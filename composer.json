@@ -1,0 +1,32 @@
+{
+    "name": "hyyan/woo-poly-integration",
+    "description": "Integrates Polylang with Woocommerce",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hyyan Abo Fakher",
+            "email": "Tiribthea4hyyan@gmail.com",
+            "homepage": "https://github.com/hyyan"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/hyyan/woo-poly-integration/issues"
+    },
+    "keywords": [
+        "wordpress",
+        "wordpress admin",
+        "wordpress plugin",
+        "wordpress muplugin",
+        "polylang",
+        "woocommerce",
+        "polylang woocommerce integration",
+        "hyyan",
+        "bedrock",
+        "gwp"
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "composer/installers": "~1.0"
+    }
+}
