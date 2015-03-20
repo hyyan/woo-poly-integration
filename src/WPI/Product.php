@@ -27,11 +27,12 @@ class Product
     {
         add_action('current_screen', array($this, 'syncProductsMeta'));
         add_action('woocommerce_reduce_order_stock', array($this, 'syncStock'));
+        add_filter('woocommerce_restore_order_stock_quantity', array($this, 'restoreStockQuantity'), 10, 2);
     }
 
     /**
      * Sync porduct meta
-     * 
+     *
      * @return false if the current post type is not "porduct"
      */
     public function syncProductsMeta()
@@ -123,6 +124,57 @@ class Product
         }
 
         return true;
+    }
+
+    /**
+     * Restore order stock quantity
+     *
+     * @param integer $change the stock change
+     * @param integer $id     item id
+     *
+     * @return integer stock change
+     */
+    public function restoreStockQuantity($change, $id)
+    {
+
+        $orderId = absint($_POST['order_id']);
+        $order = new \WC_Order($orderId);
+        $items = $order->get_items();
+        $product = $order->get_product_from_item($items[$id]);
+
+        // get array of defined langs
+        $langs = pll_languages_list();
+
+        foreach ($items as $item) {
+
+            $productId = $item['product_id'];
+            $productObject = wc_get_product($productId);
+
+            // product not found
+            if (!$productObject)
+                return $change;
+
+            $productLang = pll_get_post_language($productId);
+
+            // product default lang can not be found
+            if (!$productLang)
+                return $change;
+
+            foreach ($langs as $name) {
+
+                // skip the current product lang
+                if ($productLang == $name)
+                    continue;
+
+                $translationID = pll_get_post($productId, $name);
+
+                if ($translationID && ($transltedProduct = wc_get_product($translationID))) {
+                    $transltedProduct->increase_stock($change);
+                }
+            }
+        }
+
+        return $change;
     }
 
     /**
