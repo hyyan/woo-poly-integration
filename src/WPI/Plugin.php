@@ -77,10 +77,12 @@ class Plugin
         require_once __DIR__.'/Pages.php';
         require_once __DIR__.'/Login.php';
         require_once __DIR__.'/Cart.php';
+        require_once __DIR__.'/Product.php';
 
         new Pages();
         new Login();
         new Cart();
+        new Product();
     }
 
 }

@@ -26,7 +26,6 @@ extract it there.
 
 ## Not Complete (Stuff we care about for now)
 
-* Sync Stocks
 * Reports
 * Shipping Classes Translation
 
