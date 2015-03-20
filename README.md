@@ -21,7 +21,7 @@ extract it there.
 
 ## What you need to know about this plugin
 
-* The plugin stills in development , so you might found bugs
+* The plugin stills in development , so you might find bugs
 * The plugin doesn't implement full integration yet (Working on it)
 
 ## Not Complete (Stuff we care about for now)
