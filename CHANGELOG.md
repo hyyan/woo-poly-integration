@@ -1,3 +1,7 @@
+###0.4
+
+* General improvements for product meta sync
+
 ###0.3
 
 * added porduct restoreStockQuantity function
