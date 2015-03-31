@@ -25,9 +25,23 @@ class Product
      */
     public function __construct()
     {
-        add_action('current_screen', array($this, 'syncProductsMeta'));
-        add_action('woocommerce_reduce_order_stock', array($this, 'syncStock'));
-        add_filter('woocommerce_restore_order_stock_quantity', array($this, 'restoreStockQuantity'), 10, 2);
+        // sync product meta
+        add_action(
+                'current_screen'
+                , array($this, 'syncProductsMeta')
+        );
+
+        // sync stock
+        add_action(
+                'woocommerce_reduce_order_stock'
+                , array($this, 'syncStock')
+        );
+        add_filter(
+                'woocommerce_restore_order_stock_quantity'
+                , array($this, 'restoreStockQuantity')
+                , 10
+                , 2
+        );
     }
 
     /**
@@ -48,31 +62,32 @@ class Product
             return $this->defineProductMetaToCopy($metas);
         });
 
-        // disable editing product meta for translation
-        $disable = false;
-
         /*
+         * Disable editing product meta for translation
+         *
          * if the "post" is defined in $_GET then we should check if the current
          * porduct has a translation and it is the same as the default translation
          * lang defined in polylang then porduct meta editing must by enabled
          *
          * if the "new_lang" is defined or if the current page is the "edit"
          * page then porduct meta editing must by disabled
+         *
+         * enqueue the lock-fileds.js script if we should disable porduct
+         * meta editing
          */
+        $disable = false;
         if ($_GET['post']) {
             $porductID = esc_attr($_GET['post']);
             $disable = $porductID && (pll_get_post_language($porductID) != pll_default_language());
         } elseif (isset($_GET['new_lang']) || $currentScreen->base == 'edit') {
             $disable = true;
         }
-
-        /**
-         * enqueue the lock-fileds.js script if we should disable porduct
-         * meta editing
-         */
         if ($disable) {
             $this->addLockFiledsScript();
         }
+
+        /* sync the prodcut type */
+        $this->syncSelectedProdcutType();
     }
 
     /**
@@ -178,6 +193,48 @@ class Product
     }
 
     /**
+     * Sync the porduct select list
+     */
+    protected function syncSelectedProdcutType()
+    {
+        /*
+         * First we add save_post action to save the porduct type
+         * as post meta
+         *
+         * This is step is important so we can get the right product type
+         */
+        add_action('save_post', function ($id) {
+            $product = get_product($id);
+            if ($product) {
+                $type = $product->product_type;
+                update_post_meta($id, '_translation_porduct_type', $type);
+            }
+        });
+
+        /*
+         * If we can get the post id and the _translation_porduct_type meta is
+         * found then we add the js script to sync the product type select
+         * list
+         */
+        $id = isset($_GET['from_post']) ?
+                esc_attr($_GET['from_post']) :
+                esc_attr($_GET['post']);
+
+        if ($id && ($type = get_post_meta($id, '_translation_porduct_type'))) {
+            add_action('admin_print_scripts', function () use ($type) {
+                echo '<script type="text/javascript" id="woo-poly">';
+                echo PHP_EOL . '// <![CDATA[' . PHP_EOL;
+                echo 'addLoadEvent(function () {' . PHP_EOL;
+                echo "jQuery('#product-type option').removeAttr('selected');" . PHP_EOL;
+                echo "jQuery('#product-type option[value=\"" . $type[0] . "\"]').attr('selected', 'selected');" . PHP_EOL;
+                echo '});' . PHP_EOL;
+                echo PHP_EOL . '// ]]>' . PHP_EOL;
+                echo '</script>';
+            }, 11);
+        }
+    }
+
+    /**
      * Add the lock-fileds.js script
      *
      * The script will disable editing of some porduct metas
@@ -207,6 +264,7 @@ class Product
     {
         return array_merge($metas, array(
             '_stock_status',
+            'total_sales',
             '_downloadable',
             '_virtual',
             '_regular_price',
@@ -228,7 +286,20 @@ class Product
             '_upsell_ids',
             '_crosssell_ids',
             '_product_image_gallery',
-            'total_sales'
+            '_min_variation_price',
+            '_max_variation_price',
+            '_min_price_variation_id',
+            '_max_price_variation_id',
+            '_min_variation_regular_price',
+            '_max_variation_regular_price',
+            '_min_regular_price_variation_id',
+            '_max_regular_price_variation_id',
+            '_min_variation_sale_price',
+            '_max_variation_sale_price',
+            '_min_sale_price_variation_id',
+            '_max_sale_price_variation_id',
+            '_product_url',
+            '_translation_porduct_type',
         ));
     }
 
