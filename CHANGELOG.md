@@ -1,3 +1,7 @@
+###0.5
+
+* Added support for coupon translation
+
 ###0.4
 
 * General improvements for product meta sync

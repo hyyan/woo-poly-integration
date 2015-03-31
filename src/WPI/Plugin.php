@@ -7,6 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WPI;
 
 /**
@@ -74,15 +75,18 @@ class Plugin
      */
     public function registerCore()
     {
-        require_once __DIR__.'/Pages.php';
-        require_once __DIR__.'/Login.php';
-        require_once __DIR__.'/Cart.php';
-        require_once __DIR__.'/Product.php';
+        require_once __DIR__ . '/Functions.php';
+        require_once __DIR__ . '/Pages.php';
+        require_once __DIR__ . '/Login.php';
+        require_once __DIR__ . '/Cart.php';
+        require_once __DIR__ . '/Product.php';
+        require_once __DIR__ . '/Coupon.php';
 
         new Pages();
         new Login();
         new Cart();
         new Product();
+        new Coupon();
     }
 
 }
