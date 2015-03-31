@@ -27,7 +27,6 @@ extract it there.
 ## Not Complete (Stuff we care about for now)
 
 * Reports
-* Shipping Classes Translation
 
 ## Setup your environment
 
