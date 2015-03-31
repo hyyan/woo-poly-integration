@@ -27,12 +27,11 @@ extract it there.
 ## Not Complete (Stuff we care about for now)
 
 * Reports
-* Shipping Classes Translation
 
 ## Setup your environment
 
 * Make sure to setup you permalinks correctly
-* You need to activate polylang translation for (Products,Products Category and tags)
+* You need to activate polylang translation for (Products, Shipping Classes and Products Category/Tags)
 * You need to translate the following pages (Cart,Account,Checkout) by your self, but do not translate
   the `shop` page
 
