@@ -1,3 +1,7 @@
+###0.6
+
+* Added support for order translation
+
 ###0.5
 
 * Added support for coupon translation
