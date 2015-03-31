@@ -81,12 +81,14 @@ class Plugin
         require_once __DIR__ . '/Cart.php';
         require_once __DIR__ . '/Product.php';
         require_once __DIR__ . '/Coupon.php';
+        require_once __DIR__ . '/Order.php';
 
         new Pages();
         new Login();
         new Cart();
         new Product();
         new Coupon();
+        new Order();
     }
 
 }
