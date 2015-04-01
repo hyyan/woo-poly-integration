@@ -5,7 +5,7 @@
  * Plugin URI: https://github.com/hyyan/woo-poly-integration/
  * Description: Integrates Polylang with Woocommerce
  * Author: Hyyan Abo Fakher
- * Version: 0.6
+ * Version: 0.7
  * Author URI: https://github.com/hyyan
  * GitHub Plugin URI: hyyan/woo-poly-integration
  * License: MIT License

@@ -1,3 +1,7 @@
+###0.7
+
+* Added support for attributes translation
+
 ###0.6
 
 * Added support for order translation
