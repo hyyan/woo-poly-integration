@@ -18,6 +18,7 @@ Integrates Woocommerce With Polylang
   - [x] Meta Synchronization
   - [ ] Product Variation
 - [x] Order Translation
+- [x] Cart Synchronization
 - [x] Coupon Synchronization
 - [ ] Emails
 - [ ] Reports
