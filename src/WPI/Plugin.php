@@ -23,7 +23,7 @@ class Plugin
      */
     public function __construct()
     {
-        $this->register();
+        add_action('init',array($this,'register'));
     }
 
     /**
