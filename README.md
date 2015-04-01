@@ -7,6 +7,26 @@
 
 Integrates Woocommerce With Polylang
 
+## Features List
+
+- [x] Page Translation
+- [x] Product Translation
+  - [x] Categories
+  - [x] Tags
+  - [x] Attributes
+  - [x] Shipping Classes
+  - [x] Meta Synchronization
+  - [ ] Product Variation
+- [x] Order Translation
+- [x] Coupon Synchronization
+- [ ] Emails
+- [ ] Reports
+
+## What you need to know about this plugin
+
+* The plugin stills in development , so you might find bugs
+* The plugin doesn't implement full integration yet (Working on it)
+
 ## How to install
 
 ### Classical way
@@ -19,24 +39,13 @@ extract it there.
 
 1. run composer command : ``` composer require hyyan/woo-poly-integration```
 
-## What you need to know about this plugin
-
-* The plugin stills in development , so you might find bugs
-* The plugin doesn't implement full integration yet (Working on it)
-
-## Not Complete (Stuff we care about for now)
-
-* Reports
-* Emails
-* Product Variation
-
 ## Setup your environment
 
 * Make sure to setup you permalinks correctly
 * You need to activate polylang translation for (Products, Shipping Classes and Products Category/Tags)
 * You need to translate the following pages (Cart,Account,Checkout) by your self, but do not translate
   the `shop` page
-
+* The plugin will handle the rest for you
 
 ## Contributing
 
