@@ -300,6 +300,8 @@ class Product
             '_max_sale_price_variation_id',
             '_product_url',
             '_translation_porduct_type',
+            '_product_attributes',
+            '_default_attributes'
         ));
     }
 
