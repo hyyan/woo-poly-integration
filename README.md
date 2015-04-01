@@ -27,6 +27,8 @@ extract it there.
 ## Not Complete (Stuff we care about for now)
 
 * Reports
+* Emails
+* Product Variation
 
 ## Setup your environment
 
