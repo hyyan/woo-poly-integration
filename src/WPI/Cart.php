@@ -62,7 +62,7 @@ class Cart
         $result = $id;
 
         // get the product translations
-        $IDS = $polylang->get_translations('post', $id);
+        $IDS =  $polylang->model->get_translations('post', $id);
 
         // check if any of product's translation is already in cart
         foreach ($woocommerce->cart->get_cart() as $keys => $values) {
