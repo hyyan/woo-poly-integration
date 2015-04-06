@@ -76,7 +76,7 @@ class Product
          * meta editing
          */
         $disable = false;
-        if ($_GET['post']) {
+        if (isset($_GET['post'])) {
             $porductID = esc_attr($_GET['post']);
             $disable = $porductID && (pll_get_post_language($porductID) != pll_default_language());
         } elseif (isset($_GET['new_lang']) || $currentScreen->base == 'edit') {
@@ -218,7 +218,7 @@ class Product
          */
         $id = isset($_GET['from_post']) ?
                 esc_attr($_GET['from_post']) :
-                esc_attr($_GET['post']);
+                (isset($_GET['post']) ? esc_attr($_GET['post']) : false);
 
         if ($id && ($type = get_post_meta($id, '_translation_porduct_type'))) {
             add_action('admin_print_scripts', function () use ($type) {
