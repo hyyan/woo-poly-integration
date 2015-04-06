@@ -28,7 +28,7 @@ class Attributes
                 , array($this, 'makePolylangManageAttrsTranslation')
         );
 
-        // mangae attributes label translation
+        // manage attributes label translation
         add_action(
                 'init'
                 , array($this, 'makeAttributeLableTranslateable')
