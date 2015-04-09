@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
     exit('restricted access');
 }
 
-define('Hyyan_WPI_DIR', dirname(__FILE__));
+define('Hyyan_WPI_DIR', __FILE__);
 define('Hyyan_WPI_URL', plugin_dir_url(__FILE__));
 
 require_once __DIR__ . '/src/Hyyan/WPI/Plugin.php';
