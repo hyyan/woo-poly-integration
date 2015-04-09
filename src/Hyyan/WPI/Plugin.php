@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WPI;
+namespace Hyyan\WPI;
 
 /**
  * Plugin
@@ -38,7 +38,7 @@ class Plugin
     {
         if (!static::canActivate()) {
             add_action('admin_notices', function () {
-                printf('<div id="message" class="error"><p>%s</p></div>', __('Hyyan WooCommerce Polylang Integration Plugin can not function correctly , the plugin requires WooCommerce and Polylang plugins', 'wpi'));
+                printf('<div id="message" class="error"><p>%s</p></div>', __('Hyyan WooCommerce Polylang Integration Plugin can not function correctly , the plugin requires WooCommerce and Polylang plugins', 'woo-poly-integration'));
             });
 
             return false;

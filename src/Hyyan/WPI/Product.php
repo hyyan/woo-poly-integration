@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WPI;
+namespace Hyyan\WPI;
 
 /**
  * Product
@@ -243,8 +243,8 @@ class Product
     {
         add_action('admin_enqueue_scripts', function () {
             wp_enqueue_script(
-                    'wpi-ock-fields.js'
-                    , plugins_url('src/assets/js/lock-fields.js', WPI_BASE_FILE)
+                    'hyyan-wpi-fields-locker.js'
+                    , plugins_url('public/js/FieldsLocker.js', Hyyan_WPI_DIR)
                     , array('jquery')
                     , '1.0'
                     , true

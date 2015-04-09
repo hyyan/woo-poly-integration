@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WPI;
+namespace Hyyan\WPI;
 
 /**
  * Order
@@ -83,7 +83,7 @@ class Order
                     . '            id="order_lang" name="order_lang"/>'
                     . '     </p>'
                     . '</div>'
-                    , __('Order/Checkout Language : ', 'wpi')
+                    , __('Order/Checkout Language : ', 'woo-poly-integration')
                     , $langEntity->name
             );
         }

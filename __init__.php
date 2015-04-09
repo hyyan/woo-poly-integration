@@ -5,10 +5,12 @@
  * Plugin URI: https://github.com/hyyan/woo-poly-integration/
  * Description: Integrates Woocommerce with Polylang
  * Author: Hyyan Abo Fakher
- * Version: 0.7
  * Author URI: https://github.com/hyyan
+ * Text Domain: woo-poly-integration
+ * Domain Path: /languages
  * GitHub Plugin URI: hyyan/woo-poly-integration
  * License: MIT License
+ * Version: 0.7
  */
 
 /**
@@ -22,8 +24,9 @@ if (!defined('ABSPATH')) {
     exit('restricted access');
 }
 
-define('WPI_BASE_FILE', __FILE__);
+define('Hyyan_WPI_DIR', dirname(__FILE__));
+define('Hyyan_WPI_URL', plugin_dir_url(__FILE__));
 
-require_once __DIR__ . '/src/WPI/Plugin.php';
+require_once __DIR__ . '/src/Hyyan/WPI/Plugin.php';
 
-new WPI\Plugin();
+new Hyyan\WPI\Plugin();

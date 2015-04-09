@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WPI;
+namespace Hyyan\WPI;
 
 /**
  * Cart
@@ -112,7 +112,7 @@ class Cart
         wp_deregister_script('wc-cart-fragments');
         wp_enqueue_script(
                 'wc-cart-fragments'
-                , plugins_url('src/assets/js/cart-fragments.js', WPI_BASE_FILE)
+                , plugins_url('public/js/Cart.js', Hyyan_WPI_DIR)
                 , array('jquery', 'jquery-cookie')
                 , '1.0'
                 , true
