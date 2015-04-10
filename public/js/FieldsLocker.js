@@ -26,7 +26,7 @@
         /**
          * Do lock all fields
          */
-        start: function () {
+        init: function () {
 
             // handle disabled items
             var disabled = this.getDisabledItems();
@@ -94,7 +94,7 @@
 
     // bootstrap 
     $(document).ready(function () {
-        new FieldsLocker($).start();
+        new FieldsLocker($).init();
     });
 
 })(window.jQuery);
