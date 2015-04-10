@@ -83,7 +83,7 @@ class Product
             $disable = true;
         }
         if ($disable) {
-            $this->addLockFiledsScript();
+            $this->addFieldsLockerScript();
         }
 
         /* sync the prodcut type */
@@ -239,7 +239,7 @@ class Product
      *
      * The script will disable editing of some porduct metas
      */
-    protected function addLockFiledsScript()
+    protected function addFieldsLockerScript()
     {
         add_action('admin_enqueue_scripts', function () {
             wp_enqueue_script(
