@@ -49,6 +49,8 @@
         , getDisabledItems: function () {
             // default ids
             var items = [
+                // quick edit
+                '#woocommerce-fields *',
                 // product types
                 '.type_box *',
                 // inputs : general
