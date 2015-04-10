@@ -32,7 +32,7 @@ class Attributes
         add_action(
                 'init'
                 , array($this, 'makeAttributeLableTranslateable')
-                , 10, 2
+                , 11, 2
         );
         add_filter('woocommerce_attribute_label'
                 , array($this, 'translateAttrsLable')
@@ -74,7 +74,7 @@ class Attributes
     public function makeAttributeLableTranslateable()
     {
         $attrs = wc_get_attribute_taxonomies();
-        $section = __('Woocommerce Attributes', 'wpi');
+        $section = __('Woocommerce Attributes', 'woo-poly-integration');
         foreach ($attrs as $attr) {
             pll_register_string(
                     $attr->attribute_label
