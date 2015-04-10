@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Hyyan\WPI;
+namespace Hyyan\WPI\Product;
 
 /**
  * Attributes

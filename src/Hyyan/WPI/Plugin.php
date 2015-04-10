@@ -75,22 +75,24 @@ class Plugin
      */
     public function registerCore()
     {
-        require_once __DIR__ . '/Functions.php';
-        require_once __DIR__ . '/Pages.php';
-        require_once __DIR__ . '/Login.php';
+        require_once __DIR__ . '/Product/Attributes.php';
+        require_once __DIR__ . '/Product/Meta.php';
+        require_once __DIR__ . '/Product/Stock.php';
         require_once __DIR__ . '/Cart.php';
-        require_once __DIR__ . '/Product.php';
         require_once __DIR__ . '/Coupon.php';
+        require_once __DIR__ . '/Functions.php';
+        require_once __DIR__ . '/Login.php';
         require_once __DIR__ . '/Order.php';
-        require_once __DIR__ . '/Attributes.php';
+        require_once __DIR__ . '/Pages.php';
 
-        new Pages();
-        new Login();
+        new Product\Attributes();
+        new Product\Meta();
+        new Product\Stock();
         new Cart();
-        new Product();
         new Coupon();
+        new Login();
         new Order();
-        new Attributes();
+        new Pages();
     }
 
 }
