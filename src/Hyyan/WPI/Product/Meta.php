@@ -64,16 +64,16 @@ class Meta
         if (isset($_GET['post'])) {
             $ID = esc_attr($_GET['post']);
             $disable = $ID && (pll_get_post_language($ID) != pll_default_language());
-        } elseif (isset($_GET['from_post']) || $currentScreen->base == 'edit') {
+        } elseif (isset($_GET['new_lang']) || $currentScreen->base == 'edit') {
             $disable = true;
-            $ID = esc_attr($_GET['from_post']);
+            $ID = isset($_GET['from_post']) ? esc_attr($_GET['from_post']) : false;
+        }
+
+        if ($disable) {
+            $this->addFieldsLockerScript();
         }
 
         if ($ID && ($product = wc_get_product($ID))) {
-
-            if ($disable) {
-                $this->addFieldsLockerScript();
-            }
 
             /* sync selected prodcut type */
             $this->syncSelectedProdcutType($ID);
@@ -116,11 +116,11 @@ class Meta
             add_action('admin_print_scripts', function () use ($type) {
                 printf(
                         '<script type="text/javascript" id="woo-poly">'
-                        . ' %1$s // <![CDATA[ %1$s'
+                        . '// <![CDATA[ %1$s'
                         . ' addLoadEvent(function () { %1$s'
                         . '     jQuery("#product-type option").removeAttr("selected");%1$s'
-                        . '     jQuery("#product-type option[value=\"%2$s"\"]").attr("selected", "selected");%1$s'
-                        . ' %1$s // ]]> %1$s'
+                        . '     jQuery("#product-type option[value=\"%2$s\"]").attr("selected", "selected");%1$s'
+                        . '// ]]>'
                         . '</script>'
                         , PHP_EOL
                         , $type[0]
