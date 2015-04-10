@@ -123,6 +123,7 @@ class Meta
                         . ' addLoadEvent(function () { %1$s'
                         . '     jQuery("#product-type option").removeAttr("selected");%1$s'
                         . '     jQuery("#product-type option[value=\"%2$s\"]").attr("selected", "selected");%1$s'
+                        . '});'
                         . '// ]]>'
                         . '</script>'
                         , PHP_EOL
