@@ -23,7 +23,7 @@ class Plugin
      */
     public function __construct()
     {
-        add_action('init',array($this,'register'));
+        add_action('init', array($this, 'register'));
     }
 
     /**
@@ -45,6 +45,31 @@ class Plugin
         }
 
         $this->registerCore();
+    }
+
+    /**
+     * Add plugin core classes
+     */
+    public function registerCore()
+    {
+        require_once __DIR__ . '/Product/Attributes.php';
+        require_once __DIR__ . '/Product/Meta.php';
+        require_once __DIR__ . '/Product/Stock.php';
+        require_once __DIR__ . '/Cart.php';
+        require_once __DIR__ . '/Coupon.php';
+        require_once __DIR__ . '/Functions.php';
+        require_once __DIR__ . '/Login.php';
+        require_once __DIR__ . '/Order.php';
+        require_once __DIR__ . '/Pages.php';
+
+        new Product\Attributes();
+        new Product\Meta();
+        new Product\Stock();
+        new Cart();
+        new Coupon();
+        new Login();
+        new Order();
+        new Pages();
     }
 
     /**
@@ -71,28 +96,15 @@ class Plugin
     }
 
     /**
-     * Add plugin core classes
+     * Get current plugin version
+     *
+     * @return integer
      */
-    public function registerCore()
+    public static function getVersion()
     {
-        require_once __DIR__ . '/Product/Attributes.php';
-        require_once __DIR__ . '/Product/Meta.php';
-        require_once __DIR__ . '/Product/Stock.php';
-        require_once __DIR__ . '/Cart.php';
-        require_once __DIR__ . '/Coupon.php';
-        require_once __DIR__ . '/Functions.php';
-        require_once __DIR__ . '/Login.php';
-        require_once __DIR__ . '/Order.php';
-        require_once __DIR__ . '/Pages.php';
+        $data = get_plugin_data(Hyyan_WPI_DIR);
 
-        new Product\Attributes();
-        new Product\Meta();
-        new Product\Stock();
-        new Cart();
-        new Coupon();
-        new Login();
-        new Order();
-        new Pages();
+        return $data['Version'];
     }
 
 }
