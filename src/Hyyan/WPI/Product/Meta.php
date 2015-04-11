@@ -39,6 +39,12 @@ class Meta
      */
     public function syncProductsMeta()
     {
+
+        // sync product meta with polylang
+        add_filter('pll_copy_post_metas', function ($metas) {
+            return $this->defineProductMetaToCopy($metas);
+        });
+
         $currentScreen = get_current_screen();
 
         if ($currentScreen->post_type !== 'product')
@@ -76,17 +82,6 @@ class Meta
 
         /* sync selected prodcut type */
         $this->syncSelectedProdcutType($ID);
-
-        // sync product meta with polylang
-        if ($ID && ($product = wc_get_product($ID))) {
-
-            // define the porduct meta that must be synced
-            // polylang will handle this part
-            add_filter('pll_copy_post_metas', function ($metas) use ($product) {
-                return $this->defineProductMetaToCopy($metas, $product);
-            });
-
-        }
     }
 
     /**
@@ -102,11 +97,11 @@ class Meta
          *
          * This is step is important so we can get the right product type
          */
-        add_action('save_post', function ($ID) {
-            $product = get_product($ID);
+        add_action('save_post', function ($_ID) {
+            $product = get_product($_ID);
             if ($product) {
                 $type = $product->product_type;
-                update_post_meta($ID, '_translation_porduct_type', $type);
+                update_post_meta($_ID, '_translation_porduct_type', $type);
             }
         });
 
@@ -123,7 +118,7 @@ class Meta
                         . ' addLoadEvent(function () { %1$s'
                         . '     jQuery("#product-type option").removeAttr("selected");%1$s'
                         . '     jQuery("#product-type option[value=\"%2$s\"]").attr("selected", "selected");%1$s'
-                        . '});'
+                        . '})'
                         . '// ]]>'
                         . '</script>'
                         , PHP_EOL
@@ -148,8 +143,8 @@ class Meta
                     'hyyan-wpi-fields-locker.js'
                     , plugins_url('public/js/FieldsLocker.js', Hyyan_WPI_DIR)
                     , array('jquery')
-                    , '1.0'
-                    , true
+                    , \Hyyan\WPI\Plugin::getVersion()
+                    , false
             );
         }, 100);
     }
@@ -158,12 +153,11 @@ class Meta
      * Define the meta keys that must copyied from orginal product to its
      * translation
      *
-     * @param array       $metas   array of meta keys
-     * @param \WC_Product $product the current product object
+     * @param array $metas array of meta keys
      *
      * @return array extended meta keys array
      */
-    protected function defineProductMetaToCopy($metas, $product)
+    protected function defineProductMetaToCopy($metas)
     {
         return array_merge($metas, array(
             '_stock_status',
