@@ -50,7 +50,7 @@ class Plugin
     /**
      * Add plugin core classes
      */
-    public function registerCore()
+    protected function registerCore()
     {
         require_once __DIR__ . '/Product/Attributes.php';
         require_once __DIR__ . '/Product/Meta.php';
