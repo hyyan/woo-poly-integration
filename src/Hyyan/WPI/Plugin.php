@@ -48,31 +48,6 @@ class Plugin
     }
 
     /**
-     * Add plugin core classes
-     */
-    public function registerCore()
-    {
-        require_once __DIR__ . '/Product/Attributes.php';
-        require_once __DIR__ . '/Product/Meta.php';
-        require_once __DIR__ . '/Product/Stock.php';
-        require_once __DIR__ . '/Cart.php';
-        require_once __DIR__ . '/Coupon.php';
-        require_once __DIR__ . '/Functions.php';
-        require_once __DIR__ . '/Login.php';
-        require_once __DIR__ . '/Order.php';
-        require_once __DIR__ . '/Pages.php';
-
-        new Product\Attributes();
-        new Product\Meta();
-        new Product\Stock();
-        new Cart();
-        new Coupon();
-        new Login();
-        new Order();
-        new Pages();
-    }
-
-    /**
      * Check if the plugin can be activated
      *
      * @return boolean true if can be activated , false otherwise
@@ -105,6 +80,31 @@ class Plugin
         $data = get_plugin_data(Hyyan_WPI_DIR);
 
         return $data['Version'];
+    }
+
+    /**
+     * Add plugin core classes
+     */
+    protected function registerCore()
+    {
+        require_once __DIR__ . '/Product/Attributes.php';
+        require_once __DIR__ . '/Product/Meta.php';
+        require_once __DIR__ . '/Product/Stock.php';
+        require_once __DIR__ . '/Cart.php';
+        require_once __DIR__ . '/Coupon.php';
+        require_once __DIR__ . '/Functions.php';
+        require_once __DIR__ . '/Login.php';
+        require_once __DIR__ . '/Order.php';
+        require_once __DIR__ . '/Pages.php';
+
+        new Product\Attributes();
+        new Product\Meta();
+        new Product\Stock();
+        new Cart();
+        new Coupon();
+        new Login();
+        new Order();
+        new Pages();
     }
 
 }
