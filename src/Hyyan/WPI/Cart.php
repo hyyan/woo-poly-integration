@@ -114,7 +114,7 @@ class Cart
                 'wc-cart-fragments'
                 , plugins_url('public/js/Cart.js', Hyyan_WPI_DIR)
                 , array('jquery', 'jquery-cookie')
-                , '1.0'
+                , \Hyyan\WPI\Plugin::getVersion()
                 , true
         );
     }
