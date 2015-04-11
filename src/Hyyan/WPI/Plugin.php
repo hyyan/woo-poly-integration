@@ -23,18 +23,18 @@ class Plugin
      */
     public function __construct()
     {
-        add_action('init', array($this, 'register'));
+        add_action('init', array($this, 'activate'));
     }
 
     /**
-     * Register plugin
+     * Activate plugin
      *
-     * The plugin will register its core if the requirements full filled , otherwise
+     * The plugin will register its core if the requirements are full filled , otherwise
      * it will show an admin error message
      *
      * @return boolean false if plugin can not be activated
      */
-    public function register()
+    public function activate()
     {
         if (!static::canActivate()) {
             add_action('admin_notices', function () {
