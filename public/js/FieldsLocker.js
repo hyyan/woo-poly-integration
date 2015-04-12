@@ -59,7 +59,7 @@
                 // product types
                 '.type_box :input',
                 // inputs : general
-                '#general_product_data :input',
+                '#general_product_data :input:not(#_button_text):not(#_product_url)',
                 // inputs : stock
                 '#inventory_product_data :input',
                 // inputs : shipping

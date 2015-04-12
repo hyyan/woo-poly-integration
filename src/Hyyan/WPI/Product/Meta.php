@@ -199,10 +199,10 @@ class Meta
             '_max_variation_sale_price',
             '_min_sale_price_variation_id',
             '_max_sale_price_variation_id',
-            '_product_url',
             '_translation_porduct_type',
             '_product_attributes',
-            '_default_attributes'
+            '_default_attributes',
+            '_button_text',
         ));
     }
 
