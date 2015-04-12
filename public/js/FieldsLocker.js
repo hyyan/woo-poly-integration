@@ -27,11 +27,16 @@
          * Do lock all fields
          */
         init: function () {
+            
+            // Enable fields again before saving the post
+            $('#post').bind('submit', function () {
+                $(this).find(':input').removeAttr('disabled');
+            });
 
             // handle disabled items
             var disabled = this.getDisabledItems();
             for (var i = 0; i < disabled.length; i++) {
-                $(disabled[i]).attr('disabled', 'disabled');
+                $(disabled[i]).attr('disabled', true);
             }
 
             // handle deleted items
@@ -50,19 +55,19 @@
             // default ids
             var items = [
                 // quick edit
-                '#woocommerce-fields *',
+                '#woocommerce-fields :input',
                 // product types
-                '.type_box *',
+                '.type_box :input',
                 // inputs : general
-                '#general_product_data *',
+                '#general_product_data :input',
                 // inputs : stock
-                '#inventory_product_data *',
+                '#inventory_product_data :input',
                 // inputs : shipping
-                '#shipping_product_data *',
+                '#shipping_product_data :input',
                 // inputs : related
                 '#parent_id',
                 // inputs : attributes
-                '#product_attributes *',
+                '#product_attributes :input',
                 // inputs : advanced setting
                 '#comment_status',
                 '#menu_order'
@@ -93,7 +98,7 @@
     };
 
     // bootstrap 
-    $(document).ready(function () {
+    $(document).ready(function ($) {
         new FieldsLocker($).init();
     });
 
