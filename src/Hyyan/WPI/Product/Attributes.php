@@ -36,7 +36,7 @@ class Attributes
         // manage attributes label translation
         add_action(
                 'init'
-                , array($this, 'makeAttributeLableTranslateable')
+                , array($this, 'makeAttributeLablesTranslateable')
                 , 11, 2
         );
         add_filter('woocommerce_attribute_label'
@@ -82,7 +82,7 @@ class Attributes
     /**
      * Make all attributes labled managed by polylang string translation
      */
-    public function makeAttributeLableTranslateable()
+    public function makeAttributeLablesTranslateable()
     {
         $attrs = wc_get_attribute_taxonomies();
         $section = __('Woocommerce Attributes', 'woo-poly-integration');
