@@ -188,8 +188,6 @@ class Meta
             '_width',
             '_height',
             'product_shipping_class',
-            // related
-            'parent_id',
             // advanced
             '_purchase_note',
             'menu_order',

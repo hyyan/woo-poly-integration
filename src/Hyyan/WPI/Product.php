@@ -34,6 +34,9 @@ class Product
                 , array($this, 'manageProductTranslation')
         );
 
+        // sync post parent (good for grouped products)
+        add_filter('admin_init', array($this, 'syncPostParent'));
+
         new Product\Taxonomies();
         new Product\Meta();
         new Product\Stock();
@@ -59,6 +62,19 @@ class Product
         $types [] = 'product';
 
         return $types;
+    }
+
+    /**
+     * Tell polylang to sync the post parent
+     */
+    public function syncPostParent()
+    {
+        $options = get_option('polylang');
+        $sync = $options['sync'];
+        if (!in_array('post_parent', $sync)) {
+            $options['sync'][] = 'post_parent';
+            update_option('polylang', $options);
+        }
     }
 
 }

@@ -69,7 +69,7 @@
                 // inputs : shipping
                 '#shipping_product_data :input',
                 // inputs : related
-                '#parent_id',
+                '#linked_product_data :input',
                 // inputs : attributes
                 '#product_attributes :input',
                 // inputs : advanced setting
