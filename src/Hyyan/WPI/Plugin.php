@@ -87,6 +87,7 @@ class Plugin
      */
     protected function registerCore()
     {
+        require_once __DIR__ . '/HooksInterface.php';
         require_once __DIR__ . '/Product/Attributes.php';
         require_once __DIR__ . '/Product/Meta.php';
         require_once __DIR__ . '/Product/Stock.php';

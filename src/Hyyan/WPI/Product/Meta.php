@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
+use Hyyan\WPI\HooksInterface;
+
 /**
  * Prodcut Meta
  *
@@ -157,53 +159,55 @@ class Meta
      *
      * @return array extended meta keys array
      */
-    protected function defineProductMetaToCopy($metas)
+    protected function defineProductMetaToCopy(array $metas = array())
     {
-        return array_merge($metas, array(
-            '_stock_status',
-            'total_sales',
+
+        $default = array(
+            // general
+            'product-type',
+            '_virtual',
             '_downloadable',
+            '_sku',
+            '_regular_price',
+            '_sale_price',
+            '_sale_price_dates_from',
+            '_sale_price_dates_to',
             '_downloadable_files',
             '_download_limit',
             '_download_expiry',
             '_download_type',
-            '_virtual',
-            '_regular_price',
-            '_sale_price',
-            '_purchase_note',
-            '_featured',
+            // stock
+            '_manage_stock',
+            '_stock',
+            '_backorders',
+            '_stock_status',
+            '_sold_individually',
+            // shipping
             '_weight',
             '_length',
             '_width',
             '_height',
-            '_sku',
-            '_sale_price_dates_from',
-            '_sale_price_dates_to',
-            '_price',
-            '_sold_individually',
-            '_manage_stock',
-            '_backorders',
-            '_stock',
+            'product_shipping_class',
+            // related
+            'parent_id',
+            // advanced
+            '_purchase_note',
+            'menu_order',
+            'comment_status',
+            // extra
             '_upsell_ids',
             '_crosssell_ids',
+            '_featured',
+            '_price',
             '_product_image_gallery',
-            '_min_variation_price',
-            '_max_variation_price',
-            '_min_price_variation_id',
-            '_max_price_variation_id',
-            '_min_variation_regular_price',
-            '_max_variation_regular_price',
-            '_min_regular_price_variation_id',
-            '_max_regular_price_variation_id',
-            '_min_variation_sale_price',
-            '_max_variation_sale_price',
-            '_min_sale_price_variation_id',
-            '_max_sale_price_variation_id',
-            '_translation_porduct_type',
-            '_product_attributes',
-            '_default_attributes',
-            '_button_text',
-        ));
+            'total_sales',
+            '_translation_porduct_type'
+        );
+
+        return array_merge(
+                $metas
+                , apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, $default)
+        );
     }
 
 }
