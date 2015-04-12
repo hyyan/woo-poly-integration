@@ -43,7 +43,6 @@ extract it there.
 ## Setup your environment
 
 * Make sure to setup you permalinks correctly
-* You need to activate polylang translation for (Products, Shipping Classes and Products Category/Tags)
 * You need to translate the following pages (Cart,Account,Checkout) by your self, but do not translate
   the `shop` page
 * The plugin will handle the rest for you
