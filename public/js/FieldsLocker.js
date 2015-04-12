@@ -6,16 +6,18 @@
  * file that was distributed with this source code.
  */
 
-(function ($) {
+(function ($, document) {
 
     /**
      * Constrcut the class
      * 
      * @param {jQuery} $ jquery object
-     * @returns {FieldsLocker_L1.FieldsLocker}
+     * @param {document} document
+     * @returns {FieldsLocker_L9.FieldsLocker}
      */
-    var FieldsLocker = function ($) {
+    var FieldsLocker = function ($, document) {
         this.$ = $;
+        this.document = document;
     };
 
     FieldsLocker.prototype = {
@@ -27,16 +29,17 @@
          * Do lock all fields
          */
         init: function () {
-            
-            // Enable fields again before saving the post
-            $('#post').bind('submit', function () {
-                $(this).find(':input').removeAttr('disabled');
-            });
 
             // handle disabled items
             var disabled = this.getDisabledItems();
             for (var i = 0; i < disabled.length; i++) {
-                $(disabled[i]).attr('disabled', true);
+                $(disabled[i])
+                        .attr('onclick', 'event.preventDefault();') // for checkboxes;
+                        .css({
+                            'opacity': .5,
+                            'pointer-events': 'none',
+                            'cursor': 'not-allowed'
+                        });
             }
 
             // handle deleted items
@@ -44,6 +47,7 @@
             for (var i = 0; i < deleted.length; i++) {
                 $(deleted[i]).css({visibility: 'hidden'});
             }
+            
         }
 
         /**
@@ -102,4 +106,4 @@
         new FieldsLocker($).init();
     });
 
-})(window.jQuery);
+})(window.jQuery, document);
