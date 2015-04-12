@@ -197,7 +197,7 @@ class Meta
             // extra
             '_upsell_ids',
             '_crosssell_ids',
-            '_featured',
+            '_thumbnail_id',
             '_price',
             '_product_image_gallery',
             'total_sales',
