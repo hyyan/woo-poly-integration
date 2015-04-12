@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
+use Hyyan\WPI\HooksInterface;
+
 /**
  * Attributes
  *
@@ -36,6 +38,12 @@ class Attributes
         );
         add_filter('woocommerce_attribute_label'
                 , array($this, 'translateAttrsLable')
+        );
+
+        // extend meta list
+        add_filter(
+                HooksInterface::PRODUCT_META_SYNC_FILTER
+                , array($this, 'extendProductMetaList')
         );
     }
 
@@ -94,6 +102,21 @@ class Attributes
     public function translateAttrsLable($label)
     {
         return pll__($label);
+    }
+
+    /**
+     * Extend the product meta list that must by synced
+     *
+     * @param array $metas current meta list
+     *
+     * @return array
+     */
+    public function extendProductMetaList(array $metas)
+    {
+        return array_merge($metas, array(
+            '_product_attributes',
+            '_default_attributes',
+        ));
     }
 
 }
