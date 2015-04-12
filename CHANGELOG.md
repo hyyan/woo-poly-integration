@@ -1,3 +1,8 @@
+###0.8
+
+* Refactoring Code 
+* General Improvements
+
 ###0.7
 
 * Added support for attributes translation
