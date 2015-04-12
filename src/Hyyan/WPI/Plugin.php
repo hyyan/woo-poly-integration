@@ -88,7 +88,7 @@ class Plugin
     protected function registerCore()
     {
         require_once __DIR__ . '/HooksInterface.php';
-        require_once __DIR__ . '/Product/Attributes.php';
+        require_once __DIR__ . '/Product/Taxonomies.php';
         require_once __DIR__ . '/Product/Meta.php';
         require_once __DIR__ . '/Product/Stock.php';
         require_once __DIR__ . '/Cart.php';
@@ -98,7 +98,7 @@ class Plugin
         require_once __DIR__ . '/Order.php';
         require_once __DIR__ . '/Pages.php';
 
-        new Product\Attributes();
+        new Product\Taxonomies();
         new Product\Meta();
         new Product\Stock();
         new Cart();

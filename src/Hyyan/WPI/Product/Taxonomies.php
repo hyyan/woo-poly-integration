@@ -13,13 +13,13 @@ namespace Hyyan\WPI\Product;
 use Hyyan\WPI\HooksInterface;
 
 /**
- * Attributes
+ * Taxonomies
  *
- * Handle attributes translation
+ * Handle taxonomies translation
  *
  * @author Hyyan
  */
-class Attributes
+class Taxonomies
 {
 
     /**
@@ -27,23 +27,24 @@ class Attributes
      */
     public function __construct()
     {
-        // manage attributes translation
+        // manage taxonomies translation
         add_filter(
                 'pll_get_taxonomies'
-                , array($this, 'makePolylangManageAttrsTranslation')
+                , array($this, 'manageTaxonomiesTranslation')
         );
 
         // manage attributes label translation
         add_action(
                 'init'
-                , array($this, 'makeAttributeLablesTranslateable')
+                , array($this, 'manageAttrLablesTranslation')
                 , 11, 2
         );
-        add_filter('woocommerce_attribute_label'
-                , array($this, 'translateAttrsLable')
+        add_filter(
+                'woocommerce_attribute_label'
+                , array($this, 'translateAttrLable')
         );
 
-        // extend meta list
+        // extend meta list to include attributes
         add_filter(
                 HooksInterface::PRODUCT_META_SYNC_FILTER
                 , array($this, 'extendProductMetaList')
@@ -51,38 +52,35 @@ class Attributes
     }
 
     /**
-     * Notifty polylang about every new attributes
+     * Notifty polylang about product taxonomies
      *
-     * @param array $types array of cutoms posts managed by polylang
+     * @param array $taxonomies array of cutoms taxonomies managed by polylang
      *
      * @return array
      */
-    public function makePolylangManageAttrsTranslation($types)
+    public function manageTaxonomiesTranslation($taxonomies)
     {
-        $attrs = wc_get_attribute_taxonomy_names();
+        $new = $this->getTaxonomies();
         $options = get_option('polylang');
-
         $taxs = $options['taxonomies'];
         $update = false;
-
-        foreach ($attrs as $attr) {
-            if (!in_array($attr, $taxs)) {
-                $options['taxonomies'][] = $attr;
+        foreach ($new as $tax) {
+            if (!in_array($tax, $taxs)) {
+                $options['taxonomies'][] = $tax;
                 $update = true;
             }
         }
-
         if ($update) {
             update_option('polylang', $options);
         }
 
-        return array_merge($types, $attrs);
+        return array_merge($taxonomies, $new);
     }
 
     /**
-     * Make all attributes labled managed by polylang string translation
+     * Make all attributes lables managed by polylang string translation
      */
-    public function makeAttributeLablesTranslateable()
+    public function manageAttrLablesTranslation()
     {
         $attrs = wc_get_attribute_taxonomies();
         $section = __('Woocommerce Attributes', 'woo-poly-integration');
@@ -102,7 +100,7 @@ class Attributes
      *
      * @return string translated attribute label
      */
-    public function translateAttrsLable($label)
+    public function translateAttrLable($label)
     {
         return pll__($label);
     }
@@ -119,6 +117,20 @@ class Attributes
         return array_merge($metas, array(
             '_product_attributes',
             '_default_attributes',
+        ));
+    }
+
+    /**
+     * Get taxonomies array
+     *
+     * @return array
+     */
+    protected function getTaxonomies()
+    {
+        return array_merge(wc_get_attribute_taxonomy_names(), array(
+            'product_cat',
+            'product_tag',
+            'product_shipping_class'
         ));
     }
 
