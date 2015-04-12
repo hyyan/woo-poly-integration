@@ -22,6 +22,9 @@ use Hyyan\WPI\HooksInterface;
 class Attributes
 {
 
+    /**
+     * Constrcut object
+     */
     public function __construct()
     {
         // manage attributes translation
