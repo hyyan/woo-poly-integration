@@ -18,4 +18,23 @@ namespace Hyyan\WPI;
 interface HooksInterface
 {
 
+    /**
+     * Product Meta Sync Filter
+     *
+     * The filter is fired before product meta array is passed to polylang
+     * to handle sync.
+     *
+     * The filter recive one parameter which is the meta array
+     *
+     * for instance :
+     * <code>
+     * add_filter(Hyyan\WPI\HooksInterface::PRODUCT_META_SYNC_FILTER,function($meta=array()) {
+     *
+     *      // do whatever you want
+     *
+     *      return $meta;
+     * });
+     * </code>
+     */
+    const PRODUCT_META_SYNC_FILTER = 'woo-poly.product.metaSync';
 }
