@@ -56,7 +56,7 @@ function getOrderLanguage($id)
  */
 function getProductTranslationByObject(\WC_Product $product, $slug = '')
 {
-    $productTranslationID = pll_get_post($product->id, $slug = '');
+    $productTranslationID = pll_get_post($product->id, $slug);
 
     if ($productTranslationID) {
         $translated = wc_get_product($productTranslationID);
@@ -81,5 +81,5 @@ function getProductTranslationByID($id, $slug = '')
     if (!$product)
         return false;
 
-    return getProductTranslationByObject($product);
+    return getProductTranslationByObject($product,$slug);
 }

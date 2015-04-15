@@ -11,6 +11,7 @@ namespace Hyyan\WPI;
 require_once __DIR__ . '/Product/Taxonomies.php';
 require_once __DIR__ . '/Product/Meta.php';
 require_once __DIR__ . '/Product/Stock.php';
+require_once __DIR__ . '/Product/Variable.php';
 
 /**
  * Product
@@ -40,6 +41,7 @@ class Product
         new Product\Taxonomies();
         new Product\Meta();
         new Product\Stock();
+        new Product\Variable();
     }
 
     /**
