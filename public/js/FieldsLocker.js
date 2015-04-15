@@ -72,6 +72,8 @@
                 '#linked_product_data :input',
                 // inputs : attributes
                 '#product_attributes :input',
+                // inputs : variations
+                '#variable_product_options :input',
                 // inputs : advanced setting
                 '#comment_status',
                 '#menu_order'
