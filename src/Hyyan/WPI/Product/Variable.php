@@ -11,6 +11,7 @@
 namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\Utilities;
 
 /**
  * Variable
@@ -75,12 +76,12 @@ class Variable
                  * This check will make sure that variation , will be
                  * created for brand new products which are not saved yet by user
                  */
-                $from = \Hyyan\WPI\getProductTranslationByID(
+                $from = Utilities::getProductTranslationByID(
                         esc_attr($_GET['from_post'])
                         , pll_default_language()
                 );
             } else {
-                $from = \Hyyan\WPI\getProductTranslationByObject(
+                $from = Utilities::getProductTranslationByObject(
                         $product
                         , pll_default_language()
                 );
@@ -96,7 +97,7 @@ class Variable
         foreach ($langs as $lang) {
             $variation = new VariationDuplicator(
                     $from
-                    , \Hyyan\WPI\getProductTranslationByObject($product, $lang)
+                    , Utilities::getProductTranslationByObject($product, $lang)
             );
             remove_action('save_post', array($this, 'variations'), 10);
             $variation->handle();
