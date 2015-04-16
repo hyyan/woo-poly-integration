@@ -24,7 +24,7 @@ class Variable
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

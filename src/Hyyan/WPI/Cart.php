@@ -21,7 +21,7 @@ class Cart
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

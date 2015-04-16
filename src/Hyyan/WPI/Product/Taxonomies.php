@@ -23,7 +23,7 @@ class Taxonomies
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

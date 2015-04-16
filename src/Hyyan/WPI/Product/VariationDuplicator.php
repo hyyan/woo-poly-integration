@@ -32,7 +32,7 @@ class VariationDuplicator
     protected $to;
 
     /**
-     * Constrcut object
+     * Construct object
      *
      * @param \WC_Product_Variable $from the product which contains variations to
      *                                   copy from

@@ -21,7 +21,7 @@ final class Autoloader
     private $base;
 
     /**
-     * Constrcut the autoloader class
+     * Construct the autoloader class
      *
      * @param string $base the base path to use
      *

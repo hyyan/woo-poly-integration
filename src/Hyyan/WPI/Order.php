@@ -21,7 +21,7 @@ class Order
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

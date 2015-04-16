@@ -21,7 +21,7 @@ class Pages
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

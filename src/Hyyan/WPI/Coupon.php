@@ -21,7 +21,7 @@ class Coupon
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

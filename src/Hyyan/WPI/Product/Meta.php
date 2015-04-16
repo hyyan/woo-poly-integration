@@ -23,7 +23,7 @@ class Meta
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

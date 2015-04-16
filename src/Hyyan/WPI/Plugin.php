@@ -19,7 +19,7 @@ class Plugin
 {
 
     /**
-     * Constrcut the plugin
+     * Construct the plugin
      */
     public function __construct()
     {

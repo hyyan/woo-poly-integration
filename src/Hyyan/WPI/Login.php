@@ -21,7 +21,7 @@ class Login
 {
 
     /**
-     * Constrcut object
+     * Construct object
      */
     public function __construct()
     {

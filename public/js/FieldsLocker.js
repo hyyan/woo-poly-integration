@@ -9,7 +9,7 @@
 (function ($, document) {
 
     /**
-     * Constrcut the class
+     * Construct the class
      * 
      * @param {jQuery} $ jquery object
      * @param {document} document
@@ -22,7 +22,7 @@
 
     FieldsLocker.prototype = {
         /**
-         * Constrcutor
+         * Constructor
          */
         constructor: FieldsLocker,
         /**
