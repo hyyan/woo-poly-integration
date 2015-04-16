@@ -79,9 +79,20 @@ class Taxonomies
 
     /**
      * Make all attributes lables managed by polylang string translation
+     *
+     * @global \Polylang $polylang
+     * @global \WooCommerce $woocommerce
+     *
+     * @return boolean false if polylang or woocommerce can not be found
      */
     public function manageAttrLablesTranslation()
     {
+        global $polylang, $woocommerce;
+
+        if (!$polylang || !$woocommerce) {
+            return false;
+        }
+
         $attrs = wc_get_attribute_taxonomies();
         $section = __('Woocommerce Attributes', 'woo-poly-integration');
         foreach ($attrs as $attr) {
