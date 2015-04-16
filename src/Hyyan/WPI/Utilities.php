@@ -55,7 +55,7 @@ final class Utilities
      */
     public static function getProductTranslationsArrayByObject(\WC_Product $product, $excludeDefault = false)
     {
-        return static::getProductTranslationsByID($product->id, $excludeDefault);
+        return static::getProductTranslationsArrayByID($product->id, $excludeDefault);
     }
 
     /**
