@@ -8,6 +8,11 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\Product\Taxonomies,
+    Hyyan\WPI\Product\Meta,
+    Hyyan\WPI\Product\Stock,
+    Hyyan\WPI\Product\Variable;
+
 /**
  * Product
  *
@@ -33,10 +38,10 @@ class Product
         // sync post parent (good for grouped products)
         add_filter('admin_init', array($this, 'syncPostParent'));
 
-        new Product\Taxonomies();
-        new Product\Meta();
-        new Product\Stock();
-        new Product\Variable();
+        new Taxonomies();
+        new Meta();
+        new Stock();
+        new Variable();
     }
 
     /**
