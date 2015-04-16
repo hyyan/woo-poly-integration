@@ -62,7 +62,7 @@ class Cart
         $result = $ID;
 
         // get the product translations
-        $IDS = Utilities::getTranslationsArrayByID($ID);
+        $IDS = Utilities::getProductTranslationsArrayByID($ID);
 
         // check if any of product's translation is already in cart
         foreach (WC()->cart->get_cart() as $values) {

@@ -31,7 +31,7 @@ final class Utilities
      * @return array associative array with language code as key and ID of translations
      *               as value.
      */
-    public static function getTranslationsArrayByID($ID, $excludeDefault = false)
+    public static function getProductTranslationsArrayByID($ID, $excludeDefault = false)
     {
         global $polylang;
         $IDS = $polylang->model->get_translations('post', $ID);
@@ -53,7 +53,7 @@ final class Utilities
      * @return array associative array with language code as key and ID of translations
      *               as value.
      */
-    public static function getTranslationsArrayByObject(\WC_Product $product, $excludeDefault = false)
+    public static function getProductTranslationsArrayByObject(\WC_Product $product, $excludeDefault = false)
     {
         return static::getProductTranslationsByID($product->id, $excludeDefault);
     }
