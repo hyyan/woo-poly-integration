@@ -13,7 +13,7 @@ namespace Hyyan\WPI;
 /**
  * Cart
  *
- * Handle cart
+ * Handle cart translation
  *
  * @author Hyyan
  */
