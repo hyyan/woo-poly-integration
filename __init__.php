@@ -28,6 +28,10 @@ define('Hyyan_WPI_DIR', __FILE__);
 define('Hyyan_WPI_URL', plugin_dir_url(__FILE__));
 
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
-require_once __DIR__ . '/src/Hyyan/WPI/Plugin.php';
+require_once __DIR__ . '/src/Hyyan/WPI/Autoloader.php';
 
+/* register the autoloader */
+new Hyyan\WPI\Autoloader(__DIR__ . '/src/');
+
+/* bootstrap the plugin */
 new Hyyan\WPI\Plugin();
