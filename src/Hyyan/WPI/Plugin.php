@@ -87,15 +87,6 @@ class Plugin
      */
     protected function registerCore()
     {
-        require_once __DIR__ . '/HooksInterface.php';
-        require_once __DIR__ . '/Cart.php';
-        require_once __DIR__ . '/Coupon.php';
-        require_once __DIR__ . '/Functions.php';
-        require_once __DIR__ . '/Login.php';
-        require_once __DIR__ . '/Order.php';
-        require_once __DIR__ . '/Pages.php';
-        require_once __DIR__ . '/Product.php';
-
         new Cart();
         new Coupon();
         new Login();

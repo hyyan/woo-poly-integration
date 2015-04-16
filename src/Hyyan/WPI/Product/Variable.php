@@ -12,8 +12,6 @@ namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
 
-require_once __DIR__ . '/VariationDuplicator.php';
-
 /**
  * Variable
  *

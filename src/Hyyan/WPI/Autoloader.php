@@ -47,7 +47,6 @@ class Autoloader
         }
 
         $filename = $this->base . str_replace('\\', '/', $className) . ".php";
-        var_dump($filename);
         if (file_exists($filename)) {
             require_once($filename);
             if (
