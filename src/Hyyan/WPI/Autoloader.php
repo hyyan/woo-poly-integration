@@ -13,7 +13,7 @@ namespace Hyyan\WPI;
  *
  * @author Hyyan
  */
-class Autoloader
+final class Autoloader
 {
     /**
      * @var String
