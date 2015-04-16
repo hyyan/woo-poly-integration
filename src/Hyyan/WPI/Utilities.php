@@ -121,4 +121,26 @@ final class Utilities
         return false;
     }
 
+    /**
+     * Get the translations IDS of the given term ID
+     *
+     * @global \Polylang $polylang
+     *
+     * @param integer $ID             term id
+     * @param boolean $excludeDefault ture to exclude defualt language
+     *
+     * @return array associative array with language code as key and ID of translations
+     *               as value.
+     */
+    public static function getTermTranslationsArrayByID($ID, $excludeDefault = false)
+    {
+        global $polylang;
+        $IDS = $polylang->model->get_translations('term', $ID);
+        if (true === $excludeDefault) {
+            unset($IDS[pll_default_language()]);
+        }
+
+        return $IDS;
+    }
+
 }
