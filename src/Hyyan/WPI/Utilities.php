@@ -97,4 +97,28 @@ final class Utilities
         return $product;
     }
 
+    /**
+     * Get polylang langauge entity
+     *
+     * @global \Polylang $polylang
+     *
+     * @param string $slug the language slug
+     *
+     * @return \PLL_Language|false language entity in success , false otherwise
+     */
+    public static function getLanguageEntity($slug)
+    {
+        global $polylang;
+
+        $langs = $polylang->model->get_languages_list();
+
+        foreach ($langs as $lang) {
+            if ($lang->slug == $slug) {
+                return $lang;
+            }
+        }
+
+        return false;
+    }
+
 }

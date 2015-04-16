@@ -99,7 +99,7 @@ class Order
      */
     public function translateProductsInOrdersDetails($product, $items)
     {
-        return getProductTranslationByObject($product);
+        return Utilities::getProductTranslationByObject($product);
     }
 
     /**
@@ -116,11 +116,11 @@ class Order
     public function translateProductNameInOrdersDetails($name, $item)
     {
         $id = $item['item_meta']['_product_id'][0];
-        $product = getProductTranslationByID($id);
+        $product = Utilities::getProductTranslationByID($id);
         if (!$product->is_visible()) {
             return $product->post->post_title;
         } else {
-            return sprintf( '<a href="%s">%s</a>', get_permalink( $product->id ), $product->post->post_title );
+            return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
         }
     }
 
@@ -135,7 +135,7 @@ class Order
     {
         $orderLangArray = get_post_meta($id, 'lang');
         if ($orderLangArray) {
-            return getLanguageEntity($orderLangArray[0]);
+            return Utilities::getLanguageEntity($orderLangArray[0]);
         }
 
         return false;
