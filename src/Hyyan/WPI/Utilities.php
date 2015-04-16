@@ -34,7 +34,7 @@ final class Utilities
     public static function getTranslationsArrayByID($ID, $excludeDefault = false)
     {
         global $polylang;
-        $IDS = $polylang->get_translations('post', $ID);
+        $IDS = $polylang->model->get_translations('post', $ID);
         if (true === $excludeDefault) {
             unset($IDS[pll_default_language()]);
         }
@@ -55,7 +55,7 @@ final class Utilities
      */
     public static function getTranslationsArrayByObject(\WC_Product $product, $excludeDefault = false)
     {
-        return getProductTranslationsByID($product->id, $excludeDefault);
+        return static::getProductTranslationsByID($product->id, $excludeDefault);
     }
 
     /**
@@ -74,7 +74,7 @@ final class Utilities
             return false;
         }
 
-        return getProductTranslationByObject($product, $slug);
+        return static::getProductTranslationByObject($product, $slug);
     }
 
     /**
