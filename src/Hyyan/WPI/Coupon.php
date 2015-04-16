@@ -79,53 +79,33 @@ class Coupon
     }
 
     /**
-     * Get array of product post translations IDS
+     * Get array of product translations IDS
      *
-     * @param integer $id the product id
+     * @param integer $ID the product ID
      *
-     * @return array array contains all translation IDS for the given product post
+     * @return array array contains all translation IDS for the given product
      */
-    protected function getProductPostTranslationIDS($id)
+    protected function getProductPostTranslationIDS($ID)
     {
 
-        $result = array($id);
-        $langs = pll_languages_list();
+        $IDS = Utilities::getProductTranslationsArrayByID($ID);
 
-        foreach ($langs as $name) {
-
-            $translationID = pll_get_post($id, $name);
-
-            if ($translationID) {
-                $result[] = $translationID;
-            }
-        }
-
-        return $result;
+        return $IDS ? $IDS : array($ID);
     }
 
     /**
-     * Get array of product term translations IDS
+     * Get array of term translations IDS
      *
-     * @param integer $id the term id
+     * @param integer $ID the term ID
      *
-     * @return array array contains all translation IDS for the given product term
+     * @return array array contains all translation IDS for the given term
      */
-    protected function getProductTermTranslationIDS($id)
+    protected function getProductTermTranslationIDS($ID)
     {
 
-        $result = array($id);
-        $langs = pll_languages_list();
+        $IDS = Utilities::getTermTranslationsArrayByID($ID);
 
-        foreach ($langs as $name) {
-
-            $translationID = pll_get_term($id, $name);
-
-            if ($translationID) {
-                $result[] = $translationID;
-            }
-        }
-
-        return $result;
+        return $IDS ? $IDS : array($ID);
     }
 
 }
