@@ -155,7 +155,7 @@ class Variation
      */
     public static function deleteRelatedVariation($variationID)
     {
-        $posts = (array) static::getRelatedVariation($variatonID);
+        $posts = (array) static::getRelatedVariation($variationID);
         foreach ($posts as $post) {
             wp_delete_post($post->ID, true);
         }
