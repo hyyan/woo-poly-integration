@@ -73,7 +73,8 @@ class Meta
             $ID = absint($_GET['post']);
             $disable = $ID && (pll_get_post_language($ID) != pll_default_language());
         } elseif (isset($_GET['new_lang']) || $currentScreen->base == 'edit') {
-            $disable = true;
+            $disable = isset($_GET['new_lang']) && (esc_attr($_GET['new_lang']) != pll_default_language()) ?
+                    true : false;
             $ID = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
         }
 
