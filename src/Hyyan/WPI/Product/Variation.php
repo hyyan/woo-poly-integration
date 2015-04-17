@@ -150,7 +150,7 @@ class Variation
 
     /**
      * Delete all variation related to the given variation ID
-     * 
+     *
      * @param integer $variationID variation ID
      */
     public static function deleteRelatedVariation($variationID)
