@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
+use Hyyan\WPI\Utilities;
+
 /**
  * Product Stock
  *
@@ -19,6 +21,8 @@ namespace Hyyan\WPI\Product;
  */
 class Stock
 {
+    const STOCK_REDUCE_ACTION = 'reduce';
+    const STOCK_INCREASE_ACTION = 'increase';
 
     /**
      * Construct object
@@ -28,124 +32,115 @@ class Stock
         // sync stock
         add_action(
                 'woocommerce_reduce_order_stock'
-                , array($this, 'syncStock')
+                , array($this, 'reduceStock')
         );
         add_filter(
                 'woocommerce_restore_order_stock_quantity'
-                , array($this, 'restoreStockQuantity')
-                , 10
-                , 2
+                , array($this, 'increaseStock')
         );
     }
 
     /**
-     * Sync stock for product and its translation
+     * Reduce stock for product and its translation
      *
      * @param \WC_Order $order
-     *
-     * @return boolean false if sync failed , true otherwise
      */
-    public function syncStock($order)
+    public function reduceStock($order)
     {
-        // get array of defined langs
-        $langs = pll_languages_list();
 
-        // get array of ordered products
+        /* Get array of ordered products */
         $items = $order->get_items();
 
+        /* Reduce stock */
         foreach ($items as $item) {
-
-            $productId = $item['product_id'];
-            $productObject = wc_get_product($productId);
-
-            // product not found
-            if (!$productObject) {
-                return false;
-            }
-
-            // product does not manage the stock
-            if (!$productObject->managing_stock()) {
-                return false;
-            }
-
-            $productLang = pll_get_post_language($productId);
-
-            // product default lang can not be found
-            if (!$productLang) {
-                return false;
-            }
-
-            foreach ($langs as $name) {
-
-                // skip the current product lang
-                if ($productLang == $name) {
-                    continue;
-                }
-
-                $translationID = pll_get_post($productId, $name);
-
-                if ($translationID && ($transltedProduct = wc_get_product($translationID))) {
-                    $transltedProduct->reduce_stock($item['qty']);
-                }
-            }
-
+            $this->change($item, self::STOCK_REDUCE_ACTION);
         }
-
-        return true;
     }
 
     /**
-     * Restore order stock quantity
+     * Increase stock for product and its translation
      *
      * @param integer $change the stock change
-     * @param integer $id     item id
      *
      * @return integer stock change
      */
-    public function restoreStockQuantity($change, $id)
+    public function increaseStock($change)
     {
 
         $orderId = absint($_POST['order_id']);
         $order = new \WC_Order($orderId);
+
+        /* Get array of ordered products */
         $items = $order->get_items();
-        $product = $order->get_product_from_item($items[$id]);
 
-        // get array of defined langs
-        $langs = pll_languages_list();
-
+        /* Increase stock */
         foreach ($items as $item) {
-
-            $productId = $item['product_id'];
-            $productObject = wc_get_product($productId);
-
-            // product not found
-            if (!$productObject) {
-                return $change;
-            }
-
-            $productLang = pll_get_post_language($productId);
-
-            // product default lang can not be found
-            if (!$productLang) {
-                return $change;
-            }
-
-            foreach ($langs as $name) {
-
-                // skip the current product lang
-                if ($productLang == $name) {
-                    continue;
-                }
-
-                $translationID = pll_get_post($productId, $name);
-
-                if ($translationID && ($transltedProduct = wc_get_product($translationID))) {
-                    $transltedProduct->increase_stock($change);
-                }
-            }
+            $item['change'] = $change;
+            $this->change($item, self::STOCK_INCREASE_ACTION);
         }
 
         return $change;
+    }
+
+    /**
+     * Change the product stock in the given order item
+     *
+     * @param array  $item   the order data
+     * @param string $action STOCK_REDUCE_ACTION | STOCK_INCREASE_ACTION
+     */
+    protected function change(array $item, $action = self::STOCK_REDUCE_ACTION)
+    {
+        $productID = $item['product_id'];
+        $productObject = wc_get_product($productID);
+        $productLang = pll_get_post_language($productID);
+
+        $variationID = $item['variation_id'];
+
+        /* Handle Products */
+        if ($productObject && $productLang) {
+
+            /* Get the translations IDS */
+            $translations = Utilities::getProductTranslationsArrayByObject(
+                            $productObject
+            );
+
+            /* Remove the current product from translation array */
+            unset($translations[$productLang]);
+
+            $isManageStock = $productObject->managing_stock();
+            $isVariation = $variationID && $variationID > 0;
+            $method = ($action === self::STOCK_REDUCE_ACTION) ?
+                    'reduce_stock' :
+                    'increase_stock';
+            $change = ($action === self::STOCK_REDUCE_ACTION) ?
+                    $item['qty'] :
+                    $item['change'];
+
+            /* Sync stock for all translation */
+            foreach ($translations as $ID) {
+
+                /* Only if product is managing stock */
+                if ($isManageStock && !$isVariation) {
+                    if (($translation = wc_get_product($ID))) {
+                        $translation->$method($change);
+                    }
+                }
+            }
+
+            /* Handle variation */
+            if ($isVariation) {
+                $posts = VariationDuplicator::getRelatedVariation($variationID);
+                foreach ($posts as $post) {
+                    if ($post->ID == $variationID) {
+                        continue;
+                    }
+                    $variation = wc_get_product($post);
+                    if ($variation && $variation->managing_stock()) {
+                        $variation->$method($change);
+                    }
+                }
+            }
+        }
     }
 
 }
