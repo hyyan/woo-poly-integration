@@ -30,6 +30,11 @@ class Variable
     {
 
         add_action('save_post', array($this, 'duplicateVariations'), 10, 3);
+        add_action(
+                'wp_ajax_woocommerce_remove_variations'
+                , array($this, 'removeVariations')
+                , 9
+        );
 
         // extend meta list to include variation meta
         add_filter(
@@ -105,6 +110,20 @@ class Variable
             $variation->duplicate();
 
             add_action('save_post', array($this, __FUNCTION__), 10, 3);
+        }
+    }
+
+    /**
+     * Remove variatoins related to current removed variation
+     */
+    public function removeVariations()
+    {
+        if (isset($_POST['variation_ids'])) {
+            $IDS = (array) $_POST['variation_ids'];
+
+            foreach ($IDS as $ID) {
+                Variation::deleteRelatedVariation($ID);
+            }
         }
     }
 
