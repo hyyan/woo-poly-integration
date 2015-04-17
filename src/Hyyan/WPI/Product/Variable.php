@@ -100,7 +100,7 @@ class Variable
                     , Utilities::getProductTranslationByObject($product, $lang)
             );
             remove_action('save_post', array($this, 'variations'), 10);
-            $variation->handle();
+            $variation->duplicate();
             add_action('save_post', array($this, 'variations'), 10, 3);
         }
     }

@@ -49,7 +49,7 @@ class Variation
      *
      * @return boolean false if the from product conatins no variatoins
      */
-    public function handle()
+    public function duplicate()
     {
 
         $fromVariation = $this->from->get_available_variations();
