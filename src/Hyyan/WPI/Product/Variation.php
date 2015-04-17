@@ -11,13 +11,13 @@
 namespace Hyyan\WPI\Product;
 
 /**
- * VariationDuplicator
+ * Variation
  *
  * Handle Variation Duplicate
  *
  * @author Hyyan
  */
-class VariationDuplicator
+class Variation
 {
     const DUPLICATE_KEY = '_point_to_variation';
 

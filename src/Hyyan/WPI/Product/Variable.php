@@ -95,7 +95,7 @@ class Variable
         $langs = pll_languages_list();
 
         foreach ($langs as $lang) {
-            $variation = new VariationDuplicator(
+            $variation = new Variation(
                     $from
                     , Utilities::getProductTranslationByObject($product, $lang)
             );

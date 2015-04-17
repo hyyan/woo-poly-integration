@@ -129,7 +129,7 @@ class Stock
 
             /* Handle variation */
             if ($isVariation) {
-                $posts = VariationDuplicator::getRelatedVariation($variationID);
+                $posts = Variation::getRelatedVariation($variationID);
                 foreach ($posts as $post) {
                     if ($post->ID == $variationID) {
                         continue;
