@@ -29,7 +29,7 @@ class Variable
     public function __construct()
     {
 
-        add_action('save_post', array($this, 'duplicate'), 10, 3);
+        add_action('save_post', array($this, 'duplicateVariations'), 10, 3);
 
         // extend meta list to include variation meta
         add_filter(
@@ -47,7 +47,7 @@ class Variable
      *
      * @return boolean
      */
-    public function duplicate($ID, \WP_Post $post, $update)
+    public function duplicateVariations($ID, \WP_Post $post, $update)
     {
 
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
