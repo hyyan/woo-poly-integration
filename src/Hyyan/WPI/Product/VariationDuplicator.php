@@ -117,6 +117,32 @@ class VariationDuplicator
     }
 
     /**
+     * Get array of variations IDS which point to the given variation ID
+     *
+     * @param integer $variatonID variation ID
+     *
+     * @return array array of posts
+     */
+    public static function getRelatedVariation($variatonID)
+    {
+        $poinTo = get_post_meta(
+                $variatonID
+                , self::DUPLICATE_KEY
+                , true
+        );
+
+        if ($poinTo) {
+            return get_posts(array(
+                'meta_key' => self::DUPLICATE_KEY,
+                'meta_value' => $poinTo,
+                'post_type' => 'product_variation'
+            ));
+        }
+
+        return array();
+    }
+
+    /**
      * Create new variation
      *
      * @param \WC_Product_Variation $variation the variation product
