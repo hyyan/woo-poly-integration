@@ -81,6 +81,9 @@ class VariationDuplicator
             }
         } else {
 
+            /* This could be a very long operation */
+            set_time_limit(0);
+
             foreach ($fromVariation as $variation) {
 
                 /*
@@ -113,6 +116,9 @@ class VariationDuplicator
                         break;
                 }
             }
+
+            /* Restor original timeout */
+            set_time_limit(ini_get('max_execution_time'));
         }
     }
 
