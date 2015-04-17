@@ -70,11 +70,11 @@ class Meta
          */
 
         if (isset($_GET['post'])) {
-            $ID = esc_attr($_GET['post']);
+            $ID = absint($_GET['post']);
             $disable = $ID && (pll_get_post_language($ID) != pll_default_language());
         } elseif (isset($_GET['new_lang']) || $currentScreen->base == 'edit') {
             $disable = true;
-            $ID = isset($_GET['from_post']) ? esc_attr($_GET['from_post']) : false;
+            $ID = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
         }
 
         // disable fields edit for translation
