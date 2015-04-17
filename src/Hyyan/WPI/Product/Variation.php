@@ -149,6 +149,19 @@ class Variation
     }
 
     /**
+     * Delete all variation related to the given variation ID
+     * 
+     * @param integer $variationID variation ID
+     */
+    public static function deleteRelatedVariation($variationID)
+    {
+        $posts = (array) static::getRelatedVariation($variatonID);
+        foreach ($posts as $post) {
+            wp_delete_post($post->ID, true);
+        }
+    }
+
+    /**
      * Create new variation
      *
      * @param \WC_Product_Variation $variation the variation product
