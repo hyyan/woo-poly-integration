@@ -77,13 +77,13 @@ class Variable
                  * created for brand new products which are not saved yet by user
                  */
                 $from = Utilities::getProductTranslationByID(
-                        esc_attr($_GET['from_post'])
-                        , pll_default_language()
+                                esc_attr($_GET['from_post'])
+                                , pll_default_language()
                 );
             } else {
                 $from = Utilities::getProductTranslationByObject(
-                        $product
-                        , pll_default_language()
+                                $product
+                                , pll_default_language()
                 );
             }
         }
@@ -99,9 +99,12 @@ class Variable
                     $from
                     , Utilities::getProductTranslationByObject($product, $lang)
             );
-            remove_action('save_post', array($this, 'variations'), 10);
+
+            remove_action('save_post', array($this, __FUNCTION__), 10);
+
             $variation->duplicate();
-            add_action('save_post', array($this, 'variations'), 10, 3);
+
+            add_action('save_post', array($this, __FUNCTION__), 10, 3);
         }
     }
 
