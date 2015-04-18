@@ -40,7 +40,17 @@ class Pages
             add_filter(sprintf('option_woocommerce_%s_page_id', $page), $method);
         }
 
+        /* To generate the correct url for shop page */
+        add_filter(
+                'pll_get_archive_url'
+                , array($this, 'translateShopUrl')
+                , 10
+                , 2
+        );
+
         if (!is_admin()) {
+
+            /* To get product from current language in the shop page */
             add_filter('parse_request', array($this, 'correctShopPage'));
         }
     }
@@ -94,4 +104,41 @@ class Pages
             $wp->query_vars['post_type'] = 'product';
         }
     }
+
+    /**
+     * Translate the shop page name in the given shop url
+     *
+     * @param string $url      complete url
+     * @param string $language the current language
+     *
+     * @return string translated url
+     */
+    public function translateShopUrl($url, $language)
+    {
+        $result = $url;
+
+        if (!is_post_type_archive('product')) {
+            return $result;
+        }
+
+        $shopPageID = get_option('woocommerce_shop_page_id');
+        $shopPage = get_post($shopPageID);
+
+        if ($shopPage) {
+
+            $shopPageTranslatedID = pll_get_post($shopPageID, $language);
+            $shopPageTranslation = get_post($shopPageTranslatedID);
+
+            if ($shopPageTranslation) {
+                $result = str_replace(
+                        $shopPage->post_name
+                        , $shopPageTranslation->post_name
+                        , $url
+                );
+            }
+        }
+
+        return $result;
+    }
+
 }
