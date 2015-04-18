@@ -129,8 +129,9 @@ class Variation
      *
      * @return array array of posts
      */
-    public static function getRelatedVariation($variatonID)
+    public static function getRelatedVariation($variatonID, $returnIDS = false)
     {
+        $result = array();
         $poinTo = get_post_meta(
                 $variatonID
                 , self::DUPLICATE_KEY
@@ -138,14 +139,22 @@ class Variation
         );
 
         if ($poinTo) {
-            return get_posts(array(
+            $result = get_posts(array(
                 'meta_key' => self::DUPLICATE_KEY,
                 'meta_value' => $poinTo,
                 'post_type' => 'product_variation'
             ));
+
+            if (true === $returnIDS) {
+                $IDS = array();
+                foreach ($result as $post) {
+                    $IDS[] = $post->ID;
+                }
+                $result = $IDS;
+            }
         }
 
-        return array();
+        return $result;
     }
 
     /**
