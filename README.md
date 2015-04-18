@@ -43,8 +43,7 @@ extract it there.
 ## Setup your environment
 
 * Make sure to setup you permalinks correctly
-* You need to translate the following pages (Cart,Account,Checkout) by your self, but do not translate
-  the `shop` page
+* You need to translate woocommerce pages by yourself 
 * The plugin will handle the rest for you
 
 ## Contributing
