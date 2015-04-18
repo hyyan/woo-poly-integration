@@ -44,6 +44,7 @@ class Taxonomies
                 , array($this, 'translateAttrLable')
         );
 
+        add_action('admin_print_scripts', array($this, 'addAttsTranslateButton'), 100);
         // extend meta list to include attributes
         add_filter(
                 HooksInterface::PRODUCT_META_SYNC_FILTER
@@ -129,6 +130,39 @@ class Taxonomies
             '_product_attributes',
             '_default_attributes',
         ));
+    }
+
+    /**
+     * Add a button before the attributes table to let the user know how to
+     * translate the attributes labels
+     *
+     * @global type $pagenow
+     *
+     * @return boolean false if not attributes page
+     */
+    public function addAttsTranslateButton()
+    {
+        global $pagenow;
+        if ($pagenow !== 'edit.php') {
+            return false;
+        }
+
+        $isAttrPage = isset($_GET['page']) &&
+                esc_attr($_GET['page']) === 'product_attributes';
+
+        if (!$isAttrPage) {
+            return false;
+        }
+        printf(
+                '<script type="text/javascript" id="hyyan">'
+                . ' jQuery(document).ready(function ($) {'
+                . '     $("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
+                . '         .insertBefore(".attributes-table");'
+                . ' });'
+                . '</script>'
+                , admin_url('options-general.php?page=mlang&tab=strings&s&group=Woocommerce+Attributes&paged=1')
+                , __('Translate Attributes Lables', 'woo-poly-integration')
+        );
     }
 
     /**
