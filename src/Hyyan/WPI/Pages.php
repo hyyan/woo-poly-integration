@@ -27,13 +27,13 @@ class Pages
     {
 
         $method = array($this, 'getPostTranslationID');
-        $pages = array(
+        $pages = apply_filters(HooksInterface::PAGES_LIST, array(
             'shop',
             'cart',
             'checkout',
             'terms',
             'myaccount',
-        );
+        ));
 
         foreach ($pages as $page) {
             add_filter(sprintf('woocommerce_get_%s_page_id', $page), $method);

@@ -17,7 +17,6 @@ namespace Hyyan\WPI;
  */
 interface HooksInterface
 {
-
     /**
      * Product Meta Sync Filter
      *
@@ -37,4 +36,23 @@ interface HooksInterface
      * </code>
      */
     const PRODUCT_META_SYNC_FILTER = 'woo-poly.product.metaSync';
+
+    /**
+     * Pages List
+     *
+     * The filter id fired before the list of woocommerce page names are passed
+     * to ploylang in order to handle their translation
+     *
+     * for instance :
+     * <code>
+     * add_filter(Hyyan\WPI\HooksInterface::PAGES_LIST,function (array $pages) {
+     *
+     *      // do whatever you want
+     *      $pages [] = 'shop';
+     *
+     *      return $pages;
+     * });
+     */
+    const PAGES_LIST = 'woo-poly.pages.list';
+
 }
