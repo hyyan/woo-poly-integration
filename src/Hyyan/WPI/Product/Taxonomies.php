@@ -95,7 +95,7 @@ class Taxonomies
         }
 
         $attrs = wc_get_attribute_taxonomies();
-        $section = __('Woocommerce Attributes', 'woo-poly-integration');
+        $section = 'Woocommerce Attributes';
         foreach ($attrs as $attr) {
             pll_register_string(
                     $attr->attribute_label
