@@ -1,3 +1,9 @@
+###0.9
+
+* Refactoring Code 
+* Added support for variation products
+
+
 ###0.8
 
 * Refactoring Code 
