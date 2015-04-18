@@ -27,21 +27,18 @@ class Pages
     {
 
         $method = array($this, 'getPostTranslationID');
+        $pages = array(
+            'shop',
+            'cart',
+            'checkout',
+            'terms',
+            'myaccount',
+        );
 
-        // shop page
-        add_filter('woocommerce_get_shop_page_id', $method);
-
-        //cart page
-        add_filter('woocommerce_get_cart_page_id', $method);
-
-        // checkout page
-        add_filter('woocommerce_get_checkout_page_id', $method);
-
-        // terms page (Categories,Tags)
-        add_filter('woocommerce_get_terms_page_id', $method);
-
-        // myaccount page
-        add_filter('woocommerce_get_myaccount_page_id', $method);
+        foreach ($pages as $page) {
+            add_filter(sprintf('woocommerce_get_%s_page_id', $page), $method);
+            add_filter(sprintf('option_woocommerce_%s_page_id', $page), $method);
+        }
     }
 
     /**
