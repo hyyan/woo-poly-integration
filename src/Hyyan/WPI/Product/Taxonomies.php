@@ -154,7 +154,7 @@ class Taxonomies
             return false;
         }
         printf(
-                '<script type="text/javascript" id="hyyan">'
+                '<script type="text/javascript">'
                 . ' jQuery(document).ready(function ($) {'
                 . '     $("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
                 . '         .insertBefore(".attributes-table");'
