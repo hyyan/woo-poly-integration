@@ -1,3 +1,7 @@
+###0.11.1
+
+* Corrected query used to get the orders list in my account page
+
 ###0.11
 
 * Improved support for product variations 
