@@ -42,7 +42,10 @@ class Variable
                 , array($this, 'extendProductMetaList')
         );
 
-        $this->handleVariableLimitation();
+        if (is_admin()) {
+            $this->handleVariableLimitation();
+            $this->shouldDisableLangSwitcher();
+        }
     }
 
     /**
@@ -187,7 +190,7 @@ class Variable
                     . ' };'
                     . '</script>'
                     , __('Wrong Language For Variable Product', 'woo-poly-integration')
-                    , __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/blob/master/README.md' target='_blank'>Read more , to know why</a>","woo-poly-integration")
+                    , __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/blob/master/README.md' target='_blank'>Read more , to know why</a>", "woo-poly-integration")
                     , pll_default_language()
             );
         });
@@ -204,6 +207,40 @@ class Variable
                     , true
             );
         }, 100);
+    }
+
+    /**
+     * Check if we have to disable the language switcher in the polylang setting
+     * page
+     */
+    public function shouldDisableLangSwitcher()
+    {
+        add_action('current_screen', function () {
+            $screen = get_current_screen();
+            if ($screen->id !== 'settings_page_mlang') {
+                return false;
+            }
+            $count = wp_count_posts('product_variation');
+            if (!$count) {
+                return false;
+            }
+            add_action('admin_print_scripts', function () use ($count) {
+                printf(
+                        '<script type="text/javascript" id="woo-poly-disable-lang-switcher">'
+                        . '  jQuery(document).ready(function ($) {'
+                        . '     $("#options-lang #default_lang")'
+                        . '         .css({
+                                        "opacity": .5,
+                                        "pointer-events": "none",
+                                        "cursor": "not-allowed"
+                                    });'
+                        . '     $("#options-lang").prepend("<p class=\'update-nag\'>%s</p>");'
+                        . '  });'
+                        . '</script>'
+                        , __('You can not change the default language ,Becuase you are using variable products', 'woo-poly-integration')
+                );
+            }, 100);
+        });
     }
 
 }
