@@ -105,7 +105,7 @@
 
     // bootstrap 
     $(document).ready(function ($) {
-        new FieldsLocker($).init();
+        new FieldsLocker($,document).init();
     });
 
 })(window.jQuery, document);
