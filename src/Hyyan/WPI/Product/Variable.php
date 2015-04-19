@@ -190,7 +190,7 @@ class Variable
                     . ' };'
                     . '</script>'
                     , __('Wrong Language For Variable Product', 'woo-poly-integration')
-                    , __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/blob/master/README.md' target='_blank'>Read more , to know why</a>", "woo-poly-integration")
+                    , __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>Read more , to know why</a>", "woo-poly-integration")
                     , pll_default_language()
             );
         });

@@ -25,8 +25,12 @@ Integrates Woocommerce With Polylang
 
 ## What you need to know about this plugin
 
-* The plugin stills in development , so you might find bugs
-* The plugin doesn't implement full integration yet (Working on it)
+1. The plugin stills in development , so you might find bugs
+2. The plugin doesn't implement full integration yet (Working on it)
+3. The plugin support variable products , but using them will `disallow you to 
+  change the default language` , because of the way the plugin implements this
+  support. So you have to make sure to choose the default language before start
+  adding new variable products.
 
 ## How to install
 
@@ -43,7 +47,7 @@ extract it there.
 ## Setup your environment
 
 * Make sure to setup you permalinks correctly
-* You need to translate woocommerce pages by yourself 
+* You need to translate woocommerce pages by yourself
 * The plugin will handle the rest for you
 
 ## Contributing
