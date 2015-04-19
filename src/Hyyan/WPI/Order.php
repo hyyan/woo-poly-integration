@@ -32,11 +32,15 @@ class Order
                 , array($this, 'manageOrderTranslation')
         );
 
-        // to save the order language with every checkout
+        /* Save the order language with every checkout */
         add_action(
                 'woocommerce_checkout_update_order_meta'
                 , array($this, 'saveOrderLanguage')
         );
+
+        if (is_admin()) {
+            $this->limitPolylangFeaturesForOrders();
+        }
 
         /* Translate products in order details */
         add_filter(
@@ -117,6 +121,44 @@ class Order
         } else {
             return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
         }
+    }
+
+    /**
+     * Disallow the user to create translations for this post type
+     */
+    public function limitPolylangFeaturesForOrders()
+    {
+        add_action('current_screen', function () {
+
+            global $pagenow;
+            if (!in_array($pagenow, array('post.php', 'post-new.php', 'edit.php'))) {
+                return false;
+            }
+
+            if (
+                    isset($_GET['post_type']) &&
+                    !(esc_attr($_GET['post_type']) === 'shop_order')
+            ) {
+                return false;
+            }
+
+            if (
+                    ($pagenow == 'post.php' && isset($_GET['post'])) &&
+                    (get_post_type(esc_attr($_GET['post'])) !== 'shop_order')
+            ) {
+                return false;
+            }
+
+            add_action('admin_print_scripts', function () {
+                print(
+                        '<script type="text/javascript" id="woo-poly-orders">'
+                        . ' jQuery(document).ready(function ($) {'
+                        . '     $(".pll_icon_add,#post-translations").hide()'
+                        . ' });'
+                        . '</script>'
+                );
+            }, 100);
+        });
     }
 
     /**
