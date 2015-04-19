@@ -25,19 +25,20 @@ class Order
      */
     public function __construct()
     {
+
+        /* Manage order translation */
+        add_filter(
+                'pll_get_post_types'
+                , array($this, 'manageOrderTranslation')
+        );
+
         // to save the order language with every checkout
         add_action(
                 'woocommerce_checkout_update_order_meta'
                 , array($this, 'saveOrderLanguage')
         );
 
-        // show order language for admin
-        add_action(
-                'woocommerce_admin_order_data_after_order_details'
-                , array($this, 'showOrderLanguageInOrderDetails')
-        );
-
-        // translate products in order details
+        /* Translate products in order details */
         add_filter(
                 'woocommerce_order_item_product'
                 , array($this, 'translateProductsInOrdersDetails')
@@ -51,41 +52,36 @@ class Order
     }
 
     /**
+     * Notifty polylang about order custom post
+     *
+     * @param array $types array of custom post names managed by polylang
+     *
+     * @return array
+     */
+    public function manageOrderTranslation(array $types)
+    {
+        $options = get_option('polylang');
+        $postTypes = $options['post_types'];
+        if (!in_array('shop_order', $postTypes)) {
+            $options['post_types'][] = 'shop_order';
+            update_option('polylang', $options);
+        }
+
+        $types [] = 'shop_order';
+
+        return $types;
+    }
+
+    /**
      * Save the order language with every checkout
      *
-     * @param \WC_Order $order the order object
+     * @param integer $order the order object
      */
     public function saveOrderLanguage($order)
     {
         $current = pll_current_language();
         if ($current) {
-            add_post_meta($order, 'lang', pll_current_language(), true);
-        }
-    }
-
-    /**
-     * Show the order langauge in order details meta box for admins
-     *
-     * This option will allow the admin to add note according to the order
-     * language
-     */
-    public function showOrderLanguageInOrderDetails()
-    {
-
-        $langEntity = static::getOrderLangauge(get_the_ID());
-
-        if ($langEntity) {
-            printf(
-                    '<div class="update-nag" style="position:relative !important">'
-                    . '     <p class="form-field form-field-wide">'
-                    . '     <strong><label for="order_lang">%s</label></strong>'
-                    . '     <input type="text" disabled placeholder="%s" '
-                    . '            id="order_lang" name="order_lang"/>'
-                    . '     </p>'
-                    . '</div>'
-                    , __('Order/Checkout Language : ', 'woo-poly-integration')
-                    , $langEntity->name
-            );
+            pll_set_post_language($order, $current);
         }
     }
 
@@ -93,11 +89,10 @@ class Order
      * Translate products in order details pages
      *
      * @param \WC_Product $product
-     * @param array       $items   order items
      *
      * @return \WC_Product
      */
-    public function translateProductsInOrdersDetails($product, $items)
+    public function translateProductsInOrdersDetails($product)
     {
         return Utilities::getProductTranslationByObject($product);
     }
@@ -127,18 +122,13 @@ class Order
     /**
      * Get the order language
      *
-     * @param integer $id order id
+     * @param integer $ID order ID
      *
-     * @return \PLL_Language|false lang entity in success , false otherwise
+     * @return string|false language in success , false otherwise
      */
-    public static function getOrderLangauge($id)
+    public static function getOrderLangauge($ID)
     {
-        $orderLangArray = get_post_meta($id, 'lang');
-        if ($orderLangArray) {
-            return Utilities::getLanguageEntity($orderLangArray[0]);
-        }
-
-        return false;
+        pll_get_post_language($ID);
     }
 
 }
