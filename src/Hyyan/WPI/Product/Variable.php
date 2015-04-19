@@ -41,6 +41,8 @@ class Variable
                 HooksInterface::PRODUCT_META_SYNC_FILTER
                 , array($this, 'extendProductMetaList')
         );
+
+        $this->handleVariableLimitation();
     }
 
     /**
@@ -150,6 +152,58 @@ class Variable
             '_min_sale_price_variation_id',
             '_max_sale_price_variation_id',
         ));
+    }
+
+    /**
+     * Handle variation limitation about defualt language
+     *
+     * @global string $pagenow current page name
+     *
+     * @return boolean false if this is not new variable product
+     */
+    public function handleVariableLimitation()
+    {
+
+        global $pagenow;
+        if ($pagenow !== 'post-new.php') {
+            return false;
+        }
+
+        if (isset($_GET['from_post'])) {
+            return false;
+        }
+
+        if (pll_current_language() === pll_default_language()) {
+            return false;
+        }
+
+        add_action('admin_print_scripts', function () {
+            printf(
+                    '<script type="text/javascript" id="woo-poly-variables-data">'
+                    . ' var HYYAN_WPI_VARIABLES = {'
+                    . '     title       : "%s" ,'
+                    . '     content     : "%s" ,'
+                    . '     defaultLang : "%s"'
+                    . ' };'
+                    . '</script>'
+                    , __('Wrong Language For Variable Product', 'woo-poly-integration')
+                    , __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/blob/master/README.md' target='_blank'>Read more , to know why</a>","woo-poly-integration")
+                    , pll_default_language()
+            );
+        });
+
+        add_action('admin_enqueue_scripts', function () {
+            wp_enqueue_script('jquery-ui-core');
+            wp_enqueue_script("jquery-effects-core");
+            wp_enqueue_script('jquery-ui-dialog');
+            wp_enqueue_script(
+                    'woo-poly-variables'
+                    , plugins_url('public/js/Variables.js', Hyyan_WPI_DIR)
+                    , array('jquery', 'jquery-ui-core', 'jquery-ui-dialog')
+                    , \Hyyan\WPI\Plugin::getVersion()
+                    , true
+            );
+        }, 100);
     }
 
 }
