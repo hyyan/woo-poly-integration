@@ -1,3 +1,8 @@
+###0.11
+
+* Improved support for product variations 
+* Imporved support for orders
+
 ###0.10
 
 * Added the ability to handle shop page translation
