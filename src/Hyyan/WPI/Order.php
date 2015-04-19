@@ -31,7 +31,6 @@ class Order
                 'pll_get_post_types'
                 , array($this, 'manageOrderTranslation')
         );
-
         /* Save the order language with every checkout */
         add_action(
                 'woocommerce_checkout_update_order_meta'
@@ -41,6 +40,11 @@ class Order
         if (is_admin()) {
             $this->limitPolylangFeaturesForOrders();
         }
+
+        /* For the query used to get orders in my accout page */
+        add_filter('woocommerce_my_account_my_orders_query'
+                , array($this, 'correctMyAccountOrderQuery')
+        );
 
         /* Translate products in order details */
         add_filter(
@@ -121,6 +125,22 @@ class Order
         } else {
             return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
         }
+    }
+
+    /**
+     * Correct My account order query
+     *
+     * Will correct the query to display orders from all languages
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function correctMyAccountOrderQuery(array $query)
+    {
+        $query['lang'] = implode(',', pll_languages_list());
+
+        return $query;
     }
 
     /**
