@@ -87,3 +87,14 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 = 0.14 =
 * Released in the wordpress repository
+
+
+== Contributing ==
+
+Everyone is welcome to help contribute and improve this plugin. There are several
+ways you can contribute:
+
+* Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
+* Suggesting new features
+* Writing or refactoring code
+* Fixing [issues](https://github.com/hyyan/woo-poly-integration/issues)
