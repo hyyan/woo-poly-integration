@@ -1,3 +1,7 @@
+###0.11.2
+
+* Added forgotten return statement
+
 ###0.11.1
 
 * Corrected query used to get the orders list in my account page
