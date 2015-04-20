@@ -190,7 +190,7 @@ class Order
      */
     public static function getOrderLangauge($ID)
     {
-        pll_get_post_language($ID);
+        return pll_get_post_language($ID);
     }
 
 }
