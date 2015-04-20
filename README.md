@@ -46,7 +46,7 @@ extract it there.
 
 ## Setup your environment
 
-* Make sure to setup you permalinks correctly
+* Make sure to setup your woocommerce permalinks correctly
 * You need to translate woocommerce pages by yourself
 * The plugin will handle the rest for you
 

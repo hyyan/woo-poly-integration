@@ -1,3 +1,7 @@
+###0.14
+
+* Made ready to release to wordpress
+
 ###0.13
 
 * Coupons support variation product
