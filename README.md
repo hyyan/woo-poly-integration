@@ -20,7 +20,7 @@ Integrates Woocommerce With Polylang
 - [x] Order Translation
 - [x] Cart Synchronization `Without Variation Support`
 - [x] Coupon Synchronization
-- [ ] Emails
+- [x] Emails
 - [ ] Reports
 
 ## What you need to know about this plugin

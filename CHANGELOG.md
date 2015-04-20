@@ -1,3 +1,7 @@
+###0.12
+
+* Added support for emails
+
 ###0.11.2
 
 * Added forgotten return statement
