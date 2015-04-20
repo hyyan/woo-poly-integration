@@ -1,3 +1,7 @@
+###0.13
+
+* Coupons support variation product
+
 ###0.12
 
 * Added support for emails
