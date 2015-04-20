@@ -87,8 +87,20 @@ class Coupon
      */
     protected function getProductPostTranslationIDS($ID)
     {
+        $result = array($ID);
+        $product = wc_get_product($ID);
 
-        $IDS = Utilities::getProductTranslationsArrayByID($ID);
+        if ($product && $product->product_type === 'variation') {
+            $IDS = Product\Variation::getRelatedVariation($ID, true);
+            if (is_array($IDS)) {
+                $result = array_merge($result, $IDS);
+            }
+        } else {
+            $IDS = Utilities::getProductTranslationsArrayByID($ID);
+            if (is_array($IDS)) {
+                $result = array_merge($result, $IDS);
+            }
+        }
 
         return $IDS ? $IDS : array($ID);
     }
