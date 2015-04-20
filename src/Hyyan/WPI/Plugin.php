@@ -24,6 +24,9 @@ class Plugin
     public function __construct()
     {
         add_action('init', array($this, 'activate'));
+
+        /* Registered anyway */
+        new Emails();
     }
 
     /**
