@@ -47,6 +47,16 @@ same interface you love.
 * You need to translate woocommerce pages by yourself
 * The plugin will handle the rest for you
 
+= Contributing =
+
+Everyone is welcome to help contribute and improve this plugin. There are several
+ways you can contribute:
+
+* Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
+* Suggesting new features
+* Writing or refactoring code
+* Fixing [issues](https://github.com/hyyan/woo-poly-integration/issues)
+
 == Installation ==
 
 = Classical way =
@@ -87,14 +97,3 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 = 0.14 =
 * Released in the wordpress repository
-
-
-== Contributing ==
-
-Everyone is welcome to help contribute and improve this plugin. There are several
-ways you can contribute:
-
-* Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
-* Suggesting new features
-* Writing or refactoring code
-* Fixing [issues](https://github.com/hyyan/woo-poly-integration/issues)
