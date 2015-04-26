@@ -95,7 +95,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 
-=0.15=
+= 0.15 =
 * Extended meta list to include _visibility
 
 = 0.14 =
