@@ -10,7 +10,7 @@
  * Domain Path: /languages
  * GitHub Plugin URI: hyyan/woo-poly-integration
  * License: MIT License
- * Version: 0.14
+ * Version: 0.15
  */
 
 /**

@@ -1,3 +1,7 @@
+###0.15
+
+* Extended meta list to include _visibility
+
 ###0.14
 
 * Made ready to release to wordpress
