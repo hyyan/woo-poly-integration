@@ -1,3 +1,7 @@
+###0.16 (Not Released)
+
+* Added support for product gallery translation
+
 ###0.15
 
 * Extended meta list to include _visibility

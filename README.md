@@ -17,6 +17,7 @@ Integrates Woocommerce With Polylang
   - [x] Shipping Classes
   - [x] Meta Synchronization
   - [x] Variation Product
+  - [x] Product Gallery
 - [x] Order Translation
 - [x] Cart Synchronization `Without Variation Support`
 - [x] Coupon Synchronization
