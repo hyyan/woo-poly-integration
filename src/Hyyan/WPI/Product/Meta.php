@@ -201,7 +201,8 @@ class Meta
             '_price',
             '_product_image_gallery',
             'total_sales',
-            '_translation_porduct_type'
+            '_translation_porduct_type',
+            '_visibility',
         );
 
         return array_merge(
