@@ -3,7 +3,7 @@ Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.16
+Stable tag: 0.17
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -95,6 +95,9 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 2. Orders can capture the user language 
 
 == Changelog ==
+
+= 0.17 (Not Released) =
+* Fixed (Polylang language switcher is disabled even if there is no variable products)
 
 = 0.16 =
 * Added support for product gallery translation

@@ -221,10 +221,10 @@ class Variable
                 return false;
             }
             $count = wp_count_posts('product_variation');
-            if (!$count) {
+            if (!($count && $count->publish > 0)) {
                 return false;
             }
-            add_action('admin_print_scripts', function () use ($count) {
+            add_action('admin_print_scripts', function () {
                 printf(
                         '<script type="text/javascript" id="woo-poly-disable-lang-switcher">'
                         . '  jQuery(document).ready(function ($) {'

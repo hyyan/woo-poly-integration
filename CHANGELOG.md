@@ -1,3 +1,7 @@
+###0.17 (Not Released)
+
+* Fixed (Polylang language switcher is disabled even if there is no variable products)
+
 ###0.16
 
 * Added support for product gallery translation
