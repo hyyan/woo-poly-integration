@@ -2,7 +2,6 @@
 
 [![project status](http://stillmaintained.com/hyyan/woo-poly-integration.png)](http://stillmaintained.com/hyyan/woo-poly-integration)
 [![Latest Stable Version](https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
-[![Total Downloads](https://poser.pugx.org/hyyan/woo-poly-integration/downloads.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
 [![License](https://poser.pugx.org/hyyan/woo-poly-integration/license.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
 
 Integrates Woocommerce With Polylang
