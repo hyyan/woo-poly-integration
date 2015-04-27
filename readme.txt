@@ -96,7 +96,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 
-= 0.16 (Not Released) =
+= 0.16 =
 * Added support for product gallery translation
 
 = 0.15 =

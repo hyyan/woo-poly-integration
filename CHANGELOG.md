@@ -1,4 +1,4 @@
-###0.16 (Not Released)
+###0.16
 
 * Added support for product gallery translation
 
