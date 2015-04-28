@@ -1,6 +1,7 @@
 ###0.17 (Not Released)
 
 * Fixed (Polylang language switcher is disabled even if there is no variable products)
+* Added the ability to sync product category custom fields
 
 ###0.16
 

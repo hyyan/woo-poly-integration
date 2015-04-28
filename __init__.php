@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Plugin Name: Hyyan WooCommerce Polylang Integration
  * Plugin URI: https://github.com/hyyan/woo-poly-integration/

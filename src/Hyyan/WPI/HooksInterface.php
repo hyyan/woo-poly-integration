@@ -38,6 +38,54 @@ interface HooksInterface
     const PRODUCT_META_SYNC_FILTER = 'woo-poly.product.metaSync';
 
     /**
+     * Product Sync Category Custom Fields Action
+     *
+     * The action will be fired when the plugin attemps to sync default product
+     * category custom fields (dispplay_type,thumbinal_id)
+     *
+     * The action can be used to update extra custom fields if they exist
+     *
+     * for instance :
+     * <code>
+     *
+     * add_action(
+     *      HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS,
+     *      function (\Hyyan\WPI\Taxonomies $tax , $termID) {
+     *
+     *        if (isset($_POST['my_field_name'])) {
+     *            $tax->doSyncProductCatCustomFields(
+     *                      $termID
+     *                     , 'my_field_name'
+     *                     , esc_attr($_POST['my_field_name'])
+     *             );
+     *        }
+     *
+     *      }
+     * );
+     * </code>
+     */
+    const PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS = 'woo-poly.product.syncCategoryCustomFields';
+
+    /**
+     * Product Copy Category Custom Fields
+     *
+     * The action is fired when new translatin is being added for product category
+     *
+     * The action can be used to copy catefory custom fields from give category
+     * ID to its transation
+     *
+     * for instance :
+     *
+     * <code>
+     * add_action(HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS,function ($categoryID) {
+     *
+     *        // do whatever you want here
+     * });
+     * </code>
+     */
+    const PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS = 'woo-poly.product.copyCategoryCustomFields';
+
+    /**
      * Pages List
      *
      * The filter id fired before the list of woocommerce page names are passed
