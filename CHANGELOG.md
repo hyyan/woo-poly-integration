@@ -1,3 +1,7 @@
+###0.17.1
+
+* Removed wrong php used statement
+
 ###0.17
 
 * Fixed (Polylang language switcher is disabled even if there is no variable products)
