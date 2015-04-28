@@ -96,8 +96,9 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 
-= 0.17 (Not Released) =
+= 0.17 =
 * Fixed (Polylang language switcher is disabled even if there is no variable products)
+* Added the ability to sync product category custom fields
 
 = 0.16 =
 * Added support for product gallery translation
