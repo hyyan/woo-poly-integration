@@ -11,7 +11,6 @@ namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Utilities;
-use Hyyan\WPI\HooksInterface;
 
 /**
  * Taxonomies
