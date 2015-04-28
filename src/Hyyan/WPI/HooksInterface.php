@@ -23,7 +23,7 @@ interface HooksInterface
      * The filter is fired before product meta array is passed to polylang
      * to handle sync.
      *
-     * The filter recive one parameter which is the meta array
+     * The filter receive one parameter which is the meta array
      *
      * for instance :
      * <code>
@@ -52,6 +52,7 @@ interface HooksInterface
      *
      *      return $pages;
      * });
+     * </code>
      */
     const PAGES_LIST = 'woo-poly.pages.list';
 
