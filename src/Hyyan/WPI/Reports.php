@@ -25,7 +25,7 @@ class Reports
     {
         add_filter(
                 'woocommerce_reports_get_order_report_query'
-                , array($this, 'filterByLanguage')
+                , array($this, 'filterProductByLanguage')
         );
     }
 
@@ -39,7 +39,7 @@ class Reports
      *
      * @return array final report query
      */
-    public function filterByLanguage(array $query)
+    public function filterProductByLanguage(array $query)
     {
         if (
                 !(
