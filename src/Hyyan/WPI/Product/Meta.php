@@ -44,7 +44,52 @@ class Meta
 
         // sync product meta with polylang
         add_filter('pll_copy_post_metas', function ($metas) {
-            return $this->defineProductMetaToCopy($metas);
+            $default = array(
+                // general
+                'product-type',
+                '_virtual',
+                '_downloadable',
+                '_sku',
+                '_regular_price',
+                '_sale_price',
+                '_sale_price_dates_from',
+                '_sale_price_dates_to',
+                '_downloadable_files',
+                '_download_limit',
+                '_download_expiry',
+                '_download_type',
+                // stock
+                '_manage_stock',
+                '_stock',
+                '_backorders',
+                '_stock_status',
+                '_sold_individually',
+                // shipping
+                '_weight',
+                '_length',
+                '_width',
+                '_height',
+                'product_shipping_class',
+                // advanced
+                '_purchase_note',
+                'menu_order',
+                'comment_status',
+                // extra
+                '_upsell_ids',
+                '_crosssell_ids',
+                '_featured',
+                '_thumbnail_id',
+                '_price',
+                '_product_image_gallery',
+                'total_sales',
+                '_translation_porduct_type',
+                '_visibility',
+            );
+
+            return array_merge(
+                    $metas
+                    , apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, $default)
+            );
         });
 
         $currentScreen = get_current_screen();
@@ -151,64 +196,4 @@ class Meta
             );
         }, 100);
     }
-
-    /**
-     * Define the meta keys that must copyied from orginal product to its
-     * translation
-     *
-     * @param array $metas array of meta keys
-     *
-     * @return array extended meta keys array
-     */
-    protected function defineProductMetaToCopy(array $metas = array())
-    {
-
-        $default = array(
-            // general
-            'product-type',
-            '_virtual',
-            '_downloadable',
-            '_sku',
-            '_regular_price',
-            '_sale_price',
-            '_sale_price_dates_from',
-            '_sale_price_dates_to',
-            '_downloadable_files',
-            '_download_limit',
-            '_download_expiry',
-            '_download_type',
-            // stock
-            '_manage_stock',
-            '_stock',
-            '_backorders',
-            '_stock_status',
-            '_sold_individually',
-            // shipping
-            '_weight',
-            '_length',
-            '_width',
-            '_height',
-            'product_shipping_class',
-            // advanced
-            '_purchase_note',
-            'menu_order',
-            'comment_status',
-            // extra
-            '_upsell_ids',
-            '_crosssell_ids',
-            '_featured',
-            '_thumbnail_id',
-            '_price',
-            '_product_image_gallery',
-            'total_sales',
-            '_translation_porduct_type',
-            '_visibility',
-        );
-
-        return array_merge(
-                $metas
-                , apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, $default)
-        );
-    }
-
 }
