@@ -27,6 +27,20 @@ class Reports
                 'woocommerce_reports_get_order_report_query'
                 , array($this, 'filterProductByLanguage')
         );
+
+        /* handle stock table filtering */
+        add_filter(
+                'woocommerce_report_most_stocked_query_from'
+                , array($this, 'filterStockByLangauge')
+        );
+        add_filter(
+                'woocommerce_report_out_of_stock_query_from'
+                , array($this, 'filterStockByLangauge')
+        );
+        add_filter(
+                'woocommerce_report_low_in_stock_query_from'
+                , array($this, 'filterStockByLangauge')
+        );
     }
 
     /**
@@ -75,6 +89,29 @@ class Reports
         $query['where'].= $polylang->model->where_clause($lang, $type);
 
         return $query;
+    }
+
+    /**
+     * Filter stock by langauge
+     *
+     * Filter the stock table according to choosen langauge
+     *
+     * @global \Polylang $polylang
+     * @param string $query stock query
+     *
+     * @return string final stock query
+     */
+    public function filterStockByLangauge($query)
+    {
+        global $polylang;
+        $lang = ($current = pll_current_language()) ?
+                array($current) :
+                pll_languages_list();
+
+        $join = $polylang->model->join_clause('post');
+        $where = $polylang->model->where_clause($lang, 'post');
+
+        return str_replace('WHERE 1=1', "{$join} WHERE 1=1 {$where}", $query);
     }
 
 }
