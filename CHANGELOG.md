@@ -1,3 +1,7 @@
+###0.17.2
+
+* Fixed issue#2 (https://github.com/hyyan/woo-poly-integration/issues/2)
+
 ###0.17.1
 
 * Removed wrong php used statement

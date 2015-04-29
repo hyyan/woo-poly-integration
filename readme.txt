@@ -3,7 +3,7 @@ Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.17.1
+Stable tag: 0.17.2
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -98,6 +98,9 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 = 0.17.1 =
 * Removed wrong php used statement
+
+= 0.17.2 =
+* Fixed issue#2 (https://github.com/hyyan/woo-poly-integration/issues/2)
 
 = 0.17 =
 * Fixed (Polylang language switcher is disabled even if there is no variable products)

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Plugin Name: Hyyan WooCommerce Polylang Integration
  * Plugin URI: https://github.com/hyyan/woo-poly-integration/
@@ -9,7 +10,7 @@
  * Domain Path: /languages
  * GitHub Plugin URI: hyyan/woo-poly-integration
  * License: MIT License
- * Version: 0.17.1
+ * Version: 0.17.2
  */
 
 /**
