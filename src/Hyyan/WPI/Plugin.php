@@ -97,6 +97,7 @@ class Plugin
         new Pages();
         new Product();
         new Media();
+        new Reports();
     }
 
 }
