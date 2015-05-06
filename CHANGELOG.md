@@ -1,3 +1,8 @@
+###0.18
+
+* Added basic support for reports (filter by language)
+* General fixes
+
 ###0.17.2
 
 * Fixed issue#2 (https://github.com/hyyan/woo-poly-integration/issues/2)

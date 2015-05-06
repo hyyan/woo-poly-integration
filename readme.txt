@@ -3,7 +3,7 @@ Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.17.2
+Stable tag: 0.18
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -31,7 +31,10 @@ same interface you love.
 - [√] Cart Synchronization `Without Variation Support`
 - [√] Coupon Synchronization
 - [√] Emails
-- [ ] Reports
+- [√] Reports
+  - [√] Filter by language
+  - [ ] Combine reports for all languages
+
 
 = What you need to know about this plugin =
 
@@ -95,6 +98,10 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 2. Orders can capture the user language 
 
 == Changelog ==
+
+= 0.18 =
+* Added basic support for reports (filter by language)
+* General fixes
 
 = 0.17.2 =
 * Fixed issue#2 (https://github.com/hyyan/woo-poly-integration/issues/2)
