@@ -1,3 +1,7 @@
+###0.19
+
+* Added the ability to set the write permalinks that can work with polylang if the default woocomerce permalinks are used
+
 ###0.18
 
 * Added basic support for reports (filter by language)
