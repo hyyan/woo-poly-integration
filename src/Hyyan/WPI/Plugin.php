@@ -98,6 +98,7 @@ class Plugin
         new Product();
         new Media();
         new Reports();
+        new Permalinks();
     }
 
 }
