@@ -17,12 +17,29 @@ namespace Hyyan\WPI;
  */
 class Reports
 {
+    /**
+     * Tab name
+     *
+     * @var string
+     */
+    protected $tab;
+
+    /**
+     * Report type
+     *
+     * @var string
+     */
+    protected $report;
 
     /**
      * Construct object
      */
     public function __construct()
     {
+
+        $this->tab = isset($_GET['tab']) ? esc_attr($_GET['tab']) : false;
+        $this->report = isset($_GET['report']) ? esc_attr($_GET['report']) : false;
+
         add_filter(
                 'woocommerce_reports_get_order_report_query'
                 , array($this, 'filterProductByLanguage')
@@ -55,24 +72,14 @@ class Reports
      */
     public function filterProductByLanguage(array $query)
     {
-        if (
-                !(
-                isset($_GET['tab']) &&
-                esc_attr($_GET['tab']) === 'orders'
-                )
-        ) {
+        if ('orders' !== $this->tab || false === $this->report) {
             return $query;
         }
 
-        if (!isset($_GET['report'])) {
-            return $query;
-        }
-
-        $report = esc_attr($_GET['report']);
         $type = null;
-        if ($report === 'sales_by_product') {
+        if ($this->report === 'sales_by_product') {
             $type = 'post';
-        } elseif ($report === 'sales_by_category') {
+        } elseif ($this->report === 'sales_by_category') {
             $type = 'term';
         }
 
