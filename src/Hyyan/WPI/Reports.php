@@ -76,14 +76,11 @@ class Reports
             return $query;
         }
 
-        $type = null;
-        if ($this->report === 'sales_by_product') {
-            $type = 'post';
-        } elseif ($this->report === 'sales_by_category') {
-            $type = 'term';
-        }
-
-        if (!$type) {
+        $reports = array(
+            'sales_by_product',
+            'sales_by_category'
+        );
+        if (!in_array($this->report, $reports)) {
             return $query;
         }
 
@@ -92,8 +89,8 @@ class Reports
                 array($current) :
                 pll_languages_list();
 
-        $query['join'].= $polylang->model->join_clause($type);
-        $query['where'].= $polylang->model->where_clause($lang, $type);
+        $query['join'].= $polylang->model->join_clause('post');
+        $query['where'].= $polylang->model->where_clause($lang, 'post');
 
         return $query;
     }
