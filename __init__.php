@@ -35,15 +35,3 @@ new Hyyan\WPI\Autoloader(__DIR__ . '/src/');
 
 /* bootstrap the plugin */
 new Hyyan\WPI\Plugin();
-
-add_filter('woocommerce_reports_get_order_report_query',function($query){
-    
-    error_log(print_r($query,true));
-    
-    return $query;
-},100);
-
-add_action('init',function(){
-    //var_dump(get_post_meta(@$_GET['post']));die;
-    
-});
