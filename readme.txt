@@ -101,6 +101,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 = 0.20 =
 * Added the ability to sync total_sales when stock value is changed
+* Fixed database error in sales_be_category reports
 
 = 0.19 =
 * Added the ability to set the write permalinks that can work with polylang if the default woocomerce permalinks are used
