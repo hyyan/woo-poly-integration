@@ -1,3 +1,7 @@
+###0.20 (Not Released)
+
+* Added the ability to sync total_sales when stock value is changed
+
 ###0.19
 
 * Added the ability to set the write permalinks that can work with polylang if the default woocomerce permalinks are used

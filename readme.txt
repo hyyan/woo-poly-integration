@@ -3,7 +3,7 @@ Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.19
+Stable tag: 0.20
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -98,6 +98,9 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 2. Orders can capture the user language 
 
 == Changelog ==
+
+= 0.20 =
+* Added the ability to sync total_sales when stock value is changed
 
 = 0.19 =
 * Added the ability to set the write permalinks that can work with polylang if the default woocomerce permalinks are used
