@@ -1,6 +1,7 @@
 ###0.20 (Not Released)
 
 * Added the ability to sync total_sales when stock value is changed
+* Added the ability to combine product report with its translation
 * Fixed database error in sales_be_category reports
 
 ###0.19
