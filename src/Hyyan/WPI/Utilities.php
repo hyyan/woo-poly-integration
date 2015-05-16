@@ -143,4 +143,18 @@ final class Utilities
         return $IDS;
     }
 
+    /**
+     * Get current admin url
+     *
+     * Get the full url for current admin page
+     *
+     * @return string
+     */
+    public static function getCurrentAdminUrl()
+    {
+        return ( is_ssl() ? 'https://' : 'http://' )
+                . $_SERVER['HTTP_HOST']
+                . $_SERVER['REQUEST_URI'];
+    }
+
 }
