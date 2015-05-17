@@ -4,7 +4,11 @@
 [![Latest Stable Version](https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
 [![License](https://poser.pugx.org/hyyan/woo-poly-integration/license.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
 
-Integrates Woocommerce With Polylang
+
+This plugin makes it possible to run multilingual e-commerce sites using
+WooCommerce and Polylang.It makes products and store pages translatable, lets 
+visitors switch languages and order products in their language. and all that in 
+same interface you love.
 
 ## Features List
 
