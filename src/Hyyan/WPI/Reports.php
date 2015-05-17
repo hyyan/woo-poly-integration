@@ -75,6 +75,15 @@ class Reports
 
         /* Combine product report with its translation */
         add_action('admin_init', array($this, 'translateProductIDS'));
+
+        /* Combine product category report with its translation */
+        add_action('admin_init', array($this, 'translateCategoryIDS'));
+        add_filter(
+                'woocommerce_report_sales_by_category_get_products_in_category'
+                , array($this, 'addProductsInCategoryTranslations')
+                , 10
+                , 2
+        );
     }
 
     /**
@@ -176,7 +185,10 @@ class Reports
                 $translations = Utilities::getProductTranslationsArrayByID($ID);
                 $extendedIDS = array_merge($extendedIDS, $translations);
             }
-        } elseif (isset($_GET['lang'])) {
+        } elseif (
+                isset($_GET['lang']) &&
+                esc_attr($_GET['lang']) !== 'all'
+        ) {
 
             $lang = esc_attr($_GET['lang']);
             foreach ($IDS as $ID) {
@@ -189,6 +201,91 @@ class Reports
         if (!empty($extendedIDS)) {
             $_GET['product_ids'] = $extendedIDS;
         }
+    }
+
+    /**
+     * Translate Category IDS for category report
+     *
+     * @global \Polylang $polylang
+     * @global \WooCommerce $woocommerce
+     *
+     * @return false if woocommerce or polylang not found
+     */
+    public function translateCategoryIDS()
+    {
+        global $polylang, $woocommerce;
+        if (!$polylang || !$woocommerce) {
+            return false;
+        }
+
+        /* Check for product_ids */
+        if (!isset($_GET['show_categories'])) {
+            return false;
+        }
+
+        /* Show combine button anyway */
+        add_action(
+                'admin_print_scripts'
+                , array($this, 'showCombineButton')
+                , 100
+        );
+
+        if (
+                !static::isCombine() &&
+                (isset($_GET['lang']) && esc_attr($_GET['lang']) !== 'all' )
+        ) {
+
+            $IDS = (array) $_GET['show_categories'];
+            $extendedIDS = array();
+            $lang = esc_attr($_GET['lang']);
+
+            foreach ($IDS as $ID) {
+                $translation = pll_get_term($ID, $lang);
+                if ($translation) {
+                    $extendedIDS[] = $translation;
+                }
+            }
+
+            if (!empty($extendedIDS)) {
+                $_GET['show_categories'] = $extendedIDS;
+            }
+        }
+    }
+
+    /**
+     * Collect products from category translations
+     *
+     * Add all products in the given category translations
+     *
+     * @param array   $productIDS array of products in the given category
+     * @param integer $categoryID category ID
+     *
+     * @return array array of producs in the given category and its translations
+     */
+    public function addProductsInCategoryTranslations($productIDS, $categoryID)
+    {
+
+        if (static::isCombine()) {
+
+            /* Find the category translations */
+            $translations = Utilities::getTermTranslationsArrayByID($categoryID);
+
+            foreach ($translations as $slug => $ID) {
+
+                if ($ID === $categoryID) {
+                    continue;
+                }
+
+                $termIDS = get_term_children($ID, 'product_cat');
+                $termIDS[] = $ID;
+                $productIDS = array_merge(
+                        $productIDS
+                        , (array) get_objects_in_term($termIDS, 'product_cat')
+                );
+            }
+        }
+
+        return $productIDS;
     }
 
     /**
