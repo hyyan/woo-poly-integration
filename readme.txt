@@ -12,9 +12,9 @@ Integrates Woocommerce With Polylang
 == Description ==
 
 This plugin makes it possible to run multilingual e-commerce sites using
-WooCommerce and Polylang . It makes products and store pages translatable, lets 
-visitors switch languages and order products in their language. and all that in 
-same interface you love.
+WooCommerce and Polylang.It makes products and store pages translatable, lets 
+visitors switch languages and order products in their language. and all that frome 
+the same interface you love.
 
 = Features  =
 
