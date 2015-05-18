@@ -144,13 +144,13 @@ final class Utilities
     }
 
     /**
-     * Get current admin url
+     * Get current url
      *
-     * Get the full url for current admin page
+     * Get the full url for current location
      *
      * @return string
      */
-    public static function getCurrentAdminUrl()
+    public static function getCurrentUrl()
     {
         return ( is_ssl() ? 'https://' : 'http://' )
                 . $_SERVER['HTTP_HOST']
