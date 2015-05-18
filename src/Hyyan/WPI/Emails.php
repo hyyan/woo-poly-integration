@@ -51,6 +51,10 @@ class Emails
             return $locale;
         }
 
+        if ('GET' === filter_input(INPUT_SERVER, 'REQUEST_METHOD')) {
+            return $locale;
+        }
+
         $ID = false;
         $search = array('post', 'post_ID', 'pll_post_id', 'order_id');
 
@@ -76,6 +80,7 @@ class Emails
                         $entity->locale
                 );
                 $GLOBALS['text_direction'] = $entity->is_rtl ? 'rtl' : 'ltr';
+                $GLOBALS['wp_locale'] = new \WP_Locale();
 
                 return $entity->locale;
             }

@@ -4,6 +4,7 @@
 * Added the ability to combine product report with its translation
 * Added the ability to combine category report with its translation
 * Fixed database error in sales_be_category reports
+* Fixed Orders Interface to use the current user language instead of the order language
 
 ###0.19
 
