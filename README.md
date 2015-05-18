@@ -27,14 +27,12 @@ the same interface you love.
 - [x] Emails
 - [x] Reports
   - [x] Filter by language
-  - [ ] Combine reports for all languages
+  - [x] Combine reports for all languages
 
 
 ## What you need to know about this plugin
 
-1. The plugin stills in development , so you might find bugs
-2. The plugin doesn't implement full integration yet (Working on it)
-3. The plugin support variable products , but using them will `disallow you to 
+1. The plugin support variable products , but using them will `disallow you to 
   change the default language` , because of the way the plugin implements this
   support. So you have to make sure to choose the default language before start
   adding new variable products.
@@ -53,9 +51,9 @@ extract it there.
 
 ## Setup your environment
 
-* Make sure to setup your woocommerce permalinks correctly
-* You need to translate woocommerce pages by yourself
-* The plugin will handle the rest for you
+1. Make sure to setup your woocommerce permalinks correctly
+2. You need to translate woocommerce pages by yourself
+3. The plugin will handle the rest for you
 
 ## Contributing
 

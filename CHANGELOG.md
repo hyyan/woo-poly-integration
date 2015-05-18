@@ -1,4 +1,4 @@
-###0.20 (Not Released)
+###0.20
 
 * Added the ability to sync total_sales when stock value is changed
 * Added the ability to combine product report with its translation
