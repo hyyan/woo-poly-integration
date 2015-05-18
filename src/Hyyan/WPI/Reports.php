@@ -32,20 +32,6 @@ class Reports
     protected $report;
 
     /**
-     * Combine button styling
-     *
-     * @var array
-     */
-    protected $combineStyle = array(
-        'height:inherit',
-        'float:right',
-        'line-height:26px',
-        'padding: 10px',
-        'display: block',
-        'text-decoration: none'
-    );
-
-    /**
      * Construct object
      */
     public function __construct()
@@ -54,10 +40,18 @@ class Reports
         $this->tab = isset($_GET['tab']) ? esc_attr($_GET['tab']) : false;
         $this->report = isset($_GET['report']) ? esc_attr($_GET['report']) : false;
 
-        add_filter(
-                'woocommerce_reports_get_order_report_query'
-                , array($this, 'filterProductByLanguage')
-        );
+        /* Handle products filtering and combining */
+        if ('orders' == $this->tab || false === $this->report) {
+
+            add_filter(
+                    'woocommerce_reports_get_order_report_data'
+                    , array($this, 'combineProductsByLanguage')
+            );
+            add_filter(
+                    'woocommerce_reports_get_order_report_query'
+                    , array($this, 'filterProductByLanguage')
+            );
+        }
 
         /* handle stock table filtering */
         add_filter(
@@ -98,10 +92,6 @@ class Reports
      */
     public function filterProductByLanguage(array $query)
     {
-        if ('orders' !== $this->tab || false === $this->report) {
-            return $query;
-        }
-
         $reports = array(
             'sales_by_product',
             'sales_by_category'
@@ -124,6 +114,70 @@ class Reports
         $query['where'].= $polylang->model->where_clause($lang, 'post');
 
         return $query;
+    }
+
+    /**
+     * Combine products by language
+     *
+     * @param array $results
+     *
+     * @return array
+     */
+    public function combineProductsByLanguage($results)
+    {
+        if (!is_array($results)) {
+            return $results;
+        }
+
+        if (isset($results['0']->order_item_qty)) {
+            $mode = 'top_sellers';
+        } elseif (is_array($results) && isset($results['0']->order_item_total)) {
+            $mode = 'top_earners';
+        } else {
+            return $results;
+        }
+
+        $translated = array();
+        $lang = pll_current_language() ? : pll_default_language();
+
+        /* Filter data by language */
+        foreach ($results as $data) {
+
+            $translation = Utilities::getProductTranslationByID(
+                            $data->product_id, $lang
+            );
+
+            $data->from = $data->product_id;
+            $data->product_id = $translation->id;
+            $translated [] = $data;
+        }
+
+        /* Unique product IDS */
+        $unique = array();
+
+        foreach ($translated as $data) {
+
+            if (!isset($unique[$data->product_id])) {
+                $unique[$data->product_id] = $data;
+                continue;
+            }
+
+            $property = '';
+            switch ($mode) {
+                case 'top_sellers':
+                    $property = 'order_item_qty';
+                    break;
+                case 'top_earners':
+                    $property = 'order_item_total';
+                    break;
+                default:
+                    break;
+            }
+
+            $unique[$data->product_id]->$property += $data->$property;
+        }
+
+        return array_values($unique);
     }
 
     /**
@@ -168,13 +222,6 @@ class Reports
         if (!isset($_GET['product_ids'])) {
             return false;
         }
-
-        /* Show combine button anyway */
-        add_action(
-                'admin_print_scripts'
-                , array($this, 'showCombineButton')
-                , 100
-        );
 
         $IDS = (array) $_GET['product_ids'];
         $extendedIDS = array();
@@ -222,13 +269,6 @@ class Reports
         if (!isset($_GET['show_categories'])) {
             return false;
         }
-
-        /* Show combine button anyway */
-        add_action(
-                'admin_print_scripts'
-                , array($this, 'showCombineButton')
-                , 100
-        );
 
         if (
                 !static::isCombine() &&
@@ -289,41 +329,6 @@ class Reports
     }
 
     /**
-     * Show the combine buttton for product report
-     */
-    public function showCombineButton()
-    {
-        $isCombine = static::isCombine();
-        $url = Utilities::getCurrentAdminUrl();
-
-        if (!$isCombine) {
-            $url = add_query_arg(array('combine' => '', 'lang' => 'all'), $url);
-        } else {
-            $url = remove_query_arg('combine', $url);
-        }
-
-        $title = __('Combine Report', 'woo-poly-integration');
-        $desc = __('Combine Report With Its Translation', 'woo-poly-integration');
-        $icon = $isCombine ?
-                '<span class=\"dashicons dashicons-yes\" style=\"line-height:inherit\"></span>' :
-                '<span class=\"dashicons dashicons-editor-contract\" style=\"line-height:inherit\"></span>';
-        $style = $isCombine ? implode(';', $this->combineStyle) . ';color:green' :
-                implode(';', $this->combineStyle);
-
-        printf(
-                '<script type="text/javascript" id="woo-poly-combine-report">'
-                . ' jQuery(document).ready(function ($) {'
-                . '     $(".stats_range").prepend("<a href=\'%s\' style=\'%s\' title=\'%s\'>%s</a>")'
-                . ' });'
-                . '</script>'
-                , $url
-                , $style
-                , $desc
-                , $icon . $title
-        );
-    }
-
-    /**
      * Is combine
      *
      * Check if combine mode is requested
@@ -332,7 +337,7 @@ class Reports
      */
     public static function isCombine()
     {
-        return isset($_GET['combine']) &&
+        return !pll_current_language() ||
                 (isset($_GET['lang']) && esc_attr($_GET['lang']) === 'all');
     }
 
