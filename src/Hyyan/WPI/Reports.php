@@ -138,7 +138,8 @@ class Reports
         }
 
         $translated = array();
-        $lang = pll_current_language() ? : pll_default_language();
+        $lang = pll_current_language() ? :
+                get_user_meta(get_current_user_id(), 'user_lang', true);
 
         /* Filter data by language */
         foreach ($results as $data) {
