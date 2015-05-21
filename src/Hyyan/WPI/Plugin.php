@@ -96,6 +96,7 @@ class Plugin
         new Order();
         new Pages();
         new Product();
+        new Taxonomies\Taxonomies();
         new Media();
         new Reports();
         new Permalinks();
