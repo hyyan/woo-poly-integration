@@ -157,4 +157,48 @@ final class Utilities
                 . $_SERVER['REQUEST_URI'];
     }
 
+    /**
+     * Js Script wrapper
+     *
+     * Warp the given js code
+     *
+     * @param string  $ID     the script ID
+     * @param string  $code   js code
+     * @param boolean $jquery true to include jQuery ready wrap , false otherwise
+     *                        (true by default)
+     * @param boolean $return true to return wrapped code , false othwerwise
+     *                        false by default
+     *
+     * @return string wrapped js code if return is true
+     */
+    public static function jsScriptWrapper($ID, $code, $jquery = true, $return = false)
+    {
+        $result = '';
+        $prefix = 'hyyan-wpi-';
+        $header = sprintf('<script type="text/javascript" id="%s">', $prefix . $ID);
+        $footer = '</script>';
+
+        if (true === $jquery) {
+            $result = sprintf(
+                    "%s\n jQuery(document).ready(function ($) {\n %s \n});\n %s \n"
+                    , $header
+                    , $code
+                    , $footer
+            );
+        } else {
+            $result = sprintf(
+                    "%s\n %s \n%s"
+                    , $header
+                    , $code
+                    , $footer
+            );
+        }
+
+        if (false === $return) {
+            print $result;
+        } else {
+            return $result;
+        }
+    }
+
 }

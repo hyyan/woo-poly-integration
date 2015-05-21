@@ -173,16 +173,16 @@ class Taxonomies
         if (!$isAttrPage) {
             return false;
         }
-        printf(
-                '<script type="text/javascript">'
-                . ' jQuery(document).ready(function ($) {'
-                . '     $("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
-                . '         .insertBefore(".attributes-table");'
-                . ' });'
-                . '</script>'
+
+        $jsID = 'attrs-label-translation-button';
+        $code = sprintf(
+                '$("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
+                . ' .insertBefore(".attributes-table");'
                 , admin_url('options-general.php?page=mlang&tab=strings&s&group=Woocommerce+Attributes&paged=1')
                 , __('Translate Attributes Lables', 'woo-poly-integration')
         );
+
+        Utilities::jsScriptWrapper($jsID, $code);
     }
 
     /**
@@ -255,7 +255,6 @@ class Taxonomies
             });
         </script>
         <?php
-
         /* Allow other plugins to check for category custom fields */
         do_action(
                 HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS

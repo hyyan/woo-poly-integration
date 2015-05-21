@@ -170,13 +170,11 @@ class Order
             }
 
             add_action('admin_print_scripts', function () {
-                print(
-                        '<script type="text/javascript" id="woo-poly-orders">'
-                        . ' jQuery(document).ready(function ($) {'
-                        . '     $(".pll_icon_add,#post-translations").hide()'
-                        . ' });'
-                        . '</script>'
-                );
+
+                $jsID = 'order-translations-buttons';
+                $code = '$(".pll_icon_add,#post-translations").hide()';
+
+                Utilities::jsScriptWrapper($jsID, $code);
             }, 100);
         });
     }

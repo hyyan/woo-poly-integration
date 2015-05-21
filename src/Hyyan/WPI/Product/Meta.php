@@ -11,6 +11,7 @@
 namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\Utilities;
 
 /**
  * Prodcut Meta
@@ -171,19 +172,24 @@ class Meta
          * list
          */
         if ($ID && ($type = get_post_meta($ID, '_translation_porduct_type'))) {
+
             add_action('admin_print_scripts', function () use ($type) {
-                printf(
-                        '<script type="text/javascript" id="woo-poly">'
-                        . '// <![CDATA[ %1$s'
+
+                $jsID = 'product-type-sync';
+                $code = sprintf(
+                        '// <![CDATA[ %1$s'
                         . ' addLoadEvent(function () { %1$s'
-                        . '     jQuery("#product-type option").removeAttr("selected");%1$s'
-                        . '     jQuery("#product-type option[value=\"%2$s\"]").attr("selected", "selected");%1$s'
+                        . '  jQuery("#product-type option")'
+                        . '     .removeAttr("selected");%1$s'
+                        . '  jQuery("#product-type option[value=\"%2$s\"]")'
+                        . '         .attr("selected", "selected");%1$s'
                         . '})'
                         . '// ]]>'
-                        . '</script>'
                         , PHP_EOL
                         , $type[0]
                 );
+
+                Utilities::jsScriptWrapper($jsID, $code);
             }, 11);
         }
     }
