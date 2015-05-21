@@ -172,7 +172,7 @@ class Order
             add_action('admin_print_scripts', function () {
 
                 $jsID = 'order-translations-buttons';
-                $code = '$(".pll_icon_add,#post-translations").hide()';
+                $code = '$(".pll_icon_add,#post-translations").fadeOut()';
 
                 Utilities::jsScriptWrapper($jsID, $code);
             }, 100);
