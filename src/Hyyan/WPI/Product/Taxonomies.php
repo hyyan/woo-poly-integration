@@ -178,7 +178,7 @@ class Taxonomies
         $code = sprintf(
                 '$("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
                 . ' .insertBefore(".attributes-table");'
-                , admin_url('options-general.php?page=mlang&tab=strings&s&group=Woocommerce+Attributes&paged=1')
+                , admin_url('options-general.php?page=mlang&tab=strings&group=Woocommerce+Attributes')
                 , __('Translate Attributes Lables', 'woo-poly-integration')
         );
 
