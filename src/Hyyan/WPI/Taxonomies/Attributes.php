@@ -38,7 +38,7 @@ class Attributes implements TaxonomiesInterface
         );
         add_action(
                 'admin_print_scripts'
-                , array($this, 'addAttsTranslateButton')
+                , array($this, 'addAttrsTranslateButton')
                 , 100
         );
     }
@@ -90,7 +90,7 @@ class Attributes implements TaxonomiesInterface
      *
      * @return boolean false if not attributes page
      */
-    public function addAttsTranslateButton()
+    public function addAttrsTranslateButton()
     {
         global $pagenow;
         if ($pagenow !== 'edit.php') {
