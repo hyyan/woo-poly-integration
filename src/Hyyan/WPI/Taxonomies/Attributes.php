@@ -38,7 +38,7 @@ class Attributes implements TaxonomiesInterface
         );
         add_action(
                 'admin_print_scripts'
-                , array($this, 'addAttrsTranslateButton')
+                , array($this, 'addAttrsTranslateLinks')
                 , 100
         );
     }
@@ -60,7 +60,7 @@ class Attributes implements TaxonomiesInterface
         }
 
         $attrs = wc_get_attribute_taxonomies();
-        $section = 'Woocommerce Attributes';
+        $section = __('Woocommerce Attributes', 'woo-poly-integration');
         foreach ($attrs as $attr) {
             pll_register_string(
                     $attr->attribute_label
@@ -90,7 +90,7 @@ class Attributes implements TaxonomiesInterface
      *
      * @return boolean false if not attributes page
      */
-    public function addAttrsTranslateButton()
+    public function addAttrsTranslateLinks()
     {
         global $pagenow;
         if ($pagenow !== 'edit.php') {
@@ -104,15 +104,42 @@ class Attributes implements TaxonomiesInterface
             return false;
         }
 
-        $jsID = 'attrs-label-translation-button';
-        $code = sprintf(
+        $stringTranslationURL = add_query_arg(array(
+            'page' => 'mlang',
+            'tab' => 'strings',
+            'group' => __('Woocommerce Attributes', 'woo-poly-integration')
+        ), admin_url('options-general.php'));
+
+        /* Add attribute translate button */
+        $buttonID = 'attrs-label-translation-button';
+        $buttonCode = sprintf(
                 '$("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
                 . ' .insertBefore(".attributes-table");'
-                , admin_url('options-general.php?page=mlang&tab=strings&group=Woocommerce+Attributes')
+                , $stringTranslationURL
                 , __('Translate Attributes Lables', 'woo-poly-integration')
         );
 
-        Utilities::jsScriptWrapper($jsID, $code);
+        /* Add attribute translate search link */
+        $searchLinkID = 'attr-label-translate-search-link';
+        $searchLinkCode = sprintf(
+                "$('.attributes-table .row-actions').each(function () {\n"
+                . ' var $this = $(this);'
+                . ' var attrName = $this.parent().find("strong a").text();'
+                . ' var attrTranslateUrl = "%s&s="+attrName ;'
+                . ' var attrTranslateHref = '
+                . '     "<span class=\'translate\'>"'
+                . '     + "| "'
+                . '     + "<a href=\'"+attrTranslateUrl+"\'>%s</a>"'
+                . '     + "</span>";'
+                . ' $this.append(attrTranslateHref);'
+                . "\n});\n"
+                , $stringTranslationURL
+                , __('Translate', 'woo-poly-integration')
+        );
+
+        /* Output code */
+        Utilities::jsScriptWrapper($buttonID, $buttonCode);
+        Utilities::jsScriptWrapper($searchLinkID, $searchLinkCode);
     }
 
     /**
