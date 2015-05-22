@@ -1,3 +1,8 @@
+###0.21 (Not Released)
+
+* Added link for every attribute to search for its translation in the polylang strings table
+* General code improvements
+
 ###0.20
 
 * Added the ability to sync total_sales when stock value is changed

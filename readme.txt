@@ -3,7 +3,7 @@ Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.20
+Stable tag: 0.21
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -99,6 +99,10 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 5. Get reports in specific language and combine reports for all langauges
 
 == Changelog ==
+
+= 0.21 =
+* Added link for every attribute to search for its translation in the polylang strings table
+* General code improvements
 
 = 0.20 =
 * Added the ability to sync total_sales when stock value is changed
