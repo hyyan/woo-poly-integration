@@ -123,6 +123,9 @@ class Meta
             '_width',
             '_height',
             'product_shipping_class',
+            // attributes
+            '_product_attributes',
+            '_default_attributes',
             // advanced
             '_purchase_note',
             'menu_order',

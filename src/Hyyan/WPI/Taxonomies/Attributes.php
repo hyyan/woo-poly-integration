@@ -11,7 +11,6 @@
 namespace Hyyan\WPI\Taxonomies;
 
 use Hyyan\WPI\Utilities;
-use Hyyan\WPI\HooksInterface;
 
 /**
  * Attributes
@@ -41,12 +40,6 @@ class Attributes implements TaxonomiesInterface
                 'admin_print_scripts'
                 , array($this, 'addAttsTranslateButton')
                 , 100
-        );
-
-        /* Extend meta list to include attributes */
-        add_filter(
-                HooksInterface::PRODUCT_META_SYNC_FILTER
-                , array($this, 'extendProductMetaList')
         );
     }
 
@@ -87,21 +80,6 @@ class Attributes implements TaxonomiesInterface
     public function translateAttrLable($label)
     {
         return pll__($label);
-    }
-
-    /**
-     * Extend the product meta list that must by synced
-     *
-     * @param array $metas current meta list
-     *
-     * @return array
-     */
-    public function extendProductMetaList(array $metas)
-    {
-        return array_merge($metas, array(
-            '_product_attributes',
-            '_default_attributes',
-        ));
     }
 
     /**
