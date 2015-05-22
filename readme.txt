@@ -94,7 +94,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 1. Add and translate products from the same interface you love
 2. Products meta is synced , no need to do anything by your own
-3. Orders uses the customer chosen language 
+3. Orders use the customer chosen language 
 4. Orders language can be changed 
 5. Get reports in specific language and combine reports for all langauges
 
