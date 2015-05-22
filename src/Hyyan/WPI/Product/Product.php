@@ -8,11 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Hyyan\WPI;
-
-use Hyyan\WPI\Product\Meta,
-    Hyyan\WPI\Product\Stock,
-    Hyyan\WPI\Product\Variable;
+namespace Hyyan\WPI\Product;
 
 /**
  * Product

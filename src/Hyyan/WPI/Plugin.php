@@ -95,7 +95,7 @@ class Plugin
         new Login();
         new Order();
         new Pages();
-        new Product();
+        new Product\Product();
         new Taxonomies\Taxonomies();
         new Media();
         new Reports();
