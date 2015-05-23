@@ -41,6 +41,11 @@ class Variable
                 HooksInterface::PRODUCT_META_SYNC_FILTER
                 , array($this, 'extendProductMetaList')
         );
+        /* Extend selectors list to include variation meta */
+        add_filter(
+                HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER
+                , array($this, 'extendFieldsLockerSelectors')
+        );
 
         if (is_admin()) {
             $this->handleVariableLimitation();
@@ -141,7 +146,8 @@ class Variable
      */
     public function extendProductMetaList(array $metas)
     {
-        return array_merge($metas, array(
+
+        $metas['Variables'] = array(
             '_min_variation_price',
             '_max_variation_price',
             '_min_price_variation_id',
@@ -154,7 +160,26 @@ class Variable
             '_max_variation_sale_price',
             '_min_sale_price_variation_id',
             '_max_sale_price_variation_id',
-        ));
+        );
+
+        return $metas;
+    }
+
+    /**
+     * Extend the fields locker selectors
+     *
+     * Extend the fields locker selectors to lock variation fields for translation
+     *
+     * @param array $selectors
+     *
+     * @return array
+     */
+    public function extendFieldsLockerSelectors(array $selectors)
+    {
+
+        $selectors[] = '#variable_product_options :input';
+
+        return $selectors;
     }
 
     /**

@@ -38,6 +38,23 @@ interface HooksInterface
     const PRODUCT_META_SYNC_FILTER = 'woo-poly.product.metaSync';
 
     /**
+     * Fields Locker Selectors Filter
+     *
+     * The filter will be fired when the fields locker builds its selectors list
+     * allowing other plugins to extend this list
+     *
+     * for instance :
+     * <code>
+     * add_filter(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER,function($selectors=array()) {
+     *
+     *      $selectors[] = '.my_field_to_lock';
+     *
+     *      return $selectors;
+     * });
+     */
+    const FIELDS_LOCKER_SELECTORS_FILTER = 'woo-poly.fieldsLockerSelectors';
+
+    /**
      * Product Sync Category Custom Fields Action
      *
      * The action will be fired when the plugin attemps to sync default product

@@ -44,7 +44,7 @@ class Meta
     {
 
         // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array($this, 'defineProductMetaToCopy'));
+        add_filter('pll_copy_post_metas', array($this, 'getProductMetaToCopy'));
 
         $currentScreen = get_current_screen();
 
@@ -63,9 +63,6 @@ class Meta
          *
          * if the "new_lang" is defined or if the current page is the "edit"
          * page then porduct meta editing must by disabled
-         *
-         * enqueue the lock-fileds.js script if we should disable porduct
-         * meta editing
          */
 
         if (isset($_GET['post'])) {
@@ -79,7 +76,11 @@ class Meta
 
         // disable fields edit for translation
         if ($disable) {
-            $this->addFieldsLockerScript();
+            add_action(
+                    'admin_print_scripts'
+                    , array($this, 'addFieldsLocker')
+                    , 100
+            );
         }
 
         /* sync selected prodcut type */
@@ -90,62 +91,117 @@ class Meta
      * Define the meta keys that must copyied from orginal product to its
      * translation
      *
-     * @param array $metas array of meta keys
+     * @param array   $metas array of meta keys
+     * @param boolean $flat  false to return meta list with sections (default true)
      *
      * @return array extended meta keys array
      */
-    public function defineProductMetaToCopy(array $metas = array())
+    public function getProductMetaToCopy(array $metas = array(), $flat = true)
     {
 
-        $default = array(
+        $default = apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, array(
             // general
-            'product-type',
-            '_virtual',
-            '_downloadable',
-            '_sku',
-            '_regular_price',
-            '_sale_price',
-            '_sale_price_dates_from',
-            '_sale_price_dates_to',
-            '_downloadable_files',
-            '_download_limit',
-            '_download_expiry',
-            '_download_type',
+            'General' => array(
+                'product-type',
+                '_virtual',
+                '_downloadable',
+                '_sku',
+                '_regular_price',
+                '_sale_price',
+                '_sale_price_dates_from',
+                '_sale_price_dates_to',
+                '_downloadable_files',
+                '_download_limit',
+                '_download_expiry',
+                '_download_type',
+                'menu_order',
+                'comment_status',
+                '_upsell_ids',
+                '_crosssell_ids',
+                '_featured',
+                '_thumbnail_id',
+                '_price',
+                '_product_image_gallery',
+                'total_sales',
+                '_translation_porduct_type',
+                '_visibility',
+            ),
             // stock
-            '_manage_stock',
-            '_stock',
-            '_backorders',
-            '_stock_status',
-            '_sold_individually',
+            'Stock' => array(
+                '_manage_stock',
+                '_stock',
+                '_backorders',
+                '_stock_status',
+                '_sold_individually',
+            ),
             // shipping
-            '_weight',
-            '_length',
-            '_width',
-            '_height',
-            'product_shipping_class',
+            'Shipping' => array(
+                '_weight',
+                '_length',
+                '_width',
+                '_height',
+                'product_shipping_class',
+            ),
             // attributes
-            '_product_attributes',
-            '_default_attributes',
-            // advanced
-            '_purchase_note',
-            'menu_order',
-            'comment_status',
-            // extra
-            '_upsell_ids',
-            '_crosssell_ids',
-            '_featured',
-            '_thumbnail_id',
-            '_price',
-            '_product_image_gallery',
-            'total_sales',
-            '_translation_porduct_type',
-            '_visibility',
+            'Attributes' => array(
+                '_product_attributes',
+                '_default_attributes',
+            ),
+        ));
+
+        if (false === $flat) {
+            return $default;
+        }
+
+        foreach ($default as $value) {
+            $metas = array_merge($metas, $value);
+        }
+
+        return $metas;
+    }
+
+    /**
+     * Add the Fields Locker script
+     *
+     * The script will disable editing of some porduct metas for product
+     * translation
+     *
+     * @todo Add option to control this part
+     */
+    public function addFieldsLocker()
+    {
+
+        $metas = $this->getProductMetaToCopy();
+        $selectors = apply_filters(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array(
+            '.insert',
+            in_array('_product_attributes', $metas) ? '#product_attributes :input' : rand(),
+        ));
+
+        $jsID = 'product-fields-locker';
+        $code = sprintf(
+                'var disabled = %s;'
+                . 'for (var i = 0; i < disabled.length; i++) {'
+                . ' $('
+                . '     %s + ","'
+                . '     + "." + disabled[i] + ","'
+                . '     + "#" +disabled[i] + ","'
+                . '     + "*[name^=\'"+disabled[i]+"\']"'
+                . ' )'
+                . '     .attr("onclick", event.preventDefault())'
+                . '     .css({'
+                . '         opacity: .5,'
+                . '         \'pointer-events\': \'none\','
+                . '         cursor: \'not-allowed\''
+                . '     }'
+                . ' );'
+                . '}'
+                , json_encode($metas)
+                , !empty($selectors) ?
+                        json_encode(implode(',', $selectors)) :
+                        array(rand())
         );
 
-        return array_merge(
-                $metas
-                , apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, $default)
-        );
+        Utilities::jsScriptWrapper($jsID, $code);
     }
 
     /**
@@ -192,30 +248,9 @@ class Meta
                         , $type[0]
                 );
 
-                Utilities::jsScriptWrapper($jsID, $code);
+                Utilities::jsScriptWrapper($jsID, $code, false);
             }, 11);
         }
-    }
-
-    /**
-     * Add the Fields Locker script
-     *
-     * The script will disable editing of some porduct metas for product
-     * translation
-     *
-     * @todo Add option to control this part
-     */
-    protected function addFieldsLockerScript()
-    {
-        add_action('admin_enqueue_scripts', function () {
-            wp_enqueue_script(
-                    'hyyan-wpi-fields-locker.js'
-                    , plugins_url('public/js/FieldsLocker.js', Hyyan_WPI_DIR)
-                    , array('jquery')
-                    , \Hyyan\WPI\Plugin::getVersion()
-                    , false
-            );
-        }, 100);
     }
 
 }
