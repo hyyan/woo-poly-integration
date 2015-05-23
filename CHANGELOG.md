@@ -1,6 +1,7 @@
 ###0.21 (Not Released)
 
 * Added link for every attribute to search for its translation in the polylang strings table
+* Added generic fields locker
 * General code improvements
 
 ###0.20

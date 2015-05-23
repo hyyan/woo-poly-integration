@@ -102,6 +102,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 = 0.21 =
 * Added link for every attribute to search for its translation in the polylang strings table
+* Added generic fields locker
 * General code improvements
 
 = 0.20 =
