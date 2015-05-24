@@ -97,6 +97,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 3. Orders use the customer chosen language 
 4. Orders language can be changed 
 5. Get reports in specific language and combine reports for all langauges
+6. Control plugin features from its admin page 
 
 == Changelog ==
 
