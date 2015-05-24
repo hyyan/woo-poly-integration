@@ -10,8 +10,9 @@
 
 namespace Hyyan\WPI\Product;
 
-use Hyyan\WPI\HooksInterface;
-use Hyyan\WPI\Utilities;
+use Hyyan\WPI\HooksInterface,
+    Hyyan\WPI\Utilities,
+    Hyyan\WPI\Admin\Settings;
 
 /**
  * Prodcut Meta
@@ -44,7 +45,7 @@ class Meta
     {
 
         // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array($this, 'getProductMetaToCopy'));
+        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
 
         $currentScreen = get_current_screen();
 
@@ -96,68 +97,86 @@ class Meta
      *
      * @return array extended meta keys array
      */
-    public function getProductMetaToCopy(array $metas = array(), $flat = true)
+    public static function getProductMetaToCopy(array $metas = array(), $flat = true)
     {
 
         $default = apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, array(
             // general
-            'General' => array(
-                'product-type',
-                '_virtual',
-                '_downloadable',
-                '_sku',
-                '_regular_price',
-                '_sale_price',
-                '_sale_price_dates_from',
-                '_sale_price_dates_to',
-                '_downloadable_files',
-                '_download_limit',
-                '_download_expiry',
-                '_download_type',
-                'menu_order',
-                'comment_status',
-                '_upsell_ids',
-                '_crosssell_ids',
-                '_featured',
-                '_thumbnail_id',
-                '_price',
-                '_product_image_gallery',
-                'total_sales',
-                '_translation_porduct_type',
-                '_visibility',
+            'general' => array(
+                'name' => __('General Metas', 'woo-poly-integration'),
+                'desc' => __('General Metas', 'woo-poly-integration'),
+                'metas' => array(
+                    'product-type',
+                    '_virtual',
+                    '_downloadable',
+                    '_sku',
+                    '_regular_price',
+                    '_sale_price',
+                    '_sale_price_dates_from',
+                    '_sale_price_dates_to',
+                    '_downloadable_files',
+                    '_download_limit',
+                    '_download_expiry',
+                    '_download_type',
+                    'menu_order',
+                    'comment_status',
+                    '_upsell_ids',
+                    '_crosssell_ids',
+                    '_featured',
+                    '_thumbnail_id',
+                    '_price',
+                    '_product_image_gallery',
+                    'total_sales',
+                    '_translation_porduct_type',
+                    '_visibility',
+                )
             ),
             // stock
-            'Stock' => array(
-                '_manage_stock',
-                '_stock',
-                '_backorders',
-                '_stock_status',
-                '_sold_individually',
+            'stock' => array(
+                'name' => __('Stock Metas', 'woo-poly-integration'),
+                'desc' => __('Stock Metas', 'woo-poly-integration'),
+                'metas' => array(
+                    '_manage_stock',
+                    '_stock',
+                    '_backorders',
+                    '_stock_status',
+                    '_sold_individually',
+                )
             ),
             // shipping
-            'Shipping' => array(
-                '_weight',
-                '_length',
-                '_width',
-                '_height',
-                'product_shipping_class',
+            'shipping' => array(
+                'name' => __('ShippingClass Metas', 'woo-poly-integration'),
+                'desc' => __('ShippingClass Metas', 'woo-poly-integration'),
+                'metas' => array(
+                    '_weight',
+                    '_length',
+                    '_width',
+                    '_height',
+                    'product_shipping_class',
+                )
             ),
             // attributes
             'Attributes' => array(
-                '_product_attributes',
-                '_default_attributes',
-            ),
+                'name' => __('Attributes Metas', 'woo-poly-integration'),
+                'desc' => __('Attributes Metas', 'woo-poly-integration'),
+                'metas' => array(
+                    '_product_attributes',
+                    '_default_attributes',
+                ),
+            )
         ));
 
         if (false === $flat) {
             return $default;
         }
 
-        foreach ($default as $value) {
-            $metas = array_merge($metas, $value);
+        foreach ($default as $ID => $value) {
+            $metas = array_merge($metas, Settings::getOption(
+                    $ID , 'wpi-metas-list' , $value['metas']
+            ));
         }
 
-        return $metas;
+        return array_values($metas);
     }
 
     /**
@@ -166,12 +185,16 @@ class Meta
      * The script will disable editing of some porduct metas for product
      * translation
      *
-     * @todo Add option to control this part
+     * @return boolean false if the fields locker feature is disabled
      */
     public function addFieldsLocker()
     {
 
-        $metas = $this->getProductMetaToCopy();
+        if ('off' === Settings::getOption('fields-locker', 'wpi-features', 'on')) {
+            return false;
+        }
+
+        $metas = static::getProductMetaToCopy();
         $selectors = apply_filters(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array(
             '.insert',
             in_array('_product_attributes', $metas) ? '#product_attributes :input' : rand(),

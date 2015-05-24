@@ -148,18 +148,22 @@ class Variable
     {
 
         $metas['Variables'] = array(
-            '_min_variation_price',
-            '_max_variation_price',
-            '_min_price_variation_id',
-            '_max_price_variation_id',
-            '_min_variation_regular_price',
-            '_max_variation_regular_price',
-            '_min_regular_price_variation_id',
-            '_max_regular_price_variation_id',
-            '_min_variation_sale_price',
-            '_max_variation_sale_price',
-            '_min_sale_price_variation_id',
-            '_max_sale_price_variation_id',
+            'name' => __('Variables Metas', 'woo-poly-integration'),
+            'desc' => __('Variables Metas', 'woo-poly-integration'),
+            'metas' => array(
+                '_min_variation_price',
+                '_max_variation_price',
+                '_min_price_variation_id',
+                '_max_price_variation_id',
+                '_min_variation_regular_price',
+                '_max_variation_regular_price',
+                '_min_regular_price_variation_id',
+                '_max_regular_price_variation_id',
+                '_min_variation_sale_price',
+                '_max_variation_sale_price',
+                '_min_sale_price_variation_id',
+                '_max_sale_price_variation_id',
+            )
         );
 
         return $metas;

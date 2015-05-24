@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\Admin\Settings;
+
 /**
  * Plugin
  *
@@ -90,16 +92,22 @@ class Plugin
      */
     protected function registerCore()
     {
+        new Admin\Settings();
         new Cart();
-        new Coupon();
         new Login();
         new Order();
         new Pages();
         new Product\Product();
         new Taxonomies\Taxonomies();
         new Media();
-        new Reports();
         new Permalinks();
+
+        if ('on' === Settings::getOption('coupons', 'wpi-features', 'on')) {
+            new Coupon();
+        }
+        if ('on' === Settings::getOption('reports', 'wpi-features', 'on')) {
+            new Reports();
+        }
     }
 
 }

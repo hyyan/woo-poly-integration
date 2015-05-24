@@ -121,4 +121,40 @@ interface HooksInterface
      */
     const PAGES_LIST = 'woo-poly.pages.list';
 
+    /**
+     * Settings Sections Filter
+     *
+     * The filter is fired when settings section are being built, to ler other
+     * plugins add their own sections
+     *
+     * for instance :
+     * <code>
+     * add_filter(HooksInterface::SETTINGS_SECTIONS_FILTER,function (array $sections) {
+     *
+     *      // Add your section
+     *
+     *      return $sections;
+     * });
+     * </code>
+     */
+    const SETTINGS_SECTIONS_FILTER = 'woo-poly.settings.sections';
+
+    /**
+     * Settings Fields Filter
+     *
+     * The filter is fired when settings fields are being built, to ler other
+     * plugins add their own fields
+     *
+     * for instance :
+     * <code>
+     * add_filter(HooksInterface::SETTINGS_SECTIONS_FIELDS,function (array $fields) {
+     *
+     *      // Add your fields
+     *
+     *      return $fields;
+     * });
+     * </code>
+     */
+    const SETTINGS_SECTIONS_FIELDS = 'woo-poly.settings.fields';
+
 }

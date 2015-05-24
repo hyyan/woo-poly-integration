@@ -10,7 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
-use Hyyan\WPI\Utilities;
+use Hyyan\WPI\Utilities,
+    Hyyan\WPI\Admin\Settings;
 
 /**
  * Product Stock
@@ -123,11 +124,16 @@ class Stock
                 if ($isManageStock && !$isVariation) {
                     if (($translation = wc_get_product($ID))) {
                         $translation->$method($change);
-                        update_post_meta(
-                                $ID
-                                , 'total_sales'
-                                , get_post_meta($productID, 'total_sales', true)
+                        $general = Settings::getOption(
+                                        'general', 'wpi-metas-list', array()
                         );
+                        if (in_array('total_sales', $general)) {
+                            update_post_meta(
+                                    $ID
+                                    , 'total_sales'
+                                    , get_post_meta($productID, 'total_sales', true)
+                            );
+                        }
                     }
                 }
             }

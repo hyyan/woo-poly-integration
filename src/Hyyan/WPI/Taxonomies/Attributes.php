@@ -145,7 +145,7 @@ class Attributes implements TaxonomiesInterface
     /**
      * @{inheritdoc}
      */
-    public function getNames()
+    public static function getNames()
     {
         return wc_get_attribute_taxonomy_names();
     }

@@ -10,33 +10,21 @@
 
 namespace Hyyan\WPI\Taxonomies;
 
+use Hyyan\WPI\Admin\Settings;
+
 /**
  * Taxonomies
  *
  * @author Hyyan
  */
-class Taxonomies implements TaxonomiesInterface
+class Taxonomies
 {
-    /**
-     * Managed taxonomies instances
-     *
-     * @var array
-     */
-    public $managed = array();
 
     /**
      * Construct object
      */
     public function __construct()
     {
-
-        $this->managed = array(
-            new Attributes(),
-            new Categories(),
-            new Tags(),
-            new ShippingCalss()
-        );
-
         /* Manage taxonomies translation */
         add_filter(
                 'pll_get_taxonomies'
@@ -54,14 +42,25 @@ class Taxonomies implements TaxonomiesInterface
     public function manageTaxonomiesTranslation($taxonomies)
     {
 
-        $new = $this->getNames();
+        $supported = $this->getManagedTaxonomies();
+        $add = $supported[0];
+        $remove = $supported[1];
         $options = get_option('polylang');
+
         $taxs = $options['taxonomies'];
         $update = false;
 
-        foreach ($new as $tax) {
+        foreach ($add as $tax) {
             if (!in_array($tax, $taxs)) {
                 $options['taxonomies'][] = $tax;
+                $update = true;
+            }
+        }
+        foreach ($remove as $tax) {
+            if (in_array($tax, $taxs)) {
+                $options['taxonomies'] = array_flip($options['taxonomies']);
+                unset($options['taxonomies'][$tax]);
+                $options['taxonomies'] = array_flip($options['taxonomies']);
                 $update = true;
             }
         }
@@ -70,21 +69,37 @@ class Taxonomies implements TaxonomiesInterface
             update_option('polylang', $options);
         }
 
-        return array_merge($taxonomies, $new);
+        return array_merge($taxonomies, $add);
     }
 
     /**
-     * @{inheritdoc}
+     * Get managed taxonomies
+     *
+     * @return array taxonomies that must be added and removed to polylang
      */
-    public function getNames()
+    public function getManagedTaxonomies()
     {
-        $taxonomies = array();
+        $add = array();
+        $remove = array();
+        $supported = array(
+            'attributes' => 'Hyyan\WPI\Taxonomies\Attributes',
+            'categories' => 'Hyyan\WPI\Taxonomies\Categories',
+            'tags' => 'Hyyan\WPI\Taxonomies\Tags',
+            'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss'
+        );
 
-        foreach ($this->managed as $tax) {
-            $taxonomies = array_merge($taxonomies, $tax->getNames());
+        foreach ($supported as $option => $class) {
+
+            $names = $class::getNames();
+            if ('on' === Settings::getOption($option, 'wpi-features', 'on')) {
+                $add = array_merge($add, $names);
+                new $class();
+            } else {
+                $remove = array_merge($remove, $names);
+            }
         }
 
-        return $taxonomies;
+        return array($add, $remove);
     }
 
 }

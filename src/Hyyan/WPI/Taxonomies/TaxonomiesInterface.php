@@ -23,5 +23,5 @@ interface TaxonomiesInterface
      *
      * @return array array of taxonmies names to manage by polylang
      */
-    public function getNames();
+    public static function getNames();
 }

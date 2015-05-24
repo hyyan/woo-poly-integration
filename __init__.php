@@ -28,6 +28,7 @@ define('Hyyan_WPI_DIR', __FILE__);
 define('Hyyan_WPI_URL', plugin_dir_url(__FILE__));
 
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
+require_once __DIR__ . '/vendor/class.settings-api.php';
 require_once __DIR__ . '/src/Hyyan/WPI/Autoloader.php';
 
 /* register the autoloader */

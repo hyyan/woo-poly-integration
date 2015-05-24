@@ -21,7 +21,7 @@ class ShippingCalss implements TaxonomiesInterface
     /**
      * @{inheritdoc}
      */
-    public function getNames()
+    public static function getNames()
     {
         return array('product_shipping_class');
     }
