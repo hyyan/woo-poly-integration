@@ -83,9 +83,9 @@ class Settings extends \WeDevs_Settings_API
                 'id' => 'wpi-metas-list',
                 'title' => __('Metas List', 'woo-poly-integration'),
                 'desc' => __(
-                        'The section will allow controll which metas should be
+                        'The section will allow you to controll which metas should be
                          synced between product and its translation , please ignore
-                         this section if you do not understand what this is mean.
+                         this section if you do not understand the meaning of this.
                         '
                         , 'woo-poly-integration'
                 )
