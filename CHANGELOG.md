@@ -1,4 +1,4 @@
-###0.21 (Not Released)
+###0.21
 
 * Added admin interface to allow user to control plugin features
 * Added link for every attribute to search for its translation in the polylang strings table
