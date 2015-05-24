@@ -1,7 +1,9 @@
 ###0.21 (Not Released)
 
+* Added admin interface to allow user to control plugin features
 * Added link for every attribute to search for its translation in the polylang strings table
 * Added generic fields locker
+* Fixed product_type is not synced in 0.20 version
 * General code improvements
 
 ###0.20
