@@ -25,7 +25,7 @@
                         <div>
                             <?php
                             _e('The plugin is an open source project
-                                        which tries to fill the gap between
+                                        which aims to fill the gap between
                                         <a href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>
                                         and
                                         <a href="https://wordpress.org/plugins/polylang/">Polylang</a>'
