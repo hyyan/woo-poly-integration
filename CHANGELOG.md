@@ -3,7 +3,6 @@
 * Added admin interface to allow user to control plugin features
 * Added link for every attribute to search for its translation in the polylang strings table
 * Added generic fields locker
-* Added POT file for translation
 * Fixed product_type is not synced in 0.20 version
 * General code improvements
 
