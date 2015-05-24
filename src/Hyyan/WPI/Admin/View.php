@@ -55,7 +55,7 @@
                 <div class="postbox">
                     <h3>
                         <span>
-                            <?php _e('Support Plugin', 'woo-poly-integration'); ?>
+                            <?php _e('Support The Plugin', 'woo-poly-integration'); ?>
                         </span>
                     </h3>
                     <div class="inside">
@@ -91,7 +91,7 @@
                         <p>
                             <?php
                             _e('Need help , Want to ask for new feature ?
-                                     please contact with one of the following ways'
+                                     please contact using one of the following methods'
                                     , 'woo-poly-integration'
                             )
                             ?>
