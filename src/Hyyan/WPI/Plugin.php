@@ -26,11 +26,24 @@ class Plugin
     public function __construct()
     {
         add_action('init', array($this, 'activate'));
+        add_action('plugins_loaded', array($this, 'loadTextDomain'));
 
         if ('on' === Settings::getOption('emails', 'wpi-features', 'on')) {
             /* Registered anyway */
             new Emails();
         }
+    }
+
+    /**
+     * Load plugin langauge file
+     */
+    public function loadTextDomain()
+    {
+        load_plugin_textdomain(
+                'woo-poly-integration'
+                , false
+                , plugin_basename(dirname(Hyyan_WPI_DIR)) . '/languages'
+        );
     }
 
     /**
