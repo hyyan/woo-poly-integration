@@ -110,11 +110,12 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * General code improvements
 
 = 0.20 =
-* Added the ability to sync total_sales when stock value is changed
-* Added the ability to combine product report with its translation
-* Added the ability to combine category report with its translation
-* Fixed database error in sales_be_category reports
-* Fixed Orders Interface to use the current user language instead of the order language
+* Added admin interface to allow user to control plugin features
+* Added link for every attribute to search for its translation in the polylang strings table
+* Added generic fields locker
+* Added POT file for translation
+* Fixed product_type is not synced in 0.20 version
+* General code improvements
 
 = 0.19 =
 * Added the ability to set the write permalinks that can work with polylang if the default woocomerce permalinks are used
