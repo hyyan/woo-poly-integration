@@ -86,7 +86,7 @@ class Taxonomies
      *
      * @return array taxonomies that must be added and removed to polylang
      */
-    public function prepareAndGet()
+    protected function prepareAndGet()
     {
         $add = array();
         $remove = array();
