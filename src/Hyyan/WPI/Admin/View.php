@@ -60,7 +60,7 @@
                     </h3>
                     <div class="inside">
                         <?php
-                        _e('<strong>I will never ask you for donation , now or the future</strong> ,
+                        _e('<strong>I will never ask you for donation , now or in the future</strong> ,
                                     but the plugin stills need your support.
                                     please support by rating this plugin On
                                     <a href="https://wordpress.org/support/view/plugin-reviews/woo-poly-integration">Wordpress Repository</a> ,
