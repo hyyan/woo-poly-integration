@@ -27,8 +27,10 @@ class Plugin
     {
         add_action('init', array($this, 'activate'));
 
-        /* Registered anyway */
-        new Emails();
+        if ('on' === Settings::getOption('emails', 'wpi-features', 'on')) {
+            /* Registered anyway */
+            new Emails();
+        }
     }
 
     /**

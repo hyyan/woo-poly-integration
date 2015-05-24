@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
+use Hyyan\WPI\Admin\Settings;
+
 /**
  * Product
  *
@@ -36,8 +38,11 @@ class Product
         add_filter('admin_init', array($this, 'syncPostParent'));
 
         new Meta();
-        new Stock();
         new Variable();
+
+        if ('on' === Settings::getOption('stock', 'wpi-features', 'on')) {
+            new Stock();
+        }
     }
 
     /**
