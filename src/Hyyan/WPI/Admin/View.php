@@ -75,6 +75,18 @@
                         );
                         ?>
                         <br><br>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wordpress.org/plugins/woo-poly-integration/" data-text="Hyyan WooCommerce Polylang Integration ,makes you run multilingual store easily." data-via="HyyanAF">Tweet</a>
+                        <script>
+                            !function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = p + '://platform.twitter.com/widgets.js';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            }(document, 'script', 'twitter-wjs');
+                        </script>
                         <iframe src="https://ghbtns.com/github-btn.html?user=hyyan&repo=woo-poly-integration&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
                         <iframe src="https://ghbtns.com/github-btn.html?user=hyyan&repo=woo-poly-integration&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
                     </div>
