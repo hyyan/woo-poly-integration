@@ -19,12 +19,21 @@ use Hyyan\WPI\Admin\Settings;
  */
 class Taxonomies
 {
+    /**
+     * Managed taxonomies
+     *
+     * @var array
+     */
+    protected $managed = array();
 
     /**
      * Construct object
      */
     public function __construct()
     {
+        /* Just to prepare taxonomies  */
+        $this->prepareAndGet();
+
         /* Manage taxonomies translation */
         add_filter(
                 'pll_get_taxonomies'
@@ -42,7 +51,7 @@ class Taxonomies
     public function manageTaxonomiesTranslation($taxonomies)
     {
 
-        $supported = $this->getManagedTaxonomies();
+        $supported = $this->prepareAndGet();
         $add = $supported[0];
         $remove = $supported[1];
         $options = get_option('polylang');
@@ -77,7 +86,7 @@ class Taxonomies
      *
      * @return array taxonomies that must be added and removed to polylang
      */
-    public function getManagedTaxonomies()
+    public function prepareAndGet()
     {
         $add = array();
         $remove = array();
@@ -93,7 +102,9 @@ class Taxonomies
             $names = $class::getNames();
             if ('on' === Settings::getOption($option, 'wpi-features', 'on')) {
                 $add = array_merge($add, $names);
-                new $class();
+                if (!isset($this->managed[$class])) {
+                    $this->managed[$class] = new $class();
+                }
             } else {
                 $remove = array_merge($remove, $names);
             }
