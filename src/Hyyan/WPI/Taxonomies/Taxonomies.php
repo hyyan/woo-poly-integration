@@ -10,7 +10,8 @@
 
 namespace Hyyan\WPI\Taxonomies;
 
-use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Settings,
+    Hyyan\WPI\Admin\Features;
 
 /**
  * Taxonomies
@@ -100,7 +101,7 @@ class Taxonomies
         foreach ($supported as $option => $class) {
 
             $names = $class::getNames();
-            if ('on' === Settings::getOption($option, 'wpi-features', 'on')) {
+            if ('on' === Settings::getOption($option, Features::getID(), 'on')) {
                 $add = array_merge($add, $names);
                 if (!isset($this->managed[$class])) {
                     $this->managed[$class] = new $class();

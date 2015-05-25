@@ -11,7 +11,8 @@
 namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\Utilities,
-    Hyyan\WPI\Admin\Settings;
+    Hyyan\WPI\Admin\Settings,
+    Hyyan\WPI\Admin\MetasList;
 
 /**
  * Product Stock
@@ -125,7 +126,7 @@ class Stock
                     if (($translation = wc_get_product($ID))) {
                         $translation->$method($change);
                         $general = Settings::getOption(
-                                        'general', 'wpi-metas-list', array()
+                                        'general', MetasList::getID(), array()
                         );
                         if (in_array('total_sales', $general)) {
                             update_post_meta(

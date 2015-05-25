@@ -12,7 +12,8 @@ namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface,
     Hyyan\WPI\Utilities,
-    Hyyan\WPI\Admin\Settings;
+    Hyyan\WPI\Admin\Settings,
+    Hyyan\WPI\Admin\MetasList;
 
 /**
  * Prodcut Meta
@@ -172,7 +173,7 @@ class Meta
 
         foreach ($default as $ID => $value) {
             $metas = array_merge($metas, Settings::getOption(
-                    $ID , 'wpi-metas-list' , $value['metas']
+                            $ID, MetasList::getID(), $value['metas']
             ));
         }
 
@@ -190,7 +191,7 @@ class Meta
     public function addFieldsLocker()
     {
 
-        if ('off' === Settings::getOption('fields-locker', 'wpi-features', 'on')) {
+        if ('off' === Settings::getOption('fields-locker', \Hyyan\WPI\Admin\Features::getID(), 'on')) {
             return false;
         }
 

@@ -10,7 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
-use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Settings,
+    Hyyan\WPI\Admin\Features;
 
 /**
  * Product
@@ -40,7 +41,7 @@ class Product
         new Meta();
         new Variable();
 
-        if ('on' === Settings::getOption('stock', 'wpi-features', 'on')) {
+        if ('on' === Settings::getOption('stock', Features::getID(), 'on')) {
             new Stock();
         }
     }
