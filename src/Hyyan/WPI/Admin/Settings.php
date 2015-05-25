@@ -219,7 +219,7 @@ class Settings extends \WeDevs_Settings_API
             )
         );
 
-        return apply_filters(HooksInterface::SETTINGS_SECTIONS_FIELDS, $fields);
+        return apply_filters(HooksInterface::SETTINGS_FIELDS_FILTER, $fields);
     }
 
     /**
