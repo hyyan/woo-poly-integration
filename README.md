@@ -12,7 +12,7 @@ the same interface you love.
 
 ## Features
 
-- [x] Auto Woocommerce Translation Files Download
+- [x] Auto Download Woocommerce Translation Files
 - [x] Page Translation
 - [x] Product Translation
   - [x] Categories

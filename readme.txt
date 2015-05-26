@@ -18,7 +18,7 @@ the same interface you love.
 
 = Features  =
 
-- [√] Auto Woocommerce Translation Files Download
+- [√] Auto Download Woocommerce Translation Files
 - [√] Page Translation
 - [√] Product Translation
   - [√] Categories
