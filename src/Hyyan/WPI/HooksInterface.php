@@ -157,4 +157,11 @@ interface HooksInterface
      */
     const SETTINGS_FIELDS_FILTER = 'woo-poly.settings.fields';
 
+    /**
+     * Language Repo URL Filter
+     *
+     * The filter is fired before using the default language repo url.
+     */
+    const LANGUAGE_REPO_URL_FILTER = 'woo-poly.language.repoUrl';
+
 }

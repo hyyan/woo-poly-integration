@@ -117,6 +117,7 @@ class Plugin
         new Taxonomies\Taxonomies();
         new Media();
         new Permalinks();
+        new Lanaguage();
 
         if ('on' === Settings::getOption('coupons', Features::getID(), 'on')) {
             new Coupon();
