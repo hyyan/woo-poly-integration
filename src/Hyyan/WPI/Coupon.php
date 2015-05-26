@@ -10,6 +10,9 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\Admin\Settings,
+    Hyyan\WPI\Admin\Features;
+
 /**
  * Coupon
  *
@@ -25,7 +28,9 @@ class Coupon
      */
     public function __construct()
     {
-        add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
+        if ('on' === Settings::getOption('coupons', Features::getID(), 'on')) {
+            add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
+        }
     }
 
     /**

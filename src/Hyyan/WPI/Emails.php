@@ -10,6 +10,9 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\Admin\Settings,
+    Hyyan\WPI\Admin\Features;
+
 /**
  * Emails
  *
@@ -25,7 +28,9 @@ class Emails
      */
     public function __construct()
     {
-        add_filter('plugin_locale', array($this, 'correctLocal'), 100);
+        if ('on' === Settings::getOption('emails', Features::getID(), 'on')) {
+            add_filter('plugin_locale', array($this, 'correctLocal'), 100);
+        }
     }
 
     /**

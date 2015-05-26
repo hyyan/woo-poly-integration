@@ -10,6 +10,9 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\Admin\Settings,
+    Hyyan\WPI\Admin\Features;
+
 /**
  * Reports
  *
@@ -39,6 +42,10 @@ class Reports
 
         $this->tab = isset($_GET['tab']) ? esc_attr($_GET['tab']) : false;
         $this->report = isset($_GET['report']) ? esc_attr($_GET['report']) : false;
+
+        if ('off' === Settings::getOption('reports', Features::getID(), 'on')) {
+            return;
+        }
 
         /* Handle products filtering and combining */
         if ('orders' == $this->tab || false === $this->report) {
