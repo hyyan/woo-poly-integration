@@ -66,8 +66,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Emails', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check to use order language whenever woocommerce sends
-                         order emails'
+                        'Use order language whenever woocommerce sends order emails'
                         , 'woo-poly-integration'
                 )
             ),
@@ -77,8 +76,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Reports', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check to enable reports langauge filtering and
-                         combining'
+                        'Enable reports langauge filtering and combining'
                         , 'woo-poly-integration'
                 )
             ),
@@ -88,8 +86,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Coupons Sync', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check to apply coupons rules for product and its
-                         translations'
+                        'Apply coupons rules for product and its translations'
                         , 'woo-poly-integration'
                 )
             ),
@@ -99,7 +96,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Stock Sync', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check to sync stock for product and its translations'
+                        'Sync stock for product and its translations'
                         , 'woo-poly-integration'
                 )
             ),
@@ -109,7 +106,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Translate Categories', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check this option to enable categories translations'
+                        'Enable categories translations'
                         , 'woo-poly-integration'
                 )
             ),
@@ -119,7 +116,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Translate Tags', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check this option to enable tags translations'
+                        'Enable tags translations'
                         , 'woo-poly-integration'
                 )
             ),
@@ -129,7 +126,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Translate Attributes', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check this option to enable Attributes translations'
+                        'Enable Attributes translations'
                         , 'woo-poly-integration'
                 )
             ),
@@ -139,7 +136,7 @@ class Features extends AbstractSettings
                 'default' => 'off',
                 'label' => __('Translate ShippingClass', 'woo-poly-integration'),
                 'desc' => __(
-                        'Check this option to enable ShippingClass translations'
+                        'Enable ShippingClass translations'
                         , 'woo-poly-integration'
                 )
             )
