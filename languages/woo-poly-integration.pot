@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hyyan Woocommerce Polylang Integration\n"
-"POT-Creation-Date: 2015-05-24 08:05-0800\n"
-"PO-Revision-Date: 2015-05-24 08:05-0800\n"
+"POT-Creation-Date: 2015-05-25 23:06-0800\n"
+"PO-Revision-Date: 2015-05-25 23:06-0800\n"
 "Last-Translator: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
 "Language-Team: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
 "Language: en\n"
@@ -15,29 +15,95 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../src/Hyyan/WPI/Admin/Settings.php:55
-msgid "Hyyan WooCommerce Polylang Integration"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:56
-msgid "WooPoly"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:75
+#: ../src/Hyyan/WPI/Admin/Features.php:36
 msgid "Features"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/Settings.php:77
+#: ../src/Hyyan/WPI/Admin/Features.php:38
 msgid ""
 " The section will allow you to Enable/Disable\n"
 "                          Plugin Features."
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/Settings.php:84
+#: ../src/Hyyan/WPI/Admin/Features.php:56
+msgid "Fields Locker"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:58
+msgid ""
+"Fields locker makes it easy for user to know which\n"
+"                         field to translate and which to ignore "
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:67
+msgid "Emails"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:69
+msgid "Use order language whenever woocommerce sends order emails"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:77
+msgid "Reports"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:79
+msgid "Enable reports langauge filtering and combining"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:87
+msgid "Coupons Sync"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:89
+msgid "Apply coupons rules for product and its translations"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:97
+msgid "Stock Sync"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:99
+msgid "Sync stock for product and its translations"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:107
+msgid "Translate Categories"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:109
+msgid "Enable categories translations"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:117
+msgid "Translate Tags"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:119
+msgid "Enable tags translations"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:127
+msgid "Translate Attributes"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:129
+msgid "Enable Attributes translations"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:137
+msgid "Translate ShippingClass"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/Features.php:139
+msgid "Enable ShippingClass translations"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Admin/MetasList.php:38
 msgid "Metas List"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/Settings.php:86
+#: ../src/Hyyan/WPI/Admin/MetasList.php:40
 msgid ""
 "The section will allow you to controll which metas should be\n"
 "                         synced between product and its translation , please "
@@ -47,84 +113,12 @@ msgid ""
 "                        "
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/Settings.php:130
-msgid "Fields Locker"
+#: ../src/Hyyan/WPI/Admin/Settings.php:57
+msgid "Hyyan WooCommerce Polylang Integration"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/Settings.php:132
-msgid ""
-"Fields locker makes it easy for user to know which\n"
-"                         field to translate and which to ignore "
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:141
-msgid "Emails"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:143
-msgid ""
-"Check to use order language whenever woocommerce sends\n"
-"                         order emails"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:152
-msgid "Reports"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:154
-msgid ""
-"Check to enable reports langauge filtering and\n"
-"                         combining"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:163
-msgid "Coupons Sync"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:165
-msgid ""
-"Check to apply coupons rules for product and its\n"
-"                         translations"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:174
-msgid "Stock Sync"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:176
-msgid "Check to sync stock for product and its translations"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:184
-msgid "Translate Categories"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:186
-msgid "Check this option to enable categories translations"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:194
-msgid "Translate Tags"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:196
-msgid "Check this option to enable tags translations"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:204
-msgid "Translate Attributes"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:206
-msgid "Check this option to enable Attributes translations"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:214
-msgid "Translate ShippingClass"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Admin/Settings.php:216
-msgid "Check this option to enable ShippingClass translations"
+#: ../src/Hyyan/WPI/Admin/Settings.php:58
+msgid "WooPoly"
 msgstr ""
 
 #: ../src/Hyyan/WPI/Admin/View.php:2
@@ -198,25 +192,46 @@ msgstr ""
 msgid "On My Email"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Plugin.php:61
+#: ../src/Hyyan/WPI/Language.php:55
+msgid "Translation Downloader"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Language.php:57
+msgid "Download Woocommerce translations when a new polylang language is added"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Language.php:127
+#, php-format
+msgid ""
+"Woocommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Language.php:139
+#, php-format
+msgid ""
+"Unable to download woocommerce translation %s from : <a href=\"%2$s\">%2$s</"
+"a>"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Plugin.php:62
 msgid ""
 "Hyyan WooCommerce Polylang Integration Plugin can not function correctly , "
 "the plugin requires WooCommerce and Polylang plugins"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Product/Meta.php:106 ../src/Hyyan/WPI/Product/Meta.php:107
+#: ../src/Hyyan/WPI/Product/Meta.php:107 ../src/Hyyan/WPI/Product/Meta.php:108
 msgid "General Metas"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Product/Meta.php:136 ../src/Hyyan/WPI/Product/Meta.php:137
+#: ../src/Hyyan/WPI/Product/Meta.php:137 ../src/Hyyan/WPI/Product/Meta.php:138
 msgid "Stock Metas"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Product/Meta.php:148 ../src/Hyyan/WPI/Product/Meta.php:149
+#: ../src/Hyyan/WPI/Product/Meta.php:149 ../src/Hyyan/WPI/Product/Meta.php:150
 msgid "ShippingClass Metas"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Product/Meta.php:160 ../src/Hyyan/WPI/Product/Meta.php:161
+#: ../src/Hyyan/WPI/Product/Meta.php:161 ../src/Hyyan/WPI/Product/Meta.php:162
 msgid "Attributes Metas"
 msgstr ""
 
