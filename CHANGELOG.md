@@ -1,3 +1,8 @@
+###0.22 (Not Released)
+
+* Added Translation Downloader to auto download woocommerce translation files when a new polylang language is add
+* General code improvements
+
 ###0.21
 
 * Added admin interface to allow user to control plugin features
