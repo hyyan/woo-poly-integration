@@ -15,11 +15,11 @@ use Hyyan\WPI\HooksInterface,
     Hyyan\WPI\Admin\Features;
 
 /**
- * Lanaguage
+ * Language
  *
  * @author Hyyan
  */
-class Lanaguage
+class Language
 {
 
     /**
