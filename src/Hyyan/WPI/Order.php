@@ -156,7 +156,7 @@ class Order
             }
 
             if (
-                    isset($_GET['post_type']) &&
+                    !isset($_GET['post_type']) ||
                     !(esc_attr($_GET['post_type']) === 'shop_order')
             ) {
                 return false;
