@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+    exit('restricted access');
+}
+?>
 <div class="wrap">
     <h2> <?php _e('WooPoly Advanced Options', 'woo-poly-integration'); ?></h2>
     <div id="poststuff">
