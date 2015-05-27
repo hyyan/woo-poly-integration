@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hyyan Woocommerce Polylang Integration\n"
-"POT-Creation-Date: 2015-05-25 23:06-0800\n"
-"PO-Revision-Date: 2015-05-25 23:06-0800\n"
+"POT-Creation-Date: 2015-05-27 08:01-0800\n"
+"PO-Revision-Date: 2015-05-27 08:01-0800\n"
 "Last-Translator: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
 "Language-Team: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
 "Language: en\n"
@@ -121,15 +121,15 @@ msgstr ""
 msgid "WooPoly"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:2
+#: ../src/Hyyan/WPI/Admin/View.php:7
 msgid "WooPoly Advanced Options"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:21
+#: ../src/Hyyan/WPI/Admin/View.php:26
 msgid "About The Plugin"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:27
+#: ../src/Hyyan/WPI/Admin/View.php:32
 msgid ""
 "The plugin is an open source project\n"
 "                                        which aims to fill the gap between\n"
@@ -140,15 +140,15 @@ msgid ""
 "plugins/polylang/\">Polylang</a>"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:37
+#: ../src/Hyyan/WPI/Admin/View.php:42
 msgid "Author : "
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:58
+#: ../src/Hyyan/WPI/Admin/View.php:63
 msgid "Support The Plugin"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:63
+#: ../src/Hyyan/WPI/Admin/View.php:68
 msgid ""
 "<strong>I will never ask you for donation , now or in the future</strong> ,\n"
 "                                    but the plugin stills need your "
@@ -169,27 +169,27 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:99
+#: ../src/Hyyan/WPI/Admin/View.php:104
 msgid "Need Help ?"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:105
+#: ../src/Hyyan/WPI/Admin/View.php:110
 msgid ""
 "Need help , Want to ask for new feature ?\n"
 "                                     please contact using one of the "
 "following methods"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:114
+#: ../src/Hyyan/WPI/Admin/View.php:119
 msgid "On Github"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:119
+#: ../src/Hyyan/WPI/Admin/View.php:124
 msgid "On Wordpress Support Froum"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Admin/View.php:124
-msgid "On My Email"
+#: ../src/Hyyan/WPI/Admin/View.php:129
+msgid "On Email"
 msgstr ""
 
 #: ../src/Hyyan/WPI/Language.php:55
@@ -200,20 +200,7 @@ msgstr ""
 msgid "Download Woocommerce translations when a new polylang language is added"
 msgstr ""
 
-#: ../src/Hyyan/WPI/Language.php:127
-#, php-format
-msgid ""
-"Woocommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Language.php:139
-#, php-format
-msgid ""
-"Unable to download woocommerce translation %s from : <a href=\"%2$s\">%2$s</"
-"a>"
-msgstr ""
-
-#: ../src/Hyyan/WPI/Plugin.php:62
+#: ../src/Hyyan/WPI/Plugin.php:57
 msgid ""
 "Hyyan WooCommerce Polylang Integration Plugin can not function correctly , "
 "the plugin requires WooCommerce and Polylang plugins"
@@ -269,6 +256,19 @@ msgstr ""
 
 #: ../src/Hyyan/WPI/Taxonomies/Attributes.php:137
 msgid "Translate"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Tools/TranslationsDownloader.php:47
+#, php-format
+msgid ""
+"Woocommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Tools/TranslationsDownloader.php:59
+#, php-format
+msgid ""
+"Unable to download woocommerce translation %s from : <a href=\"%2$s\">%2$s</"
+"a>"
 msgstr ""
 
 #: ../vendor/class.settings-api.php:352
