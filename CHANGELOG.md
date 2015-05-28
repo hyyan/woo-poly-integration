@@ -1,6 +1,7 @@
 ###0.22 (Not Released)
 
 * Added Translation Downloader to auto download woocommerce translation files when a new polylang language is add
+* Added Arabic translation
 * Fixed translation links are hidden in posts page
 * General code improvements
 

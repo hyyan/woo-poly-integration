@@ -50,6 +50,10 @@ the same interface you love.
 2. You need to translate woocommerce pages by yourself
 3. The plugin will handle the rest for you
 
+= Translations =
+
+* Arabic by [Hyyan Abo Fakher](https://github.com/hyyan)
+
 = Contributing =
 
 Everyone is welcome to help contribute and improve this plugin. There are several

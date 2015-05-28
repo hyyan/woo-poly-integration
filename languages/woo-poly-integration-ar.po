@@ -1,108 +1,112 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hyyan Woocommerce Polylang Integration\n"
-"POT-Creation-Date: 2015-05-28 00:15-0800\n"
-"PO-Revision-Date: 2015-05-28 00:15-0800\n"
+"POT-Creation-Date: 2015-05-28 00:13-0800\n"
+"PO-Revision-Date: 2015-05-28 00:14-0800\n"
 "Last-Translator: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
 "Language-Team: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
-"Language: en\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.6\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPathExcluded-0: ../vendor\n"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:36
 msgid "Features"
-msgstr ""
+msgstr "الميزات"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:38
 msgid ""
 " The section will allow you to Enable/Disable\n"
 "                          Plugin Features."
-msgstr ""
+msgstr "القسم سوف يسمح لك ب تفعيل/تعطيل ميزات الإضافة."
 
 #: ../src/Hyyan/WPI/Admin/Features.php:56
 msgid "Fields Locker"
-msgstr ""
+msgstr "معطل الحقول"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:58
 msgid ""
 "Fields locker makes it easy for user to know which\n"
 "                         field to translate and which to ignore "
 msgstr ""
+"معطل الحقول يجعل من السهل على المستخدم معرفة أي الحقول يجب ترجمتها و أي "
+"الحقول يجب تجاهلها"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:67
 msgid "Emails"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:69
 msgid "Use order language whenever woocommerce sends order emails"
 msgstr ""
+"استخدام لغة الطلب في إي وقت تقوم به ووكومريس بإرسال بريد إالكتروني خاص بطلب"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:77
 msgid "Reports"
-msgstr ""
+msgstr "التقارير"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:79
 msgid "Enable reports langauge filtering and combining"
-msgstr ""
+msgstr "تغعيل تصقية الطلبات ودمجها حسب اللغة"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:87
 msgid "Coupons Sync"
-msgstr ""
+msgstr "مزامنة الفسائم"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:89
 msgid "Apply coupons rules for product and its translations"
-msgstr ""
+msgstr "تطبيق قواعد القسائم على المنتج وترجماته"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:97
 msgid "Stock Sync"
-msgstr ""
+msgstr "مزامنة المخزون"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:99
 msgid "Sync stock for product and its translations"
-msgstr ""
+msgstr "مزامنة المخزون بين المنتج وترجماته"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:107
 msgid "Translate Categories"
-msgstr ""
+msgstr "ترجمة التصنيفات"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:109
 msgid "Enable categories translations"
-msgstr ""
+msgstr "تفعيل ترجمة التصنيفات"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:117
 msgid "Translate Tags"
-msgstr ""
+msgstr "ترجمة الوسوم"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:119
 msgid "Enable tags translations"
-msgstr ""
+msgstr "تفعيل ترجمة الوسوم"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:127
 msgid "Translate Attributes"
-msgstr ""
+msgstr "ترجمة الصفات"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:129
 msgid "Enable Attributes translations"
-msgstr ""
+msgstr "تفعيل ترجة الصفات"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:137
 msgid "Translate ShippingClass"
-msgstr ""
+msgstr "ترجمة فئات الشحن"
 
 #: ../src/Hyyan/WPI/Admin/Features.php:139
 msgid "Enable ShippingClass translations"
-msgstr ""
+msgstr "تفعيل ترجمة فئات الشحن"
 
 #: ../src/Hyyan/WPI/Admin/MetasList.php:38
 msgid "Metas List"
-msgstr ""
+msgstr "قائمة الميتا"
 
 #: ../src/Hyyan/WPI/Admin/MetasList.php:40
 msgid ""
@@ -113,22 +117,24 @@ msgid ""
 "of this.\n"
 "                        "
 msgstr ""
+"القسم سوف يسمح لك بالتحكم بالميتا التي يجب مزامنتها بين المنتج وترجماته , "
+"رجاءً قم بتجاهل هذا القسم إذا كنت لا تعرف معنى ذلك"
 
 #: ../src/Hyyan/WPI/Admin/Settings.php:57
 msgid "Hyyan WooCommerce Polylang Integration"
-msgstr ""
+msgstr "Hyyan WooCommerce Polylang Integration"
 
 #: ../src/Hyyan/WPI/Admin/Settings.php:58
 msgid "WooPoly"
-msgstr ""
+msgstr "ووبولي"
 
 #: ../src/Hyyan/WPI/Admin/View.php:7
 msgid "WooPoly Advanced Options"
-msgstr ""
+msgstr "خيارات ووبولي المتقدمة"
 
 #: ../src/Hyyan/WPI/Admin/View.php:26
 msgid "About The Plugin"
-msgstr ""
+msgstr "حول الإضافة"
 
 #: ../src/Hyyan/WPI/Admin/View.php:32
 msgid ""
@@ -140,14 +146,20 @@ msgid ""
 "                                        <a href=\"https://wordpress.org/"
 "plugins/polylang/\">Polylang</a>"
 msgstr ""
+"الإضافة هي مشروع مفتوح المصدر يهدف لإغلاق الثغرة "
+"بين                                        <a href=\"https://wordpress.org/"
+"plugins/woocommerce/\">Woocommerce</a>\n"
+"                                        و\n"
+"                                        <a href=\"https://wordpress.org/"
+"plugins/polylang/\">Polylang</a>"
 
 #: ../src/Hyyan/WPI/Admin/View.php:42
 msgid "Author : "
-msgstr ""
+msgstr "المؤلف : "
 
 #: ../src/Hyyan/WPI/Admin/View.php:63
 msgid "Support The Plugin"
-msgstr ""
+msgstr "دعم الإضافة "
 
 #: ../src/Hyyan/WPI/Admin/View.php:68
 msgid ""
@@ -169,10 +181,19 @@ msgid ""
 "                                    to translators list\n"
 "                                    "
 msgstr ""
+"<strong>لن أقوم بطلب تبرع , الأن أو في المستقبل</strong> ,\n"
+"لكن الإضافة ما زالت بحاجة لدعمك رجاءً قم بتقديم الدعم عن طريق تصنيف الإضافة "
+"على                                     <a href=\"https://wordpress.org/"
+"support/view/plugin-reviews/woo-poly-integration\">مستودع ووردبريس</a> ,\n"
+"أو عن طريق منح الإضافة نجمة على  <a href=\"https://github.com/hyyan/woo-poly-"
+"integration\">Github</a>.\n"
+"                                    <br><br>\n"
+"إذا كنت تتحدث لغة غير الإنكليزية , يمكنك دعم الإضافة بتوسيع قائمة الترجمات , "
+"وسوف يتم إضافة اسمك لقائمة المترجمين"
 
 #: ../src/Hyyan/WPI/Admin/View.php:104
 msgid "Need Help ?"
-msgstr ""
+msgstr "تحتاج المساعدة ؟"
 
 #: ../src/Hyyan/WPI/Admin/View.php:110
 msgid ""
@@ -180,57 +201,61 @@ msgid ""
 "                                     please contact using one of the "
 "following methods"
 msgstr ""
+"تحتاج المساعدة , تريد أن تتطلب ميزة جديدة ؟ الرجاء التواصل عن طريق إحدى "
+"الطرق التالية "
 
 #: ../src/Hyyan/WPI/Admin/View.php:119
 msgid "On Github"
-msgstr ""
+msgstr "على Github"
 
 #: ../src/Hyyan/WPI/Admin/View.php:124
 msgid "On Wordpress Support Froum"
-msgstr ""
+msgstr "على منتدى  ووردبريس لدعم"
 
 #: ../src/Hyyan/WPI/Admin/View.php:129
 msgid "On Email"
-msgstr ""
+msgstr "على البريد الإلكتروني"
 
 #: ../src/Hyyan/WPI/Language.php:55
 msgid "Translation Downloader"
-msgstr ""
+msgstr "محمل الترجمات"
 
 #: ../src/Hyyan/WPI/Language.php:57
 msgid "Download Woocommerce translations when a new polylang language is added"
-msgstr ""
+msgstr "تحميل ترجمات ووكومريس عندما يتم إضافة لغة جديدة في polylang "
 
 #: ../src/Hyyan/WPI/Plugin.php:57
 msgid ""
 "Hyyan WooCommerce Polylang Integration Plugin can not function correctly , "
 "the plugin requires WooCommerce and Polylang plugins"
 msgstr ""
+"إضاقة Hyyan WooCommerce Polylang Integration  لا تستطيع العمل بشكل صحيح  , "
+"الإضافة تتطلب وجود الإضافتين WooCommerce  و Polylang "
 
 #: ../src/Hyyan/WPI/Product/Meta.php:107 ../src/Hyyan/WPI/Product/Meta.php:108
 msgid "General Metas"
-msgstr ""
+msgstr "ميتا عامة"
 
 #: ../src/Hyyan/WPI/Product/Meta.php:137 ../src/Hyyan/WPI/Product/Meta.php:138
 msgid "Stock Metas"
-msgstr ""
+msgstr "ميتا المخزون"
 
 #: ../src/Hyyan/WPI/Product/Meta.php:149 ../src/Hyyan/WPI/Product/Meta.php:150
 msgid "ShippingClass Metas"
-msgstr ""
+msgstr "ميتا فئات الشحن"
 
 #: ../src/Hyyan/WPI/Product/Meta.php:161 ../src/Hyyan/WPI/Product/Meta.php:162
 msgid "Attributes Metas"
-msgstr ""
+msgstr "ميتا الصفات"
 
 #: ../src/Hyyan/WPI/Product/Variable.php:151
 #: ../src/Hyyan/WPI/Product/Variable.php:152
 msgid "Variables Metas"
-msgstr ""
+msgstr "ميتا المنتجات المتعددة الأنواع"
 
 #: ../src/Hyyan/WPI/Product/Variable.php:221
 msgid "Wrong Language For Variable Product"
-msgstr ""
+msgstr "لغة خاطئة للمنتج المتعدد الأنواع"
 
 #: ../src/Hyyan/WPI/Product/Variable.php:222
 msgid ""
@@ -239,35 +264,44 @@ msgid ""
 "tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>Read "
 "more , to know why</a>"
 msgstr ""
+"المنتجات المتعددة الأنواع يجب أن يتم إنشائها بلفة الافتراضية أولاً. أو سوف "
+"تتعقد الأمور.<br> <a href='https://github.com/hyyan/woo-poly-integration/"
+"tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>اقرأ "
+"المزيد , اتعرف لماذا </a>"
 
 #: ../src/Hyyan/WPI/Product/Variable.php:273
 msgid ""
 "You can not change the default language ,Becuase you are using variable "
 "products"
 msgstr ""
+"لا يمكنك تغير اللغة الافتراضية , لأنك تقوم باستخدام المنتجات المتعددة الأنواع"
 
 #: ../src/Hyyan/WPI/Taxonomies/Attributes.php:63
 #: ../src/Hyyan/WPI/Taxonomies/Attributes.php:110
 msgid "Woocommerce Attributes"
-msgstr ""
+msgstr "صفات ووكومريس"
 
 #: ../src/Hyyan/WPI/Taxonomies/Attributes.php:119
 msgid "Translate Attributes Lables"
-msgstr ""
+msgstr "ترجة اسماء الصفات"
 
 #: ../src/Hyyan/WPI/Taxonomies/Attributes.php:137
 msgid "Translate"
-msgstr ""
+msgstr "ترجمة"
 
 #: ../src/Hyyan/WPI/Tools/TranslationsDownloader.php:47
 #, php-format
 msgid ""
 "Woocommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>"
 msgstr ""
+"ترجمة ووكومريس %s  لا يمكن العثور عليها في :  <a href=\"%2$s\">%2$s</a>"
 
 #: ../src/Hyyan/WPI/Tools/TranslationsDownloader.php:59
 #, php-format
 msgid ""
 "Unable to download woocommerce translation %s from : <a href=\"%2$s\">%2$s</"
 "a>"
-msgstr ""
+msgstr "فشل في تحميل ترجمة ووكومريس %s  من : <a href=\"%2$s\">%2$s</a>"
+
+#~ msgid "Choose File"
+#~ msgstr "اختيار الملف"
