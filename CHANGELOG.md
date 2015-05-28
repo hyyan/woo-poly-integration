@@ -1,4 +1,4 @@
-###0.22 (Not Released)
+###0.22
 
 * Added Translation Downloader to auto download woocommerce translation files when a new polylang language is add
 * Added Arabic translation
