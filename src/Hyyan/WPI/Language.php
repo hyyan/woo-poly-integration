@@ -86,6 +86,10 @@ class Language
         $name = esc_attr($_REQUEST['name']);
         $locale = esc_attr($_REQUEST['locale']);
 
+        if ('en_us' === strtolower($locale)) {
+            return true;
+        }
+
         try {
             return TranslationsDownloader::download($locale, $name);
         } catch (\RuntimeException $ex) {
