@@ -1,3 +1,7 @@
+###0.22.1
+
+* Fixed translation downloader tries to download woo translations for en_US locale
+
 ###0.22
 
 * Added Translation Downloader to auto download woocommerce translation files when a new polylang language is add
