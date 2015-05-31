@@ -1,5 +1,6 @@
-###0.22.1
+###0.23 (Not Released)
 
+* Added support for Woocommerce search widget @see [Duplicated search result](https://wordpress.org/support/topic/duplicated-search-result)
 * Fixed translation downloader tries to download woo translations for en_US locale
 
 ###0.22

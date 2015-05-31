@@ -115,6 +115,7 @@ class Plugin
         new Language();
         new Coupon();
         new Reports();
+        new Widgets\SearchWidget();
     }
 
 }

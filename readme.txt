@@ -3,7 +3,7 @@ Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.22.1 (Not Released)
+Stable tag: 0.23 (Not Released)
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -106,8 +106,8 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 
-= 0.22.1 (Not Released) =
-
+= 0.23 (Not Released) =
+* Added support for Woocommerce search widget @see [Duplicated search result](https://wordpress.org/support/topic/duplicated-search-result)
 * Fixed translation downloader tries to download woo translations for en_US locale
 
 = 0.22 =
