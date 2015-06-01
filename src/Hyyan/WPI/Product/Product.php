@@ -40,6 +40,7 @@ class Product
 
         new Meta();
         new Variable();
+        new Duplicator();
 
         if ('on' === Settings::getOption('stock', Features::getID(), 'on')) {
             new Stock();

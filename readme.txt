@@ -109,6 +109,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 = 0.23 (Not Released) =
 * Added support for Woocommerce search widget @see [Duplicated search result](https://wordpress.org/support/topic/duplicated-search-result)
 * Fixed translation downloader tries to download woo translations for en_US locale
+* Fixed wrong product duplicate behavior 
 
 = 0.22 =
 * Added Translation Downloader to auto download woocommerce translation files when a new polylang language is add
