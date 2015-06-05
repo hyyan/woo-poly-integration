@@ -1,3 +1,7 @@
+###0.24 (Not Released)
+
+* Fixed products are duplicated when shop page is set as front page
+
 ###0.23
 
 * Added support for Woocommerce search widget @see [Duplicated search result](https://wordpress.org/support/topic/duplicated-search-result)
