@@ -82,25 +82,46 @@ class Pages
      */
     public function correctShopPage(\WP $wp)
     {
-        if (pll_default_language() === pll_current_language()) {
-            return false;
+
+        global $polylang;
+
+        $shopID = wc_get_page_id('shop');
+        $shopOnFront = ('page' === get_option('show_on_front')) && in_array(
+                        get_option('page_on_front')
+                        , $polylang->model->get_translations(
+                                'post', $shopID
+        ));
+
+        $vars = array('pagename', 'page', 'name');
+        foreach ($vars as $var) {
+            if (isset($wp->query_vars[$var])) {
+                $shopOnFront = false;
+                break;
+            }
         }
+        if (!$shopOnFront) {
 
-        if (empty($wp->query_vars['pagename'])) {
-            return false;
-        }
+            if (
+                    pll_default_language() === pll_current_language() ||
+                    empty($wp->query_vars['pagename'])
+            ) {
+                return false;
+            }
 
-        $shopPage = get_post(wc_get_page_id('shop'));
+            $shopPage = get_post(wc_get_page_id('shop'));
 
-        /* Explode by / for children page */
-        $page = explode('/', $wp->query_vars['pagename']);
+            /* Explode by / for children page */
+            $page = explode('/', $wp->query_vars['pagename']);
 
-        if (
-                isset($shopPage->post_name) &&
-                $shopPage->post_name == $page[count($page) - 1]
-        ) {
-            unset($wp->query_vars['page']);
-            unset($wp->query_vars['pagename']);
+            if (
+                    isset($shopPage->post_name) &&
+                    $shopPage->post_name == $page[count($page) - 1]
+            ) {
+                unset($wp->query_vars['page']);
+                unset($wp->query_vars['pagename']);
+                $wp->query_vars['post_type'] = 'product';
+            }
+        } else {
             $wp->query_vars['post_type'] = 'product';
         }
     }
