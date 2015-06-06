@@ -1,5 +1,6 @@
 ###0.24 (Not Released)
 
+* Added support for Layered Nav Widget
 * Fixed products are duplicated when shop page is set as front page
 
 ###0.23

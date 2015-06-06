@@ -107,6 +107,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog ==
 
 = 0.24 =
+* Added support for Layered Nav Widget
 * Fixed products are duplicated when shop page is set as front page
 
 = 0.23 =
