@@ -116,6 +116,7 @@ class Plugin
         new Coupon();
         new Reports();
         new Widgets\SearchWidget();
+        new Widgets\LayeredNav();
     }
 
 }
