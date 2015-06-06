@@ -108,7 +108,7 @@ class Pages
                 return false;
             }
 
-            $shopPage = get_post(wc_get_page_id('shop'));
+            $shopPage = get_post($shopID);
 
             /* Explode by / for children page */
             $page = explode('/', $wp->query_vars['pagename']);
