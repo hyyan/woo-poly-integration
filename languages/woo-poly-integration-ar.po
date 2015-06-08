@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hyyan Woocommerce Polylang Integration\n"
-"POT-Creation-Date: 2015-05-28 00:13-0800\n"
-"PO-Revision-Date: 2015-05-28 00:14-0800\n"
+"POT-Creation-Date: 2015-06-08 10:13-0800\n"
+"PO-Revision-Date: 2015-06-08 10:26-0800\n"
 "Last-Translator: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
 "Language-Team: Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>\n"
 "Language: ar\n"
@@ -128,93 +128,9 @@ msgstr "Hyyan WooCommerce Polylang Integration"
 msgid "WooPoly"
 msgstr "ووبولي"
 
-#: ../src/Hyyan/WPI/Admin/View.php:7
-msgid "WooPoly Advanced Options"
-msgstr "خيارات ووبولي المتقدمة"
-
-#: ../src/Hyyan/WPI/Admin/View.php:26
-msgid "About The Plugin"
-msgstr "حول الإضافة"
-
-#: ../src/Hyyan/WPI/Admin/View.php:32
-msgid ""
-"The plugin is an open source project\n"
-"                                        which aims to fill the gap between\n"
-"                                        <a href=\"https://wordpress.org/"
-"plugins/woocommerce/\">Woocommerce</a>\n"
-"                                        and\n"
-"                                        <a href=\"https://wordpress.org/"
-"plugins/polylang/\">Polylang</a>"
-msgstr ""
-"الإضافة هي مشروع مفتوح المصدر يهدف لإغلاق الثغرة "
-"بين                                        <a href=\"https://wordpress.org/"
-"plugins/woocommerce/\">Woocommerce</a>\n"
-"                                        و\n"
-"                                        <a href=\"https://wordpress.org/"
-"plugins/polylang/\">Polylang</a>"
-
-#: ../src/Hyyan/WPI/Admin/View.php:42
-msgid "Author : "
-msgstr "المؤلف : "
-
-#: ../src/Hyyan/WPI/Admin/View.php:63
-msgid "Support The Plugin"
-msgstr "دعم الإضافة "
-
-#: ../src/Hyyan/WPI/Admin/View.php:68
-msgid ""
-"<strong>I will never ask you for donation , now or in the future</strong> ,\n"
-"                                    but the plugin stills need your "
-"support.\n"
-"                                    please support by rating this plugin On\n"
-"                                    <a href=\"https://wordpress.org/support/"
-"view/plugin-reviews/woo-poly-integration\">Wordpress Repository</a> ,\n"
-"                                    or by giving the plugin a star on  <a "
-"href=\"https://github.com/hyyan/woo-poly-integration\">Github</a>.\n"
-"                                    <br><br>\n"
-"                                    If you speak langauge other than "
-"English ,\n"
-"                                    you can support the plugin by extending "
-"the\n"
-"                                    trasnlation list. and your name will be "
-"added\n"
-"                                    to translators list\n"
-"                                    "
-msgstr ""
-"<strong>لن أقوم بطلب تبرع , الأن أو في المستقبل</strong> ,\n"
-"لكن الإضافة ما زالت بحاجة لدعمك رجاءً قم بتقديم الدعم عن طريق تصنيف الإضافة "
-"على                                     <a href=\"https://wordpress.org/"
-"support/view/plugin-reviews/woo-poly-integration\">مستودع ووردبريس</a> ,\n"
-"أو عن طريق منح الإضافة نجمة على  <a href=\"https://github.com/hyyan/woo-poly-"
-"integration\">Github</a>.\n"
-"                                    <br><br>\n"
-"إذا كنت تتحدث لغة غير الإنكليزية , يمكنك دعم الإضافة بتوسيع قائمة الترجمات , "
-"وسوف يتم إضافة اسمك لقائمة المترجمين"
-
-#: ../src/Hyyan/WPI/Admin/View.php:104
-msgid "Need Help ?"
-msgstr "تحتاج المساعدة ؟"
-
-#: ../src/Hyyan/WPI/Admin/View.php:110
-msgid ""
-"Need help , Want to ask for new feature ?\n"
-"                                     please contact using one of the "
-"following methods"
-msgstr ""
-"تحتاج المساعدة , تريد أن تتطلب ميزة جديدة ؟ الرجاء التواصل عن طريق إحدى "
-"الطرق التالية "
-
-#: ../src/Hyyan/WPI/Admin/View.php:119
-msgid "On Github"
-msgstr "على Github"
-
-#: ../src/Hyyan/WPI/Admin/View.php:124
-msgid "On Wordpress Support Froum"
-msgstr "على منتدى  ووردبريس لدعم"
-
-#: ../src/Hyyan/WPI/Admin/View.php:129
-msgid "On Email"
-msgstr "على البريد الإلكتروني"
+#: ../src/Hyyan/WPI/Endpoints.php:353
+msgid "Woocommerce Endpoints"
+msgstr "نهايات روابط ووكومريس"
 
 #: ../src/Hyyan/WPI/Language.php:55
 msgid "Translation Downloader"
@@ -223,14 +139,6 @@ msgstr "محمل الترجمات"
 #: ../src/Hyyan/WPI/Language.php:57
 msgid "Download Woocommerce translations when a new polylang language is added"
 msgstr "تحميل ترجمات ووكومريس عندما يتم إضافة لغة جديدة في polylang "
-
-#: ../src/Hyyan/WPI/Plugin.php:57
-msgid ""
-"Hyyan WooCommerce Polylang Integration Plugin can not function correctly , "
-"the plugin requires WooCommerce and Polylang plugins"
-msgstr ""
-"إضاقة Hyyan WooCommerce Polylang Integration  لا تستطيع العمل بشكل صحيح  , "
-"الإضافة تتطلب وجود الإضافتين WooCommerce  و Polylang "
 
 #: ../src/Hyyan/WPI/Product/Meta.php:107 ../src/Hyyan/WPI/Product/Meta.php:108
 msgid "General Metas"
@@ -286,6 +194,7 @@ msgid "Translate Attributes Lables"
 msgstr "ترجة اسماء الصفات"
 
 #: ../src/Hyyan/WPI/Taxonomies/Attributes.php:137
+#: ../src/Hyyan/WPI/Views/Messages/endpointsTranslations.php:18
 msgid "Translate"
 msgstr "ترجمة"
 
@@ -302,6 +211,143 @@ msgid ""
 "Unable to download woocommerce translation %s from : <a href=\"%2$s\">%2$s</"
 "a>"
 msgstr "فشل في تحميل ترجمة ووكومريس %s  من : <a href=\"%2$s\">%2$s</a>"
+
+#: ../src/Hyyan/WPI/Views/Admin/about.php:8
+msgid "About The Plugin"
+msgstr "حول الإضافة"
+
+#: ../src/Hyyan/WPI/Views/Admin/about.php:14
+msgid ""
+"The plugin is an open source project\n"
+"            which aims to fill the gap between\n"
+"            <a href=\"https://wordpress.org/plugins/woocommerce/"
+"\">Woocommerce</a>\n"
+"            and <a href=\"https://wordpress.org/plugins/polylang/"
+"\">Polylang</a>"
+msgstr ""
+"الإضافة هي مشروع مفتوح المصدر يهدف لإغلاق الثغرة "
+"بين                                        <a href=\"https://wordpress.org/"
+"plugins/woocommerce/\">Woocommerce</a>\n"
+"                                        و\n"
+"                                        <a href=\"https://wordpress.org/"
+"plugins/polylang/\">Polylang</a>"
+
+#: ../src/Hyyan/WPI/Views/Admin/about.php:24
+msgid "Author : "
+msgstr "المؤلف : "
+
+#: ../src/Hyyan/WPI/Views/Admin/getHelp.php:7
+msgid "Need Help ?"
+msgstr "تحتاج المساعدة ؟"
+
+#: ../src/Hyyan/WPI/Views/Admin/getHelp.php:13
+msgid ""
+"Need help , Want to ask for new feature ?\n"
+"                please contact using one of the following methods"
+msgstr ""
+"تحتاج المساعدة , تريد أن تتطلب ميزة جديدة ؟ الرجاء التواصل عن طريق إحدى "
+"الطرق التالية "
+
+#: ../src/Hyyan/WPI/Views/Admin/getHelp.php:22
+msgid "On Github"
+msgstr "على Github"
+
+#: ../src/Hyyan/WPI/Views/Admin/getHelp.php:27
+msgid "On Wordpress Support Froum"
+msgstr "على منتدى  ووردبريس لدعم"
+
+#: ../src/Hyyan/WPI/Views/Admin/getHelp.php:32
+msgid "On Email"
+msgstr "على البريد الإلكتروني"
+
+#: ../src/Hyyan/WPI/Views/Admin/support.php:8
+msgid "Support The Plugin"
+msgstr "دعم الإضافة "
+
+#: ../src/Hyyan/WPI/Views/Admin/support.php:13
+msgid ""
+"<strong>I will never ask you for donation , now or in the future</strong> ,\n"
+"        but the plugin stills need your support.\n"
+"        please support by rating this plugin On\n"
+"        <a href=\"https://wordpress.org/support/view/plugin-reviews/woo-poly-"
+"integration\">Wordpress Repository</a> ,\n"
+"        or by giving the plugin a star on  <a href=\"https://github.com/"
+"hyyan/woo-poly-integration\">Github</a>.\n"
+"        <br><br>\n"
+"        If you speak langauge other than English ,\n"
+"        you can support the plugin by extending the\n"
+"        trasnlation list. and your name will be added\n"
+"        to translators list"
+msgstr ""
+"<strong>لن أقوم بطلب تبرع , الأن أو في المستقبل</strong> ,\n"
+"لكن الإضافة ما زالت بحاجة لدعمك رجاءً قم بتقديم الدعم عن طريق تصنيف الإضافة "
+"على                                     <a href=\"https://wordpress.org/"
+"support/view/plugin-reviews/woo-poly-integration\">مستودع ووردبريس</a> ,\n"
+"أو عن طريق منح الإضافة نجمة على  <a href=\"https://github.com/hyyan/woo-poly-"
+"integration\">Github</a>.\n"
+"                                    <br><br>\n"
+"إذا كنت تتحدث لغة غير الإنكليزية , يمكنك دعم الإضافة بتوسيع قائمة الترجمات , "
+"وسوف يتم إضافة اسمك لقائمة المترجمين"
+
+#: ../src/Hyyan/WPI/Views/Messages/activateError.php:8
+#: ../src/Hyyan/WPI/Views/Messages/support.php:16
+msgid "Hyyan WooCommerce Polylang Integration Plugin"
+msgstr "Hyyan WooCommerce Polylang Integration"
+
+#: ../src/Hyyan/WPI/Views/Messages/activateError.php:13
+msgid ""
+"The plugin can not function correctly , the plugin requires\n"
+"        WooCommerce and Polylang plugins"
+msgstr ""
+"إضاقة Hyyan WooCommerce Polylang Integration  لا تستطيع العمل بشكل صحيح  , "
+"الإضافة تتطلب وجود الإضافتين WooCommerce  و Polylang "
+
+#: ../src/Hyyan/WPI/Views/Messages/activateError.php:20
+msgid "Plugins Sites : "
+msgstr "موقع الإضافات :"
+
+#: ../src/Hyyan/WPI/Views/Messages/activateError.php:22
+msgid "WooCommerce"
+msgstr "ووكومريس"
+
+#: ../src/Hyyan/WPI/Views/Messages/activateError.php:26
+msgid "Polylang"
+msgstr "Polylang"
+
+#: ../src/Hyyan/WPI/Views/Messages/endpointsTranslations.php:11
+#, php-format
+msgid ""
+"You can translate woocommerce endpoints from polylang strings tab.\n"
+"                 <a target=\"_blank\" href=\"%s\">%s</a>"
+msgstr ""
+"يمكنك ترجمة نهايات روابط ووكومريس من تبويب ترجمة الجمل .<a target=\"_blank\" "
+"href=\"%s\">%s</a>"
+
+#: ../src/Hyyan/WPI/Views/Messages/support.php:24
+msgid ""
+"Hello, my name is <b>Hyyan Abo Fakher</b>, and I am the developer\n"
+"                   of plugin <b>Hyyan WooCommerce Polylang Integration</b>."
+"<br>\n"
+"                   If you like this plugin, please write a few words about "
+"it\n"
+"                   at the <a target=\"_blank\" href=\"https://wordpress.org/"
+"support/view/plugin-reviews/woo-poly-integration\">wordpress.org</a>\n"
+"                   or <a target=\"_blank\" href=\"https://twitter.com"
+"\">twitter</a>\n"
+"                   It will help other people\n"
+"                   find this useful plugin more quickly.<br><b>Thank you!</b>"
+msgstr ""
+"مرحباً , اسمي هو <b>حيان أبو فخر</b> , و أنا هو مطور إضافة <b>Hyyan "
+"WooCommerce Polylang Integration</b><br> إذا كنت تحب هذه الإضافة , رجاءً قم "
+"بكتابة بضع كلمات عنها في <a target=\"_blank\" href=\"https://wordpress.org/"
+"support/view/plugin-reviews/woo-poly-integration\">wordpress.org</a>\n"
+" أو على <a target=\"_blank\" href=\"https://twitter.com\">twitter</a> , إن "
+"ذلك سوف يساعد الأخرين على إيجاد هذه الإضافة المفيدة. \n"
+" . <b>شكراً لك !</b>"
+
+#: ../src/Hyyan/WPI/Views/admin.php:7
+msgid "WooPoly Advanced Options"
+msgstr "خيارات ووبولي المتقدمة"
 
 #~ msgid "Choose File"
 #~ msgstr "اختيار الملف"
