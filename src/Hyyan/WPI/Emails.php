@@ -37,8 +37,8 @@ class Emails
      * Correct the locale for orders emails , Othe emails must be handled
      * correctly out of the box
      *
-     * @global type $polylang
-     * @global type $woocommerce
+     * @global \Polylang $polylang
+     * @global \WooCommerce $woocommerce
      *
      * @param string $locale current locale
      *
