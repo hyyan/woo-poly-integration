@@ -44,7 +44,7 @@ the same interface you love.
    and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
 2. The plugin support variable products , but using them will `disallow you to 
    change the default language` , because of the way the plugin implements this
-   support. So you have to make sure to choose the default language before start
+   support. So you have to make sure to choose the default language before you start
    adding new variable products.
 3. Polylang URL modifications method `The language is set from content` is not 
    supported yet

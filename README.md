@@ -35,10 +35,10 @@ the same interface you love.
 ## What you need to know about this plugin
 
 1. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang) 
-   and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest versions
+   and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
 2. The plugin support variable products , but using them will `disallow you to 
    change the default language` , because of the way the plugin implements this
-   support. So you have to make sure to choose the default language before start
+   support. So you have to make sure to choose the default language before you start
    adding new variable products.
 3. Polylang URL modifications method `The language is set from content` is not 
    supported yet
