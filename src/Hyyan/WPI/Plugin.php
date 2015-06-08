@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\Tools\FlashMessages;
+
 /**
  * Plugin
  *
