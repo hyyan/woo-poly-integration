@@ -29,4 +29,9 @@ interface MessagesInterface
      */
     const MSG_ACTIVATE_ERROR = 'wpi-activate-error';
 
+    /**
+     * Endpoints translations message
+     */
+    const MSG_ENDPOINTS_TRANSLATION = 'wpi-endpoints-translations';
+
 }

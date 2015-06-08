@@ -144,6 +144,7 @@ class Plugin
         new Login();
         new Order();
         new Pages();
+        new Endpoints();
         new Product\Product();
         new Taxonomies\Taxonomies();
         new Media();
