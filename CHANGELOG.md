@@ -1,4 +1,4 @@
-###0.24 (Not Released)
+###0.24
 
 * Added support for Layered Nav Widget
 * Added support for endpoints translation
