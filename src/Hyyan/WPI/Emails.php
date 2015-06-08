@@ -29,7 +29,7 @@ class Emails
     public function __construct()
     {
         if ('on' === Settings::getOption('emails', Features::getID(), 'on')) {
-            add_filter('plugin_locale', array($this, 'correctLocal'), 100);
+            add_filter('plugin_locale', array($this, 'correctLocale'), 100);
         }
     }
 
@@ -44,7 +44,7 @@ class Emails
      *
      * @return string locale
      */
-    public function correctLocal($locale)
+    public function correctLocale($locale)
     {
 
         global $polylang, $woocommerce;
