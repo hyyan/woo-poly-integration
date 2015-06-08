@@ -52,11 +52,14 @@ class Emails
             return $locale;
         }
 
-        if (!is_admin() || defined('DOING_AJAX')) {
+        $refer = isset($_GET['action']) &&
+                esc_attr($_GET['action'] === 'woocommerce_mark_order_status');
+
+        if (!is_admin() || (defined('DOING_AJAX') && !$refer)) {
             return $locale;
         }
 
-        if ('GET' === filter_input(INPUT_SERVER, 'REQUEST_METHOD')) {
+        if ('GET' === filter_input(INPUT_SERVER, 'REQUEST_METHOD') && !$refer) {
             return $locale;
         }
 
@@ -70,7 +73,7 @@ class Emails
             }
         }
 
-        if ((get_post_type($ID) !== 'shop_order')) {
+        if ((get_post_type($ID) !== 'shop_order') && !$refer) {
             return $locale;
         }
 
