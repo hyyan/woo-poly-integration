@@ -14,6 +14,7 @@ the same interface you love.
 
 - [x] Auto Download Woocommerce Translation Files
 - [x] Page Translation
+- [x] Endpoints Translation
 - [x] Product Translation
   - [x] Categories
   - [x] Tags

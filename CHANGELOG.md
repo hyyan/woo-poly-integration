@@ -1,7 +1,9 @@
 ###0.24 (Not Released)
 
 * Added support for Layered Nav Widget
+* Added support for endpoints translation
 * Fixed products are duplicated when shop page is set as front page
+* General code improvements
 
 ###0.23
 
