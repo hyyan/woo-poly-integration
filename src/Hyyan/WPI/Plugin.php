@@ -57,13 +57,10 @@ class Plugin
      */
     public function activate()
     {
-        $errorID = 'wpi-activate-error';
-        $supportID = 'wpi-support';
-
         if (!static::canActivate()) {
-            FlashMessages::remove($supportID);
+            FlashMessages::remove(MessagesInterface::MSG_SUPPORT);
             FlashMessages::add(
-                    $errorID
+                    MessagesInterface::MSG_ACTIVATE_ERROR
                     , static::getView('Messages/activateError')
                     , array('error')
                     , true
@@ -72,8 +69,11 @@ class Plugin
             return false;
         }
 
-        FlashMessages::remove($errorID);
-        FlashMessages::add($supportID, static::getView('Messages/support'));
+        FlashMessages::remove(MessagesInterface::MSG_ACTIVATE_ERROR);
+        FlashMessages::add(
+                MessagesInterface::MSG_SUPPORT
+                , static::getView('Messages/support')
+        );
 
         $this->registerCore();
     }
