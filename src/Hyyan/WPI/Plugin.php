@@ -23,6 +23,9 @@ class Plugin
      */
     public function __construct()
     {
+
+        FlashMessages::register();
+
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
 
@@ -52,13 +55,23 @@ class Plugin
      */
     public function activate()
     {
+        $errorID = 'wpi-activate-error';
+        $supportID = 'wpi-support';
+
         if (!static::canActivate()) {
-            add_action('admin_notices', function () {
-                printf('<div id="message" class="error"><p>%s</p></div>', __('Hyyan WooCommerce Polylang Integration Plugin can not function correctly , the plugin requires WooCommerce and Polylang plugins', 'woo-poly-integration'));
-            });
+            FlashMessages::remove($supportID);
+            FlashMessages::add(
+                    $errorID
+                    , static::getView('Messages/activateError')
+                    , array('error')
+                    , true
+            );
 
             return false;
         }
+
+        FlashMessages::remove($errorID);
+        FlashMessages::add($supportID, static::getView('Messages/support'));
 
         $this->registerCore();
     }
@@ -96,6 +109,27 @@ class Plugin
         $data = get_plugin_data(Hyyan_WPI_DIR);
 
         return $data['Version'];
+    }
+
+    /**
+     * Get plugin view
+     *
+     * @param string $name view name
+     * @param array  $vars array of vars to pass to the view
+     *
+     * @return string the view content
+     */
+    public static function getView($name, array $vars = array())
+    {
+        $result = '';
+        $path = dirname(Hyyan_WPI_DIR) . '/src/Hyyan/WPI/Views/' . $name . '.php';
+        if (file_exists($path)) {
+            ob_start();
+            include($path);
+            $result = ob_get_clean();
+        }
+
+        return $result;
     }
 
     /**
