@@ -4,6 +4,7 @@
 * Added support for endpoints translation
 * Fixed products are duplicated when shop page is set as front page
 * Fixed [Unable to open order details after 0.20 upgrade](https://wordpress.org/support/topic/unable-to-open-order-details-after-20-upgrade)
+* Fixed translations links are not hidden in the order page
 * General code improvements
 
 ###0.23

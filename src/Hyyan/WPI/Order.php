@@ -150,32 +150,17 @@ class Order
     {
         add_action('current_screen', function () {
 
-            global $pagenow;
-            if (!in_array($pagenow, array('post.php', 'post-new.php', 'edit.php'))) {
-                return false;
+            $screen = get_current_screen();
+
+            if ($screen->post_type === 'shop_order') {
+                add_action('admin_print_scripts', function () {
+
+                    $jsID = 'order-translations-buttons';
+                    $code = '$(".pll_icon_add,#post-translations").fadeOut()';
+
+                    Utilities::jsScriptWrapper($jsID, $code);
+                }, 100);
             }
-
-            if (
-                    !isset($_GET['post_type']) ||
-                    !(esc_attr($_GET['post_type']) === 'shop_order')
-            ) {
-                return false;
-            }
-
-            if (
-                    ($pagenow == 'post.php' && isset($_GET['post'])) &&
-                    (get_post_type(esc_attr($_GET['post'])) !== 'shop_order')
-            ) {
-                return false;
-            }
-
-            add_action('admin_print_scripts', function () {
-
-                $jsID = 'order-translations-buttons';
-                $code = '$(".pll_icon_add,#post-translations").fadeOut()';
-
-                Utilities::jsScriptWrapper($jsID, $code);
-            }, 100);
         });
     }
 
