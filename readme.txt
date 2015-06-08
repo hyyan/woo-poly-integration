@@ -111,6 +111,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * Added support for Layered Nav Widget
 * Added support for endpoints translation
 * Fixed products are duplicated when shop page is set as front page
+* Fixed [Unable to open order details after 0.20 upgrade](https://wordpress.org/support/topic/unable-to-open-order-details-after-20-upgrade)
 * General code improvements
 
 = 0.23 =

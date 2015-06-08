@@ -36,3 +36,5 @@ new Hyyan\WPI\Autoloader(__DIR__ . '/src/');
 
 /* bootstrap the plugin */
 new Hyyan\WPI\Plugin();
+
+

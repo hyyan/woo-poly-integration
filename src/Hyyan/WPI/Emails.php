@@ -29,7 +29,7 @@ class Emails
     public function __construct()
     {
         if ('on' === Settings::getOption('emails', Features::getID(), 'on')) {
-            add_filter('plugin_locale', array($this, 'correctLocale'), 100);
+            add_filter('plugin_locale', array($this, 'correctLocal'), 100);
         }
     }
 
@@ -44,7 +44,7 @@ class Emails
      *
      * @return string locale
      */
-    public function correctLocale($locale)
+    public function correctLocal($locale)
     {
 
         global $polylang, $woocommerce;
@@ -85,7 +85,9 @@ class Emails
                         $entity->locale
                 );
                 $GLOBALS['text_direction'] = $entity->is_rtl ? 'rtl' : 'ltr';
-                $GLOBALS['wp_locale'] = new \WP_Locale();
+                if (class_exists('WP_Locale')) {
+                    $GLOBALS['wp_locale'] = new \WP_Locale();
+                }
 
                 return $entity->locale;
             }
