@@ -55,7 +55,7 @@ class Emails
         $refer = isset($_GET['action']) &&
                 esc_attr($_GET['action'] === 'woocommerce_mark_order_status');
 
-        if ((!is_admin() && !isset( $_REQUEST['ipn_track_id'] )) || (defined('DOING_AJAX') && !$refer)) {
+        if ((!is_admin() && !isset($_REQUEST['ipn_track_id'])) || (defined('DOING_AJAX') && !$refer)) {
             return $locale;
         }
 
@@ -64,7 +64,7 @@ class Emails
         }
 
         $ID = false;
-		
+
 		if (!isset($_REQUEST['ipn_track_id'])) {
 			$search = array('post', 'post_ID', 'pll_post_id', 'order_id');
 
@@ -75,7 +75,7 @@ class Emails
 				}
 			}
 		} else {
-			$ID = $this->get_order_id_from_ipn_request();
+			$ID = $this->getOrderIDFromIPNRequest();
 		}
 
         if ((get_post_type($ID) !== 'shop_order') && !$refer) {
@@ -109,30 +109,27 @@ class Emails
      *
      * @return int the order id if one was found or false
      */
-	public function get_order_id_from_ipn_request() {
-	
-		if ( ! empty( $_REQUEST ) ) {
-			
-			$posted = wp_unslash( $_REQUEST );
+     public function getOrderIDFromIPNRequest() {
 
-			if ( empty( $posted['custom'] ) ) {
+         if (!empty($_REQUEST)) {
 
-				return false;
-			}
-			
-			$custom =  maybe_unserialize( $posted['custom'] );
+             $posted = wp_unslash($_REQUEST);
 
-			if ( ! is_array($custom) ) {
+             if (empty($posted['custom'])) {
+                return false;
+            }
 
-				return false;
-			}
+             $custom = maybe_unserialize($posted['custom']);
 
-			list( $order_id, $order_key ) = $custom;
-			
+             if (!is_array($custom)) {
+                return false;
+             }
+
+			list($order_id, $order_key) = $custom;
+
 			return $order_id;
 		}
-		
+
 		return false;
 	}
-	
 }
