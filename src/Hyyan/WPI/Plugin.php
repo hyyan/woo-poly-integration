@@ -154,6 +154,7 @@ class Plugin
         new Reports();
         new Widgets\SearchWidget();
         new Widgets\LayeredNav();
+        new Gateways();
     }
 
 }
