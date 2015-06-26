@@ -65,18 +65,18 @@ class Emails
 
         $ID = false;
 
-		if (!isset($_REQUEST['ipn_track_id'])) {
-			$search = array('post', 'post_ID', 'pll_post_id', 'order_id');
+        if (!isset($_REQUEST['ipn_track_id'])) {
+            $search = array('post', 'post_ID', 'pll_post_id', 'order_id');
 
-			foreach ($search as $value) {
-				if (isset($_REQUEST[$value])) {
-					$ID = esc_attr($_REQUEST[$value]);
-					break;
-				}
-			}
-		} else {
-			$ID = $this->getOrderIDFromIPNRequest();
-		}
+            foreach ($search as $value) {
+                if (isset($_REQUEST[$value])) {
+                    $ID = esc_attr($_REQUEST[$value]);
+                    break;
+                }
+            }
+        } else {
+            $ID = $this->getOrderIDFromIPNRequest();
+        }
 
         if ((get_post_type($ID) !== 'shop_order') && !$refer) {
             return $locale;
@@ -104,13 +104,13 @@ class Emails
         return $locale;
     }
 
-	/**
+    /**
      * Return the order id associated with the current IPN request
      *
      * @return int the order id if one was found or false
      */
-     public function getOrderIDFromIPNRequest() {
-
+     public function getOrderIDFromIPNRequest()
+     {
          if (!empty($_REQUEST)) {
 
              $posted = wp_unslash($_REQUEST);
@@ -125,11 +125,11 @@ class Emails
                 return false;
              }
 
-			list($order_id, $order_key) = $custom;
+            list($order_id, $order_key) = $custom;
 
-			return $order_id;
-		}
+            return $order_id;
+        }
 
-		return false;
-	}
+        return false;
+    }
 }
