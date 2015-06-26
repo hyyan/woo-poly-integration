@@ -1,3 +1,9 @@
+###0.25
+
+* Add the ability to handle the locale code of Paypal checkout
+* Fixed locale for emails that are triggered by a Paypal IPN message
+* Fixed fields locker is not working in Firefox browser
+
 ###0.24
 
 * Added support for Layered Nav Widget

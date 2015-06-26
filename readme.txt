@@ -3,7 +3,7 @@ Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.24
+Stable tag: 0.25
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -13,7 +13,7 @@ Integrates Woocommerce With Polylang
 
 This plugin makes it possible to run multilingual e-commerce sites using
 WooCommerce and Polylang.It makes products and store pages translatable, lets 
-visitors switch languages and order products in their language. and all that frome 
+visitors switch languages and order products in their language. and all that from
 the same interface you love.
 
 = Features  =
@@ -30,6 +30,7 @@ the same interface you love.
   - [√] Variation Product
   - [√] Product Gallery
 - [√] Order Translation
+- [√] Stock Synchronization
 - [√] Cart Synchronization `Without Variation Support`
 - [√] Coupon Synchronization
 - [√] Emails
@@ -40,20 +41,20 @@ the same interface you love.
 
 = What you need to know about this plugin =
 
-1. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang) 
+1. The plugin needs `PHP5.3 or above`
+2. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang) 
    and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
-2. The plugin support variable products , but using them will `disallow you to 
+3. The plugin support variable products , but using them will `disallow you to 
    change the default language` , because of the way the plugin implements this
    support. So you have to make sure to choose the default language before you start
    adding new variable products.
-3. Polylang URL modifications method `The language is set from content` is not 
+4. Polylang URL modifications method `The language is set from content` is not 
    supported yet
 
 = Setup your environment =
 
-1. Make sure to setup your woocommerce permalinks correctly
-2. You need to translate woocommerce pages by yourself
-3. The plugin will handle the rest for you
+1. You need to translate woocommerce pages by yourself
+2. The plugin will handle the rest for you
 
 = Translations =
 
@@ -110,6 +111,11 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+
+= 0.25 =
+* Add the ability to handle the locale code of Paypal checkout
+* Fixed locale for emails that are triggered by a Paypal IPN message
+* Fixed fields locker is not working in Firefox browser
 
 = 0.24 =
 * Added support for Layered Nav Widget
