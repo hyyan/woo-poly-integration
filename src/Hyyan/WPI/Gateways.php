@@ -20,7 +20,6 @@ namespace Hyyan\WPI;
 class Gateways
 {
 
-
     /**
      * Construct object
      */
@@ -29,7 +28,6 @@ class Gateways
         add_filter('woocommerce_paypal_args', array($this, 'setPaypalLocalCode'));
 
     }
-
 
     /**
      * Set the PayPal checkout locale code
@@ -46,6 +44,5 @@ class Gateways
         return $args;
 
     }
-
 
 }
