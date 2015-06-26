@@ -183,3 +183,6 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 = 0.20 =
 The release includes many new features for reports , improve the support for emails , and include 
 new bug fixes
+
+= 0.25 =
+The release includes important fixes , update immediately 
