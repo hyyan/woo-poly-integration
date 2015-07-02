@@ -101,25 +101,20 @@ class Pages
         }
         if (!$shopOnFront) {
 
-            if (
-                    pll_default_language() === pll_current_language() ||
-                    empty($wp->query_vars['pagename'])
-            ) {
-                return false;
-            }
+            if (!empty($wp->query_vars['pagename'])) {
+                $shopPage = get_post($shopID);
 
-            $shopPage = get_post($shopID);
+                /* Explode by / for children page */
+                $page = explode('/', $wp->query_vars['pagename']);
 
-            /* Explode by / for children page */
-            $page = explode('/', $wp->query_vars['pagename']);
-
-            if (
-                    isset($shopPage->post_name) &&
-                    $shopPage->post_name == $page[count($page) - 1]
-            ) {
-                unset($wp->query_vars['page']);
-                unset($wp->query_vars['pagename']);
-                $wp->query_vars['post_type'] = 'product';
+                if (
+                        isset($shopPage->post_name) &&
+                        $shopPage->post_name == $page[count($page) - 1]
+                ) {
+                    unset($wp->query_vars['page']);
+                    unset($wp->query_vars['pagename']);
+                    $wp->query_vars['post_type'] = 'product';
+                }
             }
         } else {
             $wp->query_vars['post_type'] = 'product';

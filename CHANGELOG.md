@@ -1,3 +1,8 @@
+###0.26 (Not Released)
+
+* Fixed product duplication in shop page when default language is changed
+* Fixed total sales is syned even if porudct is not managing stock
+
 ###0.25
 
 * Add the ability to handle the locale code of Paypal checkout
