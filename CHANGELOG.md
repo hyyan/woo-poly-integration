@@ -1,7 +1,7 @@
 ###0.26 (Not Released)
 
 * Fixed product duplication in shop page when default language is changed
-* Fixed total sales is syned even if porudct is not managing stock
+* Fixed total sales is syned even if product is not managing stock
 
 ###0.25
 
