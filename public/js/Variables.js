@@ -6,7 +6,7 @@
  * file that was distributed with this source code.
  */
 
-(function ($, document) {
+(function ($, document, HYYAN_WPI_VARIABLES) {
 
     /**
      * Construct variables
