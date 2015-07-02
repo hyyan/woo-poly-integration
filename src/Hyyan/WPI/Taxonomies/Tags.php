@@ -13,7 +13,7 @@ namespace Hyyan\WPI\Taxonomies;
 /**
  * Tags
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Tags implements TaxonomiesInterface
 {

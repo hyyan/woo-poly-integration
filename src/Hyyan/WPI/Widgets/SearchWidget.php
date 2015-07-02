@@ -13,7 +13,7 @@ namespace Hyyan\WPI\Widgets;
 /**
  * SearchWidget
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class SearchWidget
 {

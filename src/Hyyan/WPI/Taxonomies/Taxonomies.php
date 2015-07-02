@@ -16,7 +16,7 @@ use Hyyan\WPI\Admin\Settings,
 /**
  * Taxonomies
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Taxonomies
 {

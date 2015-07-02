@@ -13,7 +13,7 @@ namespace Hyyan\WPI\Taxonomies;
 /**
  * ShippingCalss
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class ShippingCalss implements TaxonomiesInterface
 {

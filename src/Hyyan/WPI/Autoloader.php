@@ -13,7 +13,7 @@ namespace Hyyan\WPI;
 /**
  * Plugin Namespace Autoloader
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 final class Autoloader
 {

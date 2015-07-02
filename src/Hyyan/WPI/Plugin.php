@@ -15,7 +15,7 @@ use Hyyan\WPI\Tools\FlashMessages;
 /**
  * Plugin
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Plugin
 {

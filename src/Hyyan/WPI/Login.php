@@ -15,7 +15,7 @@ namespace Hyyan\WPI;
  *
  * Handle login
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Login
 {

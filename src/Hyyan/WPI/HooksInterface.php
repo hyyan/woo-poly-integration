@@ -13,7 +13,7 @@ namespace Hyyan\WPI;
 /**
  * Plugin Hooks Interface
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 interface HooksInterface
 {

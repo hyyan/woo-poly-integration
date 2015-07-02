@@ -18,7 +18,7 @@ use Hyyan\WPI\Utilities;
  *
  * Handle Variable Products
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Variable
 {

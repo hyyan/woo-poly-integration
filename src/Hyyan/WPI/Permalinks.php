@@ -13,7 +13,7 @@ namespace Hyyan\WPI;
 /**
  * Permalinks
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Permalinks
 {

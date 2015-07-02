@@ -15,7 +15,7 @@ use Hyyan\WPI\Utilities;
 /**
  * Attributes
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Attributes implements TaxonomiesInterface
 {

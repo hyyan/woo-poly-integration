@@ -19,7 +19,7 @@ use Hyyan\WPI\Utilities,
  *
  * Handle stock sync
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Stock
 {

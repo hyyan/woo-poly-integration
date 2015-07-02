@@ -15,7 +15,7 @@ use Hyyan\WPI\Product\Meta;
 /**
  * MetasList
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class MetasList extends AbstractSettings
 {

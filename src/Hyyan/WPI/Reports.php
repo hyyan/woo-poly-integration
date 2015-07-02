@@ -16,7 +16,7 @@ use Hyyan\WPI\Admin\Settings,
 /**
  * Reports
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Reports
 {

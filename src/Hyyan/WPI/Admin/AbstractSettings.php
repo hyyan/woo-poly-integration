@@ -16,6 +16,8 @@ use Hyyan\WPI\HooksInterface;
  * AbstractSettings
  *
  * @author Hyyan
+ * 
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 abstract class AbstractSettings Implements SettingsInterface
 {

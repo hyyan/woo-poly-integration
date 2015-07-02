@@ -15,7 +15,7 @@ use Hyyan\WPI\HooksInterface;
 /**
  * TranslationsDownloader
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class TranslationsDownloader
 {

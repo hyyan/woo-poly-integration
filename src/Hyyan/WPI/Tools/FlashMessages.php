@@ -13,7 +13,7 @@ namespace Hyyan\WPI\Tools;
 /**
  * FlashMessages
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 final class FlashMessages
 {

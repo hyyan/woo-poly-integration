@@ -15,7 +15,7 @@ namespace Hyyan\WPI;
  *
  * Handle cart translation
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Cart
 {

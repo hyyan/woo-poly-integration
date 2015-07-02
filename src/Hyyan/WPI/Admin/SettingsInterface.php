@@ -13,7 +13,7 @@ namespace Hyyan\WPI\Admin;
 /**
  * SettingsInterface
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 interface SettingsInterface
 {

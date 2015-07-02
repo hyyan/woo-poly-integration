@@ -18,7 +18,7 @@ use Hyyan\WPI\Admin\Settings,
  *
  * Handle woocommerce emails
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Emails
 {

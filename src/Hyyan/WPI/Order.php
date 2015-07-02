@@ -15,7 +15,7 @@ namespace Hyyan\WPI;
  *
  * Handle order language
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Order
 {

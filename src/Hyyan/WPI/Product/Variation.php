@@ -15,7 +15,7 @@ namespace Hyyan\WPI\Product;
  *
  * Handle Variation Duplicate
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Variation
 {

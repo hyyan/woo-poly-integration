@@ -15,7 +15,7 @@ namespace Hyyan\WPI;
  *
  * Constains messages IDS used in this plugin
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 interface MessagesInterface
 {

@@ -15,7 +15,7 @@ namespace Hyyan\WPI;
  *
  * Some helper methods
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 final class Utilities
 {

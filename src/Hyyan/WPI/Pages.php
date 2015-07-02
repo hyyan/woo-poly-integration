@@ -15,7 +15,7 @@ namespace Hyyan\WPI;
  *
  * Handle page translations
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Pages
 {

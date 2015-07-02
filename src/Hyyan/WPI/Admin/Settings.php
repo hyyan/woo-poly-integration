@@ -17,7 +17,7 @@ use Hyyan\WPI\HooksInterface;
  *
  * Admin settings page
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Settings extends \WeDevs_Settings_API
 {

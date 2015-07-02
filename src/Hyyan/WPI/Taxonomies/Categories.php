@@ -16,7 +16,7 @@ use Hyyan\WPI\Utilities;
 /**
  * Categories
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Categories implements TaxonomiesInterface
 {

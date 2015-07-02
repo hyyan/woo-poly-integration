@@ -13,7 +13,7 @@ namespace Hyyan\WPI\Product;
 /**
  * Duplicator
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Duplicator
 {

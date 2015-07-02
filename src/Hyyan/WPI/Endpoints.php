@@ -17,7 +17,7 @@ use Hyyan\WPI\Tools\FlashMessages,
 /**
  * Endpoints
  *
- * @author Hyyan
+ * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
  */
 class Endpoints
 {
