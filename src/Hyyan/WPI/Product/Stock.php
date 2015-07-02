@@ -122,20 +122,23 @@ class Stock
             foreach ($translations as $ID) {
 
                 /* Only if product is managing stock */
-                if ($isManageStock && !$isVariation) {
+                if ($isManageStock) {
                     if (($translation = wc_get_product($ID))) {
                         $translation->$method($change);
-                        $general = Settings::getOption(
-                                        'general', MetasList::getID(), array()
-                        );
-                        if (in_array('total_sales', $general)) {
-                            update_post_meta(
-                                    $ID
-                                    , 'total_sales'
-                                    , get_post_meta($productID, 'total_sales', true)
-                            );
-                        }
                     }
+                }
+
+                $general = Settings::getOption(
+                                'general'
+                                , MetasList::getID()
+                                , array('total_sales')
+                );
+                if (in_array('total_sales', $general)) {
+                    update_post_meta(
+                            $ID
+                            , 'total_sales'
+                            , get_post_meta($productID, 'total_sales', true)
+                    );
                 }
             }
 
