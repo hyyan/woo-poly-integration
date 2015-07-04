@@ -57,7 +57,7 @@ class Duplicator
     {
         $screen = get_current_screen();
 
-        if ($screen->post_type !== 'product') {
+        if ($screen && $screen->post_type !== 'product') {
             return $capability;
         }
 
