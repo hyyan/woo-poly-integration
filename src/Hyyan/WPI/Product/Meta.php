@@ -244,7 +244,7 @@ class Meta
          */
         add_action('save_post', function ($_ID) {
             $product = get_product($_ID);
-            if ($product) {
+            if ($product && !isset($_GET['from_post'])) {
                 $type = $product->product_type;
                 update_post_meta($_ID, '_translation_porduct_type', $type);
             }
