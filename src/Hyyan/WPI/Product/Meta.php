@@ -164,6 +164,15 @@ class Meta
                     '_product_attributes',
                     '_default_attributes',
                 ),
+            ),
+            // Taxes
+            'Taxes' => array(
+                'name' => __('Taxes Metas', 'woo-poly-integration'),
+                'desc' => __('Taxes Metas', 'woo-poly-integration'),
+                'metas' => array(
+                    '_tax_status',
+                    '_tax_class',
+                ),
             )
         ));
 
