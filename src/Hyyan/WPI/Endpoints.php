@@ -69,6 +69,56 @@ class Endpoints
                 'current_screen'
                 , array($this, 'showFlashMessages')
         );
+        add_filter(
+                'woocommerce_get_checkout_payment_url'
+                , array($this, 'checkoutEndpoints')
+                , 100, 1
+        );
+    }
+
+    /**
+     * Filter correct checkout url for WooCommerce payment APIs
+     *
+     * Trim duplicate IDs out of URL
+     *
+     * @param string $pay_url the payment api endpoint
+     *
+     * @return string trimmed payment url 
+     */
+
+    public function checkoutEndpoints($pay_url) {
+
+        $order_pay_str = pll__('order-pay');
+        $order_received_str = pll__('order-received');
+        
+        // "/checkout/order-received/14/order-pay/14..." => "/checkout/order-pay/14..." 
+        if(strpos($pay_url, $order_pay_str) !== false && strpos($pay_url, $order_received_str) !== false) {
+            $first_part_end = strpos($pay_url, $order_received_str);
+            $second_part_start = strpos($pay_url, $order_pay_str);
+            $first_part = substr($pay_url, 0, $first_part_end);
+            $second_part = substr($pay_url, $second_part_start);
+
+            return $first_part . $order_received_str . '/' . $second_part;
+
+        } elseif(strpos($pay_url, $order_pay_str) !== false) {
+            // "/checkout/14/order-pay/14..." => "/checkout/order-pay/14..."
+            $first_part_end = strpos($pay_url, $order_pay_str) - 1; // remove trailing slash
+            $first_part = substr($pay_url, 0, $first_part_end); // ".../checkout/14"
+            $second_part = substr($pay_url, $first_part_end); // "/order-pay/14"
+            if(is_numeric(substr($first_part, -1, 1))) {
+                $id_digits_left = true;
+                while ($id_digits_left) {
+                    $first_part = substr($first_part, 0, -1); // remove one char from end
+                    if(!is_numeric(substr($first_part, -1, 1))) {
+                        $id_digits_left = false;
+                    }
+                }
+                $second_part = substr($second_part, 1); // remove first slash (avoid "//")
+                return $first_part . $second_part;
+            }
+        }
+        return $pay_url;
+
     }
 
     /**
