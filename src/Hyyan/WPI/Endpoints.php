@@ -51,11 +51,12 @@ class Endpoints
                 , array($this, 'updateRules')
                 , 100, 2
         );
-        add_filter(
+        //BUG FIXED WITH WC_Payment_Gateway::get_return_url()
+        /*add_filter(
                 'page_link'
                 , array($this, 'filterPermalink')
                 , 10, 2
-        );
+        );*/
         add_filter(
                 'pll_the_language_link'
                 , array($this, 'correctPolylangSwitcherLinks')
@@ -301,7 +302,7 @@ class Endpoints
     public function fixMyAccountLinkInMenus(array $items = array())
     {
         global $polylang;
-        $translations = $polylang->model->get_translations(
+        $translations = PLL()->model->post->get_translations(
                 'post', wc_get_page_id('myaccount')
         );
 
