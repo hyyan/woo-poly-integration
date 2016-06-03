@@ -301,7 +301,7 @@ class Endpoints
     public function fixMyAccountLinkInMenus(array $items = array())
     {
         global $polylang;
-        $translations = $polylang->model->get_translations(
+        $translations = PLL()->model->post->get_translations(
                 'post', wc_get_page_id('myaccount')
         );
 
