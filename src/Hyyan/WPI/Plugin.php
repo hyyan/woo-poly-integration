@@ -91,9 +91,16 @@ class Plugin
         );
 
         $plugins = apply_filters('active_plugins', get_option('active_plugins'));
-
+        
+        $multisite = is_multisite();
+        
+        $plugins_multisite = $multisite ? get_site_option( 'active_sitewide_plugins') : array();
+        
         foreach ($requiredPlugins as $name) {
-            if (!in_array($name, $plugins)) {
+            if ( ! $multisite && !in_array($name, $plugins) ){
+                return false;
+            }
+            if ( $multisite && !array_key_exists( $name, $plugins_multisite ) ){
                 return false;
             }
         }
