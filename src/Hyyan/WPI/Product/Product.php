@@ -39,7 +39,7 @@ class Product
         add_filter('admin_init', array($this, 'syncPostParent'));
 
         // get attributes in current language
-        add_filter('admin_init', array($this, 'getProductAttributesInLanguage'));
+        add_filter('woocommerce_product_attribute_terms', array($this, 'getProductAttributesInLanguage'));
 
         new Meta();
         new Variable();
