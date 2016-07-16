@@ -1,3 +1,13 @@
+###0.10
+
+* Added the ability to handle shop page translation
+
+###0.9
+
+* Refactoring Code 
+* Added support for variation products
+
+
 ###0.8
 
 * Refactoring Code 
