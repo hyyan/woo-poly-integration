@@ -64,78 +64,6 @@ class Endpoints
                 'current_screen'
                 , array($this, 'showFlashMessages')
         );
-        add_filter(
-                'woocommerce_get_checkout_payment_url'
-                , array($this, 'checkoutEndpoints')
-                , 100, 1
-        );
-    }
-
-    /**
-     * Filter correct checkout url for WooCommerce payment APIs
-     *
-     * Trim duplicate IDs out of URL
-     *
-     * @param string $url the payment api endpoint
-     *
-     * @return string trimmed payment url 
-     */
-    public function checkoutEndpoints($url)
-    {
-
-        $orderPayString = pll__('order-pay');
-        $orderReceivedString = pll__('order-received');
-
-        // "/checkout/order-received/14/order-pay/14..." => 
-        // "/checkout/order-pay/14..." 
-        
-        if (
-                strpos($url, $orderPayString) !== false &&
-                strpos($url, $orderReceivedString) !== false
-        ) {
-
-            $firstPartEnd = strpos($url, $orderReceivedString);
-            $secondPartStart = strpos($url, $orderPayString);
-            $firstPart = substr($url, 0, $firstPartEnd);
-            $secondPart = substr($url, $secondPartStart);
-
-            return $firstPart
-                    . $orderReceivedString
-                    . '/'
-                    . $secondPart;
-        } elseif (strpos($url, $orderPayString) !== false) {
-            
-            // "/checkout/14/order-pay/14..." => "/checkout/order-pay/14..."
-            
-            // remove trailing slash
-            $firstPartEnd = strpos($url, $orderPayString) - 1; 
-            
-            // ".../checkout/14"
-            $firstPart = substr($url, 0, $firstPartEnd); 
-            
-            // "/order-pay/14"
-            $secondPart = substr($url, $firstPartEnd); 
-            
-            if (is_numeric(substr($firstPart, -1, 1))) {
-                $idDigitsLeft = true;
-                while ($idDigitsLeft) {
-                    
-                    // remove one char from end
-                    $firstPart = substr($firstPart, 0, -1); 
-                    
-                    if (!is_numeric(substr($firstPart, -1, 1))) {
-                        $idDigitsLeft = false;
-                    }
-                }
-                
-                // remove first slash (avoid "//")
-                $secondPart = substr($secondPart, 1); 
-                
-                return $firstPart . $secondPart;
-            }
-        }
-        
-        return $url;
     }
 
     /**
@@ -257,7 +185,6 @@ class Endpoints
             $url = trailingslashit($permalink)
                     . $endpoint
                     . '/'
-                    . $value
                     . $query_string;
         } else {
             $url = add_query_arg($endpoint, $value, $permalink);
