@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
             </a>
         </li>
         <li>
-            <a href="mailto:tiribthea4hyyan@gmail.com" target="_blank">
+            <a href="mailto:hyyanaf@gmail.com" target="_blank">
                 <?php _e('On Email', 'woo-poly-integration'); ?>
             </a>
         </li>

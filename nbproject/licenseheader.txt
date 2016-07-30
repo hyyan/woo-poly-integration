@@ -2,7 +2,7 @@
 ${licenseFirst}
 </#if>
 ${licensePrefix}This file is part of the hyyan/woo-poly-integratiion plugin.
-${licensePrefix}(c) Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
+${licensePrefix}(c) Hyyan Abo Fakher <hyyanaf@gmail.com>
 ${licensePrefix}
 ${licensePrefix}For the full copyright and license information, please view the LICENSE
 ${licensePrefix}file that was distributed with this source code.

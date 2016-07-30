@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,7 +18,7 @@ use Hyyan\WPI\Admin\Settings,
  *
  * Handle coupon with products translations
  *
- * @author Hyyan Abo Fakher <tiribthea4hyyan@gmail.com>
+ * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Coupon
 {
