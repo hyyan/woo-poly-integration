@@ -1,4 +1,12 @@
-###0.26 (Not Released)
+###0.27 (Not Released)
+
+* Fixed Issue #42
+* Fixed Issue #43
+* Fixed Issue #44
+* Fixed Issue #45
+
+
+###0.26 (Not Released In Wordpress.org)
 
 * Fixed product duplication in shop page when default language is changed
 * Fixed total sales is syned even if product is not managing stock
