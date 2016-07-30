@@ -9,6 +9,6 @@ if (!defined('ABSPATH')) {
 <a href="https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE" target="_blank">
     <img src="https://poser.pugx.org/hyyan/woo-poly-integration/license.svg"/>
 </a>
-<a href="http://stillmaintained.com/hyyan/woo-poly-integration" target="_blank">
-    <img src="http://stillmaintained.com/hyyan/woo-poly-integration.png" />
+<a href="http://www.gitchecker.com/hyyan/woo-poly-integration" target="_blank">
+    <img src="http://www.repostatus.org/badges/latest/active.svg" />
 </a>
