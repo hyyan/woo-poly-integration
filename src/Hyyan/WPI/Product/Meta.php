@@ -45,13 +45,13 @@ class Meta
     public function syncProductsMeta()
     {
 
-        // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
-
         $currentScreen = get_current_screen();
 
         if ($currentScreen->post_type !== 'product')
             return false;
+            
+        // sync product meta with polylang
+        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
 
         $ID = false;
         $disable = false;
