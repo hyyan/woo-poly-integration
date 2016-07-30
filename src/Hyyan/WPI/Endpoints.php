@@ -76,44 +76,66 @@ class Endpoints
      *
      * Trim duplicate IDs out of URL
      *
-     * @param string $pay_url the payment api endpoint
+     * @param string $url the payment api endpoint
      *
      * @return string trimmed payment url 
      */
+    public function checkoutEndpoints($url)
+    {
 
-    public function checkoutEndpoints($pay_url) {
+        $orderPayString = pll__('order-pay');
+        $orderReceivedString = pll__('order-received');
 
-        $order_pay_str = pll__('order-pay');
-        $order_received_str = pll__('order-received');
+        // "/checkout/order-received/14/order-pay/14..." => 
+        // "/checkout/order-pay/14..." 
         
-        // "/checkout/order-received/14/order-pay/14..." => "/checkout/order-pay/14..." 
-        if(strpos($pay_url, $order_pay_str) !== false && strpos($pay_url, $order_received_str) !== false) {
-            $first_part_end = strpos($pay_url, $order_received_str);
-            $second_part_start = strpos($pay_url, $order_pay_str);
-            $first_part = substr($pay_url, 0, $first_part_end);
-            $second_part = substr($pay_url, $second_part_start);
+        if (
+                strpos($url, $orderPayString) !== false &&
+                strpos($url, $orderReceivedString) !== false
+        ) {
 
-            return $first_part . $order_received_str . '/' . $second_part;
+            $firstPartEnd = strpos($url, $orderReceivedString);
+            $secondPartStart = strpos($url, $orderPayString);
+            $firstPart = substr($url, 0, $firstPartEnd);
+            $secondPart = substr($url, $secondPartStart);
 
-        } elseif(strpos($pay_url, $order_pay_str) !== false) {
+            return $firstPart
+                    . $orderReceivedString
+                    . '/'
+                    . $secondPart;
+        } elseif (strpos($url, $orderPayString) !== false) {
+            
             // "/checkout/14/order-pay/14..." => "/checkout/order-pay/14..."
-            $first_part_end = strpos($pay_url, $order_pay_str) - 1; // remove trailing slash
-            $first_part = substr($pay_url, 0, $first_part_end); // ".../checkout/14"
-            $second_part = substr($pay_url, $first_part_end); // "/order-pay/14"
-            if(is_numeric(substr($first_part, -1, 1))) {
-                $id_digits_left = true;
-                while ($id_digits_left) {
-                    $first_part = substr($first_part, 0, -1); // remove one char from end
-                    if(!is_numeric(substr($first_part, -1, 1))) {
-                        $id_digits_left = false;
+            
+            // remove trailing slash
+            $firstPartEnd = strpos($url, $orderPayString) - 1; 
+            
+            // ".../checkout/14"
+            $firstPart = substr($url, 0, $firstPartEnd); 
+            
+            // "/order-pay/14"
+            $secondPart = substr($url, $firstPartEnd); 
+            
+            if (is_numeric(substr($firstPart, -1, 1))) {
+                $idDigitsLeft = true;
+                while ($idDigitsLeft) {
+                    
+                    // remove one char from end
+                    $firstPart = substr($firstPart, 0, -1); 
+                    
+                    if (!is_numeric(substr($firstPart, -1, 1))) {
+                        $idDigitsLeft = false;
                     }
                 }
-                $second_part = substr($second_part, 1); // remove first slash (avoid "//")
-                return $first_part . $second_part;
+                
+                // remove first slash (avoid "//")
+                $secondPart = substr($secondPart, 1); 
+                
+                return $firstPart . $secondPart;
             }
         }
-        return $pay_url;
-
+        
+        return $url;
     }
 
     /**
