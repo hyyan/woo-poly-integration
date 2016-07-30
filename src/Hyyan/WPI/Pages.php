@@ -64,6 +64,11 @@ class Pages
      */
     public function getPostTranslationID($id)
     {
+
+        if (!function_exists('pll_get_post')) {
+            return $id;
+        }
+        
         $translatedID = pll_get_post($id);
 
         if ($translatedID) {
