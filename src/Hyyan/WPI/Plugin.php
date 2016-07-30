@@ -85,20 +85,24 @@ class Plugin
      */
     public static function canActivate()
     {
-        $requiredPlugins = array(
-            'polylang/polylang.php',
-            'woocommerce/woocommerce.php'
-        );
-
         $plugins = apply_filters('active_plugins', get_option('active_plugins'));
+        $polylang = false;
+        $woocommerce = false;
 
-        foreach ($requiredPlugins as $name) {
-            if (!in_array($name, $plugins)) {
-                return false;
-            }
+        // check polylang plugin 
+        if (
+                in_array('polylang/polylang.php', $plugins) ||
+                in_array('polyland_pro/polylang.php', $plugins)
+        ) {
+            $polylang = true;
+        }
+        
+        // check woocommerce plugin 
+        if (in_array('woocommerce/woocommerce.php', $plugins)) {
+            $woocommerce = true;
         }
 
-        return true;
+        return $polylang && $woocommerce;
     }
 
     /**
