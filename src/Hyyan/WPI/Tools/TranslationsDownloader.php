@@ -154,7 +154,7 @@ class TranslationsDownloader
     public static function getRepoUrl()
     {
         $url = sprintf(
-                'https://github.com/woothemes/woocommerce-language-packs/raw/v%s/packages'
+                'https://downloads.wordpress.org/translation/plugin/woocommerce/%s'
                 , WC()->version
         );
 
