@@ -102,9 +102,9 @@ class Order
      */
     public function translateProductsInOrdersDetails($product)
     {
-        if($product){
+        if ($product) {
             return Utilities::getProductTranslationByObject($product);
-        }else{
+        } else {
             return false;
         }
     }
@@ -124,13 +124,13 @@ class Order
     {
         $id = $item['item_meta']['_product_id'][0];
         $product = Utilities::getProductTranslationByID($id);
-        if($product){
+        if ($product) {
             if (!$product->is_visible()) {
                 return $product->post->post_title;
             } else {
                 return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
             }
-        }else{
+        } else {
             return $name;
         }
     }
