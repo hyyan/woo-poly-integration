@@ -52,11 +52,6 @@ class Endpoints
                 , 100, 2
         );
         add_filter(
-                'page_link'
-                , array($this, 'filterPermalink')
-                , 10, 2
-        );
-        add_filter(
                 'pll_the_language_link'
                 , array($this, 'correctPolylangSwitcherLinks')
                 , 10, 2
@@ -165,63 +160,6 @@ class Endpoints
         foreach ($this->endpoints as $endpoint) {
             add_rewrite_endpoint(pll__($endpoint), EP_ROOT | EP_PAGES);
         }
-    }
-
-    /**
-     * Filter Permalink
-     *
-     * Filter permalinks to include the current endpoint translation
-     *
-     * @global \WP_Post $post
-     * @global \WP $wp
-     *
-     * @param string  $link post permalink
-     * @param integer $ID   post ID
-     *
-     * @return string filtered permalink
-     */
-    public function filterPermalink($link, $ID)
-    {
-        global $post, $wp;
-
-        if (!isset($post->ID) || is_admin()) {
-            return $link;
-        }
-
-        $pageLang = pll_get_post_language($post->ID);
-
-        if (icl_object_id($ID, 'page', false, $pageLang) !== $post->ID) {
-            return $link;
-        }
-
-        $endpoints = WC()->query->get_query_vars();
-        foreach ($endpoints as $key => $endpoint) {
-
-            if (!isset($wp->query_vars[$key])) {
-                continue;
-            }
-
-            if (in_array($key, array('pay', 'order-received'))) {
-                $endpoint = get_option(
-                        'woocommerce_checkout_'
-                        . str_replace('-', '_', $key)
-                        . '_endpoint'
-                );
-            } else {
-                $endpoint = get_option(
-                        'woocommerce_myaccount_'
-                        . str_replace('-', '_', $key)
-                        . '_endpoint'
-                );
-            }
-            $link = $this->rebuildUrl(
-                    $this->getEndpointTranslation($endpoint)
-                    , $wp->query_vars[$key]
-                    , $link
-            );
-        }
-
-        return $link;
     }
 
     /**
