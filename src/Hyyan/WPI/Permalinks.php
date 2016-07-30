@@ -18,8 +18,8 @@ namespace Hyyan\WPI;
 class Permalinks
 {
     const PRODUCT_BASE = '/product';
-    const PRODUCT_CATEGORY_BASE = 'prodcut-category';
-    const PRODUCT_TAG_BASE = 'prodcut-tags';
+    const PRODUCT_CATEGORY_BASE = 'product-category';
+    const PRODUCT_TAG_BASE = 'product-tags';
 
     /**
      * Construct object

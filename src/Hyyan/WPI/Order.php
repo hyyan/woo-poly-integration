@@ -110,12 +110,12 @@ class Order
     }
 
     /**
-     * Translate the prodcut name in order details page
+     * Translate the product name in order details page
      *
-     * @param string $name prodcut name
+     * @param string $name product name
      * @param array  $item order item
      *
-     * @return string prodcut name
+     * @return string product name
      *
      * @todo should I remove this filter and let handle the translation in the
      *       theme file?

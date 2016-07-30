@@ -83,7 +83,7 @@ final class Utilities
      * @param \WC_Product $product the product to use to retirve translation
      * @param string      $slug    the language slug
      *
-     * @return \WC_Product product translation or same prodcut if translaion not found
+     * @return \WC_Product product translation or same product if translaion not found
      */
     public static function getProductTranslationByObject(\WC_Product $product, $slug = '')
     {

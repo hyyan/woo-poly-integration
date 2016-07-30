@@ -16,7 +16,7 @@ use Hyyan\WPI\HooksInterface,
     Hyyan\WPI\Admin\MetasList;
 
 /**
- * Prodcut Meta
+ * product Meta
  *
  * Handle product meta sync
  *
@@ -85,8 +85,8 @@ class Meta
             );
         }
 
-        /* sync selected prodcut type */
-        $this->syncSelectedProdcutType($ID);
+        /* sync selected product type */
+        $this->syncSelectedproductType($ID);
     }
 
     /**
@@ -243,7 +243,7 @@ class Meta
      *
      * @param integer $ID product type
      */
-    protected function syncSelectedProdcutType($ID = null)
+    protected function syncSelectedproductType($ID = null)
     {
         /*
          * First we add save_post action to save the porduct type
