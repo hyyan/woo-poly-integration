@@ -39,7 +39,10 @@ class Product
         add_filter('admin_init', array($this, 'syncPostParent'));
 
         // get attributes in current language
-        add_filter('woocommerce_product_attribute_terms', array($this, 'getProductAttributesInLanguage'));
+        add_filter(
+                'woocommerce_product_attribute_terms'
+                , array($this, 'getProductAttributesInLanguage')
+        );
 
         new Meta();
         new Variable();
@@ -88,22 +91,27 @@ class Product
     /**
      * Get product attributes in right language
      *
-     * @param array $args array of arguments for get_terms function in WooCommerce attributes html markup
+     * @param array $args array of arguments for get_terms function in WooCommerce 
+     *                    attributes html markup
      *
      * @return array
      */
     public function getProductAttributesInLanguage($args)
     {
-        $lang = '';
+
         global $post;
-        if(isset($_GET['new_lang'])) {
+        $lang = '';
+
+        if (isset($_GET['new_lang'])) {
             $lang = esc_attr($_GET['new_lang']);
-        } elseif(!empty($post)) {
+        } elseif (!empty($post)) {
             $lang = pll_get_post_language($post->ID);
         } else {
             $lang = PLL()->pref_lang;
         }
+
         $args['lang'] = $lang;
+
         return $args;
     }
 
