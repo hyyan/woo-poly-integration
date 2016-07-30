@@ -1,6 +1,7 @@
 ###0.27 (Not Released)
 
 * Updated [TranslationsDownloader](https://github.com/hyyan/woo-poly-integration/pull/32) to fetch languages files from woocommerce translation project
+* Fixed Issue #16
 * Fixed Issue #42
 * Fixed Issue #42
 * Fixed Issue #43
