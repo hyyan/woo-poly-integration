@@ -26,7 +26,7 @@ final class Utilities
      * @global \Polylang $polylang
      *
      * @param integer $ID             the product ID
-     * @param boolean $excludeDefault ture to exclude defualt language
+     * @param boolean $excludeDefault true to exclude default language
      *
      * @return array associative array with language code as key and ID of translations
      *               as value.
@@ -48,7 +48,7 @@ final class Utilities
      * @see \Hyyan\WPI\getProductTranslationsByID()
      *
      * @param \WC_Product $product        the product object
-     * @param boolean     $excludeDefault ture to exclude defualt language
+     * @param boolean     $excludeDefault true to exclude default language
      *
      * @return array associative array with language code as key and ID of translations
      *               as value.
@@ -59,9 +59,9 @@ final class Utilities
     }
 
     /**
-     * Get porduct translation by ID
+     * Get product translation by ID
      *
-     * @param integer $ID   the porduct ID
+     * @param integer $ID   the product ID
      * @param string  $slug the language slug
      *
      * @return \WC_Product|false product translation if found , false if the
@@ -80,7 +80,7 @@ final class Utilities
     /**
      * Get product translation by object
      *
-     * @param \WC_Product $product the product to use to retirve translation
+     * @param \WC_Product $product the product to use to retrive translation
      * @param string      $slug    the language slug
      *
      * @return \WC_Product product translation or same product if translaion not found
@@ -98,13 +98,13 @@ final class Utilities
     }
 
     /**
-     * Get polylang langauge entity
+     * Get polylang language entity
      *
      * @global \Polylang $polylang
      *
      * @param string $slug the language slug
      *
-     * @return \PLL_Language|false language entity in success , false otherwise
+     * @return \PLL_Language|false language entity on success , false otherwise
      */
     public static function getLanguageEntity($slug)
     {
@@ -127,7 +127,7 @@ final class Utilities
      * @global \Polylang $polylang
      *
      * @param integer $ID             term id
-     * @param boolean $excludeDefault ture to exclude defualt language
+     * @param boolean $excludeDefault true to exclude default language
      *
      * @return array associative array with language code as key and ID of translations
      *               as value.
@@ -199,6 +199,26 @@ final class Utilities
         } else {
             return $result;
         }
+    }
+
+    /**
+     * Check WooCommerce version
+     *
+     * Check if you are running a specified WooCommerce version (or higher)
+     *
+     * @param string    $version    Version to check agains. (Default: 2.6)
+     *
+     * @return boolean  true if running version is equal or higher, false otherwise
+     */
+    public static function woocommerceVersionCheck( $version = '2.6' ) {
+
+        global $woocommerce;
+
+        if( version_compare( $woocommerce->version, $version, ">=" ) ) {
+            return true;
+        }
+
+        return false;
     }
 
 }

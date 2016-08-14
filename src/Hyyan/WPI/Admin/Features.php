@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Admin;
 
+use Hyyan\WPI\Utilities;
+
 /**
  * Features
  *
@@ -76,7 +78,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Reports', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable reports langauge filtering and combining'
+                        'Enable reports language filtering and combining'
                         , 'woo-poly-integration'
                 )
             ),
@@ -126,7 +128,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Translate Attributes', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable Attributes translations'
+                        'Enable attributes translations'
                         , 'woo-poly-integration'
                 )
             ),
@@ -134,9 +136,9 @@ class Features extends AbstractSettings
                 'name' => 'shipping-class',
                 'type' => 'checkbox',
                 'default' => 'off',
-                'label' => __('Translate ShippingClass', 'woo-poly-integration'),
+                'label' => __('Translate Shipping Classes', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable ShippingClass translations'
+                        'Enable shipping classes translations' . ( Utilities::woocommerceVersionCheck( '2.6' ) ? ' (not supported for WooCommerce versions >= 2.6)' : '' )
                         , 'woo-poly-integration'
                 )
             )
