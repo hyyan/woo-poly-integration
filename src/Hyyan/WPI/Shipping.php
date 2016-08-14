@@ -31,7 +31,7 @@ class Shipping
 
         // Shipping Class translation is not supported after WooCommerce 2.6
         // Note: WooCommerce change the Shipping Class interface and is no longer
-        // using the same actions and filters as WordPress. Therefore PolylanTo
+        // using the same actions and filters as WordPress. Therefore Polylang
         // can't display the languages columns and metabox for custom post types
         // and taxonomies.
         if ( Utilities::woocommerceVersionCheck( '2.6' ) ) {
