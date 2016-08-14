@@ -31,8 +31,6 @@ class Plugin
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
 
-        /* Registered anyway */
-        new Emails();
     }
 
     /**
@@ -148,6 +146,7 @@ class Plugin
      */
     protected function registerCore()
     {
+        new Emails();
         new Admin\Settings();
         new Cart();
         new Login();
