@@ -78,7 +78,7 @@ class MetasList extends AbstractSettings
     }
 
     /**
-     * Normalize string by removing "_", and leading ans trailing spaces from string
+     * Normalize string by removing "_", and leading and trailing spaces from string
      *
      * @param string $string
      *
