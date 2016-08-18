@@ -1,3 +1,14 @@
+/*
+ * This file is part of the hyyan/woo-poly-integration plugin.
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Modified WooCommerce cart-fragments.js script to break HTML5 fragment caching. 
+ * Useful when switching languages. Adds support new Cart page ajax.
+ **/
+
 /* global wc_cart_fragments_params */
 jQuery( function( $ ) {
 
