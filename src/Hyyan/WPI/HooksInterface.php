@@ -164,4 +164,24 @@ interface HooksInterface
      */
     const LANGUAGE_REPO_URL_FILTER = 'woo-poly.language.repoUrl';
 
+    /**
+     * Load Payment Gateway Extention
+     *
+     * The action is fired when this plugin is initialised and allows other plugins
+     * to load payment gateways extentions or change the gateway object to
+     * enable Polylang support.
+     *
+     * The action can be used to load a class extention for a given payment gateway
+     *
+     * for instance :
+     *
+     * <code>
+     * add_action(HooksInterface::GATEWAY_LOAD_EXTENTION . $gateway->id,function ($gateway, $available_gateways) {
+     *
+     *        // do whatever you want here
+     * });
+     * </code>
+     */
+    const GATEWAY_LOAD_EXTENTION = 'woo-poly.gateway.loadClassExtention.';
+    
 }
