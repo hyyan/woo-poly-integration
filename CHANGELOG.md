@@ -1,3 +1,10 @@
+###0.28(Not Released)
+
+* [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)
+* [Fixed shipment methods translation and added support for WooCommerce 2.6.](https://github.com/hyyan/woo-poly-integration/pull/50)
+* [Fixed payment gateways translation] (https://github.com/hyyan/woo-poly-integration/pull/52)
+* [WC2.6 cart page ajax support] (https://github.com/hyyan/woo-poly-integration/pull/53)
+
 ###0.27
 
 * Updated [TranslationsDownloader](https://github.com/hyyan/woo-poly-integration/pull/32) to fetch languages files from woocommerce translation project

@@ -2,8 +2,8 @@
 Contributors: hyyan
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 0.27
+Tested up to: 4.6
+Stable tag: 0.28 (Not Released)
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -111,6 +111,12 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+= 0.28 =
+* [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)
+* [Fixed shipment methods translation and added support for WooCommerce 2.6.](https://github.com/hyyan/woo-poly-integration/pull/50)
+* [Fixed payment gateways translation] (https://github.com/hyyan/woo-poly-integration/pull/52)
+* [WC2.6 cart page ajax support] (https://github.com/hyyan/woo-poly-integration/pull/53)
+
 = 0.27 =
 * Updated [TranslationsDownloader](https://github.com/hyyan/woo-poly-integration/pull/32) to fetch languages files from woocommerce translation project
 * Fixed Issue [#12 : Wrong Return URL after Payment](https://github.com/hyyan/woo-poly-integration/issues/12)
@@ -197,3 +203,7 @@ new bug fixes
 
 = 0.25 =
 The release includes important fixes , update immediately 
+
+= 0.28 =
+The release includes important fixes and updates for latest version of 
+woocommerce and polylang , please update immediately 
