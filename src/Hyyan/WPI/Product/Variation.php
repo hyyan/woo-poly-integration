@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
 namespace Hyyan\WPI\Product;
 
 /**
- * Variation
+ * Variation.
  *
  * Handle Variation Duplicate
  *
@@ -32,7 +32,7 @@ class Variation
     protected $to;
 
     /**
-     * Construct object
+     * Construct object.
      *
      * @param \WC_Product_Variable $from the product which contains variations to
      *                                   copy from
@@ -45,13 +45,12 @@ class Variation
     }
 
     /**
-     * Handle variation duplicate
+     * Handle variation duplicate.
      *
-     * @return boolean false if the from product conatins no variatoins
+     * @return bool false if the from product conatins no variatoins
      */
     public function duplicate()
     {
-
         $fromVariation = $this->from->get_available_variations();
 
         if (empty($fromVariation)) {
@@ -67,15 +66,11 @@ class Variation
             foreach ($fromVariation as $variation) {
                 if (
                         !metadata_exists(
-                                'post'
-                                , $variation['variation_id']
-                                , self::DUPLICATE_KEY
+                                'post', $variation['variation_id'], self::DUPLICATE_KEY
                         )
                 ) {
                     update_post_meta(
-                            $variation['variation_id']
-                            , self::DUPLICATE_KEY
-                            , $variation['variation_id']
+                            $variation['variation_id'], self::DUPLICATE_KEY, $variation['variation_id']
                     );
                 }
             }
@@ -95,19 +90,17 @@ class Variation
                     'meta_key' => self::DUPLICATE_KEY,
                     'meta_value' => $variation['variation_id'],
                     'post_type' => 'product_variation',
-                    'post_parent' => $this->to->id
+                    'post_parent' => $this->to->id,
                 ));
 
                 switch (count($posts)) {
                     case 1:
                         // update
                         $this->update(
-                                wc_get_product($variation['variation_id'])
-                                , $posts[0]
-                                , $variation
+                                wc_get_product($variation['variation_id']), $posts[0], $variation
                         );
                         break;
-                    case 0 :
+                    case 0:
                         // insert
                         $this->insert(wc_get_product($variation['variation_id']), $variation);
                         break;
@@ -123,9 +116,9 @@ class Variation
     }
 
     /**
-     * Get array of variations IDS which point to the given variation ID
+     * Get array of variations IDS which point to the given variation ID.
      *
-     * @param integer $variatonID variation ID
+     * @param int $variatonID variation ID
      *
      * @return array array of posts
      */
@@ -133,16 +126,14 @@ class Variation
     {
         $result = array();
         $poinTo = get_post_meta(
-                $variatonID
-                , self::DUPLICATE_KEY
-                , true
+                $variatonID, self::DUPLICATE_KEY, true
         );
 
         if ($poinTo) {
             $result = get_posts(array(
                 'meta_key' => self::DUPLICATE_KEY,
                 'meta_value' => $poinTo,
-                'post_type' => 'product_variation'
+                'post_type' => 'product_variation',
             ));
 
             if (true === $returnIDS) {
@@ -158,9 +149,9 @@ class Variation
     }
 
     /**
-     * Delete all variation related to the given variation ID
+     * Delete all variation related to the given variation ID.
      *
-     * @param integer $variationID variation ID
+     * @param int $variationID variation ID
      */
     public static function deleteRelatedVariation($variationID)
     {
@@ -171,15 +162,13 @@ class Variation
     }
 
     /**
-     * Create new variation
+     * Create new variation.
      *
      * @param \WC_Product_Variation $variation the variation product
-     *
-     * @param array $metas variation array
+     * @param array                 $metas     variation array
      */
     protected function insert(\WC_Product_Variation $variation, array $metas)
     {
-
         $data = (array) get_post($variation->variation_id);
         unset($data['ID']);
         $data['post_parent'] = $this->to->id;
@@ -187,9 +176,7 @@ class Variation
 
         if ($ID) {
             update_post_meta(
-                    $ID
-                    , self::DUPLICATE_KEY
-                    , $metas['variation_id']
+                    $ID, self::DUPLICATE_KEY, $metas['variation_id']
             );
 
             $this->copyVariationMetas($variation->variation_id, $ID);
@@ -197,7 +184,7 @@ class Variation
     }
 
     /**
-     * Update variation product from given post object
+     * Update variation product from given post object.
      *
      * @param \WC_Product_Variation $variation
      * @param \WP_Post              $post
@@ -209,13 +196,13 @@ class Variation
     }
 
     /**
-     * Copy variation meta
+     * Copy variation meta.
      *
      * The method follow the same method polylang use to sync metas between
      * translations
      *
-     * @param integer $from product variation ID
-     * @param integer $to   product variation ID
+     * @param int $from product variation ID
+     * @param int $to   product variation ID
      */
     protected function copyVariationMetas($from, $to)
     {
@@ -258,5 +245,4 @@ class Variation
             }
         }
     }
-
 }

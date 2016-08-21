@@ -19,8 +19,7 @@ if (!defined('ABSPATH')) {
         If you speak langauge other than English ,
         you can support the plugin by extending the
         trasnlation list. and your name will be added
-        to translators list'
-            , 'woo-poly-integration'
+        to translators list', 'woo-poly-integration'
     );
     ?>
     <br><br>

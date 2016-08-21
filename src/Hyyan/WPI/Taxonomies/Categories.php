@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,79 +14,66 @@ use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Utilities;
 
 /**
- * Categories
+ * Categories.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Categories implements TaxonomiesInterface
 {
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         /* Handle product category custom fiedlds */
         add_action(
-                'product_cat_add_form_fields'
-                , array($this, 'copyProductCatCustomFields')
-                , 11
+                'product_cat_add_form_fields', array($this, 'copyProductCatCustomFields'), 11
         );
         add_action(
-                'created_term'
-                , array($this, 'syncProductCatCustomFields')
-                , 11
-                , 3
+                'created_term', array($this, 'syncProductCatCustomFields'), 11, 3
         );
         add_action(
-                'edit_term'
-                , array($this, 'syncProductCatCustomFields')
-                , 11
-                , 3
+                'edit_term', array($this, 'syncProductCatCustomFields'), 11, 3
         );
     }
 
     /**
-     * Sync Product Category Custom Fields
+     * Sync Product Category Custom Fields.
      *
      * Keep product categories translation synced
      *
-     * @param integer $termID   the term id
-     * @param integer $ttID     ?
-     * @param string  $taxonomy the taxonomy name
+     * @param int    $termID   the term id
+     * @param int    $ttID     ?
+     * @param string $taxonomy the taxonomy name
      */
     public function syncProductCatCustomFields($termID, $ttID = '', $taxonomy = '')
     {
         if (isset($_POST['display_type']) && 'product_cat' === $taxonomy) {
             $this->doSyncProductCatCustomFields(
-                    $termID
-                    , 'display_type'
-                    , esc_attr($_POST['display_type'])
+                    $termID, 'display_type', esc_attr($_POST['display_type'])
             );
         }
         if (isset($_POST['product_cat_thumbnail_id']) && 'product_cat' === $taxonomy) {
             $this->doSyncProductCatCustomFields(
-                    $termID
-                    , 'thumbnail_id'
-                    , absint($_POST['product_cat_thumbnail_id'])
+                    $termID, 'thumbnail_id', absint($_POST['product_cat_thumbnail_id'])
             );
         }
 
         if ('product_cat' === $taxonomy) {
             /* Allow other plugins to check for category custom fields */
             do_action(
-                    HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS
-                    , $this, $termID, $taxonomy
+                    HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS, $this, $termID, $taxonomy
             );
         }
     }
 
     /**
-     * Copy product Category Custom fields
+     * Copy product Category Custom fields.
      *
      * Copy the category custom fields from orginal category to its translations
      * when we start adding new category translation
      *
-     * @return boolean false if this action must not be executed
+     * @return bool false if this action must not be executed
      */
     public function copyProductCatCustomFields()
     {
@@ -101,8 +88,7 @@ class Categories implements TaxonomiesInterface
         $thumbID = absint(get_woocommerce_term_meta($ID, 'thumbnail_id', true));
         $image = $thumbID ?
                 wp_get_attachment_thumb_url($thumbID) :
-                wc_placeholder_img_src();
-        ?>
+                wc_placeholder_img_src(); ?>
         <script type="text/javascript">
             jQuery('document').ready(function ($) {
                 $('#display_type option[value="<?php echo $type ?>"]')
@@ -118,16 +104,15 @@ class Categories implements TaxonomiesInterface
 
         /* Allow other plugins to check for category custom fields */
         do_action(
-                HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS
-                , $ID
+                HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS, $ID
         );
     }
     /**
-     * Do sync category custom fields
+     * Do sync category custom fields.
      *
-     * @param integer $ID    the term ID
-     * @param string  $key   the key
-     * @param mixed   $value the value
+     * @param int    $ID    the term ID
+     * @param string $key   the key
+     * @param mixed  $value the value
      */
     public function doSyncProductCatCustomFields($ID, $key, $value = '')
     {
@@ -139,11 +124,10 @@ class Categories implements TaxonomiesInterface
     }
 
     /**
-     * @{inheritdoc}
+     * {@inheritdoc}
      */
     public static function getNames()
     {
         return array('product_cat');
     }
-
 }

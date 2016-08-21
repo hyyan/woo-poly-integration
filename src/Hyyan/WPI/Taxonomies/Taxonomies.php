@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,25 +10,25 @@
 
 namespace Hyyan\WPI\Taxonomies;
 
-use Hyyan\WPI\Admin\Settings,
-    Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Features;
 
 /**
- * Taxonomies
+ * Taxonomies.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Taxonomies
 {
     /**
-     * Managed taxonomies
+     * Managed taxonomies.
      *
      * @var array
      */
     protected $managed = array();
 
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
@@ -37,13 +37,12 @@ class Taxonomies
 
         /* Manage taxonomies translation */
         add_filter(
-                'pll_get_taxonomies'
-                , array($this, 'manageTaxonomiesTranslation')
+                'pll_get_taxonomies', array($this, 'manageTaxonomiesTranslation')
         );
     }
 
     /**
-     * Notifty polylang about product taxonomies
+     * Notifty polylang about product taxonomies.
      *
      * @param array $taxonomies array of cutoms taxonomies managed by polylang
      *
@@ -51,7 +50,6 @@ class Taxonomies
      */
     public function manageTaxonomiesTranslation($taxonomies)
     {
-
         $supported = $this->prepareAndGet();
         $add = $supported[0];
         $remove = $supported[1];
@@ -83,7 +81,7 @@ class Taxonomies
     }
 
     /**
-     * Get managed taxonomies
+     * Get managed taxonomies.
      *
      * @return array taxonomies that must be added and removed to polylang
      */
@@ -95,11 +93,10 @@ class Taxonomies
             'attributes' => 'Hyyan\WPI\Taxonomies\Attributes',
             'categories' => 'Hyyan\WPI\Taxonomies\Categories',
             'tags' => 'Hyyan\WPI\Taxonomies\Tags',
-            'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss'
+            'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss',
         );
 
         foreach ($supported as $option => $class) {
-
             $names = $class::getNames();
             if ('on' === Settings::getOption($option, Features::getID(), 'on')) {
                 $add = array_merge($add, $names);
@@ -113,5 +110,4 @@ class Taxonomies
 
         return array($add, $remove);
     }
-
 }

@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,7 @@ namespace Hyyan\WPI\Admin;
 use Hyyan\WPI\HooksInterface;
 
 /**
- * Settings
+ * Settings.
  *
  * Admin settings page
  *
@@ -21,9 +21,8 @@ use Hyyan\WPI\HooksInterface;
  */
 class Settings extends \WeDevs_Settings_API
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
@@ -36,7 +35,7 @@ class Settings extends \WeDevs_Settings_API
     }
 
     /**
-     * Initialize settings
+     * Initialize settings.
      */
     public function init()
     {
@@ -49,21 +48,17 @@ class Settings extends \WeDevs_Settings_API
     }
 
     /**
-     * Add plugin menu
+     * Add plugin menu.
      */
     public function registerMenu()
     {
         add_options_page(
-                __('Hyyan WooCommerce Polylang Integration', 'woo-poly-integration')
-                , __('WooPoly', 'woo-poly-integration')
-                , 'delete_posts'
-                , 'hyyan-wpi'
-                , array($this, 'outputPage')
+                __('Hyyan WooCommerce Polylang Integration', 'woo-poly-integration'), __('WooPoly', 'woo-poly-integration'), 'delete_posts', 'hyyan-wpi', array($this, 'outputPage')
         );
     }
 
     /**
-     * Get sections
+     * Get sections.
      *
      * Get setting sections array to register
      *
@@ -75,7 +70,7 @@ class Settings extends \WeDevs_Settings_API
     }
 
     /**
-     * Returns all the settings fields
+     * Returns all the settings fields.
      *
      * @return array settings fields
      */
@@ -85,17 +80,17 @@ class Settings extends \WeDevs_Settings_API
     }
 
     /**
-     * Output page content
+     * Output page content.
      */
     public function outputPage()
     {
-        echo \Hyyan\WPI\Plugin::getView('admin',array(
-            'self' => $this
+        echo \Hyyan\WPI\Plugin::getView('admin', array(
+            'self' => $this,
         ));
     }
 
     /**
-     * Get the value of a settings field
+     * Get the value of a settings field.
      *
      * @param string $option  settings field name
      * @param string $section the section name this field belongs to
@@ -113,5 +108,4 @@ class Settings extends \WeDevs_Settings_API
 
         return $default;
     }
-
 }

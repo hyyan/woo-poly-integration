@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,12 +10,12 @@
 
 namespace Hyyan\WPI\Product;
 
-use Hyyan\WPI\Utilities,
-    Hyyan\WPI\Admin\Settings,
-    Hyyan\WPI\Admin\MetasList;
+use Hyyan\WPI\Utilities;
+use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\MetasList;
 
 /**
- * Product Stock
+ * Product Stock.
  *
  * Handle stock sync
  *
@@ -27,23 +27,21 @@ class Stock
     const STOCK_INCREASE_ACTION = 'increase';
 
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         // sync stock
         add_action(
-                'woocommerce_reduce_order_stock'
-                , array($this, 'reduceStock')
+                'woocommerce_reduce_order_stock', array($this, 'reduceStock')
         );
         add_filter(
-                'woocommerce_restore_order_stock_quantity'
-                , array($this, 'increaseStock')
+                'woocommerce_restore_order_stock_quantity', array($this, 'increaseStock')
         );
     }
 
     /**
-     * Reduce stock for product and its translation
+     * Reduce stock for product and its translation.
      *
      * @param \WC_Order $order
      */
@@ -60,15 +58,14 @@ class Stock
     }
 
     /**
-     * Increase stock for product and its translation
+     * Increase stock for product and its translation.
      *
-     * @param integer $change the stock change
+     * @param int $change the stock change
      *
-     * @return integer stock change
+     * @return int stock change
      */
     public function increaseStock($change)
     {
-
         $orderId = absint($_POST['order_id']);
         $order = new \WC_Order($orderId);
 
@@ -85,7 +82,7 @@ class Stock
     }
 
     /**
-     * Change the product stock in the given order item
+     * Change the product stock in the given order item.
      *
      * @param array  $item   the order data
      * @param string $action STOCK_REDUCE_ACTION | STOCK_INCREASE_ACTION
@@ -129,15 +126,11 @@ class Stock
                 }
 
                 $general = Settings::getOption(
-                                'general'
-                                , MetasList::getID()
-                                , array('total_sales')
+                                'general', MetasList::getID(), array('total_sales')
                 );
                 if (in_array('total_sales', $general)) {
                     update_post_meta(
-                            $ID
-                            , 'total_sales'
-                            , get_post_meta($productID, 'total_sales', true)
+                            $ID, 'total_sales', get_post_meta($productID, 'total_sales', true)
                     );
                 }
             }
@@ -157,5 +150,4 @@ class Stock
             }
         }
     }
-
 }

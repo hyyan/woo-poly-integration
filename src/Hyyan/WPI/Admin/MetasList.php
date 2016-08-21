@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,15 +13,14 @@ namespace Hyyan\WPI\Admin;
 use Hyyan\WPI\Product\Meta;
 
 /**
- * MetasList
+ * MetasList.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class MetasList extends AbstractSettings
 {
-
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     public static function getID()
     {
@@ -29,7 +28,7 @@ class MetasList extends AbstractSettings
     }
 
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     protected function doGetSections()
     {
@@ -43,15 +42,14 @@ class MetasList extends AbstractSettings
                          It is safe to ignore these settings if you do not understand
                          their meaning.Please ignore this section if you do not
                          understand the meaning of this.
-                        '
-                        , 'woo-poly-integration'
-                )
-            )
+                        ', 'woo-poly-integration'
+                ),
+            ),
         );
     }
 
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     protected function doGetFields()
     {
@@ -60,7 +58,6 @@ class MetasList extends AbstractSettings
         $metas = Meta::getProductMetaToCopy(array(), false);
         $fields = array();
         foreach ($metas as $ID => $value) {
-
             $fields[] = array(
                 'name' => $ID,
                 'label' => $value['name'],
@@ -68,9 +65,8 @@ class MetasList extends AbstractSettings
                 'type' => 'multicheck',
                 'default' => array_combine($value['metas'], $value['metas']),
                 'options' => array_combine(
-                        $value['metas']
-                        , array_map(array(__CLASS__, 'normalize'), $value['metas'])
-                )
+                        $value['metas'], array_map(array(__CLASS__, 'normalize'), $value['metas'])
+                ),
             );
         }
 
@@ -78,7 +74,7 @@ class MetasList extends AbstractSettings
     }
 
     /**
-     * Normalize string by removing "_", and leading and trailing spaces from string
+     * Normalize string by removing "_", and leading and trailing spaces from string.
      *
      * @param string $string
      *
@@ -86,7 +82,6 @@ class MetasList extends AbstractSettings
      */
     public static function normalize($string)
     {
-        return ucwords( trim( str_replace( '_', ' ', $string ) ) );
+        return ucwords(trim(str_replace('_', ' ', $string)));
     }
-
 }

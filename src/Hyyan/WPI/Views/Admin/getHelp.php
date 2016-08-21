@@ -11,8 +11,7 @@ if (!defined('ABSPATH')) {
     <p>
         <?php
         _e('Need help , Want to ask for new feature ?
-                please contact using one of the following methods'
-                , 'woo-poly-integration'
+                please contact using one of the following methods', 'woo-poly-integration'
         )
         ?>
     </p>

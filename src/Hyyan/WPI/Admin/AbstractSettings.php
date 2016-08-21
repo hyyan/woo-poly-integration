@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,39 +13,34 @@ namespace Hyyan\WPI\Admin;
 use Hyyan\WPI\HooksInterface;
 
 /**
- * AbstractSettings
+ * AbstractSettings.
  *
  * @author Hyyan
- * 
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
-abstract class AbstractSettings Implements SettingsInterface
+abstract class AbstractSettings implements SettingsInterface
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         add_filter(
-                HooksInterface::SETTINGS_SECTIONS_FILTER
-                , array($this, 'getSections')
+                HooksInterface::SETTINGS_SECTIONS_FILTER, array($this, 'getSections')
         );
         add_filter(
-                HooksInterface::SETTINGS_FIELDS_FILTER
-                , array($this, 'getFields')
+                HooksInterface::SETTINGS_FIELDS_FILTER, array($this, 'getFields')
         );
     }
 
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     public function getSections(array $sections)
     {
         $new = array();
         $current = apply_filters(
-                $this->getSectionsFilterName()
-                , (array) $this->doGetSections()
+                $this->getSectionsFilterName(), (array) $this->doGetSections()
         );
 
         foreach ($current as $def) {
@@ -57,20 +52,19 @@ abstract class AbstractSettings Implements SettingsInterface
     }
 
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     public function getFields(array $fields)
     {
         return array_merge($fields, array(
             static::getID() => apply_filters(
-                    $this->getFieldsFilterName()
-                    , (array) $this->doGetFields()
-            )
+                    $this->getFieldsFilterName(), (array) $this->doGetFields()
+            ),
         ));
     }
 
     /**
-     * Get sections filter name
+     * Get sections filter name.
      *
      * @return string
      */
@@ -80,7 +74,7 @@ abstract class AbstractSettings Implements SettingsInterface
     }
 
     /**
-     * Get sections filter name
+     * Get sections filter name.
      *
      * @return string
      */

@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,55 +13,47 @@ namespace Hyyan\WPI;
 use Hyyan\WPI\Tools\FlashMessages;
 
 /**
- * Plugin
+ * Plugin.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Plugin
 {
-
     /**
-     * Construct the plugin
+     * Construct the plugin.
      */
     public function __construct()
     {
-
         FlashMessages::register();
 
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
-
     }
 
     /**
-     * Load plugin langauge file
+     * Load plugin langauge file.
      */
     public function loadTextDomain()
     {
         load_plugin_textdomain(
-                'woo-poly-integration'
-                , false
-                , plugin_basename(dirname(Hyyan_WPI_DIR)) . '/languages'
+                'woo-poly-integration', false, plugin_basename(dirname(Hyyan_WPI_DIR)).'/languages'
         );
     }
 
     /**
-     * Activate plugin
+     * Activate plugin.
      *
      * The plugin will register its core if the requirements are full filled , otherwise
      * it will show an admin error message
      *
-     * @return boolean false if plugin can not be activated
+     * @return bool false if plugin can not be activated
      */
     public function activate()
     {
         if (!static::canActivate()) {
             FlashMessages::remove(MessagesInterface::MSG_SUPPORT);
             FlashMessages::add(
-                    MessagesInterface::MSG_ACTIVATE_ERROR
-                    , static::getView('Messages/activateError')
-                    , array('error')
-                    , true
+                    MessagesInterface::MSG_ACTIVATE_ERROR, static::getView('Messages/activateError'), array('error'), true
             );
 
             return false;
@@ -69,21 +61,19 @@ class Plugin
 
         FlashMessages::remove(MessagesInterface::MSG_ACTIVATE_ERROR);
         FlashMessages::add(
-                MessagesInterface::MSG_SUPPORT
-                , static::getView('Messages/support')
+                MessagesInterface::MSG_SUPPORT, static::getView('Messages/support')
         );
 
         $this->registerCore();
     }
 
     /**
-     * Check if the plugin can be activated
+     * Check if the plugin can be activated.
      *
-     * @return boolean true if can be activated , false otherwise
+     * @return bool true if can be activated , false otherwise
      */
     public static function canActivate()
     {
-
         $isMultisite = is_multisite();
         $funtction = is_multisite() ?
                 'is_plugin_active_for_network' :
@@ -92,7 +82,7 @@ class Plugin
         $polylang = false;
         $woocommerce = false;
 
-        /** check polylang plugin  * */
+        /* check polylang plugin  * */
         if (
                 $funtction('polylang/polylang.php') ||
                 $funtction('polyland_pro/polylang.php')
@@ -100,7 +90,7 @@ class Plugin
             $polylang = true;
         }
 
-        /** check woocommerce plugin * */
+        /* check woocommerce plugin * */
         if ($funtction('woocommerce/woocommerce.php')) {
             $woocommerce = true;
         }
@@ -109,9 +99,9 @@ class Plugin
     }
 
     /**
-     * Get current plugin version
+     * Get current plugin version.
      *
-     * @return integer
+     * @return int
      */
     public static function getVersion()
     {
@@ -121,7 +111,7 @@ class Plugin
     }
 
     /**
-     * Get plugin view
+     * Get plugin view.
      *
      * @param string $name view name
      * @param array  $vars array of vars to pass to the view
@@ -131,10 +121,10 @@ class Plugin
     public static function getView($name, array $vars = array())
     {
         $result = '';
-        $path = dirname(Hyyan_WPI_DIR) . '/src/Hyyan/WPI/Views/' . $name . '.php';
+        $path = dirname(Hyyan_WPI_DIR).'/src/Hyyan/WPI/Views/'.$name.'.php';
         if (file_exists($path)) {
             ob_start();
-            include($path);
+            include $path;
             $result = ob_get_clean();
         }
 
@@ -142,7 +132,7 @@ class Plugin
     }
 
     /**
-     * Add plugin core classes
+     * Add plugin core classes.
      */
     protected function registerCore()
     {
@@ -165,5 +155,4 @@ class Plugin
         new Gateways();
         new Shipping();
     }
-
 }

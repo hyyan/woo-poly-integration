@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,15 +13,14 @@ namespace Hyyan\WPI\Admin;
 use Hyyan\WPI\Utilities;
 
 /**
- * Features
+ * Features.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Features extends AbstractSettings
 {
-
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     public static function getID()
     {
@@ -29,7 +28,7 @@ class Features extends AbstractSettings
     }
 
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     protected function doGetSections()
     {
@@ -38,15 +37,14 @@ class Features extends AbstractSettings
                 'title' => __('Features', 'woo-poly-integration'),
                 'desc' => __(
                         ' The section will allow you to Enable/Disable
-                          Plugin Features.'
-                        , 'woo-poly-integration'
-                )
-            )
+                          Plugin Features.', 'woo-poly-integration'
+                ),
+            ),
         );
     }
 
     /**
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     protected function doGetFields()
     {
@@ -58,9 +56,8 @@ class Features extends AbstractSettings
                 'label' => __('Fields Locker', 'woo-poly-integration'),
                 'desc' => __(
                         'Fields locker makes it easy for user to know which
-                         field to translate and which to ignore '
-                        , 'woo-poly-integration'
-                )
+                         field to translate and which to ignore ', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'emails',
@@ -68,9 +65,8 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Emails', 'woo-poly-integration'),
                 'desc' => __(
-                        'Use order language whenever woocommerce sends order emails'
-                        , 'woo-poly-integration'
-                )
+                        'Use order language whenever woocommerce sends order emails', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'reports',
@@ -78,9 +74,8 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Reports', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable reports language filtering and combining'
-                        , 'woo-poly-integration'
-                )
+                        'Enable reports language filtering and combining', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'coupons',
@@ -88,9 +83,8 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Coupons Sync', 'woo-poly-integration'),
                 'desc' => __(
-                        'Apply coupons rules for product and its translations'
-                        , 'woo-poly-integration'
-                )
+                        'Apply coupons rules for product and its translations', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'stock',
@@ -98,9 +92,8 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Stock Sync', 'woo-poly-integration'),
                 'desc' => __(
-                        'Sync stock for product and its translations'
-                        , 'woo-poly-integration'
-                )
+                        'Sync stock for product and its translations', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'categories',
@@ -108,9 +101,8 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Translate Categories', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable categories translations'
-                        , 'woo-poly-integration'
-                )
+                        'Enable categories translations', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'tags',
@@ -118,9 +110,8 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Translate Tags', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable tags translations'
-                        , 'woo-poly-integration'
-                )
+                        'Enable tags translations', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'attributes',
@@ -128,9 +119,8 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Translate Attributes', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable attributes translations'
-                        , 'woo-poly-integration'
-                )
+                        'Enable attributes translations', 'woo-poly-integration'
+                ),
             ),
             array(
                 'name' => 'shipping-class',
@@ -138,11 +128,9 @@ class Features extends AbstractSettings
                 'default' => 'off',
                 'label' => __('Translate Shipping Classes', 'woo-poly-integration'),
                 'desc' => __(
-                        'Enable shipping classes translations' . ( Utilities::woocommerceVersionCheck( '2.6' ) ? ' (not supported for WooCommerce versions >= 2.6)' : '' )
-                        , 'woo-poly-integration'
-                )
-            )
+                        'Enable shipping classes translations'.(Utilities::woocommerceVersionCheck('2.6') ? ' (not supported for WooCommerce versions >= 2.6)' : ''), 'woo-poly-integration'
+                ),
+            ),
         );
     }
-
 }

@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,33 +11,32 @@
 namespace Hyyan\WPI\Product;
 
 /**
- * Duplicator
+ * Duplicator.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Duplicator
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         add_action('woocommerce_duplicate_product', array(
-            $this, 'unlinkOrginalProductTranslations'
+            $this, 'unlinkOrginalProductTranslations',
         ));
 
-        add_action('woocommerce_duplicate_product_capability',array(
-            $this, 'disableDuplicateForVariables'
+        add_action('woocommerce_duplicate_product_capability', array(
+            $this, 'disableDuplicateForVariables',
         ));
     }
 
     /**
-     * Unlink orginal product translations from the new copy
+     * Unlink orginal product translations from the new copy.
      *
      * @global \Polylang $polylang
      *
-     * @param integer $ID the new product ID
+     * @param int $ID the new product ID
      */
     public function unlinkOrginalProductTranslations($ID)
     {
@@ -46,12 +45,12 @@ class Duplicator
     }
 
     /**
-     * Disable duplicate capability for variables
+     * Disable duplicate capability for variables.
      *
      * @param string $capability
      *
-     * @return boolean|srting false if should be disables , passed capability
-     *                        otherwise
+     * @return bool|srting false if should be disables , passed capability
+     *                     otherwise
      */
     public function disableDuplicateForVariables($capability)
     {
@@ -68,5 +67,4 @@ class Duplicator
 
         return $capability;
     }
-
 }

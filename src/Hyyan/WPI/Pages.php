@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
 namespace Hyyan\WPI;
 
 /**
- * Pages
+ * Pages.
  *
  * Handle page translations
  *
@@ -19,13 +19,11 @@ namespace Hyyan\WPI;
  */
 class Pages
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
-
         $method = array($this, 'getPostTranslationID');
         $pages = apply_filters(HooksInterface::PAGES_LIST, array(
             'shop',
@@ -42,10 +40,7 @@ class Pages
 
         /* To generate the correct url for shop page */
         add_filter(
-                'pll_get_archive_url'
-                , array($this, 'translateShopUrl')
-                , 10
-                , 2
+                'pll_get_archive_url', array($this, 'translateShopUrl'), 10, 2
         );
 
         if (!is_admin()) {
@@ -56,15 +51,14 @@ class Pages
     }
 
     /**
-     * Get the id of translated post
+     * Get the id of translated post.
      *
-     * @param integer $id the post to get translation id for
+     * @param int $id the post to get translation id for
      *
-     * @return integer
+     * @return int
      */
     public function getPostTranslationID($id)
     {
-
         if (!function_exists('pll_get_post')) {
             return $id;
         }
@@ -79,21 +73,20 @@ class Pages
     }
 
     /**
-     * Correct the shop page to display products from currrent language only
+     * Correct the shop page to display products from currrent language only.
      *
-     * @param  \WP     $wp wordpress instance
-     * @return boolean false if the current language is the same as default
-     *                    language or if the "pagename" var is empty
+     * @param \WP $wp wordpress instance
+     *
+     * @return bool false if the current language is the same as default
+     *              language or if the "pagename" var is empty
      */
     public function correctShopPage(\WP $wp)
     {
-
         global $polylang;
 
         $shopID = wc_get_page_id('shop');
         $shopOnFront = ('page' === get_option('show_on_front')) && in_array(
-                        get_option('page_on_front')
-                        , PLL()->model->post->get_translations(
+                        get_option('page_on_front'), PLL()->model->post->get_translations(
                                 $shopID
         ));
 
@@ -105,7 +98,6 @@ class Pages
             }
         }
         if (!$shopOnFront) {
-
             if (!empty($wp->query_vars['pagename'])) {
                 $shopPage = get_post($shopID);
 
@@ -127,7 +119,7 @@ class Pages
     }
 
     /**
-     * Translate the shop page name in the given shop url
+     * Translate the shop page name in the given shop url.
      *
      * @param string $url      complete url
      * @param string $language the current language
@@ -146,20 +138,16 @@ class Pages
         $shopPage = get_post($shopPageID);
 
         if ($shopPage) {
-
             $shopPageTranslatedID = pll_get_post($shopPageID, $language);
             $shopPageTranslation = get_post($shopPageTranslatedID);
 
             if ($shopPageTranslation) {
                 $result = str_replace(
-                        $shopPage->post_name
-                        , $shopPageTranslation->post_name
-                        , $url
+                        $shopPage->post_name, $shopPageTranslation->post_name, $url
                 );
             }
         }
 
         return $result;
     }
-
 }

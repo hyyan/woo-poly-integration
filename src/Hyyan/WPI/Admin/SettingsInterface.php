@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,15 +11,14 @@
 namespace Hyyan\WPI\Admin;
 
 /**
- * SettingsInterface
+ * SettingsInterface.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 interface SettingsInterface
 {
-
     /**
-     * Get sections array
+     * Get sections array.
      *
      * @param array $sections current registered sections
      *
@@ -28,7 +27,7 @@ interface SettingsInterface
     public function getSections(array $sections);
 
     /**
-     * Get fields array
+     * Get fields array.
      *
      * @param array $fields current registered fields
      *
@@ -37,7 +36,7 @@ interface SettingsInterface
     public function getFields(array $fields);
 
     /**
-     * Get settings ID
+     * Get settings ID.
      *
      * @return string setting ID
      */

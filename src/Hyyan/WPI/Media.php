@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
 namespace Hyyan\WPI;
 
 /**
- * Media
+ * Media.
  *
  * Handle products media translation
  *
@@ -19,24 +19,22 @@ namespace Hyyan\WPI;
  */
 class Media
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         if (static::isMediaTranslationEnabled()) {
             add_filter(
-                    'woocommerce_product_gallery_attachment_ids'
-                    , array($this, 'translateGallery')
+                    'woocommerce_product_gallery_attachment_ids', array($this, 'translateGallery')
             );
         }
     }
 
     /**
-     * Check if media translation is enable in polylang settings
+     * Check if media translation is enable in polylang settings.
      *
-     * @return boolean true if enabled , false otherwise
+     * @return bool true if enabled , false otherwise
      */
     public static function isMediaTranslationEnabled()
     {
@@ -46,7 +44,7 @@ class Media
     }
 
     /**
-     * Translate product gallery
+     * Translate product gallery.
      *
      * @param array $IDS current attachment IDS
      *
@@ -66,5 +64,4 @@ class Media
 
         return $translations;
     }
-
 }
