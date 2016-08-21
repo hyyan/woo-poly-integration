@@ -163,6 +163,7 @@ class Plugin
         new Widgets\SearchWidget();
         new Widgets\LayeredNav();
         new Gateways();
+        new Shipping();
     }
 
 }

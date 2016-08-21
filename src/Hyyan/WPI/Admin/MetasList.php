@@ -37,9 +37,12 @@ class MetasList extends AbstractSettings
             array(
                 'title' => __('Metas List', 'woo-poly-integration'),
                 'desc' => __(
-                        'The section will allow you to controll which metas should be
-                         synced between product and its translation , please ignore
-                         this section if you do not understand the meaning of this.
+                        'The section will allow you to control which metas should be
+                         synced between products and their translations. The default
+                         values are appropriate for the large majority of the users.
+                         It is safe to ignore these settings if you do not understand
+                         their meaning.Please ignore this section if you do not
+                         understand the meaning of this.
                         '
                         , 'woo-poly-integration'
                 )
@@ -75,7 +78,7 @@ class MetasList extends AbstractSettings
     }
 
     /**
-     * Normalize string by removing "_" from string
+     * Normalize string by removing "_", and leading and trailing spaces from string
      *
      * @param string $string
      *
@@ -83,7 +86,7 @@ class MetasList extends AbstractSettings
      */
     public static function normalize($string)
     {
-        return ucwords(str_replace('_', ' ', $string));
+        return ucwords( trim( str_replace( '_', ' ', $string ) ) );
     }
 
 }
