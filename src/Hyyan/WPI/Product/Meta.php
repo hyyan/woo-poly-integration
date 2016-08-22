@@ -36,9 +36,9 @@ class Meta
     }
 
     /**
-     * Sync porduct meta.
+     * Sync product meta.
      *
-     * @return false if the current post type is not "porduct"
+     * @return false if the current post type is not "product"
      */
     public function syncProductsMeta()
     {
@@ -59,11 +59,11 @@ class Meta
          * Disable editing product meta for translation
          *
          * if the "post" is defined in $_GET then we should check if the current
-         * porduct has a translation and it is the same as the default translation
-         * lang defined in polylang then porduct meta editing must by enabled
+         * product has a translation and it is the same as the default translation
+         * lang defined in polylang then product meta editing must by enabled
          *
          * if the "new_lang" is defined or if the current page is the "edit"
-         * page then porduct meta editing must by disabled
+         * page then product meta editing must by disabled
          */
 
         if (isset($_GET['post'])) {
@@ -212,7 +212,7 @@ class Meta
     /**
      * Add the Fields Locker script.
      *
-     * The script will disable editing of some porduct metas for product
+     * The script will disable editing of some product metas for product
      * translation
      *
      * @return bool false if the fields locker feature is disabled
@@ -256,14 +256,14 @@ class Meta
     }
 
     /**
-     * Sync the porduct select list.
+     * Sync the product select list.
      *
      * @param int $ID product type
      */
     protected function syncSelectedproductType($ID = null)
     {
         /*
-         * First we add save_post action to save the porduct type
+         * First we add save_post action to save the product type
          * as post meta
          *
          * This is step is important so we can get the right product type
