@@ -269,7 +269,7 @@ class Meta
          * This is step is important so we can get the right product type
          */
         add_action('save_post', function ($_ID) {
-            $product = get_product($_ID);
+            $product = wc_get_product($_ID);    // get_product soft deprecated for wc_get_product
             if ($product && !isset($_GET['from_post'])) {
                 $type = $product->product_type;
                 update_post_meta($_ID, '_translation_porduct_type', $type);
