@@ -13,8 +13,7 @@ if (!defined('ABSPATH')) {
             <h3>
                 <?php
                 _e(
-                        'Hyyan WooCommerce Polylang Integration Plugin'
-                        , 'woo-poly-integration'
+                        'Hyyan WooCommerce Polylang Integration Plugin', 'woo-poly-integration'
                 )
                 ?>
             </h3>
@@ -27,8 +26,7 @@ if (!defined('ABSPATH')) {
                    at the <a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/woo-poly-integration">wordpress.org</a>
                    or <a target="_blank" href="https://twitter.com">twitter</a>
                    It will help other people
-                   find this useful plugin more quickly.<br><b>Thank you!</b>'
-                        , 'woo-poly-integration'
+                   find this useful plugin more quickly.<br><b>Thank you!</b>', 'woo-poly-integration'
                 );
                 ?>
             <p>

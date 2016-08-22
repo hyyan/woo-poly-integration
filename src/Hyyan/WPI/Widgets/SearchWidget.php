@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,25 +11,24 @@
 namespace Hyyan\WPI\Widgets;
 
 /**
- * SearchWidget
+ * SearchWidget.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class SearchWidget
 {
-
     /**
-     * Constuct object
+     * Constuct object.
      */
     public function __construct()
     {
         add_filter('get_product_search_form', array(
-            $this, 'fixSearchForm'
+            $this, 'fixSearchForm',
         ));
     }
 
     /**
-     * Fix search form to avoid duplicated products results
+     * Fix search form to avoid duplicated products results.
      *
      * @global \Polylang $polylang
      *
@@ -48,23 +47,19 @@ class SearchWidget
                 preg_match('#<form.+>#', $form, $matches);
                 $old = reset($matches);
                 $new = preg_replace(
-                        '#' . $polylang->links_model->home . '\/?#'
-                        , $polylang->curlang->search_url
-                        , $old
+                        '#'.$polylang->links_model->home.'\/?#', $polylang->curlang->search_url, $old
                 );
 
                 $form = str_replace($old, $new, $form);
-            } else
+            } else {
                 $form = str_replace(
-                        '</form>'
-                        , '<input type="hidden" name="lang" value="'
-                        . esc_attr($polylang->curlang->slug)
-                        . '" /></form>'
-                        , $form
+                        '</form>', '<input type="hidden" name="lang" value="'
+                        .esc_attr($polylang->curlang->slug)
+                        .'" /></form>', $form
                 );
+            }
         }
 
         return $form;
     }
-
 }

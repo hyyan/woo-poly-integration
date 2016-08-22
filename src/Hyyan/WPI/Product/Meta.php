@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,13 +10,13 @@
 
 namespace Hyyan\WPI\Product;
 
-use Hyyan\WPI\HooksInterface,
-    Hyyan\WPI\Utilities,
-    Hyyan\WPI\Admin\Settings,
-    Hyyan\WPI\Admin\MetasList;
+use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\Utilities;
+use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\MetasList;
 
 /**
- * product Meta
+ * product Meta.
  *
  * Handle product meta sync
  *
@@ -24,21 +24,19 @@ use Hyyan\WPI\HooksInterface,
  */
 class Meta
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         // sync product meta
         add_action(
-                'current_screen'
-                , array($this, 'syncProductsMeta')
+                'current_screen', array($this, 'syncProductsMeta')
         );
     }
 
     /**
-     * Sync porduct meta
+     * Sync porduct meta.
      *
      * @return false if the current post type is not "porduct"
      */
@@ -50,8 +48,9 @@ class Meta
 
         $currentScreen = get_current_screen();
 
-        if ($currentScreen->post_type !== 'product')
+        if ($currentScreen->post_type !== 'product') {
             return false;
+        }
 
         $ID = false;
         $disable = false;
@@ -79,9 +78,7 @@ class Meta
         // disable fields edit for translation
         if ($disable) {
             add_action(
-                    'admin_print_scripts'
-                    , array($this, 'addFieldsLocker')
-                    , 100
+                    'admin_print_scripts', array($this, 'addFieldsLocker'), 100
             );
         }
 
@@ -91,16 +88,15 @@ class Meta
 
     /**
      * Define the meta keys that must copyied from orginal product to its
-     * translation
+     * translation.
      *
-     * @param array   $metas array of meta keys
-     * @param boolean $flat  false to return meta list with sections (default true)
+     * @param array $metas array of meta keys
+     * @param bool  $flat  false to return meta list with sections (default true)
      *
      * @return array extended meta keys array
      */
     public static function getProductMetaToCopy(array $metas = array(), $flat = true)
     {
-
         $default = apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, array(
             // general
             'general' => array(
@@ -130,7 +126,7 @@ class Meta
                     'total_sales',
                     '_translation_porduct_type',
                     '_visibility',
-                )
+                ),
             ),
             // stock
             'stock' => array(
@@ -142,7 +138,7 @@ class Meta
                     '_backorders',
                     '_stock_status',
                     '_sold_individually',
-                )
+                ),
             ),
             // shipping
             'shipping' => array(
@@ -154,7 +150,7 @@ class Meta
                     '_width',
                     '_height',
                     'product_shipping_class',
-                )
+                ),
             ),
             // attributes
             'Attributes' => array(
@@ -173,7 +169,7 @@ class Meta
                     '_tax_status',
                     '_tax_class',
                 ),
-            )
+            ),
         ));
 
         if (false === $flat) {
@@ -190,16 +186,15 @@ class Meta
     }
 
     /**
-     * Add the Fields Locker script
+     * Add the Fields Locker script.
      *
      * The script will disable editing of some porduct metas for product
      * translation
      *
-     * @return boolean false if the fields locker feature is disabled
+     * @return bool false if the fields locker feature is disabled
      */
     public function addFieldsLocker()
     {
-
         if ('off' === Settings::getOption('fields-locker', \Hyyan\WPI\Admin\Features::getID(), 'on')) {
             return false;
         }
@@ -213,24 +208,22 @@ class Meta
         $jsID = 'product-fields-locker';
         $code = sprintf(
                 'var disabled = %s;'
-                . 'for (var i = 0; i < disabled.length; i++) {'
-                . ' $('
-                . '     %s + ","'
-                . '     + "." + disabled[i] + ","'
-                . '     + "#" +disabled[i] + ","'
-                . '     + "*[name^=\'"+disabled[i]+"\']"'
-                . ' )'
-                . '     .off("click")'
-                . '     .on("click", function (e) {e.preventDefault()})'
-                . '     .css({'
-                . '         opacity: .5,'
-                . '         \'pointer-events\': \'none\','
-                . '         cursor: \'not-allowed\''
-                . '     }'
-                . ' );'
-                . '}'
-                , json_encode($metas)
-                , !empty($selectors) ?
+                .'for (var i = 0; i < disabled.length; i++) {'
+                .' $('
+                .'     %s + ","'
+                .'     + "." + disabled[i] + ","'
+                .'     + "#" +disabled[i] + ","'
+                .'     + "*[name^=\'"+disabled[i]+"\']"'
+                .' )'
+                .'     .off("click")'
+                .'     .on("click", function (e) {e.preventDefault()})'
+                .'     .css({'
+                .'         opacity: .5,'
+                .'         \'pointer-events\': \'none\','
+                .'         cursor: \'not-allowed\''
+                .'     }'
+                .' );'
+                .'}', json_encode($metas), !empty($selectors) ?
                         json_encode(implode(',', $selectors)) :
                         array(rand())
         );
@@ -239,9 +232,9 @@ class Meta
     }
 
     /**
-     * Sync the porduct select list
+     * Sync the porduct select list.
      *
-     * @param integer $ID product type
+     * @param int $ID product type
      */
     protected function syncSelectedproductType($ID = null)
     {
@@ -265,26 +258,21 @@ class Meta
          * list
          */
         if ($ID && ($type = get_post_meta($ID, '_translation_porduct_type'))) {
-
             add_action('admin_print_scripts', function () use ($type) {
-
                 $jsID = 'product-type-sync';
                 $code = sprintf(
                         '// <![CDATA[ %1$s'
-                        . ' addLoadEvent(function () { %1$s'
-                        . '  jQuery("#product-type option")'
-                        . '     .removeAttr("selected");%1$s'
-                        . '  jQuery("#product-type option[value=\"%2$s\"]")'
-                        . '         .attr("selected", "selected");%1$s'
-                        . '})'
-                        . '// ]]>'
-                        , PHP_EOL
-                        , $type[0]
+                        .' addLoadEvent(function () { %1$s'
+                        .'  jQuery("#product-type option")'
+                        .'     .removeAttr("selected");%1$s'
+                        .'  jQuery("#product-type option[value=\"%2$s\"]")'
+                        .'         .attr("selected", "selected");%1$s'
+                        .'})'
+                        .'// ]]>', PHP_EOL, $type[0]
                 );
 
                 Utilities::jsScriptWrapper($jsID, $code, false);
             }, 11);
         }
     }
-
 }

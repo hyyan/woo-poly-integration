@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,26 +10,24 @@
 
 namespace Hyyan\WPI;
 
-use Hyyan\WPI\Tools\FlashMessages,
-    Hyyan\WPI\MessagesInterface,
-    Hyyan\WPI\Plugin;
+use Hyyan\WPI\Tools\FlashMessages;
 
 /**
- * Endpoints
+ * Endpoints.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Endpoints
 {
     /**
-     * Array of current found endpoints
+     * Array of current found endpoints.
      *
      * @var array
      */
     protected $endpoints = array();
 
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
@@ -38,36 +36,27 @@ class Endpoints
         $this->regsiterEndpointsTranslations();
 
         add_action(
-                'init'
-                , array($this, 'rewriteEndpoints')
-                , 11
+                'init', array($this, 'rewriteEndpoints'), 11
         );
         add_action(
-                'woocommerce_update_options'
-                , array($this, 'addEndpoints')
+                'woocommerce_update_options', array($this, 'addEndpoints')
         );
         add_filter(
-                'pre_update_option_rewrite_rules'
-                , array($this, 'updateRules')
-                , 100, 2
+                'pre_update_option_rewrite_rules', array($this, 'updateRules'), 100, 2
         );
         add_filter(
-                'pll_the_language_link'
-                , array($this, 'correctPolylangSwitcherLinks')
-                , 10, 2
+                'pll_the_language_link', array($this, 'correctPolylangSwitcherLinks'), 10, 2
         );
         add_filter(
-                'wp_get_nav_menu_items'
-                , array($this, 'fixMyAccountLinkInMenus')
+                'wp_get_nav_menu_items', array($this, 'fixMyAccountLinkInMenus')
         );
         add_action(
-                'current_screen'
-                , array($this, 'showFlashMessages')
+                'current_screen', array($this, 'showFlashMessages')
         );
     }
 
     /**
-     * Rewrite endpoints
+     * Rewrite endpoints.
      *
      * Add all endpoints to polylang strings table
      */
@@ -78,7 +67,7 @@ class Endpoints
     }
 
     /**
-     * Register endpoints translations
+     * Register endpoints translations.
      *
      * Find all woocomerce endpoints and register them with polylang to be
      * translated as polylang strings
@@ -90,7 +79,6 @@ class Endpoints
      */
     public function regsiterEndpointsTranslations()
     {
-
         global $polylang, $woocommerce;
         if (!$polylang || !$woocommerce) {
             return false;
@@ -103,7 +91,7 @@ class Endpoints
     }
 
     /**
-     * Get endpoint translations
+     * Get endpoint translations.
      *
      * Register endpoint as polylang string if not registered and returne the
      * endpoint translation for the current langauge
@@ -116,11 +104,8 @@ class Endpoints
      */
     public function getEndpointTranslation($endpoint)
     {
-
         pll_register_string(
-                $endpoint
-                , $endpoint
-                , static::getPolylangStringSection()
+                $endpoint, $endpoint, static::getPolylangStringSection()
         );
 
         $this->endpoints [] = $endpoint;
@@ -129,7 +114,7 @@ class Endpoints
     }
 
     /**
-     * Update Rules
+     * Update Rules.
      *
      * Update the endpoint rule with new value and flush the rewrite rules
      *
@@ -140,9 +125,7 @@ class Endpoints
     public function updateRules($value)
     {
         remove_filter(
-                'pre_update_option_rewrite_rules'
-                , array($this, __FUNCTION__)
-                , 100, 2
+                'pre_update_option_rewrite_rules', array($this, __FUNCTION__), 100, 2
         );
         $this->addEndpoints();
         flush_rewrite_rules();
@@ -151,7 +134,7 @@ class Endpoints
     }
 
     /**
-     * Add endpoints
+     * Add endpoints.
      *
      * Add all endpoints translation in the current langauge
      */
@@ -163,7 +146,7 @@ class Endpoints
     }
 
     /**
-     * Get Endpoint Url
+     * Get Endpoint Url.
      *
      * Rebuild permalink with corrent endpoint translation
      *
@@ -177,15 +160,15 @@ class Endpoints
     {
         if (get_option('permalink_structure')) {
             if (strstr($permalink, '?')) {
-                $query_string = '?' . parse_url($permalink, PHP_URL_QUERY);
+                $query_string = '?'.parse_url($permalink, PHP_URL_QUERY);
                 $permalink = current(explode('?', $permalink));
             } else {
                 $query_string = '';
             }
             $url = trailingslashit($permalink)
-                    . $endpoint
-                    . '/'
-                    . $query_string;
+                    .$endpoint
+                    .'/'
+                    .$query_string;
         } else {
             $url = add_query_arg($endpoint, $value, $permalink);
         }
@@ -194,11 +177,12 @@ class Endpoints
     }
 
     /**
-     * Correct Polylang Switcher Links
+     * Correct Polylang Switcher Links.
      *
      * Add the correct endpoint translations for polylang switcher links
      *
      * @global \WP $wp
+     *
      * @param string $link link
      * @param string $slug langauge
      *
@@ -211,9 +195,7 @@ class Endpoints
         foreach ($endpoints as $key => $value) {
             if (isset($wp->query_vars[$key])) {
                 $link = str_replace(
-                        $value
-                        , pll_translate_string($key, $slug)
-                        , $link
+                        $value, pll_translate_string($key, $slug), $link
                 );
                 break;
             }
@@ -223,7 +205,7 @@ class Endpoints
     }
 
     /**
-     * Fix My Account Link In Menus
+     * Fix My Account Link In Menus.
      *
      * The method will remove endpoints from my account page link in wp menus
      *
@@ -243,9 +225,7 @@ class Endpoints
         );
 
         foreach ($items as $item) {
-
             if (in_array($item->object_id, $translations)) {
-
                 $vars = WC()->query->get_query_vars();
                 foreach ($vars as $key => $value) {
                     if (false !== ($pos = strpos($item->url, $value))) {
@@ -259,7 +239,7 @@ class Endpoints
     }
 
     /**
-     * Show flash messages
+     * Show flash messages.
      *
      * Show endpoints flash messages in defined screens only
      */
@@ -270,18 +250,17 @@ class Endpoints
             'edit-shop_order',
             'woocommerce_page_wc-settings',
             'settings_page_mlang',
-            'hyyan-wpi'
+            'hyyan-wpi',
         );
         if (in_array($screen->id, $allowedPages)) {
             FlashMessages::add(
-                    MessagesInterface::MSG_ENDPOINTS_TRANSLATION
-                    , Plugin::getView('Messages/endpointsTranslations')
+                    MessagesInterface::MSG_ENDPOINTS_TRANSLATION, Plugin::getView('Messages/endpointsTranslations')
             );
         }
     }
 
     /**
-     * Get polylang StringSection
+     * Get polylang StringSection.
      *
      * @return string section name
      */
@@ -289,5 +268,4 @@ class Endpoints
     {
         return __('Woocommerce Endpoints', 'woo-poly-integration');
     }
-
 }

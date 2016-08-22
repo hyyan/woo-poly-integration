@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,11 +10,11 @@
 
 namespace Hyyan\WPI\Product;
 
-use Hyyan\WPI\Admin\Settings,
-    Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Features;
 
 /**
- * Product
+ * Product.
  *
  * Handle product translation
  *
@@ -22,17 +22,15 @@ use Hyyan\WPI\Admin\Settings,
  */
 class Product
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
 
         // manage product translation
         add_filter(
-                'pll_get_post_types'
-                , array($this, 'manageProductTranslation')
+                'pll_get_post_types', array($this, 'manageProductTranslation')
         );
 
         // sync post parent (good for grouped products)
@@ -40,8 +38,7 @@ class Product
 
         // get attributes in current language
         add_filter(
-                'woocommerce_product_attribute_terms'
-                , array($this, 'getProductAttributesInLanguage')
+                'woocommerce_product_attribute_terms', array($this, 'getProductAttributesInLanguage')
         );
 
         new Meta();
@@ -54,7 +51,7 @@ class Product
     }
 
     /**
-     * Notifty polylang about product custom post
+     * Notifty polylang about product custom post.
      *
      * @param array $types array of custom post names managed by polylang
      *
@@ -62,7 +59,6 @@ class Product
      */
     public function manageProductTranslation(array $types)
     {
-
         $options = get_option('polylang');
         $postTypes = $options['post_types'];
         if (!in_array('product', $postTypes)) {
@@ -76,7 +72,7 @@ class Product
     }
 
     /**
-     * Tell polylang to sync the post parent
+     * Tell polylang to sync the post parent.
      */
     public function syncPostParent()
     {
@@ -89,16 +85,15 @@ class Product
     }
 
     /**
-     * Get product attributes in right language
+     * Get product attributes in right language.
      *
-     * @param array $args array of arguments for get_terms function in WooCommerce 
+     * @param array $args array of arguments for get_terms function in WooCommerce
      *                    attributes html markup
      *
      * @return array
      */
     public function getProductAttributesInLanguage($args)
     {
-
         global $post;
         $lang = '';
 
@@ -114,5 +109,4 @@ class Product
 
         return $args;
     }
-
 }

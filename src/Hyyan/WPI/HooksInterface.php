@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,14 +11,14 @@
 namespace Hyyan\WPI;
 
 /**
- * Plugin Hooks Interface
+ * Plugin Hooks Interface.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 interface HooksInterface
 {
     /**
-     * Product Meta Sync Filter
+     * Product Meta Sync Filter.
      *
      * The filter is fired before product meta array is passed to polylang
      * to handle sync.
@@ -38,7 +38,7 @@ interface HooksInterface
     const PRODUCT_META_SYNC_FILTER = 'woo-poly.product.metaSync';
 
     /**
-     * Fields Locker Selectors Filter
+     * Fields Locker Selectors Filter.
      *
      * The filter will be fired when the fields locker builds its selectors list
      * allowing other plugins to extend this list
@@ -55,7 +55,7 @@ interface HooksInterface
     const FIELDS_LOCKER_SELECTORS_FILTER = 'woo-poly.fieldsLockerSelectors';
 
     /**
-     * Product Sync Category Custom Fields Action
+     * Product Sync Category Custom Fields Action.
      *
      * The action will be fired when the plugin attemps to sync default product
      * category custom fields (dispplay_type,thumbinal_id)
@@ -84,7 +84,7 @@ interface HooksInterface
     const PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS = 'woo-poly.product.syncCategoryCustomFields';
 
     /**
-     * Product Copy Category Custom Fields
+     * Product Copy Category Custom Fields.
      *
      * The action is fired when new translatin is being added for product category
      *
@@ -103,7 +103,7 @@ interface HooksInterface
     const PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS = 'woo-poly.product.copyCategoryCustomFields';
 
     /**
-     * Pages List
+     * Pages List.
      *
      * The filter id fired before the list of woocommerce page names are passed
      * to ploylang in order to handle their translation
@@ -122,7 +122,7 @@ interface HooksInterface
     const PAGES_LIST = 'woo-poly.pages.list';
 
     /**
-     * Settings Sections Filter
+     * Settings Sections Filter.
      *
      * The filter is fired when settings section are being built, to ler other
      * plugins add their own sections
@@ -140,7 +140,7 @@ interface HooksInterface
     const SETTINGS_SECTIONS_FILTER = 'woo-poly.settings.sections';
 
     /**
-     * Settings Fields Filter
+     * Settings Fields Filter.
      *
      * The filter is fired when settings fields are being built, to ler other
      * plugins add their own fields
@@ -158,10 +158,29 @@ interface HooksInterface
     const SETTINGS_FIELDS_FILTER = 'woo-poly.settings.fields';
 
     /**
-     * Language Repo URL Filter
+     * Language Repo URL Filter.
      *
      * The filter is fired before using the default language repo url.
      */
     const LANGUAGE_REPO_URL_FILTER = 'woo-poly.language.repoUrl';
 
+    /**
+     * Load Payment Gateway Extention.
+     *
+     * The action is fired when this plugin is initialised and allows other plugins
+     * to load payment gateways extentions or change the gateway object to
+     * enable Polylang support.
+     *
+     * The action can be used to load a class extention for a given payment gateway
+     *
+     * for instance :
+     *
+     * <code>
+     * add_action(HooksInterface::GATEWAY_LOAD_EXTENTION . $gateway->id,function ($gateway, $available_gateways) {
+     *
+     *        // do whatever you want here
+     * });
+     * </code>
+     */
+    const GATEWAY_LOAD_EXTENTION = 'woo-poly.gateway.loadClassExtention.';
 }

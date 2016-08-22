@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,22 +13,21 @@ namespace Hyyan\WPI\Tools;
 use Hyyan\WPI\HooksInterface;
 
 /**
- * TranslationsDownloader
+ * TranslationsDownloader.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class TranslationsDownloader
 {
-
     /**
-     * Download translation files from woocommerce repo
+     * Download translation files from woocommerce repo.
      *
      * @global \WP_Filesystem_Base $wp_filesystem
      *
      * @param string $locale locale
      * @param string $name   langauge name
      *
-     * @return boolean true when the translation is downloaded successfully
+     * @return bool true when the translation is downloaded successfully
      *
      * @throws \RuntimeException on errors
      */
@@ -41,14 +40,10 @@ class TranslationsDownloader
 
         /* Check if we can download */
         if (!static::isAvaliable($locale)) {
-
             $notAvaliable = sprintf(
                     __(
-                            'Woocommerce translation %s can not be found in : <a href="%2$s">%2$s</a>'
-                            , 'woo-poly-integration'
-                    )
-                    , sprintf('%s(%s)', $name, $locale)
-                    , static::getRepoUrl()
+                            'Woocommerce translation %s can not be found in : <a href="%2$s">%2$s</a>', 'woo-poly-integration'
+                    ), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
             );
 
             throw new \RuntimeException($notAvaliable);
@@ -56,13 +51,10 @@ class TranslationsDownloader
 
         /* Download the language pack */
         $cantDownload = sprintf(
-                __('Unable to download woocommerce translation %s from : <a href="%2$s">%2$s</a>')
-                , sprintf('%s(%s)', $name, $locale)
-                , static::getRepoUrl()
+                __('Unable to download woocommerce translation %s from : <a href="%2$s">%2$s</a>'), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
         );
         $response = wp_remote_get(
-                sprintf('%s/%s.zip', static::getRepoUrl(), $locale)
-                , array('sslverify' => false, 'timeout' => 200)
+                sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('sslverify' => false, 'timeout' => 200)
         );
 
         if (
@@ -74,12 +66,12 @@ class TranslationsDownloader
             /* Initialize the WP filesystem, no more using 'file-put-contents' function */
             global $wp_filesystem;
             if (empty($wp_filesystem)) {
-                require_once (ABSPATH . '/wp-admin/includes/file.php');
+                require_once ABSPATH.'/wp-admin/includes/file.php';
                 WP_Filesystem();
             }
 
             $uploadDir = wp_upload_dir();
-            $file = trailingslashit($uploadDir['path']) . $locale . '.zip';
+            $file = trailingslashit($uploadDir['path']).$locale.'.zip';
 
             /* Save the zip file */
             if (!$wp_filesystem->put_contents($file, $response['body'], FS_CHMOD_FILE)) {
@@ -87,7 +79,7 @@ class TranslationsDownloader
             }
 
             /* Unzip the file to wp-content/languages/woocommerce directory */
-            $dir = trailingslashit(WP_LANG_DIR) . 'woocommerce/';
+            $dir = trailingslashit(WP_LANG_DIR).'woocommerce/';
             $unzip = unzip_file($file, $dir);
             if (true !== $unzip) {
                 throw new \RuntimeException($cantDownload);
@@ -98,23 +90,21 @@ class TranslationsDownloader
 
             return true;
         } else {
-
             throw new \RuntimeException($cantDownload);
         }
     }
 
     /**
-     * Check if the langauge pack is avaliable in the langauge repo
+     * Check if the langauge pack is avaliable in the langauge repo.
      *
      * @param string $locale locale
      *
-     * @return boolean true if exists , false otherwise
+     * @return bool true if exists , false otherwise
      */
     public static function isAvaliable($locale)
     {
         $response = wp_remote_get(
-                sprintf('%s/%s.zip', static::getRepoUrl(), $locale)
-                , array('sslverify' => false, 'timeout' => 200)
+                sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('sslverify' => false, 'timeout' => 200)
         );
 
         if (
@@ -129,36 +119,33 @@ class TranslationsDownloader
     }
 
     /**
-     * Check if woocommerce language file is already downloaded
+     * Check if woocommerce language file is already downloaded.
      *
      * @param string $locale locale
      *
-     * @return boolean true if downaloded , false otherwise
+     * @return bool true if downaloded , false otherwise
      */
     public static function isDownloaded($locale)
     {
         return file_exists(
                 sprintf(
                         trailingslashit(WP_LANG_DIR)
-                        . '/woocommerce/woocommerce-%s.mo'
-                        , $locale
+                        .'/woocommerce/woocommerce-%s.mo', $locale
                 )
         );
     }
 
     /**
-     * Get langauge repo URL
+     * Get langauge repo URL.
      *
      * @return string
      */
     public static function getRepoUrl()
     {
         $url = sprintf(
-                'https://downloads.wordpress.org/translation/plugin/woocommerce/%s'
-                , WC()->version
+                'https://downloads.wordpress.org/translation/plugin/woocommerce/%s', WC()->version
         );
 
         return apply_filters(HooksInterface::LANGUAGE_REPO_URL_FILTER, $url);
     }
-
 }

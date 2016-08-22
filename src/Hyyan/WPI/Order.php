@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
 namespace Hyyan\WPI;
 
 /**
- * Order
+ * Order.
  *
  * Handle order language
  *
@@ -19,22 +19,19 @@ namespace Hyyan\WPI;
  */
 class Order
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
 
         /* Manage order translation */
         add_filter(
-                'pll_get_post_types'
-                , array($this, 'manageOrderTranslation')
+                'pll_get_post_types', array($this, 'manageOrderTranslation')
         );
         /* Save the order language with every checkout */
         add_action(
-                'woocommerce_checkout_update_order_meta'
-                , array($this, 'saveOrderLanguage')
+                'woocommerce_checkout_update_order_meta', array($this, 'saveOrderLanguage')
         );
 
         if (is_admin()) {
@@ -42,25 +39,20 @@ class Order
         }
 
         /* For the query used to get orders in my accout page */
-        add_filter('woocommerce_my_account_my_orders_query'
-                , array($this, 'correctMyAccountOrderQuery')
+        add_filter('woocommerce_my_account_my_orders_query', array($this, 'correctMyAccountOrderQuery')
         );
 
         /* Translate products in order details */
         add_filter(
-                'woocommerce_order_item_product'
-                , array($this, 'translateProductsInOrdersDetails')
-                , 10, 3
+                'woocommerce_order_item_product', array($this, 'translateProductsInOrdersDetails'), 10, 3
         );
         add_filter(
-                'woocommerce_order_item_name'
-                , array($this, 'translateProductNameInOrdersDetails')
-                , 10, 3
+                'woocommerce_order_item_name', array($this, 'translateProductNameInOrdersDetails'), 10, 3
         );
     }
 
     /**
-     * Notifty polylang about order custom post
+     * Notifty polylang about order custom post.
      *
      * @param array $types array of custom post names managed by polylang
      *
@@ -81,9 +73,9 @@ class Order
     }
 
     /**
-     * Save the order language with every checkout
+     * Save the order language with every checkout.
      *
-     * @param integer $order the order object
+     * @param int $order the order object
      */
     public function saveOrderLanguage($order)
     {
@@ -94,7 +86,7 @@ class Order
     }
 
     /**
-     * Translate products in order details pages
+     * Translate products in order details pages.
      *
      * @param \WC_Product $product
      *
@@ -110,7 +102,7 @@ class Order
     }
 
     /**
-     * Translate the product name in order details page
+     * Translate the product name in order details page.
      *
      * @param string $name product name
      * @param array  $item order item
@@ -136,7 +128,7 @@ class Order
     }
 
     /**
-     * Correct My account order query
+     * Correct My account order query.
      *
      * Will correct the query to display orders from all languages
      *
@@ -152,17 +144,15 @@ class Order
     }
 
     /**
-     * Disallow the user to create translations for this post type
+     * Disallow the user to create translations for this post type.
      */
     public function limitPolylangFeaturesForOrders()
     {
         add_action('current_screen', function () {
-
             $screen = get_current_screen();
 
             if ($screen->post_type === 'shop_order') {
                 add_action('admin_print_scripts', function () {
-
                     $jsID = 'order-translations-buttons';
                     $code = '$(".pll_icon_add,#post-translations").fadeOut()';
 
@@ -173,9 +163,9 @@ class Order
     }
 
     /**
-     * Get the order language
+     * Get the order language.
      *
-     * @param integer $ID order ID
+     * @param int $ID order ID
      *
      * @return string|false language in success , false otherwise
      */
@@ -183,5 +173,4 @@ class Order
     {
         return pll_get_post_language($ID);
     }
-
 }

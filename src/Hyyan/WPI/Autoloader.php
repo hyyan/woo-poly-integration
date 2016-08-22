@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,19 +11,19 @@
 namespace Hyyan\WPI;
 
 /**
- * Plugin Namespace Autoloader
+ * Plugin Namespace Autoloader.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 final class Autoloader
 {
     /**
-     * @var String
+     * @var string
      */
     private $base;
 
     /**
-     * Construct the autoloader class
+     * Construct the autoloader class.
      *
      * @param string $base the base path to use
      *
@@ -36,11 +36,11 @@ final class Autoloader
     }
 
     /**
-     * Handle autoloading
+     * Handle autoloading.
      *
      * @param string $className class or inteface name
      *
-     * @return boolean true if class or interface exists , false otherwise
+     * @return bool true if class or interface exists , false otherwise
      */
     public function handle($className)
     {
@@ -48,9 +48,9 @@ final class Autoloader
             return;
         }
 
-        $filename = $this->base . str_replace('\\', '/', $className) . ".php";
+        $filename = $this->base.str_replace('\\', '/', $className).'.php';
         if (file_exists($filename)) {
-            require_once($filename);
+            require_once $filename;
             if (
                     class_exists($className) ||
                     interface_exists($className)
@@ -61,5 +61,4 @@ final class Autoloader
 
         return false;
     }
-
 }

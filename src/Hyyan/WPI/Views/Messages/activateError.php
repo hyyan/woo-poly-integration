@@ -11,8 +11,7 @@ if (!defined('ABSPATH')) {
 <p>
     <?php
     _e('The plugin can not function correctly , the plugin requires
-        WooCommerce and Polylang plugins'
-            , 'woo-poly-integration'
+        WooCommerce and Polylang plugins', 'woo-poly-integration'
     );
     ?>
 <p>

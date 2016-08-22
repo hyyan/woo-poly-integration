@@ -14,8 +14,7 @@ if (!defined('ABSPATH')) {
         _e('The plugin is an open source project
             which aims to fill the gap between
             <a href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>
-            and <a href="https://wordpress.org/plugins/polylang/">Polylang</a>'
-                , 'woo-poly-integration'
+            and <a href="https://wordpress.org/plugins/polylang/">Polylang</a>', 'woo-poly-integration'
         )
         ?>
         <br><br>

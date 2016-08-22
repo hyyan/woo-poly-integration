@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
 namespace Hyyan\WPI;
 
 /**
- * Login
+ * Login.
  *
  * Handle login
  *
@@ -19,20 +19,18 @@ namespace Hyyan\WPI;
  */
 class Login
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         add_filter(
-                'woocommerce_login_redirect'
-                , array($this, 'getLoginRedirectPermalink')
+                'woocommerce_login_redirect', array($this, 'getLoginRedirectPermalink')
         );
     }
 
     /**
-     * Find the correct login redirect permalink
+     * Find the correct login redirect permalink.
      *
      * @param string $to redirect url
      *
@@ -49,5 +47,4 @@ class Login
 
         return $to;
     }
-
 }

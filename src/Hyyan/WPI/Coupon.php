@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,11 +10,11 @@
 
 namespace Hyyan\WPI;
 
-use Hyyan\WPI\Admin\Settings,
-    Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Features;
 
 /**
- * Coupon
+ * Coupon.
  *
  * Handle coupon with products translations
  *
@@ -22,9 +22,8 @@ use Hyyan\WPI\Admin\Settings,
  */
 class Coupon
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
@@ -34,7 +33,7 @@ class Coupon
     }
 
     /**
-     * Extend the coupon to include porducts translations
+     * Extend the coupon to include porducts translations.
      *
      * @param \WC_Coupon $coupon
      *
@@ -42,7 +41,6 @@ class Coupon
      */
     public function couponLoaded(\WC_Coupon $coupon)
     {
-
         $productIDS = array();
         $excludeProductIDS = array();
         $productCategoriesIDS = array();
@@ -50,28 +48,24 @@ class Coupon
 
         foreach ($coupon->product_ids as $id) {
             $productIDS = array_merge(
-                    $productIDS
-                    , $this->getProductPostTranslationIDS($id)
+                    $productIDS, $this->getProductPostTranslationIDS($id)
             );
         }
         foreach ($coupon->exclude_product_ids as $id) {
             $excludeProductIDS = array_merge(
-                    $excludeProductIDS
-                    , $this->getProductPostTranslationIDS($id)
+                    $excludeProductIDS, $this->getProductPostTranslationIDS($id)
             );
         }
 
         foreach ($coupon->product_categories as $id) {
             $productCategoriesIDS = array_merge(
-                    $productCategoriesIDS
-                    , $this->getProductTermTranslationIDS($id)
+                    $productCategoriesIDS, $this->getProductTermTranslationIDS($id)
             );
         }
 
         foreach ($coupon->exclude_product_categories as $id) {
             $excludeProductCategoriesIDS = array_merge(
-                    $excludeProductCategoriesIDS
-                    , $this->getProductTermTranslationIDS($id)
+                    $excludeProductCategoriesIDS, $this->getProductTermTranslationIDS($id)
             );
         }
 
@@ -84,9 +78,9 @@ class Coupon
     }
 
     /**
-     * Get array of product translations IDS
+     * Get array of product translations IDS.
      *
-     * @param integer $ID the product ID
+     * @param int $ID the product ID
      *
      * @return array array contains all translation IDS for the given product
      */
@@ -111,18 +105,16 @@ class Coupon
     }
 
     /**
-     * Get array of term translations IDS
+     * Get array of term translations IDS.
      *
-     * @param integer $ID the term ID
+     * @param int $ID the term ID
      *
      * @return array array contains all translation IDS for the given term
      */
     protected function getProductTermTranslationIDS($ID)
     {
-
         $IDS = Utilities::getTermTranslationsArrayByID($ID);
 
         return $IDS ? $IDS : array($ID);
     }
-
 }

@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
 namespace Hyyan\WPI;
 
 /**
- * Permalinks
+ * Permalinks.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
@@ -22,7 +22,7 @@ class Permalinks
     const PRODUCT_TAG_BASE = 'product-tags';
 
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
@@ -30,7 +30,7 @@ class Permalinks
     }
 
     /**
-     * Set default permalinks
+     * Set default permalinks.
      *
      * Setup the write permalinks to work with polylang if used permalinks is the
      * default woocommerce permalinks
@@ -39,11 +39,10 @@ class Permalinks
     {
         $permalinks = get_option('woocommerce_permalinks');
 
-        $permalinks['category_base'] = $permalinks['category_base'] ? : self::PRODUCT_CATEGORY_BASE;
-        $permalinks['tag_base'] = $permalinks['tag_base'] ? : self::PRODUCT_TAG_BASE;
-        $permalinks['product_base'] = $permalinks['product_base'] ? : self::PRODUCT_BASE;
+        $permalinks['category_base'] = $permalinks['category_base'] ?: self::PRODUCT_CATEGORY_BASE;
+        $permalinks['tag_base'] = $permalinks['tag_base'] ?: self::PRODUCT_TAG_BASE;
+        $permalinks['product_base'] = $permalinks['product_base'] ?: self::PRODUCT_BASE;
 
         update_option('woocommerce_permalinks', $permalinks);
     }
-
 }

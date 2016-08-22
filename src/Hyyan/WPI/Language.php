@@ -2,7 +2,7 @@
 
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
- * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>
+ * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,34 +10,33 @@
 
 namespace Hyyan\WPI;
 
-use Hyyan\WPI\Admin\Settings,
-    Hyyan\WPI\Admin\Features,
-    Hyyan\WPI\Tools\TranslationsDownloader;
+use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Tools\TranslationsDownloader;
 
 /**
- * Language
+ * Language.
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
 class Language
 {
-
     /**
-     * Construct object
+     * Construct object.
      */
     public function __construct()
     {
         add_action('load-settings_page_mlang', array(
-            $this, 'downlaodWhenPolylangAddLangauge'
+            $this, 'downlaodWhenPolylangAddLangauge',
         ));
 
         add_action('woo-poly.settings.wpi-features_fields', array(
-            $this, 'addSettingFields'
+            $this, 'addSettingFields',
         ));
     }
 
     /**
-     * Add setting fields
+     * Add setting fields.
      *
      * Add langauge setting fields
      *
@@ -47,31 +46,28 @@ class Language
      */
     public function addSettingFields(array $fields)
     {
-
         $fields [] = array(
             'name' => 'language-downloader',
             'type' => 'checkbox',
             'default' => 'on',
             'label' => __('Translation Downloader', 'woo-poly-integration'),
             'desc' => __(
-                    'Download Woocommerce translations when a new polylang language is added'
-                    , 'woo-poly-integration'
-            )
+                    'Download Woocommerce translations when a new polylang language is added', 'woo-poly-integration'
+            ),
         );
 
         return $fields;
     }
 
     /**
-     * Download Translation
+     * Download Translation.
      *
      * Download woocommerce translation when polylang add new langauge
      *
-     * @return boolean true if action executed successfully , false otherwise
+     * @return bool true if action executed successfully , false otherwise
      */
     public function downlaodWhenPolylangAddLangauge()
     {
-
         if ('off' === Settings::getOption('language-downloader', Features::getID(), 'on')) {
             return false;
         }
@@ -93,15 +89,11 @@ class Language
         try {
             return TranslationsDownloader::download($locale, $name);
         } catch (\RuntimeException $ex) {
-
             add_settings_error(
-                    'general'
-                    , $ex->getCode()
-                    , $ex->getMessage()
+                    'general', $ex->getCode(), $ex->getMessage()
             );
 
             return false;
         }
     }
-
 }
