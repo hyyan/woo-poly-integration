@@ -95,7 +95,7 @@ class Meta
      *
      * @param int $ID Id of the product in the default language
      */
-    public function add_product_type_meta($ID)
+    public function addProductTypeMeta($ID)
     {
         if ($ID) {
             $meta = get_post_meta($ID, '_translation_porduct_type');
