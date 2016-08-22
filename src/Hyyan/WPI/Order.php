@@ -114,6 +114,7 @@ class Order
      *
      * @param string $name product name
      * @param array  $item order item
+     * @param boolean $is_visible whether product is visible
      *
      * @return string product name
      *
