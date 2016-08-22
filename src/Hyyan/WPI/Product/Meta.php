@@ -73,6 +73,10 @@ class Meta
             $disable = isset($_GET['new_lang']) && (esc_attr($_GET['new_lang']) != pll_default_language()) ?
                     true : false;
             $ID = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
+            
+            // Add the '_translation_porduct_type' meta, for the case where
+            // the product was created before plugin acivation.
+            $this->addProductTypeMeta($ID);
         }
 
         // disable fields edit for translation
@@ -84,6 +88,26 @@ class Meta
 
         /* sync selected product type */
         $this->syncSelectedproductType($ID);
+    }
+    
+    /**
+     * Add product type meta to products created before plugin activation.
+     *
+     * @param int $ID Id of the product in the default language
+     */
+    public function add_product_type_meta($ID)
+    {
+        if ($ID) {
+            $meta = get_post_meta($ID, '_translation_porduct_type');
+
+            if (empty($meta)) {
+                $product = wc_get_product($ID);
+                if ($product) {
+                    update_post_meta($ID, '_translation_porduct_type', $product->product_type);
+                }
+            }
+
+        }
     }
 
     /**
