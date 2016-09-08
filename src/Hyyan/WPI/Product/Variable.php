@@ -27,20 +27,18 @@ class Variable
      */
     public function __construct()
     {
+        // Handle variations duplication
         add_action('save_post', array($this, 'duplicateVariations'), 10, 3);
-        add_action(
-                'wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9
-        );
+        add_action('save_post', array($this, 'syncDefaultAttributes'), 10, 3);
+        
+        // Remove variations
+        add_action('wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9);
 
-        // extend meta list to include variation meta
-        add_filter(
-                HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList')
-        );
-        /* Extend selectors list to include variation meta */
-        add_filter(
-                HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors')
-        );
+        // Extend meta list to include variation meta and fields to lock
+        add_filter(HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList'));
+        add_filter(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors'));
 
+        // Variable Products limitations warnings and safe-guards
         if (is_admin()) {
             $this->handleVariableLimitation();
             $this->shouldDisableLangSwitcher();
@@ -109,6 +107,121 @@ class Variable
             $variation->duplicate();
 
             add_action('save_post', array($this, __FUNCTION__), 10, 3);
+        }
+    }
+    
+    /**
+     * Prevents plugins (like Polylang) from overwriting default attribute meta sync.
+     *
+     * Why is this required: Polylang to simplify the synchronization process of multiple meta values,
+     * deletes all metas first. In this process Variable Product default attributes that are not taxomomies
+     * managed by Polylang, are lost. 
+     *
+     * @param boolean   $check      Whether to manipulate metadata. (true to continue, false to stop execution)
+     * @param int       $object_id  ID of the object metadata is for
+     * @param string    $meta_key   Metadata key
+	 * @param string    $meta_value Metadata value
+     */
+    public function skipDefaultAttributesMeta($check, $object_id, $meta_key, $meta_value)
+    {
+        // Ignore if not 'default attribute' meta
+        if ('_default_attributes' === $meta_key) {
+            $product = wc_get_product($object_id);
+
+            // Don't let anyone delete the meta. NO ONE!
+            if ($product && current_filter() === 'delete_post_metadata') {
+                return false;
+            }
+
+            // _default_attributes meta should be unique
+            if ($product && current_filter() === 'add_post_metadata') {
+                $old_value = get_post_meta($product->id, '_default_attributes');
+                return empty($old_value) ? $check : false;
+            }
+
+            // Maybe is Variable Product
+            // New translations of Variable Products are first created as simple
+            if ($product && Utilities::maybeVariableProduct($product)) {
+                // Try Polylang first
+                $lang = pll_get_post_language($product->id);
+
+                if (!$lang) {
+                    // Must be a new translation and Polylang doesn't stored the language yet
+                    $lang = isset($_GET['new_lang']) ? $_GET['new_lang'] : '';
+                }
+
+                foreach ($meta_value as $key => $value) {
+                    $term = get_term_by('slug', $value, $key);
+
+                    if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
+                        $translated_term_id = pll_get_term($term->term_id, $lang);
+                        $translated_term    = get_term_by('id', $translated_term_id, $term->taxonomy);
+
+                        // If meta is taxonomy managed by Polylang and is in the
+                        // correct language continue, otherwise return false to
+                        // stop execution
+                        return ($value === $translated_term->slug) ? $check : false;
+                    }
+                }
+            }
+        }
+
+        return $check;
+    }
+
+    /**
+     * Sync default attributes between product translations.
+     *
+     * @param int       $post_id    Post ID
+     * @param \WP_Post  $post       Post Object
+     * @param boolean   $update     true if updating the post, false otherwise
+     */
+    public function syncDefaultAttributes($post_id, $post, $update)
+    {
+        // Don't sync if not in the admin backend nor on autosave
+        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        // Don't sync if Default Attribute syncronization is disabled
+        $metas = Meta::getProductMetaToCopy();
+
+        if (!in_array('_default_attributes', $metas)) {
+            return;
+        }
+
+        //  To avoid Polylang overwriting default attribute meta
+        add_filter('delete_post_metadata', array($this, 'skipDefaultAttributesMeta'), 10, 4);
+        add_filter('add_post_metadata', array($this, 'skipDefaultAttributesMeta'), 10, 4);
+        add_filter('update_post_metadata', array($this, 'skipDefaultAttributesMeta'), 10, 4);
+
+        // Don't sync if not a Variable Product
+        $product = wc_get_product($post_id);
+
+        if ($product && 'simple' === $product->product_type && Utilities::maybeVariableProduct($product)) {
+            // Maybe is Variable Product - new translations of Variable Products are first created as simple
+
+            // Only need to sync for the new translation from source product
+            // The other product translation stay untouched
+            $attributes_translation = Utilities::getDefaultAttributesTranslation($_GET['from_post'], $_GET['new_lang']);
+
+            if (!empty($attributes_translation) && isset($attributes_translation[$_GET['new_lang']])) {
+                update_post_meta($product->id, '_default_attributes', $attributes_translation[$_GET['new_lang']]);
+            }
+        } elseif ($product && 'variable' === $product->product_type) {
+            // Variable Product
+
+            // For each product translation, get the translated (default) terms/attributes
+            $attributes_translation = Utilities::getDefaultAttributesTranslation($product->id);
+            $langs                  = pll_languages_list();
+
+            foreach ($langs as $lang) {
+                $translation_id = pll_get_post($product->id, $lang);
+
+                if ($translation_id != $product->id) {
+                    update_post_meta($translation_id, '_default_attributes', $attributes_translation[$lang]);
+                }
+            }
         }
     }
 

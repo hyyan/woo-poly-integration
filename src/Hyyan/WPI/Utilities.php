@@ -213,4 +213,95 @@ final class Utilities
 
         return false;
     }
+    
+    /**
+     * Get variations default attributes translation.
+     *
+     * Get the translation of the default attributes of product passed by id, in
+     * a given language, if one is passed, otherwise in all available languages.
+     *
+     * @param int       $product_id     (required) Product id.
+     * @param string    $lang           (optional) Language slug.
+     *
+     * @return array    Indexed array, with language slug as key, of attributes
+     *                  pairs [attribute] => attribute slug
+     */
+    public static function getDefaultAttributesTranslation($product_id, $lang = '')
+    {
+        $product = wc_get_product( $product_id );
+        $translated_attributes = array();
+
+        if ($product && 'variable' === $product->product_type) {
+            $default_attributes = $product->get_variation_default_attributes();
+            $terms = array(); // Array of terms: if the term is taxonomy each value is a term object, otherwise an array (term slug => term value)
+            $langs = array();
+
+            foreach ($default_attributes as $key => $value) {
+                $term = get_term_by('name', $value, $key);
+
+                if ($term && pll_is_translated_taxonomy($term->taxonomy))
+                    $terms[] = $term;
+                else
+                    $terms[] = array($key => $value);
+            }
+
+            // For each product translation, get the translated default attributes
+            if (empty($lang)) {
+                $langs = pll_languages_list();
+            } else {
+                $langs[] = $lang; // get translation for a specific language
+            }
+
+            foreach ($langs as $lang) {
+                $translated_terms = array();
+
+                foreach ($terms as $term) {
+                    if (is_object($term)) {
+                        $translated_term_id = pll_get_term($term->term_id, $lang);
+                        $translated_term = get_term_by('id', $translated_term_id, $term->taxonomy);
+
+                        $translated_terms[$translated_term->taxonomy] = $translated_term->slug;
+                    } else {
+                        $translated_terms[key($term)] = $term[key($term)];
+                    }
+                }
+
+                $translated_attributes[$lang] = $translated_terms;
+            }
+        }
+
+        return $translated_attributes;
+    }
+
+    /**
+     * Check if it product might be a Variable Product.
+     *
+     * New translations of Variable Products are first created as Simple Products.
+     *
+     * @param \WC_Product|int   $product    (required) Product object or product id.
+     *
+     * @return bool true is is variable, false otherwise.
+     */
+    public static function maybeVariableProduct($product)
+    {
+        if (is_numeric($product))
+            $product = wc_get_product(asbint($product));
+
+        if ($product && 'variable' === $product->product_type)
+            return true;
+        elseif ($product && 'simple' === $product->product_type) {
+            $current_screen  = function_exists('get_current_screen') ? get_current_screen() : false;
+            $add_new_product = $current_screen && $current_screen->post_type === 'product' && $current_screen->action === 'add';
+            $is_translation  = isset($_GET['from_post']) && isset($_GET['new_lang']);
+            $has_variations  = get_children(array(
+                    'post_type'   => 'product_variation',
+                    'post_parent' => $product->id
+                ));
+
+            if ($add_new_product && $is_translation && $has_variations)
+                    return true;
+        }
+
+        return false;
+    }
 }
