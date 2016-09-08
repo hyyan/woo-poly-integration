@@ -47,7 +47,7 @@ class Order
                 'woocommerce_order_item_product', array($this, 'translateProductsInOrdersDetails'), 10, 3
         );
         add_filter(
-                'woocommerce_order_item_name', array($this, 'translateProductNameInOrdersDetails'), 10, 2
+                'woocommerce_order_item_name', array($this, 'translateProductNameInOrdersDetails'), 10, 3
         );
     }
 
@@ -106,18 +106,19 @@ class Order
      *
      * @param string $name product name
      * @param array  $item order item
+     * @param boolean $is_visible whether product is visible
      *
      * @return string product name
      *
      * @todo should I remove this filter and let handle the translation in the
      *       theme file?
      */
-    public function translateProductNameInOrdersDetails($name, $item)
+    public function translateProductNameInOrdersDetails($name, $item, $is_visible)
     {
         $id = $item['item_meta']['_product_id'][0];
         $product = Utilities::getProductTranslationByID($id);
         if ($product) {
-            if (!$product->is_visible()) {
+            if (!$is_visible) {
                 return $product->post->post_title;
             } else {
                 return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
