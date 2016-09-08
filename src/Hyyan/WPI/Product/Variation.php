@@ -169,6 +169,10 @@ class Variation
      */
     protected function insert(\WC_Product_Variation $variation, array $metas)
     {
+        // Add the duplicate meta to the default language product variation,
+        // just in case the product was created before plugin acivation.
+        $this->addDuplicateMeta( $variation->variation_id );
+        
         $data = (array) get_post($variation->variation_id);
         unset($data['ID']);
         $data['post_parent'] = $this->to->id;
@@ -193,6 +197,22 @@ class Variation
     protected function update(\WC_Product_Variation $variation, \WP_Post $post, array $metas)
     {
         $this->copyVariationMetas($variation->variation_id, $post->ID);
+    }
+    
+    /**
+     * Add duplicate meta key to products created before plugin activation.
+     *
+     * @param int $ID   Id of the product in the default language
+     */
+    public function addDuplicateMeta($ID)
+    {
+        if ($ID) {
+            $meta = get_post_meta($ID, self::DUPLICATE_KEY);
+
+            if (empty($meta)) {
+                update_post_meta($ID, self::DUPLICATE_KEY, $ID);
+            }
+        }
     }
 
     /**
