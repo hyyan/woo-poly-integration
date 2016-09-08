@@ -27,21 +27,18 @@ class Variable
      */
     public function __construct()
     {
+        // Handle variations duplication
         add_action('save_post', array($this, 'duplicateVariations'), 10, 3);
-        add_action( 'save_post', array( $this, 'sync_default_attributes' ), 10, 3 );
-        add_action(
-                'wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9
-        );
+        add_action('save_post', array($this, 'syncDefaultAttributes'), 10, 3);
+        
+        // Remove variations
+        add_action('wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9);
 
-        // extend meta list to include variation meta
-        add_filter(
-                HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList')
-        );
-        /* Extend selectors list to include variation meta */
-        add_filter(
-                HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors')
-        );
+        // Extend meta list to include variation meta and fields to lock
+        add_filter(HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList'));
+        add_filter(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors'));
 
+        // Variable Products limitations warnings and safe-guards
         if (is_admin()) {
             $this->handleVariableLimitation();
             $this->shouldDisableLangSwitcher();
@@ -123,9 +120,9 @@ class Variable
      * @param boolean   $check      Whether to manipulate metadata. (true to continue, false to stop execution)
      * @param int       $object_id  ID of the object metadata is for
      * @param string    $meta_key   Metadata key
-25	 * @param string    $meta_value Metadata value
+	 * @param string    $meta_value Metadata value
      */
-    public function skip_default_attributes_meta($check, $object_id, $meta_key, $meta_value)
+    public function skipDefaultAttributesMeta($check, $object_id, $meta_key, $meta_value)
     {
         // Ignore if not 'default attribute' meta
         if ('_default_attributes' === $meta_key) {
@@ -144,7 +141,7 @@ class Variable
 
             // Maybe is Variable Product
             // New translations of Variable Products are first created as simple
-            if ($product && Utilities::maybe_variable_product($product)) {
+            if ($product && Utilities::maybeVariableProduct($product)) {
                 // Try Polylang first
                 $lang = pll_get_post_language($product->id);
 
@@ -179,7 +176,7 @@ class Variable
      * @param \WP_Post  $post       Post Object
      * @param boolean   $update     true if updating the post, false otherwise
      */
-    public function sync_default_attributes($post_id, $post, $update)
+    public function syncDefaultAttributes($post_id, $post, $update)
     {
         // Don't sync if not in the admin backend nor on autosave
         if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
@@ -194,19 +191,19 @@ class Variable
         }
 
         //  To avoid Polylang overwriting default attribute meta
-        add_filter('delete_post_metadata', array($this, 'skip_default_attributes_meta'), 10, 4);
-        add_filter('add_post_metadata', array($this, 'skip_default_attributes_meta'), 10, 4);
-        add_filter('update_post_metadata', array($this, 'skip_default_attributes_meta'), 10, 4);
+        add_filter('delete_post_metadata', array($this, 'skipDefaultAttributesMeta'), 10, 4);
+        add_filter('add_post_metadata', array($this, 'skipDefaultAttributesMeta'), 10, 4);
+        add_filter('update_post_metadata', array($this, 'skipDefaultAttributesMeta'), 10, 4);
 
         // Don't sync if not a Variable Product
         $product = wc_get_product($post_id);
 
-        if ($product && 'simple' === $product->product_type && Utilities::maybe_variable_product($product)) {
+        if ($product && 'simple' === $product->product_type && Utilities::maybeVariableProduct($product)) {
             // Maybe is Variable Product - new translations of Variable Products are first created as simple
 
             // Only need to sync for the new translation from source product
             // The other product translation stay untouched
-            $attributes_translation = Utilities::get_default_attributes_translation($_GET['from_post'], $_GET['new_lang']);
+            $attributes_translation = Utilities::getDefaultAttributesTranslation($_GET['from_post'], $_GET['new_lang']);
 
             if (!empty($attributes_translation) && isset($attributes_translation[$_GET['new_lang']])) {
                 update_post_meta($product->id, '_default_attributes', $attributes_translation[$_GET['new_lang']]);
@@ -215,7 +212,7 @@ class Variable
             // Variable Product
 
             // For each product translation, get the translated (default) terms/attributes
-            $attributes_translation = Utilities::get_default_attributes_translation($product->id);
+            $attributes_translation = Utilities::getDefaultAttributesTranslation($product->id);
             $langs                  = pll_languages_list();
 
             foreach ($langs as $lang) {

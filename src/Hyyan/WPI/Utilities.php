@@ -226,7 +226,7 @@ final class Utilities
      * @return array    Indexed array, with language slug as key, of attributes
      *                  pairs [attribute] => attribute slug
      */
-    public static function get_default_attributes_translation($product_id, $lang = '')
+    public static function getDefaultAttributesTranslation($product_id, $lang = '')
     {
         $product = wc_get_product( $product_id );
         $translated_attributes = array();
@@ -282,7 +282,7 @@ final class Utilities
      *
      * @return bool true is is variable, false otherwise.
      */
-    public static function maybe_variable_product($product)
+    public static function maybeVariableProduct($product)
     {
         if (is_numeric($product))
             $product = wc_get_product(asbint($product));
