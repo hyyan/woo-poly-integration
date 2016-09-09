@@ -12,6 +12,7 @@ namespace Hyyan\WPI;
 
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Utilities;
 
 /**
  * Reports.
@@ -78,11 +79,9 @@ class Reports
     }
 
     /**
-     * Filter by lanaguge.
+     * Filter by language.
      *
-     * Filter report data according to choosen lanaguge
-     *
-     * @global \Polylang $polylang
+     * Filter report data according to choosen language
      *
      * @param array $query
      *
@@ -102,13 +101,12 @@ class Reports
         if (isset($_GET['product_ids'])) {
             return $query;
         }
-
-        global $polylang;
+        
         $lang = ($current = pll_current_language()) ?
                 array($current) :
                 pll_languages_list();
 
-        $query['join'] .= PLL()->model->post->join_clause('post');
+        $query['join'] .= PLL()->model->post->join_clause(Utilities::polylangVersionCheck('2.0') ? 'posts' : 'post');
         $query['where'] .= PLL()->model->post->where_clause($lang, 'post');
 
         return $query;
@@ -178,11 +176,9 @@ class Reports
     }
 
     /**
-     * Filter stock by langauge.
+     * Filter stock by language.
      *
-     * Filter the stock table according to choosen langauge
-     *
-     * @global \Polylang $polylang
+     * Filter the stock table according to choosen language
      *
      * @param string $query stock query
      *
@@ -190,12 +186,11 @@ class Reports
      */
     public function filterStockByLangauge($query)
     {
-        global $polylang;
         $lang = ($current = pll_current_language()) ?
                 array($current) :
                 pll_languages_list();
-
-        $join = PLL()->model->post->join_clause('post');
+        
+        $join = PLL()->model->post->join_clause(Utilities::polylangVersionCheck('2.0') ? 'posts' : 'post');
         $where = PLL()->model->post->where_clause($lang, 'post');
 
         return str_replace('WHERE 1=1', "{$join} WHERE 1=1 {$where}", $query);
