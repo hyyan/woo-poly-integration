@@ -250,6 +250,8 @@ class Variation
                         if ($term) {
                             $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->id);
                             $translated[] = get_term_by('id', pll_get_term($term->term_id, $lang), $tax)->slug;
+                        } else {
+                            $translated[] = $termSlug;
                         }
                     }
                     $metas[$key] = $translated;
