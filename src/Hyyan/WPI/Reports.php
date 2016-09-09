@@ -108,8 +108,8 @@ class Reports
                 array($current) :
                 pll_languages_list();
 
-        $query['join'] .= $polylang->model->join_clause('post');
-        $query['where'] .= $polylang->model->where_clause($lang, 'post');
+        $query['join'] .= PLL()->model->post->join_clause('post');
+        $query['where'] .= PLL()->model->post->where_clause($lang, 'post');
 
         return $query;
     }
@@ -195,8 +195,8 @@ class Reports
                 array($current) :
                 pll_languages_list();
 
-        $join = $polylang->model->join_clause('post');
-        $where = $polylang->model->where_clause($lang, 'post');
+        $join = PLL()->model->post->join_clause('post');
+        $where = PLL()->model->post->where_clause($lang, 'post');
 
         return str_replace('WHERE 1=1', "{$join} WHERE 1=1 {$where}", $query);
     }
