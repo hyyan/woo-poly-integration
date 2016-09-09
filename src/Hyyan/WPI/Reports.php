@@ -59,13 +59,13 @@ class Reports
 
         /* handle stock table filtering */
         add_filter(
-                'woocommerce_report_most_stocked_query_from', array($this, 'filterStockByLangauge')
+                'woocommerce_report_most_stocked_query_from', array($this, 'filterStockByLanguage')
         );
         add_filter(
-                'woocommerce_report_out_of_stock_query_from', array($this, 'filterStockByLangauge')
+                'woocommerce_report_out_of_stock_query_from', array($this, 'filterStockByLanguage')
         );
         add_filter(
-                'woocommerce_report_low_in_stock_query_from', array($this, 'filterStockByLangauge')
+                'woocommerce_report_low_in_stock_query_from', array($this, 'filterStockByLanguage')
         );
 
         /* Combine product report with its translation */
@@ -184,7 +184,7 @@ class Reports
      *
      * @return string final stock query
      */
-    public function filterStockByLangauge($query)
+    public function filterStockByLanguage($query)
     {
         $lang = ($current = pll_current_language()) ?
                 array($current) :
