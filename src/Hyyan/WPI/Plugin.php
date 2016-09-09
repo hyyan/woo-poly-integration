@@ -154,5 +154,6 @@ class Plugin
         new Widgets\LayeredNav();
         new Gateways();
         new Shipping();
+        new Breadcrumb();
     }
 }
