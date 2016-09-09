@@ -1,3 +1,14 @@
+###0.29(Not Released)
+* [Fixed backend html orders screen](https://github.com/hyyan/woo-poly-integration/pull/55)
+* [Fixed product type dropdown selection](https://github.com/hyyan/woo-poly-integration/pull/56)
+* [Fixed translation of products variations created before plugin activation](https://github.com/hyyan/woo-poly-integration/pull/60)
+* [Fixed variable products default attributes sync](https://github.com/hyyan/woo-poly-integration/pull/61)
+* [Fixed variable products (non-taxonomies) attributes sync](https://github.com/hyyan/woo-poly-integration/pull/62)
+* [Fixed product shipping class for websites running WooCommerce 2.6 or higher](https://github.com/hyyan/woo-poly-integration/pull/63)
+* [Fixed cart translation](https://github.com/hyyan/woo-poly-integration/pull/64)
+* [Fixed coupons with multiple products](https://github.com/hyyan/woo-poly-integration/pull/65)
+* [Fixed coupon with multiple products](https://github.com/hyyan/woo-poly-integration/pull/66)
+
 ###0.28(Not Released)
 
 * [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)

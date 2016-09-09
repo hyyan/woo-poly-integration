@@ -31,7 +31,7 @@ the same interface you love.
   - [√] Product Gallery
 - [√] Order Translation
 - [√] Stock Synchronization
-- [√] Cart Synchronization `Without Variation Support`
+- [√] Cart Synchronization
 - [√] Coupon Synchronization
 - [√] Emails
 - [√] Reports
@@ -111,6 +111,17 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+= 0.29 =
+* [Fixed backend html orders screen](https://github.com/hyyan/woo-poly-integration/pull/55)
+* [Fixed product type dropdown selection](https://github.com/hyyan/woo-poly-integration/pull/56)
+* [Fixed translation of products variations created before plugin activation](https://github.com/hyyan/woo-poly-integration/pull/60)
+* [Fixed variable products default attributes sync](https://github.com/hyyan/woo-poly-integration/pull/61)
+* [Fixed variable products (non-taxonomies) attributes sync](https://github.com/hyyan/woo-poly-integration/pull/62)
+* [Fixed product shipping class for websites running WooCommerce 2.6 or higher](https://github.com/hyyan/woo-poly-integration/pull/63)
+* [Fixed cart translation](https://github.com/hyyan/woo-poly-integration/pull/64)
+* [Fixed coupons with multiple products](https://github.com/hyyan/woo-poly-integration/pull/65)
+* [Fixed coupon with multiple products](https://github.com/hyyan/woo-poly-integration/pull/66)
+
 = 0.28 =
 * [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)
 * [Fixed shipment methods translation and added support for WooCommerce 2.6.](https://github.com/hyyan/woo-poly-integration/pull/50)
