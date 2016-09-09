@@ -8,6 +8,7 @@
 * [Fixed cart translation](https://github.com/hyyan/woo-poly-integration/pull/64)
 * [Fixed coupons with multiple products](https://github.com/hyyan/woo-poly-integration/pull/65)
 * [Fixed coupon with multiple products](https://github.com/hyyan/woo-poly-integration/pull/66)
+* Tested and confirmed working on WordPress 4.6.1 and Polylang 2.0.4
 
 ###0.28(Not Released)
 
