@@ -189,7 +189,7 @@ class Reports
         $lang = ($current = pll_current_language()) ?
                 array($current) :
                 pll_languages_list();
-        
+
         $join = PLL()->model->post->join_clause(Utilities::polylangVersionCheck('2.0') ? 'posts' : 'post');
         $where = PLL()->model->post->where_clause($lang, 'post');
 
