@@ -45,6 +45,12 @@ class Meta
 
         // sync product meta with polylang
         add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        // Shipping Class translation is not supported after WooCommerce 2.6 but it is
+        // still implemented by WooCommerce as a taxonomy. Therefore Polylang will not
+        // copy the Shipping Class meta. We need to take care of it.
+        if (Utilities::woocommerceVersionCheck('2.6')) { 
+            add_action('wp_insert_post', array($this, 'syncShippingClass'), 10, 3);
+        }
 
         $currentScreen = get_current_screen();
 
@@ -88,6 +94,62 @@ class Meta
 
         /* sync selected product type */
         $this->syncSelectedproductType($ID);
+    }
+    
+    
+    /**
+     * Sync Product Shipping Class.
+     * 
+     * Shipping Class translation is not supported after WooCommerce 2.6
+     * but it is still implemented by WooCommerce as a taxonomy. Therefore,
+     * Polylang will not copy the Shipping Class meta.
+     *
+     * @param int       $post_id    Id of the product being created or edited
+     * @param \WP_Post  $post       Post object
+     * @param boolean   $update     Whether this is an existing post being updated or not
+     */
+    public function syncShippingClass($post_id, $post, $update)
+    {
+        if (in_array('product_shipping_class', $this->getProductMetaToCopy())) {
+            // If adding new product translation copy shipping class, otherwise
+            // sync all product translations with shipping class of this.
+            $copy = isset($_GET['new_lang']) && isset($_GET['from_post']);
+            
+            if ($copy) {
+                // New translation - copy shipping class from product source
+                $ID = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
+                $product = wc_get_product($ID);
+            } else {
+                // Product edit - update shipping class of all product translations
+                $product = wc_get_product($post_id);
+            }
+            
+            if ($product) {            
+                $shipping_class = $product->get_shipping_class();
+                if ($shipping_class){
+                    
+                    $shipping_terms = get_term_by( 'slug', $shipping_class, 'product_shipping_class' );
+                    if ($shipping_terms) {
+                        
+                        if ($copy) {
+                            // New translation - copy shipping class from product source
+                            wp_set_post_terms( $post_id, array( $shipping_terms->term_id ), 'product_shipping_class' );
+                        } else {
+                            // Product edit - update shipping class of all product translations
+                            $langs = pll_languages_list();
+                            
+                            foreach ($langs as $lang) {
+                                $translation_id = pll_get_post($post_id, $lang);
+                                if ($translation_id != $post_id) {
+                                    // Don't sync if is the same product
+                                    wp_set_post_terms( $translation_id, array( $shipping_terms->term_id ), 'product_shipping_class' );
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        }
     }
     
     /**
