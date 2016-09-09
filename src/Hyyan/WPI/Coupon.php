@@ -47,26 +47,26 @@ class Coupon
         $excludeProductCategoriesIDS = array();
 
         foreach ($coupon->product_ids as $id) {
-            $productIDS = array_merge(
-                    $productIDS, $this->getProductPostTranslationIDS($id)
-            );
+            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
+                $productIDS[] = $_id;
+            }
         }
         foreach ($coupon->exclude_product_ids as $id) {
-            $excludeProductIDS = array_merge(
-                    $excludeProductIDS, $this->getProductPostTranslationIDS($id)
-            );
+            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
+                $excludeProductIDS[] = $_id;
+            }
         }
 
         foreach ($coupon->product_categories as $id) {
-            $productCategoriesIDS = array_merge(
-                    $productCategoriesIDS, $this->getProductTermTranslationIDS($id)
-            );
+            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
+                $productCategoriesIDS[] = $_id;
+            }
         }
 
         foreach ($coupon->exclude_product_categories as $id) {
-            $excludeProductCategoriesIDS = array_merge(
-                    $excludeProductCategoriesIDS, $this->getProductTermTranslationIDS($id)
-            );
+            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
+                $excludeProductCategoriesIDS[] = $_id;
+            }
         }
 
         $coupon->product_ids = $productIDS;
