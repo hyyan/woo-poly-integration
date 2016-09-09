@@ -25,7 +25,7 @@ the same interface you love.
   - [x] Product Gallery
 - [x] Order Translation
 - [x] Stock Synchronization
-- [x] Cart Synchronization `Without Variation Support`
+- [x] Cart Synchronization
 - [x] Coupon Synchronization
 - [x] Emails
 - [x] Reports
