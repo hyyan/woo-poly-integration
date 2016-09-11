@@ -111,7 +111,12 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
-= 0.29 =
+
+= 0.28 =
+* [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)
+* [Fixed shipment methods translation and added support for WooCommerce 2.6.](https://github.com/hyyan/woo-poly-integration/pull/50)
+* [Fixed payment gateways translation](https://github.com/hyyan/woo-poly-integration/pull/52)
+* [Added WC2.6 cart page ajax support](https://github.com/hyyan/woo-poly-integration/pull/53)
 * [Fixed backend html orders screen](https://github.com/hyyan/woo-poly-integration/pull/55)
 * [Fixed product type dropdown selection](https://github.com/hyyan/woo-poly-integration/pull/56)
 * [Fixed translation of products variations created before plugin activation](https://github.com/hyyan/woo-poly-integration/pull/60)
@@ -122,12 +127,6 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * [Fixed coupons with multiple products](https://github.com/hyyan/woo-poly-integration/pull/65)
 * [Fixed coupon with multiple products](https://github.com/hyyan/woo-poly-integration/pull/66)
 * Tested and confirmed working on WordPress 4.6.1 and Polylang 2.0.4
-
-= 0.28 =
-* [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)
-* [Fixed shipment methods translation and added support for WooCommerce 2.6.](https://github.com/hyyan/woo-poly-integration/pull/50)
-* [Fixed payment gateways translation] (https://github.com/hyyan/woo-poly-integration/pull/52)
-* [WC2.6 cart page ajax support] (https://github.com/hyyan/woo-poly-integration/pull/53)
 
 = 0.27 =
 * Updated [TranslationsDownloader](https://github.com/hyyan/woo-poly-integration/pull/32) to fetch languages files from woocommerce translation project
