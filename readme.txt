@@ -3,7 +3,7 @@ Contributors: hyyan, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 0.28
+Stable tag: 0.29 (Not released)
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -111,6 +111,12 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+
+= 0.29 =
+* Fixed PHP notice due to Polylang deprecated functions
+* Fixed Wordpress database error in reports page
+* Fixed missing argument warning in order detailspage and emails
+* Fixed strpos() empty needle warning for empty endpoints
 
 = 0.28 =
 * [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)

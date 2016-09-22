@@ -1,3 +1,10 @@
+###0.29 (Not released)
+
+* Fixed PHP notice due to Polylang deprecated functions
+* Fixed Wordpress database error in reports page
+* Fixed missing argument warning in order detailspage and emails
+* Fixed strpos() empty needle warning for empty endpoints
+
 ###0.28
 
 * [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)
