@@ -117,6 +117,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * Fixed Wordpress database error in reports page
 * Fixed missing argument warning in order detailspage and emails
 * Fixed strpos() empty needle warning for empty endpoints
+* Fix removing email instructions from 3rd party payment gateways
 
 = 0.28 =
 * [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)

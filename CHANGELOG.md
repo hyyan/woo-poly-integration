@@ -4,6 +4,7 @@
 * Fixed Wordpress database error in reports page
 * Fixed missing argument warning in order detailspage and emails
 * Fixed strpos() empty needle warning for empty endpoints
+* Fix removing email instructions from 3rd party payment gateways
 
 ###0.28
 
