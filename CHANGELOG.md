@@ -4,7 +4,8 @@
 * Fixed Wordpress database error in reports page
 * Fixed missing argument warning in order detailspage and emails
 * Fixed strpos() empty needle warning for empty endpoints
-* Fix removing email instructions from 3rd party payment gateways
+* Fixed removing email instructions from 3rd party payment gateways
+* Fixed not detecting whether polylang pro is active
 
 ###0.28
 
