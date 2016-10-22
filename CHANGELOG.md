@@ -1,5 +1,6 @@
 ###0.29 (Not released)
 
+* Fix PHP notice in Reports when products dont have translations
 * Fixed PHP notice due to Polylang deprecated functions
 * Fixed Wordpress database error in reports page
 * Fixed missing argument warning in order detailspage and emails
