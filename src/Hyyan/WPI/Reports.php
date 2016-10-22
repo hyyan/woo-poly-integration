@@ -143,8 +143,10 @@ class Reports
                             $data->product_id, $lang
             );
 
-            $data->from = $data->product_id;
-            $data->product_id = $translation->id;
+            if ($translation) {
+                $data->from = $data->product_id;
+                $data->product_id = $translation->id;
+            }
             $translated [] = $data;
         }
 
