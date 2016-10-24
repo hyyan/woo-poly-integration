@@ -226,43 +226,52 @@ class Variation
      */
     protected function copyVariationMetas($from, $to)
     {
-
         /* copy or synchronize post metas and allow plugins to do the same */
-        $metas = get_post_custom($from);
+        $metas_from = get_post_custom($from);
+        $metas_to = get_post_custom($to);
 
         /* get public and protected meta keys */
-        $keys = array_unique(array_merge(array_keys($metas), array_keys(get_post_custom($to))));
+        $keys = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
 
         /* synchronize */
         foreach ($keys as $key) {
             /*
-             * the synchronization process of multiple values custom fields is
-             * easier if we delete all metas first
+             * _variation_description meta is a text-based string and generally needs to be translated.
+             * 
+             * _variation_description meta is copied from product in default language to the translations
+             * when the translation is first created. But the meta can be edited/changed and will not be
+             * overwriten when product is saved or updated.
              */
-            delete_post_meta($to, $key);
-            if (isset($metas[$key])) {
-                if (substr($key, 0, 10) == 'attribute_') {
-                    $translated = array();
-                    $tax = str_replace('attribute_', '', $key);
-
-                    foreach ($metas[$key] as $termSlug) {
-                        $term = get_term_by('slug', $termSlug, $tax);
-                        if ($term) {
-                            $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->id);
-                            $translated[] = get_term_by('id', pll_get_term($term->term_id, $lang), $tax)->slug;
-                        } else {
-                            $translated[] = $termSlug;
+            if ( '_variation_description' != $key || !isset($metas_to[$key])) {
+                /*
+                 * the synchronization process of multiple values custom fields is
+                 * easier if we delete all metas first
+                 */
+                delete_post_meta($to, $key);
+                if (isset($metas_from[$key])) {
+                    if (substr($key, 0, 10) == 'attribute_') {
+                        $translated = array();
+                        $tax = str_replace('attribute_', '', $key);
+    
+                        foreach ($metas_from[$key] as $termSlug) {
+                            $term = get_term_by('slug', $termSlug, $tax);
+                            if ($term) {
+                                $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->id);
+                                $translated[] = get_term_by('id', pll_get_term($term->term_id, $lang), $tax)->slug;
+                            } else {
+                                $translated[] = $termSlug;
+                            }
                         }
+                        $metas_from[$key] = $translated;
                     }
-                    $metas[$key] = $translated;
-                }
-                foreach ($metas[$key] as $value) {
-                    /*
-                     * Important: always maybe_unserialize value coming from
-                     *            get_post_custom. See codex.
-                     */
-                    $value = maybe_unserialize($value);
-                    add_post_meta($to, $key, $value);
+                    foreach ($metas_from[$key] as $value) {
+                        /*
+                         * Important: always maybe_unserialize value coming from
+                         *            get_post_custom. See codex.
+                         */
+                        $value = maybe_unserialize($value);
+                        add_post_meta($to, $key, $value);
+                    }
                 }
             }
         }
