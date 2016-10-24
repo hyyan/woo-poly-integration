@@ -261,7 +261,7 @@ final class Utilities
             $langs = array();
 
             foreach ($default_attributes as $key => $value) {
-                $term = get_term_by('name', $value, $key);
+                $term = get_term_by('slug', $value, $key);
 
                 if ($term && pll_is_translated_taxonomy($term->taxonomy))
                     $terms[] = $term;
