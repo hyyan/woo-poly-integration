@@ -154,13 +154,18 @@ class Variable
                     $term = get_term_by('slug', $value, $key);
 
                     if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
-                        $translated_term_id = pll_get_term($term->term_id, $lang);
-                        $translated_term    = get_term_by('id', $translated_term_id, $term->taxonomy);
+                        if ($translated_term_id = pll_get_term($term->term_id, $lang)) {
+                            $translated_term    = get_term_by('id', $translated_term_id, $term->taxonomy);
+    
+                            // If meta is taxonomy managed by Polylang and is in the
+                            // correct language continue, otherwise return false to
+                            // stop execution
+                            return ($value === $translated_term->slug) ? $check : false;
+                        } else {
+                            // Attribute term has no translation
+                            return false;
+                        }
 
-                        // If meta is taxonomy managed by Polylang and is in the
-                        // correct language continue, otherwise return false to
-                        // stop execution
-                        return ($value === $translated_term->slug) ? $check : false;
                     }
                 }
             }

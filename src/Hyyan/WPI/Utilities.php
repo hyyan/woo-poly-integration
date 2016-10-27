@@ -282,9 +282,11 @@ final class Utilities
                 foreach ($terms as $term) {
                     if (is_object($term)) {
                         $translated_term_id = pll_get_term($term->term_id, $lang);
-                        $translated_term = get_term_by('id', $translated_term_id, $term->taxonomy);
-
-                        $translated_terms[$translated_term->taxonomy] = $translated_term->slug;
+                        // Skip for attribute terms that don't have translations
+                        if ( $translated_term_id ) {
+                            $translated_term = get_term_by('id', $translated_term_id, $term->taxonomy);
+                            $translated_terms[$translated_term->taxonomy] = $translated_term->slug;
+                        }
                     } else {
                         $translated_terms[key($term)] = $term[key($term)];
                     }
