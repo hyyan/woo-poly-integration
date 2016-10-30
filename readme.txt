@@ -3,7 +3,7 @@ Contributors: hyyan, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 0.29 (Not released)
+Stable tag: 0.30 (Not released)
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
