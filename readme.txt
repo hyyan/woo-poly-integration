@@ -120,6 +120,8 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * Fixed strpos() empty needle warning for empty endpoints
 * Fixed removing email instructions from 3rd party payment gateways
 * Fixed not detecting whether polylang pro is active
+* Fixed unable to unselect a complete settings section [Issue #51](https://github.com/hyyan/woo-poly-integration/issues/51)
+* Tested and confirmed working on WordPress 4.6.1, Polylang 2.0.7 and WooCommerce 2.6.7
 
 = 0.28 =
 * [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)

@@ -7,13 +7,15 @@
 * Fixed strpos() empty needle warning for empty endpoints
 * Fixed removing email instructions from 3rd party payment gateways
 * Fixed not detecting whether polylang pro is active
+* Fixed unable to unselect a complete settings section [Issue #51](https://github.com/hyyan/woo-poly-integration/issues/51)
+* Tested and confirmed working on WordPress 4.6.1, Polylang 2.0.7 and WooCommerce 2.6.7
 
 ###0.28
 
 * [Fixed order emails translation](https://github.com/hyyan/woo-poly-integration/pull/49)
 * [Fixed shipment methods translation and added support for WooCommerce 2.6.](https://github.com/hyyan/woo-poly-integration/pull/50)
-* [Fixed payment gateways translation] (https://github.com/hyyan/woo-poly-integration/pull/52)
-* [WC2.6 cart page ajax support] (https://github.com/hyyan/woo-poly-integration/pull/53)
+* [Fixed payment gateways translation](https://github.com/hyyan/woo-poly-integration/pull/52)
+* [WC2.6 cart page ajax support](https://github.com/hyyan/woo-poly-integration/pull/53)
 * [Fixed backend html orders screen](https://github.com/hyyan/woo-poly-integration/pull/55)
 * [Fixed product type dropdown selection](https://github.com/hyyan/woo-poly-integration/pull/56)
 * [Fixed translation of products variations created before plugin activation](https://github.com/hyyan/woo-poly-integration/pull/60)
