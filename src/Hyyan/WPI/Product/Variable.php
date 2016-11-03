@@ -61,7 +61,7 @@ class Variable
         }
 
         global $pagenow;
-        if (!in_array($pagenow, array('post.php', 'post-new.php'))) {
+        if (!in_array($pagenow, array('post.php', 'post-new.php')) || get_post_type($ID) !== 'product') {
             return false;
         }
 
@@ -179,7 +179,7 @@ class Variable
     public function syncDefaultAttributes($post_id, $post, $update)
     {
         // Don't sync if not in the admin backend nor on autosave
-        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || get_post_type($post_id) !== 'product') {
             return;
         }
 
