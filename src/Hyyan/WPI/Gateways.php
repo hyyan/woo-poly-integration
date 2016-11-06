@@ -134,11 +134,14 @@ class Gateways
      */
     public function removeGatewayActions()
     {
+        $default_gateways = array('bacs', 'cheque', 'cod');
+        
         foreach ($this->enabledGateways as $gateway) {
-            remove_action('woocommerce_email_before_order_table', array($gateway, 'email_instructions'));
-            remove_action('woocommerce_thankyou_'.$gateway->id, array($gateway, 'thankyou_page'));
-            //remove_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $gateway, 'process_admin_options' ) );
-
+            if (in_array($gateway->id, $default_gateways)) {
+                remove_action('woocommerce_email_before_order_table', array($gateway, 'email_instructions'));
+                remove_action('woocommerce_thankyou_'.$gateway->id, array($gateway, 'thankyou_page'));
+                //remove_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $gateway, 'process_admin_options' ) );
+            }
             if ('bacs' == $gateway->id) {
                 remove_action('woocommerce_update_options_payment_gateways_'.$gateway->id, array($gateway, 'save_account_details'));
             }

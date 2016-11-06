@@ -12,6 +12,7 @@ namespace Hyyan\WPI;
 
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Utilities;
 
 /**
  * Reports.
@@ -58,13 +59,13 @@ class Reports
 
         /* handle stock table filtering */
         add_filter(
-                'woocommerce_report_most_stocked_query_from', array($this, 'filterStockByLangauge')
+                'woocommerce_report_most_stocked_query_from', array($this, 'filterStockByLanguage')
         );
         add_filter(
-                'woocommerce_report_out_of_stock_query_from', array($this, 'filterStockByLangauge')
+                'woocommerce_report_out_of_stock_query_from', array($this, 'filterStockByLanguage')
         );
         add_filter(
-                'woocommerce_report_low_in_stock_query_from', array($this, 'filterStockByLangauge')
+                'woocommerce_report_low_in_stock_query_from', array($this, 'filterStockByLanguage')
         );
 
         /* Combine product report with its translation */
@@ -78,11 +79,9 @@ class Reports
     }
 
     /**
-     * Filter by lanaguge.
+     * Filter by language.
      *
-     * Filter report data according to choosen lanaguge
-     *
-     * @global \Polylang $polylang
+     * Filter report data according to choosen language
      *
      * @param array $query
      *
@@ -102,14 +101,13 @@ class Reports
         if (isset($_GET['product_ids'])) {
             return $query;
         }
-
-        global $polylang;
+        
         $lang = ($current = pll_current_language()) ?
                 array($current) :
                 pll_languages_list();
 
-        $query['join'] .= $polylang->model->join_clause('post');
-        $query['where'] .= $polylang->model->where_clause($lang, 'post');
+        $query['join'] .= PLL()->model->post->join_clause(Utilities::polylangVersionCheck('2.0') ? 'posts' : 'post');
+        $query['where'] .= PLL()->model->post->where_clause($lang, 'post');
 
         return $query;
     }
@@ -145,8 +143,10 @@ class Reports
                             $data->product_id, $lang
             );
 
-            $data->from = $data->product_id;
-            $data->product_id = $translation->id;
+            if ($translation) {
+                $data->from = $data->product_id;
+                $data->product_id = $translation->id;
+            }
             $translated [] = $data;
         }
 
@@ -178,25 +178,22 @@ class Reports
     }
 
     /**
-     * Filter stock by langauge.
+     * Filter stock by language.
      *
-     * Filter the stock table according to choosen langauge
-     *
-     * @global \Polylang $polylang
+     * Filter the stock table according to choosen language
      *
      * @param string $query stock query
      *
      * @return string final stock query
      */
-    public function filterStockByLangauge($query)
+    public function filterStockByLanguage($query)
     {
-        global $polylang;
         $lang = ($current = pll_current_language()) ?
                 array($current) :
                 pll_languages_list();
 
-        $join = $polylang->model->join_clause('post');
-        $where = $polylang->model->where_clause($lang, 'post');
+        $join = PLL()->model->post->join_clause(Utilities::polylangVersionCheck('2.0') ? 'posts' : 'post');
+        $where = PLL()->model->post->where_clause($lang, 'post');
 
         return str_replace('WHERE 1=1', "{$join} WHERE 1=1 {$where}", $query);
     }

@@ -106,14 +106,14 @@ class Order
      *
      * @param string $name product name
      * @param array  $item order item
-     * @param boolean $is_visible whether product is visible
+     * @param boolean $is_visible whether product is visible. Defaults to false.
      *
      * @return string product name
      *
      * @todo should I remove this filter and let handle the translation in the
      *       theme file?
      */
-    public function translateProductNameInOrdersDetails($name, $item, $is_visible)
+    public function translateProductNameInOrdersDetails($name, $item, $is_visible = false)
     {
         $id = $item['item_meta']['_product_id'][0];
         $product = Utilities::getProductTranslationByID($id);

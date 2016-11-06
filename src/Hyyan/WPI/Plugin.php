@@ -85,7 +85,7 @@ class Plugin
         /* check polylang plugin  * */
         if (
                 $funtction('polylang/polylang.php') ||
-                $funtction('polyland_pro/polylang.php')
+                $funtction('polyland-pro/polylang.php')
         ) {
             $polylang = true;
         }

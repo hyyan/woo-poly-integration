@@ -215,6 +215,30 @@ final class Utilities
     }
     
     /**
+     * Check Polylang version.
+     *
+     * Check if you are running a specified Polylang version (or higher)
+     *
+     * @param string $version Version to check agains. (Default: 2.0)
+     *
+     * @return bool true if running version is equal or higher, false otherwise
+     */
+    public static function polylangVersionCheck($version = '2.0')
+    {
+        if (!function_exists('get_plugin_data')) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+        
+        $data = get_plugin_data(ABSPATH . 'wp-content/plugins/polylang/polylang.php', false, false);
+
+        if (version_compare($data['Version'], $version, '>=')) {
+            return true;
+        }
+
+        return false;
+    }
+    
+    /**
      * Get variations default attributes translation.
      *
      * Get the translation of the default attributes of product passed by id, in
