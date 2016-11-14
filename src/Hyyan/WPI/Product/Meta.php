@@ -293,23 +293,29 @@ class Meta
 
         $jsID = 'product-fields-locker';
         $code = sprintf(
-                'var disabled = %s;'
-                .'for (var i = 0; i < disabled.length; i++) {'
-                .' $('
-                .'     %s + ","'
-                .'     + "." + disabled[i] + ","'
-                .'     + "#" +disabled[i] + ","'
-                .'     + "*[name^=\'"+disabled[i]+"\']"'
-                .' )'
-                .'     .off("click")'
-                .'     .on("click", function (e) {e.preventDefault()})'
-                .'     .css({'
-                .'         opacity: .5,'
-                .'         \'pointer-events\': \'none\','
-                .'         cursor: \'not-allowed\''
-                .'     }'
-                .' );'
-                .'}', json_encode($metas), !empty($selectors) ?
+                'function hyyan_wpi_lockFields(){'
+                .'  var disabled = %s;'
+                .'  for (var i = 0; i < disabled.length; i++) {'
+                .'      $('
+                .'       %s + ","'
+                .'       + "." + disabled[i] + ","'
+                .'       + "#" +disabled[i] + ","'
+                .'      + "*[name^=\'"+disabled[i]+"\']"'
+                .'      )'
+                .'      .off("click")'
+                .'      .on("click", function (e) {e.preventDefault()})'
+                .'      .css({'
+                .'          opacity: .5,'
+                .'          \'pointer-events\': \'none\','
+                .'          cursor: \'not-allowed\''
+                .'      });'
+                .'  }'
+                . '};'
+                . 'hyyan_wpi_lockFields();'
+                . '$(document).ajaxComplete(function(){'
+                . '    hyyan_wpi_lockFields(); '
+                . '});'
+                , json_encode($metas), !empty($selectors) ?
                         json_encode(implode(',', $selectors)) :
                         array(rand())
         );

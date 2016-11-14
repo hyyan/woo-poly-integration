@@ -3,7 +3,7 @@ Contributors: hyyan, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 0.30 (Not released)
+Stable tag: 0.29
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -121,6 +121,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * Fixed removing email instructions from 3rd party payment gateways
 * Fixed not detecting whether polylang pro is active
 * Fixed unable to unselect a complete settings section [Issue #51](https://github.com/hyyan/woo-poly-integration/issues/51)
+* Fixed Fields Locker is not working in variation tab [Issue #76](https://github.com/hyyan/woo-poly-integration/issues/76)
 * Tested and confirmed working on WordPress 4.6.1, Polylang 2.0.7 and WooCommerce 2.6.7
 
 = 0.28 =
@@ -227,5 +228,9 @@ new bug fixes
 The release includes important fixes , update immediately 
 
 = 0.28 =
+The release includes important fixes and updates for latest version of 
+woocommerce and polylang , please update immediately 
+
+= 0.29 =
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 

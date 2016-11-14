@@ -2,6 +2,9 @@
 
 [![project status](http://www.repostatus.org/badges/latest/active.svg)](http://www.gitchecker.com/hyyan/woo-poly-integration)
 [![Latest Stable Version](https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
+[![Wordpress plugin](http://img.shields.io/wordpress/plugin/v/woo-poly-integration.svg)](https://wordpress.org/plugins/woo-poly-integration/)
+[![Wordpress](http://img.shields.io/wordpress/plugin/dt/woo-poly-integration.svg)](https://wordpress.org/plugins/woo-poly-integration/)
+[![Wordpress rating](http://img.shields.io/wordpress/plugin/r/woo-poly-integration.svg)](https://wordpress.org/plugins/woo-poly-integration/)
 [![License](https://poser.pugx.org/hyyan/woo-poly-integration/license.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
 
 

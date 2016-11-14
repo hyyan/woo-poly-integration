@@ -1,4 +1,4 @@
-###0.29 (Not released)
+###0.29
 
 * Fix PHP notice in Reports when products dont have translations
 * Fixed PHP notice due to Polylang deprecated functions
@@ -8,6 +8,7 @@
 * Fixed removing email instructions from 3rd party payment gateways
 * Fixed not detecting whether polylang pro is active
 * Fixed unable to unselect a complete settings section [Issue #51](https://github.com/hyyan/woo-poly-integration/issues/51)
+* Fixed Fields Locker is not working in variation tab [Issue #76](https://github.com/hyyan/woo-poly-integration/issues/76)
 * Tested and confirmed working on WordPress 4.6.1, Polylang 2.0.7 and WooCommerce 2.6.7
 
 ###0.28
