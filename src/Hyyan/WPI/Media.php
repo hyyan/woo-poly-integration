@@ -26,7 +26,7 @@ class Media
     {
         if (static::isMediaTranslationEnabled()) {
             add_filter(
-                    'woocommerce_product_gallery_attachment_ids', array($this, 'translateGallery')
+                    'woocommerce_product_get_gallery_image_ids', array($this, 'translateGallery')
             );
         }
     }
