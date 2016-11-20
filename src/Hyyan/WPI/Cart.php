@@ -265,7 +265,8 @@ class Cart
 
         // If no variation ID is set, attempt to get a variation ID from posted attributes.
         if (empty($variation_id)) {
-            $variation_id = $adding_to_cart->get_matching_variation(wp_unslash($_POST));
+            $data_store   = WC_Data_Store::load('product');
+			$variation_id = $data_store->find_matching_product_variation($adding_to_cart, wp_unslash($_POST));
         }
 
         /**
@@ -291,76 +292,90 @@ class Cart
          * End of custom code.
          */
 
-        //$variation = wc_get_product( $variation_id );
+        // Validate the attributes.
+		try {
+			if (empty($variation_id)) {
+				throw new Exception(__('Please choose product options&hellip;', 'woocommerce') );
+			}
 
-        // Verify all attributes
-        foreach ($attributes as $attribute) {
-            if (!$attribute['is_variation']) {
-                    continue;
-            }
+			$variation_data = wc_get_product_variation_attributes($variation_id);
 
-            $taxonomy = 'attribute_' . sanitize_title($attribute['name']);
+			foreach ($attributes as $attribute) {
+				if (!$attribute['is_variation']) {
+					continue;
+				}
 
-            if (isset($_REQUEST[$taxonomy])) {
-                // Get value from post data
-                if ($attribute['is_taxonomy']) {
-                    // Don't use wc_clean as it destroys sanitized characters
-                    $value = sanitize_title(stripslashes($_REQUEST[$taxonomy]));
+				$taxonomy = 'attribute_' . sanitize_title($attribute['name']);
 
-                    /**
-                    * Custom code to check if a translation of the product is already in the cart,
-                    * and in that case, replace the variation attribute being added to the cart by
-                    * the respective translation in the language of the product already in the cart
-                    * NOTE: The product_id is filtered by $this->add_to_cart() and holds the id of
-                    * the product translation, if one exists in the cart.
-                    */
-                    if ($product_id != absint($_REQUEST['add-to-cart'])) {
-                        // Get the translation of the term
-                        $term  = get_term_by('slug', $value, $attribute['name']);
-                        $_term = get_term_by('id', pll_get_term(absint($term->term_id), $lang), $attribute['name']);
-
-                        if ($_term) {
-                            $value = $_term->slug;
+				if (isset($_REQUEST[$taxonomy])) {
+					// Get value from post data
+					if ($attribute['is_taxonomy']) {
+						// Don't use wc_clean as it destroys sanitized characters
+						$value = sanitize_title(stripslashes($_REQUEST[$taxonomy]));
+                        
+                        /**
+                        * Custom code to check if a translation of the product is already in the cart,
+                        * and in that case, replace the variation attribute being added to the cart by
+                        * the respective translation in the language of the product already in the cart
+                        * NOTE: The product_id is filtered by $this->add_to_cart() and holds the id of
+                        * the product translation, if one exists in the cart.
+                        */
+                        if ($product_id != absint($_REQUEST['add-to-cart'])) {
+                            // Get the translation of the term
+                            $term  = get_term_by('slug', $value, $attribute['name']);
+                            $_term = get_term_by('id', pll_get_term(absint($term->term_id), $lang), $attribute['name']);
+    
+                            if ($_term) {
+                                $value = $_term->slug;
+                            }
                         }
-                    }
-                    /**
-                    * End of custom code.
-                    */
-                } else {
-                    $value = wc_clean(stripslashes($_REQUEST[$taxonomy]));
-                }
+                        /**
+                        * End of custom code.
+                        */
+					} else {
+						$value = wc_clean(stripslashes($_REQUEST[$taxonomy]));
+					}
 
-                // Get valid value from variation
-                $valid_value = isset($variation->variation_data[$taxonomy]) ? $variation->variation_data[$taxonomy] : '';
+					// Get valid value from variation
+					$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
 
-                // Allow if valid
-                if ('' === $valid_value || $valid_value === $value) {
-                    $variations[$taxonomy] = $value;
-                    continue;
-                }
-            } else {
-                $missing_attributes[] = wc_attribute_label($attribute['name']);
-            }
-        }
+					// Allow if valid or show error.
+					if ( '' === $valid_value || $valid_value === $value) {
+						$variations[$taxonomy] = $value;
+					} else {
+						throw new Exception(sprintf(__('Invalid value posted for %s', 'woocommerce'), wc_attribute_label($attribute['name'])));
+					}
+				} else {
+					$missing_attributes[] = wc_attribute_label($attribute['name']);
+				}
+			}
+			if (!empty($missing_attributes)) {
+				throw new Exception(sprintf(_n('%s is a required field', '%s are required fields', sizeof($missing_attributes), 'woocommerce'), wc_format_list_of_items($missing_attributes)));
+			}
+		} catch (Exception $e) {
+			wc_add_notice($e->getMessage(), 'error');
+            //return false;
+            /**
+             * Custom code: We are doing an action, therefore no return needed. Instead we need to
+             * set $passed_validation to false, to ensure the product is not added to the card.
+             */
+            add_filter('woocommerce_add_to_cart_validation', '__return_false');
+		}
 
-        if (!empty($missing_attributes)) {
-            wc_add_notice(sprintf(_n('%s is a required field', '%s are required fields', sizeof($missing_attributes), 'woocommerce'), wc_format_list_of_items($missing_attributes)), 'error');
-        } elseif (empty($variation_id)) {
-            wc_add_notice(__('Please choose product options&hellip;', 'woocommerce'), 'error');
-        } else {
-            // Add to cart validation
-            $passed_validation 	= apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations);
+		// Add to cart validation
+		$passed_validation 	= apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations);
 
-            if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variations) !== false) {
-                wc_add_to_cart_message(array($product_id => $quantity), true);
+		if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variations) !== false) {
+			wc_add_to_cart_message(array($product_id => $quantity), true);
+			//return true;
+            /**
+             * Custom code: We are doing an action, therefore no return needed. Intead we need to
+             * set $was_added_to_cart to true to trigger the optional redirect
+             */
+            $was_added_to_cart = true;
+		}
 
-                //return true; Doing an action, no return needed but we need to set $was_added_to_cart to trigger the redirect
-                $was_added_to_cart = true;
-            } else {
-                $was_added_to_cart = false;
-            }
-        }
-        //return false; Doing an action, no return needed but we need to set $was_added_to_cart to trigger the redirect
+		//return false; We are doing an action, therefore no return needed. but we need to set $was_added_to_cart to trigger the redirect
         // End: From add_to_cart_handler_variable( $product_id )
 
         /**
