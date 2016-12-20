@@ -66,8 +66,8 @@ class Cart
         foreach (WC()->cart->get_cart() as $values) {
             $product = $values['data'];
 
-            if (in_array($product->id, $IDS)) {
-                $result = $product->id;
+            if (in_array($product->get_id(), $IDS)) {
+                $result = $product->get_id();
                 break;
             }
         }
@@ -417,7 +417,7 @@ class Cart
         // Get parent product translation id for the given language
         $variation   = wc_get_product($variation_id);
         $parent      = $variation ? $variation->parent : null;
-        $_product_id = $parent ? pll_get_post($parent->id, $lang) : null;
+        $_product_id = $parent ? pll_get_post($parent->get_id(), $lang) : null;
 
         // Get variation translation using the duplication metadata value
         $meta = get_post_meta($variation_id, Variation::DUPLICATE_KEY, true);
