@@ -115,13 +115,13 @@ class Order
      */
     public function translateProductNameInOrdersDetails($name, $item, $is_visible = false)
     {
-        $id = $item['item_meta']['_product_id'][0];
+        $id = $item->get_product_id();
         $product = Utilities::getProductTranslationByID($id);
         if ($product) {
             if (!$is_visible) {
-                return $product->post->post_title;
+                return $product->get_name();
             } else {
-                return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
+                return sprintf('<a href="%s">%s</a>', get_permalink($product->get_id()), $product->get_name());
             }
         } else {
             return $name;
