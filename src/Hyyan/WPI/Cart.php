@@ -416,7 +416,7 @@ class Cart
 
         // Get parent product translation id for the given language
         $variation   = wc_get_product($variation_id);
-        $parent      = $variation ? $variation->parent : null;
+        $parent      = $variation ? wc_get_product($variation->get_parent_id()) : null;
         $_product_id = $parent ? pll_get_post($parent->get_id(), $lang) : null;
 
         // Get variation translation using the duplication metadata value
