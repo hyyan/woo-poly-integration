@@ -57,7 +57,7 @@ class Variation
             return false;
         }
 
-        if ($this->to->id === $this->from->id) {
+        if ($this->to->get_id() === $this->from->get_id()) {
 
             /*
              * In such a case just add the duplicate meta
@@ -90,7 +90,7 @@ class Variation
                     'meta_key' => self::DUPLICATE_KEY,
                     'meta_value' => $variation['variation_id'],
                     'post_type' => 'product_variation',
-                    'post_parent' => $this->to->id,
+                    'post_parent' => $this->to->get_id(),
                 ));
 
                 switch (count($posts)) {
@@ -175,7 +175,7 @@ class Variation
         
         $data = (array) get_post($variation->variation_id);
         unset($data['ID']);
-        $data['post_parent'] = $this->to->id;
+        $data['post_parent'] = $this->to->get_id();
         $ID = wp_insert_post($data);
 
         if ($ID) {
@@ -256,7 +256,7 @@ class Variation
                         foreach ($metas_from[$key] as $termSlug) {
                             $term = get_term_by('slug', $termSlug, $tax);
                             if ($term) {
-                                $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->id);
+                                $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->get_id());
                                 if ($translated_term = pll_get_term($term->term_id, $lang)) {
                                     $translated[] = get_term_by('id', $translated_term, $tax)->slug;
                                 } else {
