@@ -227,22 +227,30 @@ class Variation
     protected function copyVariationMetas($from, $to)
     {
         /* copy or synchronize post metas and allow plugins to do the same */
-        $metas_from = get_post_custom($from);
-        $metas_to = get_post_custom($to);
+        $metas_from     = get_post_custom($from);
+        $metas_to       = get_post_custom($to);
 
         /* get public and protected meta keys */
-        $keys = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
+        $keys           = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
+        
+        /* metas disabled for sync */
+        $metas_nosync   = Meta::getDisabledProductMetaToCopy();
+
+        /*
+         * _variation_description meta is a text-based string and generally needs to be translated.
+         * _variation_description meta is copied from product in default language to the translations
+         * when the translation is first created. But the meta can be edited/changed and will not be
+         * overwriten when product is saved or updated.
+         */
+        if (isset($metas_to['_variation_description'])) {
+            $metas_nosync[] = '_variation_description';
+        }
+        
+        error_log(print_r($metas_nosync, true));
 
         /* synchronize */
         foreach ($keys as $key) {
-            /*
-             * _variation_description meta is a text-based string and generally needs to be translated.
-             * 
-             * _variation_description meta is copied from product in default language to the translations
-             * when the translation is first created. But the meta can be edited/changed and will not be
-             * overwriten when product is saved or updated.
-             */
-            if ( '_variation_description' != $key || !isset($metas_to[$key])) {
+            if (!in_array($key, $metas_nosync)) {
                 /*
                  * the synchronization process of multiple values custom fields is
                  * easier if we delete all metas first

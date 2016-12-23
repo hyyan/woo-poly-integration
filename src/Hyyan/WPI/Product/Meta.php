@@ -170,7 +170,7 @@ class Meta
             if (empty($meta)) {
                 $product = wc_get_product($ID);
                 if ($product) {
-                    update_post_meta($ID, '_translation_porduct_type', $product->product_type);
+                    update_post_meta($ID, '_translation_porduct_type', $product->get_type());
                 }
             }
 
@@ -274,6 +274,22 @@ class Meta
         }
 
         return array_values($metas);
+    }
+
+    /**
+     * Get the meta keys disabled in the Metas List settings section, to be synced
+     * between products and their translations.
+     *
+     * @param array $metas array of meta keys
+     *
+     * @return array extended meta keys array
+     */
+    public static function getDisabledProductMetaToCopy(array $metas = array())
+    {
+        foreach(static::getProductMetaToCopy(array(), false) as $group) {
+            $metas = array_merge($metas, $group['metas']);
+        }
+        return array_values(array_diff($metas, static::getProductMetaToCopy()));
     }
 
     /**
