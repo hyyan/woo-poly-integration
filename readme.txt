@@ -3,7 +3,7 @@ Contributors: hyyan, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang ,bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 0.29
+Stable tag: 0.29.1
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -15,6 +15,8 @@ This plugin makes it possible to run multilingual e-commerce sites using
 WooCommerce and Polylang.It makes products and store pages translatable, lets 
 visitors switch languages and order products in their language. and all that from
 the same interface you love.
+
+> Please do not ask for support on wordpress forum anymore , it is becoming hard to me to follow issues on wordpress forum , Email and Github , when you want help just open new Github issue so I can help.
 
 = Features  =
 
@@ -111,6 +113,13 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+
+== 0.29.1 ==
+
+* Improve Multisite compatibility 
+* Fix variation description couldnt be translated
+* Fix PHP Notices when translating variable products with variations
+* Fix wc translation download
 
 = 0.29 =
 * Fix PHP notice in Reports when products dont have translations
@@ -232,5 +241,9 @@ The release includes important fixes and updates for latest version of
 woocommerce and polylang , please update immediately 
 
 = 0.29 =
+The release includes important fixes and updates for latest version of 
+woocommerce and polylang , please update immediately 
+
+= 0.29.1 =
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 

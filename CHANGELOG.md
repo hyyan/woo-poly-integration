@@ -1,3 +1,10 @@
+### 0.29.1
+
+* Improve Multisite compatibility 
+* Fix variation description couldnt be translated
+* Fix PHP Notices when translating variable products with variations
+* Fix wc translation download
+
 ###0.29
 
 * Fix PHP notice in Reports when products dont have translations
