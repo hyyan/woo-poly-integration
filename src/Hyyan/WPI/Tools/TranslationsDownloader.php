@@ -25,7 +25,7 @@ class TranslationsDownloader
      * @global \WP_Filesystem_Base $wp_filesystem
      *
      * @param string $locale locale
-     * @param string $name   langauge name
+     * @param string $name   language name
      *
      * @return bool true when the translation is downloaded successfully
      *
@@ -33,7 +33,7 @@ class TranslationsDownloader
      */
     public static function download($locale, $name)
     {
-        /* Check if already downlaoded */
+        /* Check if already downloaded */
         if (static::isDownloaded($locale)) {
             return true;
         }
@@ -51,7 +51,7 @@ class TranslationsDownloader
 
         /* Download the language pack */
         $cantDownload = sprintf(
-                __('Unable to download woocommerce translation %s from : <a href="%2$s">%2$s</a>'), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
+                __('Unable to download woocommerce translation %s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
         );
         $response = wp_remote_get(
                 sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('sslverify' => false, 'timeout' => 200)
@@ -67,7 +67,14 @@ class TranslationsDownloader
             global $wp_filesystem;
             if (empty($wp_filesystem)) {
                 require_once ABSPATH.'/wp-admin/includes/file.php';
-                WP_Filesystem();
+
+                if (false === ($creds = request_filesystem_credentials('', '', false, false, null) ) ) {
+                    throw new \RuntimeException($cantDownload);
+                }
+
+                if (!WP_Filesystem($creds)) {
+                    throw new \RuntimeException($cantDownload);
+                }
             }
 
             $uploadDir = wp_upload_dir();
@@ -78,8 +85,8 @@ class TranslationsDownloader
                 throw new \RuntimeException($cantDownload);
             }
 
-            /* Unzip the file to wp-content/languages/woocommerce directory */
-            $dir = trailingslashit(WP_LANG_DIR).'woocommerce/';
+            /* Unzip the file to wp-content/languages/plugins directory */
+            $dir = trailingslashit(WP_LANG_DIR).'plugins/';
             $unzip = unzip_file($file, $dir);
             if (true !== $unzip) {
                 throw new \RuntimeException($cantDownload);
@@ -95,7 +102,7 @@ class TranslationsDownloader
     }
 
     /**
-     * Check if the langauge pack is avaliable in the langauge repo.
+     * Check if the language pack is avaliable in the language repo.
      *
      * @param string $locale locale
      *
@@ -123,20 +130,20 @@ class TranslationsDownloader
      *
      * @param string $locale locale
      *
-     * @return bool true if downaloded , false otherwise
+     * @return bool true if downloded , false otherwise
      */
     public static function isDownloaded($locale)
     {
         return file_exists(
                 sprintf(
                         trailingslashit(WP_LANG_DIR)
-                        .'/woocommerce/woocommerce-%s.mo', $locale
+                        .'plugins/woocommerce-%s.mo', $locale
                 )
         );
     }
 
     /**
-     * Get langauge repo URL.
+     * Get language repo URL.
      *
      * @return string
      */
