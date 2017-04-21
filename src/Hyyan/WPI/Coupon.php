@@ -46,24 +46,24 @@ class Coupon
         $productCategoriesIDS = array();
         $excludeProductCategoriesIDS = array();
 
-        foreach ($coupon->product_ids as $id) {
+        foreach ($coupon->get_product_ids() as $id) {
             foreach ($this->getProductPostTranslationIDS($id) as $_id) {
                 $productIDS[] = $_id;
             }
         }
-        foreach ($coupon->exclude_product_ids as $id) {
+        foreach ($coupon->get_excluded_product_ids() as $id) {
             foreach ($this->getProductPostTranslationIDS($id) as $_id) {
                 $excludeProductIDS[] = $_id;
             }
         }
 
-        foreach ($coupon->product_categories as $id) {
+        foreach ($coupon->get_product_categories() as $id) {
             foreach ($this->getProductTermTranslationIDS($id) as $_id) {
                 $productCategoriesIDS[] = $_id;
             }
         }
 
-        foreach ($coupon->exclude_product_categories as $id) {
+        foreach ($coupon->get_excluded_product_categories() as $id) {
             foreach ($this->getProductTermTranslationIDS($id) as $_id) {
                 $excludeProductCategoriesIDS[] = $_id;
             }

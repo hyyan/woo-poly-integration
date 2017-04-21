@@ -57,7 +57,7 @@ class Variation
             return false;
         }
 
-        if ($this->to->id === $this->from->id) {
+        if ($this->to->get_id() === $this->from->get_id()) {
 
             /*
              * In such a case just add the duplicate meta
@@ -90,7 +90,7 @@ class Variation
                     'meta_key' => self::DUPLICATE_KEY,
                     'meta_value' => $variation['variation_id'],
                     'post_type' => 'product_variation',
-                    'post_parent' => $this->to->id,
+                    'post_parent' => $this->to->get_id(),
                 ));
 
                 switch (count($posts)) {
@@ -171,11 +171,11 @@ class Variation
     {
         // Add the duplicate meta to the default language product variation,
         // just in case the product was created before plugin acivation.
-        $this->addDuplicateMeta( $variation->variation_id );
-        
-        $data = (array) get_post($variation->variation_id);
+        $this->addDuplicateMeta($variation->get_id());
+
+        $data = (array) get_post($variation->get_id());
         unset($data['ID']);
-        $data['post_parent'] = $this->to->id;
+        $data['post_parent'] = $this->to->get_id();
         $ID = wp_insert_post($data);
 
         if ($ID) {
@@ -183,7 +183,7 @@ class Variation
                     $ID, self::DUPLICATE_KEY, $metas['variation_id']
             );
 
-            $this->copyVariationMetas($variation->variation_id, $ID);
+            $this->copyVariationMetas($variation->get_id(), $ID);
         }
     }
 
@@ -196,7 +196,7 @@ class Variation
      */
     protected function update(\WC_Product_Variation $variation, \WP_Post $post, array $metas)
     {
-        $this->copyVariationMetas($variation->variation_id, $post->ID);
+        $this->copyVariationMetas($variation->get_id(), $post->ID);
     }
     
     /**
@@ -227,22 +227,30 @@ class Variation
     protected function copyVariationMetas($from, $to)
     {
         /* copy or synchronize post metas and allow plugins to do the same */
-        $metas_from = get_post_custom($from);
-        $metas_to = get_post_custom($to);
+        $metas_from     = get_post_custom($from);
+        $metas_to       = get_post_custom($to);
 
         /* get public and protected meta keys */
-        $keys = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
+        $keys           = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
+        
+        /* metas disabled for sync */
+        $metas_nosync   = Meta::getDisabledProductMetaToCopy();
+
+        /*
+         * _variation_description meta is a text-based string and generally needs to be translated.
+         * _variation_description meta is copied from product in default language to the translations
+         * when the translation is first created. But the meta can be edited/changed and will not be
+         * overwriten when product is saved or updated.
+         */
+        if (isset($metas_to['_variation_description'])) {
+            $metas_nosync[] = '_variation_description';
+        }
+        
+        error_log(print_r($metas_nosync, true));
 
         /* synchronize */
         foreach ($keys as $key) {
-            /*
-             * _variation_description meta is a text-based string and generally needs to be translated.
-             * 
-             * _variation_description meta is copied from product in default language to the translations
-             * when the translation is first created. But the meta can be edited/changed and will not be
-             * overwriten when product is saved or updated.
-             */
-            if ( '_variation_description' != $key || !isset($metas_to[$key])) {
+            if (!in_array($key, $metas_nosync)) {
                 /*
                  * the synchronization process of multiple values custom fields is
                  * easier if we delete all metas first
@@ -256,7 +264,7 @@ class Variation
                         foreach ($metas_from[$key] as $termSlug) {
                             $term = get_term_by('slug', $termSlug, $tax);
                             if ($term) {
-                                $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->id);
+                                $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->get_id());
                                 if ($translated_term = pll_get_term($term->term_id, $lang)) {
                                     $translated[] = get_term_by('id', $translated_term, $tax)->slug;
                                 } else {

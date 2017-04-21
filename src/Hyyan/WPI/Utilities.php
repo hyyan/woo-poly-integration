@@ -54,7 +54,7 @@ final class Utilities
      */
     public static function getProductTranslationsArrayByObject(\WC_Product $product, $excludeDefault = false)
     {
-        return static::getProductTranslationsArrayByID($product->id, $excludeDefault);
+        return static::getProductTranslationsArrayByID($product->get_id(), $excludeDefault);
     }
 
     /**
@@ -86,7 +86,7 @@ final class Utilities
      */
     public static function getProductTranslationByObject(\WC_Product $product, $slug = '')
     {
-        $productTranslationID = pll_get_post($product->id, $slug);
+        $productTranslationID = pll_get_post($product->get_id(), $slug);
 
         if ($productTranslationID) {
             $translated = wc_get_product($productTranslationID);
@@ -321,7 +321,7 @@ final class Utilities
             $is_translation  = isset($_GET['from_post']) && isset($_GET['new_lang']);
             $has_variations  = get_children(array(
                     'post_type'   => 'product_variation',
-                    'post_parent' => $product->id
+                    'post_parent' => $product->get_id()
                 ));
 
             if ($add_new_product && $is_translation && $has_variations)

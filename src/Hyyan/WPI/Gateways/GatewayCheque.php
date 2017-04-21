@@ -47,7 +47,7 @@ class GatewayCheque extends \WC_Gateway_Cheque
      */
     public function email_instructions($order, $sent_to_admin, $plain_text = false)
     {
-        if ($this->instructions && !$sent_to_admin && 'cheque' === $order->payment_method && $order->has_status('on-hold')) {
+        if ($this->instructions && !$sent_to_admin && 'cheque' === $order->get_payment_method() && $order->has_status('on-hold')) {
             echo wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))).PHP_EOL;
         }
     }
