@@ -74,7 +74,7 @@ class Stock
 
         /* Increase stock */
         foreach ($items as $item) {
-            $item['change'] = $change;
+            $item->change = $change;
             $this->change($item, self::STOCK_INCREASE_ACTION);
         }
 
@@ -87,13 +87,13 @@ class Stock
      * @param array  $item   the order data
      * @param string $action STOCK_REDUCE_ACTION | STOCK_INCREASE_ACTION
      */
-    protected function change(array $item, $action = self::STOCK_REDUCE_ACTION)
+protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_REDUCE_ACTION )
     {
-        $productID = $item['product_id'];
+        $productID = $item->get_product_id();
         $productObject = wc_get_product($productID);
         $productLang = pll_get_post_language($productID);
 
-        $variationID = $item['variation_id'];
+        $variationID = $item->get_variation_id();
 
         /* Handle Products */
         if ($productObject && $productLang) {
@@ -112,8 +112,8 @@ class Stock
                     'reduce_stock' :
                     'increase_stock';
             $change = ($action === self::STOCK_REDUCE_ACTION) ?
-                    $item['qty'] :
-                    $item['change'];
+              $item->get_quantity() :
+          		$item->change;
 
             /* Sync stock for all translation */
             foreach ($translations as $ID) {
