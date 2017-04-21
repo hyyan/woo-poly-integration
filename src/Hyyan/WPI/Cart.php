@@ -91,7 +91,7 @@ class Cart
         // By default, returns the same input
         $cart_item_data_translation = $cart_item_data;
 
-        switch ( $cart_item_data->product_type ) {
+        switch ( $cart_item_data->get_type() ) {
             case 'variation':
                 $variation_translation   = $this->getVariationTranslation( $cart_variation_id );
                 $cart_item_data_translation = $variation_translation ? $variation_translation : $cart_item_data_translation;
@@ -337,7 +337,10 @@ class Cart
 					}
 
 					// Get valid value from variation
-					$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
+//change proposed by @theleemon
+$variation_data = wc_get_product_variation_attributes($variation->get_id());
+$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
+					//$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
 
 					// Allow if valid or show error.
 					if ( '' === $valid_value || $valid_value === $value) {

@@ -203,7 +203,7 @@ class Variable
         // Don't sync if not a Variable Product
         $product = wc_get_product($post_id);
 
-        if ($product && 'simple' === $product->product_type && Utilities::maybeVariableProduct($product)) {
+        if ($product && 'simple' === $product->get_type() && Utilities::maybeVariableProduct($product)) {
             // Maybe is Variable Product - new translations of Variable Products are first created as simple
 
             // Only need to sync for the new translation from source product
@@ -213,7 +213,7 @@ class Variable
             if (!empty($attributes_translation) && isset($attributes_translation[$_GET['new_lang']])) {
                 update_post_meta($product->get_id(), '_default_attributes', $attributes_translation[$_GET['new_lang']]);
             }
-        } elseif ($product && 'variable' === $product->product_type) {
+        } elseif ($product && 'variable' === $product->get_type()) {
             // Variable Product
 
             // For each product translation, get the translated (default) terms/attributes
@@ -286,8 +286,8 @@ class Variable
      */
     public function extendFieldsLockerSelectors(array $selectors)
     {
-        $selectors[] = '#variable_product_options :input';
-
+        //FIX: #128 allow variable product description to be translated
+				$selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
         return $selectors;
     }
 

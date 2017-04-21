@@ -69,10 +69,10 @@ class Coupon
             }
         }
 
-        $coupon->product_ids = $productIDS;
-        $coupon->exclude_product_ids = $excludeProductIDS;
-        $coupon->product_categories = $productCategoriesIDS;
-        $coupon->exclude_product_categories = $excludeProductCategoriesIDS;
+				$coupon->set_product_ids( $productIDS );
+				$coupon->set_excluded_product_ids( $excludeProductIDS );
+				$coupon->set_product_categories( $productCategoriesIDS );
+				$coupon->set_excluded_product_categories( $excludeProductCategoriesIDS );
 
         return $coupon;
     }
@@ -89,7 +89,7 @@ class Coupon
         $result = array($ID);
         $product = wc_get_product($ID);
 
-        if ($product && $product->product_type === 'variation') {
+        if ($product && $product->get_type() === 'variation') {
             $IDS = Product\Variation::getRelatedVariation($ID, true);
             if (is_array($IDS)) {
                 $result = array_merge($result, $IDS);
