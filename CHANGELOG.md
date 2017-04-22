@@ -1,3 +1,9 @@
+### 0.30.0
+
+* Fix adaptations for wooCommerce 3.0
+* Add settings Page link to plugins page
+* Allow variation description to be editable in translations
+
 ### 0.29.1
 
 * Improve Multisite compatibility 

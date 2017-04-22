@@ -256,7 +256,7 @@ final class Utilities
         $translated_attributes = array();
 
         if ($product && 'variable' === $product->get_type()) {
-            $default_attributes = $product->get_variation_default_attributes();
+            $default_attributes = $product->get_default_attributes();
             $terms = array(); // Array of terms: if the term is taxonomy each value is a term object, otherwise an array (term slug => term value)
             $langs = array();
 
