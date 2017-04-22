@@ -89,7 +89,14 @@ class Stock
      */
 protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_REDUCE_ACTION )
     {
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
         $productID = $item->get_product_id();
+	  		}
+				else
+				{
+					$productID = $item['product_id'];
+				}
         $productObject = wc_get_product($productID);
         $productLang = pll_get_post_language($productID);
 
@@ -109,8 +116,8 @@ protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_R
             $isManageStock = $productObject->managing_stock();
             $isVariation = $variationID && $variationID > 0;
             $method = ($action === self::STOCK_REDUCE_ACTION) ?
-                    'reduce_stock' :
-                    'increase_stock';
+                    'decrease' :
+                    'increase';
             $change = ($action === self::STOCK_REDUCE_ACTION) ?
               $item->get_quantity() :
           		$item->change;
@@ -121,7 +128,7 @@ protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_R
                 /* Only if product is managing stock */
                 if ($isManageStock) {
                     if (($translation = wc_get_product($ID))) {
-                        $translation->$method($change);
+                        \wc_update_product_stock($translation, $change, $method);
                     }
                 }
 
@@ -135,8 +142,11 @@ protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_R
                 }
             }
 
-            /* Handle variation */
-            if ($isVariation) {
+            /* Handle variation stock UNLESS stock is managed on the parent
+						 * there is a function for this $variation->get_stock_managed_by_id() however in woo-poly-context 
+						 * this returns the master language id of either the variation of the parent.
+						 */
+            if (($isVariation) && !($isManageStock)) {
                 $posts = Variation::getRelatedVariation($variationID);
                 foreach ($posts as $post) {
                     if ($post->ID == $variationID) {
@@ -144,7 +154,7 @@ protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_R
                     }
                     $variation = wc_get_product($post);
                     if ($variation && $variation->managing_stock()) {
-                        $variation->$method($change);
+												\wc_update_product_stock($variation, $change, $method);
                     }
                 }
             }

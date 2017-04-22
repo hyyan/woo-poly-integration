@@ -145,7 +145,7 @@ class Reports
 
             if ($translation) {
                 $data->from = $data->product_id;
-                $data->product_id = $translation->id;
+                $data->product_id = $translation->get_id();
             }
             $translated [] = $data;
         }

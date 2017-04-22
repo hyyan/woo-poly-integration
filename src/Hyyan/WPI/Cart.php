@@ -11,6 +11,7 @@
 namespace Hyyan\WPI;
 
 use Hyyan\WPI\Product\Variation;
+use Hyyan\WPI\Utilities;
 
 /**
  * Cart.
@@ -284,7 +285,7 @@ class Cart
 
             // Get the respective variation in the language of the product in the cart
             $variation    = $this->getVariationTranslation($variation_id, $lang);
-            $variation_id = $variation->variation_id;
+            $variation_id = $variation->get_id();
         } else {
             $variation = wc_get_product($variation_id);
         }
@@ -419,7 +420,14 @@ $valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : 
 
         // Get parent product translation id for the given language
         $variation   = wc_get_product($variation_id);
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
         $parent      = $variation ? wc_get_product($variation->get_parent_id()) : null;
+				}
+				else
+				{
+					$parent      = $variation ? $variation->parent : null;
+				}
         $_product_id = $parent ? pll_get_post($parent->get_id(), $lang) : null;
 
         // Get variation translation using the duplication metadata value

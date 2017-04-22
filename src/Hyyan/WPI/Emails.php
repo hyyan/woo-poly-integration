@@ -12,6 +12,7 @@ namespace Hyyan\WPI;
 
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Utilities;
 
 /**
  * Emails.
@@ -464,7 +465,14 @@ class Emails
         }
 
         // Get order language
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
         $order_language = pll_get_post_language($order->get_id(), 'locale');
+				}
+				else
+				{
+	        $order_language = pll_get_post_language($order->id, 'locale');
+				}
 
         if ($order_language == '') {
             $order_language = pll_current_language('locale');
@@ -494,9 +502,17 @@ class Emails
         $find['order-number'] = '{order_number}';
         $find['site_title'] = '{site_title}';
 
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
         $replace['order-date'] = date_i18n(wc_date_format(), strtotime($order->get_date_created()));
+  			}
+				else
+				{
+					$replace['order-date'] = date_i18n(wc_date_format(), strtotime($order->order_date));
+				}
         $replace['order-number'] = $order->get_order_number();
         $replace['site_title'] = get_bloginfo('name');
+
 
         $string = str_replace($find, $replace, $string);
 

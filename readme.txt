@@ -116,9 +116,12 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == 0.30.0 ==
 
-* Fix adaptations for wooCommerce 3.0
-* Add settings Page link to plugins page
-* Allow variation description to be editable in translations
+* Fix #137 #131 #130 #110 adaptations for wooCommerce 3.0
+* Fix #136 Variable product stock sync issue where stock managed at parent level
+* Enh #132 Add settings Page link to plugins page
+* Fix #128 Allow variation description to be editable in translations
+* Fix #129 #138 Account page only shows orders in current language
+* Fix #112 Shipping Class are not sync for Product Variations
 
 == 0.29.1 ==
 
@@ -253,6 +256,7 @@ woocommerce and polylang , please update immediately
 = 0.29.1 =
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 
+
 = 0.30.0 =
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 
