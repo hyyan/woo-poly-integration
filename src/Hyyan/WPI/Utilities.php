@@ -330,4 +330,23 @@ final class Utilities
 
         return false;
     }
+		
+    /**
+     * get payment method for order independent of wooCommerce version
+     *
+     * @param WC_Order $order
+     *
+     * @return string payment method name.
+     */
+    public static function get_payment_method($order)
+    {		
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
+					return $order->get_payment_method();
+				}
+				else
+				{
+					return $order->payment_method;
+				}
+		}
 }

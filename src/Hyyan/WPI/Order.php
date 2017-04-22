@@ -9,6 +9,7 @@
  */
 
 namespace Hyyan\WPI;
+use Hyyan\WPI\Utilities;
 
 /**
  * Order.
@@ -115,14 +116,32 @@ class Order
      */
     public function translateProductNameInOrdersDetails($name, $item, $is_visible = false)
     {
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
         $id = $item->get_product_id();
+  			}
+				else
+				{
+					$id = $item['item_meta']['_product_id'][0];
+				}
         $product = Utilities::getProductTranslationByID($id);
         if ($product) {
+					if (Utilities::woocommerceVersionCheck('3.0')) 
+					{
             if (!$is_visible) {
                 return $product->get_name();
             } else {
                 return sprintf('<a href="%s">%s</a>', get_permalink($product->get_id()), $product->get_name());
             }
+					}
+					else
+					{
+						if (!$is_visible) {
+                return $product->post->post_title;
+            } else {
+                return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
+            }
+					}
         } else {
             return $name;
         }
@@ -161,7 +180,6 @@ class Order
         if (isset($args['lang'])) {
             $query['lang'] = $args['lang'];
         }
-        
         return $query;
     }
 

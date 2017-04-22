@@ -37,14 +37,7 @@ class Plugin
 		 */
 		public function hyyan_settings_link( $links ) {
 //FIX: #132 Add link to settings page
-/* get_admin_url() should be correct and works fine for other plugins, but in Hyyan context it produces: Fatal error: Uncaught Error: Call to undefined function Hyyan\WPI\ get_admin_url()
-			if ( !function_exists('get_admin_url') ) {
-		   require_once( ABSPATH . '/wp-includes/link-template.php' );
-			}
-			$mylinks = array('<a href="'. \get_admin_url( null, 'options-general.php?page=hyyan-wpi' ) . '">' . 
-				esc_html__( 'Settings', ' woo-poly-integration' ) . '</a>', );
-*/
-			$mylinks = array('<a href="options-general.php?page=hyyan-wpi">' . esc_html__( 'Settings', ' woo-poly-integration' ) . '</a>', );
+			$mylinks = array('<a href="' . admin_url() . 'options-general.php?page=hyyan-wpi">' . esc_html__( 'Settings', ' woo-poly-integration' ) . '</a>', );
 			return array_merge( $links, $mylinks );
 		}
 

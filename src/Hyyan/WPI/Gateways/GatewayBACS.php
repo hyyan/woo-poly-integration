@@ -9,6 +9,7 @@
  */
 
 namespace Hyyan\WPI\Gateways;
+use Hyyan\WPI\Utilities;
 
 /**
  * Gateways BACS.
@@ -47,11 +48,20 @@ class GatewayBACS extends \WC_Gateway_BACS
      */
     public function email_instructions($order, $sent_to_admin, $plain_text = false)
     {
-        if (!$sent_to_admin && 'bacs' === $order->get_payment_method() && $order->has_status('on-hold')) {
+        if (!$sent_to_admin && 'bacs' === Utilities::get_payment_method($order) && $order->has_status('on-hold')) {
             if ($this->instructions) {
                 echo wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))).PHP_EOL;
             }
-            $this->bank_details($order->get_id());
+						if (Utilities::woocommerceVersionCheck('3.0')) 
+						{
+							$order_id = $order->get_id();
+						}
+						else
+						{
+							$order_id = $order->id;
+						}
+            $this->bank_details($order_id);
+
         }
     }
 
