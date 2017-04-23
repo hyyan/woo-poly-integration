@@ -256,7 +256,14 @@ final class Utilities
         $translated_attributes = array();
 
         if ($product && 'variable' === $product->get_type()) {
+						if (Utilities::woocommerceVersionCheck('3.0')) 
+						{
             $default_attributes = $product->get_default_attributes();
+						}
+						else
+						{
+							$default_attributes = $product->get_variation_default_attributes();
+						}
             $terms = array(); // Array of terms: if the term is taxonomy each value is a term object, otherwise an array (term slug => term value)
             $langs = array();
 
@@ -347,6 +354,143 @@ final class Utilities
 				else
 				{
 					return $order->payment_method;
+				}
+		}
+		/**
+     * get billing country for order independent of wooCommerce version
+     *
+     * @param WC_Order $order
+     *
+     * @return string payment method name.
+     */
+    public static function get_billing_country($order)
+    {		
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
+					return $order->get_billing_country();
+				}
+				else
+				{
+					return $order->billing_country;
+				}
+		}
+
+		/**
+     * get product id for order item independent of wooCommerce version
+     *
+     * @param WC_Order_Item_Product $item
+     *
+     * @return id
+     */
+    public static function get_order_item_productid($item)
+    {		
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
+	        return $item->get_product_id();
+	  		}
+				else
+				{
+					return $item['product_id'];
+				}
+		}
+
+		
+		/**
+     * get variation id for order item independent of wooCommerce version
+     *
+     * @param WC_Order_Item_Product $item
+     *
+     * @return id
+     */
+    public static function get_order_item_variationid($item)
+    {		
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
+	        return $item->get_variation_id();
+	  		}
+				else
+				{
+					return $item['variation_id'];
+				}
+		}
+
+				
+		/**
+     * get quantity for order item independent of wooCommerce version
+     *
+     * @param WC_Order_Item_Product $item
+     *
+     * @return integer quantity
+     */
+    public static function get_order_item_quantity($item)
+    {		
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
+	        return $item->get_quantity();
+	  		}
+				else
+				{
+					return $item['qty'];
+				}
+		}
+
+		/**
+     * get change for order item independent of wooCommerce version
+     *
+     * @param WC_Order_Item_Product $item
+     *
+     * @return integer change
+     */
+    public static function get_order_item_change($item)
+    {		
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
+	        return $item->change;
+	  		}
+				else
+				{
+					return $item['change'];
+				}
+		}
+
+		/**
+     * get order languate independent of wooCommerce version
+     *
+     * @param WC_Order order
+     *
+     * @return string language
+     */
+    public static function get_orderid($order)
+    {		
+				// Get order language
+				if (Utilities::woocommerceVersionCheck('3.0')) 
+				{
+	        return $order->get_id();
+				}
+				else
+				{
+	        return $order->id;
+				}
+				
+		}
+
+
+
+		/**
+     * get id for variation parent independent of wooCommerce version
+     *
+     * @param WC_Product variation
+     *
+     * @return integer id of variation parent post
+     */
+    public static function get_variation_parentid($variation)
+    {		
+				if ($variation){
+					return (Utilities::woocommerceVersionCheck('3.0')) ? $variation->get_parent_id() : $variation->parent->get_id();
+				}
+				else
+				{
+					return null;
 				}
 		}
 }

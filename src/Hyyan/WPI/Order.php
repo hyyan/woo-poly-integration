@@ -116,14 +116,7 @@ class Order
      */
     public function translateProductNameInOrdersDetails($name, $item, $is_visible = false)
     {
-				if (Utilities::woocommerceVersionCheck('3.0')) 
-				{
-        $id = $item->get_product_id();
-  			}
-				else
-				{
-					$id = $item['item_meta']['_product_id'][0];
-				}
+				$id = (Utilities::woocommerceVersionCheck('3.0')) ? $item->get_product_id() : $item['item_meta']['_product_id'][0];
         $product = Utilities::getProductTranslationByID($id);
         if ($product) {
 					if (Utilities::woocommerceVersionCheck('3.0')) 
@@ -137,9 +130,11 @@ class Order
 					else
 					{
 						if (!$is_visible) {
-                return $product->post->post_title;
+								return get_post($product->get_id())->post_title;
+                //return $product->post->post_title;
             } else {
-                return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
+								return sprintf('<a href="%s">%s</a>', get_permalink($product->get_id()), get_post($product->get_id())->post_title);
+                //return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
             }
 					}
         } else {
