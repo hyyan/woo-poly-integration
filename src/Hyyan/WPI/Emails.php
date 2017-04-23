@@ -464,16 +464,7 @@ class Emails
             return $string; // Returns the original $string on error (no order to get language from)
         }
 
-        // Get order language
-				if (Utilities::woocommerceVersionCheck('3.0')) 
-				{
-        $order_language = pll_get_post_language($order->get_id(), 'locale');
-				}
-				else
-				{
-	        $order_language = pll_get_post_language($order->id, 'locale');
-				}
-
+				$order_language = pll_get_post_language(Utilities::get_orderid($order), 'locale');
         if ($order_language == '') {
             $order_language = pll_current_language('locale');
         }

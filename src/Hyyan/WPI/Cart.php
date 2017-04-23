@@ -420,15 +420,8 @@ $valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : 
 
         // Get parent product translation id for the given language
         $variation   = wc_get_product($variation_id);
-				if (Utilities::woocommerceVersionCheck('3.0')) 
-				{
-        $parent      = $variation ? wc_get_product($variation->get_parent_id()) : null;
-				}
-				else
-				{
-					$parent      = $variation ? $variation->parent : null;
-				}
-        $_product_id = $parent ? pll_get_post($parent->get_id(), $lang) : null;
+				$parentid = Utilities::get_variation_parentid($variation);
+				$_product_id = pll_get_post($parentid, $lang);
 
         // Get variation translation using the duplication metadata value
         $meta = get_post_meta($variation_id, Variation::DUPLICATE_KEY, true);

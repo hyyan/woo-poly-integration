@@ -52,16 +52,7 @@ class GatewayBACS extends \WC_Gateway_BACS
             if ($this->instructions) {
                 echo wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))).PHP_EOL;
             }
-						if (Utilities::woocommerceVersionCheck('3.0')) 
-						{
-							$order_id = $order->get_id();
-						}
-						else
-						{
-							$order_id = $order->id;
-						}
-            $this->bank_details($order_id);
-
+            $this->bank_details(Utilities::get_orderid($order));
         }
     }
 
@@ -83,7 +74,7 @@ class GatewayBACS extends \WC_Gateway_BACS
         $order = wc_get_order($order_id);
 
         // Get the order country and country $locale
-        $country = $order->get_billing_country();
+				$country = Utilities::get_billing_country($order);
         $locale = $this->get_country_locale();
 
         // Get sortcode label in the $locale array and use appropriate one
