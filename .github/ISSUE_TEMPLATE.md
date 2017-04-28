@@ -7,7 +7,11 @@ Please note:
 If reporting a problem please make sure you confirm the following points so we can reproduce and fix your problem as quickly as possible:
 -->
 
-#### Version Information
+#### Can you reproduce this issue on default Wordpress theme (eg Storefront)?
+
+#### Can you reproduce this issue when all other plugins are disabled except WooCommerce, Polylang and Hyyan WooCommerce Polylang Integration?
+
+#### What product versions and settings are you using when this issue occurs?
 * PHP: 
 * WordPress: 
 * WooCommerce: 
@@ -15,9 +19,6 @@ If reporting a problem please make sure you confirm the following points so we c
 * Hyyan WooCommerce Polylang Integration: 
 * Browser: 
 
-#### Can you reproduce this issue on default Wordpress theme (eg Storefront)?
-
-#### Can you reproduce this issue when all other plugins are disabled except WooCommerce, Polylang and Hyyan WooCommerce Polylang Integration?
 
 #### Steps to Reproduce
 1. 
