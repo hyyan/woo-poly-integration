@@ -96,10 +96,10 @@ class Attributes implements TaxonomiesInterface
         }
 
         $stringTranslationURL = add_query_arg(array(
-            'page' => 'mlang',
-            'tab' => 'strings',
+            'page' => 'mlang_strings',
+            //'tab' => 'strings',
             'group' => __('Woocommerce Attributes', 'woo-poly-integration'),
-        ), admin_url('options-general.php'));
+        ), admin_url('admin.php'));
 
         /* Add attribute translate button */
         $buttonID = 'attrs-label-translation-button';
