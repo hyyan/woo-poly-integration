@@ -9,6 +9,7 @@
  */
 
 namespace Hyyan\WPI\Gateways;
+use Hyyan\WPI\Utilities;
 
 /**
  * Gateways BACS.
@@ -47,11 +48,11 @@ class GatewayBACS extends \WC_Gateway_BACS
      */
     public function email_instructions($order, $sent_to_admin, $plain_text = false)
     {
-        if (!$sent_to_admin && 'bacs' === $order->payment_method && $order->has_status('on-hold')) {
+        if (!$sent_to_admin && 'bacs' === Utilities::get_payment_method($order) && $order->has_status('on-hold')) {
             if ($this->instructions) {
                 echo wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))).PHP_EOL;
             }
-            $this->bank_details($order->id);
+            $this->bank_details(Utilities::get_orderid($order));
         }
     }
 
@@ -73,7 +74,7 @@ class GatewayBACS extends \WC_Gateway_BACS
         $order = wc_get_order($order_id);
 
         // Get the order country and country $locale
-        $country = $order->billing_country;
+				$country = Utilities::get_billing_country($order);
         $locale = $this->get_country_locale();
 
         // Get sortcode label in the $locale array and use appropriate one

@@ -33,6 +33,11 @@ class Meta
         add_action(
                 'current_screen', array($this, 'syncProductsMeta')
         );
+
+        // suppress "Invalid or duplicated SKU." error message when SKU syncronization is enabled
+        add_filter(
+                'wc_product_has_unique_sku', array($this, 'suppressInvalidDuplicatedSKUErrorMsg'), 100
+        );
     }
 
     /**
@@ -165,7 +170,7 @@ class Meta
             if (empty($meta)) {
                 $product = wc_get_product($ID);
                 if ($product) {
-                    update_post_meta($ID, '_translation_porduct_type', $product->product_type);
+                    update_post_meta($ID, '_translation_porduct_type', $product->get_type());
                 }
             }
 
@@ -272,6 +277,22 @@ class Meta
     }
 
     /**
+     * Get the meta keys disabled in the Metas List settings section, to be synced
+     * between products and their translations.
+     *
+     * @param array $metas array of meta keys
+     *
+     * @return array extended meta keys array
+     */
+    public static function getDisabledProductMetaToCopy(array $metas = array())
+    {
+        foreach(static::getProductMetaToCopy(array(), false) as $group) {
+            $metas = array_merge($metas, $group['metas']);
+        }
+        return array_values(array_diff($metas, static::getProductMetaToCopy()));
+    }
+
+    /**
      * Add the Fields Locker script.
      *
      * The script will disable editing of some product metas for product
@@ -339,7 +360,7 @@ class Meta
         add_action('save_post', function ($_ID) {
             $product = wc_get_product($_ID);    // get_product soft deprecated for wc_get_product
             if ($product && !isset($_GET['from_post'])) {
-                $type = $product->product_type;
+                $type = $product->get_type();
                 update_post_meta($_ID, '_translation_porduct_type', $type);
             }
         });
@@ -366,5 +387,21 @@ class Meta
                 Utilities::jsScriptWrapper($jsID, $code, false);
             }, 11);
         }
+    }
+
+    /**
+     * Suppress "Invalid or duplicated SKU." error message when SKU syncronization is enabled.
+     *
+     * @param bool $sky_found   whether a product sku is unique
+     *
+     * @return boolean  false if SKU sync is enabled, same as input otherwise
+     */ 
+    public function suppressInvalidDuplicatedSKUErrorMsg($sku_found) {
+        $metas = static::getProductMetaToCopy();
+
+        if (in_array('_sku', $metas))
+            return false;
+        else
+            return $sku_found;
     }
 }

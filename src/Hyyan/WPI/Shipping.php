@@ -12,6 +12,7 @@ namespace Hyyan\WPI;
 
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Utilities;
 
 /**
  * Shipping.
@@ -135,9 +136,9 @@ class Shipping
 
         // Rest of the World zone
         $zone = new \WC_Shipping_Zone();
-        $zones[ $zone->get_zone_id() ] = $zone->get_data();
-        $zones[ $zone->get_zone_id() ]['formatted_zone_location'] = $zone->get_formatted_location();
-        $zones[ $zone->get_zone_id() ]['shipping_methods'] = $zone->get_shipping_methods();
+        $zones[ $zone->get_id() ] = $zone->get_data();
+        $zones[ $zone->get_id() ]['formatted_zone_location'] = $zone->get_formatted_location();
+        $zones[ $zone->get_id() ]['shipping_methods'] = $zone->get_shipping_methods();
 
         // Add user configured zones
         $zones = array_merge($zones, \WC_Shipping_Zones::get_zones());

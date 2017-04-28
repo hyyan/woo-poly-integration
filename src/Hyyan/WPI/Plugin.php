@@ -30,6 +30,17 @@ class Plugin
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
     }
 
+		/**
+		 * Settings link that appears on the plugins overview page
+		 * @param array $links
+		 * @return array
+		 */
+		public function hyyan_settings_link( $links ) {
+//FIX: #132 Add link to settings page
+			$mylinks = array('<a href="' . admin_url() . 'options-general.php?page=hyyan-wpi">' . esc_html__( 'Settings', ' woo-poly-integration' ) . '</a>', );
+			return array_merge( $links, $mylinks );
+		}
+
     /**
      * Load plugin langauge file.
      */
@@ -65,6 +76,8 @@ class Plugin
         );
 
         $this->registerCore();
+				add_filter( 'plugin_action_links_woo-poly-integration/__init__.php', array($this,'hyyan_settings_link') );
+
     }
 
     /**

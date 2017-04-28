@@ -135,7 +135,7 @@ class Variable
 
             // _default_attributes meta should be unique
             if ($product && current_filter() === 'add_post_metadata') {
-                $old_value = get_post_meta($product->id, '_default_attributes');
+                $old_value = get_post_meta($product->get_id(), '_default_attributes');
                 return empty($old_value) ? $check : false;
             }
 
@@ -143,7 +143,7 @@ class Variable
             // New translations of Variable Products are first created as simple
             if ($product && Utilities::maybeVariableProduct($product)) {
                 // Try Polylang first
-                $lang = pll_get_post_language($product->id);
+                $lang = pll_get_post_language($product->get_id());
 
                 if (!$lang) {
                     // Must be a new translation and Polylang doesn't stored the language yet
@@ -203,7 +203,7 @@ class Variable
         // Don't sync if not a Variable Product
         $product = wc_get_product($post_id);
 
-        if ($product && 'simple' === $product->product_type && Utilities::maybeVariableProduct($product)) {
+        if ($product && 'simple' === $product->get_type() && Utilities::maybeVariableProduct($product)) {
             // Maybe is Variable Product - new translations of Variable Products are first created as simple
 
             // Only need to sync for the new translation from source product
@@ -211,19 +211,19 @@ class Variable
             $attributes_translation = Utilities::getDefaultAttributesTranslation($_GET['from_post'], $_GET['new_lang']);
 
             if (!empty($attributes_translation) && isset($attributes_translation[$_GET['new_lang']])) {
-                update_post_meta($product->id, '_default_attributes', $attributes_translation[$_GET['new_lang']]);
+                update_post_meta($product->get_id(), '_default_attributes', $attributes_translation[$_GET['new_lang']]);
             }
-        } elseif ($product && 'variable' === $product->product_type) {
+        } elseif ($product && 'variable' === $product->get_type()) {
             // Variable Product
 
             // For each product translation, get the translated (default) terms/attributes
-            $attributes_translation = Utilities::getDefaultAttributesTranslation($product->id);
+            $attributes_translation = Utilities::getDefaultAttributesTranslation($product->get_id());
             $langs                  = pll_languages_list();
 
             foreach ($langs as $lang) {
-                $translation_id = pll_get_post($product->id, $lang);
+                $translation_id = pll_get_post($product->get_id(), $lang);
 
-                if ($translation_id != $product->id) {
+                if ($translation_id != $product->get_id()) {
                     update_post_meta($translation_id, '_default_attributes', $attributes_translation[$lang]);
                 }
             }
@@ -286,8 +286,8 @@ class Variable
      */
     public function extendFieldsLockerSelectors(array $selectors)
     {
-        $selectors[] = '#variable_product_options :input';
-
+        //FIX: #128 allow variable product description to be translated
+				$selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
         return $selectors;
     }
 

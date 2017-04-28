@@ -9,6 +9,7 @@
  */
 
 namespace Hyyan\WPI;
+use Hyyan\WPI\Utilities;
 
 /**
  * Order.
@@ -115,14 +116,27 @@ class Order
      */
     public function translateProductNameInOrdersDetails($name, $item, $is_visible = false)
     {
-        $id = $item['item_meta']['_product_id'][0];
+				$id = (Utilities::woocommerceVersionCheck('3.0')) ? $item->get_product_id() : $item['item_meta']['_product_id'][0];
         $product = Utilities::getProductTranslationByID($id);
         if ($product) {
+					if (Utilities::woocommerceVersionCheck('3.0')) 
+					{
             if (!$is_visible) {
-                return $product->post->post_title;
+                return $product->get_name();
             } else {
-                return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
+                return sprintf('<a href="%s">%s</a>', get_permalink($product->get_id()), $product->get_name());
             }
+					}
+					else
+					{
+						if (!$is_visible) {
+								return get_post($product->get_id())->post_title;
+                //return $product->post->post_title;
+            } else {
+								return sprintf('<a href="%s">%s</a>', get_permalink($product->get_id()), get_post($product->get_id())->post_title);
+                //return sprintf('<a href="%s">%s</a>', get_permalink($product->id), $product->post->post_title);
+            }
+					}
         } else {
             return $name;
         }
@@ -133,14 +147,34 @@ class Order
      *
      * Will correct the query to display orders from all languages
      *
-     * @param array $query
+     * @param array $query  query arguments
      *
      * @return array
      */
     public function correctMyAccountOrderQuery(array $query)
     {
+        if (Utilities::woocommerceVersionCheck('2.7')) {
+            add_filter('woocommerce_order_data_store_cpt_get_orders_query', array($this, 'correctGetOrderQuery'), 10, 2);
+        }
         $query['lang'] = implode(',', pll_languages_list());
 
+        return $query;
+    }
+    
+    /**
+     * Correct wc_get_orders query for the My Account view orders page.
+     *
+     * Will correct the query to display orders from all languages
+     *
+     * @param array $query  WP_Query arguments
+     * @param array $args   wc_get_orders query args
+     *
+     * @return array
+     */
+    public function correctGetOrderQuery($query, $args) {
+        if (isset($args['lang'])) {
+            $query['lang'] = $args['lang'];
+        }
         return $query;
     }
 

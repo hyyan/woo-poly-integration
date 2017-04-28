@@ -9,6 +9,7 @@
  */
 
 namespace Hyyan\WPI\Gateways;
+use Hyyan\WPI\Utilities;
 
 /**
  * Gateways Cash on Delivery.
@@ -47,7 +48,7 @@ class GatewayCOD extends \WC_Gateway_COD
      */
     public function email_instructions($order, $sent_to_admin, $plain_text = false)
     {
-        if ($this->instructions && !$sent_to_admin && 'cod' === $order->payment_method) {
+        if ($this->instructions && !$sent_to_admin && 'cod' === Utilities::get_payment_method($order)) {
             echo wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))).PHP_EOL;
         }
     }
