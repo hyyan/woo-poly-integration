@@ -169,5 +169,6 @@ class Plugin
         new Gateways();
         new Shipping();
         new Breadcrumb();
+        new Shortcodes\Shortcodes();
     }
 }
