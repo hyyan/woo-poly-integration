@@ -170,5 +170,6 @@ class Plugin
         new Shipping();
         new Breadcrumb();
         new Shortcodes\Shortcodes();
+				new Tax();
     }
 }
