@@ -42,7 +42,7 @@ class Shortcodes
     {
         global $polylang;
 				if (function_exists('pll_current_language')) {
-					$query_args['lang'] = ($query_args['lang']) ? $query_args['lang'] : pll_current_language();
+					$query_args['lang'] = isset($query_args['lang']) ? $query_args['lang'] : pll_current_language();
 					return $query_args;
 				}
     }
