@@ -87,7 +87,7 @@ class Stock
      * @param array  $item   the order data
      * @param string $action STOCK_REDUCE_ACTION | STOCK_INCREASE_ACTION
      */
-    protected function change(array $item, $action = self::STOCK_REDUCE_ACTION)
+    protected function change($item, $action = self::STOCK_REDUCE_ACTION)
     {
         $productID = $item['product_id'];
         $productObject = wc_get_product($productID);
