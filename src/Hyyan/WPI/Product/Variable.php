@@ -36,7 +36,6 @@ class Variable
 
         // Extend meta list to include variation meta and fields to lock
         add_filter(HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList'));
-        add_filter(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors'));
 
         // Variable Products limitations warnings and safe-guards
         if (is_admin()) {
@@ -273,22 +272,6 @@ class Variable
         );
 
         return $metas;
-    }
-
-    /**
-     * Extend the fields locker selectors.
-     *
-     * Extend the fields locker selectors to lock variation fields for translation
-     *
-     * @param array $selectors
-     *
-     * @return array
-     */
-    public function extendFieldsLockerSelectors(array $selectors)
-    {
-        //FIX: #128 allow variable product description to be translated
-				$selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
-        return $selectors;
     }
 
     /**

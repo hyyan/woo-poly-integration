@@ -309,6 +309,7 @@ class Meta
         $metas = static::getProductMetaToCopy();
         $selectors = apply_filters(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array(
             '.insert',
+            '#variable_product_options :input:not([name^="variable_description"])',
             in_array('_product_attributes', $metas) ? '#product_attributes :input' : rand(),
         ));
 
