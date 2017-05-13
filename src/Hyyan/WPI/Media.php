@@ -25,19 +25,15 @@ class Media
     public function __construct()
     {
         if (static::isMediaTranslationEnabled()) {
-						if (Utilities::woocommerceVersionCheck('3.0')) 
-						{
-            add_filter(
+            if (Utilities::woocommerceVersionCheck('3.0')) {
+                add_filter(
                     'woocommerce_product_get_gallery_image_ids', array($this, 'translateGallery')
             );
-        }
-						else
-						{
-							add_filter(
-											'woocommerce_product_gallery_attachment_ids', array($this, 'translateGallery')
-							);
-						}
-
+            } else {
+                add_filter(
+                                            'woocommerce_product_gallery_attachment_ids', array($this, 'translateGallery')
+                            );
+            }
         }
     }
 

@@ -53,7 +53,7 @@ class Meta
         // Shipping Class translation is not supported after WooCommerce 2.6 but it is
         // still implemented by WooCommerce as a taxonomy. Therefore Polylang will not
         // copy the Shipping Class meta. We need to take care of it.
-        if (Utilities::woocommerceVersionCheck('2.6')) { 
+        if (Utilities::woocommerceVersionCheck('2.6')) {
             add_action('wp_insert_post', array($this, 'syncShippingClass'), 10, 3);
         }
 
@@ -104,7 +104,7 @@ class Meta
     
     /**
      * Sync Product Shipping Class.
-     * 
+     *
      * Shipping Class translation is not supported after WooCommerce 2.6
      * but it is still implemented by WooCommerce as a taxonomy. Therefore,
      * Polylang will not copy the Shipping Class meta.
@@ -129,16 +129,14 @@ class Meta
                 $product = wc_get_product($post_id);
             }
             
-            if ($product) {            
+            if ($product) {
                 $shipping_class = $product->get_shipping_class();
-                if ($shipping_class){
-                    
-                    $shipping_terms = get_term_by( 'slug', $shipping_class, 'product_shipping_class' );
+                if ($shipping_class) {
+                    $shipping_terms = get_term_by('slug', $shipping_class, 'product_shipping_class');
                     if ($shipping_terms) {
-                        
                         if ($copy) {
                             // New translation - copy shipping class from product source
-                            wp_set_post_terms( $post_id, array( $shipping_terms->term_id ), 'product_shipping_class' );
+                            wp_set_post_terms($post_id, array( $shipping_terms->term_id ), 'product_shipping_class');
                         } else {
                             // Product edit - update shipping class of all product translations
                             $langs = pll_languages_list();
@@ -147,13 +145,13 @@ class Meta
                                 $translation_id = pll_get_post($post_id, $lang);
                                 if ($translation_id != $post_id) {
                                     // Don't sync if is the same product
-                                    wp_set_post_terms( $translation_id, array( $shipping_terms->term_id ), 'product_shipping_class' );
+                                    wp_set_post_terms($translation_id, array( $shipping_terms->term_id ), 'product_shipping_class');
                                 }
                             }
                         }
                     }
                 }
-            } 
+            }
         }
     }
     
@@ -173,7 +171,6 @@ class Meta
                     update_post_meta($ID, '_translation_porduct_type', $product->get_type());
                 }
             }
-
         }
     }
 
@@ -286,7 +283,7 @@ class Meta
      */
     public static function getDisabledProductMetaToCopy(array $metas = array())
     {
-        foreach(static::getProductMetaToCopy(array(), false) as $group) {
+        foreach (static::getProductMetaToCopy(array(), false) as $group) {
             $metas = array_merge($metas, $group['metas']);
         }
         return array_values(array_diff($metas, static::getProductMetaToCopy()));
@@ -336,8 +333,7 @@ class Meta
                 . 'hyyan_wpi_lockFields();'
                 . '$(document).ajaxComplete(function(){'
                 . '    hyyan_wpi_lockFields(); '
-                . '});'
-                , json_encode($metas), !empty($selectors) ?
+                . '});', json_encode($metas), !empty($selectors) ?
                         json_encode(implode(',', $selectors)) :
                         array(rand())
         );
@@ -396,13 +392,15 @@ class Meta
      * @param bool $sky_found   whether a product sku is unique
      *
      * @return boolean  false if SKU sync is enabled, same as input otherwise
-     */ 
-    public function suppressInvalidDuplicatedSKUErrorMsg($sku_found) {
+     */
+    public function suppressInvalidDuplicatedSKUErrorMsg($sku_found)
+    {
         $metas = static::getProductMetaToCopy();
 
-        if (in_array('_sku', $metas))
+        if (in_array('_sku', $metas)) {
             return false;
-        else
+        } else {
             return $sku_found;
+        }
     }
 }

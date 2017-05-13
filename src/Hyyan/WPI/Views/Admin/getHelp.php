@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
         </li>
 <!--        <li>
             <a href="https://wordpress.org/support/plugin/woo-poly-integration" target="_blank">
-                <?php //_e('On Wordpress Support Froum', 'woo-poly-integration'); ?>
+                <?php //_e('On Wordpress Support Froum', 'woo-poly-integration');?>
             </a>
         </li>-->
         <li>

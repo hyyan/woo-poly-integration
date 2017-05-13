@@ -9,6 +9,7 @@
  */
 
 namespace Hyyan\WPI\Gateways;
+
 use Hyyan\WPI\Utilities;
 
 /**
@@ -74,7 +75,7 @@ class GatewayBACS extends \WC_Gateway_BACS
         $order = wc_get_order($order_id);
 
         // Get the order country and country $locale
-				$country = Utilities::get_billing_country($order);
+                $country = Utilities::get_billing_country($order);
         $locale = $this->get_country_locale();
 
         // Get sortcode label in the $locale array and use appropriate one

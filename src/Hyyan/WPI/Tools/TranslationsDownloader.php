@@ -68,7 +68,7 @@ class TranslationsDownloader
             if (empty($wp_filesystem)) {
                 require_once ABSPATH.'/wp-admin/includes/file.php';
 
-                if (false === ($creds = request_filesystem_credentials('', '', false, false, null) ) ) {
+                if (false === ($creds = request_filesystem_credentials('', '', false, false, null))) {
                     throw new \RuntimeException($cantDownload);
                 }
 

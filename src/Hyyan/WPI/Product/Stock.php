@@ -85,13 +85,13 @@ class Stock
      * @param array  $item   the order data
      * @param string $action STOCK_REDUCE_ACTION | STOCK_INCREASE_ACTION
      */
-protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_REDUCE_ACTION )
-    {
-				$productID = Utilities::get_order_item_productid($item);
-        $productObject = wc_get_product($productID);
-        $productLang = pll_get_post_language($productID);
+protected function change(\WC_Order_Item_Product $item, $action = self::STOCK_REDUCE_ACTION)
+{
+    $productID = Utilities::get_order_item_productid($item);
+    $productObject = wc_get_product($productID);
+    $productLang = pll_get_post_language($productID);
 
-        $variationID = Utilities::get_order_item_variationid($item);
+    $variationID = Utilities::get_order_item_variationid($item);
 
         /* Handle Products */
         if ($productObject && $productLang) {
@@ -111,7 +111,7 @@ protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_R
                     'increase';
             $change = ($action === self::STOCK_REDUCE_ACTION) ?
               Utilities::get_order_item_quantity($item) :
-          		Utilities::get_order_item_change($item);
+                  Utilities::get_order_item_change($item);
 
             /* Sync stock for all translation */
             foreach ($translations as $ID) {
@@ -134,9 +134,9 @@ protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_R
             }
 
             /* Handle variation stock UNLESS stock is managed on the parent
-						 * there is a function for this $variation->get_stock_managed_by_id() however in woo-poly-context 
-						 * this returns the master language id of either the variation of the parent.
-						 */
+                         * there is a function for this $variation->get_stock_managed_by_id() however in woo-poly-context
+                         * this returns the master language id of either the variation of the parent.
+                         */
             if (($isVariation) && !($isManageStock)) {
                 $posts = Variation::getRelatedVariation($variationID);
                 foreach ($posts as $post) {
@@ -145,10 +145,10 @@ protected function change( \WC_Order_Item_Product $item, $action = self::STOCK_R
                     }
                     $variation = wc_get_product($post);
                     if ($variation && $variation->managing_stock()) {
-												\wc_update_product_stock($variation, $change, $method);
+                        \wc_update_product_stock($variation, $change, $method);
                     }
                 }
             }
         }
-    }
+}
 }

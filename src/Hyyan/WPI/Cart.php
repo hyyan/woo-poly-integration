@@ -92,15 +92,15 @@ class Cart
         // By default, returns the same input
         $cart_item_data_translation = $cart_item_data;
 
-        switch ( $cart_item_data->get_type() ) {
+        switch ($cart_item_data->get_type()) {
             case 'variation':
-                $variation_translation   = $this->getVariationTranslation( $cart_variation_id );
+                $variation_translation   = $this->getVariationTranslation($cart_variation_id);
                 $cart_item_data_translation = $variation_translation ? $variation_translation : $cart_item_data_translation;
                 break;
 
             case 'simple':
             default:
-                $product_translation        = Utilities::getProductTranslationByID( $cart_product_id );
+                $product_translation        = Utilities::getProductTranslationByID($cart_product_id);
                 $cart_item_data_translation = $product_translation ? $product_translation : $cart_item_data_translation;
                 break;
         }
@@ -133,7 +133,7 @@ class Cart
     {
         $cart_variation_id = isset($cart_item['variation_id']) ? $cart_item['variation_id'] : 0;
 
-        If ($cart_variation_id !== 0) {
+        if ($cart_variation_id !== 0) {
             // Variation
             $variation_translation = $this->getVariationTranslation($cart_variation_id);
             return $variation_translation ? $variation_translation->get_permalink() : $item_permalink;
@@ -244,7 +244,7 @@ class Cart
     public function addToCartHandlerVariable($url)
     {
         // From add_to_cart_action( $url )
-        if (empty( $_REQUEST['add-to-cart']) || !is_numeric($_REQUEST['add-to-cart'])) {
+        if (empty($_REQUEST['add-to-cart']) || !is_numeric($_REQUEST['add-to-cart'])) {
             return;
         }
 
@@ -267,7 +267,7 @@ class Cart
         // If no variation ID is set, attempt to get a variation ID from posted attributes.
         if (empty($variation_id)) {
             $data_store   = WC_Data_Store::load('product');
-			$variation_id = $data_store->find_matching_product_variation($adding_to_cart, wp_unslash($_POST));
+            $variation_id = $data_store->find_matching_product_variation($adding_to_cart, wp_unslash($_POST));
         }
 
         /**
@@ -294,25 +294,25 @@ class Cart
          */
 
         // Validate the attributes.
-		try {
-			if (empty($variation_id)) {
-				throw new Exception(__('Please choose product options&hellip;', 'woocommerce') );
-			}
+        try {
+            if (empty($variation_id)) {
+                throw new Exception(__('Please choose product options&hellip;', 'woocommerce'));
+            }
 
-			$variation_data = wc_get_product_variation_attributes($variation_id);
+            $variation_data = wc_get_product_variation_attributes($variation_id);
 
-			foreach ($attributes as $attribute) {
-				if (!$attribute['is_variation']) {
-					continue;
-				}
+            foreach ($attributes as $attribute) {
+                if (!$attribute['is_variation']) {
+                    continue;
+                }
 
-				$taxonomy = 'attribute_' . sanitize_title($attribute['name']);
+                $taxonomy = 'attribute_' . sanitize_title($attribute['name']);
 
-				if (isset($_REQUEST[$taxonomy])) {
-					// Get value from post data
-					if ($attribute['is_taxonomy']) {
-						// Don't use wc_clean as it destroys sanitized characters
-						$value = sanitize_title(stripslashes($_REQUEST[$taxonomy]));
+                if (isset($_REQUEST[$taxonomy])) {
+                    // Get value from post data
+                    if ($attribute['is_taxonomy']) {
+                        // Don't use wc_clean as it destroys sanitized characters
+                        $value = sanitize_title(stripslashes($_REQUEST[$taxonomy]));
                         
                         /**
                         * Custom code to check if a translation of the product is already in the cart,
@@ -333,53 +333,53 @@ class Cart
                         /**
                         * End of custom code.
                         */
-					} else {
-						$value = wc_clean(stripslashes($_REQUEST[$taxonomy]));
-					}
+                    } else {
+                        $value = wc_clean(stripslashes($_REQUEST[$taxonomy]));
+                    }
 
-					// Get valid value from variation
+                    // Get valid value from variation
 //change proposed by @theleemon
 $variation_data = wc_get_product_variation_attributes($variation->get_id());
-$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
-					//$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
+                    $valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
+                    //$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
 
-					// Allow if valid or show error.
-					if ( '' === $valid_value || $valid_value === $value) {
-						$variations[$taxonomy] = $value;
-					} else {
-						throw new Exception(sprintf(__('Invalid value posted for %s', 'woocommerce'), wc_attribute_label($attribute['name'])));
-					}
-				} else {
-					$missing_attributes[] = wc_attribute_label($attribute['name']);
-				}
-			}
-			if (!empty($missing_attributes)) {
-				throw new Exception(sprintf(_n('%s is a required field', '%s are required fields', sizeof($missing_attributes), 'woocommerce'), wc_format_list_of_items($missing_attributes)));
-			}
-		} catch (Exception $e) {
-			wc_add_notice($e->getMessage(), 'error');
+                    // Allow if valid or show error.
+                    if ('' === $valid_value || $valid_value === $value) {
+                        $variations[$taxonomy] = $value;
+                    } else {
+                        throw new Exception(sprintf(__('Invalid value posted for %s', 'woocommerce'), wc_attribute_label($attribute['name'])));
+                    }
+                } else {
+                    $missing_attributes[] = wc_attribute_label($attribute['name']);
+                }
+            }
+            if (!empty($missing_attributes)) {
+                throw new Exception(sprintf(_n('%s is a required field', '%s are required fields', sizeof($missing_attributes), 'woocommerce'), wc_format_list_of_items($missing_attributes)));
+            }
+        } catch (Exception $e) {
+            wc_add_notice($e->getMessage(), 'error');
             //return false;
             /**
              * Custom code: We are doing an action, therefore no return needed. Instead we need to
              * set $passed_validation to false, to ensure the product is not added to the card.
              */
             add_filter('woocommerce_add_to_cart_validation', '__return_false');
-		}
+        }
 
-		// Add to cart validation
-		$passed_validation 	= apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations);
+        // Add to cart validation
+        $passed_validation    = apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations);
 
-		if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variations) !== false) {
-			wc_add_to_cart_message(array($product_id => $quantity), true);
-			//return true;
+        if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variations) !== false) {
+            wc_add_to_cart_message(array($product_id => $quantity), true);
+            //return true;
             /**
              * Custom code: We are doing an action, therefore no return needed. Intead we need to
              * set $was_added_to_cart to true to trigger the optional redirect
              */
             $was_added_to_cart = true;
-		}
+        }
 
-		//return false; We are doing an action, therefore no return needed. but we need to set $was_added_to_cart to trigger the redirect
+        //return false; We are doing an action, therefore no return needed. but we need to set $was_added_to_cart to trigger the redirect
         // End: From add_to_cart_handler_variable( $product_id )
 
         /**
@@ -389,13 +389,13 @@ $valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : 
         // From add_to_cart_action( $url )
         // If we added the product to the cart we can now optionally do a redirect.
         if ($was_added_to_cart && wc_notice_count('error') === 0) {
-                // If has custom URL redirect there
+            // If has custom URL redirect there
                 if ($url = apply_filters('woocommerce_add_to_cart_redirect', $url)) {
-                        wp_safe_redirect($url);
-                        exit;
+                    wp_safe_redirect($url);
+                    exit;
                 } elseif (get_option('woocommerce_cart_redirect_after_add') === 'yes') {
-                        wp_safe_redirect(wc_get_cart_url());
-                        exit;
+                    wp_safe_redirect(wc_get_cart_url());
+                    exit;
                 }
         }
         // End: From add_to_cart_action( $url )
@@ -420,8 +420,8 @@ $valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : 
 
         // Get parent product translation id for the given language
         $variation   = wc_get_product($variation_id);
-				$parentid = Utilities::get_variation_parentid($variation);
-				$_product_id = pll_get_post($parentid, $lang);
+        $parentid = Utilities::get_variation_parentid($variation);
+        $_product_id = pll_get_post($parentid, $lang);
 
         // Get variation translation using the duplication metadata value
         $meta = get_post_meta($variation_id, Variation::DUPLICATE_KEY, true);

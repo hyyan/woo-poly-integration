@@ -158,7 +158,7 @@ class Pages
     
     /**
      * Add Shortcode Language Filter
-     * 
+     *
      * Fix shortcodes to include language filter.
      *
      * @param array $query_args
@@ -169,9 +169,8 @@ class Pages
      */
     public function addShortcodeLanguageFilter($query_args, $atts, $loop_name)
     {
-        
         if (function_exists('pll_current_language')) {
-            $query_args['lang'] = isset($query_args['lang']) ? 
+            $query_args['lang'] = isset($query_args['lang']) ?
                                   $query_args['lang'] : pll_current_language();
             
             return $query_args;

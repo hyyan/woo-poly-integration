@@ -114,12 +114,12 @@ class Variable
      *
      * Why is this required: Polylang to simplify the synchronization process of multiple meta values,
      * deletes all metas first. In this process Variable Product default attributes that are not taxomomies
-     * managed by Polylang, are lost. 
+     * managed by Polylang, are lost.
      *
      * @param boolean   $check      Whether to manipulate metadata. (true to continue, false to stop execution)
      * @param int       $object_id  ID of the object metadata is for
      * @param string    $meta_key   Metadata key
-	 * @param string    $meta_value Metadata value
+     * @param string    $meta_value Metadata value
      */
     public function skipDefaultAttributesMeta($check, $object_id, $meta_key, $meta_value)
     {
@@ -164,7 +164,6 @@ class Variable
                             // Attribute term has no translation
                             return false;
                         }
-
                     }
                 }
             }
