@@ -3,8 +3,7 @@ Thanks for contributing&mdash;you rock!
 
 - Please make sure your changes respect the PSR-2 Coding Standards:
   - http://www.php-fig.org/psr/psr-2/
-- In case you introduced a new action or filter hook, please also include inline documentation:
-  - https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/
+- In case you introduced a new action or filter hook, please use HooksInterface.php to document it 
 - Please create tests, if you can.
 -->
 
