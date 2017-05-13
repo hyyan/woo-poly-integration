@@ -48,6 +48,12 @@ class Meta
     public function syncProductsMeta()
     {
 
+        $currentScreen = get_current_screen();
+
+        if ($currentScreen->post_type !== 'product') {
+            return false;
+        }
+
         // sync product meta with polylang
         add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
         // Shipping Class translation is not supported after WooCommerce 2.6 but it is
@@ -55,12 +61,6 @@ class Meta
         // copy the Shipping Class meta. We need to take care of it.
         if (Utilities::woocommerceVersionCheck('2.6')) {
             add_action('wp_insert_post', array($this, 'syncShippingClass'), 10, 3);
-        }
-
-        $currentScreen = get_current_screen();
-
-        if ($currentScreen->post_type !== 'product') {
-            return false;
         }
 
         $ID = false;
