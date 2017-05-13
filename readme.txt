@@ -16,7 +16,7 @@ WooCommerce and Polylang.It makes products and store pages translatable, lets
 visitors switch languages and order products in their language. and all that from
 the same interface you love.
 
-> Please do not ask for support on wordpress forum anymore , it is becoming hard to me to follow issues on wordpress forum , Email and Github , if you want help just open new Github issue please.
+> Please do not ask for support on wordpress forum anymore , it is becoming hard for me to follow issues in different places. please if you want help just open a new Github issue.
 
 = Features  =
 
