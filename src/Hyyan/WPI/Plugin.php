@@ -30,17 +30,6 @@ class Plugin
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
     }
 
-		/**
-		 * Settings link that appears on the plugins overview page
-		 * @param array $links
-		 * @return array
-		 */
-		public function hyyan_settings_link( $links ) {
-//FIX: #132 Add link to settings page
-			$mylinks = array('<a href="' . admin_url() . 'options-general.php?page=hyyan-wpi">' . esc_html__( 'Settings', ' woo-poly-integration' ) . '</a>', );
-			return array_merge( $links, $mylinks );
-		}
-
     /**
      * Load plugin langauge file.
      */
@@ -74,10 +63,22 @@ class Plugin
         FlashMessages::add(
                 MessagesInterface::MSG_SUPPORT, static::getView('Messages/support')
         );
+        
+        add_filter('plugin_action_links_woo-poly-integration/__init__.php', function($links) {
+            
+            $baseURL = is_multisite() ? get_admin_url() : admin_url();
+            $settingsLink = array(
+                '<a href="' 
+                . $baseURL 
+                . 'options-general.php?page=hyyan-wpi">' 
+                . __('Settings', ' woo-poly-integration') 
+                . '</a>'
+            );
+            
+            return array_merge($links, $settingsLink);
+        });
 
         $this->registerCore();
-				add_filter( 'plugin_action_links_woo-poly-integration/__init__.php', array($this,'hyyan_settings_link') );
-
     }
 
     /**
