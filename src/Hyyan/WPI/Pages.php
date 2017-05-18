@@ -48,6 +48,11 @@ class Pages
             /* To get product from current language in the shop page */
             add_filter('parse_request', array($this, 'correctShopPage'));
         }
+        
+        add_filter(
+                'woocommerce_shortcode_products_query',
+                array($this, 'addShortcodeLanguageFilter'), 10, 3
+        );
     }
 
     /**
@@ -149,5 +154,26 @@ class Pages
         }
 
         return $result;
+    }
+    
+    /**
+     * Add Shortcode Language Filter
+     *
+     * Fix shortcodes to include language filter.
+     *
+     * @param array $query_args
+     * @param array $atts
+     * @param string $loop_name
+     *
+     * @return string modified form
+     */
+    public function addShortcodeLanguageFilter($query_args, $atts, $loop_name)
+    {
+        if (function_exists('pll_current_language')) {
+            $query_args['lang'] = isset($query_args['lang']) ?
+                                  $query_args['lang'] : pll_current_language();
+            
+            return $query_args;
+        }
     }
 }

@@ -9,6 +9,7 @@
  */
 
 namespace Hyyan\WPI\Gateways;
+
 use Hyyan\WPI\Utilities;
 
 /**
