@@ -1,4 +1,4 @@
-### 0.30.0
+### 1.0.0
 
 * Fix #137 #131 #130 #110 adaptations for wooCommerce 3.0
 * Fix #136 Variable product stock sync issue where stock managed at parent level

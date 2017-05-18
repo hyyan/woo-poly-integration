@@ -217,7 +217,7 @@ class Variation
 
     /**
      * Sync Product Shipping Class.
-     * 
+     *
      * Shipping Class translation is not supported after WooCommerce 2.6
      * but it is still implemented by WooCommerce as a taxonomy. Therefore,
      * Polylang will not copy the Shipping Class meta.
@@ -227,19 +227,19 @@ class Variation
      */
     public function syncShippingClass($from, $to)
     {
-			// Product edit - update shipping class of all product translations
-			$variation_from = wc_get_product($from);
+        // Product edit - update shipping class of all product translations
+            $variation_from = wc_get_product($from);
             
-			if ($variation_from) {           
-				$shipping_class = $variation_from->get_shipping_class();
-				if ($shipping_class){
-					$shipping_terms = get_term_by( 'slug', $shipping_class, 'product_shipping_class' );
-					if ($shipping_terms) {
-						wp_set_post_terms( $to, array( $shipping_terms->term_id ), 'product_shipping_class' );
-					}
-				}
-			}    
-		}
+        if ($variation_from) {
+            $shipping_class = $variation_from->get_shipping_class();
+            if ($shipping_class) {
+                $shipping_terms = get_term_by('slug', $shipping_class, 'product_shipping_class');
+                if ($shipping_terms) {
+                    wp_set_post_terms($to, array( $shipping_terms->term_id ), 'product_shipping_class');
+                }
+            }
+        }
+    }
 
     /**
      * Copy variation meta.
@@ -311,7 +311,7 @@ class Variation
                 }
             }
         }
-				//add shipping class not included in metas as now a taxonomy
-				$this->syncShippingClass($from, $to);
+                //add shipping class not included in metas as now a taxonomy
+                $this->syncShippingClass($from, $to);
     }
 }

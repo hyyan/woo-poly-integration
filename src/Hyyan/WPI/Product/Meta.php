@@ -60,15 +60,7 @@ class Meta
 				//  new code to synchronise Taxonomies and Product attributes applied to WooCommerce 3.0 
 				//  which now moves product_visibility from meta to taxonomy 
 				//  (includes Catalog Visibility, Featured Product previously in meta)
-        if (Utilities::woocommerceVersionCheck('3.0')) { 
-            add_action('wp_insert_post', array($this, 'syncTaxonomiesAndProductAttributes'), 10, 3);
-        }
-				elseif (Utilities::woocommerceVersionCheck('2.6')) {
-        // Shipping Class translation is not supported after WooCommerce 2.6 but it is
-        // still implemented by WooCommerce as a taxonomy. Therefore Polylang will not
-        // copy the Shipping Class meta. We need to take care of it.
-            add_action('wp_insert_post', array($this, 'syncShippingClass'), 10, 3);
-        }
+        add_action('wp_insert_post', array($this, 'syncTaxonomiesAndProductAttributes'), 10, 3);
 
         $ID = false;
         $disable = false;
@@ -103,12 +95,6 @@ class Meta
                     'admin_print_scripts', array($this, 'addFieldsLocker'), 100
             );
         }
-
-				//leaving old call for legacy versions
-        if (Utilities::woocommerceVersionCheck('3.0')) { 
-        /* sync selected product type */
-        $this->syncSelectedproductType($ID);
-    }
     
 				return true;
     }
@@ -342,7 +328,7 @@ class Meta
     
     /**
      * Sync Product Shipping Class.
-     * 
+     *
      * Shipping Class translation is not supported after WooCommerce 2.6
      * but it is still implemented by WooCommerce as a taxonomy. Therefore,
      * Polylang will not copy the Shipping Class meta.
@@ -367,16 +353,14 @@ class Meta
                 $product = wc_get_product($post_id);
             }
             
-            if ($product) {            
+            if ($product) {
                 $shipping_class = $product->get_shipping_class();
-                if ($shipping_class){
-                    
-                    $shipping_terms = get_term_by( 'slug', $shipping_class, 'product_shipping_class' );
+                if ($shipping_class) {
+                    $shipping_terms = get_term_by('slug', $shipping_class, 'product_shipping_class');
                     if ($shipping_terms) {
-                        
                         if ($copy) {
                             // New translation - copy shipping class from product source
-                            wp_set_post_terms( $post_id, array( $shipping_terms->term_id ), 'product_shipping_class' );
+                            wp_set_post_terms($post_id, array( $shipping_terms->term_id ), 'product_shipping_class');
                         } else {
                             // Product edit - update shipping class of all product translations
                             $langs = pll_languages_list();
@@ -385,13 +369,13 @@ class Meta
                                 $translation_id = pll_get_post($post_id, $lang);
                                 if ($translation_id != $post_id) {
                                     // Don't sync if is the same product
-                                    wp_set_post_terms( $translation_id, array( $shipping_terms->term_id ), 'product_shipping_class' );
+                                    wp_set_post_terms($translation_id, array( $shipping_terms->term_id ), 'product_shipping_class');
                                 }
                             }
                         }
                     }
                 }
-            } 
+            }
         }
     }
     
@@ -411,7 +395,6 @@ class Meta
                     update_post_meta($ID, '_translation_porduct_type', $product->get_type());
                 }
             }
-
         }
     }
 
@@ -525,7 +508,7 @@ class Meta
      */
     public static function getDisabledProductMetaToCopy(array $metas = array())
     {
-        foreach(static::getProductMetaToCopy(array(), false) as $group) {
+        foreach (static::getProductMetaToCopy(array(), false) as $group) {
             $metas = array_merge($metas, $group['metas']);
         }
         return array_values(array_diff($metas, static::getProductMetaToCopy()));
@@ -589,8 +572,7 @@ class Meta
                 . 'hyyan_wpi_lockFields();'
                 . '$(document).ajaxComplete(function(){'
                 . '    hyyan_wpi_lockFields(); '
-                . '});'
-                , json_encode($metas), !empty($selectors) ?
+                . '});', json_encode($metas), !empty($selectors) ?
                         json_encode(implode(',', $selectors)) :
 						//TODO: @Hyyan, what is this rand() for?
                         array(rand())
@@ -661,11 +643,13 @@ class Meta
      * @return boolean  false if SKU sync is enabled, same as input otherwise
      */ 
     public function suppressInvalidDuplicatedSKUErrorMsg($sku_found, $product_id, $sku ) {
+    {
         $metas = static::getProductMetaToCopy();
 
-        if (in_array('_sku', $metas))
+        if (in_array('_sku', $metas)) {
             return false;
-        else
+        } else {
             return $sku_found;
+        }
     }
 }

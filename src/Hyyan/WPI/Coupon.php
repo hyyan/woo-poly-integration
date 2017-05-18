@@ -42,49 +42,45 @@ class Coupon
      */
     public function couponLoaded(\WC_Coupon $coupon)
     {
-				if (Utilities::woocommerceVersionCheck('3.0')) 
-				{
-			  
-        $productIDS = array();
-        $excludeProductIDS = array();
-        $productCategoriesIDS = array();
-        $excludeProductCategoriesIDS = array();
+        if (Utilities::woocommerceVersionCheck('3.0')) {
+            $productIDS = array();
+            $excludeProductIDS = array();
+            $productCategoriesIDS = array();
+            $excludeProductCategoriesIDS = array();
 
-        foreach ($coupon->get_product_ids() as $id) {
-            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
-                $productIDS[] = $_id;
+            foreach ($coupon->get_product_ids() as $id) {
+                foreach ($this->getProductPostTranslationIDS($id) as $_id) {
+                    $productIDS[] = $_id;
+                }
             }
-        }
-        foreach ($coupon->get_excluded_product_ids() as $id) {
-            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
-                $excludeProductIDS[] = $_id;
+            foreach ($coupon->get_excluded_product_ids() as $id) {
+                foreach ($this->getProductPostTranslationIDS($id) as $_id) {
+                    $excludeProductIDS[] = $_id;
+                }
             }
-        }
 
-        foreach ($coupon->get_product_categories() as $id) {
-            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
-                $productCategoriesIDS[] = $_id;
+            foreach ($coupon->get_product_categories() as $id) {
+                foreach ($this->getProductTermTranslationIDS($id) as $_id) {
+                    $productCategoriesIDS[] = $_id;
+                }
             }
-        }
 
-        foreach ($coupon->get_excluded_product_categories() as $id) {
-            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
-                $excludeProductCategoriesIDS[] = $_id;
+            foreach ($coupon->get_excluded_product_categories() as $id) {
+                foreach ($this->getProductTermTranslationIDS($id) as $_id) {
+                    $excludeProductCategoriesIDS[] = $_id;
+                }
             }
+
+            $coupon->set_product_ids($productIDS);
+            $coupon->set_excluded_product_ids($excludeProductIDS);
+            $coupon->set_product_categories($productCategoriesIDS);
+            $coupon->set_excluded_product_categories($excludeProductCategoriesIDS);
+
+            return $coupon;
+        } else {
+            return $this->couponLoadedOld($coupon);
         }
-
-				$coupon->set_product_ids( $productIDS );
-				$coupon->set_excluded_product_ids( $excludeProductIDS );
-				$coupon->set_product_categories( $productCategoriesIDS );
-				$coupon->set_excluded_product_categories( $excludeProductCategoriesIDS );
-
-        return $coupon;
     }
-				else
-				{
-					return $this->couponLoadedOld($coupon);
-				}
-		}
 
     /**
      * Extend the coupon to include porducts translations.

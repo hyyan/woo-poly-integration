@@ -71,24 +71,24 @@ class Emails
             add_filter('woocommerce_email_subject_customer_reset_password', array($this, 'translateEmailSubjectCustomerResetPassword'), 10, 2);
             add_filter('woocommerce_email_heading_customer_reset_password', array($this, 'translateEmailHeadingCustomerResetPassword'), 10, 2);
 
-						// On Hold Order
+                        // On Hold Order
             add_filter('woocommerce_email_subject_customer_on_hold_order', array($this, 'translateEmailSubjectCustomerOnHoldOrder'), 10, 2);
             add_filter('woocommerce_email_heading_customer_on_hold_order', array($this, 'translateEmailHeadingCustomerOnHoldOrder'), 10, 2);
 
-						// Cancelled Order
+                        // Cancelled Order
             add_filter('woocommerce_email_subject_cancelled_order', array($this, 'translateEmailSubjectCancelOrder'), 10, 2);
             add_filter('woocommerce_email_heading_cancelled_order', array($this, 'translateEmailHeadingCancelOrder'), 10, 2);
             add_filter('woocommerce_email_recipient_cancelled_order', array($this, 'translateEmailRecipientCancelOrder'), 10, 2);
 
-						// Failed Order
+                        // Failed Order
             add_filter('woocommerce_email_subject_failed_order', array($this, 'translateEmailSubjectFailedOrder'), 10, 2);
             add_filter('woocommerce_email_heading_failed_order', array($this, 'translateEmailHeadingFailedOrder'), 10, 2);
             add_filter('woocommerce_email_recipient_failed_order', array($this, 'translateEmailRecipientFailedOrder'), 10, 2);
-						
-						// strings for all emails
-						add_filter('woocommerce_email_footer_text', array($this, 'translateCommonString'));
-						add_filter('woocommerce_email_from_address', array($this, 'translateCommonString'));
-						add_filter('woocommerce_email_from_name', array($this, 'translateCommonString'));
+                        
+                        // strings for all emails
+                        add_filter('woocommerce_email_footer_text', array($this, 'translateCommonString'));
+            add_filter('woocommerce_email_from_address', array($this, 'translateCommonString'));
+            add_filter('woocommerce_email_from_name', array($this, 'translateCommonString'));
         }
     }
 
@@ -109,7 +109,7 @@ class Emails
             'customer_reset_password',
             'customer_on_hold_order',
             'cancelled_order',
-						'failed_order',
+                        'failed_order',
         );
 
         $this->default_settings = array(
@@ -165,26 +165,25 @@ class Emails
 
                 case 'new_order':
                 case 'cancelled_order':
-								case 'failed_order': 
+                                case 'failed_order':
                 case 'customer_processing_order':
                 case 'customer_note':
                 case 'customer_new_account':
                 case 'customer_reset_password':
-								case 'customer_on_hold_order':
+                                case 'customer_on_hold_order':
                 default:
                     // Register strings
                     $this->registerString($email);
                     break;
             }
         }
-				
-				//Register global email strings for translation
-				$this->registerCommonString ( 'woocommerce_email_footer_text', 
-						sprintf( __( '%s - Powered by WooCommerce', 'woocommerce' ), get_bloginfo( 'name', 'display' ))
-						);
-				$this->registerCommonString ('woocommerce_email_from_name', esc_attr( get_bloginfo( 'name', 'display' )) );
-				$this->registerCommonString ('woocommerce_email_from_address', get_option( 'admin_email' ) );
-
+                
+                //Register global email strings for translation
+                $this->registerCommonString('woocommerce_email_footer_text',
+                        sprintf(__('%s - Powered by WooCommerce', 'woocommerce'), get_bloginfo('name', 'display'))
+                        );
+        $this->registerCommonString('woocommerce_email_from_name', esc_attr(get_bloginfo('name', 'display')));
+        $this->registerCommonString('woocommerce_email_from_address', get_option('admin_email'));
     }
 
     /**
@@ -208,7 +207,7 @@ class Emails
                     pll_register_string('woocommerce_'.$email_type.'_subject'.$sufix, $settings['subject'.$sufix], __('Woocommerce Emails', 'woo-poly-integration'));
                     pll_register_string('woocommerce_'.$email_type.'_heading'.$sufix, $settings['heading'.$sufix], __('Woocommerce Emails', 'woo-poly-integration'));
                 }
-								//recipient applies to shop emails New, Cancel and Failed order types
+                                //recipient applies to shop emails New, Cancel and Failed order types
                 if (isset($settings['recipient'.$sufix])) {
                     pll_register_string('woocommerce_'.$email_type.'_recipient'.$sufix, $settings['recipient'.$sufix], __('Woocommerce Emails', 'woo-poly-integration'));
                 }
@@ -220,10 +219,10 @@ class Emails
      * Register common strings for all wooCommerce emails for translation in Polylang
      * Strings Translations table.
      *
-     * Note: This function uses get_option to retrive the 
+     * Note: This function uses get_option to retrive the
      * string from the WooCommerce Admin Settings page. get_option will return false
      * if the Admin user has not changed (nor saved) the default settings.
-		 * 
+         *
      *
      * @param string $email_type Email type
      * @param string $sufix      Additional string variation, e.g. invoice paid vs invoice
@@ -234,14 +233,14 @@ class Emails
             $value = get_option($setting);
 
             if (!($value)) {
-							$value = $default;
+                $value = $default;
             }
             if ($value) {
-							pll_register_string($setting, $value, __('Woocommerce Emails', 'woo-poly-integration'));
-						}
+                pll_register_string($setting, $value, __('Woocommerce Emails', 'woo-poly-integration'));
+            }
         }
     }
-		
+        
     /**
      * Translate to the order language, the email subject of new order email notifications to the admin.
      *
@@ -253,15 +252,14 @@ class Emails
     public function translateCommonString($email_string)
     {
         if (function_exists('pll_register_string')) {
-						$lang = pll_current_language('locale');
-						$trans = pll__($email_string);
-						if ($trans){
-							return $trans;
-						}
-						else{
-							return $email_string;
-						}
-				}
+            $lang = pll_current_language('locale');
+            $trans = pll__($email_string);
+            if ($trans) {
+                return $trans;
+            } else {
+                return $email_string;
+            }
+        }
     }
 
 
@@ -305,7 +303,7 @@ class Emails
     {
         return $this->translateEmailStringToOrderLanguage($subject, $order, 'recipient', 'failed_order');
     }
-		
+        
     /**
      * Translate to the order language, the email subject of Failed order email notifications to the admin.
      *
@@ -317,7 +315,7 @@ class Emails
     public function translateEmailSubjectFailedOrder($subject, $order)
     {
         return $this->translateEmailStringToOrderLanguage($subject, $order, 'subject', 'failed_order');
-            }
+    }
 
     /**
      * Translate to the order language, the email heading of Failed order email notifications to the admin.
@@ -330,7 +328,7 @@ class Emails
     public function translateEmailHeadingFailedOrder($heading, $order)
     {
         return $this->translateEmailStringToOrderLanguage($heading, $order, 'heading', 'failed_order');
-        }
+    }
 
     /**
      * Translate to the order language, the email subject of Cancel order email notifications to the admin.
@@ -344,7 +342,7 @@ class Emails
     {
         return $this->translateEmailStringToOrderLanguage($subject, $order, 'recipient', 'cancelled_order');
     }
-		
+        
     /**
      * Translate to the order language, the email subject of Cancel order email notifications to the admin.
      *
@@ -674,13 +672,13 @@ class Emails
      */
     public function translateEmailStringToOrderLanguage($string, $order, $string_type, $email_type)
     {
-				//allow function to be called with no order to try to pick up pll locale for footer, from address and name
-				$order_language = ($order) ? pll_get_post_language(Utilities::get_orderid($order), 'locale') : '';
+        //allow function to be called with no order to try to pick up pll locale for footer, from address and name
+                $order_language = ($order) ? pll_get_post_language(Utilities::get_orderid($order), 'locale') : '';
         if ($order_language == '') {
             $order_language = pll_current_language('locale');
-						if (!($order_language)){
-							return $string;
-						}
+            if (!($order_language)) {
+                return $string;
+            }
         }
 
         // Get setting used to register string in the Polylang strings translation table
@@ -700,28 +698,25 @@ class Emails
             $string = __($this->default_settings[$email_type.'_'.$string_type], 'woocommerce');
         }
 
-				if ($order) {
-        $find = array();
-        $replace = array();
+        if ($order) {
+            $find = array();
+            $replace = array();
 
-        $find['order-date'] = '{order_date}';
-        $find['order-number'] = '{order_number}';
-        $find['site_title'] = '{site_title}';
+            $find['order-date'] = '{order_date}';
+            $find['order-number'] = '{order_number}';
+            $find['site_title'] = '{site_title}';
 
-				if (Utilities::woocommerceVersionCheck('3.0')) 
-				{
-        $replace['order-date'] = date_i18n(wc_date_format(), strtotime($order->get_date_created()));
-  			}
-				else
-				{
-					$replace['order-date'] = date_i18n(wc_date_format(), strtotime($order->order_date));
-				}
-        $replace['order-number'] = $order->get_order_number();
-        $replace['site_title'] = get_bloginfo('name');
+            if (Utilities::woocommerceVersionCheck('3.0')) {
+                $replace['order-date'] = date_i18n(wc_date_format(), strtotime($order->get_date_created()));
+            } else {
+                $replace['order-date'] = date_i18n(wc_date_format(), strtotime($order->order_date));
+            }
+            $replace['order-number'] = $order->get_order_number();
+            $replace['site_title'] = get_bloginfo('name');
 
 
-        $string = str_replace($find, $replace, $string);
-				}
+            $string = str_replace($find, $replace, $string);
+        }
         return $string;
     }
 

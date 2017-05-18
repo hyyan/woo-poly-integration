@@ -1,9 +1,9 @@
 === Hyyan WooCommerce Polylang Integration===
-Contributors: hyyan, decarvalhoaa, jonathanmoorebcsorg, leemon, harasse
+Contributors: hyyan, decarvalhoaa, jonathanmoorebcsorg
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 4.7.4
-Stable tag: 0.30.0
+Tested up to: 4.7
+Stable tag: 1.0.0
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -16,7 +16,7 @@ WooCommerce and Polylang.It makes products and store pages translatable, lets
 visitors switch languages and order products in their language. and all that from
 the same interface you love.
 
-> Please do not ask for support on wordpress forum anymore , it is becoming hard to me to follow issues on wordpress forum , Email and Github , if you want help just open new Github issue please.
+> Please do not ask for support on wordpress forum anymore , it is becoming hard for me to follow issues in different places. please if you want help just open a new Github issue.
 
 = Features  =
 
@@ -113,6 +113,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+== 1.0.0 ==
 
 == 0.30.RC2 WooCommerce3 new taxonomies and Attributes fixes ==
 

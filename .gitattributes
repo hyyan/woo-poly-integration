@@ -1,0 +1,15 @@
+* text eol=lf
+
+*.jpg binary
+*.png binary
+
+/.github export-ignore
+/.gitignore export-ignore
+/composer.json export-ignore
+/nbproject export-ignore
+/screenshot-1.png export-ignore
+/screenshot-2.png export-ignore
+/screenshot-3.png export-ignore
+/screenshot-4.png export-ignore
+/screenshot-5.png export-ignore
+/screenshot-6.png export-ignore
