@@ -60,7 +60,7 @@ class Variable
         }
 
         global $pagenow;
-        if (!in_array($pagenow, array('post.php', 'post-new.php'))) {
+        if (!in_array($pagenow, array('post.php', 'post-new.php'))  || $post->post_type !== 'product')  {
             return false;
         }
 
@@ -111,6 +111,7 @@ class Variable
     
     /**
      * Prevents plugins (like Polylang) from overwriting default attribute meta sync.
+		 * TODO: split and correct: this function is now covering multiple concepts, not just skipping default attributes
      *
      * Why is this required: Polylang to simplify the synchronization process of multiple meta values,
      * deletes all metas first. In this process Variable Product default attributes that are not taxomomies
@@ -181,8 +182,8 @@ class Variable
      */
     public function syncDefaultAttributes($post_id, $post, $update)
     {
-        // Don't sync if not in the admin backend nor on autosave
-        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        // Don't sync if not in the admin backend nor on autosave or not product page
+        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || get_post_type($post_id) !== 'product')  {
             return;
         }
 

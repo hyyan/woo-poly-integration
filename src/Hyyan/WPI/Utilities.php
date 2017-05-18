@@ -285,6 +285,7 @@ final class Utilities
                 $translated_terms = array();
 
                 foreach ($terms as $term) {
+										//only the translated_taxonomy were added as object
                     if (is_object($term)) {
                         $translated_term_id = pll_get_term($term->term_id, $lang);
                         // Skip for attribute terms that don't have translations
@@ -293,6 +294,7 @@ final class Utilities
                             $translated_terms[$translated_term->taxonomy] = $translated_term->slug;
                         }
                     } else {
+												//non-translatable taxonomy
                         $translated_terms[key($term)] = $term[key($term)];
                     }
                 }
