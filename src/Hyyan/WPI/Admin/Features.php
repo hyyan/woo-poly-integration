@@ -131,6 +131,21 @@ class Features extends AbstractSettings
                         'Enable shipping classes translations'.(Utilities::woocommerceVersionCheck('2.6') ? ' (not supported for WooCommerce versions >= 2.6)' : ''), 'woo-poly-integration'
                 ),
             ),
+            array(
+                'name' => 'new-translation-defaults',
+                'type' => 'radio',
+                'default' => '0',   //starting this off for backwards compatibility, users should test before turning on
+                'label' => __('New Translation Behaviour', 'woo-poly-integration'),
+                'desc' => __(
+                        'When creating new translations, start with blank text, copy or machine translation?' . 
+										    ' (You may want to turn this off if using Polylang Pro, Lingotek or other automatic copy-or-translation solution.) ', 'woo-poly-integration'
+                ),
+                'options' => array(
+                    '0' => 'Blank Text',
+                    '1' => __('Copy Source', 'woo-poly-integration'),
+                    '2' => __('Translate Source', 'woo-poly-integration') . ' (coming soon..  until available will use Copy Source) ',
+                )
+            ),
         );
     }
 }
