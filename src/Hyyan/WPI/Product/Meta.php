@@ -277,9 +277,9 @@ class Meta
 			global $polylang;
 			
 			
-			$newterm_name = $slug;
-			$newterm_slug = sanitize_title( $newterm_name . '-' . $lang);
-			$args = array( 'slug' => $newterm_slug
+        $newterm_name = $term->name;
+        $newterm_slug = sanitize_title($slug . '-' . $lang);
+        $args = array('slug' => $newterm_slug
 //					,'lang' => $lang  //setting lang here has no effect, Polylang uses GET/POST vars
 					);
 			

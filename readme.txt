@@ -2,7 +2,7 @@
 Contributors: hyyan, decarvalhoaa, jonathanmoorebcsorg
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 4.7
+Tested up to: 4.7.5
 Stable tag: 1.0.0
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
@@ -155,8 +155,10 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
 * Enh: Missing Term Translations are now added by default. Fixes #72
 			 Applies to Products\Categories, Products\Tags, Products\Attributes 
        Previously missing term translations caused
-* Fix: #148 WooCommerce3 product_visibility is now a taxonomy not a meta item  
-* Fix: #153 Fields locker doesn't correctly lock Product Attributes of type Select 
+* Fixes: #148 WooCommerce3 product_visibility is now a taxonomy not a meta item  
+* Fixes: #153 Fields locker doesn't correctly lock Product Attributes of type Select 
+* Fixes: #149 Duplicate product not working for variations
+* Fixes: #147 When adding new variations, tool should also add the new variation to other languages
 
 == 0.30.RC1 WooCommerce3 Fixes==
 

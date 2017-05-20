@@ -292,7 +292,7 @@ class Variation
                                 if ($translated_term = pll_get_term($term->term_id, $lang)) {
                                     $translated[] = get_term_by('id', $translated_term, $tax)->slug;
                                 } else {
-                                    $translated[] = '';     // Attribute term has no translation
+                                    $translated[] = $term->slug;     // Attribute term has no translation (if it was supposed to be translated, would be done in Meta.php)
                                 }
                             } else {
                                 $translated[] = $termSlug;
