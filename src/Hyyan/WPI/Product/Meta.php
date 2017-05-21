@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
@@ -25,6 +24,7 @@ use Hyyan\WPI\Taxonomies\Attributes;
  */
 class Meta
 {
+
     /**
      * Construct object.
      */
@@ -99,8 +99,7 @@ class Meta
 				return true;
     }
     
-
-    /**
+   /**
      * Sync Product Taxonomies and Product Attributes.
      * 
 		 * after WooCommerce 3.0 a new product_visibility taxonomy handles data such as
@@ -113,39 +112,60 @@ class Meta
      */
     public function syncTaxonomiesAndProductAttributes($post_id, $post, $update)
     {
-			//get the taxonomies for the post
-			$taxonomies = get_object_taxonomies( get_post_type( $post_id ) );
+  			//get the taxonomies for the post
+        $taxonomies = get_object_taxonomies(get_post_type($post_id));
 
-			//is this a new translation being created?
-			$copy = isset($_GET['new_lang']) && isset($_GET['from_post']);
+        //is this a new translation being created?
+        $copy = isset($_GET['new_lang']) && isset($_GET['from_post']);
 
-			if ($copy) {
-					// New translation - copy shipping class from product source
-					$source_id = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
+  			if ($copy) {
+            // New translation - copy shipping class from product source
+            $source_id = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
 
-					if ($source_id){
-						$this->copyTerms($source_id, $post_id, $_GET['new_lang'], $taxonomies);
-						//TODO: currently syncs all translations, could optimize to sync only target
-						$this->syncCustomProductAttributes($source_id, $copy);
-					}
-					
-			} else {
-					// Product edit - update terms of all product translations
+            if ($source_id) {
+    						$this->copyTerms($source_id, $post_id, $_GET['new_lang'], $taxonomies);
+                $this->syncCustomProductAttributes($source_id, $_GET['new_lang']);
+		  			}
+			  } else {
+            // Product edit - update terms of all product translations
+            //for each language
+            $langs = pll_languages_list();
+            foreach ($langs as $lang) {
+                //if a translation exists, and it is not this same post
+                $translation_id = pll_get_post($post_id, $lang);
+                if (($translation_id) && ($translation_id != $post_id)) {
+                  //set ALL the terms
+                  $this->copyTerms($post_id, $translation_id, $lang, $taxonomies);
 
-					//for each language
-					$langs = pll_languages_list();
-					foreach ($langs as $lang) {
-						//if a translation exists, and it is not this same post
-						$translation_id = pll_get_post($post_id, $lang);
-						if (($translation_id) && ($translation_id != $post_id)) {
-							//set ALL the terms
-							$this->copyTerms($post_id, $translation_id, $lang, $taxonomies);
-						}
-					}
-					//and synchronise custom product attributes which are not terms
-					$this->syncCustomProductAttributes($post_id, $copy);
-			}			
-		}
+                  //and synchronise custom product attributes which are not terms
+                  $this->syncCustomProductAttributes($post_id, $copy);
+
+                }
+            }
+        }
+    }
+
+    
+    /**
+     * sync Custom Product attributes from source product post id to all translations
+     *
+     * @param int       $source     Id of the source product to sync from
+     * @param bool		$copy       if set we are creating new item, so always sync
+     *
+     * @return bool		translations were updated
+     */
+    public function getTranslatedSourceIds($sourceids, $lang)
+    {
+        $translatedids = array();
+        foreach ($sourceids as $source_id) {
+            $translated_id = utilities::getProductTranslationByID($source_id, $lang);
+            if ($translated_id) {
+                $translatedids[] = $translated_id;
+            }			
+        }
+        return $translatedids;
+    }
+    
 
     /**
      * sync Custom Product attributes from source product post id to all translations
@@ -155,11 +175,12 @@ class Meta
 		 * 
 		 * @return bool			translations were updated
      */		
-		public function syncCustomProductAttributes($source, $copy){
+    public function syncCustomProductAttributes($source, $copy)
+    {
 			//if saving existing item, then add check that sync is currently on
-			if (!($copy)){
+      if (!($copy)) {
 				$metas = static::getProductMetaToCopy();
-				if (!(in_array('_custom_product_attributes', $metas))){
+        if (!(in_array('_custom_product_attributes', $metas))) {
 					return false;
 				}
 			}
@@ -171,28 +192,32 @@ class Meta
 			$copyattrs = array();
 
 			//first get attributes to copy if any
-			foreach ($productattrs as $productattr){
-				if ( isset($productattr['is_taxonomy']) ){
-					if ($productattr['is_taxonomy']==0){
-						$copyattrs[]=$productattr;
-					}
-				}
-			}
+        foreach ($productattrs as $productattr) {
+            if (isset($productattr['is_taxonomy'])) {
+                if ($productattr['is_taxonomy'] == 0) {
+                    $copyattrs[] = $productattr;
+					      }
+				    }
+			  }
 
 			//if there are custom attributes, sync them to any product translations
-			if (count($copyattrs)>0){
-				$product_translations = Utilities::getProductTranslationsArrayByObject($product);
-				foreach ($product_translations as $product_translation){
-					if ($product_translation!=$source){
-						$product_obj = Utilities::getProductTranslationByID($product_translation);
-						$product_obj->set_attributes($copyattrs);
-					}
-				}
-				return true;
-			}			
-			return false;
-		}
-		
+        if (count($copyattrs) > 0) {
+            if ($copy) {
+                Utilities::getProductTranslationByID($product, $copy);
+                $product_obj->set_attributes($copyattrs);
+            } else {
+              $product_translations = Utilities::getProductTranslationsArrayByObject($product);
+                foreach ($product_translations as $product_translation) {
+                    if ($product_translation != $source) {
+                      $product_obj = Utilities::getProductTranslationByID($product_translation);
+                      $product_obj->set_attributes($copyattrs);
+                    }
+                }
+            }	
+            return true;
+        }		
+        return false;
+    }
 		
     /**
      * copy terms from old product post id to new product post it
@@ -204,20 +229,21 @@ class Meta
      * @param array     $taxonomies taxonomies to synchronise
 		 * 
      */
-		public function copyTerms($old, $new, $lang, $taxonomies){
+    public function copyTerms($old, $new, $lang, $taxonomies)
+    {
 			//get the polylang options for later use
 			global $polylang;
 			$polylang_options = get_option('polylang');
 			$polylang_taxs = $polylang_options['taxonomies'];
 			
 			//loop through taxonomies and take appropriate action
-			foreach( $taxonomies AS $tax ) {
-				$old_terms = wp_get_object_terms( $old, $tax );
+      foreach ($taxonomies as $tax) {
+          $old_terms = wp_get_object_terms($old, $tax);
 				$new_terms = array();
-				foreach( $old_terms AS $t ) {
+        foreach ($old_terms as $t) {
 					$slug = $t->slug;
 					//depending on the term, translate if applicable
-					switch  ($tax){
+					switch ($tax) {
 						//core language fields must not be synchronized
 						case "language":
 						case "term_language":
@@ -225,10 +251,16 @@ class Meta
 						case "post_translations":
 							break;
 						//attributes to synchronize, not translated
-						case "product_type":
 						case "product_shipping_class":  
-						//woo3 visibility and featured product							
+                  if (in_array('product_shipping_class', static::getProductMetaToCopy())) {
+                      break;
+                  }
+                    //woo3 visibility and featured product: TODO: not supported turning off sync
 						case "product_visibility":  
+                  if (in_array('_visibility', static::getProductMetaToCopy())) {
+                      break;
+                  }
+            case "product_type":
 							$new_terms[] = $slug;
 							break;
 						//categories and tags may be translated
@@ -240,23 +272,23 @@ class Meta
 							//(no need to recheck WooPoly as when turned off in WooPoly is removed from Polylang)
 							if (pll_is_translated_taxonomy($tax)) {
 								$translated_term = pll_get_term($t->term_id, $lang);
-								if ($translated_term){
+								if ($translated_term) {
 									$new_terms[] = get_term_by('id', $translated_term, $tax)->slug;
-								}else{
+                } else {
 									//if no translation exists then create one
 									$result = $this->createDefaultTermTranslation($tax, $t, $slug, $lang, false);
-									if ($result){
-										$new_terms[]=$result;
+                  if ($result) {
+                      $new_terms[] = $result;
 									}
 								}
-							}else{
+              } else {
 								//otherwise not translatable, do synchronisation
 								$new_terms[] = $slug;
 							}
 					} //switch taxonomy slug
 				} // foreach old term
-				if (count($new_terms)>0 ){
-					wp_set_object_terms( $new, $new_terms, $tax );
+        if (count($new_terms) > 0) {
+            wp_set_object_terms($new, $new_terms, $tax);
 				}
 			} //for each taxonomy			
 		}
@@ -273,7 +305,8 @@ class Meta
      * @param array     $taxonomies taxonomies to synchronise
 		 * @param bool      $return_id  return id of new term, otherwise return slug
      */
-		public function createDefaultTermTranslation($tax, $term, $slug, $lang, $return_id){
+    public function createDefaultTermTranslation($tax, $term, $slug, $lang, $return_id)
+    {
 			global $polylang;
 			
 			
@@ -285,44 +318,43 @@ class Meta
 			
 			//TODO: load the original term, 
 			//if the orignal term has a parent, 
-			if ($term->parent){
+        if ($term->parent) {
 				//if the parent has a translation, save this to copy to new term
 				$translated_parent = pll_get_term($term->parent, $lang);
-				if ($translated_parent){
-					$args['parent'] = $translated_parent; //get_term_by('id', $translated_parent, $tax)->slug;
-				}else{
-					//no translation exists so get the actual parent
-					$parent_term = \WP_Term::get_instance($term->parent);
-					//and use this function to create default translation of the parent
-					$result = $this->createDefaultTermTranslation($tax, $parent_term, $parent_term->slug, $lang, true);
-					if ($result){
-						$args['parent']=$result;
-					}
-				}
+          if ($translated_parent) {
+					    $args['parent'] = $translated_parent; //get_term_by('id', $translated_parent, $tax)->slug;
+           } else {
+              //no translation exists so get the actual parent
+              $parent_term = \WP_Term::get_instance($term->parent);
+              //and use this function to create default translation of the parent
+              $result = $this->createDefaultTermTranslation($tax, $parent_term, $parent_term->slug, $lang, true);
+              if ($result) {
+                  $args['parent'] = $result;
+              }
+          }
 			}
 			
 			//attempt to insert the new term
-			$newterm = wp_insert_term( $newterm_name, $tax, $args );
-			if ( is_wp_error($newterm) ){
+        $newterm = wp_insert_term($newterm_name, $tax, $args);
+        if (is_wp_error($newterm)) {
 				 error_log($newterm->get_error_message());
 				 return false;
-			}
-			else{
-				$newterm_id = (int) $newterm['term_id'];
+      } else {
+				  $newterm_id = (int) $newterm['term_id'];
 			}
 			//unfortunately Polylang hooks the wp function and forces new term save into current language
 			//so then we reset into current language and re-save the translations
-			$translations = $polylang->model->term->get_translations( $term->term_id );
+        $translations = $polylang->model->term->get_translations($term->term_id);
 			$translations[$lang] = $newterm_id;
-			$polylang->model->term->set_language( $newterm_id, $lang );
-			$polylang->model->term->save_translations($term->term_id , $translations );
+        $polylang->model->term->set_language($newterm_id, $lang);
+        $polylang->model->term->save_translations($term->term_id, $translations);
 
 			//when auto-creating missing parent category, the id is returned
-			if ($return_id){
-				return $newterm_id;
-			}else{
-				return $newterm_slug;			
-			}
+        if ($return_id) {
+	  			  return $newterm_id;
+        } else {
+  			  	return $newterm_slug;			
+			  }
 		}
 
     
@@ -337,6 +369,7 @@ class Meta
      * @param \WP_Post  $post       Post object
      * @param boolean   $update     Whether this is an existing post being updated or not
      */
+    /*
     public function syncShippingClass($post_id, $post, $update)
     {
         if (in_array('product_shipping_class', $this->getProductMetaToCopy())) {
@@ -378,7 +411,7 @@ class Meta
             }
         }
     }
-    
+*/
     /**
      * Add product type meta to products created before plugin activation.
      *
@@ -431,13 +464,13 @@ class Meta
                     'comment_status',
                     '_upsell_ids',
                     '_crosssell_ids',
-                    '_featured',
+                    '_featured',            //has no effect, in woo3 now product_visibility taxonomy
                     '_thumbnail_id',
                     '_price',
                     '_product_image_gallery',
                     'total_sales',
                     '_translation_porduct_type',
-                    '_visibility',
+                    '_visibility',         //has no effect, in woo3 now product_visibility taxonomy
                 ),
             ),
             // stock
@@ -461,7 +494,7 @@ class Meta
                     '_length',
                     '_width',
                     '_height',
-                    'product_shipping_class',
+                    'product_shipping_class',  //has no effect, since woo2.6 now taxonomy
                 ),
             ),
             // attributes
@@ -532,18 +565,18 @@ class Meta
 				//change selector code to allow Product Attributes and Custom Product Attributes
 				//to be separately locked or unlocked.
 				$selectors[] = '.insert';
-				if (in_array('_product_attributes', $metas) ){
-					if (in_array('_custom_product_attributes', $metas) ){
-						$selectors[] = '#product_attributes :input';
-						$selectors[] = '#product_attributes .select2-selection';
-					}else{
-						//disable where is a taxonomy (custom taxonomy doesn't have this class)
-						$selectors[] = '#product_attributes div.taxonomy :input';
-						$selectors[] = '#product_attributes .select2-selection';
-					}
+        if (in_array('_product_attributes', $metas)) {
+            if (in_array('_custom_product_attributes', $metas)) {
+  						$selectors[] = '#product_attributes :input';
+	  					$selectors[] = '#product_attributes .select2-selection';
+            } else {
+              //disable where is a taxonomy (custom taxonomy doesn't have this class)
+              $selectors[] = '#product_attributes div.taxonomy :input';
+              $selectors[] = '#product_attributes .select2-selection';
+            }
 				}
 				//if only global product attributes are NOT synchronised, exclude them from selection
-				elseif (in_array('_custom_product_attributes', $metas) ){
+        elseif (in_array('_custom_product_attributes', $metas)) {
 						$selectors[] = '#product_attributes div.woocommerce_attribute:not(.taxonomy) :input';
 				}
 				//filters hooked by Variable class to add locking for variations section
@@ -642,7 +675,7 @@ class Meta
 		 * @param string $sku          sku being tested
      * @return boolean  false if SKU sync is enabled, same as input otherwise
      */ 
-    public function suppressInvalidDuplicatedSKUErrorMsg($sku_found, $product_id, $sku ) {
+    public function suppressInvalidDuplicatedSKUErrorMsg($sku_found, $product_id, $sku)
     {
         $metas = static::getProductMetaToCopy();
 
