@@ -245,7 +245,7 @@ class Meta
         //if there are custom attributes, sync them to any product translations
         if (count($copyattrs) > 0) {
             if ($copy) {
-                Utilities::getProductTranslationByID($product, $copy);
+                $product_obj = Utilities::getProductTranslationByID($product, $copy);
                 $product_obj->set_attributes($copyattrs);
             } else {
                 $product_translations = Utilities::getProductTranslationsArrayByObject($product);

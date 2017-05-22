@@ -40,6 +40,7 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
 * Fixes: #148 WooCommerce3 product_visibility is now a taxonomy not a meta item  
 * Fixes: #153 Fields locker doesn't correctly lock Product Attributes of type Select 
 * Fixes: #147 When adding new variations, tool should also add the new variation to other languages
+* Fixes #149 Enable duplication of variable products
 
 == 0.30.RC1 WooCommerce3 Fixes==
 

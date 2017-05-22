@@ -114,6 +114,8 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 == 1.0.0 ==
+
+Fixes #149 Enable duplication of variable products
 Fixes #165 upsets/crosssells handling in wooCommerce3
 Fixes #159 Attribute Terms synchronization issues
 

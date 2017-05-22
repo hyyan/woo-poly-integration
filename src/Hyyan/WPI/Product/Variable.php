@@ -62,7 +62,7 @@ class Variable
 
         global $pagenow;
         if (!in_array($pagenow, array('post.php', 'post-new.php'))  || $post->post_type !== 'product') {
-            //arrives here when duplicating variable product from products screen
+            //note, arrives here for example when duplicating variable product from products screen
             return false;
         }
 
