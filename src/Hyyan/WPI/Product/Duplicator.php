@@ -26,10 +26,12 @@ class Duplicator
             $this, 'unlinkOrginalProductTranslations',
         ));
 
-//			Fix: #149 some users were complaining about Duplicate not available for variation products
-//        add_action('woocommerce_duplicate_product_capability', array(
-//            $this, 'disableDuplicateForVariables',
-//        ));
+        //TODO #149 some users were complaining about Duplicate not available for variation products
+        //current issue is _point_to_variation meta is set to self on new variations 
+        //then automatically copied on duplicate
+        add_action('woocommerce_duplicate_product_capability', array(
+            $this, 'disableDuplicateForVariables',
+        ));
     }
 
     /**

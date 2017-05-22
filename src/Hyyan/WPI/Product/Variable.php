@@ -61,7 +61,8 @@ class Variable
         }
 
         global $pagenow;
-        if (!in_array($pagenow, array('post.php', 'post-new.php'))  || $post->post_type !== 'product')  {
+        if (!in_array($pagenow, array('post.php', 'post-new.php'))  || $post->post_type !== 'product') {
+            //arrives here when duplicating variable product from products screen
             return false;
         }
 
@@ -112,16 +113,16 @@ class Variable
     
     /**
      * Prevents plugins (like Polylang) from overwriting default attribute meta sync.
-		 * TODO: split and correct: this function is now covering multiple concepts, not just skipping default attributes
+         * TODO: split and correct: this function is now covering multiple concepts, not just skipping default attributes
      *
      * Why is this required: Polylang to simplify the synchronization process of multiple meta values,
      * deletes all metas first. In this process Variable Product default attributes that are not taxomomies
-     * managed by Polylang, are lost. 
+     * managed by Polylang, are lost.
      *
      * @param boolean   $check      Whether to manipulate metadata. (true to continue, false to stop execution)
      * @param int       $object_id  ID of the object metadata is for
      * @param string    $meta_key   Metadata key
-	 * @param string    $meta_value Metadata value
+     * @param string    $meta_value Metadata value
      */
     public function skipDefaultAttributesMeta($check, $object_id, $meta_key, $meta_value)
     {
@@ -166,7 +167,6 @@ class Variable
                             // Attribute term has no translation
                             return false;
                         }
-
                     }
                 }
             }
@@ -185,7 +185,7 @@ class Variable
     public function syncDefaultAttributes($post_id, $post, $update)
     {
         // Don't sync if not in the admin backend nor on autosave or not product page
-        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || get_post_type($post_id) !== 'product')  {
+        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || get_post_type($post_id) !== 'product') {
             return;
         }
 
@@ -256,7 +256,7 @@ class Variable
     {
         $metas['Variables'] = array(
             'name' => __('Variables Metas', 'woo-poly-integration'),
-            'desc' => __('Variables Metas', 'woo-poly-integration'),
+            'desc' => __('Variable Product pricing Metas', 'woo-poly-integration'),
             'metas' => array(
                 '_min_variation_price',
                 '_max_variation_price',
@@ -288,7 +288,7 @@ class Variable
     public function extendFieldsLockerSelectors(array $selectors)
     {
         //FIX: #128 allow variable product description to be translated
-				$selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
+                $selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
         return $selectors;
     }
 

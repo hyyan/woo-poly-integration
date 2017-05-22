@@ -52,9 +52,9 @@ class Stock
         $items = $order->get_items();
 
         /* Reduce stock */
-        foreach ($items as $item) {
-            $this->change($item, self::STOCK_REDUCE_ACTION);
-        }
+                    foreach ($items as $item) {
+                        $this->change($item, self::STOCK_REDUCE_ACTION);
+                    }
     }
 
     /**
@@ -73,10 +73,10 @@ class Stock
         $items = $order->get_items();
 
         /* Increase stock */
-        foreach ($items as $item) {
-            $item->change = $change;
-            $this->change($item, self::STOCK_INCREASE_ACTION);
-        }
+                    foreach ($items as $item) {
+                        $item->change = $change;
+                        $this->change($item, self::STOCK_INCREASE_ACTION);
+                    }
     }
 
     /**

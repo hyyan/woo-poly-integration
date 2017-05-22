@@ -115,6 +115,8 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog ==
 == 1.0.0 ==
 
+Fixes #159 Attribute Terms synchronization issues
+
 == 0.30.RC2 WooCommerce3 new taxonomies and Attributes fixes ==
 
 This release fixes a number of issues around handling of attributes and translations.
@@ -157,7 +159,6 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
        Previously missing term translations caused
 * Fixes: #148 WooCommerce3 product_visibility is now a taxonomy not a meta item  
 * Fixes: #153 Fields locker doesn't correctly lock Product Attributes of type Select 
-* Fixes: #149 Duplicate product not working for variations
 * Fixes: #147 When adding new variations, tool should also add the new variation to other languages
 
 == 0.30.RC1 WooCommerce3 Fixes==
@@ -307,6 +308,6 @@ woocommerce and polylang , please update immediately
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 
 
-= 0.30.0 =
+= 1.00.0 =
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 
