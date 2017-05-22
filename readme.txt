@@ -114,7 +114,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 == 1.0.0 ==
-
+Fixes #165 upsets/crosssells handling in wooCommerce3
 Fixes #159 Attribute Terms synchronization issues
 
 == 0.30.RC2 WooCommerce3 new taxonomies and Attributes fixes ==
