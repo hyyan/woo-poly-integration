@@ -20,12 +20,21 @@ use Hyyan\WPI\Admin\Features;
  */
 class Taxonomies
 {
+    /**
+     * Managed taxonomies.
+     *
+     * @var array
+     */
+    protected $managed = array();
 
     /**
      * Construct object.
      */
     public function __construct()
     {
+        /* Just to prepare taxonomies  */
+        $this->prepareAndGet();
+
         /* Manage taxonomies translation */
         add_filter(
                 'pll_get_taxonomies', array($this, 'getAllTranslateableTaxonomies'), 10, 2
@@ -135,4 +144,36 @@ class Taxonomies
 			} //if attributes are set
 		}
 	
+    
+    /**
+     * Get managed taxonomies.
+     *
+     * @return array taxonomies that must be added and removed to polylang
+     */
+    protected function prepareAndGet()
+    {
+        $add = array();
+        $remove = array();
+        $supported = array(
+            'attributes' => 'Hyyan\WPI\Taxonomies\Attributes',
+            'categories' => 'Hyyan\WPI\Taxonomies\Categories',
+            'tags' => 'Hyyan\WPI\Taxonomies\Tags',
+            //'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss',
+        );
+
+        foreach ($supported as $option => $class) {
+            $names = $class::getNames();
+            if ('on' === Settings::getOption($option, Features::getID(), 'on')) {
+                $add = array_merge($add, $names);
+                if (!isset($this->managed[$class])) {
+                    $this->managed[$class] = new $class();
+                }
+            } else {
+                $remove = array_merge($remove, $names);
+            }
+        }
+
+        return array($add, $remove);
+    }
+
 }
