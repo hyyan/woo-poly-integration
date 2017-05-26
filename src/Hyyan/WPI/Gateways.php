@@ -29,14 +29,8 @@ class Gateways
     {
         add_filter('woocommerce_paypal_args', array($this, 'setPaypalLocalCode'));
 
-        // Set enabled payment gateways
-        $this->enabledGateways = $this->getEnabledPaymentGateways();
-
-        // Register Woocommerce Payment Gateway custom  titles and descriptions in Polylang's Strings translations table
-        add_action('wp_loaded', array($this, 'registerGatewayStringsForTranslation')); // called only after Wordpress is loaded
-
-        // Load payment gateways extensions (gateway intructions translation)
-        $this->loadPaymentGatewaysExtentions();
+        //key construction actions moved to wp_loaded as many payment gateways not ready before then..
+        add_action('wp_loaded', array($this, 'loadOnWpLoaded')); // called only after Wordpress is loaded
 
         // Payment gateway title and respective description
         add_filter('woocommerce_gateway_title', array($this, 'translatePaymentGatewayTitle'), 10, 2);
@@ -46,6 +40,20 @@ class Gateways
         //add_filter( 'woocommerce_get_order_item_totals', array( $this, 'translateWoocommerceOrderPaymentMethod' ), 10, 2 ); // @todo: Needs further testing before enabling
     }
 
+    /**
+     * Move initialisation code to run on wp_loaded instead of constructor
+     */
+    public function loadOnWpLoaded()
+    {
+        // Set enabled payment gateways
+        $this->enabledGateways = $this->getEnabledPaymentGateways();
+        // Register Woocommerce Payment Gateway custom  titles and descriptions in Polylang's Strings translations table
+        $this->registerGatewayStringsForTranslation();
+        
+        // Load payment gateways extensions (gateway intructions translation)
+        $this->loadPaymentGatewaysExtentions();
+    }
+    
     /**
      * Set the PayPal checkout locale code.
      *
