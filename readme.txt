@@ -115,12 +115,6 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog ==
 == 1.0.0 ==
 
-Fixes #149 Enable duplication of variable products
-Fixes #165 upsets/crosssells handling in wooCommerce3
-Fixes #159 Attribute Terms synchronization issues
-
-== 0.30.RC2 WooCommerce3 new taxonomies and Attributes fixes ==
-
 This release fixes a number of issues around handling of attributes and translations.
 In particular:
 
@@ -159,12 +153,14 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
 * Enh: Missing Term Translations are now added by default. Fixes #72
 			 Applies to Products\Categories, Products\Tags, Products\Attributes 
        Previously missing term translations caused
+
+* Fixes #155, fixes #81, fixes #99 Gateways fix gateway load issues by moving initialization to wp_loaded
+* Fixes #149 Enable duplication of variable products
+* Fixes #165 upsets/crosssells handling in wooCommerce3
+* Fixes #159 Attribute Terms synchronization issues
 * Fixes: #148 WooCommerce3 product_visibility is now a taxonomy not a meta item  
 * Fixes: #153 Fields locker doesn't correctly lock Product Attributes of type Select 
 * Fixes: #147 When adding new variations, tool should also add the new variation to other languages
-
-== 0.30.RC1 WooCommerce3 Fixes==
-
 * Fix #137 #131 #130 #110 #117, #97, #94, #84, #83, #82 adaptations for wooCommerce 3.0
 * Fix #136 Variable product stock sync issue where stock managed at parent level
 * Enh #132 Add settings Page link to plugins page
@@ -310,6 +306,13 @@ woocommerce and polylang , please update immediately
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 
 
-= 1.00.0 =
-The release includes important fixes and updates for latest version of 
-woocommerce and polylang , please update immediately 
+= 1.0.0 =
+The release is the first release for WooCommerce 3.x.
+DO NOT install until you upgrade to WooCommerce 3.x.
+If you are currently on WooCommerce 2.x, we recommend:
+0. Take a backup. And do EVERYTHING in a test environment first.  Test. 
+WooCommerce 3 has a large number of breaking changes which may and do break other plugins.
+1. temporarily deactivate this plugin, 
+2. upgrade WooCommerce and this plugin
+3. run WooCommerce database upgrade following the wooCommerce prompt
+4. reactivate this plugin
