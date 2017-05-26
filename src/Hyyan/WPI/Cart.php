@@ -296,7 +296,7 @@ class Cart
         // Validate the attributes.
         try {
             if (empty($variation_id)) {
-                throw new Exception(__('Please choose product options&hellip;', 'woocommerce'));
+                throw new \Exception(__('Please choose product options&hellip;', 'woocommerce'));
             }
 
             $variation_data = wc_get_product_variation_attributes($variation_id);
@@ -347,14 +347,14 @@ $variation_data = wc_get_product_variation_attributes($variation->get_id());
                     if ('' === $valid_value || $valid_value === $value) {
                         $variations[$taxonomy] = $value;
                     } else {
-                        throw new Exception(sprintf(__('Invalid value posted for %s', 'woocommerce'), wc_attribute_label($attribute['name'])));
+                        throw new \Exception(sprintf(__('Invalid value posted for %s', 'woocommerce'), wc_attribute_label($attribute['name'])));
                     }
                 } else {
                     $missing_attributes[] = wc_attribute_label($attribute['name']);
                 }
             }
             if (!empty($missing_attributes)) {
-                throw new Exception(sprintf(_n('%s is a required field', '%s are required fields', sizeof($missing_attributes), 'woocommerce'), wc_format_list_of_items($missing_attributes)));
+                throw new \Exception(sprintf(_n('%s is a required field', '%s are required fields', sizeof($missing_attributes), 'woocommerce'), wc_format_list_of_items($missing_attributes)));
             }
         } catch (Exception $e) {
             wc_add_notice($e->getMessage(), 'error');
