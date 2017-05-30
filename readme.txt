@@ -154,6 +154,7 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
 			 Applies to Products\Categories, Products\Tags, Products\Attributes 
        Previously missing term translations caused
 
+* Fixes #123 Fields Locker performance optimisation 
 * Fixes #155, fixes #81, fixes #99 Gateways fix gateway load issues by moving initialization to wp_loaded
 * Fixes #149 Enable duplication of variable products
 * Fixes #165 upsets/crosssells handling in wooCommerce3

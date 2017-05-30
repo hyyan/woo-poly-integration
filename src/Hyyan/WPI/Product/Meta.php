@@ -652,15 +652,18 @@ class Meta
 
         $jsID = 'product-fields-locker';
         $code = sprintf(
-            'function hyyan_wpi_lockFields(){'
-            . '  var disabled = %s;'
-            . '  for (var i = 0; i < disabled.length; i++) {'
-            . '      $('
-            . '       %s + ","'
-            . '       + "." + disabled[i] + ","'
+            'function hyyan_wpi_lockFields(){ '
+            . '  var disabled = %s;
+var disabledSelectors = %s;
+var metaSelectors = "";
+for (var i = 0; i < disabled.length; i++) {
+metaSelectors += (","
+                     + "." + disabled[i] + ","'
             . '       + "#" +disabled[i] + ","'
             . '      + "*[name^=\'"+disabled[i]+"\']"'
             . '      )'
+            . '  }'
+            . '  $(disabledSelectors + metaSelectors)'
             . '      .off("click")'
             . '      .on("click", function (e) {e.preventDefault()})'
             . '      .css({'
@@ -668,7 +671,6 @@ class Meta
             . '          \'pointer-events\': \'none\','
             . '          cursor: \'not-allowed\''
             . '      });'
-            . '  }'
             . '};'
             . 'hyyan_wpi_lockFields();'
             . '$(document).ajaxComplete(function(){'
