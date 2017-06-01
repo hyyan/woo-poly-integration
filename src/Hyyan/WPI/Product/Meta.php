@@ -151,7 +151,7 @@ class Meta
     /**
      * convert any upsells and cross sells to target language
      * (unused - instead allow any language and map on render via filters in product.php
-     * this allows additional translations to be added later and references update correctly) 
+     * this allows additional translations to be added later and references update correctly)
      *
      * @param int       $source_id     Id of the source product to sync from
      * @param string	$lang      if set we are creating new lang translation so always sync
@@ -180,7 +180,7 @@ class Meta
         //stop if no references to copy
         if ( (count($cross_sell_ids) == 0) && (count($upsell_ids) == 0) ) {return false;}
 
-        
+
         //            add_post_meta( $to, $key, ( '_thumbnail_id' == $key && $tr_value = $this->model->post->get_translation( $value, $lang ) ) ? $tr_value : $value );
         return true;
     }
@@ -504,8 +504,8 @@ class Meta
             // price
             'polylang' => array(
                 'name' => __('Polylang Metas', 'woo-poly-integration'),
-                'desc' => __('To control these values please check ', 'woo-poly-integration') . 
-                    ' <a href="' . get_admin_url() . 'admin.php?page=mlang_settings">' . 
+                'desc' => __('To control these values please check ', 'woo-poly-integration') .
+                    ' <a href="' . get_admin_url() . 'admin.php?page=mlang_settings">' .
                     __('Polylang admin menu "Languages, Settings"') . '</a> ' .
                     __('Synchronisation section values for Page order, Featured image, Comment Status', 'woo-poly-integration'),
                 'metas' => array(
@@ -541,8 +541,8 @@ class Meta
             // attributes
             'Attributes' => array(
                 'name' => __('Attributes Metas', 'woo-poly-integration'),
-                'desc' => __('To select individual Product Attributes for translation or synchronization, turn on here and check' , 'woo-poly-integration') .
-                    ' <a href="' . get_admin_url() . 'admin.php?page=mlang_settings">' . 
+                'desc' => __('To select individual Product Attributes for translation or synchronization, turn on here and check', 'woo-poly-integration') .
+                    ' <a href="' . get_admin_url() . 'admin.php?page=mlang_settings">' .
                     __('Polylang admin menu "Languages, Settings"') . '</a> ' .
                     __(' "Custom post types and Taxonomies", "Custom Taxonomies"', 'woo-poly-integration'),
                 'metas' => array(
@@ -647,17 +647,18 @@ class Meta
         elseif (in_array('_custom_product_attributes', $metas)) {
             $selectors[] = '#product_attributes div.woocommerce_attribute:not(.taxonomy) :input';
         }
+        
         //filters hooked by Variable class to add locking for variations section
         $selectors = apply_filters(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, $selectors);
 
         $jsID = 'product-fields-locker';
         $code = sprintf(
             'function hyyan_wpi_lockFields(){ '
-            . '  var disabled = %s;
-var disabledSelectors = %s;
-var metaSelectors = "";
-for (var i = 0; i < disabled.length; i++) {
-metaSelectors += (","
+            . '  var disabled = %s;'
+            . 'var disabledSelectors = %s;'
+            . 'var metaSelectors = "";'
+            . 'for (var i = 0; i < disabled.length; i++) {'
+            . '     metaSelectors += (","
                      + "." + disabled[i] + ","'
             . '       + "#" +disabled[i] + ","'
             . '      + "*[name^=\'"+disabled[i]+"\']"'
@@ -677,7 +678,6 @@ metaSelectors += (","
             . '    hyyan_wpi_lockFields(); '
             . '});', json_encode($metas), !empty($selectors) ?
             json_encode(implode(',', $selectors)) :
-            //TODO: @Hyyan, what is this rand() for?
             array(rand())
         );
 

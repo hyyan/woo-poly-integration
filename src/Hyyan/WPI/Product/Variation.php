@@ -241,8 +241,8 @@ class Variation
                 } else {
                     //if no shipping class found this would mean "Same as parent"
                     //so we need to clear existing setting if there is one
-                    //however get_shipping_class() actually gets the parent value, 
-                    //so this code shouldn't be executed, 
+                    //however get_shipping_class() actually gets the parent value,
+                    //so this code shouldn't be executed,
                     //instead the parent value will be copied to variation
                     wp_set_post_terms($to, array(  ), 'product_shipping_class');
                 }
@@ -306,7 +306,7 @@ class Variation
                                     if ($result) {
                                         $translated[] = $result;
                                     } else {
-                                        $translated[] = $term->slug;     
+                                        $translated[] = $term->slug;
                                     }
                                 }
                             } else {
@@ -326,7 +326,8 @@ class Variation
                 }
             }
         }
-                //add shipping class not included in metas as now a taxonomy
-                $this->syncShippingClass($from, $to);
+        
+        //add shipping class not included in metas as now a taxonomy
+        $this->syncShippingClass($from, $to);
     }
 }

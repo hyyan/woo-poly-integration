@@ -34,7 +34,6 @@ class Breadcrumb
      */
     public function translateBreadrumbHomeUrl($home)
     {
-        
         if (function_exists('pll_home_url')) {
             return pll_home_url();
         }
