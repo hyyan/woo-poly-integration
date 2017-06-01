@@ -113,6 +113,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+
 == 1.0.0 ==
 
 This release fixes a number of issues around handling of attributes and translations.

@@ -41,9 +41,6 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
 * Fixes: #153 Fields locker doesn't correctly lock Product Attributes of type Select 
 * Fixes: #147 When adding new variations, tool should also add the new variation to other languages
 * Fixes #149 Enable duplication of variable products
-
-== 0.30.RC1 WooCommerce3 Fixes==
-
 * Fix #137 #131 #130 #110 #117, #97, #94, #84, #83, #82 adaptations for wooCommerce 3.0
 * Fix #136 Variable product stock sync issue where stock managed at parent level
 * Enh #132 Add settings Page link to plugins page
