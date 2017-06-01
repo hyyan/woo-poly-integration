@@ -43,7 +43,12 @@ class MetasList extends AbstractSettings
                          their meaning.Please ignore this section if you do not
                          understand the meaning of this.
                         ', 'woo-poly-integration'
-                ),
+                ) . ' ' . __(
+                        'For more information please see: 
+                        ', 'woo-poly-integration'
+                ) . '<a href="https://github.com/hyyan/woo-poly-integration">' .
+                    __('documentation pages', 'woo-poly-integration') . '</a>'
+                ,
             ),
         );
     }

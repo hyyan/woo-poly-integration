@@ -22,49 +22,44 @@ class Duplicator
      */
     public function __construct()
     {
-        add_action('woocommerce_duplicate_product', array(
+        add_action('woocommerce_product_duplicate', array(
             $this, 'unlinkOrginalProductTranslations',
-        ));
+        ), 10, 3);
 
-        add_action('woocommerce_duplicate_product_capability', array(
-            $this, 'disableDuplicateForVariables',
-        ));
+        add_action('woocommerce_product_duplicate_before_save', array(
+            $this, 'unlinkCopiedVariations',
+        ), 10, 3);
     }
 
     /**
-     * Unlink orginal product translations from the new copy.
+     * Unlink new variation copies from previous variation
      *
-     * @global \Polylang $polylang
-     *
-     * @param int $ID the new product ID
+     * @param WC_Product $child_duplicate  the new variation
+     * @param WC_Product $child  the original variation
      */
-    public function unlinkOrginalProductTranslations($ID)
+    public function unlinkCopiedVariations($child_duplicate, $child)
+    {
+        //clear the reference to previous variation
+        if ($child_duplicate instanceof \WC_Product_Variation) {
+            //at this point is not saved, no id, so remove the key reference
+            //(there is no alternative after-save filter)
+            $child_duplicate->delete_meta_data(Variation::DUPLICATE_KEY);
+            //later the existing code will get false checking for DUPLICATE_KEY and reset it to the new variation id
+        }
+    }
+    
+    /**
+     * Unlink original product translations from the new copy.
+     *
+     * @param WC_Product $duplicate  the new product
+     * @param WC_Product $product  the original product
+     *
+     */
+    public function unlinkOrginalProductTranslations($duplicate, $product)
     {
         global $polylang;
-        $polylang->model->delete_translation('post', $ID);
-    }
-
-    /**
-     * Disable duplicate capability for variables.
-     *
-     * @param string $capability
-     *
-     * @return bool|srting false if should be disables , passed capability
-     *                     otherwise
-     */
-    public function disableDuplicateForVariables($capability)
-    {
-        $screen = get_current_screen();
-
-        if ($screen && $screen->post_type !== 'product') {
-            return $capability;
-        }
-
-        $ID = get_the_ID();
-        if (wc_get_product($ID) instanceof \WC_Product_Variable) {
-            return false;
-        }
-
-        return $capability;
+        //deprecated in Polylang 1.8 [currently 2.1.4], use PLL()->model->post->delete_translation() instead
+        //$polylang->model->delete_translation('post', $ID);
+        $polylang->model->post->delete_translation($duplicate->get_id());
     }
 }

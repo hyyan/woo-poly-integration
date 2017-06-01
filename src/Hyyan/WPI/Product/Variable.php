@@ -36,6 +36,7 @@ class Variable
 
         // Extend meta list to include variation meta and fields to lock
         add_filter(HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList'));
+        add_filter(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors'));
 
         // Variable Products limitations warnings and safe-guards
         if (is_admin()) {
@@ -60,7 +61,8 @@ class Variable
         }
 
         global $pagenow;
-        if (!in_array($pagenow, array('post.php', 'post-new.php'))) {
+        if (!in_array($pagenow, array('post.php', 'post-new.php'))  || $post->post_type !== 'product') {
+            //note, arrives here for example when duplicating variable product from products screen
             return false;
         }
 
@@ -111,6 +113,7 @@ class Variable
     
     /**
      * Prevents plugins (like Polylang) from overwriting default attribute meta sync.
+         * TODO: split and correct: this function is now covering multiple concepts, not just skipping default attributes
      *
      * Why is this required: Polylang to simplify the synchronization process of multiple meta values,
      * deletes all metas first. In this process Variable Product default attributes that are not taxomomies
@@ -181,8 +184,8 @@ class Variable
      */
     public function syncDefaultAttributes($post_id, $post, $update)
     {
-        // Don't sync if not in the admin backend nor on autosave
-        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        // Don't sync if not in the admin backend nor on autosave or not product page
+        if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || get_post_type($post_id) !== 'product') {
             return;
         }
 
@@ -253,7 +256,7 @@ class Variable
     {
         $metas['Variables'] = array(
             'name' => __('Variables Metas', 'woo-poly-integration'),
-            'desc' => __('Variables Metas', 'woo-poly-integration'),
+            'desc' => __('Variable Product pricing Metas', 'woo-poly-integration'),
             'metas' => array(
                 '_min_variation_price',
                 '_max_variation_price',
@@ -271,6 +274,22 @@ class Variable
         );
 
         return $metas;
+    }
+
+    /**
+     * Extend the fields locker selectors.
+     *
+     * Extend the fields locker selectors to lock variation fields for translation
+     *
+     * @param array $selectors
+     *
+     * @return array
+     */
+    public function extendFieldsLockerSelectors(array $selectors)
+    {
+        //FIX: #128 allow variable product description to be translated
+                $selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
+        return $selectors;
     }
 
     /**

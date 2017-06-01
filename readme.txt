@@ -113,15 +113,65 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
-
 == 1.0.0 ==
 
-* Fix #137 #131 #130 #110 adaptations for wooCommerce 3.0
+This release fixes a number of issues around handling of attributes and translations.
+In particular:
+
+1. New translations can now use auto-copy of source language, to help save time translating.
+   In future a machine translation will be added.
+	 Copy option covers Product Title, Short Description and Long Description.
+   Also when creating a new product, any missing Product Categories, Tags and Attributes are copied,
+   to avoid unexpected problems which occur if a translation is saved with missing term translations.
+
+2. it is now possible to set up the system to allow different types of product attributes
+to be synchronised, translated, or independent in each language. The default options will be:
+ - Translation and Synchronization Enabled for Product Attributes
+ - Synchronization off for Custom Product Attributes
+
+In this case choose how to set up your product attributes as follows:
+ - Translated Attribute?  Add in Products\Attributes and turn on Translation in Polylang at:
+        Languages\Settings\Custom Taxonomies 
+ - Synchronised Attribute? [eg same value in all languages, eg product code, numeric properties] 
+				Add in Products\Attributes and leave Translation turned off in Polyang.
+ - Different value in each language? add directly to Product as a Custom Product Attribute
+
+
+* Enh: synchronisation for Custom Product Attributes and Global Product Attributes can now be 
+       turned on and off independently in 
+			 Settings\WooPoly, Metas List, Attributes Metas, Custom Product Attributes.
+       The fields locker is unlocked for the attribute types which are not synchronized.
+* Fix: Global Product Attributes can now be individually configured in Polylang:  
+			 When Settings\WooPoly Translation attributes is checked then attributes appear in Polylang:
+       Languages\Settings\Custom Taxonomies lists the individual taxonomies 
+			 Previously all attributes translation were forced on: now they can be selectively turned
+       on and off.  This means that there is no longer any need to create dummy translations for 
+       untranslateable values such as reference codes and numeric fields.  Fixes #127.
+CHANGE: new Product Attributes are no longer automatically enabled for translation,
+       After creating new Attribute, enable Translation in Polylang if needed by checking:
+			 Languages\Settings\Custom Taxonomies 
+* Enh: Missing Term Translations are now added by default. Fixes #72
+			 Applies to Products\Categories, Products\Tags, Products\Attributes 
+       Previously missing term translations caused
+
+* Fixes #123 Fields Locker performance optimisation 
+* Fixes #155, fixes #81, fixes #99 Gateways fix gateway load issues by moving initialization to wp_loaded
+* Fixes #149 Enable duplication of variable products
+* Fixes #165 upsets/crosssells handling in wooCommerce3
+* Fixes #159 Attribute Terms synchronization issues
+* Fixes: #148 WooCommerce3 product_visibility is now a taxonomy not a meta item  
+* Fixes: #153 Fields locker doesn't correctly lock Product Attributes of type Select 
+* Fixes: #147 When adding new variations, tool should also add the new variation to other languages
+* Fix #137 #131 #130 #110 #117, #97, #94, #84, #83, #82 adaptations for wooCommerce 3.0
 * Fix #136 Variable product stock sync issue where stock managed at parent level
 * Enh #132 Add settings Page link to plugins page
 * Fix #128 Allow variation description to be editable in translations
 * Fix #129 #138 Account page only shows orders in current language
 * Fix #112 Shipping Class are not sync for Product Variations
+* Fix #140, #142, #143, #89, #70 Email Translation issues
+* Fix #145 correct link from Polylang to Attributes Strings translations
+* Fix #95 WooCommmerce product shortcodes not filtering by language
+* Fix #104 Tax by allowing translation of Price Display Suffix
 
 == 0.29.1 ==
 
@@ -257,6 +307,13 @@ woocommerce and polylang , please update immediately
 The release includes important fixes and updates for latest version of 
 woocommerce and polylang , please update immediately 
 
-= 0.30.0 =
-The release includes important fixes and updates for latest version of 
-woocommerce and polylang , please update immediately 
+= 1.0.0 =
+The release is the first release for WooCommerce 3.x.
+DO NOT install until you upgrade to WooCommerce 3.x.
+If you are currently on WooCommerce 2.x, we recommend:
+0. Take a backup. And do EVERYTHING in a test environment first.  Test. 
+WooCommerce 3 has a large number of breaking changes which may and do break other plugins.
+1. temporarily deactivate this plugin, 
+2. upgrade WooCommerce and this plugin
+3. run WooCommerce database upgrade following the wooCommerce prompt
+4. reactivate this plugin

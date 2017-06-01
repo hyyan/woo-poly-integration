@@ -37,49 +37,114 @@ class Taxonomies
 
         /* Manage taxonomies translation */
         add_filter(
-                'pll_get_taxonomies', array($this, 'manageTaxonomiesTranslation')
+                'pll_get_taxonomies', array($this, 'getAllTranslateableTaxonomies'), 10, 2
         );
+				
+				add_action('update_option_wpi-features', array($this, 'updatePolyLangFromWooPolyFeatures')
+						, 10, 3);
+
+				add_action('update_option_wpi-metas-list', array($this, 'updatePolyLangFromWooPolyMetas')
+						, 10, 3);
     }
 
     /**
-     * Notifty polylang about product taxonomies.
+		 * All this function needs to do is:
+		 *   if called requesting all available settings 
+		 *			return all taxonomies enabled in woo-poly 
+		 * This is because Polylang only saves the options which are turned on in Polylang so needs to 
+		 * be told about the others.
      *
      * @param array $taxonomies array of cutoms taxonomies managed by polylang
+	 	 * @param bool  $is_settings true when displaying the list of custom taxonomies in Polylang settings
      *
      * @return array
      */
-    public function manageTaxonomiesTranslation($taxonomies)
+    public function getAllTranslateableTaxonomies($taxonomies, $is_settings)
     {
-        $supported = $this->prepareAndGet();
-        $add = $supported[0];
-        $remove = $supported[1];
-        $options = get_option('polylang');
+				//if not called to get all settings, simply return the input
+				if (!($is_settings)){
+					return $taxonomies;
+        }
 
-        $taxs = $options['taxonomies'];
-        $update = false;
+				//otherwise, called by Polylang Settings, return translatable taxonomies
+        $add = array();
+        $tax_types = array(
+            'attributes' => 'Hyyan\WPI\Taxonomies\Attributes',
+            'categories' => 'Hyyan\WPI\Taxonomies\Categories',
+            'tags' => 'Hyyan\WPI\Taxonomies\Tags',
+            'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss',
+        );
 
-        foreach ($add as $tax) {
-            if (!in_array($tax, $taxs)) {
-                $options['taxonomies'][] = $tax;
-                $update = true;
+				//for each type, add it
+        foreach ($tax_types as $tax_type => $class) {
+            $names = $class::getNames();
+					if ('on' === Settings::getOption($tax_type, Features::getID(), 'on')) {
+                $add = array_merge($add, $names);
+                }
             }
-        }
-        foreach ($remove as $tax) {
-            if (in_array($tax, $taxs)) {
-                $options['taxonomies'] = array_flip($options['taxonomies']);
-                unset($options['taxonomies'][$tax]);
-                $options['taxonomies'] = array_flip($options['taxonomies']);
-                $update = true;
-            }
+				
+				return array_merge($taxonomies, $add);
         }
 
-        if ($update) {
-            update_option('polylang', $options);
-        }
-
-        return array_merge($taxonomies, $add);
+		
+		
+    /**
+		 * Hook to allow some customization when WooPoly Settings are saved, 
+		 * for example some settings should be updated in Polylang Settings
+		 * [we could also catch some mutually incompatible woopoly settings, 
+		 *  by hooking pre_update_option_wpi-metas-list]
+     *
+     * @param array $old_value   previous WooPoly settings
+     * @param array $new_value   new WooPoly settings
+	 	 * @param string $option		 option name
+     *
+     * @return array
+     */
+		public function updatePolyLangFromWooPolyMetas( $old_value, $new_value, $option ) {
+			//we could update Polylang settings for Featured Image, Comment Status, Page Order
+			//if the WooPoly settings have changed, but note this would also affect Posts
+			return true;
     }
 
+    /**
+		 * When WooPoly settings are saved, we should try to update the related Polylang Settings
+     *
+     * @param array $old_value   previous WooPoly settings
+     * @param array $new_value   new WooPoly settings
+	 	 * @param string $option		option name
+     *
+     * @return array
+     */
+		public function updatePolyLangFromWooPolyFeatures( $old_value, $new_value, $option ) {
+			if ( isset($old_value['attributes']) && isset($new_value['attributes']) ){
+				$old_attr_sync = $old_value['attributes'];
+				$new_attr_sync = $new_value['attributes'];
+				if ($old_attr_sync != $new_attr_sync){
+					//if we are just turning the attributes on, old behaviour is to force add to translation
+					//now we will not force translation on, only force off, ie:
+					//  remove from Polylang if disabling translation 
+					if ($new_attr_sync!='on'){
+						$polylang_options = get_option('polylang');
+						$polylang_taxs = $polylang_options['taxonomies'];
+						$remove = Attributes::getNames();
+						$update=false;
+						foreach ($remove as $tax) {
+							if (in_array($tax, $polylang_taxs)) {
+									$polylang_options['taxonomies'] = array_flip($polylang_options['taxonomies']);
+									unset($polylang_options['taxonomies'][$tax]);
+									$polylang_options['taxonomies'] = array_flip($polylang_options['taxonomies']);
+									$update = true;
+							} //if Product Attribute was previously translated
+						} //for each Product Attribute
+						if ($update) {
+							update_option('polylang', $polylang_options);
+						}						
+					} //if wooPoly Translate Product Attributes is turned On
+				} //if attributes setting has changed
+			} //if attributes are set
+		}
+	
+    
     /**
      * Get managed taxonomies.
      *
@@ -93,7 +158,7 @@ class Taxonomies
             'attributes' => 'Hyyan\WPI\Taxonomies\Attributes',
             'categories' => 'Hyyan\WPI\Taxonomies\Categories',
             'tags' => 'Hyyan\WPI\Taxonomies\Tags',
-            'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss',
+            //'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss',
         );
 
         foreach ($supported as $option => $class) {
@@ -110,4 +175,5 @@ class Taxonomies
 
         return array($add, $remove);
     }
+
 }

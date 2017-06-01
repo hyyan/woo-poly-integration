@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
+use Hyyan\WPI\Product\Meta;
+
 /**
  * Variation.
  *
@@ -219,23 +221,30 @@ class Variation
      * Sync Product Shipping Class.
      *
      * Shipping Class translation is not supported after WooCommerce 2.6
-     * but it is still implemented by WooCommerce as a taxonomy. Therefore,
-     * Polylang will not copy the Shipping Class meta.
+     * but it is still implemented by WooCommerce as a taxonomy (no longer a meta).
+     * Therefore, Polylang will not copy the Shipping Class meta.
      *
      * @param int $from product variation ID
      * @param int $to   product variation ID
      */
     public function syncShippingClass($from, $to)
     {
-        // Product edit - update shipping class of all product translations
+        if (in_array('product_shipping_class', Meta::getProductMetaToCopy())) {
             $variation_from = wc_get_product($from);
-            
-        if ($variation_from) {
-            $shipping_class = $variation_from->get_shipping_class();
-            if ($shipping_class) {
-                $shipping_terms = get_term_by('slug', $shipping_class, 'product_shipping_class');
-                if ($shipping_terms) {
-                    wp_set_post_terms($to, array( $shipping_terms->term_id ), 'product_shipping_class');
+            if ($variation_from) {
+                $shipping_class = $variation_from->get_shipping_class();
+                if ($shipping_class) {
+                    $shipping_terms = get_term_by('slug', $shipping_class, 'product_shipping_class');
+                    if ($shipping_terms) {
+                        wp_set_post_terms($to, array( $shipping_terms->term_id ), 'product_shipping_class');
+                    }
+                } else {
+                    //if no shipping class found this would mean "Same as parent"
+                    //so we need to clear existing setting if there is one
+                    //however get_shipping_class() actually gets the parent value, 
+                    //so this code shouldn't be executed, 
+                    //instead the parent value will be copied to variation
+                    wp_set_post_terms($to, array(  ), 'product_shipping_class');
                 }
             }
         }
@@ -292,7 +301,13 @@ class Variation
                                 if ($translated_term = pll_get_term($term->term_id, $lang)) {
                                     $translated[] = get_term_by('id', $translated_term, $tax)->slug;
                                 } else {
-                                    $translated[] = '';     // Attribute term has no translation
+                                    // Attribute term has no translation
+                                    $result=Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
+                                    if ($result) {
+                                        $translated[] = $result;
+                                    } else {
+                                        $translated[] = $term->slug;     
+                                    }
                                 }
                             } else {
                                 $translated[] = $termSlug;
