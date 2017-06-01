@@ -116,6 +116,8 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == 1.0.0 ==
 
+**Thanks for @jon007 and @decarvalhoaa for the amazing work in order to release this new version**
+
 This release fixes a number of issues around handling of attributes and translations.
 In particular:
 
