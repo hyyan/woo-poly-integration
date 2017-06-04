@@ -100,7 +100,11 @@ class Plugin
                 is_plugin_active_for_network('polylang-pro/polylang.php')
             )
         ) {
-            $polylang = true;
+            if (isset($GLOBALS['polylang'], \PLL()->model, PLL()->links_model)){
+                if (pll_default_language()){
+                    $polylang = true;
+                }
+            }
         }
         /* check woocommerce plugin * */
         if (

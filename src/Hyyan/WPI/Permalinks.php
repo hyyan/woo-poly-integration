@@ -32,17 +32,29 @@ class Permalinks
     /**
      * Set default permalinks.
      *
-     * Setup the write permalinks to work with polylang if used permalinks is the
+     * Setup the right permalinks to work with polylang if used permalinks is the
      * default woocommerce permalinks
+     * (This was getting called too often, also a situation occurred where these got set to boolean...)
      */
     public function setDefaultPermalinks()
     {
         $permalinks = get_option('woocommerce_permalinks');
+        $was_set=false;
+        if (! isset($permalinks['category_base']) || ( is_bool($permalinks['category_base']))) {
+            $permalinks['category_base'] = self::PRODUCT_CATEGORY_BASE;
+            $was_set=true;
+        }
+        if (! isset($permalinks['tag_base']) || ( is_bool($permalinks['tag_base']))) {
+            $permalinks['tag_base'] =  self::PRODUCT_TAG_BASE;
+            $was_set=true;
+        }
+        if (! isset($permalinks['product_base']) || ( is_bool($permalinks['product_base']))) {
+            $permalinks['product_base'] = self::PRODUCT_BASE;
+            $was_set=true;
+        }
 
-        $permalinks['category_base'] = $permalinks['category_base'] ?: self::PRODUCT_CATEGORY_BASE;
-        $permalinks['tag_base'] = $permalinks['tag_base'] ?: self::PRODUCT_TAG_BASE;
-        $permalinks['product_base'] = $permalinks['product_base'] ?: self::PRODUCT_BASE;
-
+        if ($was_set){
         update_option('woocommerce_permalinks', $permalinks);
+        }
     }
 }

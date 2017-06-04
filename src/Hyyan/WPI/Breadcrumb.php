@@ -24,7 +24,7 @@ class Breadcrumb
      */
     public function __construct()
     {
-        add_filter('woocommerce_breadcrumb_home_url', array($this, 'translateBreadrumbHomeUrl'));
+        add_filter('woocommerce_breadcrumb_home_url', array($this, 'translateBreadrumbHomeUrl'), 10, 1);
     }
 
     /**

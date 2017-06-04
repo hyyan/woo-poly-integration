@@ -114,6 +114,11 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 
+== 1.0.1 ==
+Fixes #174 Error in autofill of missing translations of parent category
+Fixes #175 WooCommerce doesn't pass loop name for some shortcodes
+Fixes #10  Initial setup issues if Polylang is not yet configured
+
 == 1.0.0 ==
 
 **Thanks for @jon007 and @decarvalhoaa for the amazing work has been done in order to release this new version**
