@@ -13,6 +13,8 @@ WooCommerce and Polylang.It makes products and store pages translatable, lets
 visitors switch languages and order products in their language. and all that from
 the same interface you love.
 
+[Read the full docs](https://github.com/hyyan/woo-poly-integration/wiki)
+
 ## Features
 
 - [x] Auto Download Woocommerce Translation Files

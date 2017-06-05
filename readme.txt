@@ -18,6 +18,8 @@ the same interface you love.
 
 > Please do not ask for support on wordpress forum anymore , it is becoming hard for me to follow issues in different places. please if you want help just open a new Github issue.
 
+[Read the full docs](https://github.com/hyyan/woo-poly-integration/wiki)
+
 = Features  =
 
 - [√] Auto Download Woocommerce Translation Files
@@ -120,12 +122,13 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog ==
 
 == 1.0.1 ==
-Fixes #170 when WooCommerce 3.0.8+ active, product variation titles corrected in cart and orders
-Added Documentation links to new wiki Documentation pages
-Added minified javascript (enable SCRIPT_DEBUG to use unminified versions)
-Fixes #174 Error in autofill of missing translations of parent category
-Fixes #175 WooCommerce doesn't pass loop name for some shortcodes
-Fixes #10  Initial setup issues if Polylang is not yet configured
+
+* Fixes #170 when WooCommerce 3.0.8+ active, product variation titles corrected in cart and orders
+* Added Documentation links to new wiki Documentation pages
+* Added minified javascript (enable SCRIPT_DEBUG to use unminified versions)
+* Fixes #174 Error in autofill of missing translations of parent category
+* Fixes #175 WooCommerce doesn't pass loop name for some shortcodes
+* Fixes #10  Initial setup issues if Polylang is not yet configured
 
 == 1.0.0 ==
 
