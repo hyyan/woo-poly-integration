@@ -67,12 +67,17 @@ the same interface you love.
 Everyone is welcome to help contribute and improve this plugin. There are several
 ways you can contribute:
 
-* Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
+* Reporting issues (please read [issue guidelines](https://github.com/hyyan/woo-poly-integration/blob/master/.github/CONTRIBUTING.md))
 * Suggesting new features
-* Writing or refactoring code
+* Writing or refactoring [code](https://github.com/hyyan/woo-poly-integration)
+* Improving [documentation](https://github.com/hyyan/woo-poly-integration/wiki)
 * Fixing [issues](https://github.com/hyyan/woo-poly-integration/issues)
 
 == Installation ==
+
+= Standard install =
+
+In your site Admin, go to Plugins, Add New and search for Hyyan WooCommerce Polylang Integration and install it.
 
 = Classical way =
 
@@ -113,6 +118,14 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+
+== 1.0.1 ==
+Fixes #170 when WooCommerce 3.0.8+ active, product variation titles corrected in cart and orders
+Added Documentation links to new wiki Documentation pages
+Added minified javascript (enable SCRIPT_DEBUG to use unminified versions)
+Fixes #174 Error in autofill of missing translations of parent category
+Fixes #175 WooCommerce doesn't pass loop name for some shortcodes
+Fixes #10  Initial setup issues if Polylang is not yet configured
 
 == 1.0.0 ==
 

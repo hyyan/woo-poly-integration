@@ -41,7 +41,7 @@ class SearchWidget
         global $polylang;
 
         if ($form) {
-            if ($polylang->links_model->using_permalinks) {
+            if ((isset($polylang->links_model)) && ($polylang->links_model->using_permalinks)) {
 
                 /* Take care to modify only the url in the <form> tag */
                 preg_match('#<form.+>#', $form, $matches);
@@ -52,11 +52,13 @@ class SearchWidget
 
                 $form = str_replace($old, $new, $form);
             } else {
+                if (isset($polylang->curlang, $polylang->curlang->slug)){
                 $form = str_replace(
                         '</form>', '<input type="hidden" name="lang" value="'
                         .esc_attr($polylang->curlang->slug)
                         .'" /></form>', $form
                 );
+                }
             }
         }
 

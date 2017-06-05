@@ -44,10 +44,9 @@ class MetasList extends AbstractSettings
                          understand the meaning of this.
                         ', 'woo-poly-integration'
                 ) . ' ' . __(
-                        'For more information please see: 
-                        ', 'woo-poly-integration'
-                ) . '<a href="https://github.com/hyyan/woo-poly-integration">' .
-                    __('documentation pages', 'woo-poly-integration') . '</a>'
+                        'For more information please see:', 'woo-poly-integration'
+                ) . ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Settings-Metas">' .
+                    __('documentation pages', 'woo-poly-integration') . '</a>.'
                 ,
             ),
         );

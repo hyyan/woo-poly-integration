@@ -51,7 +51,7 @@ class Pages
         
         add_filter(
                 'woocommerce_shortcode_products_query',
-                array($this, 'addShortcodeLanguageFilter'), 10, 3
+                array($this, 'addShortcodeLanguageFilter'), 10, 2
         );
     }
 
@@ -163,11 +163,11 @@ class Pages
      *
      * @param array $query_args
      * @param array $atts
-     * @param string $loop_name
+     * @param string $loop_name  --  not provided by some shortcodes
      *
      * @return string modified form
      */
-    public function addShortcodeLanguageFilter($query_args, $atts, $loop_name)
+    public function addShortcodeLanguageFilter($query_args, $atts)
     {
         if (function_exists('pll_current_language')) {
             $query_args['lang'] = isset($query_args['lang']) ?

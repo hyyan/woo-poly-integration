@@ -119,7 +119,7 @@ class Meta
         $copy = isset($_GET['new_lang']) && isset($_GET['from_post']);
 
         if ($copy) {
-            // New translation - copy shipping class from product source
+            // New translation - copy attributes from product source
             $source_id = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
 
             if ($source_id) {
@@ -369,7 +369,7 @@ class Meta
                 //no translation exists so get the actual parent
                 $parent_term = \WP_Term::get_instance($term->parent);
                 //and use this function to create default translation of the parent
-                $result = $this->createDefaultTermTranslation($tax, $parent_term, $parent_term->slug, $lang, true);
+                $result = static::createDefaultTermTranslation($tax, $parent_term, $parent_term->slug, $lang, true);
                 if ($result) {
                     $args['parent'] = $result;
                 }
