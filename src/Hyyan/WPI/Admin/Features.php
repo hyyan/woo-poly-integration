@@ -124,17 +124,7 @@ class Features extends AbstractSettings
                         'Enable attributes translations', 'woo-poly-integration'
                 ),
             ),
-/*
-            array(
-                'name' => 'shipping-class',
-                'type' => 'checkbox',
-                'default' => 'off',
-                'label' => __('Translate Shipping Classes', 'woo-poly-integration'),
-                'desc' => __(
-                        'Enable shipping classes translations'.(Utilities::woocommerceVersionCheck('2.6') ? ' (not supported for WooCommerce versions >= 2.6)' : ''), 'woo-poly-integration'
-                ),
-            ),
- */
+
             array(
                 'name' => 'new-translation-defaults',
                 'type' => 'radio',

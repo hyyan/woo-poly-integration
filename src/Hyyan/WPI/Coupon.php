@@ -23,6 +23,7 @@ use Hyyan\WPI\Utilities;
  */
 class Coupon
 {
+
     /**
      * Construct object.
      */
@@ -42,44 +43,40 @@ class Coupon
      */
     public function couponLoaded(\WC_Coupon $coupon)
     {
-        if (Utilities::woocommerceVersionCheck('3.0')) {
-            $productIDS = array();
-            $excludeProductIDS = array();
-            $productCategoriesIDS = array();
-            $excludeProductCategoriesIDS = array();
+        $productIDS                  = array();
+        $excludeProductIDS           = array();
+        $productCategoriesIDS        = array();
+        $excludeProductCategoriesIDS = array();
 
-            foreach ($coupon->get_product_ids() as $id) {
-                foreach ($this->getProductPostTranslationIDS($id) as $_id) {
-                    $productIDS[] = $_id;
-                }
+        foreach ($coupon->get_product_ids() as $id) {
+            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
+                $productIDS[] = $_id;
             }
-            foreach ($coupon->get_excluded_product_ids() as $id) {
-                foreach ($this->getProductPostTranslationIDS($id) as $_id) {
-                    $excludeProductIDS[] = $_id;
-                }
-            }
-
-            foreach ($coupon->get_product_categories() as $id) {
-                foreach ($this->getProductTermTranslationIDS($id) as $_id) {
-                    $productCategoriesIDS[] = $_id;
-                }
-            }
-
-            foreach ($coupon->get_excluded_product_categories() as $id) {
-                foreach ($this->getProductTermTranslationIDS($id) as $_id) {
-                    $excludeProductCategoriesIDS[] = $_id;
-                }
-            }
-
-            $coupon->set_product_ids($productIDS);
-            $coupon->set_excluded_product_ids($excludeProductIDS);
-            $coupon->set_product_categories($productCategoriesIDS);
-            $coupon->set_excluded_product_categories($excludeProductCategoriesIDS);
-
-            return $coupon;
-        } else {
-            return $this->couponLoadedOld($coupon);
         }
+        foreach ($coupon->get_excluded_product_ids() as $id) {
+            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
+                $excludeProductIDS[] = $_id;
+            }
+        }
+
+        foreach ($coupon->get_product_categories() as $id) {
+            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
+                $productCategoriesIDS[] = $_id;
+            }
+        }
+
+        foreach ($coupon->get_excluded_product_categories() as $id) {
+            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
+                $excludeProductCategoriesIDS[] = $_id;
+            }
+        }
+
+        $coupon->set_product_ids($productIDS);
+        $coupon->set_excluded_product_ids($excludeProductIDS);
+        $coupon->set_product_categories($productCategoriesIDS);
+        $coupon->set_excluded_product_categories($excludeProductCategoriesIDS);
+
+        return $coupon;
     }
 
     /**
@@ -91,9 +88,9 @@ class Coupon
      */
     public function couponLoadedOld(\WC_Coupon $coupon)
     {
-        $productIDS = array();
-        $excludeProductIDS = array();
-        $productCategoriesIDS = array();
+        $productIDS                  = array();
+        $excludeProductIDS           = array();
+        $productCategoriesIDS        = array();
         $excludeProductCategoriesIDS = array();
         foreach ($coupon->product_ids as $id) {
             foreach ($this->getProductPostTranslationIDS($id) as $_id) {
@@ -115,12 +112,13 @@ class Coupon
                 $excludeProductCategoriesIDS[] = $_id;
             }
         }
-        $coupon->product_ids = $productIDS;
-        $coupon->exclude_product_ids = $excludeProductIDS;
-        $coupon->product_categories = $productCategoriesIDS;
+        $coupon->product_ids                = $productIDS;
+        $coupon->exclude_product_ids        = $excludeProductIDS;
+        $coupon->product_categories         = $productCategoriesIDS;
         $coupon->exclude_product_categories = $excludeProductCategoriesIDS;
         return $coupon;
     }
+
     /**
      * Get array of product translations IDS.
      *
@@ -130,7 +128,7 @@ class Coupon
      */
     protected function getProductPostTranslationIDS($ID)
     {
-        $result = array($ID);
+        $result  = array($ID);
         $product = wc_get_product($ID);
 
         if ($product && $product->get_type() === 'variation') {
@@ -161,4 +159,5 @@ class Coupon
 
         return $IDS ? $IDS : array($ID);
     }
+
 }

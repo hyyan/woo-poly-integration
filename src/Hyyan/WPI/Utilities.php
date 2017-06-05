@@ -19,6 +19,7 @@ namespace Hyyan\WPI;
  */
 final class Utilities
 {
+
     /**
      * Get the translations IDS of the given product ID.
      *
@@ -90,7 +91,7 @@ final class Utilities
 
         if ($productTranslationID) {
             $translated = wc_get_product($productTranslationID);
-            $product = $translated ? $translated : $product;
+            $product    = $translated ? $translated : $product;
         }
 
         return $product;
@@ -152,8 +153,8 @@ final class Utilities
     public static function getCurrentUrl()
     {
         return (is_ssl() ? 'https://' : 'http://')
-                .$_SERVER['HTTP_HOST']
-                .$_SERVER['REQUEST_URI'];
+                . $_SERVER['HTTP_HOST']
+                . $_SERVER['REQUEST_URI'];
     }
 
     /**
@@ -174,7 +175,7 @@ final class Utilities
     {
         $result = '';
         $prefix = 'hyyan-wpi-';
-        $header = sprintf('<script type="text/javascript" id="%s">', $prefix.$ID);
+        $header = sprintf('<script type="text/javascript" id="%s">', $prefix . $ID);
         $footer = '</script>';
 
         if (true === $jquery) {
@@ -199,11 +200,11 @@ final class Utilities
      *
      * Check if you are running a specified WooCommerce version (or higher)
      *
-     * @param string $version Version to check agains. (Default: 2.6)
+     * @param string $version Version to check against
      *
      * @return bool true if running version is equal or higher, false otherwise
      */
-    public static function woocommerceVersionCheck($version = '2.6')
+    public static function woocommerceVersionCheck($version)
     {
         global $woocommerce;
 
@@ -213,22 +214,22 @@ final class Utilities
 
         return false;
     }
-    
+
     /**
      * Check Polylang version.
      *
      * Check if you are running a specified Polylang version (or higher)
      *
-     * @param string $version Version to check agains. (Default: 2.0)
+     * @param string $version Version to check against
      *
      * @return bool true if running version is equal or higher, false otherwise
      */
-    public static function polylangVersionCheck($version = '2.0')
+    public static function polylangVersionCheck($version)
     {
         if (!function_exists('get_plugin_data')) {
             require_once ABSPATH . 'wp-admin/includes/plugin.php';
         }
-        
+
         $data = get_plugin_data(ABSPATH . 'wp-content/plugins/polylang/polylang.php', false, false);
 
         if (version_compare($data['Version'], $version, '>=')) {
@@ -237,7 +238,7 @@ final class Utilities
 
         return false;
     }
-    
+
     /**
      * Get variations default attributes translation.
      *
@@ -252,17 +253,14 @@ final class Utilities
      */
     public static function getDefaultAttributesTranslation($product_id, $lang = '')
     {
-        $product = wc_get_product($product_id);
+        $product               = wc_get_product($product_id);
         $translated_attributes = array();
 
         if ($product && 'variable' === $product->get_type()) {
-            if (Utilities::woocommerceVersionCheck('3.0')) {
-                $default_attributes = $product->get_default_attributes();
-            } else {
-                $default_attributes = $product->get_variation_default_attributes();
-            }
-            $terms = array(); // Array of terms: if the term is taxonomy each value is a term object, otherwise an array (term slug => term value)
-            $langs = array();
+
+            $default_attributes = $product->get_default_attributes();
+            $terms              = array(); // Array of terms: if the term is taxonomy each value is a term object, otherwise an array (term slug => term value)
+            $langs              = array();
 
             foreach ($default_attributes as $key => $value) {
                 $term = get_term_by('slug', $value, $key);
@@ -290,7 +288,7 @@ final class Utilities
                         $translated_term_id = pll_get_term($term->term_id, $lang);
                         // Skip for attribute terms that don't have translations
                         if ($translated_term_id) {
-                            $translated_term = get_term_by('id', $translated_term_id, $term->taxonomy);
+                            $translated_term                              = get_term_by('id', $translated_term_id, $term->taxonomy);
                             $translated_terms[$translated_term->taxonomy] = $translated_term->slug;
                         }
                     } else {
@@ -328,9 +326,9 @@ final class Utilities
             $add_new_product = $current_screen && $current_screen->post_type === 'product' && $current_screen->action === 'add';
             $is_translation  = isset($_GET['from_post']) && isset($_GET['new_lang']);
             $has_variations  = get_children(array(
-                    'post_type'   => 'product_variation',
-                    'post_parent' => $product->get_id()
-                ));
+                'post_type'   => 'product_variation',
+                'post_parent' => $product->get_id()
+            ));
 
             if ($add_new_product && $is_translation && $has_variations) {
                 return true;
@@ -339,7 +337,7 @@ final class Utilities
 
         return false;
     }
-        
+
     /**
      * get payment method for order independent of wooCommerce version
      *
@@ -349,13 +347,10 @@ final class Utilities
      */
     public static function get_payment_method($order)
     {
-        if (Utilities::woocommerceVersionCheck('3.0')) {
-            return $order->get_payment_method();
-        } else {
-            return $order->payment_method;
-        }
+        return $order->get_payment_method();
     }
-        /**
+
+    /**
      * get billing country for order independent of wooCommerce version
      *
      * @param WC_Order $order
@@ -364,14 +359,10 @@ final class Utilities
      */
     public static function get_billing_country($order)
     {
-        if (Utilities::woocommerceVersionCheck('3.0')) {
-            return $order->get_billing_country();
-        } else {
-            return $order->billing_country;
-        }
+        return $order->get_billing_country();
     }
 
-        /**
+    /**
      * get product id for order item independent of wooCommerce version
      *
      * @param WC_Order_Item_Product $item
@@ -380,15 +371,10 @@ final class Utilities
      */
     public static function get_order_item_productid($item)
     {
-        if (Utilities::woocommerceVersionCheck('3.0')) {
-            return $item->get_product_id();
-        } else {
-            return $item['product_id'];
-        }
+        return $item->get_product_id();
     }
 
-        
-        /**
+    /**
      * get variation id for order item independent of wooCommerce version
      *
      * @param WC_Order_Item_Product $item
@@ -397,15 +383,10 @@ final class Utilities
      */
     public static function get_order_item_variationid($item)
     {
-        if (Utilities::woocommerceVersionCheck('3.0')) {
-            return $item->get_variation_id();
-        } else {
-            return $item['variation_id'];
-        }
+        return $item->get_variation_id();
     }
 
-                
-        /**
+    /**
      * get quantity for order item independent of wooCommerce version
      *
      * @param WC_Order_Item_Product $item
@@ -414,14 +395,10 @@ final class Utilities
      */
     public static function get_order_item_quantity($item)
     {
-        if (Utilities::woocommerceVersionCheck('3.0')) {
-            return $item->get_quantity();
-        } else {
-            return $item['qty'];
-        }
+        return $item->get_quantity();
     }
 
-        /**
+    /**
      * get change for order item independent of wooCommerce version
      *
      * @param WC_Order_Item_Product $item
@@ -430,14 +407,10 @@ final class Utilities
      */
     public static function get_order_item_change($item)
     {
-        if (Utilities::woocommerceVersionCheck('3.0')) {
-            return $item->change;
-        } else {
-            return $item['change'];
-        }
+        return $item->change;
     }
 
-        /**
+    /**
      * get order languate independent of wooCommerce version
      *
      * @param WC_Order order
@@ -447,16 +420,10 @@ final class Utilities
     public static function get_orderid($order)
     {
         // Get order language
-                if (Utilities::woocommerceVersionCheck('3.0')) {
-                    return $order->get_id();
-                } else {
-                    return $order->id;
-                }
+        return $order->get_id();
     }
 
-
-
-        /**
+    /**
      * get id for variation parent independent of wooCommerce version
      *
      * @param WC_Product variation
@@ -466,9 +433,10 @@ final class Utilities
     public static function get_variation_parentid($variation)
     {
         if ($variation) {
-            return (Utilities::woocommerceVersionCheck('3.0')) ? $variation->get_parent_id() : $variation->parent->get_id();
+            return $variation->get_parent_id();
         } else {
             return null;
         }
     }
+
 }

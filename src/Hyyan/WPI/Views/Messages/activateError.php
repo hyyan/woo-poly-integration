@@ -16,11 +16,11 @@ if (!defined('ABSPATH')) {
     ?>
 <p>
 <hr>
-<?php _e('Plugins Sites : ', 'woo-poly-integration'); ?>
+<?php _e('Plugins : ', 'woo-poly-integration'); ?>
 <a href="https://wordpress.org/plugins/woocommerce/">
-    <?php _e('WooCommerce', 'woo-poly-integration'); ?>
+    <?php printf('%s V%s', _e('WooCommerce', 'woo-poly-integration'), Hyyan\WPI\Plugin::WOOCOMMERCE_VERSION); ?>
 </a>
 |
 <a href="https://wordpress.org/plugins/polylang/">
-    <?php _e('Polylang', 'woo-poly-integration'); ?>
+    <?php printf('%s V%s', _e('Polylang', 'woo-poly-integration'), Hyyan\WPI\Plugin::POLYLANG_VERSION); ?>
 </a>

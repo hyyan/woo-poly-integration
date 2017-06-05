@@ -23,29 +23,12 @@ use Hyyan\WPI\Utilities;
  */
 class Shipping
 {
+
     /**
      * Construct object.
      */
     public function __construct()
     {
-
-        // Shipping Class translation is not supported after WooCommerce 2.6
-        // Note: WooCommerce change the Shipping Class interface and is no longer
-        // using the same actions and filters as WordPress. Therefore Polylang
-        // can't display the languages columns and metabox for custom post types
-        // and taxonomies.
-        if (Utilities::woocommerceVersionCheck('2.6')) {
-
-            // Force shipping class translation feature to off
-            if ('off' !== Settings::getOption('shipping-class', Features::getID())) {
-                $settings = get_option(Features::getID());
-                $settings['shipping-class'] = 'off';
-                update_option(Features::getID(), $settings);
-            }
-
-            // Disable shipping class translation feature input selector
-            add_action('current_screen', array($this, 'disableSettings'));
-        }
 
         // Register woocommerce shipping method custom names in polylang strings translations table
         // called only after Wordpress is loaded
@@ -100,19 +83,9 @@ class Shipping
     {
         $active_methods = array();
 
-        if (Utilities::woocommerceVersionCheck('2.6')) {
-            //  WooCommerce 2.6 intoduces the concept of Shipping Zones
-
-            // Format:  $shipping_methods[zone_name_method_id] => shipping_method_object
-            // where zone_name is e.g. domestic, europe, rest_of_the_world, and
-            // methods_id is e.g. flat_rate, free_shiping, local_pickup, etc
-            $shipping_methods = $this->getZonesShippingMethods();
-        } else {
-
-            // Format:  $shipping_methods[method_id] => shipping_method_object
-            // where methods_id is e.g. flat_rate, free_shiping, local_pickup, etc
-            $shipping_methods = WC()->shipping->load_shipping_methods();
-        }
+        // Format:  $shipping_methods[method_id] => shipping_method_object
+        // where methods_id is e.g. flat_rate, free_shiping, local_pickup, etc
+        $shipping_methods = WC()->shipping->load_shipping_methods();
 
         foreach ($shipping_methods as $id => $shipping_method) {
             if (isset($shipping_method->enabled) && 'yes' === $shipping_method->enabled) {
@@ -135,10 +108,10 @@ class Shipping
         $zones = array();
 
         // Rest of the World zone
-        $zone = new \WC_Shipping_Zone();
-        $zones[ $zone->get_id() ] = $zone->get_data();
-        $zones[ $zone->get_id() ]['formatted_zone_location'] = $zone->get_formatted_location();
-        $zones[ $zone->get_id() ]['shipping_methods'] = $zone->get_shipping_methods();
+        $zone                                              = new \WC_Shipping_Zone();
+        $zones[$zone->get_id()]                            = $zone->get_data();
+        $zones[$zone->get_id()]['formatted_zone_location'] = $zone->get_formatted_location();
+        $zones[$zone->get_id()]['shipping_methods']        = $zone->get_shipping_methods();
 
         // Add user configured zones
         $zones = array_merge($zones, \WC_Shipping_Zones::get_zones());
@@ -151,7 +124,7 @@ class Shipping
         foreach ($zones as $zone) {
             foreach ($zone['shipping_methods'] as $instance_id => $shipping_method) {
                 // Zone names are converted to all lower-case and spaces replaced with
-                $shipping_methods[ $shipping_method->id.'_'.$instance_id ] = $shipping_method;
+                $shipping_methods[$shipping_method->id . '_' . $instance_id] = $shipping_method;
             }
         }
 
@@ -167,10 +140,10 @@ class Shipping
             $shipping_methods = $this->getActiveShippingMethods();
 
             foreach ($shipping_methods as $method_id => $plugin_id) {
-                $setting = get_option($plugin_id.$method_id.'_settings');
+                $setting = get_option($plugin_id . $method_id . '_settings');
 
                 if ($setting && isset($setting['title'])) {
-                    pll_register_string($plugin_id.$method_id.'_shipping_method', $setting['title'], __('Woocommerce Shipping Methods', 'woo-poly-integration'));
+                    pll_register_string($plugin_id . $method_id . '_shipping_method', $setting['title'], __('Woocommerce Shipping Methods', 'woo-poly-integration'));
                 }
             }
         }
@@ -218,4 +191,5 @@ class Shipping
 
         return $translated_implode;
     }
+
 }

@@ -19,6 +19,13 @@ use Hyyan\WPI\Tools\FlashMessages;
  */
 class Plugin
 {
+        
+    /** Required woocommerce version */
+    const WOOCOMMERCE_VERSION = '3.0.0';
+    
+    /** Required polylang version */
+    const POLYLANG_VERSION = '2.0.0';
+    
     /**
      * Construct the plugin.
      */
@@ -89,7 +96,8 @@ class Plugin
     {
         $polylang = false;
         $woocommerce = false;
-        /* check polylang plugin  * */
+        
+        /* check polylang plugin */
         if (
             (
                 is_plugin_active('polylang/polylang.php') ||
@@ -102,14 +110,18 @@ class Plugin
         ) {
             $polylang = true;
         }
-        /* check woocommerce plugin * */
+        
+        /* check woocommerce plugin */
         if (
                is_plugin_active('woocommerce/woocommerce.php') ||
                is_plugin_active_for_network('woocommerce/woocommerce.php')
           ) {
             $woocommerce = true;
         }
-        return $polylang && $woocommerce;
+        
+        
+        return  ($polylang && Utilities::polylangVersionCheck(self::POLYLANG_VERSION)) &&
+                ($woocommerce && Utilities::woocommerceVersionCheck(self::WOOCOMMERCE_VERSION) );
     }
 
     /**
