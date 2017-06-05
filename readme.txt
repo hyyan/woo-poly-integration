@@ -121,6 +121,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == 1.0.1 ==
 Added Documentation links to new wiki Documentation pages
+Added minified javascript (enable SCRIPT_DEBUG to use unminified versions)
 Fixes #174 Error in autofill of missing translations of parent category
 Fixes #175 WooCommerce doesn't pass loop name for some shortcodes
 Fixes #10  Initial setup issues if Polylang is not yet configured

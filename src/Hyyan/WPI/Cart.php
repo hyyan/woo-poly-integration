@@ -213,8 +213,9 @@ class Cart
     {
         /* remove the orginal wc-cart-fragments.js and register ours */
         wp_deregister_script('wc-cart-fragments');
+        $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
         wp_enqueue_script(
-                'wc-cart-fragments', plugins_url('public/js/Cart.js', Hyyan_WPI_DIR), array('jquery', 'jquery-cookie'), Plugin::getVersion(), true
+                'wc-cart-fragments', plugins_url('public/js/Cart' . $suffix . '.js', Hyyan_WPI_DIR), array('jquery', 'jquery-cookie'), Plugin::getVersion(), true
         );
     }
     

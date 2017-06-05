@@ -328,11 +328,12 @@ class Variable
         });
 
         add_action('admin_enqueue_scripts', function () {
+            $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
             wp_enqueue_script('jquery-ui-core');
             wp_enqueue_script('jquery-effects-core');
             wp_enqueue_script('jquery-ui-dialog');
             wp_enqueue_script(
-                    'woo-poly-variables', plugins_url('public/js/Variables.js', Hyyan_WPI_DIR), array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'), \Hyyan\WPI\Plugin::getVersion(), true
+                    'woo-poly-variables', plugins_url('public/js/Variables' . $suffix . '.js', Hyyan_WPI_DIR), array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'), \Hyyan\WPI\Plugin::getVersion(), true
             );
         }, 100);
     }
