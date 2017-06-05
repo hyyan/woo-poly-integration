@@ -15,7 +15,12 @@ if (!defined('ABSPATH')) {
             which aims to fill the gap between
             <a href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>
             and <a href="https://wordpress.org/plugins/polylang/">Polylang</a>', 'woo-poly-integration'
-        )
+        );
+        echo('. ');
+        _e('For more information please see:', 'woo-poly-integration');
+        echo(' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki">');
+        _e('documentation pages', 'woo-poly-integration');
+        echo('</a>.');
         ?>
         <br><br>
 
