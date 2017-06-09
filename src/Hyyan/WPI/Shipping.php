@@ -85,7 +85,7 @@ class Shipping
 
         // Format:  $shipping_methods[method_id] => shipping_method_object
         // where methods_id is e.g. flat_rate, free_shiping, local_pickup, etc
-        $shipping_methods = WC()->shipping->load_shipping_methods();
+        $shipping_methods = $this->getZonesShippingMethods();
 
         foreach ($shipping_methods as $id => $shipping_method) {
             if (isset($shipping_method->enabled) && 'yes' === $shipping_method->enabled) {
