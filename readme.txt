@@ -123,6 +123,10 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == 1.0.1 ==
 
+* Fixes #186 Shipping Method translation regression from 1.0.1
+
+== 1.0.1 ==
+
 * Fixes #170 when WooCommerce 3.0.8+ active, product variation titles corrected in cart and orders
 * Added Documentation links to new wiki Documentation pages
 * Added minified javascript (enable SCRIPT_DEBUG to use unminified versions)
