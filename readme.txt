@@ -3,7 +3,7 @@ Contributors: hyyan, decarvalhoaa, jonathanmoorebcsorg
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.7
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -121,9 +121,11 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog ==
 
-== 1.0.1 ==
+== 1.0.2 ==
 
+* Fixes #184 Stock update incorrect if customer switches language while checking out 
 * Fixes #186 Shipping Method translation regression from 1.0.1
+* Fixes #188 When translating Variations, code tries to create copies of untranslated terms
 
 == 1.0.1 ==
 

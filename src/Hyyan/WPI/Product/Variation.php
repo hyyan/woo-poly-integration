@@ -302,7 +302,7 @@ class Variation
                                     $translated[] = get_term_by('id', $translated_term, $tax)->slug;
                                 } else {
                                     // Attribute term has no translation
-                                    $result=Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
+                                    $result=(pll_is_translated_taxonomy($tax)) ? Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false) : false;
                                     if ($result) {
                                         $translated[] = $result;
                                     } else {

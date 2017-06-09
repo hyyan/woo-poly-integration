@@ -1,3 +1,9 @@
+### 1.0.2
+
+* Fixes #184 Stock update incorrect if customer switches language while checking out 
+* Fixes #186 Shipping Method translation regression from 1.0.1
+* Fixes #188 When translating Variations, code tries to create copies of untranslated terms
+
 ### 1.0.1
 
 * Fixes #170 when WooCommerce 3.0.8+ active, product variation titles corrected in cart and orders

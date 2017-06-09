@@ -52,9 +52,9 @@ class Stock
         $items = $order->get_items();
 
         /* Reduce stock */
-                    foreach ($items as $item) {
-                        $this->change($item, self::STOCK_REDUCE_ACTION);
-                    }
+        foreach ($items as $item) {
+            $this->change($item, self::STOCK_REDUCE_ACTION);
+        }
     }
 
     /**
@@ -89,23 +89,28 @@ protected function change(\WC_Order_Item_Product $item, $action = self::STOCK_RE
 {
     $productID = Utilities::get_order_item_productid($item);
     $productObject = wc_get_product($productID);
-    $productLang = pll_get_post_language($productID);
-
+    //$productLang = pll_get_post_language($productID); //#184
+    $orderLang = pll_get_post_language($item->get_order_id());
     $variationID = Utilities::get_order_item_variationid($item);
 
         /* Handle Products */
-        if ($productObject && $productLang) {
+        if ($productObject && $orderLang) {
 
             /* Get the translations IDS */
             $translations = Utilities::getProductTranslationsArrayByObject(
                             $productObject
             );
 
-            /* Remove the current product from translation array */
-            unset($translations[$productLang]);
 
             $isManageStock = $productObject->managing_stock();
             $isVariation = $variationID && $variationID > 0;
+
+            //in 3.0.8 at least, current lang item must not be removed from array if is variation
+            if ($isManageStock && (!$isVariation)) {
+                /* Remove the current product from translation array */
+                unset($translations[$orderLang]);
+            }
+
             $method = ($action === self::STOCK_REDUCE_ACTION) ?
                     'decrease' :
                     'increase';
