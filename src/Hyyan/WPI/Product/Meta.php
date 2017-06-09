@@ -612,7 +612,7 @@ class Meta
         foreach (static::getProductMetaToCopy(array(), false) as $group) {
             $metas = array_merge($metas, $group['metas']);
         }
-        return array_values(array_diff($metas, static::getProductMetaToCopy()));
+        return apply_filters( HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER, array_values(array_diff($metas, static::getProductMetaToCopy())) );
     }
 
     /**

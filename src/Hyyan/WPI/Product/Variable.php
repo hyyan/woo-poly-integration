@@ -288,7 +288,10 @@ class Variable
     public function extendFieldsLockerSelectors(array $selectors)
     {
         //FIX: #128 allow variable product description to be translated
-                $selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
+
+	    $variable_exclude = apply_filters( HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER, array( '[name^="variable_description"]' ) );
+
+	    $selectors[] = '#variable_product_options :input:not(' . implode( ',', $variable_exclude ) . ')';
         return $selectors;
     }
 

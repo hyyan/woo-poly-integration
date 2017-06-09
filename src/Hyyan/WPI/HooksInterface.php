@@ -54,6 +54,13 @@ interface HooksInterface
      */
     const FIELDS_LOCKER_SELECTORS_FILTER = 'woo-poly.fieldsLockerSelectors';
 
+	/**
+	 * Fields Locker Variable Exclude Selectors Filter.
+	 *
+	 * This filter may be used to exclude some variation attributes from being locked.
+	 */
+	const FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER = 'woo-poly.fieldsLockerVariableExcludeSelectors';
+
     /**
      * Product Sync Category Custom Fields Action.
      *
@@ -183,4 +190,79 @@ interface HooksInterface
      * </code>
      */
     const GATEWAY_LOAD_EXTENTION = 'woo-poly.gateway.loadClassExtention.';
+
+	/**
+	 * Product Variation Copy Meta Action.
+	 *
+	 * This action gets fired as soon as variation meta is being copied.
+	 */
+	const PRODUCT_VARIATION_COPY_META_ACTION = 'woo-poly.product.variation.copyMeta';
+
+	/**
+	 * Product Disabled Meta Sync Filter.
+	 *
+	 * The filter is fired while excluding certain meta from being handled by PolyLang.
+	 *
+	 * The filter receives one parameter which is the meta array
+	 *
+	 * for instance :
+	 * <code>
+	 * add_filter(Hyyan\WPI\HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER,function($meta=array()) {
+	 *
+	 *      // do whatever you want
+	 *
+	 *      return $meta;
+	 * });
+	 * </code>
+	 */
+	const PRODUCT_DISABLED_META_SYNC_FILTER = 'woo-poly.product.disabledMetaSync';
+
+	/**
+	 * Emails Translatable Filter.
+	 *
+	 * This filter may be used to support translation for custom email templates (ids).
+	 */
+	const EMAILS_TRANSLATABLE_FILTER = 'woo-poly.Emails.translatableEmails';
+
+	/**
+	 * Emails Default Settings Filter.
+	 *
+	 * This filter may be used to adjust default settings for email templates.
+	 */
+	const EMAILS_DEFAULT_SETTINGS_FILTER = 'woo-poly.Emails.defaultSettings';
+
+	/**
+	 * Emails Translatable Action.
+	 *
+	 * This action fires after our plugin has added filters to translate subjects and headings for email.
+	 */
+	const EMAILS_TRANSLATION_ACTION = 'woo-poly.Emails.translation';
+
+	/**
+	 * Emails Switch Language Action.
+	 *
+	 * This filter fires before the language is being switched so that plugins may unload their language file.
+	 */
+	const EMAILS_SWITCH_LANGUAGE_ACTION = 'woo-poly.Emails.switchLanguage';
+
+	/**
+	 * Emails After Switch Language Action.
+	 *
+	 * This filter fires after the language has been switched so that plugins may reload their language file.
+	 */
+	const EMAILS_AFTER_SWITCH_LANGUAGE_ACTION = 'woo-poly.Emails.afterSwitchLanguage';
+
+	/**
+	 * Emails Order Find Replace Find Filter.
+	 *
+	 * This filter may be used to support custom variables in subjects/headings (find).
+	 */
+	const EMAILS_ORDER_FIND_REPLACE_FIND_FILTER = 'woo-poly.Emails.orderFindReplaceFind';
+
+	/**
+	 * Emails Order Find Replace Replace Filter.
+	 *
+	 * This filter may be used to support custom variables in subjects/headings (replace).
+	 */
+	const EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER = 'woo-poly.Emails.orderFindReplaceReplace';
 }
