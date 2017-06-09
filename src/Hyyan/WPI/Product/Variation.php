@@ -10,6 +10,7 @@
 
 namespace Hyyan\WPI\Product;
 
+use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Product\Meta;
 
 /**
@@ -329,5 +330,7 @@ class Variation
         
         //add shipping class not included in metas as now a taxonomy
         $this->syncShippingClass($from, $to);
+
+        do_action( HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION, $from, $to, $this->from, $this->to );
     }
 }
