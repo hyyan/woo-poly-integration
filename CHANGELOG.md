@@ -1,5 +1,6 @@
 ### 1.0.2
 
+* Fixes #190 Products Quick Edit now synchronizes translations
 * Fixes #187 Wordpress 4.8 breaks translation for new Variation Products
 * Fixes #184 Stock update incorrect if customer switches language while checking out 
 * Fixes #186 Shipping Method translation regression from 1.0.1

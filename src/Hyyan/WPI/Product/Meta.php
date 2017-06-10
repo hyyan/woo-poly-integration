@@ -34,6 +34,9 @@ class Meta
         add_action(
             'current_screen', array($this, 'syncProductsMeta')
         );
+        add_action(
+            'woocommerce_product_quick_edit_save', array($this, 'saveQuickEdit')
+        );
 
         // suppress "Invalid or duplicated SKU." error message when SKU syncronization is enabled
         add_filter(
@@ -42,6 +45,21 @@ class Meta
         );
     }
 
+
+    /**
+     * catch save from QuickEdit
+     *
+	 * @param WC_Product $product
+     */
+    public function saveQuickEdit(\WC_Product $product)
+    {
+        // sync product meta with polylang
+        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        
+        //some taxonomies can actually be changed in the QuickEdit
+        $this->syncTaxonomiesAndProductAttributes($product->get_id(), $product, true);
+    }
+    
     /**
      * Sync product meta.
      *
@@ -87,7 +105,9 @@ class Meta
 
             // Add the '_translation_porduct_type' meta, for the case where
             // the product was created before plugin acivation.
-            $this->addProductTypeMeta($ID);
+            if ($ID) {
+                $this->addProductTypeMeta($ID);
+            }
         }
 
         // disable fields edit for translation
