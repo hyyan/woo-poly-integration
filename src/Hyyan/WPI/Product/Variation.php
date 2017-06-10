@@ -11,6 +11,7 @@
 namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\Product\Meta;
+use Hyyan\WPI\Utilities;
 
 /**
  * Variation.
@@ -53,6 +54,7 @@ class Variation
      */
     public function duplicate()
     {
+        //the variations of the product in the from product language
         $fromVariation = $this->from->get_available_variations();
 
         if (empty($fromVariation)) {
@@ -66,11 +68,7 @@ class Variation
              */
 
             foreach ($fromVariation as $variation) {
-                if (
-                        !metadata_exists(
-                                'post', $variation['variation_id'], self::DUPLICATE_KEY
-                        )
-                ) {
+                if (! metadata_exists('post', $variation['variation_id'], self::DUPLICATE_KEY)) {
                     update_post_meta(
                             $variation['variation_id'], self::DUPLICATE_KEY, $variation['variation_id']
                     );
@@ -99,7 +97,7 @@ class Variation
                     case 1:
                         // update
                         $this->update(
-                                wc_get_product($variation['variation_id']), $posts[0], $variation
+                            wc_get_product($variation['variation_id']), $posts[0], $variation
                         );
                         break;
                     case 0:
@@ -127,27 +125,27 @@ class Variation
     public static function getRelatedVariation($variatonID, $returnIDS = false)
     {
         $result = array();
-        $poinTo = get_post_meta(
-                $variatonID, self::DUPLICATE_KEY, true
-        );
 
-        if ($poinTo) {
-            $result = get_posts(array(
-                'meta_key' => self::DUPLICATE_KEY,
-                'meta_value' => $poinTo,
-                'post_type' => 'product_variation',
-            ));
+        //previous version of code using get_post_meta() was filtered at runtime by Polylang
+        //even when adding 'suppress_filters' => true, so there was no way to adjust stock
+        //on translations when processing new order
+        //it also did not return all versions of post for deletion
+        global $wpdb;
+        $postids=$wpdb->get_col( "select post_id from wp_postmeta where meta_key='" . 
+            self::DUPLICATE_KEY .  "' and meta_value=" . $variatonID); 
 
             if (true === $returnIDS) {
-                $IDS = array();
-                foreach ($result as $post) {
-                    $IDS[] = $post->ID;
+            return $postids;
+        } else {
+            $result = array();
+            foreach ($postids as $postid){
+                $product = wc_get_product($postid);
+                if ($product){
+                    $result[]=$product;
                 }
-                $result = $IDS;
             }
+            return $result;
         }
-
-        return $result;
     }
 
     /**
@@ -316,7 +314,7 @@ class Variation
                                         // and create the translation
                                         $fromLang = pll_get_post_language($from);
                                         $term = pll_get_term($term_id, $fromLang); 
-                                        $result=Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
+                                        $result = Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
                                         if ($result) {
                                             $translated[] = $result;
                                         } else {
@@ -326,7 +324,7 @@ class Variation
                                 } else {
                                     $translated[] = $termSlug;
                                 }
-                            }else{
+                            } else {
                                 $translated[] = $termSlug;                                
                             }
                         }

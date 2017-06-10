@@ -96,19 +96,13 @@ class Variable
             return false;
         }
 
-        $langs = pll_languages_list();
-
-        foreach ($langs as $lang) {
-            $variation = new Variation(
-                    $from, Utilities::getProductTranslationByObject($product, $lang)
-            );
-
-            remove_action('save_post', array($this, __FUNCTION__), 10);
-
+        remove_action('save_post', array($this, __FUNCTION__), 10);
+        $translations = Utilities::getProductTranslationsArrayByObject($from, true);
+        foreach ($translations as $translation){
+            $variation = new Variation($from, wc_get_product($translation));
             $variation->duplicate();
-
-            add_action('save_post', array($this, __FUNCTION__), 10, 3);
         }
+        add_action('save_post', array($this, __FUNCTION__), 10, 3);
     }
     
     /**
