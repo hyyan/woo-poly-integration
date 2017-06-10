@@ -295,22 +295,39 @@ class Variation
                         $tax = str_replace('attribute_', '', $key);
     
                         foreach ($metas_from[$key] as $termSlug) {
-                            $term = get_term_by('slug', $termSlug, $tax);
-                            if ($term) {
-                                $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->get_id());
-                                if ($translated_term = pll_get_term($term->term_id, $lang)) {
-                                    $translated[] = get_term_by('id', $translated_term, $tax)->slug;
-                                } else {
-                                    // Attribute term has no translation
-                                    $result=(pll_is_translated_taxonomy($tax)) ? Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false) : false;
-                                    if ($result) {
-                                        $translated[] = $result;
+                            if (pll_is_translated_taxonomy($tax)){
+                                //code needs to get term by slug but since WP4.8 
+                                //Polylang filters this by new language so it isn't found
+                                //$term = get_term_by('slug', $termSlug, $tax);          
+                                //following sequence retrieves from db for translated tax only
+                                global $wpdb;
+                                $term_id = $wpdb->get_var( " SELECT t.term_id FROM wp_terms AS t "
+                                    . "INNER JOIN wp_term_taxonomy AS tt ON (t.term_id = tt.term_id) "
+                                    . "WHERE tt.taxonomy IN ('" . $tax . 
+                                    "') AND t.slug='" . $termSlug . "' limit 1" );
+                                if ($term_id) {
+                                    //ok we got a term to translate, now get translation if available
+                                    $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->get_id());
+                                    $translated_term = pll_get_term($term_id, $lang);
+                                    if ($translated_term) {
+                                        $translated[] = get_term_by('id', $translated_term, $tax)->slug;
                                     } else {
-                                        $translated[] = $term->slug;
+                                        // Attribute term has no translation, so get the previous term
+                                        // and create the translation
+                                        $fromLang = pll_get_post_language($from);
+                                        $term = pll_get_term($term_id, $fromLang); 
+                                        $result=Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
+                                        if ($result) {
+                                            $translated[] = $result;
+                                        } else {
+                                            $translated[] = $termSlug;
+                                        }
                                     }
+                                } else {
+                                    $translated[] = $termSlug;
                                 }
-                            } else {
-                                $translated[] = $termSlug;
+                            }else{
+                                $translated[] = $termSlug;                                
                             }
                         }
                         $metas_from[$key] = $translated;

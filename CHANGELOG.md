@@ -1,5 +1,6 @@
 ### 1.0.2
 
+* Fixes #187 Wordpress 4.8 breaks translation for new Variation Products
 * Fixes #184 Stock update incorrect if customer switches language while checking out 
 * Fixes #186 Shipping Method translation regression from 1.0.1
 * Fixes #188 When translating Variations, code tries to create copies of untranslated terms

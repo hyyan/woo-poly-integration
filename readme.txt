@@ -1,9 +1,9 @@
 === Hyyan WooCommerce Polylang Integration===
-Contributors: hyyan, decarvalhoaa, jonathanmoorebcsorg
+Contributors: hyyan, jonathanmoorebcsorg, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 4.7
-Stable tag: 1.0.1
+Tested up to: 4.8
+Stable tag: 1.0.2
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -123,6 +123,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == 1.0.2 ==
 
+* Fixes #187 Wordpress 4.8 breaks translation for new Variation Products
 * Fixes #184 Stock update incorrect if customer switches language while checking out 
 * Fixes #186 Shipping Method translation regression from 1.0.1
 * Fixes #188 When translating Variations, code tries to create copies of untranslated terms
@@ -342,3 +343,7 @@ WooCommerce 3 has a large number of breaking changes which may and do break othe
 2. upgrade WooCommerce and this plugin
 3. run WooCommerce database upgrade following the wooCommerce prompt
 4. reactivate this plugin
+
+= 1.0.2 =
+This release includes a change for Wordpress 4.8 compatibility and is tested with WooCommerce 3.0.8.
+If you are using WooCommerce 3.x please update immediately.
