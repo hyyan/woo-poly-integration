@@ -89,6 +89,8 @@ class Emails
             add_filter('woocommerce_email_footer_text', array($this, 'translateCommonString'));
             add_filter('woocommerce_email_from_address', array($this, 'translateCommonString'));
             add_filter('woocommerce_email_from_name', array($this, 'translateCommonString'));
+
+            do_action( HooksInterface::EMAILS_TRANSLATION_ACTION, $this );
         }
     }
 
@@ -98,7 +100,7 @@ class Emails
      */
     public function registerEmailStringsForTranslation()
     {
-        $this->emails = array(
+        $this->emails = apply_filters( HooksInterface::EMAILS_TRANSLATABLE_FILTER, array(
             'new_order',
             'customer_processing_order',
             'customer_refunded_order',
@@ -110,9 +112,9 @@ class Emails
             'customer_on_hold_order',
             'cancelled_order',
             'failed_order',
-        );
+        ), $this );
 
-        $this->default_settings = array(
+        $this->default_settings = apply_filters( HooksInterface::EMAILS_DEFAULT_SETTINGS_FILTER, array(
             'new_order_subject'                             => __('[{site_title}] New customer order ({order_number}) - {order_date}', 'woocommerce'),
             'new_order_heading'                             => __('New customer order', 'woocommerce'),
             'customer_processing_order_subject'             => __('Your {site_title} order receipt from {order_date}', 'woocommerce'),
@@ -141,7 +143,7 @@ class Emails
             'cancelled_order_heading'                       => __('Cancelled order', 'woocommerce'),
             'failed_order_subject'                          => __('[{site_title}] Failed order ({order_number})', 'woocommerce'),
             'failed_order_heading'                          => __('Failed order', 'woocommerce'),
-        );
+        ), $this );
 
         // Register strings for translation and hook filters
         foreach ($this->emails as $email) {
@@ -200,7 +202,6 @@ class Emails
     {
         if (function_exists('pll_register_string')) {
             $settings = get_option('woocommerce_' . $email_type . '_settings');
-
             if ($settings) {
                 if (isset($settings['subject' . $sufix]) && isset($settings['heading' . $sufix])) {
                     pll_register_string('woocommerce_' . $email_type . '_subject' . $sufix, $settings['subject' . $sufix], __('Woocommerce Emails', 'woo-poly-integration'));
@@ -694,7 +695,8 @@ class Emails
         }
 
         if ($order) {
-            $find    = array();
+
+        	$find    = array();
             $replace = array();
 
             $find['order-date']   = '{order_date}';
@@ -705,8 +707,7 @@ class Emails
             $replace['order-number'] = $order->get_order_number();
             $replace['site_title']   = get_bloginfo('name');
 
-
-            $string = str_replace($find, $replace, $string);
+            $string = str_replace( apply_filters( HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $order ), apply_filters( HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $order ), $string);
         }
         return $string;
     }
@@ -766,7 +767,9 @@ class Emails
             //$current_language = pll_current_language( 'locale' );
             // unload plugin's textdomains
             unload_textdomain('default');
-            unload_textdomain('woocommerce');
+            unload_textdomain('woocommerce');#
+
+	        do_action( HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION );
 
             // set locale to order locale
             $locale                    = apply_filters('locale', $language);
@@ -784,7 +787,10 @@ class Emails
 
             // (re-)load plugin's textdomain with order locale
             load_default_textdomain($language);
+
             $woocommerce->load_plugin_textdomain();
+	        do_action( HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION );
+
             $wp_locale = new \WP_Locale();
         }
     }
