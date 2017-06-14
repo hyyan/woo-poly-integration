@@ -128,6 +128,8 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * Fixes #184 Stock update incorrect if customer switches language while checking out 
 * Fixes #186 Shipping Method translation regression from 1.0.1
 * Fixes #188 When translating Variations, code tries to create copies of untranslated terms
+* Fixes #182 email translation extension hooks thanks to @vendidero/WooCommerce Germanized
+* Fixes #181 additional filters in Meta synchronization thanks to @vendidero/WooCommerce Germanized
 
 == 1.0.1 ==
 
