@@ -170,7 +170,8 @@ class Plugin
      */
     protected function registerCore()
     {
-        new Emails();
+
+		new Emails();
         new Admin\Settings();
         new Cart();
         new Login();
@@ -191,7 +192,6 @@ class Plugin
         new Breadcrumb();
         new Tax();
     }
-    
 
 	/**
 	 * Show row meta on the plugin screen.
