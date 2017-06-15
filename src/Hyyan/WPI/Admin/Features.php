@@ -143,6 +143,15 @@ class Features extends AbstractSettings
                     '2' => __('Translate Source', 'woo-poly-integration') . ' (coming soon..  until available will use Copy Source) ',
                 )
             ),
+            array(
+                'name' => 'localenumbers',
+                'type' => 'checkbox',
+                'default' => 'on',
+                'label' => __('Use locale number formats', 'woo-poly-integration'),
+                'desc' => __(
+                        'Format numbers according to the convention for current language.', 'woo-poly-integration'
+                ),
+            ),
         );
     }
 }
