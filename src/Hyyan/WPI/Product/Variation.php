@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
  * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
@@ -7,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
@@ -24,17 +22,14 @@ use Hyyan\WPI\Utilities;
 class Variation
 {
     const DUPLICATE_KEY = '_point_to_variation';
-
     /**
      * @var \WC_Product_Variable
      */
     protected $from;
-
     /**
      * @var \WC_Product
      */
     protected $to;
-
     /**
      * Construct object.
      *
@@ -47,7 +42,6 @@ class Variation
         $this->from = $from;
         $this->to = $to;
     }
-
     /**
      * Handle variation duplicate.
      *
@@ -57,17 +51,13 @@ class Variation
     {
         //the variations of the product in the from product language
         $fromVariation = $this->from->get_available_variations();
-
         if (empty($fromVariation)) {
             return false;
         }
-
         if ($this->to->get_id() === $this->from->get_id()) {
-
             /*
              * In such a case just add the duplicate meta
              */
-
             foreach ($fromVariation as $variation) {
                 if (! metadata_exists('post', $variation['variation_id'], self::DUPLICATE_KEY)) {
                     update_post_meta(
@@ -76,24 +66,19 @@ class Variation
                 }
             }
         } else {
-
             /* This could be a very long operation */
             set_time_limit(0);
-
             foreach ($fromVariation as $variation) {
-
                 /*
                  * First we check if the "to" product contains the duplicate meta
                  * key to find out if we have to update or insert
                  */
-
                 $posts = get_posts(array(
                     'meta_key' => self::DUPLICATE_KEY,
                     'meta_value' => $variation['variation_id'],
                     'post_type' => 'product_variation',
                     'post_parent' => $this->to->get_id(),
                 ));
-
                 switch (count($posts)) {
                     case 1:
                         // update
@@ -110,12 +95,10 @@ class Variation
                         break;
                 }
             }
-
             /* Restor original timeout */
             set_time_limit(ini_get('max_execution_time'));
         }
     }
-
     /**
      * Get array of variations IDS which point to the given variation ID.
      *
@@ -161,7 +144,6 @@ class Variation
             wp_delete_post($post->ID, true);
         }
     }
-
     /**
      * Create new variation.
      *
@@ -173,21 +155,17 @@ class Variation
         // Add the duplicate meta to the default language product variation,
         // just in case the product was created before plugin acivation.
         $this->addDuplicateMeta($variation->get_id());
-
         $data = (array) get_post($variation->get_id());
         unset($data['ID']);
         $data['post_parent'] = $this->to->get_id();
         $ID = wp_insert_post($data);
-
         if ($ID) {
             update_post_meta(
                     $ID, self::DUPLICATE_KEY, $metas['variation_id']
             );
-
             $this->copyVariationMetas($variation->get_id(), $ID);
         }
     }
-
     /**
      * Update variation product from given post object.
      *
@@ -199,7 +177,6 @@ class Variation
     {
         $this->copyVariationMetas($variation->get_id(), $post->ID);
     }
-    
     /**
      * Add duplicate meta key to products created before plugin activation.
      *
@@ -209,13 +186,11 @@ class Variation
     {
         if ($ID) {
             $meta = get_post_meta($ID, self::DUPLICATE_KEY);
-
             if (empty($meta)) {
                 update_post_meta($ID, self::DUPLICATE_KEY, $ID);
             }
         }
     }
-
     /**
      * Sync Product Shipping Class.
      *
@@ -235,7 +210,7 @@ class Variation
                 if ($shipping_class) {
                     $shipping_terms = get_term_by('slug', $shipping_class, 'product_shipping_class');
                     if ($shipping_terms) {
-                        wp_set_post_terms($to, array( $shipping_terms->term_id ), 'product_shipping_class');
+                        wp_set_post_terms($to, array($shipping_terms->term_id), 'product_shipping_class');
                     }
                 } else {
                     //if no shipping class found this would mean "Same as parent"
@@ -243,12 +218,11 @@ class Variation
                     //however get_shipping_class() actually gets the parent value,
                     //so this code shouldn't be executed,
                     //instead the parent value will be copied to variation
-                    wp_set_post_terms($to, array(  ), 'product_shipping_class');
+                    wp_set_post_terms($to, array(), 'product_shipping_class');
                 }
             }
         }
     }
-
     /**
      * Copy variation meta.
      *
@@ -257,19 +231,18 @@ class Variation
      *
      * @param int $from product variation ID
      * @param int $to   product variation ID
+     * 
+     * @return boolean false if something went wrong
      */
     protected function copyVariationMetas($from, $to)
     {
         /* copy or synchronize post metas and allow plugins to do the same */
         $metas_from     = get_post_custom($from);
         $metas_to       = get_post_custom($to);
-
         /* get public and protected meta keys */
         $keys           = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
-        
         /* metas disabled for sync */
         $metas_nosync   = Meta::getDisabledProductMetaToCopy();
-
         /*
          * _variation_description meta is a text-based string and generally needs to be translated.
          * _variation_description meta is copied from product in default language to the translations
@@ -279,7 +252,6 @@ class Variation
         if (isset($metas_to['_variation_description'])) {
             $metas_nosync[] = '_variation_description';
         }
-        
         /* synchronize */
         foreach ($keys as $key) {
             if (!in_array($key, $metas_nosync)) {
@@ -292,19 +264,11 @@ class Variation
                     if (substr($key, 0, 10) == 'attribute_') {
                         $translated = array();
                         $tax = str_replace('attribute_', '', $key);
-    
                         foreach ($metas_from[$key] as $termSlug) {
                             if (pll_is_translated_taxonomy($tax)){
-                                //code needs to get term by slug but since WP4.8 
-                                //Polylang filters this by new language so it isn't found
-                                //$term = get_term_by('slug', $termSlug, $tax);          
-                                //following sequence retrieves from db for translated tax only
-                                global $wpdb;
-                                $term_id = $wpdb->get_var( " SELECT t.term_id FROM wp_terms AS t "
-                                    . "INNER JOIN wp_term_taxonomy AS tt ON (t.term_id = tt.term_id) "
-                                    . "WHERE tt.taxonomy IN ('" . $tax . 
-                                    "') AND t.slug='" . $termSlug . "' limit 1" );
-                                if ($term_id) {
+                                $term = $this->getTermBySlug($tax, $termSlug);
+                                if ($term) {
+                                    $term_id = $term->term_id;
                                     //ok we got a term to translate, now get translation if available
                                     $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->get_id());
                                     $translated_term = pll_get_term($term_id, $lang);
@@ -313,9 +277,18 @@ class Variation
                                     } else {
                                         // Attribute term has no translation, so get the previous term
                                         // and create the translation
+                                        $result = false;
                                         $fromLang = pll_get_post_language($from);
-                                        $term = pll_get_term($term_id, $fromLang); 
-                                        $result = Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
+                                        if (! $fromLang) {
+                                            $fromLang = pll_get_post_language(wc_get_product($from)->get_parent_id());
+                                        }
+                                        if ($fromLang) {
+                                            $term = pll_get_term($term_id, $fromLang); 
+                                            if ($term) {
+                                                $term = get_term_by('id', $term, $tax);
+                                                $result = Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
+                                            }
+                                        }
                                         if ($result) {
                                             $translated[] = $result;
                                         } else {
@@ -348,4 +321,34 @@ class Variation
 
         do_action( HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION, $from, $to, $this->from, $this->to );
     }
+    /**
+     * Get Term By Slug.
+     *
+     * Why not get_term_by method ?! since 4.8 we were unable to force polylang to
+     * fetch terms with the default language
+     *
+     * @param string $taxonomy taxonomy name
+     * @param string $value    term slug
+     *
+     * @return bool false if the term can not fetched , the term object otherwise
+     */
+    private function getTermBySlug($taxonomy, $value)
+    {
+        $query = array(
+            'get' => 'all',
+            'number' => 1,
+            'taxonomy' => $taxonomy,
+            'update_term_meta_cache' => false,
+            'orderby' => 'none',
+            'suppress_filter' => true,
+            'slug' => $value,
+            'lang' => pll_default_language(),
+        );
+        $terms = get_terms($query);
+        if (is_wp_error($terms) || empty($terms)) {
+            return false;
+        }
+        $term = array_shift($terms);
+        return get_term($term, $taxonomy);
+  }
 }

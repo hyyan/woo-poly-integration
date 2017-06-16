@@ -72,9 +72,13 @@ class Variable
             return false;
         }
 
+        if ($product->get_parent_id()){
+            $product = wc_get_product($product->get_parent_id());
+        }
+        
         $from = null;
 
-        if (pll_get_post_language($ID) == pll_default_language()) {
+        if (pll_get_post_language($product->get_id()) == pll_default_language()) {
             $from = $product;
         } else {
             if (isset($_GET['from_post'])) {
@@ -96,6 +100,17 @@ class Variable
             return false;
         }
 
+        $langs = pll_languages_list();
+        foreach ($langs as $lang) {
+            remove_action('save_post', array($this, __FUNCTION__), 10);
+            $variation = new Variation(
+                    $from, Utilities::getProductTranslationByObject($product, $lang)
+            );
+            $variation->duplicate();
+            add_action('save_post', array($this, __FUNCTION__), 10, 3);
+        }
+        
+/*        
         remove_action('save_post', array($this, __FUNCTION__), 10);
         $translations = Utilities::getProductTranslationsArrayByObject($from, true);
         foreach ($translations as $translation){
@@ -103,6 +118,8 @@ class Variable
             $variation->duplicate();
         }
         add_action('save_post', array($this, __FUNCTION__), 10, 3);
+ * 
+ */
     }
     
     /**
