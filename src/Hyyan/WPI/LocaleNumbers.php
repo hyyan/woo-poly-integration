@@ -21,22 +21,9 @@ class LocaleNumbers
         add_filter('woocommerce_format_localized_decimal', array($this, 'getLocalizedDecimal'), 10, 2);
         //add_filter('woocommerce_format_localized_price', array($this, 'getLocalizedPrice'), 10, 2);
         
-        add_filter( 'product_attributes_type_selector', array( $this, 'add_attribute_type_number' ) );
     }
 
-	/**
-	 * Add extra attribute types
-	 *
-	 * @param array $types
-	 *
-	 * @return array
-	 */
-	public function add_attribute_type_number( $types ) {
-		$types[] = 'Number';
 
-		return $types;
-	}
-    
     /*
      * get localized getLocalizedDecimal 
      *
