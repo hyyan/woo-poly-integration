@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the hyyan/woo-poly-integration plugin.
  * (c) Hyyan Abo Fakher <hyyanaf@gmail.com>.
@@ -6,11 +7,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Product\Meta;
-use Hyyan\WPI\Utilities;
 
 /**
  * Variation.
@@ -21,15 +22,19 @@ use Hyyan\WPI\Utilities;
  */
 class Variation
 {
+
     const DUPLICATE_KEY = '_point_to_variation';
+
     /**
      * @var \WC_Product_Variable
      */
     protected $from;
+
     /**
      * @var \WC_Product
      */
     protected $to;
+
     /**
      * Construct object.
      *
@@ -42,6 +47,7 @@ class Variation
         $this->from = $from;
         $this->to = $to;
     }
+
     /**
      * Handle variation duplicate.
      *
@@ -59,7 +65,7 @@ class Variation
              * In such a case just add the duplicate meta
              */
             foreach ($fromVariation as $variation) {
-                if (! metadata_exists('post', $variation['variation_id'], self::DUPLICATE_KEY)) {
+                if (!metadata_exists('post', $variation['variation_id'], self::DUPLICATE_KEY)) {
                     update_post_meta(
                             $variation['variation_id'], self::DUPLICATE_KEY, $variation['variation_id']
                     );
@@ -83,7 +89,7 @@ class Variation
                     case 1:
                         // update
                         $this->update(
-                            wc_get_product($variation['variation_id']), $posts[0], $variation
+                                wc_get_product($variation['variation_id']), $posts[0], $variation
                         );
                         break;
                     case 0:
@@ -99,6 +105,7 @@ class Variation
             set_time_limit(ini_get('max_execution_time'));
         }
     }
+
     /**
      * Get array of variations IDS which point to the given variation ID.
      *
@@ -115,17 +122,17 @@ class Variation
         //on translations when processing new order
         //it also did not return all versions of post for deletion
         global $wpdb;
-        $postids=$wpdb->get_col( "select post_id from wp_postmeta where meta_key='" . 
-            self::DUPLICATE_KEY .  "' and meta_value=" . $variatonID); 
+        $postids = $wpdb->get_col("select post_id from wp_postmeta where meta_key='" .
+                self::DUPLICATE_KEY . "' and meta_value=" . $variatonID);
 
-            if (true === $returnIDS) {
+        if (true === $returnIDS) {
             return $postids;
         } else {
             $result = array();
-            foreach ($postids as $postid){
+            foreach ($postids as $postid) {
                 $product = wc_get_product($postid);
-                if ($product){
-                    $result[]=$product;
+                if ($product) {
+                    $result[] = $product;
                 }
             }
             return $result;
@@ -144,6 +151,7 @@ class Variation
             wp_delete_post($post->ID, true);
         }
     }
+
     /**
      * Create new variation.
      *
@@ -166,6 +174,7 @@ class Variation
             $this->copyVariationMetas($variation->get_id(), $ID);
         }
     }
+
     /**
      * Update variation product from given post object.
      *
@@ -177,6 +186,7 @@ class Variation
     {
         $this->copyVariationMetas($variation->get_id(), $post->ID);
     }
+
     /**
      * Add duplicate meta key to products created before plugin activation.
      *
@@ -191,6 +201,7 @@ class Variation
             }
         }
     }
+
     /**
      * Sync Product Shipping Class.
      *
@@ -223,6 +234,7 @@ class Variation
             }
         }
     }
+
     /**
      * Copy variation meta.
      *
@@ -237,12 +249,15 @@ class Variation
     protected function copyVariationMetas($from, $to)
     {
         /* copy or synchronize post metas and allow plugins to do the same */
-        $metas_from     = get_post_custom($from);
-        $metas_to       = get_post_custom($to);
+        $metas_from = get_post_custom($from);
+        $metas_to = get_post_custom($to);
+
         /* get public and protected meta keys */
-        $keys           = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
+        $keys = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
+
         /* metas disabled for sync */
-        $metas_nosync   = Meta::getDisabledProductMetaToCopy();
+        $metas_nosync = Meta::getDisabledProductMetaToCopy();
+
         /*
          * _variation_description meta is a text-based string and generally needs to be translated.
          * _variation_description meta is copied from product in default language to the translations
@@ -252,75 +267,98 @@ class Variation
         if (isset($metas_to['_variation_description'])) {
             $metas_nosync[] = '_variation_description';
         }
+
         /* synchronize */
         foreach ($keys as $key) {
-            if (!in_array($key, $metas_nosync)) {
-                /*
-                 * the synchronization process of multiple values custom fields is
-                 * easier if we delete all metas first
-                 */
-                delete_post_meta($to, $key);
-                if (isset($metas_from[$key])) {
-                    if (substr($key, 0, 10) == 'attribute_') {
-                        $translated = array();
-                        $tax = str_replace('attribute_', '', $key);
-                        foreach ($metas_from[$key] as $termSlug) {
-                            if (pll_is_translated_taxonomy($tax)){
-                                $term = $this->getTermBySlug($tax, $termSlug);
-                                if ($term) {
-                                    $term_id = $term->term_id;
-                                    //ok we got a term to translate, now get translation if available
-                                    $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->get_id());
-                                    $translated_term = pll_get_term($term_id, $lang);
-                                    if ($translated_term) {
-                                        $translated[] = get_term_by('id', $translated_term, $tax)->slug;
-                                    } else {
-                                        // Attribute term has no translation, so get the previous term
-                                        // and create the translation
-                                        $result = false;
-                                        $fromLang = pll_get_post_language($from);
-                                        if (! $fromLang) {
-                                            $fromLang = pll_get_post_language(wc_get_product($from)->get_parent_id());
-                                        }
-                                        if ($fromLang) {
-                                            $term = pll_get_term($term_id, $fromLang); 
-                                            if ($term) {
-                                                $term = get_term_by('id', $term, $tax);
-                                                $result = Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
-                                            }
-                                        }
-                                        if ($result) {
-                                            $translated[] = $result;
-                                        } else {
-                                            $translated[] = $termSlug;
-                                        }
-                                    }
-                                } else {
-                                    $translated[] = $termSlug;
-                                }
-                            } else {
-                                $translated[] = $termSlug;                                
-                            }
+
+            if (in_array($key, $metas_nosync) || !isset($metas_from[$key])) {
+                continue;
+            }
+
+            /*
+             * the synchronization process of multiple values custom fields is
+             * easier if we delete all metas first
+             */
+            delete_post_meta($to, $key);
+
+            if (substr($key, 0, 10) == 'attribute_') {
+
+                $translated = array();
+                $tax = str_replace('attribute_', '', $key);
+
+                foreach ($metas_from[$key] as $termSlug) {
+
+                    if (!pll_is_translated_taxonomy($tax)) {
+                        $translated[] = $termSlug;
+                        continue;
+                    }
+
+                    $term = $this->getTermBySlug($tax, $termSlug);
+
+                    if (!$term) {
+                        $translated[] = $termSlug;
+                        continue;
+                    }
+
+                    $term_id = $term->term_id;
+
+                    //ok we got a term to translate, now get translation if
+                    // available
+                    $lang = isset($_GET['new_lang']) ?
+                            esc_attr($_GET['new_lang']) :
+                            pll_get_post_language($this->to->get_id());
+
+                    $translated_term = pll_get_term($term_id, $lang);
+
+                    if ($translated_term) {
+                        $translated[] = get_term_by('id', $translated_term, $tax)->slug;
+                        continue;
+                    }
+
+                    // Attribute term has no translation, so get the previous term
+                    // and create the translation
+                    $result = false;
+                    $fromLang = pll_get_post_language($from) ?:
+                            pll_get_post_language(
+                                    wc_get_product($from)->get_parent_id()
+                    );
+
+                    if ($fromLang) {
+                        $term = pll_get_term($term_id, $fromLang);
+                        if ($term) {
+                            $term = get_term_by('id', $term, $tax);
+                            $result = Meta::createDefaultTermTranslation(
+                                            $tax, $term, $termSlug, $lang, false
+                            );
                         }
-                        $metas_from[$key] = $translated;
                     }
-                    foreach ($metas_from[$key] as $value) {
-                        /*
-                         * Important: always maybe_unserialize value coming from
-                         *            get_post_custom. See codex.
-                         */
-                        $value = maybe_unserialize($value);
-                        add_post_meta($to, $key, $value);
-                    }
+
+                    $translated[] = $result ? $result : $termSlug;
                 }
+
+                $metas_from[$key] = $translated;
+            }
+
+            foreach ($metas_from[$key] as $value) {
+
+                /*
+                 * Important: always maybe_unserialize value coming from
+                 *            get_post_custom. See codex.
+                 */
+                $value = maybe_unserialize($value);
+                add_post_meta($to, $key, $value);
             }
         }
-        
+
         //add shipping class not included in metas as now a taxonomy
         $this->syncShippingClass($from, $to);
 
-        do_action( HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION, $from, $to, $this->from, $this->to );
+        do_action(
+                HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION
+                , $from, $to, $this->from, $this->to
+        );
     }
+
     /**
      * Get Term By Slug.
      *
@@ -344,11 +382,16 @@ class Variation
             'slug' => $value,
             'lang' => pll_default_language(),
         );
+        
         $terms = get_terms($query);
+        
         if (is_wp_error($terms) || empty($terms)) {
             return false;
         }
+        
         $term = array_shift($terms);
+        
         return get_term($term, $taxonomy);
-  }
+    }
+
 }
