@@ -10,23 +10,64 @@ class LocaleNumbers
 {
 
     /**
-     * Construct object.
+     * Hook relevant WooCommerce filters to apply localisation according to Polylang locale.
      */
     public function __construct()
     {
+        //localise standard price formatting arguments
         add_filter('wc_get_price_decimal_separator', array($this, 'getLocaleDecimalSeparator'), 10, 1);
         add_filter('wc_get_price_thousand_separator', array($this, 'getLocaleThousandSeparator'), 10, 1);
+        add_filter('wc_price_args', array($this, 'filterPriceArgs'), 10, 1);
 
-        //unreleased woocommerce checkin https://github.com/woocommerce/woocommerce/pull/15628
+        //WooCommerce 3.1 unreleased checkin https://github.com/woocommerce/woocommerce/pull/15628
         add_filter('woocommerce_format_localized_decimal', array($this, 'getLocalizedDecimal'), 10, 2);
+        //no additional override on finished price format as no currency paramber available
         //add_filter('woocommerce_format_localized_price', array($this, 'getLocalizedPrice'), 10, 2);
         
     }
 
 
     /*
-     * get localized getLocalizedDecimal 
+     * Filter WooCommerce pricing arguments to localize
+     * see https://github.com/hyyan/woo-poly-integration/wiki/Price-Localization for notes
      *
+     * @param Array $args   arguments used with wc_price
+     * 		'ex_tax_label'       => false,
+     *      'currency'           => '',
+     *      'decimal_separator'  => wc_get_price_decimal_separator(),
+	   *      'thousand_separator' => wc_get_price_thousand_separator(),
+	   *      'decimals'           => wc_get_price_decimals(),
+	   *      'price_format'       => get_woocommerce_price_format(),
+     *
+     * @return Array the arguments 
+     */
+    public function filterPriceArgs($args){
+        
+        //if there is a currency provided, attempt a full reset of formatting parameters
+        if ( (isset($args['currency'])) && ($args['currency']!='') ){
+            $currency = $args['currency'];
+            $locale = pll_current_language('locale'); 
+            $formatter = new \NumberFormatter($locale.'@currency='.$currency,  \NumberFormatter::CURRENCY);
+            $args['decimal_separator'] = $formatter->getSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL);
+            $args['thousand_separator'] = $formatter->getSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL);
+            $args['decimals'] = $formatter->getAttribute(\NumberFormatter::FRACTION_DIGITS);
+            $prefix=$formatter->getTextAttribute(\NumberFormatter::POSITIVE_PREFIX);
+            if (strlen($prefix)) {        
+    			$args['price_format'] = '%1$s%2$s';
+            }else {
+                $args['price_format'] = '%2$s%1$s';                
+            }	
+        } else {
+            //otherwise if no currency is set, get localized separators only as other parms depend on currency
+            $args['decimal_separator'] = $this->getLocaleDecimalSeparator($args['decimal_separator']);
+            $args['thousand_separator'] = $this->getLocaleThousandSeparator($args['decimal_separator']);
+        }  
+        return $args;
+    }
+    
+    /*
+     * get localized getLocalizedDecimal 
+     * 
      * @param string    default WooCommerce formatting of value
      * @param string    $input value to be formatted
      *
@@ -47,51 +88,7 @@ class LocaleNumbers
         return $retval;
     }
     
-    /*
-     * get localized price string 
-     * Actually to return as a fully localized currency string we need to now the currency 
-     * as well as the locale, for example:
-     * 
-     * $amount = '12345.67';
-     * 
-     * $formatter = new NumberFormatter('en_GB',  NumberFormatter::CURRENCY);
-     * echo 'UK: ' . $formatter->formatCurrency($amount, 'EUR') . PHP_EOL;
-     * 
-     * $formatter = new NumberFormatter('de_DE',  NumberFormatter::CURRENCY);
-     * echo 'DE: ' . $formatter->formatCurrency($amount, 'EUR') . PHP_EOL;
-     * 
-     * The output of the code above is:
-     * 
-     * UK: €12,345.68
-     * DE: 12.345,68 €
-     * and for France would be:
-     * FR: 12 345,68 €
-     * 
-     * In this case we don't know that so we could either stick to decimal
-     * or just unhook this function
-     * 
-     * 
-     * @param string    default WooCommerce formatting of value
-     * @param string    $input value to be formatted
-     *
-     * @return string  formatted number
-     */
-    public function getLocalizedPrice($wooFormattedValue, $input)
-    {
-        //default to return unmodified wooCommerce value
-        $retval = $wooFormattedValue;
-        
-        //don't touch values on admin screens, save as plain number using woo defaults
-        if (! is_admin()){
-            //$a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::CURRENCY);
-            $a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::DECIMAL_ALWAYS_SHOWN);
-            if ($a){
-                $retval = $a->format($input);
-            }
-        }
-        return $retval;
-    }
-    
+
     /*
      * get localized decimal separator 
      *
@@ -134,6 +131,5 @@ class LocaleNumbers
             }
         }
         return $retval;
-    }
-    
+    }    
 }

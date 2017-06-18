@@ -94,9 +94,10 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Stock Sync', 'woo-poly-integration'),
-                'desc' => __(
+                'desc' => ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Stock"> '.
+                            __(
                         'Sync stock for product and its translations', 'woo-poly-integration'
-                ) . ' <strong>' . __(
+                ) . '.</a> <strong>' . __(
                         'Note: this setting affects user actions on stock, to control synchronisation when editing products check the settings for Metas List, Stock Metas.', 'woo-poly-integration', 'woo-poly-integration'
                 ) . '</strong>',
             ),
@@ -105,27 +106,30 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Translate Categories', 'woo-poly-integration'),
-                'desc' => __(
+                'desc' => ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Product-Categories"> '.
+                            __(
                         'Enable categories translations', 'woo-poly-integration'
-                ),
+                )   . '</a>.',
             ),
             array(
                 'name' => 'tags',
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Translate Tags', 'woo-poly-integration'),
-                'desc' => __(
+                'desc' => ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Product-Tags"> '.
+                            __(
                         'Enable tags translations', 'woo-poly-integration'
-                ),
+                )   . '</a>.',
             ),
             array(
                 'name' => 'attributes',
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Translate Attributes', 'woo-poly-integration'),
-                'desc' => __(
+                'desc' => ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Product-Attributes"> '.
+                            __(
                         'Enable attributes translations', 'woo-poly-integration'
-                ),
+                )  . '</a>.',
             ),
 
             array(
@@ -148,9 +152,11 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Use locale number formats', 'woo-poly-integration'),
-                'desc' => __(
-                        'Format numbers according to the convention for current language.', 'woo-poly-integration'
-                ),
+                'desc' => ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Price-Localization"> ' .
+                   __(
+                        'Format numbers according to the convention for current language', 'woo-poly-integration')
+                 . '</a>.'
+                ,
             ),
         );
     }
