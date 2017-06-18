@@ -79,7 +79,7 @@ class LocaleNumbers
         $retval = $wooFormattedValue;
         
         //don't touch values on admin screens, save as plain number using woo defaults
-        if (! is_admin()){
+        if ( (! is_admin()) || isset($_REQUEST['get_product_price_by_ajax']) ){
             $a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::DECIMAL);
             if ($a){
                 $retval = $a->format($input, \NumberFormatter::TYPE_DOUBLE);
@@ -100,7 +100,7 @@ class LocaleNumbers
     {
         $retval = $separator;
         //don't touch values on admin screens, save as plain number using woo defaults
-        if (! is_admin()){
+        if ( (! is_admin()) || isset($_REQUEST['get_product_price_by_ajax']) ){
             $locale = pll_current_language('locale');
             $a = new \NumberFormatter($locale, \NumberFormatter::DECIMAL);
             if ($a){
