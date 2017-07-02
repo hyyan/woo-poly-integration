@@ -176,7 +176,7 @@ class Plugin
 		new Emails();
         new Admin\Settings();
         new Cart();
-        new Login();
+//        new Login();
         new Order();
         new Pages();
         new Endpoints();

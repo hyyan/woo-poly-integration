@@ -116,6 +116,37 @@ class Taxonomies
      */
         public function updatePolyLangFromWooPolyFeatures($old_value, $new_value, $option)
         {
+        $polylang_options = get_option('polylang');
+        $polylang_taxs = $polylang_options['taxonomies'];
+        $update=false;
+
+        //check Polylang is in sync for Product category and tag translation
+        if (( isset($new_value['categories']) ) && ( $new_value['categories']=='on' ) ) {
+            if (! in_array('product_cat', $polylang_taxs) ){
+                $polylang_options['taxonomies'][] = 'product_cat';
+                $update=true;
+            }
+        } else {
+            $key = array_search('product_cat', $polylang_taxs);
+            if ($key!==false){  //key may be zero which is different from false
+                unset($polylang_options['taxonomies'][$key]);
+                $update=true;
+            }
+        }
+        if (( isset($new_value['tags']) ) && ( $new_value['tags']=='on' ) ) {
+            if (! in_array('product_tag', $polylang_taxs) ){
+                $polylang_options['taxonomies'][] = 'product_tag';
+                $update=true;
+            }
+        } else {
+            $key = array_search('product_tag', $polylang_taxs);
+            if ($key!==false){
+                unset($polylang_options['taxonomies'][$key]);
+                $update=true;
+            }
+        }
+
+        //for attributes don't force on for all attributes but do force off when disabled
             if (isset($old_value['attributes']) && isset($new_value['attributes'])) {
                 $old_attr_sync = $old_value['attributes'];
                 $new_attr_sync = $new_value['attributes'];
@@ -124,10 +155,7 @@ class Taxonomies
                     //now we will not force translation on, only force off, ie:
                     //  remove from Polylang if disabling translation
                     if ($new_attr_sync!='on') {
-                        $polylang_options = get_option('polylang');
-                        $polylang_taxs = $polylang_options['taxonomies'];
                         $remove = Attributes::getNames();
-                        $update=false;
                         foreach ($remove as $tax) {
                             if (in_array($tax, $polylang_taxs)) {
                                 $polylang_options['taxonomies'] = array_flip($polylang_options['taxonomies']);
@@ -136,12 +164,12 @@ class Taxonomies
                                 $update = true;
                             } //if Product Attribute was previously translated
                         } //for each Product Attribute
-                        if ($update) {
-                            update_option('polylang', $polylang_options);
-                        }
                     } //if wooPoly Translate Product Attributes is turned On
                 } //if attributes setting has changed
             } //if attributes are set
+        if ($update) {
+            update_option('polylang', $polylang_options);
+        }
         }
     
     

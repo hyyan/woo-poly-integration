@@ -12,6 +12,7 @@ namespace Hyyan\WPI\Product;
 use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Utilities;
 use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Features;
 use Hyyan\WPI\Admin\MetasList;
 use Hyyan\WPI\Taxonomies\Attributes;
 
@@ -43,13 +44,59 @@ class Meta
             'wc_product_has_unique_sku',
             array($this, 'suppressInvalidDuplicatedSKUErrorMsg'), 100, 3
         );
+
+        if ('on' === Settings::getOption('importsync', Features::getID(), 'on')) {    
+            add_action( 'woocommerce_product_import_inserted_product_object', array($this, 'onImport'), 10, 2);
+        }
+
+        //if translate attributes feature is 'on', 
+        if ('on' === Settings::getOption('attributes', Features::getID(), 'on')) {    
+            add_action( 'woocommerce_attribute_added', array($this, 'newProductAttribute'), 10, 2);
+        }
     }
 
 
     /**
+     * On insert of a new product attribute, attempt to set it to translateable by default
+     *
+     * @param integer  $insert_id  id of attribute
+     * @param Array    $attribute  array of attribute data, see get_posted_attribute()
+     */
+    public function newProductAttribute($insert_id, $attribute)
+    {
+        $options = get_option('polylang');
+        $sync = $options['taxonomies'];
+        $attrname = 'pa_' . $attribute['attribute_name'];
+        if (!in_array($attribute, $sync)) {
+            $options['taxonomies'][] = $attrname;
+            update_option('polylang', $options);
+        }        
+    }
+
+    /**
+     * On Import, attempt synchronization of any existing translations
+     *
+     * @param [product]      $object array of product ids
+     * @param Array          $data   data in import
+     */
+    public function onImport($object, $data )
+    {
+        // sync product meta with polylang
+        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        
+        //sync taxonomies
+        $ProductID = $object->get_id();
+        if ($ProductID){
+            do_action( 'pll_save_post', $ProductID, $object, 
+                PLL()->model->post->get_translations( $ProductID ));
+
+            $this->syncTaxonomiesAndProductAttributes($ProductID, $object, true);        
+        }
+    }
+    /**
      * catch save from QuickEdit
      *
-	 * @param WC_Product $product
+	   * @param WC_Product $product
      */
     public function saveQuickEdit(\WC_Product $product)
     {

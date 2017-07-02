@@ -58,8 +58,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Fields Locker', 'woo-poly-integration'),
                 'desc' => __(
-                        'Fields locker makes it easy for user to know which
-                         field to translate and which to ignore ', 'woo-poly-integration'
+                        'Locks Meta fields which are set to be synchronized.', 'woo-poly-integration'
                 ),
             ),
             array(
@@ -155,6 +154,17 @@ class Features extends AbstractSettings
                 'desc' => ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Price-Localization"> ' .
                    __(
                         'Format numbers according to the convention for current language', 'woo-poly-integration')
+                 . '</a>.'
+                ,
+            ),
+            array(
+                'name' => 'importsync',
+                'type' => 'checkbox',
+                'default' => 'on',
+                'label' => __('Synchronize on Import', 'woo-poly-integration'),
+                'desc' => ' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki/Upload,-Bulk-Edit,-Quick-Edit"> ' .
+                   __(
+                        'When using WooCommerce 3.1 importer to importing updates to existing items, apply synchronization rules to update any existing translations.', 'woo-poly-integration')
                  . '</a>.'
                 ,
             ),

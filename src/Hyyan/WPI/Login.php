@@ -24,9 +24,12 @@ class Login
      */
     public function __construct()
     {
+        /*
         add_filter(
-                'woocommerce_login_redirect', array($this, 'getLoginRedirectPermalink')
+                'woocommerce_login_redirect', array($this, 'getLoginRedirectPermalink'), 10, 2
         );
+         * 
+         */
     }
 
     /**
