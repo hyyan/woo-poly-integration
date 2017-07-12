@@ -297,6 +297,7 @@ class Cart
         // Validate the attributes.
         try {
             if (empty($variation_id)) {
+                return;
                 throw new \Exception(__('Please choose product options&hellip;', 'woocommerce'));
             }
 

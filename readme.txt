@@ -122,6 +122,11 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog ==
 
 == 1.0.2 ==
+* partially implements #208 WooCommerce 3.1 CSV Import/Export by adding support for synchronising Product Meta and Product Attributes to translated products
+* Fixes #207 suppresses login customization to allow "Pay for Order" links to work when customer is not logged in 
+(after login continue to payment page instead of my account home)
+* Fixes #212 update deleteRelatedVariation for woocommerce3 warnings
+* Fixes #209 cart filling up error logs with variations message
 * Fixes #195 Locale number formatting for prices and built-in attributes
 * Fixes #190 Products Quick Edit now synchronizes translations
 * Fixes #187 Wordpress 4.8 breaks translation for new Variation Products

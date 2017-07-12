@@ -139,9 +139,9 @@ class Variation
      */
     public static function deleteRelatedVariation($variationID)
     {
-        $posts = (array) static::getRelatedVariation($variationID);
-        foreach ($posts as $post) {
-            wp_delete_post($post->ID, true);
+        $products = (array) static::getRelatedVariation($variationID);
+        foreach ($products as $product) {
+            wp_delete_post($product->get_id(), true);
         }
     }
     /**
