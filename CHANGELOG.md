@@ -1,5 +1,6 @@
 ### 1.0.2
 * partially implements #208 WooCommerce 3.1 CSV Import/Export by adding support for synchronising Product Meta and Product Attributes to translated products
+* Fixes #213 copy children for Grouped Product
 * Fixes #207 suppresses login customization to allow "Pay for Order" links to work when customer is not logged in 
 (after login continue to payment page instead of my account home)
 * Fixes #212 update deleteRelatedVariation for woocommerce3 warnings

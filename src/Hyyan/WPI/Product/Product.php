@@ -57,6 +57,7 @@ class Product
                 //show cross-sells and up-sells in correct language
         add_filter('woocommerce_product_get_upsell_ids', array($this, 'getUpsellsInLanguage'), 10, 2);
         add_filter('woocommerce_product_get_cross_sell_ids', array($this, 'getCrosssellsInLanguage'), 10, 2);
+        add_filter('woocommerce_product_get_children', array($this, 'getChildrenInLanguage'), 10, 2);
         
         new Meta();
         new Variable();
@@ -68,6 +69,18 @@ class Product
     }
 
     
+    /**
+     * filter child ids of Grouped Product 
+     *
+     * @param array      $related_ids array of product ids
+     * @param WC_Product $product current product
+     *
+     * @return array filtered result
+     */
+    public function getChildrenInLanguage($relatedIds, $product)
+    {
+        return $this->getProductIdsInLanguage($relatedIds, $product);
+    }
     /**
      * filter upsells display
      *

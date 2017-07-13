@@ -561,6 +561,7 @@ class Meta
                     '_sku',
                     '_upsell_ids',
                     '_crosssell_ids',
+                    '_children' ,
 //                    '_featured',          //has no effect, in woo3 now product_visibility taxonomy
                     '_product_image_gallery',
                     'total_sales',
