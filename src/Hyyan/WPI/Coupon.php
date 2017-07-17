@@ -32,6 +32,43 @@ class Coupon
         if ('on' === Settings::getOption('coupons', Features::getID(), 'on')) {
             add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
         }
+        
+        add_action('wp_loaded', array($this, 'registerCouponStringsForTranslation'));
+    }
+    
+    /**
+     * Register coupon titles adn descriptions in Polylang's Strings translations table.
+     */
+    public function registerCouponStringsForTranslation()
+    {
+        if (function_exists('pll_register_string')) {
+            $coupons = $this->getCoupons();
+            
+            foreach ($coupons as $coupon) {
+                    pll_register_string($coupon->post_type, $coupon->post_title, __('Woocommerce Coupon Names', 'woo-poly-integration'));
+                    pll_register_string($coupon->post_type, $coupon->post_excerpt, __('Woocommerce Coupon Names', 'woo-poly-integration'));
+            }
+        }
+    }
+    
+     /**
+     * Helper function - Gets the coupons enabled in the shop.
+     *
+     * @return array $coupons Coupons settings including post_type, post_excerpt and post_title
+     */
+    private function getCoupons(){
+        global $woocommerce;
+        
+        $args = array(
+            'posts_per_page'   => -1,
+            'orderby'          => 'title',
+            'order'            => 'asc',
+            'post_type'        => 'shop_coupon',
+            'post_status'      => 'publish',
+        );
+    
+        $coupons = get_posts( $args );
+        return $coupons;
     }
 
     /**
