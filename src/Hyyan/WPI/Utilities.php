@@ -438,5 +438,60 @@ final class Utilities
             return null;
         }
     }
-
+    /*
+     * get the translated product, including if it is a variation product, get the translated variation
+     * if there is no translation, return the original product
+     * 
+     * @param int $product_id   Product 
+     *
+     * @return int    translated product or variation (or original if no translation)
+     * 
+     */
+    public static function get_translated_variation($product_id, $lang)
+    {
+        if (! $lang){
+            $lang = pll_current_language();
+        }
+        //if input is already in correct language just return it
+        $sourcelang = pll_get_post_language($product_id);
+        if ($sourcelang == $lang){
+            return $product_id;
+        }
+        //if a translated item is found, return it
+        $translated_id = pll_get_post( $product_id, $lang);
+        if ( ( $translated_id ) && ( $translated_id != $product_id ) ){
+            return $translated_id;
+        }
+        //ok no linked Polylang translation so maybe it's a variation
+        $product = wc_get_product($product_id);
+        if ($product && 'variation' === $product->get_type()) {
+            //it's a variation, so let's get the parent and translate that
+            $parent_id = $product->get_parent_id();
+            $translated_id = pll_get_post( $parent_id, $lang);
+            //if no translation return the original product variation id
+            if ((! $translated_id) || ($translated_id == $parent_id) ) {
+                return $product_id;
+            }
+            //ok, it's a variation and the parent product is translated, so here's what to do:
+            //find the master link for this variation using the Hyyan '_point_to_variation' key
+            $variationmaster = get_post_meta($product_id, '_point_to_variation');
+            if (! $variationmaster){
+                return $product_id;
+            }
+            //and now the related variation for the translation
+            $posts = get_posts(array(
+                'meta_key' => '_point_to_variation',
+                'meta_value' => $variationmaster,
+                'post_type' => 'product_variation',
+                'post_parent' => $translated_id,
+            ));        
+            //return the related variation if there is one
+            if ( count($posts) ){
+                return $posts[0]->ID;
+            } else {
+                //if this variation hasn't been translated, return the original
+                return $product_id;
+            }
+        }
+    }
 }

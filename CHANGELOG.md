@@ -1,4 +1,7 @@
 ### 1.0.2
+* Fixes #215 add string translations for Coupons (includes WooCommerce Extended Coupon Features if installed)
+* addresses #168 with a utility function get_translated_variation to help get translated products or variations
+* Fixes #217 BACS bank_details() update for woocommerce3
 * partially implements #208 WooCommerce 3.1 CSV Import/Export by adding support for synchronising Product Meta and Product Attributes to translated products
 * Fixes #213 copy children for Grouped Product
 * Fixes #207 suppresses login customization to allow "Pay for Order" links to work when customer is not logged in 
