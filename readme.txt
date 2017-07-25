@@ -122,6 +122,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog ==
 
 == 1.0.2 ==
+* Cart.js Updated in line with WooCommerce 3.1 cart-fragments.js
 * Fixes #215 add string translations for Coupons (includes WooCommerce Extended Coupon Features if installed)
 * addresses #168 with a utility function get_translated_variation to help get translated products or variations
 * Fixes #217 BACS bank_details() update for woocommerce3
