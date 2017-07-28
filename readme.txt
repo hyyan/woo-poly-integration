@@ -122,6 +122,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog ==
 
 == 1.0.2 ==
+* Fixes #200 Polylang version check fails to detect Polylang PRO
 * Cart.js Updated in line with WooCommerce 3.1 cart-fragments.js
 * Fixes #215 add string translations for Coupons (includes WooCommerce Extended Coupon Features if installed)
 * addresses #168 with a utility function get_translated_variation to help get translated products or variations
@@ -358,5 +359,5 @@ WooCommerce 3 has a large number of breaking changes which may and do break othe
 4. reactivate this plugin
 
 = 1.0.2 =
-This release includes a change for Wordpress 4.8 compatibility and is tested with WooCommerce 3.0.8.
+This release includes a change for Wordpress 4.8 compatibility and is tested with WooCommerce 3.1.
 If you are using WooCommerce 3.x please update immediately.

@@ -230,8 +230,15 @@ final class Utilities
             require_once ABSPATH . 'wp-admin/includes/plugin.php';
         }
 
-        $data = get_plugin_data(ABSPATH . 'wp-content/plugins/polylang/polylang.php', false, false);
-
+        $filepath = ABSPATH . 'wp-content/plugins/polylang/polylang.php';
+        if (! file_exists($filepath)){
+            $filepath = ABSPATH . 'wp-content/plugins/polylang-pro/polylang.php';
+            if (! file_exists($filepath)){
+                error_log('Polylang version not tested - polylang file not found');
+                return true;
+            }
+        }
+        $data = get_plugin_data($filepath, false, false);
         if (version_compare($data['Version'], $version, '>=')) {
             return true;
         }
