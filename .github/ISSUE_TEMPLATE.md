@@ -15,7 +15,7 @@ If reporting a problem please make sure you confirm the following points so we c
 * PHP: 
 * WordPress: 
 * WooCommerce: 
-* Polylang: 
+* Polylang: [state if using Polylang PRO]
 * Hyyan WooCommerce Polylang Integration: 
 * Browser: 
 
