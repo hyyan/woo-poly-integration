@@ -213,7 +213,7 @@ class Cart
     {
         /* remove the orginal wc-cart-fragments.js and register ours */
         wp_deregister_script('wc-cart-fragments');
-        $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+        $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
         wp_enqueue_script(
                 'wc-cart-fragments', plugins_url('public/js/Cart' . $suffix . '.js', Hyyan_WPI_DIR), array('jquery', 'jquery-cookie'), Plugin::getVersion(), true
         );
@@ -297,6 +297,7 @@ class Cart
         // Validate the attributes.
         try {
             if (empty($variation_id)) {
+                return;
                 throw new \Exception(__('Please choose product options&hellip;', 'woocommerce'));
             }
 
@@ -339,8 +340,8 @@ class Cart
                     }
 
                     // Get valid value from variation
-//change proposed by @theleemon
-$variation_data = wc_get_product_variation_attributes($variation->get_id());
+                    //change proposed by @theleemon
+                    $variation_data = wc_get_product_variation_attributes($variation->get_id());
                     $valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
                     //$valid_value = isset($variation_data[$taxonomy]) ? $variation_data[$taxonomy] : '';
 
@@ -391,13 +392,13 @@ $variation_data = wc_get_product_variation_attributes($variation->get_id());
         // If we added the product to the cart we can now optionally do a redirect.
         if ($was_added_to_cart && wc_notice_count('error') === 0) {
             // If has custom URL redirect there
-                if ($url = apply_filters('woocommerce_add_to_cart_redirect', $url)) {
-                    wp_safe_redirect($url);
-                    exit;
-                } elseif (get_option('woocommerce_cart_redirect_after_add') === 'yes') {
-                    wp_safe_redirect(wc_get_cart_url());
-                    exit;
-                }
+            if ($url = apply_filters('woocommerce_add_to_cart_redirect', $url)) {
+                wp_safe_redirect($url);
+                exit;
+            } elseif (get_option('woocommerce_cart_redirect_after_add') === 'yes') {
+                wp_safe_redirect(wc_get_cart_url());
+                exit;
+            }
         }
         // End: From add_to_cart_action( $url )
     }

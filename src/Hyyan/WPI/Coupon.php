@@ -31,9 +31,136 @@ class Coupon
     {
         if ('on' === Settings::getOption('coupons', Features::getID(), 'on')) {
             add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
+            
+            add_action('wp_loaded', array($this, 'registerCouponStringsForTranslation'));
+            
+            //apply label filter with higher priority than woocommerce-auto-added-coupons
+            add_filter('woocommerce_cart_totals_coupon_label',
+                array($this, 'translateLabel'), 20, 2);
+            add_filter('woocommerce_coupon_get_description',
+                array($this, 'translateDescription'), 10, 2);
+            
+            /* additional fields for WooCommerce Extended Coupon Features */
+            add_filter('woocommerce_coupon_get__wjecf_enqueue_message',
+                array($this, 'translateMessage'), 10, 2);
+            add_filter('woocommerce_coupon_get__wjecf_select_free_product_message',
+                array($this, 'translateMessage'), 10, 2);
+            add_filter('woocommerce_coupon_get__wjecf_free_product_ids',
+                array($this, 'getFreeProductsInLanguage'), 10, 2);
         }
     }
 
+    /**
+     * filter product ids
+     *
+     * @param string     $product_ids list
+     * @param WC_Coupon  $coupon current coupon
+     *
+     * @return array filtered result
+     */
+    public function getFreeProductsInLanguage($productIds, $coupon)
+    {
+        if (is_admin()) {
+            return $productIds;
+        }
+        $productLang = pll_current_language();
+        $productIds = explode(',', $productIds);
+        $mappedIds = array();
+        foreach ($productIds as $productId) {
+            $mappedIds[] = Utilities::get_translated_variation($productId, $productLang);
+        }
+        return $mappedIds;
+    }
+    
+    /**
+     * translate coupon code.
+     *
+     * @param string      $value
+     * @param \WC_Coupon $coupon
+     *
+     * @return string
+     */
+    public function translateLabel($value, $coupon)
+    {
+        return sprintf(esc_html__('Coupon: %s', 'woocommerce'),
+            pll__(\get_post($coupon->get_id())->post_title));
+    }
+    /**
+     * translate coupon description.
+     *
+     * @param string      $value
+     * @param \WC_Coupon $coupon
+     *
+     * @return string
+     */
+    public function translateDescription($value, $coupon)
+    {
+        return pll__($value);
+    }
+    /**
+     * translate coupon message.
+     *
+     * @param string      $value
+     * @param \WC_Coupon $coupon
+     *
+     * @return string
+     */
+    public function translateMessage($value, $coupon)
+    {
+        return pll__($value);
+    }
+    
+    /**
+     * Register coupon titles adn descriptions in Polylang's Strings translations table.
+     */
+    public function registerCouponStringsForTranslation()
+    {
+        if (function_exists('pll_register_string')) {
+            $coupons = $this->getCoupons();
+            
+            foreach ($coupons as $coupon) {
+                //$code = wc_format_coupon_code($coupon->post_title);
+                pll_register_string($coupon->post_name, $coupon->post_title,
+                    __('Woocommerce Coupon Names', 'woo-poly-integration'));
+                pll_register_string($coupon->post_name . '_description', $coupon->post_excerpt,
+                    __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                
+                $coupon_message = get_post_meta($coupon->ID, '_wjecf_enqueue_message', true);
+                if ($coupon_message) {
+                    pll_register_string($coupon->post_name . '_message', $coupon_message,
+                    __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                }
+                $freeproduct_message = get_post_meta($coupon->ID, '_wjecf_select_free_product_message', true);
+                if ($freeproduct_message) {
+                    pll_register_string($coupon->post_name . '_freeproductmessage', $coupon_message,
+                    __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                }
+            }
+        }
+    }
+    
+    /**
+    * Helper function - Gets the coupons enabled in the shop.
+    *
+    * @return array $coupons Coupons settings including post_type, post_excerpt and post_title
+    */
+    private function getCoupons()
+    {
+        global $woocommerce;
+        
+        $args = array(
+            'posts_per_page'   => -1,
+            'orderby'          => 'title',
+            'order'            => 'asc',
+            'post_type'        => 'shop_coupon',
+            'post_status'      => 'publish',
+        );
+    
+        $coupons = get_posts($args);
+        return $coupons;
+    }
+    
+    
     /**
      * Extend the coupon to include porducts translations.
      *
@@ -79,45 +206,6 @@ class Coupon
         return $coupon;
     }
 
-    /**
-     * Extend the coupon to include porducts translations.
-     *
-     * @param \WC_Coupon $coupon
-     *
-     * @return \WC_Coupon
-     */
-    public function couponLoadedOld(\WC_Coupon $coupon)
-    {
-        $productIDS                  = array();
-        $excludeProductIDS           = array();
-        $productCategoriesIDS        = array();
-        $excludeProductCategoriesIDS = array();
-        foreach ($coupon->product_ids as $id) {
-            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
-                $productIDS[] = $_id;
-            }
-        }
-        foreach ($coupon->exclude_product_ids as $id) {
-            foreach ($this->getProductPostTranslationIDS($id) as $_id) {
-                $excludeProductIDS[] = $_id;
-            }
-        }
-        foreach ($coupon->product_categories as $id) {
-            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
-                $productCategoriesIDS[] = $_id;
-            }
-        }
-        foreach ($coupon->exclude_product_categories as $id) {
-            foreach ($this->getProductTermTranslationIDS($id) as $_id) {
-                $excludeProductCategoriesIDS[] = $_id;
-            }
-        }
-        $coupon->product_ids                = $productIDS;
-        $coupon->exclude_product_ids        = $excludeProductIDS;
-        $coupon->product_categories         = $productCategoriesIDS;
-        $coupon->exclude_product_categories = $excludeProductCategoriesIDS;
-        return $coupon;
-    }
 
     /**
      * Get array of product translations IDS.
@@ -159,5 +247,4 @@ class Coupon
 
         return $IDS ? $IDS : array($ID);
     }
-
 }

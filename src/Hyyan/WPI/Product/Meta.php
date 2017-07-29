@@ -12,6 +12,7 @@ namespace Hyyan\WPI\Product;
 use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Utilities;
 use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Features;
 use Hyyan\WPI\Admin\MetasList;
 use Hyyan\WPI\Taxonomies\Attributes;
 
@@ -34,14 +35,78 @@ class Meta
         add_action(
             'current_screen', array($this, 'syncProductsMeta')
         );
+        add_action(
+            'woocommerce_product_quick_edit_save', array($this, 'saveQuickEdit')
+        );
 
         // suppress "Invalid or duplicated SKU." error message when SKU syncronization is enabled
         add_filter(
             'wc_product_has_unique_sku',
             array($this, 'suppressInvalidDuplicatedSKUErrorMsg'), 100, 3
         );
+
+        if ('on' === Settings::getOption('importsync', Features::getID(), 'on')) {
+            add_action('woocommerce_product_import_inserted_product_object', array($this, 'onImport'), 10, 2);
+        }
+
+        //if translate attributes feature is 'on',
+        if ('on' === Settings::getOption('attributes', Features::getID(), 'on')) {
+            add_action('woocommerce_attribute_added', array($this, 'newProductAttribute'), 10, 2);
+        }
     }
 
+
+    /**
+     * On insert of a new product attribute, attempt to set it to translateable by default
+     *
+     * @param integer  $insert_id  id of attribute
+     * @param Array    $attribute  array of attribute data, see get_posted_attribute()
+     */
+    public function newProductAttribute($insert_id, $attribute)
+    {
+        $options = get_option('polylang');
+        $sync = $options['taxonomies'];
+        $attrname = 'pa_' . $attribute['attribute_name'];
+        if (!in_array($attribute, $sync)) {
+            $options['taxonomies'][] = $attrname;
+            update_option('polylang', $options);
+        }
+    }
+
+    /**
+     * On Import, attempt synchronization of any existing translations
+     *
+     * @param [product]      $object array of product ids
+     * @param Array          $data   data in import
+     */
+    public function onImport($object, $data)
+    {
+        // sync product meta with polylang
+        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        
+        //sync taxonomies
+        $ProductID = $object->get_id();
+        if ($ProductID) {
+            do_action('pll_save_post', $ProductID, $object,
+                PLL()->model->post->get_translations($ProductID));
+
+            $this->syncTaxonomiesAndProductAttributes($ProductID, $object, true);
+        }
+    }
+    /**
+     * catch save from QuickEdit
+     *
+       * @param WC_Product $product
+     */
+    public function saveQuickEdit(\WC_Product $product)
+    {
+        // sync product meta with polylang
+        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        
+        //some taxonomies can actually be changed in the QuickEdit
+        $this->syncTaxonomiesAndProductAttributes($product->get_id(), $product, true);
+    }
+    
     /**
      * Sync product meta.
      *
@@ -87,7 +152,9 @@ class Meta
 
             // Add the '_translation_porduct_type' meta, for the case where
             // the product was created before plugin acivation.
-            $this->addProductTypeMeta($ID);
+            if ($ID) {
+                $this->addProductTypeMeta($ID);
+            }
         }
 
         // disable fields edit for translation
@@ -158,33 +225,33 @@ class Meta
      *
      * @return bool		did mapping
      */
-        /*
+    /*
     public function syncUpSellsCrossSells($source_id, $lang)
     {
-        //validate source and target product
-        $target_product = utilities::getProductTranslationByID($source_id, $lang);
-        if (!($target_product)){return false;}
-        $source_product = wc_get_product($source_id);
-        if (!($source_product)){return false;}
+    //validate source and target product
+    $target_product = utilities::getProductTranslationByID($source_id, $lang);
+    if (!($target_product)){return false;}
+    $source_product = wc_get_product($source_id);
+    if (!($source_product)){return false;}
 
-        //get product references to translate
-        $upsell_ids = array();
-        $cross_sell_ids = array();
-        if (in_array('_upsell_ids', static::getProductMetaToCopy())) {
-            $upsell_ids=$source_product->get_upsell_ids();
-        }
-        if (in_array('_crosssell_ids', static::getProductMetaToCopy())) {
-            $cross_sell_ids=$source_product->get_cross_sell_ids();
-        }
-
-        //stop if no references to copy
-        if ( (count($cross_sell_ids) == 0) && (count($upsell_ids) == 0) ) {return false;}
-
-
-        //            add_post_meta( $to, $key, ( '_thumbnail_id' == $key && $tr_value = $this->model->post->get_translation( $value, $lang ) ) ? $tr_value : $value );
-        return true;
+    //get product references to translate
+    $upsell_ids = array();
+    $cross_sell_ids = array();
+    if (in_array('_upsell_ids', static::getProductMetaToCopy())) {
+        $upsell_ids=$source_product->get_upsell_ids();
     }
-        */
+    if (in_array('_crosssell_ids', static::getProductMetaToCopy())) {
+        $cross_sell_ids=$source_product->get_cross_sell_ids();
+    }
+
+    //stop if no references to copy
+    if ( (count($cross_sell_ids) == 0) && (count($upsell_ids) == 0) ) {return false;}
+
+
+    //            add_post_meta( $to, $key, ( '_thumbnail_id' == $key && $tr_value = $this->model->post->get_translation( $value, $lang ) ) ? $tr_value : $value );
+    return true;
+    }
+    */
     
     /**
      * convert array of product ids to target language
@@ -494,6 +561,7 @@ class Meta
                     '_sku',
                     '_upsell_ids',
                     '_crosssell_ids',
+                    '_children' ,
 //                    '_featured',          //has no effect, in woo3 now product_visibility taxonomy
                     '_product_image_gallery',
                     'total_sales',
@@ -612,7 +680,7 @@ class Meta
         foreach (static::getProductMetaToCopy(array(), false) as $group) {
             $metas = array_merge($metas, $group['metas']);
         }
-        return array_values(array_diff($metas, static::getProductMetaToCopy()));
+        return apply_filters(HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER, array_values(array_diff($metas, static::getProductMetaToCopy())));
     }
 
     /**

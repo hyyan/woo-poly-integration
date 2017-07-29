@@ -1,9 +1,9 @@
 === Hyyan WooCommerce Polylang Integration===
-Contributors: hyyan, decarvalhoaa, jonathanmoorebcsorg
+Contributors: hyyan, jonathanmoorebcsorg, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 4.7
-Stable tag: 1.0.0
+Tested up to: 4.8
+Stable tag: 1.0.2
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -120,6 +120,27 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+
+== 1.0.2 ==
+* Fixes #200 Polylang version check fails to detect Polylang PRO
+* Cart.js Updated in line with WooCommerce 3.1 cart-fragments.js
+* Fixes #215 add string translations for Coupons (includes WooCommerce Extended Coupon Features if installed)
+* addresses #168 with a utility function get_translated_variation to help get translated products or variations
+* Fixes #217 BACS bank_details() update for woocommerce3
+* Fixes #213 copy children for Grouped Product
+* partially implements #208 WooCommerce 3.1 CSV Import/Export by adding support for synchronising Product Meta and Product Attributes to translated products
+* Fixes #207 suppresses login customization to allow "Pay for Order" links to work when customer is not logged in 
+(after login continue to payment page instead of my account home)
+* Fixes #212 update deleteRelatedVariation for woocommerce3 warnings
+* Fixes #209 cart filling up error logs with variations message
+* Fixes #195 Locale number formatting for prices and built-in attributes
+* Fixes #190 Products Quick Edit now synchronizes translations
+* Fixes #187 Wordpress 4.8 breaks translation for new Variation Products
+* Fixes #184 Stock update incorrect if customer switches language while checking out 
+* Fixes #186 Shipping Method translation regression from 1.0.1
+* Fixes #188 When translating Variations, code tries to create copies of untranslated terms
+* Fixes #182 email translation extension hooks thanks to @vendidero/WooCommerce Germanized
+* Fixes #181 additional filters in Meta synchronization thanks to @vendidero/WooCommerce Germanized
 
 == 1.0.1 ==
 
@@ -336,3 +357,7 @@ WooCommerce 3 has a large number of breaking changes which may and do break othe
 2. upgrade WooCommerce and this plugin
 3. run WooCommerce database upgrade following the wooCommerce prompt
 4. reactivate this plugin
+
+= 1.0.2 =
+This release includes a change for Wordpress 4.8 compatibility and is tested with WooCommerce 3.1.
+If you are using WooCommerce 3.x please update immediately.

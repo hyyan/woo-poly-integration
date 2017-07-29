@@ -1,3 +1,25 @@
+### 1.0.2
+* Fixes #200 Polylang version check fails to detect Polylang PRO
+* Cart.js Updated in line with WooCommerce 3.1 cart-fragments.js
+* Fixes #215 add string translations for Coupons (includes WooCommerce Extended Coupon Features if installed)
+* addresses #168 with a utility function get_translated_variation to help get translated products or variations
+* Fixes #217 BACS bank_details() update for woocommerce3
+* partially implements #208 WooCommerce 3.1 CSV Import/Export by adding support for synchronising Product Meta and Product Attributes to translated products
+* Fixes #213 copy children for Grouped Product
+* Fixes #207 suppresses login customization to allow "Pay for Order" links to work when customer is not logged in 
+(after login continue to payment page instead of my account home)
+* Fixes #212 update deleteRelatedVariation for woocommerce3 warnings
+* Fixes #209 cart filling up error logs with variations message
+
+* Fixes #195 Locale number formatting for prices and built-in attributes
+* Fixes #190 Products Quick Edit now synchronizes translations
+* Fixes #187 Wordpress 4.8 breaks translation for new Variation Products
+* Fixes #184 Stock update incorrect if customer switches language while checking out 
+* Fixes #186 Shipping Method translation regression from 1.0.1
+* Fixes #188 When translating Variations, code tries to create copies of untranslated terms
+* Fixes #182 email translation extension hooks thanks to @vendidero/WooCommerce Germanized
+* Fixes #181 additional filters in Meta synchronization thanks to @vendidero/WooCommerce Germanized
+
 ### 1.0.1
 
 * Fixes #170 when WooCommerce 3.0.8+ active, product variation titles corrected in cart and orders

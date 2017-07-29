@@ -59,6 +59,7 @@ class GatewayBACS extends \WC_Gateway_BACS
 
     /**
      * Get bank details and place into a list format.
+     * Updated from wooCommerce 3.1
      *
      * Note: Since this is declared as a private function in WC_Gateway_BACS, it needs
      * to be copied here 1:1
@@ -72,56 +73,66 @@ class GatewayBACS extends \WC_Gateway_BACS
         }
 
         // Get order and store in $order
-        $order = wc_get_order($order_id);
+        $order        = wc_get_order($order_id);
 
         // Get the order country and country $locale
-                $country = Utilities::get_billing_country($order);
-        $locale = $this->get_country_locale();
+        $country    = $order->get_billing_country();
+        $locale        = $this->get_country_locale();
 
         // Get sortcode label in the $locale array and use appropriate one
-        $sortcode = isset($locale[ $country ]['sortcode']['label']) ? $locale[ $country ]['sortcode']['label'] : __('Sort Code', 'woocommerce');
+        $sortcode = isset($locale[ $country ]['sortcode']['label']) ? $locale[ $country ]['sortcode']['label'] : __('Sort code', 'woocommerce');
 
         $bacs_accounts = apply_filters('woocommerce_bacs_accounts', $this->account_details);
 
-        if (!empty($bacs_accounts)) {
-            echo '<h2>'.__('Our Bank Details', 'woocommerce').'</h2>'.PHP_EOL;
+        if (! empty($bacs_accounts)) {
+            $account_html = '';
+            $has_details  = false;
 
             foreach ($bacs_accounts as $bacs_account) {
                 $bacs_account = (object) $bacs_account;
 
-                if ($bacs_account->account_name || $bacs_account->bank_name) {
-                    echo '<h3>'.wp_unslash(implode(' - ', array_filter(array($bacs_account->account_name, $bacs_account->bank_name)))).'</h3>'.PHP_EOL;
+                if ($bacs_account->account_name) {
+                    $account_html .= '<h3 class="wc-bacs-bank-details-account-name">' . wp_kses_post(wp_unslash($bacs_account->account_name)) . ':</h3>' . PHP_EOL;
                 }
 
-                echo '<ul class="order_details bacs_details">'.PHP_EOL;
+                $account_html .= '<ul class="wc-bacs-bank-details order_details bacs_details">' . PHP_EOL;
 
-                        // BACS account fields shown on the thanks page and in emails
-                        $account_fields = apply_filters('woocommerce_bacs_account_fields', array(
-                                'account_number' => array(
-                                        'label' => __('Account Number', 'woocommerce'),
-                                        'value' => $bacs_account->account_number,
-                                ),
-                                'sort_code' => array(
-                                        'label' => $sortcode,
-                                        'value' => $bacs_account->sort_code,
-                                ),
-                                'iban' => array(
-                                        'label' => __('IBAN', 'woocommerce'),
-                                        'value' => $bacs_account->iban,
-                                ),
-                                'bic' => array(
-                                        'label' => __('BIC', 'woocommerce'),
-                                        'value' => $bacs_account->bic,
-                                ),
-                        ), $order_id);
+                // BACS account fields shown on the thanks page and in emails
+                $account_fields = apply_filters('woocommerce_bacs_account_fields', array(
+                    'bank_name' => array(
+                        'label' => __('Bank', 'woocommerce'),
+                        'value' => $bacs_account->bank_name,
+                    ),
+                    'account_number' => array(
+                        'label' => __('Account number', 'woocommerce'),
+                        'value' => $bacs_account->account_number,
+                    ),
+                    'sort_code'     => array(
+                        'label' => $sortcode,
+                        'value' => $bacs_account->sort_code,
+                    ),
+                    'iban'          => array(
+                        'label' => __('IBAN', 'woocommerce'),
+                        'value' => $bacs_account->iban,
+                    ),
+                    'bic'           => array(
+                        'label' => __('BIC', 'woocommerce'),
+                        'value' => $bacs_account->bic,
+                    ),
+                ), $order_id);
 
                 foreach ($account_fields as $field_key => $field) {
-                    if (!empty($field['value'])) {
-                        echo '<li class="'.esc_attr($field_key).'">'.esc_attr($field['label']).': <strong>'.wptexturize($field['value']).'</strong></li>'.PHP_EOL;
+                    if (! empty($field['value'])) {
+                        $account_html .= '<li class="' . esc_attr($field_key) . '">' . wp_kses_post($field['label']) . ': <strong>' . wp_kses_post(wptexturize($field['value'])) . '</strong></li>' . PHP_EOL;
+                        $has_details   = true;
                     }
                 }
 
-                echo '</ul>';
+                $account_html .= '</ul>';
+            }
+
+            if ($has_details) {
+                echo '<section class="woocommerce-bacs-bank-details"><h2 class="wc-bacs-bank-details-heading">' . __('Our bank details', 'woocommerce') . '</h2>' . PHP_EOL . $account_html . '</section>';
             }
         }
     }

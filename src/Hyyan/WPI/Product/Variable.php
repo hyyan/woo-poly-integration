@@ -72,9 +72,13 @@ class Variable
             return false;
         }
 
+        if ($product->get_parent_id()) {
+            $product = wc_get_product($product->get_parent_id());
+        }
+        
         $from = null;
 
-        if (pll_get_post_language($ID) == pll_default_language()) {
+        if (pll_get_post_language($product->get_id()) == pll_default_language()) {
             $from = $product;
         } else {
             if (isset($_GET['from_post'])) {
@@ -97,18 +101,25 @@ class Variable
         }
 
         $langs = pll_languages_list();
-
         foreach ($langs as $lang) {
+            remove_action('save_post', array($this, __FUNCTION__), 10);
             $variation = new Variation(
                     $from, Utilities::getProductTranslationByObject($product, $lang)
             );
-
-            remove_action('save_post', array($this, __FUNCTION__), 10);
-
             $variation->duplicate();
-
             add_action('save_post', array($this, __FUNCTION__), 10, 3);
         }
+        
+        /*
+                remove_action('save_post', array($this, __FUNCTION__), 10);
+                $translations = Utilities::getProductTranslationsArrayByObject($from, true);
+                foreach ($translations as $translation){
+                    $variation = new Variation($from, wc_get_product($translation));
+                    $variation->duplicate();
+                }
+                add_action('save_post', array($this, __FUNCTION__), 10, 3);
+         *
+         */
     }
     
     /**
@@ -288,7 +299,10 @@ class Variable
     public function extendFieldsLockerSelectors(array $selectors)
     {
         //FIX: #128 allow variable product description to be translated
-                $selectors[] = '#variable_product_options :input:not([name^="variable_description"])';
+
+        $variable_exclude = apply_filters(HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER, array( '[name^="variable_description"]' ));
+
+        $selectors[] = '#variable_product_options :input:not(' . implode(',', $variable_exclude) . ')';
         return $selectors;
     }
 
@@ -328,7 +342,7 @@ class Variable
         });
 
         add_action('admin_enqueue_scripts', function () {
-            $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+            $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
             wp_enqueue_script('jquery-ui-core');
             wp_enqueue_script('jquery-effects-core');
             wp_enqueue_script('jquery-ui-dialog');
