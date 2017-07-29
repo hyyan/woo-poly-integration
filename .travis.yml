@@ -1,4 +1,9 @@
 install: true
+language: php
+
+php:
+ - 7.0
+ 
 script: echo "skip sript"
 deploy:
   provider: script
