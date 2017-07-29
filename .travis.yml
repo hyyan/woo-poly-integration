@@ -1,6 +1,7 @@
 dist: trusty
 sudo: false
-language: c
+language: php
+install: true
 
 notifications:
   on_success: never
