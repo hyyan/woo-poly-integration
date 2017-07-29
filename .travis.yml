@@ -1,4 +1,5 @@
 install: true
+script: echo "skip sript"
 deploy:
   provider: script
   skip_cleanup: true
