@@ -1,3 +1,4 @@
+dist: precise
 deploy:
   provider: script
   skip_cleanup: true
