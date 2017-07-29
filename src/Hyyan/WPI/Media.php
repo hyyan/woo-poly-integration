@@ -66,5 +66,4 @@ class Media
 
         return $translations;
     }
-
 }

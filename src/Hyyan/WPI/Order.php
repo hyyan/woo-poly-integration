@@ -166,5 +166,4 @@ class Order
     {
         return pll_get_post_language($ID);
     }
-
 }

@@ -23,7 +23,6 @@ class LocaleNumbers
         add_filter('woocommerce_format_localized_decimal', array($this, 'getLocalizedDecimal'), 10, 2);
         //no additional override on finished price format as no currency paramber available
         //add_filter('woocommerce_format_localized_price', array($this, 'getLocalizedPrice'), 10, 2);
-        
     }
 
 
@@ -35,39 +34,40 @@ class LocaleNumbers
      * 		'ex_tax_label'       => false,
      *      'currency'           => '',
      *      'decimal_separator'  => wc_get_price_decimal_separator(),
-	   *      'thousand_separator' => wc_get_price_thousand_separator(),
-	   *      'decimals'           => wc_get_price_decimals(),
-	   *      'price_format'       => get_woocommerce_price_format(),
+       *      'thousand_separator' => wc_get_price_thousand_separator(),
+       *      'decimals'           => wc_get_price_decimals(),
+       *      'price_format'       => get_woocommerce_price_format(),
      *
-     * @return Array the arguments 
+     * @return Array the arguments
      */
-    public function filterPriceArgs($args){
+    public function filterPriceArgs($args)
+    {
         
         //if there is a currency provided, attempt a full reset of formatting parameters
-        if ( (isset($args['currency'])) && ($args['currency']!='') ){
+        if ((isset($args['currency'])) && ($args['currency']!='')) {
             $currency = $args['currency'];
-            $locale = pll_current_language('locale'); 
-            $formatter = new \NumberFormatter($locale.'@currency='.$currency,  \NumberFormatter::CURRENCY);
+            $locale = pll_current_language('locale');
+            $formatter = new \NumberFormatter($locale.'@currency='.$currency, \NumberFormatter::CURRENCY);
             $args['decimal_separator'] = $formatter->getSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL);
             $args['thousand_separator'] = $formatter->getSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL);
             $args['decimals'] = $formatter->getAttribute(\NumberFormatter::FRACTION_DIGITS);
             $prefix=$formatter->getTextAttribute(\NumberFormatter::POSITIVE_PREFIX);
-            if (strlen($prefix)) {        
-    			$args['price_format'] = '%1$s%2$s';
-            }else {
-                $args['price_format'] = '%2$s%1$s';                
-            }	
+            if (strlen($prefix)) {
+                $args['price_format'] = '%1$s%2$s';
+            } else {
+                $args['price_format'] = '%2$s%1$s';
+            }
         } else {
             //otherwise if no currency is set, get localized separators only as other parms depend on currency
             $args['decimal_separator'] = $this->getLocaleDecimalSeparator($args['decimal_separator']);
             $args['thousand_separator'] = $this->getLocaleThousandSeparator($args['decimal_separator']);
-        }  
+        }
         return $args;
     }
     
     /*
-     * get localized getLocalizedDecimal 
-     * 
+     * get localized getLocalizedDecimal
+     *
      * @param string    default WooCommerce formatting of value
      * @param string    $input value to be formatted
      *
@@ -79,9 +79,9 @@ class LocaleNumbers
         $retval = $wooFormattedValue;
         
         //don't touch values on admin screens, save as plain number using woo defaults
-        if ( (! is_admin()) || isset($_REQUEST['get_product_price_by_ajax']) ){
+        if ((! is_admin()) || isset($_REQUEST['get_product_price_by_ajax'])) {
             $a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::DECIMAL);
-            if ($a){
+            if ($a) {
                 $retval = $a->format($input, \NumberFormatter::TYPE_DOUBLE);
             }
         }
@@ -90,7 +90,7 @@ class LocaleNumbers
     
 
     /*
-     * get localized decimal separator 
+     * get localized decimal separator
      *
      * @param string    $input WooCommerce configured value
      *
@@ -100,12 +100,12 @@ class LocaleNumbers
     {
         $retval = $separator;
         //don't touch values on admin screens, save as plain number using woo defaults
-        if ( (! is_admin()) || isset($_REQUEST['get_product_price_by_ajax']) ){
+        if ((! is_admin()) || isset($_REQUEST['get_product_price_by_ajax'])) {
             $locale = pll_current_language('locale');
             $a = new \NumberFormatter($locale, \NumberFormatter::DECIMAL);
-            if ($a){
+            if ($a) {
                 $locale_result = $a->getSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL);
-                if ($locale_result){
+                if ($locale_result) {
                     $retval = $locale_result;
                 }
             }
@@ -114,7 +114,7 @@ class LocaleNumbers
     }
  
     /*
-     * get localized thousand separator 
+     * get localized thousand separator
      *
      * @param string    $input WooCommerce configured value
      *
@@ -124,12 +124,12 @@ class LocaleNumbers
     {
         $retval = $separator;
         //don't touch values on admin screens, save as plain number using woo defaults
-        if (! is_admin()){
+        if (! is_admin()) {
             $a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::DECIMAL);
-            if ($a){
+            if ($a) {
                 $retval = $a->getSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL);
             }
         }
         return $retval;
-    }    
+    }
 }

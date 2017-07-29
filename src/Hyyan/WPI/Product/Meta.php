@@ -45,13 +45,13 @@ class Meta
             array($this, 'suppressInvalidDuplicatedSKUErrorMsg'), 100, 3
         );
 
-        if ('on' === Settings::getOption('importsync', Features::getID(), 'on')) {    
-            add_action( 'woocommerce_product_import_inserted_product_object', array($this, 'onImport'), 10, 2);
+        if ('on' === Settings::getOption('importsync', Features::getID(), 'on')) {
+            add_action('woocommerce_product_import_inserted_product_object', array($this, 'onImport'), 10, 2);
         }
 
-        //if translate attributes feature is 'on', 
-        if ('on' === Settings::getOption('attributes', Features::getID(), 'on')) {    
-            add_action( 'woocommerce_attribute_added', array($this, 'newProductAttribute'), 10, 2);
+        //if translate attributes feature is 'on',
+        if ('on' === Settings::getOption('attributes', Features::getID(), 'on')) {
+            add_action('woocommerce_attribute_added', array($this, 'newProductAttribute'), 10, 2);
         }
     }
 
@@ -70,7 +70,7 @@ class Meta
         if (!in_array($attribute, $sync)) {
             $options['taxonomies'][] = $attrname;
             update_option('polylang', $options);
-        }        
+        }
     }
 
     /**
@@ -79,24 +79,24 @@ class Meta
      * @param [product]      $object array of product ids
      * @param Array          $data   data in import
      */
-    public function onImport($object, $data )
+    public function onImport($object, $data)
     {
         // sync product meta with polylang
         add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
         
         //sync taxonomies
         $ProductID = $object->get_id();
-        if ($ProductID){
-            do_action( 'pll_save_post', $ProductID, $object, 
-                PLL()->model->post->get_translations( $ProductID ));
+        if ($ProductID) {
+            do_action('pll_save_post', $ProductID, $object,
+                PLL()->model->post->get_translations($ProductID));
 
-            $this->syncTaxonomiesAndProductAttributes($ProductID, $object, true);        
+            $this->syncTaxonomiesAndProductAttributes($ProductID, $object, true);
         }
     }
     /**
      * catch save from QuickEdit
      *
-	   * @param WC_Product $product
+       * @param WC_Product $product
      */
     public function saveQuickEdit(\WC_Product $product)
     {
@@ -225,33 +225,33 @@ class Meta
      *
      * @return bool		did mapping
      */
-        /*
+    /*
     public function syncUpSellsCrossSells($source_id, $lang)
     {
-        //validate source and target product
-        $target_product = utilities::getProductTranslationByID($source_id, $lang);
-        if (!($target_product)){return false;}
-        $source_product = wc_get_product($source_id);
-        if (!($source_product)){return false;}
+    //validate source and target product
+    $target_product = utilities::getProductTranslationByID($source_id, $lang);
+    if (!($target_product)){return false;}
+    $source_product = wc_get_product($source_id);
+    if (!($source_product)){return false;}
 
-        //get product references to translate
-        $upsell_ids = array();
-        $cross_sell_ids = array();
-        if (in_array('_upsell_ids', static::getProductMetaToCopy())) {
-            $upsell_ids=$source_product->get_upsell_ids();
-        }
-        if (in_array('_crosssell_ids', static::getProductMetaToCopy())) {
-            $cross_sell_ids=$source_product->get_cross_sell_ids();
-        }
-
-        //stop if no references to copy
-        if ( (count($cross_sell_ids) == 0) && (count($upsell_ids) == 0) ) {return false;}
-
-
-        //            add_post_meta( $to, $key, ( '_thumbnail_id' == $key && $tr_value = $this->model->post->get_translation( $value, $lang ) ) ? $tr_value : $value );
-        return true;
+    //get product references to translate
+    $upsell_ids = array();
+    $cross_sell_ids = array();
+    if (in_array('_upsell_ids', static::getProductMetaToCopy())) {
+        $upsell_ids=$source_product->get_upsell_ids();
     }
-        */
+    if (in_array('_crosssell_ids', static::getProductMetaToCopy())) {
+        $cross_sell_ids=$source_product->get_cross_sell_ids();
+    }
+
+    //stop if no references to copy
+    if ( (count($cross_sell_ids) == 0) && (count($upsell_ids) == 0) ) {return false;}
+
+
+    //            add_post_meta( $to, $key, ( '_thumbnail_id' == $key && $tr_value = $this->model->post->get_translation( $value, $lang ) ) ? $tr_value : $value );
+    return true;
+    }
+    */
     
     /**
      * convert array of product ids to target language
@@ -680,7 +680,7 @@ class Meta
         foreach (static::getProductMetaToCopy(array(), false) as $group) {
             $metas = array_merge($metas, $group['metas']);
         }
-        return apply_filters( HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER, array_values(array_diff($metas, static::getProductMetaToCopy())) );
+        return apply_filters(HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER, array_values(array_diff($metas, static::getProductMetaToCopy())));
     }
 
     /**

@@ -40,21 +40,21 @@ class Permalinks
     {
         $permalinks = get_option('woocommerce_permalinks');
         $was_set=false;
-        if (! isset($permalinks['category_base']) || ( is_bool($permalinks['category_base']))) {
+        if (! isset($permalinks['category_base']) || (is_bool($permalinks['category_base']))) {
             $permalinks['category_base'] = self::PRODUCT_CATEGORY_BASE;
             $was_set=true;
         }
-        if (! isset($permalinks['tag_base']) || ( is_bool($permalinks['tag_base']))) {
+        if (! isset($permalinks['tag_base']) || (is_bool($permalinks['tag_base']))) {
             $permalinks['tag_base'] =  self::PRODUCT_TAG_BASE;
             $was_set=true;
         }
-        if (! isset($permalinks['product_base']) || ( is_bool($permalinks['product_base']))) {
+        if (! isset($permalinks['product_base']) || (is_bool($permalinks['product_base']))) {
             $permalinks['product_base'] = self::PRODUCT_BASE;
             $was_set=true;
         }
 
-        if ($was_set){
-        update_option('woocommerce_permalinks', $permalinks);
+        if ($was_set) {
+            update_option('woocommerce_permalinks', $permalinks);
         }
     }
 }

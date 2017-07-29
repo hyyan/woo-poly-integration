@@ -116,5 +116,4 @@ class Tax
 
         return $html;
     }
-
 }

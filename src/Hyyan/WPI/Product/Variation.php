@@ -115,16 +115,16 @@ class Variation
         //on translations when processing new order
         //it also did not return all versions of post for deletion
         global $wpdb;
-        $postids=$wpdb->get_col( "select post_id from wp_postmeta where meta_key='" . 
-            self::DUPLICATE_KEY .  "' and meta_value=" . $variatonID); 
+        $postids=$wpdb->get_col("select post_id from wp_postmeta where meta_key='" .
+            self::DUPLICATE_KEY .  "' and meta_value=" . $variatonID);
 
-            if (true === $returnIDS) {
+        if (true === $returnIDS) {
             return $postids;
         } else {
             $result = array();
-            foreach ($postids as $postid){
+            foreach ($postids as $postid) {
                 $product = wc_get_product($postid);
-                if ($product){
+                if ($product) {
                     $result[]=$product;
                 }
             }
@@ -231,7 +231,7 @@ class Variation
      *
      * @param int $from product variation ID
      * @param int $to   product variation ID
-     * 
+     *
      * @return boolean false if something went wrong
      */
     protected function copyVariationMetas($from, $to)
@@ -265,7 +265,7 @@ class Variation
                         $translated = array();
                         $tax = str_replace('attribute_', '', $key);
                         foreach ($metas_from[$key] as $termSlug) {
-                            if (pll_is_translated_taxonomy($tax)){
+                            if (pll_is_translated_taxonomy($tax)) {
                                 $term = $this->getTermBySlug($tax, $termSlug);
                                 if ($term) {
                                     $term_id = $term->term_id;
@@ -283,7 +283,7 @@ class Variation
                                             $fromLang = pll_get_post_language(wc_get_product($from)->get_parent_id());
                                         }
                                         if ($fromLang) {
-                                            $term = pll_get_term($term_id, $fromLang); 
+                                            $term = pll_get_term($term_id, $fromLang);
                                             if ($term) {
                                                 $term = get_term_by('id', $term, $tax);
                                                 $result = Meta::createDefaultTermTranslation($tax, $term, $termSlug, $lang, false);
@@ -299,7 +299,7 @@ class Variation
                                     $translated[] = $termSlug;
                                 }
                             } else {
-                                $translated[] = $termSlug;                                
+                                $translated[] = $termSlug;
                             }
                         }
                         $metas_from[$key] = $translated;
@@ -319,7 +319,7 @@ class Variation
         //add shipping class not included in metas as now a taxonomy
         $this->syncShippingClass($from, $to);
 
-        do_action( HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION, $from, $to, $this->from, $this->to );
+        do_action(HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION, $from, $to, $this->from, $this->to);
     }
     /**
      * Get Term By Slug.
@@ -350,5 +350,5 @@ class Variation
         }
         $term = array_shift($terms);
         return get_term($term, $taxonomy);
-  }
+    }
 }

@@ -191,5 +191,4 @@ class Shipping
 
         return $translated_implode;
     }
-
 }

@@ -52,8 +52,8 @@ class SearchWidget
 
                 $form = str_replace($old, $new, $form);
             } else {
-                if (isset($polylang->curlang, $polylang->curlang->slug)){
-                $form = str_replace(
+                if (isset($polylang->curlang, $polylang->curlang->slug)) {
+                    $form = str_replace(
                         '</form>', '<input type="hidden" name="lang" value="'
                         .esc_attr($polylang->curlang->slug)
                         .'" /></form>', $form

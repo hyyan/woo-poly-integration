@@ -54,7 +54,7 @@ class Product
                 'woocommerce_product_attribute_terms', array($this, 'getProductAttributesInLanguage')
         );
          */
-                //show cross-sells and up-sells in correct language
+        //show cross-sells and up-sells in correct language
         add_filter('woocommerce_product_get_upsell_ids', array($this, 'getUpsellsInLanguage'), 10, 2);
         add_filter('woocommerce_product_get_cross_sell_ids', array($this, 'getCrosssellsInLanguage'), 10, 2);
         add_filter('woocommerce_product_get_children', array($this, 'getChildrenInLanguage'), 10, 2);
@@ -70,7 +70,7 @@ class Product
 
     
     /**
-     * filter child ids of Grouped Product 
+     * filter child ids of Grouped Product
      *
      * @param array      $related_ids array of product ids
      * @param WC_Product $product current product
@@ -196,12 +196,12 @@ class Product
     public function wpi_editor_title($title)
     {
         // Polylang sets the 'from_post' parameter
-            if (isset($_GET['from_post'])) {
-                $my_post = get_post($_GET['from_post']);
-                if ($my_post) {
-                    return $my_post->post_title;
-                }
+        if (isset($_GET['from_post'])) {
+            $my_post = get_post($_GET['from_post']);
+            if ($my_post) {
+                return $my_post->post_title;
             }
+        }
         return $title;
     }
 
@@ -209,12 +209,12 @@ class Product
     public function wpi_editor_content($content)
     {
         // Polylang sets the 'from_post' parameter
-            if (isset($_GET['from_post'])) {
-                $my_post = get_post($_GET['from_post']);
-                if ($my_post) {
-                    return $my_post->post_content;
-                }
+        if (isset($_GET['from_post'])) {
+            $my_post = get_post($_GET['from_post']);
+            if ($my_post) {
+                return $my_post->post_content;
             }
+        }
         return $content;
     }
 
@@ -222,12 +222,12 @@ class Product
     public function wpi_editor_excerpt($excerpt)
     {
         // Polylang sets the 'from_post' parameter
-            if (isset($_GET['from_post'])) {
-                $my_post = get_post($_GET['from_post']);
-                if ($my_post) {
-                    return $my_post->post_excerpt;
-                }
+        if (isset($_GET['from_post'])) {
+            $my_post = get_post($_GET['from_post']);
+            if ($my_post) {
+                return $my_post->post_excerpt;
             }
+        }
         return $excerpt;
     }
 }

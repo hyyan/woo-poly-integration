@@ -75,7 +75,7 @@ class Plugin
         
         add_filter('plugin_action_links_woo-poly-integration/__init__.php', function ($links) {
             $baseURL = is_multisite() ? get_admin_url() : admin_url();
-            $settingsLinks = array( 
+            $settingsLinks = array(
                 '<a href="'
                 . $baseURL
                 . 'options-general.php?page=hyyan-wpi">'
@@ -83,12 +83,12 @@ class Plugin
                 . '</a>',
                 '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki">'
                 . __('Docs', 'woo-poly-integration')
-                . '</a>',                
+                . '</a>',
             );
             
             return $settingsLinks + $links;
         });
-		add_filter( 'plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2 );
+        add_filter('plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2);
 
         $this->registerCore();
     }
@@ -114,8 +114,8 @@ class Plugin
                 is_plugin_active_for_network('polylang-pro/polylang.php')
             )
         ) {
-            if (isset($GLOBALS['polylang'], \PLL()->model, PLL()->links_model)){
-                if (pll_default_language()){
+            if (isset($GLOBALS['polylang'], \PLL()->model, PLL()->links_model)) {
+                if (pll_default_language()) {
                     $polylang = true;
                 }
             }
@@ -131,7 +131,7 @@ class Plugin
         
         
         return  ($polylang && Utilities::polylangVersionCheck(self::POLYLANG_VERSION)) &&
-                ($woocommerce && Utilities::woocommerceVersionCheck(self::WOOCOMMERCE_VERSION) );
+                ($woocommerce && Utilities::woocommerceVersionCheck(self::WOOCOMMERCE_VERSION));
     }
 
     /**
@@ -172,11 +172,10 @@ class Plugin
      */
     protected function registerCore()
     {
-
-		new Emails();
+        new Emails();
         new Admin\Settings();
         new Cart();
-//        new Login();
+        //        new Login();
         new Order();
         new Pages();
         new Endpoints();
@@ -196,31 +195,31 @@ class Plugin
         
         if ('on' === Settings::getOption('localenumbers', Features::getID(), 'on')) {
             new LocaleNumbers();
-        }        
+        }
     }
 
-	/**
-	 * Show row meta on the plugin screen.
+    /**
+     * Show row meta on the plugin screen.
      * allows documentation link to be available even when plugin is deactivated
-	 *
-	 * @param	mixed $links Plugin Row Meta
-	 * @param	mixed $file  Plugin Base file
-	 * @return	array
-	 */
-	public static function plugin_row_meta( $links, $file ) {
-		if ( 'woo-poly-integration/__init__.php' == $file ) {
-			$row_meta = array(
-				'docs'    => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki"'
-                . '" aria-label="' . esc_attr__( 'View WooCommerce-Polylang Integration documentation', 'woo-poly-integration' ) . '">'
-                . esc_html__( 'Docs', 'woo-poly-integration' ) . '</a>',
-				'support' => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/issues"' 
-                . '" aria-label="' . esc_attr__( 'View Issue tracker on GitHub', 'woo-poly-integration' ) . '">'
-                . esc_html__( 'Support', 'woo-poly-integration' ) . '</a>',
-			);
-			return array_merge( $links, $row_meta );
-		}
+     *
+     * @param	mixed $links Plugin Row Meta
+     * @param	mixed $file  Plugin Base file
+     * @return	array
+     */
+    public static function plugin_row_meta($links, $file)
+    {
+        if ('woo-poly-integration/__init__.php' == $file) {
+            $row_meta = array(
+                'docs'    => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki"'
+                . '" aria-label="' . esc_attr__('View WooCommerce-Polylang Integration documentation', 'woo-poly-integration') . '">'
+                . esc_html__('Docs', 'woo-poly-integration') . '</a>',
+                'support' => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/issues"'
+                . '" aria-label="' . esc_attr__('View Issue tracker on GitHub', 'woo-poly-integration') . '">'
+                . esc_html__('Support', 'woo-poly-integration') . '</a>',
+            );
+            return array_merge($links, $row_meta);
+        }
 
-		return (array) $links;
-	}
-    
+        return (array) $links;
+    }
 }
