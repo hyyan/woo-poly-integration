@@ -8,7 +8,7 @@ script: echo "skip sript"
 deploy:
   provider: script
   skip_cleanup: true
-  script: chmod +x deploy.sh && deploy.sh 
+  script: chmod +x deploy.sh && sh deploy.sh 
   on:
     branch: master
     php: 7.0
