@@ -1,12 +1,10 @@
 dist: trusty
 sudo: false
-language: php
 
 notifications:
   on_success: never
-  on_failure: change
-  
- 
+  on_failure: always
+
 deploy:
   provider: script
   skip_cleanup: true
