@@ -1,3 +1,4 @@
+install: true
 deploy:
   provider: script
   skip_cleanup: true
