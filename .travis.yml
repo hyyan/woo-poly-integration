@@ -1,4 +1,11 @@
 dist: precise
+sudo: false
+language: php
+
+notifications:
+  on_success: never
+  on_failure: change
+  
 deploy:
   provider: script
   skip_cleanup: true
