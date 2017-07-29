@@ -1,18 +1,7 @@
-dist: trusty
-sudo: false
-language: php
-install: true
-
-php:
-  - '7.0'
-  
-notifications:
-  on_success: never
-  on_failure: always
-
 deploy:
   provider: script
   skip_cleanup: true
   script: ./deploy.sh
   on:
     branch: master
+    php: 7.0
