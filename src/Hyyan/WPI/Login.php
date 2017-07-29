@@ -17,19 +17,15 @@ namespace Hyyan\WPI;
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
-class Login
-{
+class Login {
+
     /**
      * Construct object.
      */
-    public function __construct()
-    {
-        /*
+    public function __construct() {
         add_filter(
                 'woocommerce_login_redirect', array($this, 'getLoginRedirectPermalink'), 10, 2
         );
-         *
-         */
     }
 
     /**
@@ -39,8 +35,7 @@ class Login
      *
      * @return string redirect url
      */
-    public function getLoginRedirectPermalink($to)
-    {
+    public function getLoginRedirectPermalink($to) {
         $ID = url_to_postid($to);
         $translatedID = pll_get_post($ID);
 
@@ -50,4 +45,5 @@ class Login
 
         return $to;
     }
+
 }
