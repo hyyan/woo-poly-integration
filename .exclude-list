@@ -1,0 +1,7 @@
+deploy
+assets
+nbproject
+*.json
+*.sh
+*.png
+.*
