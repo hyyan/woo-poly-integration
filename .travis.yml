@@ -1,5 +1,6 @@
 install: true
 language: php
+dist: precise
 
 php:
  - 7.0
