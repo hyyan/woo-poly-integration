@@ -45,8 +45,8 @@ rsync -r -p ./* svn/trunk
 #rm -fR svn-trunk
 
 # Add new version tag
-mkdir -p ./svn/tags/$TRAVIS_TAG
-rsync -r -p . svn/tags/$TRAVIS_TAG
+#mkdir -p ./svn/tags/$TRAVIS_TAG
+#rsync -r -p . svn/tags/$TRAVIS_TAG
 
 # Add new files to SVN
 svn stat svn | grep '^?' | awk '{print $2}' | xargs -I x svn add x@
