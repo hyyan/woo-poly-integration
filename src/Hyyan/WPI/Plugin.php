@@ -11,8 +11,6 @@
 namespace Hyyan\WPI;
 
 use Hyyan\WPI\Tools\FlashMessages;
-use Hyyan\WPI\Admin\Settings;
-use Hyyan\WPI\Admin\Features;
 
 /**
  * Plugin.
@@ -192,10 +190,7 @@ class Plugin
         new Shipping();
         new Breadcrumb();
         new Tax();
-        
-        if ('on' === Settings::getOption('localenumbers', Features::getID(), 'on')) {
-            new LocaleNumbers();
-        }
+        new LocaleNumbers();
     }
 
     /**
