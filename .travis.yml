@@ -1,8 +1,13 @@
 install: true
 language: php
+dist: precise
+sudo: true
 
 php:
  - 7.0
+ 
+before_script:
+ -  sudo apt-get install subversion
  
 script: echo "skip sript"
 deploy:
