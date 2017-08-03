@@ -3,7 +3,7 @@ Contributors: hyyan, jonathanmoorebcsorg, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
@@ -120,6 +120,10 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog ==
+
+== 1.0.3 ==
+* Fix PHP Fatal error: Class 'NumberFormatter' not found
+
 
 == 1.0.2 ==
 * Fixes #200 Polylang version check fails to detect Polylang PRO

@@ -1,3 +1,9 @@
+# Changelog
+
+### 1.0.3
+
+* Fix PHP Fatal error: Class 'NumberFormatter' not found
+
 ### 1.0.2
 * Fixes #200 Polylang version check fails to detect Polylang PRO
 * Cart.js Updated in line with WooCommerce 3.1 cart-fragments.js
