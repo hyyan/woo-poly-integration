@@ -191,6 +191,7 @@ class Plugin
         new Breadcrumb();
         new Tax();
         new LocaleNumbers();
+		  new Ajax();
     }
 
     /**
