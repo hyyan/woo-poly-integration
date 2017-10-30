@@ -19,23 +19,23 @@ namespace Hyyan\WPI;
  */
 class Ajax {
 
-	/**
-	 * Construct object.
-	 */
-	public function __construct() {
-		add_filter( 'pll_home_url_white_list', array( $this, 'pll_home_url_white_list' ) );
-	}
+    /**
+     * Construct object.
+     */
+    public function __construct() {
+        add_filter( 'pll_home_url_white_list', array( $this, 'pll_home_url_white_list' ) );
+    }
 
-	/**
-	 * Add WooCommerce class-wc-ajax.php to the Polylang home_url white list
-	 *
-	 * @param array $white_list Polylang home_url white list
-	 *
-	 * @return array filtered white list
-	 */
-	public function pll_home_url_white_list( $white_list ) {
-		$white_list[] = array( 'file' => 'class-wc-ajax.php' );
-		return $white_list;
-	}
+    /**
+     * Add WooCommerce class-wc-ajax.php to the Polylang home_url white list
+     *
+     * @param array $white_list Polylang home_url white list
+     *
+     * @return array filtered white list
+     */
+    public function pll_home_url_white_list( $white_list ) {
+        $white_list[] = array( 'file' => 'class-wc-ajax.php' );
+        return $white_list;
+    }
 
 }
