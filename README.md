@@ -1,4 +1,4 @@
-# [Wordpress  WooCommerce Polylang Integration ](https://github.com/hyyan/woo-poly-integration/)
+# WordPress WooCommerce Polylang Integration
 
 [![project status](http://www.repostatus.org/badges/latest/active.svg)](http://www.gitchecker.com/hyyan/woo-poly-integration)
 [![Latest Stable Version](https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
@@ -7,8 +7,7 @@
 [![Wordpress rating](http://img.shields.io/wordpress/plugin/r/woo-poly-integration.svg)](https://wordpress.org/plugins/woo-poly-integration/)
 [![License](https://poser.pugx.org/hyyan/woo-poly-integration/license.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
 
-
-This plugin makes it possible to run multilingual e-commerce sites using
+[This plugin](https://github.com/hyyan/woo-poly-integration/) makes it possible to run multilingual e-commerce sites using
 WooCommerce and Polylang.It makes products and store pages translatable, lets 
 visitors switch languages and order products in their language. and all that from
 the same interface you love.
