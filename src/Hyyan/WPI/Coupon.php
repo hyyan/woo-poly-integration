@@ -32,7 +32,7 @@ class Coupon
         if ('on' === Settings::getOption('coupons', Features::getID(), 'on')) {
             add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
             
-            add_action('wp_loaded', array($this, 'registerCouponStringsForTranslation'));
+            add_action('wp_loaded', array($this, 'adminRegisterCouponStrings'));    
             
             //apply label filter with higher priority than woocommerce-auto-added-coupons
             add_filter('woocommerce_cart_totals_coupon_label',
@@ -82,6 +82,7 @@ class Coupon
      */
     public function translateLabel($value, $coupon)
     {
+        $this->registerCouponStringsForTranslation();
         return sprintf(esc_html__('Coupon: %s', 'woocommerce'),
             pll__(\get_post($coupon->get_id())->post_title));
     }
@@ -95,6 +96,7 @@ class Coupon
      */
     public function translateDescription($value, $coupon)
     {
+        $this->registerCouponStringsForTranslation();
         return pll__($value);
     }
     /**
@@ -107,35 +109,46 @@ class Coupon
      */
     public function translateMessage($value, $coupon)
     {
+        $this->registerCouponStringsForTranslation();
         return pll__($value);
     }
     
+    public function adminRegisterCouponStrings()
+    {
+        if (is_admin() && (!is_ajax())){
+            $this->registerCouponStringsForTranslation();
+        }
+    }
     /**
      * Register coupon titles adn descriptions in Polylang's Strings translations table.
      */
     public function registerCouponStringsForTranslation()
     {
-        if (function_exists('pll_register_string')) {
-            $coupons = $this->getCoupons();
+        static $coupons_loaded;
+        if (! $coupons_loaded){
+            if (function_exists('pll_register_string')) {
+                $coupons = $this->getCoupons();
             
-            foreach ($coupons as $coupon) {
-                //$code = wc_format_coupon_code($coupon->post_title);
-                pll_register_string($coupon->post_name, $coupon->post_title,
-                    __('Woocommerce Coupon Names', 'woo-poly-integration'));
-                pll_register_string($coupon->post_name . '_description', $coupon->post_excerpt,
-                    __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                foreach ($coupons as $coupon) {
+                    //$code = wc_format_coupon_code($coupon->post_title);
+                    pll_register_string($coupon->post_name, $coupon->post_title,
+                        __('Woocommerce Coupon Names', 'woo-poly-integration'));
+                    pll_register_string($coupon->post_name . '_description', $coupon->post_excerpt,
+                        __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
                 
-                $coupon_message = get_post_meta($coupon->ID, '_wjecf_enqueue_message', true);
-                if ($coupon_message) {
-                    pll_register_string($coupon->post_name . '_message', $coupon_message,
-                    __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
-                }
-                $freeproduct_message = get_post_meta($coupon->ID, '_wjecf_select_free_product_message', true);
-                if ($freeproduct_message) {
-                    pll_register_string($coupon->post_name . '_freeproductmessage', $coupon_message,
-                    __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                    $coupon_message = get_post_meta($coupon->ID, '_wjecf_enqueue_message', true);
+                    if ($coupon_message) {
+                        pll_register_string($coupon->post_name . '_message', $coupon_message,
+                        __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                    }
+                    $freeproduct_message = get_post_meta($coupon->ID, '_wjecf_select_free_product_message', true);
+                    if ($freeproduct_message) {
+                        pll_register_string($coupon->post_name . '_freeproductmessage', $coupon_message,
+                        __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                    }
                 }
             }
+            $coupons_loaded = true;
         }
     }
     
