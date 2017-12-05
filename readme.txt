@@ -4,6 +4,7 @@ Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop
 Requires at least: 3.8
 Tested up to: 4.8
 Stable tag: 1.0.3
+Requires PHP: 5.6
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 
