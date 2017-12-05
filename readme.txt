@@ -2,7 +2,7 @@
 Contributors: hyyan, jonathanmoorebcsorg, decarvalhoaa
 Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: 1.0.3
 Requires PHP: 5.6
 License: MIT
