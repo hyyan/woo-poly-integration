@@ -114,8 +114,6 @@ class Pages {
                     $wp->query_vars['post_type'] = 'product';
                 }
             }
-        } else {
-            $wp->query_vars['post_type'] = 'product';
         }
     }
 
