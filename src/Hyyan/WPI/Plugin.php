@@ -19,13 +19,13 @@ use Hyyan\WPI\Tools\FlashMessages;
  */
 class Plugin
 {
-        
+
     /** Required woocommerce version */
     const WOOCOMMERCE_VERSION = '3.0.0';
-    
+
     /** Required polylang version */
     const POLYLANG_VERSION = '2.0.0';
-    
+
     /**
      * Construct the plugin.
      */
@@ -35,6 +35,7 @@ class Plugin
 
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
+        add_action('upgrader_process_complete', array($this, 'onUpgrade'), 10, 2);
     }
 
     /**
@@ -43,7 +44,7 @@ class Plugin
     public function loadTextDomain()
     {
         load_plugin_textdomain(
-                'woo-poly-integration', false, plugin_basename(dirname(Hyyan_WPI_DIR)).'/languages'
+                'woo-poly-integration', false, plugin_basename(dirname(Hyyan_WPI_DIR)) . '/languages'
         );
     }
 
@@ -57,6 +58,7 @@ class Plugin
      */
     public function activate()
     {
+        
         if (!static::canActivate()) {
             FlashMessages::remove(MessagesInterface::MSG_SUPPORT);
             FlashMessages::add(
@@ -70,7 +72,7 @@ class Plugin
         FlashMessages::add(
                 MessagesInterface::MSG_SUPPORT, static::getView('Messages/support')
         );
-        
+
         add_filter('plugin_action_links_woo-poly-integration/__init__.php', function ($links) {
             $baseURL = is_multisite() ? get_admin_url() : admin_url();
             $settingsLinks = array(
@@ -83,10 +85,10 @@ class Plugin
                 . __('Docs', 'woo-poly-integration')
                 . '</a>',
             );
-            
+
             return $settingsLinks + $links;
         });
-        add_filter('plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2);
+        add_filter('plugin_row_meta', array(__CLASS__, 'plugin_row_meta'), 10, 2);
 
         $this->registerCore();
     }
@@ -100,17 +102,17 @@ class Plugin
     {
         $polylang = false;
         $woocommerce = false;
-        
+
         /* check polylang plugin */
         if (
-            (
+                (
                 is_plugin_active('polylang/polylang.php') ||
                 is_plugin_active('polylang-pro/polylang.php')
-            ) ||
-            (
+                ) ||
+                (
                 is_plugin_active_for_network('polylang/polylang.php') ||
                 is_plugin_active_for_network('polylang-pro/polylang.php')
-            )
+                )
         ) {
             if (isset($GLOBALS['polylang'], \PLL()->model, PLL()->links_model)) {
                 if (pll_default_language()) {
@@ -118,18 +120,42 @@ class Plugin
                 }
             }
         }
-        
+
         /* check woocommerce plugin */
         if (
-               is_plugin_active('woocommerce/woocommerce.php') ||
-               is_plugin_active_for_network('woocommerce/woocommerce.php')
-          ) {
+                is_plugin_active('woocommerce/woocommerce.php') ||
+                is_plugin_active_for_network('woocommerce/woocommerce.php')
+        ) {
             $woocommerce = true;
         }
-        
-        
-        return  ($polylang && Utilities::polylangVersionCheck(self::POLYLANG_VERSION)) &&
+
+
+        return ($polylang && Utilities::polylangVersionCheck(self::POLYLANG_VERSION)) &&
                 ($woocommerce && Utilities::woocommerceVersionCheck(self::WOOCOMMERCE_VERSION));
+    }
+    
+    /**
+     * On Upgrade
+     *
+     * Run only once the plugin has been updated to a new version
+     *
+     * @param \Plugin_Upgrader $upgrader
+     * @param Array $options
+     */
+    public function onUpgrade($upgrader, $options)
+    {
+        $woopoly = 'woo-poly-integration/__init__.php';
+        
+        if (
+                $options['action'] == 'update' &&
+                ($options['type'] == 'plugin' && isset($options['plugins']))
+        ) {
+            foreach ($options['plugins'] as $plugin) {
+                if ($plugin == $woopoly) {
+                    flush_rewrite_rules();
+                }
+            }
+        }
     }
 
     /**
@@ -155,7 +181,7 @@ class Plugin
     public static function getView($name, array $vars = array())
     {
         $result = '';
-        $path = dirname(Hyyan_WPI_DIR).'/src/Hyyan/WPI/Views/'.$name.'.php';
+        $path = dirname(Hyyan_WPI_DIR) . '/src/Hyyan/WPI/Views/' . $name . '.php';
         if (file_exists($path)) {
             ob_start();
             include $path;
@@ -206,7 +232,7 @@ class Plugin
     {
         if ('woo-poly-integration/__init__.php' == $file) {
             $row_meta = array(
-                'docs'    => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki"'
+                'docs' => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki"'
                 . '" aria-label="' . esc_attr__('View WooCommerce-Polylang Integration documentation', 'woo-poly-integration') . '">'
                 . esc_html__('Docs', 'woo-poly-integration') . '</a>',
                 'support' => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/issues"'

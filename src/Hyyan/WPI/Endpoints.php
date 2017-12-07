@@ -65,7 +65,7 @@ class Endpoints
     public function rewriteEndpoints()
     {
         $this->addEndpoints();
-        flush_rewrite_rules();
+        //flush_rewrite_rules();
     }
 
     /**
@@ -144,7 +144,6 @@ class Endpoints
     {
         $langs = pll_languages_list();
         foreach ($this->endpoints as $endpoint) {
-            add_rewrite_endpoint(pll__($endpoint), EP_ROOT | EP_PAGES);
             foreach ($langs as $lang) {
                 add_rewrite_endpoint(pll_translate_string( $endpoint, $lang ), EP_ROOT | EP_PAGES);
             }
