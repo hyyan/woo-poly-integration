@@ -161,16 +161,23 @@ class Pages {
      * @return string modified form
      */
     public function addShortcodeLanguageFilter($query_args, $atts) {
-        
-        $ids = explode(',', $atts['ids']);
-        $transIds = array();
-        foreach ($ids as $id) {
-            array_push($transIds, pll_get_post($id));
+
+
+        if (strlen($atts['ids'])) {
+
+            $ids = explode(',', $atts['ids']);
+            $transIds = array();
+            foreach ($ids as $id) {
+                array_push($transIds, pll_get_post($id));
+            }
+
+            $atts['ids'] = implode($transIds, ',');
+            $query_args['post__in'] = $transIds;
+        } else {
+            $query_args['lang'] = isset($query_args['lang']) ?
+                    $query_args['lang'] : pll_current_language();
         }
-
-        $atts['ids'] = $transIds;
-        $query_args['post__in'] = $transIds;
-
+        
         return $query_args;
     }
 
