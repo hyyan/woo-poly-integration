@@ -17,13 +17,15 @@ namespace Hyyan\WPI;
  *
  * @author Marian Kadanka <marian.kadanka@gmail.com>
  */
-class Ajax {
+class Ajax
+{
 
     /**
      * Construct object.
      */
-    public function __construct() {
-        add_filter( 'pll_home_url_white_list', array( $this, 'pll_home_url_white_list' ) );
+    public function __construct()
+    {
+        add_filter('pll_home_url_white_list', array( $this, 'pll_home_url_white_list' ));
     }
 
     /**
@@ -33,9 +35,9 @@ class Ajax {
      *
      * @return array filtered white list
      */
-    public function pll_home_url_white_list( $white_list ) {
+    public function pll_home_url_white_list($white_list)
+    {
         $white_list[] = array( 'file' => 'class-wc-ajax.php' );
         return $white_list;
     }
-
 }

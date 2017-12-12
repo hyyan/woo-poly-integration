@@ -17,12 +17,14 @@ namespace Hyyan\WPI;
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
-class Pages {
+class Pages
+{
 
     /**
      * Construct object.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $method = array($this, 'getPostTranslationID');
         $pages = apply_filters(HooksInterface::PAGES_LIST, array(
             'shop',
@@ -60,7 +62,8 @@ class Pages {
      *
      * @return int
      */
-    public function getPostTranslationID($id) {
+    public function getPostTranslationID($id)
+    {
         if (!function_exists('pll_get_post')) {
             return $id;
         }
@@ -82,7 +85,8 @@ class Pages {
      * @return bool false if the current language is the same as default
      *              language or if the "pagename" var is empty
      */
-    public function correctShopPage(\WP $wp) {
+    public function correctShopPage(\WP $wp)
+    {
         global $polylang;
 
         $shopID = wc_get_page_id('shop');
@@ -125,7 +129,8 @@ class Pages {
      *
      * @return string translated url
      */
-    public function translateShopUrl($url, $language) {
+    public function translateShopUrl($url, $language)
+    {
         $result = $url;
 
         if (!is_post_type_archive('product')) {
@@ -160,11 +165,9 @@ class Pages {
      *
      * @return string modified form
      */
-    public function addShortcodeLanguageFilter($query_args, $atts) {
-
-
+    public function addShortcodeLanguageFilter($query_args, $atts)
+    {
         if (strlen($atts['ids'])) {
-
             $ids = explode(',', $atts['ids']);
             $transIds = array();
             foreach ($ids as $id) {
@@ -180,5 +183,4 @@ class Pages {
         
         return $query_args;
     }
-
 }

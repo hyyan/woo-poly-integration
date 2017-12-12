@@ -145,7 +145,7 @@ class Endpoints
         $langs = pll_languages_list();
         foreach ($this->endpoints as $endpoint) {
             foreach ($langs as $lang) {
-                add_rewrite_endpoint(pll_translate_string( $endpoint, $lang ), EP_ROOT | EP_PAGES);
+                add_rewrite_endpoint(pll_translate_string($endpoint, $lang), EP_ROOT | EP_PAGES);
             }
         }
     }

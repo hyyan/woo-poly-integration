@@ -17,7 +17,8 @@ use Hyyan\WPI\Tools\FlashMessages;
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
-class Plugin {
+class Plugin
+{
 
     /** Required woocommerce version */
     const WOOCOMMERCE_VERSION = '3.0.0';
@@ -28,7 +29,8 @@ class Plugin {
     /**
      * Construct the plugin.
      */
-    public function __construct() {
+    public function __construct()
+    {
         FlashMessages::register();
 
         add_action('init', array($this, 'activate'));
@@ -38,7 +40,8 @@ class Plugin {
     /**
      * Load plugin langauge file.
      */
-    public function loadTextDomain() {
+    public function loadTextDomain()
+    {
         load_plugin_textdomain(
                 'woo-poly-integration', false, plugin_basename(dirname(Hyyan_WPI_DIR)) . '/languages'
         );
@@ -52,8 +55,8 @@ class Plugin {
      *
      * @return bool false if plugin can not be activated
      */
-    public function activate() {
-
+    public function activate()
+    {
         if (!static::canActivate()) {
             FlashMessages::remove(MessagesInterface::MSG_SUPPORT);
             FlashMessages::add(
@@ -100,7 +103,8 @@ class Plugin {
      *
      * @return bool true if can be activated , false otherwise
      */
-    public static function canActivate() {
+    public static function canActivate()
+    {
         $polylang = false;
         $woocommerce = false;
 
@@ -137,13 +141,14 @@ class Plugin {
 
     /**
      * On Upgrade
-     * 
+     *
      * Run on the plugin updates only once
-     * 
+     *
      * @param num $newVersion
      * @param num $oldVersion
      */
-    public function onUpgrade($newVersion, $oldVersion) {
+    public function onUpgrade($newVersion, $oldVersion)
+    {
         flush_rewrite_rules(true);
     }
 
@@ -152,7 +157,8 @@ class Plugin {
      *
      * @return int
      */
-    public static function getVersion() {
+    public static function getVersion()
+    {
         $data = get_plugin_data(Hyyan_WPI_DIR);
 
         return $data['Version'];
@@ -166,7 +172,8 @@ class Plugin {
      *
      * @return string the view content
      */
-    public static function getView($name, array $vars = array()) {
+    public static function getView($name, array $vars = array())
+    {
         $result = '';
         $path = dirname(Hyyan_WPI_DIR) . '/src/Hyyan/WPI/Views/' . $name . '.php';
         if (file_exists($path)) {
@@ -181,11 +188,12 @@ class Plugin {
     /**
      * Add plugin core classes.
      */
-    protected function registerCore() {
+    protected function registerCore()
+    {
         new Emails();
         new Admin\Settings();
         new Cart();
-        //        new Login();
+        //new Login();
         new Order();
         new Pages();
         new Endpoints();
@@ -214,7 +222,8 @@ class Plugin {
      * @param	mixed $file  Plugin Base file
      * @return	array
      */
-    public static function plugin_row_meta($links, $file) {
+    public static function plugin_row_meta($links, $file)
+    {
         if ('woo-poly-integration/__init__.php' == $file) {
             $row_meta = array(
                 'docs' => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki"'
@@ -229,5 +238,4 @@ class Plugin {
 
         return (array) $links;
     }
-
 }

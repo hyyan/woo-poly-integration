@@ -11,13 +11,14 @@ namespace Hyyan\WPI;
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
 
-class LocaleNumbers {
+class LocaleNumbers
+{
 
     /**
      * Hook relevant WooCommerce filters to apply localisation according to Polylang locale.
      */
-    public function __construct() {
-
+    public function __construct()
+    {
         if (
                 class_exists('\NumberFormatter') &&
                 'on' === Settings::getOption('localenumbers', Features::getID(), 'on')
@@ -50,7 +51,8 @@ class LocaleNumbers {
      * @return Array the arguments
      */
 
-    public function filterPriceArgs($args) {
+    public function filterPriceArgs($args)
+    {
 
         //if there is a currency provided, attempt a full reset of formatting parameters
         if ((isset($args['currency'])) && ($args['currency'] != '')) {
@@ -83,7 +85,8 @@ class LocaleNumbers {
      * @return string  formatted number
      */
 
-    public function getLocalizedDecimal($wooFormattedValue, $input) {
+    public function getLocalizedDecimal($wooFormattedValue, $input)
+    {
         //default to return unmodified wooCommerce value
         $retval = $wooFormattedValue;
 
@@ -105,7 +108,8 @@ class LocaleNumbers {
      * @return string  formatted number
      */
 
-    public function getLocaleDecimalSeparator($separator) {
+    public function getLocaleDecimalSeparator($separator)
+    {
         $retval = $separator;
         //don't touch values on admin screens, save as plain number using woo defaults
         if ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax'])) {
@@ -129,7 +133,8 @@ class LocaleNumbers {
      * @return string  formatted number
      */
 
-    public function getLocaleThousandSeparator($separator) {
+    public function getLocaleThousandSeparator($separator)
+    {
         $retval = $separator;
         //don't touch values on admin screens, save as plain number using woo defaults
         if (!is_admin()) {
@@ -140,5 +145,4 @@ class LocaleNumbers {
         }
         return $retval;
     }
-
 }

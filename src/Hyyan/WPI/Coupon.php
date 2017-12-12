@@ -32,7 +32,7 @@ class Coupon
         if ('on' === Settings::getOption('coupons', Features::getID(), 'on')) {
             add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
             
-            add_action('wp_loaded', array($this, 'adminRegisterCouponStrings'));    
+            add_action('wp_loaded', array($this, 'adminRegisterCouponStrings'));
             
             //apply label filter with higher priority than woocommerce-auto-added-coupons
             add_filter('woocommerce_cart_totals_coupon_label',
@@ -115,7 +115,7 @@ class Coupon
     
     public function adminRegisterCouponStrings()
     {
-        if (is_admin() && (!is_ajax())){
+        if (is_admin() && (!is_ajax())) {
             $this->registerCouponStringsForTranslation();
         }
     }
@@ -125,7 +125,7 @@ class Coupon
     public function registerCouponStringsForTranslation()
     {
         static $coupons_loaded;
-        if (! $coupons_loaded){
+        if (! $coupons_loaded) {
             if (function_exists('pll_register_string')) {
                 $coupons = $this->getCoupons();
             
