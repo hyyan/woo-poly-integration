@@ -167,7 +167,7 @@ class Pages
      */
     public function addShortcodeLanguageFilter($query_args, $atts)
     {
-        if (strlen($atts['ids'])) {
+        if (isset($atts['ids']) && strlen($atts['ids'])) {
             $ids = explode(',', $atts['ids']);
             $transIds = array();
             foreach ($ids as $id) {
