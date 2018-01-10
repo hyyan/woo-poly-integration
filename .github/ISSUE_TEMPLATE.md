@@ -31,3 +31,11 @@ If reporting a problem please make sure you confirm the following points so we c
 
 #### What Happened Instead
 
+
+## WordPress Environment
+
+<details>
+```
+Copy and paste the system status report from **WooCommerce > System Status** in WordPress admin here.
+```
+</details>
