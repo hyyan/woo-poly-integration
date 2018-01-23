@@ -88,10 +88,14 @@ class Stock
      */
     protected function change(\WC_Order_Item_Product $item, $action = self::STOCK_REDUCE_ACTION)
     {
-        $productID = Utilities::get_order_item_productid($item);
-        $productObject = wc_get_product($productID);
+        /* Proper way to get to object so it works with IPN calls */
+        $productObject = $item->get_product();
+        $productID = $productObject->get_id();
+
         //$productLang = pll_get_post_language($productID); //#184
         $orderLang = pll_get_post_language($item->get_order_id());
+
+        /* TODO check if variations are also subject to IPN problem issue #299 */
         $variationID = Utilities::get_order_item_variationid($item);
 
         /* Handle Products */
@@ -113,14 +117,14 @@ class Stock
             $isManageStock = $productObject->managing_stock();
             $isVariation = $variationID && $variationID > 0;
 
-            //in 3.0.8 at least, current lang item must not be removed from array if is variable
-            if ($isManageStock && (!$isVariation)) {
-                /* Remove the current product from translation array */
-                unset($translations[$orderLang]);
-            }
-
             /* Sync stock for all translation */
             foreach ($translations as $ID) {
+
+                //in 3.0.8 at least, current lang item must not be removed from array if is variable
+                if ($isManageStock && (!$isVariation)) {
+                    /* Skip the current product */
+                    if ($ID == $productID) continue;
+                }
 
                 /* Only if product is managing stock
                  * including variation with stock managed at product level*/
