@@ -12,7 +12,7 @@
  * License: MIT License
  * Version: 1.0.4
  * Requires At Least: 4.7
- * Tested Up To: 4.9
+ * Tested Up To: 4.9.5
  * WC requires at least: 3.0.0
  * WC tested up to: 3.2.6
  * Requires PHP: 5.3

@@ -23,13 +23,18 @@ use Hyyan\WPI\Utilities;
  */
 class Coupon
 {
+    static $enable_logging = false;
+    static $enable_wjecf = false;
 
     /**
      * Construct object.
      */
     public function __construct()
     {
+        //avoid excessive loading
+        if ( defined( 'DOING_CRON') ) {return;} 
         if ('on' === Settings::getOption('coupons', Features::getID(), 'on')) {
+
             add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
             
             add_action('wp_loaded', array($this, 'adminRegisterCouponStrings'));
@@ -41,12 +46,20 @@ class Coupon
                 array($this, 'translateDescription'), 10, 2);
             
             /* additional fields for WooCommerce Extended Coupon Features */
-            add_filter('woocommerce_coupon_get__wjecf_enqueue_message',
-                array($this, 'translateMessage'), 10, 2);
-            add_filter('woocommerce_coupon_get__wjecf_select_free_product_message',
-                array($this, 'translateMessage'), 10, 2);
-            add_filter('woocommerce_coupon_get__wjecf_free_product_ids',
-                array($this, 'getFreeProductsInLanguage'), 10, 2);
+            $enable_wjecf = function_exists('WJECF');
+            if ($enable_wjecf){
+                if (self::$enable_logging) {
+                    error_log('woopoly enabled wjecf translation: ' . 
+                        ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
+                        ' no $_SERVER[REQUEST_URI] available'));            
+                }
+                add_filter('woocommerce_coupon_get__wjecf_enqueue_message',
+                    array($this, 'translateMessage'), 10, 2);
+                add_filter('woocommerce_coupon_get__wjecf_select_free_product_message',
+                    array($this, 'translateMessage'), 10, 2);
+                add_filter('woocommerce_coupon_get__wjecf_free_product_ids',
+                    array($this, 'getFreeProductsInLanguage'), 10, 2);
+            }
         }
     }
 
@@ -58,12 +71,17 @@ class Coupon
      *
      * @return array filtered result
      */
-    public function getFreeProductsInLanguage($productIds, $coupon)
+    public function getFreeProductsInLanguage($productIds, \WC_Coupon $coupon)
     {
         if (is_admin()) {
             return $productIds;
         }
         $productLang = pll_current_language();
+        if (self::$enable_logging) {
+            error_log('woopoly getting translated ids for: ' . $productIds . ' for coupon ' . $coupon->get_code() . 
+                ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
+                ' no $_SERVER[REQUEST_URI] available'));            
+        }
         $productIds = explode(',', $productIds);
         $mappedIds = array();
         foreach ($productIds as $productId) {
@@ -80,11 +98,15 @@ class Coupon
      *
      * @return string
      */
-    public function translateLabel($value, $coupon)
+    public function translateLabel($value, \WC_Coupon $coupon)
     {
         $this->registerCouponStringsForTranslation();
-        return sprintf(esc_html__('Coupon: %s', 'woocommerce'),
-            pll__(\get_post($coupon->get_id())->post_title));
+        $code = $coupon->get_code();
+        if ($code){
+            return sprintf(esc_html__('Coupon: %s', 'woocommerce'), pll__($code));
+        } else {
+            return $value;
+        }
     }
     /**
      * translate coupon description.
@@ -94,7 +116,7 @@ class Coupon
      *
      * @return string
      */
-    public function translateDescription($value, $coupon)
+    public function translateDescription($value, \WC_Coupon $coupon)
     {
         $this->registerCouponStringsForTranslation();
         return pll__($value);
@@ -125,30 +147,45 @@ class Coupon
     public function registerCouponStringsForTranslation()
     {
         static $coupons_loaded;
-        if (! $coupons_loaded) {
+        static $doingload;      
+        if ($coupons_loaded || $doingload){return;}
+        if (! $coupons_loaded && ! $doingload) {
+            $doingload = true;
             if (function_exists('pll_register_string')) {
+                if (self::$enable_logging) {
+                    error_log('woopoly registering coupons for translation: ' . 
+                        ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
+                        ' no $_SERVER[REQUEST_URI] available'));            
+                }
                 $coupons = $this->getCoupons();
             
-                foreach ($coupons as $coupon) {
-                    //$code = wc_format_coupon_code($coupon->post_title);
-                    pll_register_string($coupon->post_name, $coupon->post_title,
+                foreach ($coupons as $coupon_postid) {
+                    $coupon = new \WC_Coupon( $coupon_postid );
+
+                    $coupon_code = $coupon->get_code();
+                    $coupon_slug = sanitize_title_with_dashes($coupon_code);
+                    pll_register_string($coupon_slug, $coupon_code,
                         __('Woocommerce Coupon Names', 'woo-poly-integration'));
-                    pll_register_string($coupon->post_name . '_description', $coupon->post_excerpt,
+                    pll_register_string($coupon_slug . '_description', $coupon->get_description(),
                         __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
-                
-                    $coupon_message = get_post_meta($coupon->ID, '_wjecf_enqueue_message', true);
-                    if ($coupon_message) {
-                        pll_register_string($coupon->post_name . '_message', $coupon_message,
-                        __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
-                    }
-                    $freeproduct_message = get_post_meta($coupon->ID, '_wjecf_select_free_product_message', true);
-                    if ($freeproduct_message) {
-                        pll_register_string($coupon->post_name . '_freeproductmessage', $coupon_message,
-                        __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+
+                    if (self::$enable_wjecf) {
+                        
+                        $coupon_message = $coupon->get_meta('_wjecf_enqueue_message', true);
+                        if ($coupon_message) {
+                            pll_register_string($coupon_slug . '_message', $coupon_message,
+                            __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                        }
+                        $freeproduct_message = $coupon->get_meta('_wjecf_select_free_product_message', true);
+                        if ($freeproduct_message) {
+                            pll_register_string($coupon_slug . '_freeproductmessage', $coupon_message,
+                            __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                        }
                     }
                 }
             }
             $coupons_loaded = true;
+            $doingload = false;
         }
     }
     
@@ -161,21 +198,39 @@ class Coupon
     {
         global $woocommerce;
         
-        $args = array(
-            'posts_per_page'   => -1,
-            'orderby'          => 'title',
-            'order'            => 'asc',
-            'post_type'        => 'shop_coupon',
-            'post_status'      => 'publish',
-        );
-    
-        $coupons = get_posts($args);
-        return $coupons;
+        $locale = (function_exists('pll_current_language')) ? pll_current_language('locale') : get_locale();
+        $tKey = 'coupons-' . $locale;
+        
+        $coupon_ids = get_transient($tKey);
+        if ($coupon_ids) {
+            if (self::$enable_logging) {
+                error_log('woopoly found coupons in transient: ' . 
+                    ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
+                    ' no $_SERVER[REQUEST_URI] available'));            
+            }
+        } else {        
+            if (self::$enable_logging) {
+                error_log('woopoly loading coupons to transient: ' . 
+                    ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
+                    ' no $_SERVER[REQUEST_URI] available'));            
+            }
+            $args = array(
+                'posts_per_page'   => -1,
+                'orderby'          => 'title',
+                'order'            => 'asc',
+                'post_type'        => 'shop_coupon',
+                'post_status'      => 'publish',
+                'fields'           => 'ids',                
+            );
+            $coupon_ids = get_posts($args);
+            set_transient($tKey, $coupon_ids, 3600);
+        }
+        return $coupon_ids;
     }
     
     
     /**
-     * Extend the coupon to include porducts translations.
+     * Extend the coupon to include product translations.
      *
      * @param \WC_Coupon $coupon
      *
@@ -199,7 +254,7 @@ class Coupon
             }
         }
 
-        foreach ($coupon->get_product_categories() as $id) {
+        foreach ($coupon->get_product_categories() as $id) {            
             foreach ($this->getProductTermTranslationIDS($id) as $_id) {
                 $productCategoriesIDS[] = $_id;
             }
@@ -209,6 +264,16 @@ class Coupon
             foreach ($this->getProductTermTranslationIDS($id) as $_id) {
                 $excludeProductCategoriesIDS[] = $_id;
             }
+        }
+
+        if (self::$enable_logging) {
+            error_log('woopoly setting related for coupon : ' . $coupon->get_code() .
+                ' include-products:' . implode(',', $productIDS) .
+                ' exclude-products:' . implode(',', $excludeProductIDS) .
+                ' include-categories:' . implode(',', $productCategoriesIDS) .
+                ' exclude-categories:' . implode(',', $excludeProductCategoriesIDS) .
+                ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
+                ' no $_SERVER[REQUEST_URI] available'));            
         }
 
         $coupon->set_product_ids($productIDS);
