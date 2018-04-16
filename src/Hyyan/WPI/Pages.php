@@ -142,6 +142,11 @@ class Pages
 
         if ($shopPage) {
             $shopPageTranslatedID = pll_get_post($shopPageID, $language);
+            
+            if (!$shopPageTranslatedID) {
+                return $result;
+            }
+
             $shopPageTranslation = get_post($shopPageTranslatedID);
 
             if ($shopPageTranslation) {
