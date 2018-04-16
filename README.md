@@ -8,7 +8,7 @@
 [![License](https://poser.pugx.org/hyyan/woo-poly-integration/license.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
 
 [This plugin](https://github.com/hyyan/woo-poly-integration/) makes it possible to run multilingual e-commerce sites using
-WooCommerce and Polylang.It makes products and store pages translatable, lets 
+WooCommerce and Polylang.It makes products and store pages translatable, lets
 visitors switch languages and order products in their language. and all that from
 the same interface you love.
 
@@ -40,13 +40,13 @@ the same interface you love.
 ## What you need to know about this plugin
 
 1. The plugin needs `PHP5.3 and above`
-2. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang) 
+2. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang)
    and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
-3. The plugin support variable products , but using them will `disallow you to 
+3. The plugin support variable products , but using them will `disallow you to
    change the default language` , because of the way the plugin implements this
    support. So you have to make sure to choose the default language before you start
    adding new variable products.
-4. Polylang URL modifications method `The language is set from content` is not 
+4. Polylang URL modifications method `The language is set from content` is not
    supported yet
 
 ## How to install
@@ -69,6 +69,7 @@ extract it there.
 ## Translations
 
 * Arabic by [Hyyan Abo Fakher](https://github.com/hyyan)
+* Spanish by [nunhes](https://github.com/nunhes)
 
 ## Contributing
 
