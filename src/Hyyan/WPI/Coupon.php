@@ -297,7 +297,7 @@ class Coupon
         $result  = array($ID);
         $product = wc_get_product($ID);
 
-        if ($product && $product->get_type() === 'variation') {
+        if ($product && strpos($product->get_type(), 'variation') !== false) {
             $IDS = Product\Variation::getRelatedVariation($ID, true);
             if (is_array($IDS)) {
                 $result = array_merge($result, $IDS);
