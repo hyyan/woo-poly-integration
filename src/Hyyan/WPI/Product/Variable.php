@@ -30,7 +30,7 @@ class Variable
         // Handle variations duplication
         add_action('save_post', array($this, 'duplicateVariations'), 10, 3);
         add_action('save_post', array($this, 'syncDefaultAttributes'), 10, 3);
-        
+
         // Remove variations
         add_action('wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9);
 
@@ -75,7 +75,7 @@ class Variable
         if ($product->get_parent_id()) {
             $product = wc_get_product($product->get_parent_id());
         }
-        
+
         $from = null;
 
         if (pll_get_post_language($product->get_id()) == pll_default_language()) {
@@ -87,11 +87,13 @@ class Variable
                  * created for brand new products which are not saved yet by user
                  */
                 $from = Utilities::getProductTranslationByID(
-                                esc_attr($_GET['from_post']), pll_default_language()
+                                esc_attr($_GET['from_post']),
+                    pll_default_language()
                 );
             } else {
                 $from = Utilities::getProductTranslationByObject(
-                                $product, pll_default_language()
+                                $product,
+                    pll_default_language()
                 );
             }
         }
@@ -104,12 +106,13 @@ class Variable
         foreach ($langs as $lang) {
             remove_action('save_post', array($this, __FUNCTION__), 10);
             $variation = new Variation(
-                    $from, Utilities::getProductTranslationByObject($product, $lang)
+                    $from,
+                Utilities::getProductTranslationByObject($product, $lang)
             );
             $variation->duplicate();
             add_action('save_post', array($this, __FUNCTION__), 10, 3);
         }
-        
+
         /*
                 remove_action('save_post', array($this, __FUNCTION__), 10);
                 $translations = Utilities::getProductTranslationsArrayByObject($from, true);
@@ -121,7 +124,7 @@ class Variable
          *
          */
     }
-    
+
     /**
      * Prevents plugins (like Polylang) from overwriting default attribute meta sync.
          * TODO: split and correct: this function is now covering multiple concepts, not just skipping default attributes
@@ -169,7 +172,7 @@ class Variable
                     if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
                         if ($translated_term_id = pll_get_term($term->term_id, $lang)) {
                             $translated_term    = get_term_by('id', $translated_term_id, $term->taxonomy);
-    
+
                             // If meta is taxonomy managed by Polylang and is in the
                             // correct language continue, otherwise return false to
                             // stop execution
@@ -335,7 +338,10 @@ class Variable
                     .'     title       : "%s" ,'
                     .'     content     : "%s" ,'
                     .'     defaultLang : "%s"'
-                    .'};', __('Wrong Language For Variable Product', 'woo-poly-integration'), __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>Read more , to know why</a>", 'woo-poly-integration'), pll_default_language()
+                    .'};',
+                __('Wrong Language For Variable Product', 'woo-poly-integration'),
+                __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>Read more , to know why</a>", 'woo-poly-integration'),
+                pll_default_language()
             );
 
             Utilities::jsScriptWrapper($jsID, $code, false);
@@ -347,7 +353,11 @@ class Variable
             wp_enqueue_script('jquery-effects-core');
             wp_enqueue_script('jquery-ui-dialog');
             wp_enqueue_script(
-                    'woo-poly-variables', plugins_url('public/js/Variables' . $suffix . '.js', Hyyan_WPI_DIR), array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'), \Hyyan\WPI\Plugin::getVersion(), true
+                    'woo-poly-variables',
+                plugins_url('public/js/Variables' . $suffix . '.js', Hyyan_WPI_DIR),
+                array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'),
+                \Hyyan\WPI\Plugin::getVersion(),
+                true
             );
         }, 100);
     }
@@ -379,7 +389,8 @@ class Variable
                         .'});'
                         .' $("#options-lang").prepend('
                         .'     "<p class=\'update-nag\'>%s</p>"'
-                        .');', __('You can not change the default language ,Becuase you are using variable products', 'woo-poly-integration')
+                        .');',
+                    __('You can not change the default language because you are using variable products', 'woo-poly-integration')
                 );
                 Utilities::jsScriptWrapper($jsID, $code);
             }, 100);

@@ -26,13 +26,19 @@ class Attributes implements TaxonomiesInterface
     {
         /* Manage attributes label translation */
         add_action(
-                'init', array($this, 'manageAttrLablesTranslation'), 11, 2
+                'init',
+            array($this, 'manageAttrLablesTranslation'),
+            11,
+            2
         );
         add_filter(
-                'woocommerce_attribute_label', array($this, 'translateAttrLable')
+                'woocommerce_attribute_label',
+            array($this, 'translateAttrLable')
         );
         add_action(
-                'admin_print_scripts', array($this, 'addAttrsTranslateLinks'), 100
+                'admin_print_scripts',
+            array($this, 'addAttrsTranslateLinks'),
+            100
         );
     }
 
@@ -56,7 +62,9 @@ class Attributes implements TaxonomiesInterface
         $section = __('Woocommerce Attributes', 'woo-poly-integration');
         foreach ($attrs as $attr) {
             pll_register_string(
-                    $attr->attribute_label, $attr->attribute_label, $section
+                    $attr->attribute_label,
+                $attr->attribute_label,
+                $section
             );
         }
     }
@@ -105,7 +113,9 @@ class Attributes implements TaxonomiesInterface
         $buttonID = 'attrs-label-translation-button';
         $buttonCode = sprintf(
                 '$("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
-                .' .insertBefore(".attributes-table");', $stringTranslationURL, __('Translate Attributes Lables', 'woo-poly-integration')
+                .' .insertBefore(".attributes-table");',
+            $stringTranslationURL,
+            __('Translate Attributes Labels', 'woo-poly-integration')
         );
 
         /* Add attribute translate search link */
@@ -121,7 +131,9 @@ class Attributes implements TaxonomiesInterface
                 .'     + "<a href=\'"+attrTranslateUrl+"\'>%s</a>"'
                 .'     + "</span>";'
                 .' $this.append(attrTranslateHref);'
-                ."\n});\n", $stringTranslationURL, __('Translate', 'woo-poly-integration')
+                ."\n});\n",
+            $stringTranslationURL,
+            __('Translate', 'woo-poly-integration')
         );
 
         /* Output code */
