@@ -25,19 +25,22 @@ class Ajax
      */
     public function __construct()
     {
-        add_filter('pll_home_url_white_list', array( $this, 'pll_home_url_white_list' ));
+        add_filter('woocommerce_ajax_get_endpoint', array($this, 'filter_woocommerce_ajax_get_endpoint'), 10, 2);
     }
 
     /**
-     * Add WooCommerce class-wc-ajax.php to the Polylang home_url white list
+     * Filter woocommerce_ajax_get_endpoint URL - replace the path part 
+     * with the correct relative home URL according to the current language 
+     * and append the query string
      *
-     * @param array $white_list Polylang home_url white list
+     * @param string $url WC AJAX endpoint URL to filter
+     * @param string $request
      *
-     * @return array filtered white list
+     * @return string filtered WC AJAX endpoint URL
      */
-    public function pll_home_url_white_list($white_list)
+    public function filter_woocommerce_ajax_get_endpoint($url, $request)
     {
-        $white_list[] = array( 'file' => 'class-wc-ajax.php' );
-        return $white_list;
+        global $polylang;
+        return parse_url($polylang->filters_links->links->get_home_url($polylang->curlang), PHP_URL_PATH) . '?' . parse_url($url, PHP_URL_QUERY);
     }
 }
