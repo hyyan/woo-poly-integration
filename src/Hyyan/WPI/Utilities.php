@@ -226,20 +226,7 @@ final class Utilities
      */
     public static function polylangVersionCheck($version)
     {
-        if (!function_exists('get_plugin_data')) {
-            require_once ABSPATH . 'wp-admin/includes/plugin.php';
-        }
-
-        $filepath = ABSPATH . 'wp-content/plugins/polylang/polylang.php';
-        if (! file_exists($filepath)) {
-            $filepath = ABSPATH . 'wp-content/plugins/polylang-pro/polylang.php';
-            if (! file_exists($filepath)) {
-                error_log('Polylang version not tested - polylang file not found');
-                return true;
-            }
-        }
-        $data = get_plugin_data($filepath, false, false);
-        if (version_compare($data['Version'], $version, '>=')) {
+        if (defined('POLYLANG_VERSION') && version_compare(POLYLANG_VERSION, $version, '>=')) {
             return true;
         }
 
