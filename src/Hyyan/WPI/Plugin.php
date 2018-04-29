@@ -108,15 +108,21 @@ class Plugin
         $polylang = false;
         $woocommerce = false;
 
+	$polylang_file = 'polylang/polylang.php';
+	$polylang_pro_file = 'polylang-pro/polylang.php';
+	$woocommerce_file = 'woocommerce/woocommerce.php';
+	
         /* check polylang plugin */
         if (
                 (
-                is_plugin_active('polylang/polylang.php') ||
-                is_plugin_active('polylang-pro/polylang.php')
+                is_plugin_active($polylang_file) ||
+                self::isMuPlugin($polylang_file) ||
+                is_plugin_active($polylang_pro_file) ||
+		self::isMuPlugin($polylang_pro_file)
                 ) ||
                 (
-                is_plugin_active_for_network('polylang/polylang.php') ||
-                is_plugin_active_for_network('polylang-pro/polylang.php')
+                is_plugin_active_for_network($polylang_file) ||
+                is_plugin_active_for_network($polylang_pro_file)
                 )
         ) {
             if (isset($GLOBALS['polylang'], \PLL()->model, PLL()->links_model)) {
@@ -128,8 +134,9 @@ class Plugin
 
         /* check woocommerce plugin */
         if (
-                is_plugin_active('woocommerce/woocommerce.php') ||
-                is_plugin_active_for_network('woocommerce/woocommerce.php')
+                is_plugin_active($woocommerce_file) ||
+		self::isMuPlugin($woocommerce_file) ||
+                is_plugin_active_for_network($woocommerce_file)
         ) {
             $woocommerce = true;
         }
@@ -137,6 +144,17 @@ class Plugin
 
         return ($polylang && Utilities::polylangVersionCheck(self::POLYLANG_VERSION)) &&
                 ($woocommerce && Utilities::woocommerceVersionCheck(self::WOOCOMMERCE_VERSION));
+    }
+
+    /**
+     * Check if Mu-plugin
+     * 
+     * @param string $plugin
+     * @return boolean
+     */
+    public static function isMuPlugin($plugin)
+    {
+	return file_exists( trailingslashit( WPMU_PLUGIN_DIR ) . $plugin ) ;
     }
 
     /**
