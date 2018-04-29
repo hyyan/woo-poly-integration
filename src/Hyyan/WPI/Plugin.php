@@ -128,17 +128,6 @@ class Plugin
     }
 
     /**
-     * Check if Mu-plugin
-     * 
-     * @param string $plugin
-     * @return boolean
-     */
-    public static function isMuPlugin($plugin)
-    {
-	return file_exists( trailingslashit( WPMU_PLUGIN_DIR ) . $plugin ) ;
-    }
-
-    /**
      * On Upgrade
      *
      * Run on the plugin updates only once
