@@ -1,9 +1,9 @@
 === Hyyan WooCommerce Polylang Integration===
 Contributors: hyyan, jonathanmoorebcsorg, decarvalhoaa
-Tags: cms, commerce, e-commerce, e-shop, ecommerce, multilingual, products, shop, woocommerce, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
+Tags: cms, woocommerce, multilingual, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 1.0.4
+Stable tag: 1.1.0
 Requires PHP: 5.3
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
@@ -120,7 +120,35 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 5. Get reports in specific language and combine reports for all langauges
 6. Control plugin features from its admin page 
 
- == Changelog == 
+== Changelog == 
+
+== 1.1.0 ==
+
+**Thanks for :** 
+**@jon007**
+**@nunhes**
+**@masato-igarashi**
+**@marian-kadanka**
+**@ahmedofali**
+
+For all the amazing work which made releasing this new version possible
+
+* [add wc version to comment headers](https://github.com/hyyan/woo-poly-integration/commit/756a380a0ef7ee425a55230f429462c471a62328)
+* [fixes #283 by handling shortcode with no ids set](https://github.com/hyyan/woo-poly-integration/commit/19dd4b3e0afb12c9c1f73b45e45d2d1e95d1958d)
+* [Add Spanish Translate](https://github.com/hyyan/woo-poly-integration/commit/730462cf01c91f7b61259105cce4e9c9bc2ba9b5)
+* [fix issue #320](https://github.com/hyyan/woo-poly-integration/commit/5b0fae23200cf3c007ee712eeba43ee43059fdad)
+* [Fix #325 Coupon optimization](https://github.com/hyyan/woo-poly-integration/commit/74f8620d55c006fa0650f63d0188a3d7f69c67e3)
+* [fix issue #320 (re-commit)](https://github.com/hyyan/woo-poly-integration/commit/2b3c8972f0630ff89bc55d3d3e7caca69e09f006)
+* [Merge pull request #322 from nunhes/master](https://github.com/hyyan/woo-poly-integration/commit/1cabc3b86a13861410e2ad4c4200e561e2e10b3f)
+* [Update readme](https://github.com/hyyan/woo-poly-integration/commit/8113f35caf90c821204b14891e0b91448ac9bbfc)
+* [Merge pull request #326 from masato-igarashi/master](https://github.com/hyyan/woo-poly-integration/commit/e3a8db6225ebc4bc82a78a3d55cffcb76ce47f88)
+* [Fix #317](https://github.com/hyyan/woo-poly-integration/commit/c7eb1f786d9d6b0cdfaa224b0d4221b0f1666c05)
+* [Fix Ajax endpoint URL again, fixes #319](https://github.com/hyyan/woo-poly-integration/commit/888df716c43c0191c32e2b8bfc11d7ea0a9ed055)
+* [Identify woocommerce and polylang if installed as mu-plugins](https://github.com/hyyan/woo-poly-integration/commit/9e6dd41acccd7ec4a6329e937d1b39acb834c7af)
+* [Change the way of checking polylang and woocommerce versions](https://github.com/hyyan/woo-poly-integration/commit/7772cff41d362c59610df1c3521f4b8be91713ff)
+* [Remove Unneeded code since we use class name to check if plugin is activated or not](https://github.com/hyyan/woo-poly-integration/commit/be1417a2e346f8edfc690d845c451d7c78c42839)
+* [Merge pull request #329 from marian-kadanka/fix-319-ajax-endpoint-url-again](https://github.com/hyyan/woo-poly-integration/commit/f9e7209a79ac818bf95d9816f72ccc82eefb532f)
+* [Merge pull request #335 from ahmedofali/master](https://github.com/hyyan/woo-poly-integration/commit/70ce81c65e843e3050c282e4b661b04f74c93ac4)
 
 == 1.0.4 ==
 
