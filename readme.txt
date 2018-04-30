@@ -64,6 +64,7 @@ the same interface you love.
 = Translations =
 
 * Arabic by [Hyyan Abo Fakher](https://github.com/hyyan)
+* Spanish by [nunhes](https://github.com/nunhes)
 
 = Contributing =
 
