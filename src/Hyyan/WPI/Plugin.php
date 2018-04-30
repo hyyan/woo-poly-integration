@@ -109,16 +109,7 @@ class Plugin
         $woocommerce = false;
 
         /* check polylang plugin */
-        if (
-                (
-                is_plugin_active('polylang/polylang.php') ||
-                is_plugin_active('polylang-pro/polylang.php')
-                ) ||
-                (
-                is_plugin_active_for_network('polylang/polylang.php') ||
-                is_plugin_active_for_network('polylang-pro/polylang.php')
-                )
-        ) {
+        if (class_exists('Polylang')) {
             if (isset($GLOBALS['polylang'], \PLL()->model, PLL()->links_model)) {
                 if (pll_default_language()) {
                     $polylang = true;
@@ -127,10 +118,7 @@ class Plugin
         }
 
         /* check woocommerce plugin */
-        if (
-                is_plugin_active('woocommerce/woocommerce.php') ||
-                is_plugin_active_for_network('woocommerce/woocommerce.php')
-        ) {
+        if (class_exists('WooCommerce')) {
             $woocommerce = true;
         }
 
