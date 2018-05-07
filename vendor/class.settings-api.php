@@ -105,7 +105,9 @@ class WeDevs_Settings_API {
 
             if ( isset($section['desc']) && !empty($section['desc']) ) {
                 $section['desc'] = '<div class="inside">' . $section['desc'] . '</div>';
-                $callback = create_function('', 'echo "' . str_replace( '"', '\"', $section['desc'] ) . '";');
+                $callback = function() use ( $section ) {
+		    echo str_replace( '"', '\"', $section['desc'] );
+		};
             } else if ( isset( $section['callback'] ) ) {
                 $callback = $section['callback'];
             } else {
@@ -126,7 +128,8 @@ class WeDevs_Settings_API {
 
                 $args = array(
                     'id'                => $name,
-                    'label_for'         => $args['label_for'] = "{$section}[{$name}]",
+                    'class'             => isset( $option['class'] ) ? $option['class'] : $name,
+                    'label_for'         => "{$section}[{$name}]",
                     'desc'              => isset( $option['desc'] ) ? $option['desc'] : '',
                     'name'              => $label,
                     'section'           => $section,
@@ -203,9 +206,9 @@ class WeDevs_Settings_API {
         $size        = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
         $type        = isset( $args['type'] ) ? $args['type'] : 'number';
         $placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
-        $min         = empty( $args['min'] ) ? '' : ' min="' . $args['min'] . '"';
-        $max         = empty( $args['max'] ) ? '' : ' max="' . $args['max'] . '"';
-        $step        = empty( $args['max'] ) ? '' : ' step="' . $args['step'] . '"';
+        $min         = ( $args['min'] == '' ) ? '' : ' min="' . $args['min'] . '"';
+        $max         = ( $args['max'] == '' ) ? '' : ' max="' . $args['max'] . '"';
+        $step        = ( $args['step'] == '' ) ? '' : ' step="' . $args['step'] . '"';
 
         $html        = sprintf( '<input type="%1$s" class="%2$s-number" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s%7$s%8$s%9$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder, $min, $max, $step );
         $html       .= $this->get_field_description( $args );
@@ -233,7 +236,7 @@ class WeDevs_Settings_API {
     }
 
     /**
-     * Displays a multicheckbox a settings field
+     * Displays a multicheckbox for a settings field
      *
      * @param array   $args settings field args
      */
@@ -256,7 +259,7 @@ class WeDevs_Settings_API {
     }
 
     /**
-     * Displays a multicheckbox a settings field
+     * Displays a radio button for a settings field
      *
      * @param array   $args settings field args
      */
@@ -316,7 +319,7 @@ class WeDevs_Settings_API {
     }
 
     /**
-     * Displays a textarea for a settings field
+     * Displays the html for a settings field
      *
      * @param array   $args settings field args
      * @return string
@@ -402,6 +405,24 @@ class WeDevs_Settings_API {
         $html  = sprintf( '<input type="text" class="%1$s-text wp-color-picker-field" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" />', $size, $args['section'], $args['id'], $value, $args['std'] );
         $html  .= $this->get_field_description( $args );
 
+        echo $html;
+    }
+
+
+    /**
+     * Displays a select box for creating the pages select box
+     *
+     * @param array   $args settings field args
+     */
+    function callback_pages( $args ) {
+
+        $dropdown_args = array(
+            'selected' => esc_attr($this->get_option($args['id'], $args['section'], $args['std'] ) ),
+            'name'     => $args['section'] . '[' . $args['id'] . ']',
+            'id'       => $args['section'] . '[' . $args['id'] . ']',
+            'echo'     => 0
+        );
+        $html = wp_dropdown_pages( $dropdown_args );
         echo $html;
     }
 
@@ -547,6 +568,15 @@ class WeDevs_Settings_API {
                 if (typeof(localStorage) != 'undefined' ) {
                     activetab = localStorage.getItem("activetab");
                 }
+
+                //if url has section id as hash then set it as active or override the current local storage value
+                if(window.location.hash){
+                    activetab = window.location.hash;
+                    if (typeof(localStorage) != 'undefined' ) {
+                        localStorage.setItem("activetab", activetab);
+                    }
+                }
+
                 if (activetab != '' && $(activetab).length ) {
                     $(activetab).fadeIn();
                 } else {
