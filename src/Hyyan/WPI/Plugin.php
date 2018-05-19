@@ -189,6 +189,7 @@ class Plugin
         new Taxonomies\Taxonomies();
         new Media();
         new Permalinks();
+        new Privacy();
         new Language();
         new Coupon();
         new Reports();
