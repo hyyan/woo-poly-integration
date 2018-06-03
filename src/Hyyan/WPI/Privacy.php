@@ -22,6 +22,7 @@ class Privacy
     {
         $this->registerPrivacyStrings();
         add_filter('woocommerce_get_privacy_policy_text', array($this, 'translatePrivacyPolicyText'), 10, 2);
+		    add_filter( 'woocommerce_demo_store', array( $this, 'translateDemoStoreNotice' ), 10, 2 );
     }
 
     /**
@@ -32,6 +33,7 @@ class Privacy
     {
         $this->registerString('woocommerce_checkout_privacy_policy_text', get_option('woocommerce_checkout_privacy_policy_text', sprintf(__('Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.', 'woocommerce'), '[privacy_policy]')));
         $this->registerString('woocommerce_registration_privacy_policy_text', get_option('woocommerce_registration_privacy_policy_text', sprintf(__('Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.', 'woocommerce'), '[privacy_policy]')));
+		    $this->registerString( 'woocommerce_store_notice', get_option( 'woocommerce_demo_store_notice' ) );
     }
 
     
@@ -61,4 +63,15 @@ class Privacy
             return ($trans) ? $trans : $text;
         }
     }
+
+    public function translateDemoStoreNotice( $html, $notice ) {
+        $trans = '';
+        if ( function_exists( 'pll_register_string' ) ) {
+            $trans = pll__( $notice );
+            return '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $trans ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . '</a></p>';
+        } else {
+            return $html;
+        }
+    }
+
 }
