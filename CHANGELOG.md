@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.2.0 
+
+* [Implements #337 by enabling privacy strings translation](https://github.com/hyyan/woo-poly-integration/commit/d9592822d4041ce299c04576e0a5d2bb1de4d646)
+* [Implements #339 by translating store notice](https://github.com/hyyan/woo-poly-integration/commit/244aacfb4a6135beca73876cc856d1868834a9aa)
+
 ### 1.1.0
 
 * [add wc version to comment headers](https://github.com/hyyan/woo-poly-integration/commit/756a380a0ef7ee425a55230f429462c471a62328)

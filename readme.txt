@@ -3,7 +3,7 @@ Contributors: hyyan, jonathanmoorebcsorg, decarvalhoaa
 Tags: cms, woocommerce, multilingual, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 Requires PHP: 5.3
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
@@ -122,6 +122,13 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog == 
+
+== 1.2.0 ==
+
+**Thanks for : @jon007** For his amazing work which made releasing this new version possible
+
+* [Implements #337 by enabling privacy strings translation](https://github.com/hyyan/woo-poly-integration/commit/d9592822d4041ce299c04576e0a5d2bb1de4d646)
+* [Implements #339 by translating store notice](https://github.com/hyyan/woo-poly-integration/commit/244aacfb4a6135beca73876cc856d1868834a9aa)
 
 == 1.1.0 ==
 
