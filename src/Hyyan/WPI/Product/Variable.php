@@ -105,6 +105,9 @@ class Variable
         $langs = pll_languages_list();
         foreach ($langs as $lang) {
             remove_action('save_post', array($this, __FUNCTION__), 10);
+            add_filter( 'woocommerce_hide_invisible_variations', function() {
+              return false;
+            } );
             $variation = new Variation(
                     $from,
                 Utilities::getProductTranslationByObject($product, $lang)
