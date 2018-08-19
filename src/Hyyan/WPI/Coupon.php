@@ -138,9 +138,13 @@ class Coupon
     public function adminRegisterCouponStrings()
     {
         if (is_admin() && (!is_ajax())) {
-            $this->registerCouponStringsForTranslation();
+        global $pagenow;
+            if ( ($pagenow) && ( $pagenow == 'admin.php' ) && ($_GET[ 'page' ] == 'mlang_strings') ) {
+                  $this->registerCouponStringsForTranslation();
+            }
         }
-    }
+	  }
+
     /**
      * Register coupon titles adn descriptions in Polylang's Strings translations table.
      */
@@ -198,8 +202,7 @@ class Coupon
     {
         global $woocommerce;
         
-        $locale = (function_exists('pll_current_language')) ? pll_current_language('locale') : get_locale();
-        $tKey = 'coupons-' . $locale;
+        $tKey	 = 'coupons-ids';
         
         $coupon_ids = get_transient($tKey);
         if ($coupon_ids) {
