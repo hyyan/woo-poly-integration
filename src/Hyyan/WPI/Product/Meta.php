@@ -820,6 +820,11 @@ class Meta
 		if ( ! $sku_found ) {
 			return false;
 		}
+		//if called with no product id from woocommerce product_duplicate
+		//no further check can be done
+		if ( ! $product_id ) {
+			return $sku_found;
+		}
 
 		/*
 		 * now check the duplicates
@@ -842,6 +847,10 @@ class Meta
 		)
 		);
 		$curlang = pll_get_post_language( $product_id );
+		if ( ! $curlang ) {
+			//if there is no language no further check can be done
+			return $sku_found;
+		}
 		foreach ( $postids as $post_id ) {
 			//suppress duplicate sku error on translations only
 			$duplang = pll_get_post_language( $post_id );
