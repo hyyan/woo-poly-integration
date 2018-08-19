@@ -815,12 +815,44 @@ class Meta
      */
     public function suppressInvalidDuplicatedSKUErrorMsg($sku_found, $product_id, $sku)
     {
-        $metas = static::getProductMetaToCopy();
 
-        if (in_array('_sku', $metas)) {
-            return false;
-        } else {
-            return $sku_found;
-        }
-    }
+		//if the sku is not duplicate, no further check needed
+		if ( ! $sku_found ) {
+			return false;
+		}
+
+		/*
+		 * now check the duplicates
+		 * this is the same as woocommerce is_existing_sku but
+		 * gets all the product ids with the matching sku
+		 */
+		global $wpdb;
+
+		// phpcs:ignore WordPress.VIP.DirectDatabaseQuery.DirectQuery
+		$postids = $wpdb->get_col(
+		$wpdb->prepare(
+		"SELECT $wpdb->posts.ID
+				FROM $wpdb->posts
+				LEFT JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id )
+				WHERE $wpdb->posts.post_type IN ( 'product', 'product_variation' )
+					AND $wpdb->posts.post_status != 'trash'
+					AND $wpdb->postmeta.meta_key = '_sku' AND $wpdb->postmeta.meta_value = %s
+					AND $wpdb->postmeta.post_id <> %d
+				", wp_slash( $sku ), $product_id
+		)
+		);
+		$curlang = pll_get_post_language( $product_id );
+		foreach ( $postids as $post_id ) {
+			//suppress duplicate sku error on translations only
+			$duplang = pll_get_post_language( $post_id );
+			//if there is another product in the same language with the same sku
+			//disallow and return true from wc_product_has_unique_sku
+			if ( $post_id != $product_id && $curlang == pll_get_post_language( $post_id ) ) {
+				return true;
+			}
+		}
+		//if we got here, there were no duplicates in the same language
+		return false;
+	}
+
 }
