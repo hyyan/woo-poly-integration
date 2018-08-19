@@ -160,6 +160,7 @@ class Variation
         $data['post_parent'] = $this->to->get_id();
         $ID = wp_insert_post($data);
         if ($ID) {
+            pll_set_post_language( $ID, pll_get_post_language( $this->to->get_id() ) );
             update_post_meta(
                     $ID, self::DUPLICATE_KEY, $metas['variation_id']
             );
@@ -176,6 +177,7 @@ class Variation
     protected function update(\WC_Product_Variation $variation, \WP_Post $post, array $metas)
     {
         $this->copyVariationMetas($variation->get_id(), $post->ID);
+		    pll_set_post_language( $post->ID, pll_get_post_language( $post->post_parent ) );
     }
     /**
      * Add duplicate meta key to products created before plugin activation.
