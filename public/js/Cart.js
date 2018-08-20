@@ -22,7 +22,7 @@ jQuery( function( $ ) {
 
 	/* Storage Handling */
 	var $supports_html5_storage;
-	var cart_hash_key = wc_cart_fragments_params.ajax_url.toString() + '-wc_cart_hash';
+	var cart_hash_key = wc_cart_fragments_params.cart_hash_key;
 
 	try {
 		$supports_html5_storage = ( 'sessionStorage' in window && window.sessionStorage !== null );
@@ -99,7 +99,7 @@ jQuery( function( $ ) {
 			refresh_cart_fragment();
 		});
 
-		$( document.body ).on( 'added_to_cart', function( event, fragments, cart_hash ) {
+		$( document.body ).on( 'added_to_cart removed_from_cart', function( event, fragments, cart_hash ) {
 			var prev_cart_hash = sessionStorage.getItem( cart_hash_key );
 
 			if ( prev_cart_hash === null || prev_cart_hash === undefined || prev_cart_hash === '' ) {
