@@ -28,8 +28,8 @@ class Variable
     public function __construct()
     {
         // Handle variations duplication
-        add_action('save_post', array($this, 'duplicateVariations'), 10, 3);
-        add_action('save_post', array($this, 'syncDefaultAttributes'), 10, 3);
+        add_action( 'save_post_product', array( $this, 'duplicateVariations' ), 10, 3 );
+        add_action( 'save_post_product', array( $this, 'syncDefaultAttributes' ), 10, 3 );
 
         // Remove variations
         add_action('wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9);
