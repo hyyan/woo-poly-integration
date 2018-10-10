@@ -40,7 +40,7 @@ class MetasList extends AbstractSettings
                          synced between products and their translations. The default
                          values are appropriate for the large majority of the users.
                          It is safe to ignore these settings if you do not understand
-                         their meaning.Please ignore this section if you do not
+                         their meaning. Please ignore this section if you do not
                          understand the meaning of this.
                         ', 'woo-poly-integration'
                 ) . ' ' . __(
