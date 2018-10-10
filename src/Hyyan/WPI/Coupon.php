@@ -169,21 +169,21 @@ class Coupon
                     $coupon_code = $coupon->get_code();
                     $coupon_slug = sanitize_title_with_dashes($coupon_code);
                     pll_register_string($coupon_slug, $coupon_code,
-                        __('Woocommerce Coupon Names', 'woo-poly-integration'));
+                        __('WooCommerce Coupon Names', 'woo-poly-integration'));
                     pll_register_string($coupon_slug . '_description', $coupon->get_description(),
-                        __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                        __('WooCommerce Coupon Names', 'woo-poly-integration'), true);
 
                     if (self::$enable_wjecf) {
                         
                         $coupon_message = $coupon->get_meta('_wjecf_enqueue_message', true);
                         if ($coupon_message) {
                             pll_register_string($coupon_slug . '_message', $coupon_message,
-                            __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                            __('WooCommerce Coupon Names', 'woo-poly-integration'), true);
                         }
                         $freeproduct_message = $coupon->get_meta('_wjecf_select_free_product_message', true);
                         if ($freeproduct_message) {
                             pll_register_string($coupon_slug . '_freeproductmessage', $coupon_message,
-                            __('Woocommerce Coupon Names', 'woo-poly-integration'), true);
+                            __('WooCommerce Coupon Names', 'woo-poly-integration'), true);
                         }
                     }
                 }
