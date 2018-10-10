@@ -10,8 +10,8 @@ if (!defined('ABSPATH')) {
 <div class="inside">
     <p>
         <?php
-        _e('Need help , Want to ask for new feature ?
-                please contact using one of the following methods', 'woo-poly-integration'
+        _e('Need help? Want to ask for new features?
+                please contact me using one of the following methods', 'woo-poly-integration'
         )
         ?>
     </p>
