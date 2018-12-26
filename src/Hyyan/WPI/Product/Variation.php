@@ -267,7 +267,7 @@ class Variation
                         $translated = array();
                         $tax = str_replace('attribute_', '', $key);
                         foreach ($metas_from[$key] as $termSlug) {
-                            if (pll_is_translated_taxonomy($tax)) {
+                            if (pll_is_translated_taxonomy($tax) && !empty($termSlug)) {
                                 $term = $this->getTermBySlug($tax, $termSlug);
                                 if ($term) {
                                     $term_id = $term->term_id;
