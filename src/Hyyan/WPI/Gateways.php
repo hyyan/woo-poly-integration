@@ -47,7 +47,7 @@ class Gateways
     {
         // Set enabled payment gateways
         $this->enabledGateways = $this->getEnabledPaymentGateways();
-        // Register Woocommerce Payment Gateway custom  titles and descriptions in Polylang's Strings translations table
+        // Register WooCommerce Payment Gateway custom  titles and descriptions in Polylang's Strings translations table
         $this->registerGatewayStringsForTranslation();
         
         // Load payment gateways extensions (gateway intructions translation)
@@ -168,13 +168,13 @@ class Gateways
 
                 if (!empty($settings)) {
                     if (isset($settings['title'])) {
-                        pll_register_string($gateway->plugin_id.$gateway->id.'_gateway_title', $settings['title'], __('Woocommerce Payment Gateways', 'woo-poly-integration'));
+                        pll_register_string($gateway->plugin_id.$gateway->id.'_gateway_title', $settings['title'], __('WooCommerce Payment Gateways', 'woo-poly-integration'));
                     }
                     if (isset($settings['description'])) {
-                        pll_register_string($gateway->plugin_id.$gateway->id.'_gateway_description', $settings['description'], __('Woocommerce Payment Gateways', 'woo-poly-integration'));
+                        pll_register_string($gateway->plugin_id.$gateway->id.'_gateway_description', $settings['description'], __('WooCommerce Payment Gateways', 'woo-poly-integration'));
                     }
                     if (isset($settings['instructions'])) {
-                        pll_register_string($gateway->plugin_id.$gateway->id.'_gateway_instructions', $settings['instructions'], __('Woocommerce Payment Gateways', 'woo-poly-integration'));
+                        pll_register_string($gateway->plugin_id.$gateway->id.'_gateway_instructions', $settings['instructions'], __('WooCommerce Payment Gateways', 'woo-poly-integration'));
                     }
                 }
             }

@@ -67,7 +67,7 @@ class Features extends AbstractSettings
                 'default' => 'on',
                 'label' => __('Emails', 'woo-poly-integration'),
                 'desc' => __(
-                        'Use order language whenever woocommerce sends order emails', 'woo-poly-integration'
+                        'Use order language whenever WooCommerce sends order emails', 'woo-poly-integration'
                 ),
             ),
             array(

@@ -42,7 +42,7 @@ class TranslationsDownloader
         if (!static::isAvaliable($locale)) {
             $notAvaliable = sprintf(
                     __(
-                            'Woocommerce translation %s can not be found in : <a href="%2$s">%2$s</a>', 'woo-poly-integration'
+                            'WooCommerce translation %s can not be found in : <a href="%2$s">%2$s</a>', 'woo-poly-integration'
                     ), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
             );
 
@@ -51,7 +51,7 @@ class TranslationsDownloader
 
         /* Download the language pack */
         $cantDownload = sprintf(
-                __('Unable to download woocommerce translation %s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
+                __('Unable to download WooCommerce translation %s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
         );
         $response = wp_remote_get(
                 sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('sslverify' => false, 'timeout' => 200)
@@ -126,7 +126,7 @@ class TranslationsDownloader
     }
 
     /**
-     * Check if woocommerce language file is already downloaded.
+     * Check if WooCommerce language file is already downloaded.
      *
      * @param string $locale locale
      *

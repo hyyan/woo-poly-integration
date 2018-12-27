@@ -59,7 +59,7 @@ class Attributes implements TaxonomiesInterface
         }
 
         $attrs = wc_get_attribute_taxonomies();
-        $section = __('Woocommerce Attributes', 'woo-poly-integration');
+        $section = __('WooCommerce Attributes', 'woo-poly-integration');
         foreach ($attrs as $attr) {
             pll_register_string(
                     $attr->attribute_label,
@@ -106,7 +106,7 @@ class Attributes implements TaxonomiesInterface
         $stringTranslationURL = add_query_arg(array(
             'page' => 'mlang_strings',
             //'tab' => 'strings',
-            'group' => __('Woocommerce Attributes', 'woo-poly-integration'),
+            'group' => __('WooCommerce Attributes', 'woo-poly-integration'),
         ), admin_url('admin.php'));
 
         /* Add attribute translate button */

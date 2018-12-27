@@ -271,6 +271,6 @@ class Endpoints
      */
     public static function getPolylangStringSection()
     {
-        return __('Woocommerce Endpoints', 'woo-poly-integration');
+        return __('WooCommerce Endpoints', 'woo-poly-integration');
     }
 }

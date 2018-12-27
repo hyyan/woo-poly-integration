@@ -30,7 +30,7 @@ class Shipping
     public function __construct()
     {
 
-        // Register woocommerce shipping method custom names in polylang strings translations table
+        // Register WooCommerce shipping method custom names in polylang strings translations table
         // called only after Wordpress is loaded
         add_action('wp_loaded', array($this, 'registerShippingStringsForTranslation'));
 
@@ -143,7 +143,7 @@ class Shipping
                 $setting = get_option($plugin_id . $method_id . '_settings');
 
                 if ($setting && isset($setting['title'])) {
-                    pll_register_string($plugin_id . $method_id . '_shipping_method', $setting['title'], __('Woocommerce Shipping Methods', 'woo-poly-integration'));
+                    pll_register_string($plugin_id . $method_id . '_shipping_method', $setting['title'], __('WooCommerce Shipping Methods', 'woo-poly-integration'));
                 }
             }
         }

@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
         <?php
         _e('The plugin is an open source project
             which aims to fill the gap between
-            <a href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a>
+            <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a>
             and <a href="https://wordpress.org/plugins/polylang/">Polylang</a>', 'woo-poly-integration'
         );
         echo('. ');

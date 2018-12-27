@@ -17,7 +17,7 @@ use Hyyan\WPI\Utilities;
 /**
  * Emails.
  *
- * Handle woocommerce emails
+ * Handle WooCommerce emails
  *
  * @author Hyyan Abo Fakher <hyyanaf@gmail.com>
  */
@@ -38,9 +38,9 @@ class Emails
         if ('on' === Settings::getOption('emails', Features::getID(), 'on')) {
             add_filter('plugin_locale', array($this, 'correctLocal'), 100);
 
-            // Register woocommerce email subjects and headings in polylang strings translations table
+            // Register WooCommerce email subjects and headings in polylang strings translations table
             $this->registerEmailStringsForTranslation(); // called only after all plugins are loaded
-            // Translate Woocommerce email subjects and headings to the order language
+            // Translate WooCommerce email subjects and headings to the order language
             // new order
             add_filter('woocommerce_email_subject_new_order', array($this, 'translateEmailSubjectNewOrder'), 10, 2);
             add_filter('woocommerce_email_heading_new_order', array($this, 'translateEmailHeadingNewOrder'), 10, 2);
@@ -204,12 +204,12 @@ class Emails
             $settings = get_option('woocommerce_' . $email_type . '_settings');
             if ($settings) {
                 if (isset($settings['subject' . $sufix]) && isset($settings['heading' . $sufix])) {
-                    pll_register_string('woocommerce_' . $email_type . '_subject' . $sufix, $settings['subject' . $sufix], __('Woocommerce Emails', 'woo-poly-integration'));
-                    pll_register_string('woocommerce_' . $email_type . '_heading' . $sufix, $settings['heading' . $sufix], __('Woocommerce Emails', 'woo-poly-integration'));
+                    pll_register_string('woocommerce_' . $email_type . '_subject' . $sufix, $settings['subject' . $sufix], __('WooCommerce Emails', 'woo-poly-integration'));
+                    pll_register_string('woocommerce_' . $email_type . '_heading' . $sufix, $settings['heading' . $sufix], __('WooCommerce Emails', 'woo-poly-integration'));
                 }
                 //recipient applies to shop emails New, Cancel and Failed order types
                 if (isset($settings['recipient' . $sufix])) {
-                    pll_register_string('woocommerce_' . $email_type . '_recipient' . $sufix, $settings['recipient' . $sufix], __('Woocommerce Emails', 'woo-poly-integration'));
+                    pll_register_string('woocommerce_' . $email_type . '_recipient' . $sufix, $settings['recipient' . $sufix], __('WooCommerce Emails', 'woo-poly-integration'));
                 }
             }
         }
