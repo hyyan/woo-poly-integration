@@ -147,6 +147,10 @@ class Product
             $options['post_types'][] = 'product';
             update_option('polylang', $options);
         }
+		if ( ! in_array( 'product_variation', $postTypes ) ) {
+			$options[ 'post_types' ][] = 'product_variation';
+			update_option( 'polylang', $options );
+		}
 
         $types [] = 'product';
 

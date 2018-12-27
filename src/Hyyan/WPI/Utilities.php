@@ -256,7 +256,19 @@ final class Utilities
             $langs              = array();
 
             foreach ($default_attributes as $key => $value) {
-                $term = get_term_by('slug', $value, $key);
+//                $term = get_term_by('slug', $value, $key);
+				$args	 = array(
+					'get'					 => 'all',
+					'number'				 => 1,
+					'taxonomy'				 => $key,
+					'update_term_meta_cache' => false,
+					'orderby'				 => 'none',
+					'suppress_filter'		 => true,
+					'slug'					 => $value,
+					'lang'					 => pll_get_post_language( $product_id )
+				);
+				$terms	 = get_terms( $args );
+				$term	 = array_shift( $terms );
 
                 if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
                     $terms[] = $term;

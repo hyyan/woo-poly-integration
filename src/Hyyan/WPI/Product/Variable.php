@@ -170,6 +170,12 @@ class Variable
                 }
 
                 foreach ($meta_value as $key => $value) {
+					//TODO JM: get_term_by is filtered by Polylang, so
+					//will not retrieve data if the term is not in the correct language
+					//so the rest of the check does not execute as expected
+					//(it is not possible to get the term without knowing the language,
+					// and not possible to get the translation without getting the term)
+					// the fix is the additional return false which prevents save of the incorrect version when Polylang attempts to synchronise it
                     $term = get_term_by('slug', $value, $key);
 
                     if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
@@ -185,6 +191,8 @@ class Variable
                             return false;
                         }
                     }
+					// Attribute is in wrong language and must not be saved
+					return false;
                 }
             }
         }
@@ -230,6 +238,7 @@ class Variable
 
             if (!empty($attributes_translation) && isset($attributes_translation[$_GET['new_lang']])) {
                 update_post_meta($product->get_id(), '_default_attributes', $attributes_translation[$_GET['new_lang']]);
+				$product->set_default_attributes( $attributes_translation[ $_GET[ 'new_lang' ] ] );
             }
         } elseif ($product && 'variable' === $product->get_type()) {
             // Variable Product
