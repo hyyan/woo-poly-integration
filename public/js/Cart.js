@@ -8,7 +8,7 @@
  * Modified WooCommerce cart-fragments.js script to break HTML5 fragment caching. 
  * Useful when switching languages. Adds support new Cart page ajax.
  * 
- * Updated in line with WooCommerce 3.1 cart-fragments.js, 
+ * Updated in line with WooCommerce 3.5.3 cart-fragments.js, 
  * only difference is the additional Polylang lines... and these commments
  **/
 
@@ -21,8 +21,8 @@ jQuery( function( $ ) {
 	}
 
 	/* Storage Handling */
-	var $supports_html5_storage;
-	var cart_hash_key = wc_cart_fragments_params.cart_hash_key;
+	var $supports_html5_storage = true,
+		cart_hash_key           = wc_cart_fragments_params.cart_hash_key;
 
 	try {
 		$supports_html5_storage = ( 'sessionStorage' in window && window.sessionStorage !== null );
