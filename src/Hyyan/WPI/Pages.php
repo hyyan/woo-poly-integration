@@ -145,9 +145,11 @@ class Pages
             $shopPageTranslation = get_post($shopPageTranslatedID);
 
             if ($shopPageTranslation) {
-                $result = str_replace(
-                        $shopPage->post_name, $shopPageTranslation->post_name, $url
-                );
+
+              $currentUrl = parse_url($url);
+              $newSlug = str_replace($shopPage->post_name, $shopPageTranslation->post_name, $currentUrl['path']);
+              $result = $currentUrl['scheme'] . '://' . $currentUrl['host'] . $newSlug;
+
             }
         }
 
@@ -180,7 +182,7 @@ class Pages
             $query_args['lang'] = isset($query_args['lang']) ?
                     $query_args['lang'] : pll_current_language();
         }
-        
+
         return $query_args;
     }
 }
