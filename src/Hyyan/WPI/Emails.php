@@ -768,7 +768,7 @@ class Emails
             unload_textdomain('default');
             unload_textdomain('woocommerce');#
 
-            do_action(HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION);
+            do_action(HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION, $language);
 
             // set locale to order locale
             $locale                    = apply_filters('locale', $language);
@@ -788,7 +788,7 @@ class Emails
             load_default_textdomain($language);
 
             $woocommerce->load_plugin_textdomain();
-            do_action(HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION);
+            do_action(HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION, $language);
 
             $wp_locale = new \WP_Locale();
         }
