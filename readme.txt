@@ -2,8 +2,8 @@
 Contributors: hyyan, jonathanmoorebcsorg
 Tags: cms, woocommerce, multilingual, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 4.9
-Stable tag: 1.2.0
+Tested up to: 5.1
+Stable tag: 1.3.0
 Requires PHP: 5.3
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
@@ -11,6 +11,11 @@ License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
 Integrates Woocommerce With Polylang 
 
 == Description ==
+
+**Given that I am not using Wordpress these days and I haven't really been using WooPoly for a while. I am looking for maintainers to take over this project.
+If you're interested, please reply to this [issue](https://github.com/hyyan/woo-poly-integration/issues/410) or get in touch with me via email: hyyanaf [at] gmail [dot] com**
+
+---
 
 This plugin makes it possible to run multilingual e-commerce sites using
 WooCommerce and Polylang.It makes products and store pages translatable, lets 
@@ -122,6 +127,37 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog == 
+
+== 1.3.0 ==
+
+* [fixes #352 by allowing translation of 'invisible' variations](https://github.com/hyyan/woo-poly-integration/commit/cd19fdd01cafcf065fbf21dfaa80dd167ce60e63)
+* [fixes #353 by checking language of duplicate skis](https://github.com/hyyan/woo-poly-integration/commit/2a8f35955016485f07764e2fe7f6d33b6b1ceaae)
+* [improves #353 fix](https://github.com/hyyan/woo-poly-integration/commit/1d83ef23e96f35c2bb008b5fa37e5157bfc388e4)
+* [fixes #348 by assigning language to variations](https://github.com/hyyan/woo-poly-integration/commit/51898f96f2eaa24c322850564cb65923bafd7ddd)
+* [fixes #343 by reducing frequency of coupon load](https://github.com/hyyan/woo-poly-integration/commit/edf0993e0a4e7961879e5a95c825da61e0e8b5a7)
+* [fixes #354 by including updates from woocommerce](https://github.com/hyyan/woo-poly-integration/commit/42db06e024e794a6e971a515a5c86ce04df081ef)
+* [fixes #356](https://github.com/hyyan/woo-poly-integration/commit/29f4895eb2e86c492904a6dcb9b600b850199f40)
+* [Fall back to $polylang->pref_lang for AJAX endpoint URL when $polylang->curlang is not available.](https://github.com/hyyan/woo-poly-integration/commit/5a7fc8d704c9666675162d8eba8a53efe5540484)
+* [Update Coupon.php](https://github.com/hyyan/woo-poly-integration/commit/dc9dd21c3936d0881a2a1473791d5b0d4ac89a92)
+* [Update Shipping.php](https://github.com/hyyan/woo-poly-integration/commit/ea283df65c2b69627c164804750ebf2ec024ee55)
+* [Update Gateways.php](https://github.com/hyyan/woo-poly-integration/commit/98e04a9062df0fb31ceb0d80352fe629de5990d9)
+* [Update Emails.php](https://github.com/hyyan/woo-poly-integration/commit/e9b42b8676e0c5b5c84a80ce7cfc42c9181701fc)
+* [Update MetasList.php](https://github.com/hyyan/woo-poly-integration/commit/7a392709a686a8ad81a99302ea062039cf4ad0b8)
+* [Update support.php](https://github.com/hyyan/woo-poly-integration/commit/6a8a39815a91130f70e55e38d218e32250bc9bc6)
+* [Update getHelp.php](https://github.com/hyyan/woo-poly-integration/commit/92cb2e3a35279d150dda934a6914bf190389c7a1)
+* [Update about.php](https://github.com/hyyan/woo-poly-integration/commit/bfdd480fb710274920b8688b4c49a45cc8269a1f)
+* [Update TranslationsDownloader.php](https://github.com/hyyan/woo-poly-integration/commit/887cec3624c34cebda277cdc5fc9ac8177285a00)
+* [Update Attributes.php](https://github.com/hyyan/woo-poly-integration/commit/d846d5cc5502fdb6672369a66b9282fb8b0b2465)
+* [Update Variable.php](https://github.com/hyyan/woo-poly-integration/commit/614d33f3026cde459bd4ef1be9b2e1f879f16dda)
+* [Update Endpoints.php](https://github.com/hyyan/woo-poly-integration/commit/f38f07cc8141255df9797f0b668837543779abd2)
+* [Update Features.php](https://github.com/hyyan/woo-poly-integration/commit/6f332c89a8316476a29e41804644378d4fad3f4f)
+* [fixed empty attribute for variations](https://github.com/hyyan/woo-poly-integration/commit/3db2c1091082c38bda20ca5c762ad97120bc25ca)
+* [Add files via upload](https://github.com/hyyan/woo-poly-integration/commit/f89aec1e7e79987da8fcaec1b63295b3fa123fbc)
+* [fixed #370](https://github.com/hyyan/woo-poly-integration/commit/08fe1432fb0981e727409c362c1bbb2892dcb601)
+* [fixes #384](https://github.com/hyyan/woo-poly-integration/commit/772acc09640c90aa43b3106dd483ed40e84271c4)
+* [Extend the email hooks](https://github.com/hyyan/woo-poly-integration/commit/df276b3184324bb905cdd7e3812bae220c799d02)
+* [fixes #401 email subject and title translations](https://github.com/hyyan/woo-poly-integration/commit/89ca15df970ee410513200954f0993fcf0ab93f9)
+* [fixes #399](https://github.com/hyyan/woo-poly-integration/commit/90a9e625ead7d6a4429fb4db51174367014df701)
 
 == 1.2.0 ==
 
