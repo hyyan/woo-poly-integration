@@ -696,30 +696,30 @@ class Emails
         $this->switchLanguage( $order_language );
       }
 
-        // Perform the translation
-        $test = pll_translate_string( $string, $order_language );
-        if ( $test != $string ) {
-          $string = $test;
-        } else {
-          // If no user translation found in Polylang Strings Translations table, use WooCommerce default translation
-          $string = __( $this->default_settings[ $email_type . '_' . $string_type ], 'woocommerce' );
-        }
+      // Perform the translation
+      $test = pll_translate_string( $string, $order_language );
+      if ( $test != $string ) {
+        $string = $test;
+      } else {
+        // If no user translation found in Polylang Strings Translations table, use WooCommerce default translation
+        $string = __( $this->default_settings[ $email_type . '_' . $string_type ], 'woocommerce' );
+      }
 
-        if ($order) {
-            $find    = array();
-            $replace = array();
+      if ($order) {
+        $find    = array();
+        $replace = array();
 
-            $find['order-date']   = '{order_date}';
-            $find['order-number'] = '{order_number}';
-            $find['site_title']   = '{site_title}';
+        $find['order-date']   = '{order_date}';
+        $find['order-number'] = '{order_number}';
+        $find['site_title']   = '{site_title}';
 
-            $replace['order-date']   = date_i18n(wc_date_format(), strtotime($order->get_date_created()));
-            $replace['order-number'] = $order->get_order_number();
-            $replace['site_title']   = get_bloginfo('name');
+        $replace['order-date']   = date_i18n(wc_date_format(), strtotime($order->get_date_created()));
+        $replace['order-number'] = $order->get_order_number();
+        $replace['site_title']   = get_bloginfo('name');
 
-            $string = str_replace(apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $order), apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $order), $string);
-        }
-        return $string;
+        $string = str_replace(apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $order), apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $order), $string);
+      }
+      return $string;
     }
 
     /**
