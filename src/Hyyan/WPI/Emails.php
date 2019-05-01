@@ -678,12 +678,11 @@ class Emails
           return $string;
         }
       }
-      $locale		 = get_locale();
-      $baseLocale	 = get_option( 'WPLANG' );
+      $locale = get_locale();
 
       // Get setting used to register string in the Polylang strings translation table
       $_string = $string; // Store original string to return in case of error
-      // Switch language
+      // Switch language if current locale is not the same as the order
       if ( $order_language != $locale ) {
         $test = $this->getEmailSetting( $string_type, $email_type );
         if ( ! $test ) {
@@ -694,7 +693,9 @@ class Emails
         }
         $string = $test;
         $this->switchLanguage( $order_language );
+      }
 
+        // Perform the translation
         $test = pll_translate_string( $string, $order_language );
         if ( $test != $string ) {
           $string = $test;
@@ -702,7 +703,6 @@ class Emails
           // If no user translation found in Polylang Strings Translations table, use WooCommerce default translation
           $string = __( $this->default_settings[ $email_type . '_' . $string_type ], 'woocommerce' );
         }
-      }
 
         if ($order) {
             $find    = array();
