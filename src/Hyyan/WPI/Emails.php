@@ -117,6 +117,7 @@ class Emails
 		$emails			 = $wc_emails->get_emails();
 
         $this->default_settings = apply_filters(HooksInterface::EMAILS_DEFAULT_SETTINGS_FILTER, array(
+			'new_order_recipient'								 => __( $emails[ 'WC_Email_New_Order' ]->get_recipient(), 'woocommerce' ),
 			'new_order_subject'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_subject(), 'woocommerce' ),
 			'new_order_heading'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_heading(), 'woocommerce' ),
 			'customer_processing_order_subject'				 => __( $emails[ 'WC_Email_Customer_Processing_Order' ]->get_default_subject(), 'woocommerce' ),
