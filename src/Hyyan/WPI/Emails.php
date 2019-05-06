@@ -117,6 +117,7 @@ class Emails
 		$emails			 = $wc_emails->get_emails();
 
         $this->default_settings = apply_filters(HooksInterface::EMAILS_DEFAULT_SETTINGS_FILTER, array(
+			'new_order_recipient'								 => __( $emails[ 'WC_Email_New_Order' ]->get_recipient(), 'woocommerce' ),
 			'new_order_subject'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_subject(), 'woocommerce' ),
 			'new_order_heading'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_heading(), 'woocommerce' ),
 			'customer_processing_order_subject'				 => __( $emails[ 'WC_Email_Customer_Processing_Order' ]->get_default_subject(), 'woocommerce' ),
@@ -678,12 +679,11 @@ class Emails
           return $string;
         }
       }
-      $locale		 = get_locale();
-      $baseLocale	 = get_option( 'WPLANG' );
+      $locale = get_locale();
 
       // Get setting used to register string in the Polylang strings translation table
       $_string = $string; // Store original string to return in case of error
-      // Switch language
+      // Switch language if current locale is not the same as the order
       if ( $order_language != $locale ) {
         $test = $this->getEmailSetting( $string_type, $email_type );
         if ( ! $test ) {
@@ -694,31 +694,32 @@ class Emails
         }
         $string = $test;
         $this->switchLanguage( $order_language );
-
-        $test = pll_translate_string( $string, $order_language );
-        if ( $test != $string ) {
-          $string = $test;
-        } else {
-          // If no user translation found in Polylang Strings Translations table, use WooCommerce default translation
-          $string = __( $this->default_settings[ $email_type . '_' . $string_type ], 'woocommerce' );
-        }
       }
 
-        if ($order) {
-            $find    = array();
-            $replace = array();
+      // Perform the translation
+      $test = pll_translate_string( $string, $order_language );
+      if ( $test != $string ) {
+        $string = $test;
+      } else {
+        // If no user translation found in Polylang Strings Translations table, use WooCommerce default translation
+        $string = __( $this->default_settings[ $email_type . '_' . $string_type ], 'woocommerce' );
+      }
 
-            $find['order-date']   = '{order_date}';
-            $find['order-number'] = '{order_number}';
-            $find['site_title']   = '{site_title}';
+      if ($order) {
+        $find    = array();
+        $replace = array();
 
-            $replace['order-date']   = date_i18n(wc_date_format(), strtotime($order->get_date_created()));
-            $replace['order-number'] = $order->get_order_number();
-            $replace['site_title']   = get_bloginfo('name');
+        $find['order-date']   = '{order_date}';
+        $find['order-number'] = '{order_number}';
+        $find['site_title']   = '{site_title}';
 
-            $string = str_replace(apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $order), apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $order), $string);
-        }
-        return $string;
+        $replace['order-date']   = date_i18n(wc_date_format(), strtotime($order->get_date_created()));
+        $replace['order-number'] = $order->get_order_number();
+        $replace['site_title']   = get_bloginfo('name');
+
+        $string = str_replace(apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $order), apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $order), $string);
+      }
+      return $string;
     }
 
     /**
