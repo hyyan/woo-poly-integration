@@ -117,7 +117,7 @@ class Emails
 		$emails			 = $wc_emails->get_emails();
 
         $this->default_settings = apply_filters(HooksInterface::EMAILS_DEFAULT_SETTINGS_FILTER, array(
-			'new_order_recipient'								 => __( $emails[ 'WC_Email_New_Order' ]->get_recipient(), 'woocommerce' ),
+			'new_order_recipient'							 => $emails[ 'WC_Email_New_Order' ]->get_recipient(),
 			'new_order_subject'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_subject(), 'woocommerce' ),
 			'new_order_heading'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_heading(), 'woocommerce' ),
 			'customer_processing_order_subject'				 => __( $emails[ 'WC_Email_Customer_Processing_Order' ]->get_default_subject(), 'woocommerce' ),
@@ -144,8 +144,10 @@ class Emails
 			'customer_on_hold_order_heading'				 => __( $emails[ 'WC_Email_Customer_On_Hold_Order' ]->get_default_heading(), 'woocommerce' ),
 			'cancelled_order_subject'						 => __( $emails[ 'WC_Email_Cancelled_Order' ]->get_default_subject(), 'woocommerce' ),
 			'cancelled_order_heading'						 => __( $emails[ 'WC_Email_Cancelled_Order' ]->get_default_heading(), 'woocommerce' ),
+			'cancelled_order_recipient'						 => $emails[ 'WC_Email_Cancelled_Order' ]->get_recipient(),
 			'failed_order_subject'							 => __( $emails[ 'WC_Email_Failed_Order' ]->get_default_subject(), 'woocommerce' ),
 			'failed_order_heading'							 => __( $emails[ 'WC_Email_Failed_Order' ]->get_default_heading(), 'woocommerce' ),
+			'failed_order_recipient'						 => $emails[ 'WC_Email_Failed_Order' ]->get_recipient(),
         ), $this);
 
         // Register strings for translation and hook filters
