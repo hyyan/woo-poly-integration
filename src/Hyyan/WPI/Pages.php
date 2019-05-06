@@ -53,6 +53,7 @@ class Pages
         add_filter(
                 'woocommerce_shortcode_products_query', array($this, 'addShortcodeLanguageFilter'), 10, 2
         );
+		add_filter( 'shortcode_atts_product_categories', array( $this, 'addShortcodeLanguageFilterCategories' ), 10, 4 );
     }
 
     /**
@@ -176,6 +177,9 @@ class Pages
 
             $atts['ids'] = implode($transIds, ',');
             $query_args['post__in'] = $transIds;
+            if ( isset( $query_args[ 'p' ] ) && ( $query_args[ 'p' ] != $transIds) ) {
+                unset( $query_args[ 'p' ] );
+            }
         } else {
             $query_args['lang'] = isset($query_args['lang']) ?
                     $query_args['lang'] : pll_current_language();
@@ -183,4 +187,25 @@ class Pages
         
         return $query_args;
     }
+
+	public function addShortcodeLanguageFilterCategories( $out, $pairs, $atts, $shortcode ) {
+
+		if ( isset( $atts[ 'ids' ] ) && strlen( $atts[ 'ids' ] ) ) {
+			$ids		 = explode( ',', $atts[ 'ids' ] );
+			$transIds	 = array();
+			foreach ( $ids as $id ) {
+				array_push( $transIds, pll_get_term( $id ) );
+			}
+			$out[ 'ids' ] = implode( $transIds, ',' );
+		}
+
+		if ( isset( $atts[ 'parent' ] ) && strlen( $atts[ 'parent' ] ) ) {
+			$transParent = pll_get_term( $atts[ 'parent' ] );
+			if ( $transParent ) {
+				$out[ 'parent' ] = $transParent;
+			}
+		}
+		return $out;
+	}
+
 }
