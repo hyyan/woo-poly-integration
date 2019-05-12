@@ -146,9 +146,10 @@ class Pages
             $shopPageTranslation = get_post($shopPageTranslatedID);
 
             if ($shopPageTranslation) {
-                $result = str_replace(
-                        $shopPage->post_name, $shopPageTranslation->post_name, $url
-                );
+		        		$slug = $shopPage->post_name;
+        				if ( $slug != $shopPageTranslation->post_name ) {
+        					$result = substr_replace( $url, shopPageTranslation->post_name, strrpos( $url, $slug ), strlen( $slug ) );
+        				}
             }
         }
 
