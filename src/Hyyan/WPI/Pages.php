@@ -148,7 +148,7 @@ class Pages
             if ($shopPageTranslation) {
 		        		$slug = $shopPage->post_name;
         				if ( $slug != $shopPageTranslation->post_name ) {
-        					$result = substr_replace( $url, shopPageTranslation->post_name, strrpos( $url, $slug ), strlen( $slug ) );
+        					$result = substr_replace( $url, $shopPageTranslation->post_name, strrpos( $url, $slug ), strlen( $slug ) );
         				}
             }
         }
