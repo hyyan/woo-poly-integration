@@ -165,6 +165,7 @@ class Variation
                     $ID, self::DUPLICATE_KEY, $metas['variation_id']
             );
             $this->copyVariationMetas($variation->get_id(), $ID);
+			      Utilities::flushCacheUpdateLookupTable( $ID );
         }
     }
     /**
@@ -178,6 +179,7 @@ class Variation
     {
         $this->copyVariationMetas($variation->get_id(), $post->ID);
 		    pll_set_post_language( $post->ID, pll_get_post_language( $post->post_parent ) );
+		    Utilities::flushCacheUpdateLookupTable( $post->ID );
     }
     /**
      * Add duplicate meta key to products created before plugin activation.

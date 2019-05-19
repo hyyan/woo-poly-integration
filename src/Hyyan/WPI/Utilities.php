@@ -502,4 +502,33 @@ final class Utilities
             }
         }
     }
+
+	/*
+	 * Ensure product cache is refreshed and product_meta_lookup updated for any changed meta
+	 * 
+	 * @param int $id   id of Product
+	 */
+	public static function flushCacheUpdateLookupTable( $id ) {
+		$product = wc_get_product( $id );
+		if ( $product ) {
+			wc_delete_product_transients( $id );
+			wp_cache_delete( $id, 'post_meta' );
+			wp_cache_delete( 'lookup_table', 'object_' . $id );
+			$productType = $product->get_type();
+
+			$datastoreType = 'product';
+			switch ( $productType ) {
+				case 'variable':
+				case 'grouped':
+				case 'variation':
+					$datastoreType .= '-' . $productType;
+			}
+			$data_store = \WC_Data_Store::load( $datastoreType );
+			//woocommerce have unhelpfully made all the lookup table functions protected so we cannot call them
+			//$data_store->update_lookup_table( $id, 'wc_product_meta_lookup' );
+			//in the meantime an increase of zero in the product sales will force the update...
+			$data_store->update_product_sales( $id, 0, 'increase' );
+		}
+	}
+
 }

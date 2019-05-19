@@ -119,7 +119,7 @@ class Categories implements TaxonomiesInterface
         $translations = Utilities::getTermTranslationsArrayByID($ID);
 
         foreach ($translations as $translation) {
-            update_woocommerce_term_meta($translation, $key, $value);
+			      update_term_meta( $translation, $key, $value );
         }
     }
 

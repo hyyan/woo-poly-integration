@@ -164,6 +164,9 @@ class Meta
             );
         }
 
+		//wc3.6 compatibility props mrleemon #408
+		$this->syncSelectedproductType( $ID );
+
         return true;
     }
 
@@ -210,6 +213,8 @@ class Meta
                     //handle special case meta which should be translated instead of synchronized
                     //
                     //$this->syncUpSellsCrossSells($post_id, $copy);
+					//clear any product caches and update lookup table
+					utilities::flushCacheUpdateLookupTable( $translation_id );
                 }
             }
         }
