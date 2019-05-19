@@ -314,8 +314,39 @@ class Variable
     public function extendFieldsLockerSelectors(array $selectors)
     {
         //FIX: #128 allow variable product description to be translated
-
-        $variable_exclude = apply_filters(HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER, array( '[name^="variable_description"]' ));
+        $variable_exclude	 = array( '[name^="variable_description"]' );
+        /* metas disabled for sync */
+        $metas_nosync		 = Meta::getDisabledProductMetaToCopy();
+        foreach ( $metas_nosync as $meta_nosync ) {
+          switch ( $meta_nosync ) {
+            case '_sku':
+            case '_manage_stock':
+            case '_stock':
+            case '_backorders':
+            case '_stock_status':
+            case '_sold_individually':
+            case '_weight':
+            case '_length':
+            case '_width':
+            case '_height':
+            case '_tax_status':
+            case '_tax_class':
+            case '_regular_price':
+            case '_sale_price':
+            case '_sale_price_dates_from':
+            case '_sale_price_dates_to':
+            case '_download_limit':
+            case '_download_expiry':
+            case '_download_type':
+                $variable_exclude[]	 = '[name^="variable' . $meta_nosync . '"]';
+				    case 'product_shipping_class':
+                $variable_exclude[]	 = '[name^="variable_shipping_class"]';
+				    case '_virtual':
+				    case '_downloadable':
+                $variable_exclude[]	 = '[name^="variable_is' . $meta_nosync . '"]';
+          }
+        }
+        $variable_exclude = apply_filters( HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER, $variable_exclude );
 
         $selectors[] = '#variable_product_options :input:not(' . implode(',', $variable_exclude) . ')';
         return $selectors;
