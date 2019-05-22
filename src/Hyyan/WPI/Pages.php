@@ -138,6 +138,10 @@ class Pages
             return $result;
         }
 
+        if ( is_front_page() ) {
+            return $result;
+        }
+
         $shopPageID = get_option('woocommerce_shop_page_id');
         $shopPage = get_post($shopPageID);
 
