@@ -1,5 +1,17 @@
 # Changelog
 
+### 1.4.0
+
+* [fixes #408 WooCommerce 3.6.x: by ensuring product lookup data is recalculated for translations and stale product data cache is cleared](https://github.com/hyyan/woo-poly-integration/issues/408)
+* [fixes #411, #299, #391 stock synchronisation issues](https://github.com/hyyan/woo-poly-integration/commit/17e29b9927eb2fea3afbc3947d48e2b68e3d2185)
+* [fixes #234 product admin: click on featured star in products list is now synchronised to translations](https://github.com/hyyan/woo-poly-integration/commit/3bbc1bf30ec90402a8796b16c6681037bd9e5125)
+* [fixes #400 shop page url translation: fixes where shop slug is contained in url](https://github.com/hyyan/woo-poly-integration/issues/400)
+* [fixes #416 emails: some missing custom string translations added](https://github.com/hyyan/woo-poly-integration/commit/16ad4c51edc8a9610d9039bc2e4953c801892b5e)
+* [fixes #414 emails: v1.3.0 bug for translating email strings which are customized in admin](https://github.com/hyyan/woo-poly-integration/issues/414)
+* [fixes #409 shortcodes: allow product shortcode to translate in same way as products shortcode](https://github.com/hyyan/woo-poly-integration/commit/2bf61574cf5b9ebb24ccf232de0ba92af879b31b)
+* [fixes #419 variations: allow default variation based on custom product specific attribute](https://github.com/hyyan/woo-poly-integration/commit/a71263855dfa35915993ee7f8da8bf3232c46d53)
+
+
 ### 1.3.0
 
 * [fixes #352 by allowing translation of 'invisible' variations](https://github.com/hyyan/woo-poly-integration/commit/cd19fdd01cafcf065fbf21dfaa80dd167ce60e63)
