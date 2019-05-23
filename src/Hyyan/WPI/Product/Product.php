@@ -12,6 +12,7 @@ namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Utilities;
 
 /**
  * Product.
@@ -59,6 +60,9 @@ class Product
         add_filter('woocommerce_product_get_cross_sell_ids', array($this, 'getCrosssellsInLanguage'), 10, 2);
         add_filter('woocommerce_product_get_children', array($this, 'getChildrenInLanguage'), 10, 2);
         
+        //for this ajax call our action has to come before the woocommerce action because the woocommerce action does a redirect
+        add_action( 'wp_ajax_woocommerce_feature_product', array( __CLASS__, 'sync_ajax_woocommerce_feature_product' ), 5 );
+
         new Meta();
         new Variable();
         new Duplicator();
@@ -66,6 +70,35 @@ class Product
         if ('on' === Settings::getOption('stock', Features::getID(), 'on')) {
             new Stock();
         }
+    }
+
+
+    /*
+     * #234 WooCommerce allows featured to be toggled in the products admin list
+     * by clicking on the star
+     */
+    public static function sync_ajax_woocommerce_feature_product() {
+      $metas = Meta::getDisabledProductMetaToCopy();
+      if ( in_array( '_visibility', $metas ) ) {
+        return;
+      }
+
+      $product = wc_get_product( absint( $_GET[ 'product_id' ] ) );
+      if ( $product ) {
+        //woocommerce action runs last so we need to set translation feature to the opposite of current value
+        $targetValue = ! $product->get_featured();
+
+        $product_translations = Utilities::getProductTranslationsArrayByObject( $product );
+        foreach ( $product_translations as $product_translation ) {
+          if ( $product_translation != $product->get_id() ) {
+            $translation = wc_get_product( $product_translation );
+            if ( $translation ) {
+              $translation->set_featured( $targetValue );
+              $translation->save();
+            }
+          }
+        }
+      }
     }
 
     
