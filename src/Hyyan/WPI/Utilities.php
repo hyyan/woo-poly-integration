@@ -324,7 +324,7 @@ final class Utilities
     public static function maybeVariableProduct($product)
     {
         if (is_numeric($product)) {
-            $product = wc_get_product(asbint($product));
+            $product = wc_get_product(absint($product));
         }
 
         if ($product && 'variable' === $product->get_type()) {
