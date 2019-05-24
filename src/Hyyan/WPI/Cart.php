@@ -105,11 +105,6 @@ class Cart
                 break;
         }
 
-        // Keep the price that's currently saved in the cart, because it might have been modified using the "woocommerce_before_calculate_totals" filter
-        $cart_item_data_translation->set_price($cart_item_data->get_price());
-        $cart_item_data_translation->set_regular_price($cart_item_data->get_regular_price());
-        $cart_item_data_translation->set_sale_price($cart_item_data->get_sale_price());
-
         return $cart_item_data_translation;
     }
     
