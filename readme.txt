@@ -146,6 +146,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 **@mrleemon**
 
 * [fixes #408 WooCommerce 3.6.x: by ensuring product lookup data is recalculated for translations and stale product data cache is cleared](https://github.com/hyyan/woo-poly-integration/issues/408)
+* [fixes #408 WooCommerce 3.6.x: cart fragment script updates for 3.6](https://github.com/hyyan/woo-poly-integration/commit/89ef0451dd8c7775fe48e20d71dc7836e8e49a96)
 * [fixes #411, #299, #391, #361 stock synchronisation issues](https://github.com/hyyan/woo-poly-integration/commit/17e29b9927eb2fea3afbc3947d48e2b68e3d2185)
 * [fixes #390, #346 Cart: retain price when switching languages props mweimerskirch](https://github.com/hyyan/woo-poly-integration/commit/ec272c0d921e39ebfd497fb2303454d7793bf60d)
 * [fixes #234 product admin: click on featured star in products list is now synchronised to translations](https://github.com/hyyan/woo-poly-integration/commit/3bbc1bf30ec90402a8796b16c6681037bd9e5125)
