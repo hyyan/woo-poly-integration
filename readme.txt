@@ -62,7 +62,7 @@ the same interface you love.
    support. So you have to make sure to choose the default language before you start
    adding new variable products.
 4. Polylang URL modifications method `The language is set from content` is not 
-   supported yet
+   supported
 
 = Setup your environment =
 
@@ -95,11 +95,17 @@ In your site Admin, go to Plugins, Add New and search for Hyyan WooCommerce Poly
 
 1. Download the plugin as zip archive and then upload it to your wordpress plugins folder and
 extract it there.
-2. Activate the plugin from your admin panel
 
 = Composer way =
 
 1. run composer command : ``` composer require hyyan/woo-poly-integration```
+
+In all cases please do ensure you have Polylang and WooCommerce activated and setup
+before you Activate this plugin from your admin panel
+
+Please note the getting started notes:
+https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started
+
 
 == Frequently Asked Questions ==
 
@@ -132,8 +138,16 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog == 
 
 == 1.4.0 ==
+
+**Thanks to :** 
+**@jon007**
+**@mweimerskirch **
+**@Annih**
+**@mrleemon**
+
 * [fixes #408 WooCommerce 3.6.x: by ensuring product lookup data is recalculated for translations and stale product data cache is cleared](https://github.com/hyyan/woo-poly-integration/issues/408)
 * [fixes #411, #299, #391, #361 stock synchronisation issues](https://github.com/hyyan/woo-poly-integration/commit/17e29b9927eb2fea3afbc3947d48e2b68e3d2185)
+* [fixes #390, #346 Cart: retain price when switching languages props mweimerskirch](https://github.com/hyyan/woo-poly-integration/commit/ec272c0d921e39ebfd497fb2303454d7793bf60d)
 * [fixes #234 product admin: click on featured star in products list is now synchronised to translations](https://github.com/hyyan/woo-poly-integration/commit/3bbc1bf30ec90402a8796b16c6681037bd9e5125)
 * [fixes #400 shop page url translation: fixes where shop slug is contained in url](https://github.com/hyyan/woo-poly-integration/issues/400)
 * [fixes #416 emails: some missing custom string translations added](https://github.com/hyyan/woo-poly-integration/commit/16ad4c51edc8a9610d9039bc2e4953c801892b5e)

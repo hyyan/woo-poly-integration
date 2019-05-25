@@ -52,7 +52,7 @@ the same interface you love.
    support. So you have to make sure to choose the default language before you start
    adding new variable products.
 4. Polylang URL modifications method `The language is set from content` is not
-   supported yet
+   supported
 
 ## How to install
 
@@ -65,6 +65,13 @@ extract it there.
 ### Composer way
 
 1. run composer command : ``` composer require hyyan/woo-poly-integration```
+
+In all cases please do ensure you have Polylang and WooCommerce activated and setup
+before you Activate this plugin from your admin panel
+
+Please note the getting started notes:
+https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started
+
 
 ## Setup your environment
 
