@@ -8,7 +8,7 @@
  * Modified WooCommerce cart-fragments.js script to break HTML5 fragment caching. 
  * Useful when switching languages. Adds support new Cart page ajax.
  * 
- * Updated in line with WooCommerce 3.5.3 cart-fragments.js, 
+ * Updated in line with WooCommerce 3.6.3 cart-fragments.js, 
  * only difference is the additional Polylang lines... and these commments
  **/
 
@@ -63,6 +63,10 @@ jQuery( function( $ ) {
 	var $fragment_refresh = {
 		url: wc_cart_fragments_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'get_refreshed_fragments' ),
 		type: 'POST',
+		data: {
+			time: new Date().getTime()
+		},
+		timeout: wc_cart_fragments_params.request_timeout,
 		success: function( data ) {
 			if ( data && data.fragments ) {
 
@@ -81,6 +85,9 @@ jQuery( function( $ ) {
 
 				$( document.body ).trigger( 'wc_fragments_refreshed' );
 			}
+		},
+		error: function() {
+			$( document.body ).trigger( 'wc_fragments_ajax_error' );
 		}
 	};
 
@@ -117,7 +124,9 @@ jQuery( function( $ ) {
 
 		// Refresh when storage changes in another tab
 		$( window ).on( 'storage onstorage', function ( e ) {
-			if ( cart_hash_key === e.originalEvent.key && localStorage.getItem( cart_hash_key ) !== sessionStorage.getItem( cart_hash_key ) ) {
+			if (
+				cart_hash_key === e.originalEvent.key && localStorage.getItem( cart_hash_key ) !== sessionStorage.getItem( cart_hash_key )
+			) {
 				refresh_cart_fragment();
 			}
 		});
@@ -203,4 +212,18 @@ jQuery( function( $ ) {
 	$( document.body ).on( 'adding_to_cart', function() {
 		$( '.hide_cart_widget_if_empty' ).closest( '.widget_shopping_cart' ).show();
 	});
+
+	// Customiser support.
+	var hasSelectiveRefresh = (
+		'undefined' !== typeof wp &&
+		wp.customize &&
+		wp.customize.selectiveRefresh &&
+		wp.customize.widgetsPreview &&
+		wp.customize.widgetsPreview.WidgetPartial
+	);
+	if ( hasSelectiveRefresh ) {
+		wp.customize.selectiveRefresh.bind( 'partial-content-rendered', function() {
+			refresh_cart_fragment();
+		} );
+	}
 });
