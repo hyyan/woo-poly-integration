@@ -40,9 +40,9 @@ class Taxonomies
                 'pll_get_taxonomies', array($this, 'getAllTranslateableTaxonomies'), 10, 2
         );
                 
-        add_action('update_option_wpi-features', array($this, 'updatePolyLangFromWooPolyFeatures'), 10, 3);
+        add_action('update_option_wpi-features', array(__CLASS__, 'updatePolyLangFromWooPolyFeatures'), 10, 3);
 
-        add_action('update_option_wpi-metas-list', array($this, 'updatePolyLangFromWooPolyMetas'), 10, 3);
+        add_action('update_option_wpi-metas-list', array(__CLASS__, 'updatePolyLangFromWooPolyMetas'), 10, 3);
     }
 
     /**
@@ -70,7 +70,7 @@ class Taxonomies
             'attributes' => 'Hyyan\WPI\Taxonomies\Attributes',
             'categories' => 'Hyyan\WPI\Taxonomies\Categories',
             'tags' => 'Hyyan\WPI\Taxonomies\Tags',
-            'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss',
+            //'shipping-class' => 'Hyyan\WPI\Taxonomies\ShippingCalss',
         );
 
         //for each type, add it
@@ -98,7 +98,7 @@ class Taxonomies
      *
      * @return array
      */
-    public function updatePolyLangFromWooPolyMetas($old_value, $new_value, $option)
+    public static function updatePolyLangFromWooPolyMetas($old_value, $new_value, $option)
     {
         //we could update Polylang settings for Featured Image, Comment Status, Page Order
         //if the WooPoly settings have changed, but note this would also affect Posts
@@ -114,7 +114,7 @@ class Taxonomies
      *
      * @return array
      */
-    public function updatePolyLangFromWooPolyFeatures($old_value, $new_value, $option)
+    public static function updatePolyLangFromWooPolyFeatures($old_value, $new_value, $option)
     {
         $polylang_options = get_option('polylang');
         $polylang_taxs = $polylang_options['taxonomies'];
