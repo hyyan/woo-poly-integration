@@ -6,7 +6,7 @@ Tested up to: 5.1
 Stable tag: 1.4.0
 Tested Up To: 5.2.1
 WC requires at least: 3.0.0
-WC tested up to: 3.6.3
+WC tested up to: 3.6.4
 Requires PHP: 5.3
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
@@ -149,6 +149,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * [fixes #408 WooCommerce 3.6.x: cart fragment script updates for 3.6](https://github.com/hyyan/woo-poly-integration/commit/89ef0451dd8c7775fe48e20d71dc7836e8e49a96)
 * [fixes #411, #299, #391, #361 stock synchronisation issues](https://github.com/hyyan/woo-poly-integration/commit/17e29b9927eb2fea3afbc3947d48e2b68e3d2185)
 * [fixes #390, #346 Cart: retain price when switching languages props mweimerskirch](https://github.com/hyyan/woo-poly-integration/commit/ec272c0d921e39ebfd497fb2303454d7793bf60d)
+* [fixes #364 initial setup: apply initial settings automatically](https://github.com/hyyan/woo-poly-integration/commit/217e33d2843fb82775a92a9d04cd2f7f73e436f6)
 * [fixes #234 product admin: click on featured star in products list is now synchronised to translations](https://github.com/hyyan/woo-poly-integration/commit/3bbc1bf30ec90402a8796b16c6681037bd9e5125)
 * [fixes #400 shop page url translation: fixes where shop slug is contained in url](https://github.com/hyyan/woo-poly-integration/issues/400)
 * [fixes #416 emails: some missing custom string translations added](https://github.com/hyyan/woo-poly-integration/commit/16ad4c51edc8a9610d9039bc2e4953c801892b5e)
