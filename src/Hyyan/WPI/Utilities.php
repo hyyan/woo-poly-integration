@@ -505,12 +505,13 @@ final class Utilities
 
 	/*
 	 * Ensure product cache is refreshed and product_meta_lookup updated for any changed meta
-	 * 
-	 * @param int $id   id of Product
+	 *
+	 *  @param int $the_product   id of Product or product object
 	 */
-	public static function flushCacheUpdateLookupTable( $id ) {
-		$product = wc_get_product( $id );
+	public static function flushCacheUpdateLookupTable( $the_product ) {
+		$product = wc_get_product( $the_product );
 		if ( $product ) {
+			$id			 = $product->get_id();
 			wc_delete_product_transients( $id );
 			wp_cache_delete( $id, 'post_meta' );
 			wp_cache_delete( 'lookup_table', 'object_' . $id );
@@ -524,10 +525,23 @@ final class Utilities
 					$datastoreType .= '-' . $productType;
 			}
 			$data_store = \WC_Data_Store::load( $datastoreType );
-			//woocommerce have unhelpfully made all the lookup table functions protected so we cannot call them
-			//$data_store->update_lookup_table( $id, 'wc_product_meta_lookup' );
-			//in the meantime an increase of zero in the product sales will force the update...
-			$data_store->update_product_sales( $id, 0, 'increase' );
+			//woocommerce 3.6 initial releases made all the lookup table functions protected so we cannot call them
+			//woocommmerce pull request 23820 currently labelled for 3.7.0 milestone should make this public in future
+			//note that is_callable() cannot test for implementation here as root class WC_Data_Store implements __call()
+			//if ( is_callable( array( $data_store, 'update_lookup_table' ) ) ) {
+			//method_exists also returns true if protected so also need reflection to confirm if it is callable
+			//cant test this on the datastore object itself as the method is not part of the datastore interface
+			//so test the product data store itself
+			if ( method_exists( 'WC_Product_Data_Store_CPT', 'update_lookup_table' ) ) {
+				$product_data_store	 = new \WC_Product_Data_Store_CPT();
+				$reflection			 = new \ReflectionMethod( $product_data_store, 'update_lookup_table' );
+				if ( $reflection->isPublic() ) {
+					$data_store->update_lookup_table( $id, 'wc_product_meta_lookup' );
+				} else {
+					//in the meantime an increase of zero in the product sales will force the update...
+					$data_store->update_product_sales( $id, 0, 'increase' );
+				}
+			}
 		}
 	}
 
