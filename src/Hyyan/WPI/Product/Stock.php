@@ -18,6 +18,13 @@ use Hyyan\WPI\Product\Variation;
 
 class Stock {
 	public function __construct() {
+
+		//disable on product edit screen as this has its own synchronisation on save
+		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
+		if ( ($screen && $screen->post_type === 'product') || isset( $_POST[ 'product-type' ] ) ) {
+			return;
+		}
+
 		// sync stock
 		add_action(
 		'woocommerce_product_set_stock', array( __CLASS__, 'SyncStockSimple' )
