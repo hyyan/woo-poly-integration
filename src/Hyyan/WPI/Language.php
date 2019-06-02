@@ -30,6 +30,10 @@ class Language
             $this, 'downlaodWhenPolylangAddLangauge',
         ));
 
+        add_action( 'pll_add_language', array(
+            $this, 'downlaodWhenPolylangAddLangauge',
+        ) );
+
         add_action('woo-poly.settings.wpi-features_fields', array(
             $this, 'addSettingFields',
         ));
