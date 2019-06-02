@@ -67,7 +67,9 @@ class Product
         new Variable();
         new Duplicator();
 
-        if ('on' === Settings::getOption('stock', Features::getID(), 'on')) {
+		if ( ('on' === Settings::getOption( 'stock', Features::getID(), 'on' )) &&
+		    ( 'yes' === get_option( 'woocommerce_manage_stock' ) ) ) 
+		    {
             new Stock();
         }
     }

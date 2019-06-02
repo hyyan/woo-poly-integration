@@ -69,7 +69,8 @@ class Stock {
 		$product_id_with_stock	 = $product->get_stock_managed_by_id();
 		$product_with_stock		 = $product_id_with_stock !== $product->get_id() ? wc_get_product( $product_id_with_stock ) : $product;
 
-		if ( $product_with_stock ) {
+		//skip if not a valid product
+		if ( $product_with_stock && $product_with_stock->get_id() ) {
 			$targetValue = $product_with_stock->get_stock_quantity();
 
 			//update all the translations to the same stock level..
