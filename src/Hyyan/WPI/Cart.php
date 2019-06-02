@@ -96,13 +96,17 @@ class Cart
         switch ($cart_item_data->get_type()) {
             case 'variation':
                 $variation_translation   = $this->getVariationTranslation($cart_variation_id);
-                $cart_item_data_translation = $variation_translation ? $variation_translation : $cart_item_data_translation;
+                if ( $variation_translation && $variation_translation->get_id() != $cart_variation_id ) {
+                  $cart_item_data_translation = $variation_translation;
+                }
                 break;
 
             case 'simple':
             default:
                 $product_translation        = Utilities::getProductTranslationByID($cart_product_id);
-                $cart_item_data_translation = $product_translation ? $product_translation : $cart_item_data_translation;
+                if ( $product_translation && $product_translation->get_id() != $cart_product_id ) {
+                  $cart_item_data_translation = $product_translation;
+                }
                 break;
         }
 
