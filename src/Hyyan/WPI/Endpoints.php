@@ -259,7 +259,7 @@ class Endpoints
         );
         if (in_array($screen->id, $allowedPages)) {
             FlashMessages::add(
-                    MessagesInterface::MSG_ENDPOINTS_TRANSLATION, Plugin::getView('Messages/endpointsTranslations')
+			MessagesInterface::MSG_ENDPOINTS_TRANSLATION, Plugin::getView( 'Messages/endpointsTranslations' ), array( 'updated' ), true
             );
         }
     }
