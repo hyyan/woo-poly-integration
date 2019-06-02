@@ -545,4 +545,49 @@ final class Utilities
 		}
 	}
 
+	/**
+	 * Reload text domains with requested locale.
+	 *
+	 * @param string $languageLocale Language locale (e.g. en_GB, de_DE )
+	 */
+	public static function switchLocale( $languageLocale ) {
+		if ( class_exists( 'Polylang' ) ) {
+			global $locale, $polylang, $woocommerce;
+			static $cache; // Polylang string translations cache object to avoid loading the same translations object several times
+			// Cache object not found. Create one...
+			if ( empty( $cache ) ) {
+				$cache = new \PLL_Cache();
+			}
+
+			//$current_language = pll_current_language( 'locale' );
+			// unload plugin's textdomains
+			unload_textdomain( 'default' );
+			unload_textdomain( 'woocommerce' ); #
+
+			do_action( HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION, $languageLocale );
+
+			// set locale to order locale
+			$locale						 = apply_filters( 'locale', $languageLocale );
+			$polylang->curlang->locale	 = $languageLocale;
+
+			// Cache miss
+			if ( false === $mo = $cache->get( $languageLocale ) ) {
+				$mo									 = new \PLL_MO();
+				$mo->import_from_db( $GLOBALS[ 'polylang' ]->model->get_language( $languageLocale ) );
+				$GLOBALS[ 'l10n' ][ 'pll_string' ]	 = &$mo;
+
+				// Add to cache
+				$cache->set( $languageLocale, $mo );
+			}
+
+			// (re-)load plugin's textdomain with order locale
+			load_default_textdomain( $languageLocale );
+
+			$woocommerce->load_plugin_textdomain();
+			do_action( HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION, $languageLocale );
+
+			$wp_locale = new \WP_Locale();
+		}
+	}
+
 }

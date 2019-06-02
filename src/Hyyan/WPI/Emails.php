@@ -695,7 +695,7 @@ class Emails
           return $_string; // No setting in Polylang strings translations table nor default string found to translate
         }
         $string = $test;
-        $this->switchLanguage( $order_language );
+			Utilities::switchLocale( $order_language );
       }
 
       // Perform the translation
@@ -758,52 +758,6 @@ class Emails
         } else {
             // Order fully refunded
             return true;
-        }
-    }
-
-    /**
-     * Reload text domains with order locale.
-     *
-     * @param string $language Language slug (e.g. en, de )
-     */
-    public function switchLanguage($language)
-    {
-        if (class_exists('Polylang')) {
-            global $locale, $polylang, $woocommerce;
-            static $cache; // Polylang string translations cache object to avoid loading the same translations object several times
-            // Cache object not found. Create one...
-            if (empty($cache)) {
-                $cache = new \PLL_Cache();
-            }
-
-            //$current_language = pll_current_language( 'locale' );
-            // unload plugin's textdomains
-            unload_textdomain('default');
-            unload_textdomain('woocommerce');#
-
-            do_action(HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION, $language);
-
-            // set locale to order locale
-            $locale                    = apply_filters('locale', $language);
-            $polylang->curlang->locale = $language;
-
-            // Cache miss
-            if (false === $mo = $cache->get($language)) {
-                $mo                            = new \PLL_MO();
-                $mo->import_from_db($GLOBALS['polylang']->model->get_language($language));
-                $GLOBALS['l10n']['pll_string'] = &$mo;
-
-                // Add to cache
-                $cache->set($language, $mo);
-            }
-
-            // (re-)load plugin's textdomain with order locale
-            load_default_textdomain($language);
-
-            $woocommerce->load_plugin_textdomain();
-            do_action(HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION, $language);
-
-            $wp_locale = new \WP_Locale();
         }
     }
 
