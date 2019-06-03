@@ -171,7 +171,7 @@ class Features extends AbstractSettings
             array(
               'name'		 => 'checkpages',
               'type'		 => 'checkbox',
-              'default'	 => 'on',
+              'default'	 => 'off',
               'label'		 => __( 'Check WooCommerce Pages', 'woo-poly-integration' ),
               'desc'		 => '' .
               __(

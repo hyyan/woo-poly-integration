@@ -45,8 +45,8 @@ class Plugin
             //skipping ajax
           } else {
             $wcpagecheck_passed = get_option( 'wpi_wcpagecheck_passed' );
-            if ( Settings::getOption( 'checkpages', Features::getID(), 1 ) || get_option( 'wpi_wcpagecheck_passed' ) == '0' ) {
-              add_action( 'pll_language_defined', array( __CLASS__, 'wpi_ensure_woocommerce_pages_translated' ) );
+            if ( Settings::getOption( 'checkpages', Features::getID(), 0 ) || get_option( 'wpi_wcpagecheck_passed' ) == '0' ) {
+              add_action( 'current_screen', array( __CLASS__, 'wpi_ensure_woocommerce_pages_translated' ) );
             }
           }
         }
@@ -278,6 +278,24 @@ class Plugin
 			return;
 		}
 
+		/*
+		 * only recheck this when on relevant pages such as pages list,
+		 * and settings pages for the main plugins Polylang, WooCommerce and woopoly
+		 * which might affect the woocommerce pages or transations
+		 */
+		$allowedPages	 = array(
+			'woocommerce_page_wc-settings',
+			'languages_page_mlang_settings',
+			'toplevel_page_mlang',
+			'settings_page_hyyan-wpi',
+			'edit-page',
+			'page',
+			'plugins',
+		);
+		$screen			 = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
+		if ( ! $screen || ! in_array( $screen->id, $allowedPages ) ) {
+			return;
+		}
 		//avoid any re-entrance
 		if ( get_option( 'wpi_wcpagecheck_passed' ) == 'checking' ) {
 			return;
