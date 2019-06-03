@@ -568,8 +568,14 @@ final class Utilities
 
 			// set locale to order locale
 			$locale						 = apply_filters( 'locale', $languageLocale );
+			if ( $polylang->curlang ) {
 			$polylang->curlang->locale	 = $languageLocale;
-
+			} elseif ( $polylang->preflang ) {
+				$polylang->preflang->locale = $languageLocale;
+			} else {
+				//if in admin mode, if there is no polylang filter set and not view a language specific page, curlang will not be set
+				error_log( 'woo-poly-integration: switchLocale was called when polylang was not initialised, please check usage' );
+			}
 			// Cache miss
 			if ( false === $mo = $cache->get( $languageLocale ) ) {
 				$mo									 = new \PLL_MO();

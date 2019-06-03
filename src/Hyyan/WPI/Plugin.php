@@ -11,6 +11,8 @@
 namespace Hyyan\WPI;
 
 use Hyyan\WPI\Tools\FlashMessages;
+use Hyyan\WPI\Admin\Settings;
+use Hyyan\WPI\Admin\Features;
 
 /**
  * Plugin.
@@ -35,6 +37,27 @@ class Plugin
 
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
+
+        add_action( 'pll_add_language', array( __CLASS__, 'handleNewLanguage' ) );
+
+        if ( is_admin() ) {
+          if ( defined( 'DOING_AJAX' ) || (function_exists( 'is_ajax' ) && is_ajax()) ) {
+            //skipping ajax
+          } else {
+            $wcpagecheck_passed = get_option( 'wpi_wcpagecheck_passed' );
+            if ( Settings::getOption( 'checkpages', Features::getID(), 1 ) || get_option( 'wpi_wcpagecheck_passed' ) == '0' ) {
+              add_action( 'pll_language_defined', array( __CLASS__, 'wpi_ensure_woocommerce_pages_translated' ) );
+            }
+          }
+        }
+    }
+
+    /*
+     * when new language is added in polylang, flag that default pages should be rechecked
+     * (try not to download immediately as translation files will not be downloaded yet)
+     */
+    public static function handleNewLanguage( $args ) {
+        update_option( 'wpi_wcpagecheck_passed', false );
     }
 
     /**
@@ -90,9 +113,9 @@ class Plugin
         add_filter('plugin_row_meta', array(__CLASS__, 'plugin_row_meta'), 10, 2);
         
         $oldVersion = get_option('wpi_version');
-        if (version_compare(self::getVersion(), $oldVersion, '<>')) {
-            $this->onUpgrade(self::getVersion(), $oldVersion);
-            update_option('wpi_version', self::getVersion());
+        $wcpagecheck_passed	 = get_option( 'wpi_wcpagecheck_passed' );
+        if ( ! $wcpagecheck_passed || version_compare( self::getVersion(), $oldVersion, '<>' ) ) {
+            self::onUpgrade(self::getVersion(), $oldVersion);
         }
 
         $this->registerCore();
@@ -135,11 +158,12 @@ class Plugin
      * @param num $newVersion
      * @param num $oldVersion
      */
-	public function onUpgrade( $newVersion, $oldVersion ) 
+	public static function onUpgrade( $newVersion, $oldVersion ) 
 	{
+  		update_option( 'wpi_version', self::getVersion() );
       $features = get_option( Admin\Features::getID() );
       if ( ! $features ) {
-        $features = unserialize( 'a:12:{s:13:"fields-locker";s:2:"on";s:6:"emails";s:2:"on";s:7:"reports";s:2:"on";s:7:"coupons";s:2:"on";s:5:"stock";s:2:"on";s:10:"categories";s:2:"on";s:4:"tags";s:2:"on";s:10:"attributes";s:2:"on";s:24:"new-translation-defaults";s:1:"1";s:13:"localenumbers";s:3:"off";s:10:"importsync";s:2:"on";s:19:"language-downloader";s:2:"on";}' );
+        $features = unserialize( 'a:13:{s:13:"fields-locker";s:2:"on";s:6:"emails";s:2:"on";s:7:"reports";s:2:"on";s:7:"coupons";s:2:"on";s:5:"stock";s:2:"on";s:10:"categories";s:3:"off";s:4:"tags";s:2:"on";s:10:"attributes";s:2:"on";s:24:"new-translation-defaults";s:1:"1";s:13:"localenumbers";s:3:"off";s:10:"importsync";s:2:"on";s:10:"checkpages";s:2:"on";s:19:"language-downloader";s:2:"on";}' );
         update_option( Admin\Features::getID(), $features );
       }
       Taxonomies\Taxonomies::updatePolyLangFromWooPolyFeatures( $features, $features, Admin\Features::getID() );
@@ -241,4 +265,164 @@ class Plugin
 
         return (array) $links;
     }
+
+	/*
+	 * Ensure woocommerce pages exist, are translated and published
+	 * Missing pages will be added in appropriate language
+	 *
+	 */
+	public static function wpi_ensure_woocommerce_pages_translated() {
+
+		//to avoid repetition, only do this when we are going to be alerted to the results
+		if ( ! is_admin() || is_ajax() ) {
+			return;
+		}
+
+		//avoid any re-entrance
+		if ( get_option( 'wpi_wcpagecheck_passed' ) == 'checking' ) {
+			return;
+		}
+		update_option( 'wpi_wcpagecheck_passed', 'checking' );
+
+		//each of the main pages to create
+		$page_types	 = array( 'cart', 'checkout', 'myaccount', 'shop' );
+		$pages		 = array();
+		$warnings	 = array();
+
+		//just in case, get and ensure we are in the default locale
+		$default_lang	 = pll_default_language();
+		$default_locale	 = pll_default_language( 'locale' );
+		$start_locale	 = get_locale();
+		if ( $default_locale != $start_locale ) {
+			Utilities::switchLocale( $default_locale );
+		}
+
+		//get the current id of each woocommerce page
+		foreach ( $page_types as $page_type ) {
+			$pageid = wc_get_page_id( $page_type );
+			if ( $pageid == -1 || ! get_post( $pageid ) ) {
+				//if any of the pages is missing, rerun the woocommerce page creation
+				//which will just fill in any missing page
+				\WC_Install::create_pages();
+				$pageid = wc_get_page_id( $page_type );
+			}
+			$pages[ $page_type ] = $pageid;
+		}
+
+		//check the page is published in each language
+		//get the locales and the slugs
+		$langs		 = pll_languages_list( array( 'fields' => 'locale' ) );
+		$lang_slugs	 = pll_languages_list();
+
+		//for each page, check all the translations and fill in and link where necessary
+		foreach ( $pages as $page_type => $orig_page_id ) {
+			$orig_page = get_post( $orig_page_id );
+			if ( $orig_page ) {
+				$orig_postlocale = pll_get_post_language( $orig_page_id, 'locale' );
+				//default pages may not have language set correctly
+				if ( ! $orig_postlocale || ($orig_postlocale != $default_locale) ) {
+					$orig_postlocale = $default_locale;
+					pll_set_post_language( $orig_page_id, $default_lang );
+				}
+				$translations[ $default_lang ]	 = $orig_page_id;
+				$changed						 = false;
+				foreach ( $langs as $langId => $langLocale ) {
+					$translation_id	 = $orig_page_id;
+					$langSlug		 = $lang_slugs[ $langId ];
+					$isNewPost		 = false;
+
+
+					//if this is not the original language
+					if ( $langLocale != $orig_postlocale ) {
+
+						// and there is no translation in target language
+						$translation_id = pll_get_post( $orig_page_id, $langLocale );
+						if ( $translation_id == 0 || $translation_id == $orig_page_id ) {
+
+							//then create new post in target language
+							$isNewPost = true;
+							Utilities::switchLocale( $langLocale );
+
+							//default to copy source page
+							$post_name		 = $orig_page->post_name;
+							$post_title		 = $orig_page->post_title;
+							$post_content	 = $orig_page->post_content;
+
+							//ideally, get correct translation
+							switch ( $page_type ) {
+								case 'shop':
+									$post_name		 = _x( 'shop', 'Page slug', 'woocommerce' );
+									$post_title		 = _x( 'Shop', 'Page title', 'woocommerce' );
+									$post_content	 = '';
+									break;
+								case 'cart':
+									$post_name		 = _x( 'cart', 'Page slug', 'woocommerce' );
+									$post_title		 = _x( 'Cart', 'Page title', 'woocommerce' );
+									$post_content	 = '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_cart_shortcode_tag', 'woocommerce_cart' ) . ']<!-- /wp:shortcode -->';
+									break;
+								case 'checkout':
+									$post_name		 = _x( 'checkout', 'Page slug', 'woocommerce' );
+									$post_title		 = _x( 'Checkout', 'Page title', 'woocommerce' );
+									$post_content	 = '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_checkout_shortcode_tag', 'woocommerce_checkout' ) . ']<!-- /wp:shortcode -->';
+									break;
+								case 'myaccount':
+									$post_name		 = _x( 'my-account', 'Page slug', 'woocommerce' );
+									$post_title		 = _x( 'My account', 'Page title', 'woocommerce' );
+									$post_content	 = '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_my_account_shortcode_tag', 'woocommerce_my_account' ) . ']<!-- /wp:shortcode -->';
+									break;
+							}
+
+
+							$page_data		 = array(
+								'post_status'	 => 'publish',
+								'post_type'		 => 'page',
+								'post_author'	 => 1,
+								'post_name'		 => $post_name,
+								'post_title'	 => $post_title,
+								'post_content'	 => $post_content,
+								//'post_parent'	 => $post_parent,
+								'comment_status' => 'closed',
+							);
+							$translation_id	 = wp_insert_post( $page_data );
+
+							pll_set_post_language( $translation_id, $langSlug );
+							$changed = true;
+						}
+						//always add the existing translations back into the translations array
+						$translations [ $langSlug ] = $translation_id;
+					}
+					//if this woocommerce page is an existing post, check post status
+					if ( $translation_id && ! $isNewPost ) {
+						$thisPost = get_post( $translation_id );
+						if ( $thisPost ) {
+							$postStatus = $thisPost->post_status;
+							if ( $postStatus != 'publish' ) {
+								$warnings[ $page_type . '::' . $langSlug ] = sprintf(
+								__( '%1$s page in language %2$s is in status %3$s and needs to be published for the shop to work properly, check page id %4$s', 'woo-poly-integration' ), $page_type, $langLocale, $postStatus, $translation_id );
+							}
+						}
+					}
+				}
+				if ( $changed ) {
+					pll_save_post_translations( $translations );
+				}
+			}
+		}
+
+		if ( $warnings ) {
+			FlashMessages::add(
+			'pagechecks', implode( '<br/>', $warnings )
+			, array( 'updated' ), true
+			);
+			update_option( 'wpi_wcpagecheck_passed', false );
+		} else {
+			FlashMessages::remove( 'pagechecks' );
+			update_option( 'wpi_wcpagecheck_passed', true );
+		}
+		$locale = get_locale();
+		if ( $locale != $start_locale ) {
+			Utilities::switchLocale( $start_locale );
+		}
+	}
+
 }

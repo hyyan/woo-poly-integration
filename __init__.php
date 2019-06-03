@@ -41,3 +41,14 @@ new Hyyan\WPI\Autoloader(__DIR__ . '/src/');
 
 /* bootstrap the plugin */
 new Hyyan\WPI\Plugin();
+
+
+/*
+ * called when plugin is activated in settings, plugins
+ */
+function onActivate() {
+	update_option( 'wpi_wcpagecheck_passed', false );
+}
+
+register_activation_hook( __FILE__, 'onActivate' );
+

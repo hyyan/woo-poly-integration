@@ -168,6 +168,17 @@ class Features extends AbstractSettings
                  . '</a>.'
                 ,
             ),
+            array(
+              'name'		 => 'checkpages',
+              'type'		 => 'checkbox',
+              'default'	 => 'on',
+              'label'		 => __( 'Check WooCommerce Pages', 'woo-poly-integration' ),
+              'desc'		 => '' .
+              __(
+              'Check if WooCommerce pages are present and correctly translated and published. Especially helpul on initial setup', 'woo-poly-integration' )
+              . '.'
+            ,
+            ),
         );
     }
 }
