@@ -48,6 +48,7 @@ new Hyyan\WPI\Plugin();
  */
 function onActivate() {
 	update_option( 'wpi_wcpagecheck_passed', false );
+	update_option( 'hyyan-wpi-flash-messages', '' );
 }
 
 register_activation_hook( __FILE__, 'onActivate' );
