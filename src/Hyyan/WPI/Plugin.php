@@ -274,7 +274,7 @@ class Plugin
 	public static function wpi_ensure_woocommerce_pages_translated() {
 
 		//to avoid repetition, only do this when we are going to be alerted to the results
-		if ( ! is_admin() || is_ajax() ) {
+		if ( ! is_admin() || defined( 'DOING_AJAX' ) || (function_exists( 'is_ajax' ) && is_ajax()) ) {
 			return;
 		}
 
