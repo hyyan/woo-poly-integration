@@ -265,4 +265,15 @@ interface HooksInterface
      * This filter may be used to support custom variables in subjects/headings (replace).
      */
     const EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER = 'woo-poly.Emails.orderFindReplaceReplace';
+
+	/**
+	 * Cart switched item filter.
+	 *
+	 * Used when a language variant of the original item will be shown.
+	 * This filter can customise the product to be shown
+	 *
+	 * two parameters, $newItem, $originalItem, $cartItem
+	 */
+	const CART_SWITCHED_ITEM = 'woo-poly.Cart.switchedItem';
+
 }

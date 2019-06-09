@@ -113,20 +113,7 @@ class Cart
 
         // If we are changing the product to the right language
         if ( $cart_item_data_translation->get_id() != $cart_item_data->get_id() ) {
-          // Keep the price that's currently saved in the cart,
-          // because it might have been modified using the
-          // "woocommerce_before_calculate_totals" filter
-          // (unless the shop admin has explicitly turned off price synchronisation options)
-          $metas = Meta::getDisabledProductMetaToCopy();
-          if ( ! in_array( '_regular_price', $metas ) ) {
-            $cart_item_data_translation->set_regular_price( $cart_item_data->get_regular_price() );
-          }
-          if ( ! in_array( '_sale_price', $metas ) ) {
-            $cart_item_data_translation->set_sale_price( $cart_item_data->get_sale_price() );
-          }
-          if ( ! in_array( '_price', $metas ) ) {
-            $cart_item_data_translation->set_price( $cart_item_data->get_price() );
-          }
+            $cart_item_data_translation = apply_filters( HooksInterface::CART_SWITCHED_ITEM, $cart_item_data_translation, $cart_item_data, $cart_item );
         }
 
         return $cart_item_data_translation;
