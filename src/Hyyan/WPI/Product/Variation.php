@@ -77,6 +77,7 @@ class Variation
                     'meta_key' => self::DUPLICATE_KEY,
                     'meta_value' => $variation['variation_id'],
                     'post_type' => 'product_variation',
+                    'post_status'	 => 'any',
                     'post_parent' => $this->to->get_id(),
                 ));
                 switch (count($posts)) {
@@ -182,6 +183,11 @@ class Variation
     {
         $this->copyVariationMetas($variation->get_id(), $post->ID);
 		    pll_set_post_language( $post->ID, pll_get_post_language( $post->post_parent ) );
+        if ( $post->post_status != $variation->get_status() ) {
+          $destVariation = wc_get_product( $post->ID );
+          $destVariation->set_status( $variation->get_status() );
+          $destVariation->save();
+        }
 		    Utilities::flushCacheUpdateLookupTable( $post->ID );
     }
     /**
