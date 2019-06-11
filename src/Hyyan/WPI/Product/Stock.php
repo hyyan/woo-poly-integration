@@ -78,11 +78,13 @@ class Stock {
 			Variation::getRelatedVariation( get_post_meta( $product_with_stock->get_id(), Variation::DUPLICATE_KEY, true ), true ) :
 			Utilities::getProductTranslationsArrayByObject( $product_with_stock );
 
-			foreach ( $product_translations as $product_translation ) {
-				if ( $product_translation != $product_with_stock->get_id() ) {
-					$translation = wc_get_product( $product_translation );
-					if ( $translation ) {
-						wc_update_product_stock( $translation, $targetValue );
+			if ( $product_translations ) {
+				foreach ( $product_translations as $product_translation ) {
+					if ( $product_translation != $product_with_stock->get_id() ) {
+						$translation = wc_get_product( $product_translation );
+						if ( $translation ) {
+							wc_update_product_stock( $translation, $targetValue );
+						}
 					}
 				}
 			}

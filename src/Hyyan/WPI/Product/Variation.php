@@ -109,6 +109,9 @@ class Variation
     public static function getRelatedVariation($variatonID, $returnIDS = false)
     {
         $result = array();
+        if ( ! $variatonID ) {
+          return false;
+        }
 
         //previous version of code using get_post_meta() was filtered at runtime by Polylang
         //even when adding 'suppress_filters' => true, so there was no way to adjust stock
