@@ -27,9 +27,53 @@ class Emails
     /** @var array Array of email types */
     public $emails;
 
-    /** @var array Array of email default settings */
-    protected $default_settings;
-
+	/*
+	 * gets the woocommerce default value for the string type:
+	 * woocommerce should be switched to order language before calling
+	 *
+	 * @param string   $string_type string type
+	 *
+	 * @return string	WooCommerce default value for current language
+	 */
+	public function get_default_setting( $string_type ) {
+		$wc_emails	 = \WC_Emails::instance();
+		$emails		 = $wc_emails->get_emails();
+		$return = '';
+		switch ( $string_type ) {
+			case 'new_order_recipient' : $return = $emails[ 'WC_Email_New_Order' ]->get_recipient();
+			case 'new_order_subject' : $return = $emails[ 'WC_Email_New_Order' ]->get_default_subject();
+			case 'new_order_heading' : $return = $emails[ 'WC_Email_New_Order' ]->get_default_heading();
+			case 'customer_processing_order_subject' : $return = $emails[ 'WC_Email_Customer_Processing_Order' ]->get_default_subject();
+			case 'customer_processing_order_heading' : $return = $emails[ 'WC_Email_Customer_Processing_Order' ]->get_default_heading();
+			case 'customer_refunded_order_subject_partial' : $return = $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_subject( true );
+			case 'customer_refunded_order_heading_partial' : $return = $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_heading( true );
+			case 'customer_refunded_order_subject_full' : $return = $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_subject();
+			case 'customer_refunded_order_heading_full' : $return = $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_heading();
+			case 'customer_note_subject' : $return = $emails[ 'WC_Email_Customer_Note' ]->get_default_subject();
+			case 'customer_note_heading' : $return = $emails[ 'WC_Email_Customer_Note' ]->get_default_heading();
+			case 'customer_invoice_subject_paid' : $return = $emails[ 'WC_Email_Customer_Invoice' ]->get_default_subject( true );
+			case 'customer_invoice_heading_paid' : $return = $emails[ 'WC_Email_Customer_Invoice' ]->get_default_heading( true );
+			case 'customer_invoice_subject' : $return = $emails[ 'WC_Email_Customer_Invoice' ]->get_default_subject();
+			case 'customer_invoice_heading' : $return = $emails[ 'WC_Email_Customer_Invoice' ]->get_default_heading();
+			case 'customer_completed_order_subject' : $return = $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_subject();
+			case 'customer_completed_order_heading' : $return = $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_heading();
+			case 'customer_completed_order_subject_downloadable' : $return = $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_subject();
+			case 'customer_completed_order_heading_downloadable' : $return = $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_heading();
+			case 'customer_new_account_subject' : $return = $emails[ 'WC_Email_Customer_New_Account' ]->get_default_subject();
+			case 'customer_new_account_heading' : $return = $emails[ 'WC_Email_Customer_New_Account' ]->get_default_heading();
+			case 'customer_reset_password_subject' : $return = $emails[ 'WC_Email_Customer_Reset_Password' ]->get_default_subject();
+			case 'customer_reset_password_heading' : $return = $emails[ 'WC_Email_Customer_Reset_Password' ]->get_default_heading();
+			case 'customer_on_hold_order_subject' : $return = $emails[ 'WC_Email_Customer_On_Hold_Order' ]->get_default_subject();
+			case 'customer_on_hold_order_heading' : $return = $emails[ 'WC_Email_Customer_On_Hold_Order' ]->get_default_heading();
+			case 'cancelled_order_subject' : $return = $emails[ 'WC_Email_Cancelled_Order' ]->get_default_subject();
+			case 'cancelled_order_heading' : $return = $emails[ 'WC_Email_Cancelled_Order' ]->get_default_heading();
+			case 'cancelled_order_recipient' : $return = $emails[ 'WC_Email_Cancelled_Order' ]->get_recipient();
+			case 'failed_order_subject' : $return = $emails[ 'WC_Email_Failed_Order' ]->get_default_subject();
+			case 'failed_order_heading' : $return = $emails[ 'WC_Email_Failed_Order' ]->get_default_heading();
+			case 'failed_order_recipient' : $return = $emails[ 'WC_Email_Failed_Order' ]->get_recipient();
+		}
+		return apply_filters( HooksInterface::EMAILS_DEFAULT_SETTING_FILTER, $return, $string_type);
+	}
     /**
      * Construct object.
      */
@@ -113,42 +157,6 @@ class Emails
             'cancelled_order',
             'failed_order',
         ), $this);
-		$wc_emails		 = \WC_Emails::instance();
-		$emails			 = $wc_emails->get_emails();
-
-        $this->default_settings = apply_filters(HooksInterface::EMAILS_DEFAULT_SETTINGS_FILTER, array(
-			'new_order_recipient'							 => $emails[ 'WC_Email_New_Order' ]->get_recipient(),
-			'new_order_subject'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_subject(), 'woocommerce' ),
-			'new_order_heading'								 => __( $emails[ 'WC_Email_New_Order' ]->get_default_heading(), 'woocommerce' ),
-			'customer_processing_order_subject'				 => __( $emails[ 'WC_Email_Customer_Processing_Order' ]->get_default_subject(), 'woocommerce' ),
-			'customer_processing_order_heading'				 => __( $emails[ 'WC_Email_Customer_Processing_Order' ]->get_default_heading(), 'woocommerce' ),
-			'customer_refunded_order_subject_partial'		 => __( $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_subject( true ), 'woocommerce' ),
-			'customer_refunded_order_heading_partial'		 => __( $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_heading( true ), 'woocommerce' ),
-			'customer_refunded_order_subject_full'			 => __( $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_subject(), 'woocommerce' ),
-			'customer_refunded_order_heading_full'			 => __( $emails[ 'WC_Email_Customer_Refunded_Order' ]->get_default_heading(), 'woocommerce' ),
-			'customer_note_subject'							 => __( $emails[ 'WC_Email_Customer_Note' ]->get_default_subject(), 'woocommerce' ),
-			'customer_note_heading'							 => __( $emails[ 'WC_Email_Customer_Note' ]->get_default_heading(), 'woocommerce' ),
-			'customer_invoice_subject_paid'					 => __( $emails[ 'WC_Email_Customer_Invoice' ]->get_default_subject( true ), 'woocommerce' ),
-			'customer_invoice_heading_paid'					 => __( $emails[ 'WC_Email_Customer_Invoice' ]->get_default_heading( true ), 'woocommerce' ),
-			'customer_invoice_subject'						 => __( $emails[ 'WC_Email_Customer_Invoice' ]->get_default_subject(), 'woocommerce' ),
-			'customer_invoice_heading'						 => __( $emails[ 'WC_Email_Customer_Invoice' ]->get_default_heading(), 'woocommerce' ),
-			'customer_completed_order_subject'				 => __( $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_subject(), 'woocommerce' ),
-			'customer_completed_order_heading'				 => __( $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_heading(), 'woocommerce' ),
-			'customer_completed_order_subject_downloadable'	 => __( $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_subject(), 'woocommerce' ),
-			'customer_completed_order_heading_downloadable'	 => __( $emails[ 'WC_Email_Customer_Completed_Order' ]->get_default_heading(), 'woocommerce' ),
-			'customer_new_account_subject'					 => __( $emails[ 'WC_Email_Customer_New_Account' ]->get_default_subject(), 'woocommerce' ),
-			'customer_new_account_heading'					 => __( $emails[ 'WC_Email_Customer_New_Account' ]->get_default_heading(), 'woocommerce' ),
-			'customer_reset_password_subject'				 => __( $emails[ 'WC_Email_Customer_Reset_Password' ]->get_default_subject(), 'woocommerce' ),
-			'customer_reset_password_heading'				 => __( $emails[ 'WC_Email_Customer_Reset_Password' ]->get_default_heading(), 'woocommerce' ),
-			'customer_on_hold_order_subject'				 => __( $emails[ 'WC_Email_Customer_On_Hold_Order' ]->get_default_subject(), 'woocommerce' ),
-			'customer_on_hold_order_heading'				 => __( $emails[ 'WC_Email_Customer_On_Hold_Order' ]->get_default_heading(), 'woocommerce' ),
-			'cancelled_order_subject'						 => __( $emails[ 'WC_Email_Cancelled_Order' ]->get_default_subject(), 'woocommerce' ),
-			'cancelled_order_heading'						 => __( $emails[ 'WC_Email_Cancelled_Order' ]->get_default_heading(), 'woocommerce' ),
-			'cancelled_order_recipient'						 => $emails[ 'WC_Email_Cancelled_Order' ]->get_recipient(),
-			'failed_order_subject'							 => __( $emails[ 'WC_Email_Failed_Order' ]->get_default_subject(), 'woocommerce' ),
-			'failed_order_heading'							 => __( $emails[ 'WC_Email_Failed_Order' ]->get_default_heading(), 'woocommerce' ),
-			'failed_order_recipient'						 => $emails[ 'WC_Email_Failed_Order' ]->get_recipient(),
-        ), $this);
 
         // Register strings for translation and hook filters
         foreach ($this->emails as $email) {
@@ -230,7 +238,7 @@ class Emails
      *
      *
      * @param string $email_type Email type
-     * @param string $sufix      Additional string variation, e.g. invoice paid vs invoice
+     * @param string $sufix      Additional string common to different email types
      */
     public function registerCommonString($setting, $default = '')
     {
@@ -254,18 +262,27 @@ class Emails
      *
      * @return string Translated subject
      */
-    public function translateCommonString($email_string)
-    {
-        if (function_exists('pll_register_string')) {
-            $lang  = pll_current_language('locale');
-            $trans = pll__($email_string);
-            if ($trans) {
-                return $trans;
-            } else {
-                return $email_string;
-            }
-        }
-    }
+     public function translateCommonString( $email_string ) {
+	     if ( ! function_exists( 'pll_register_string' ) ) {
+		     return $email_string;
+	     }
+	     if ( is_admin() ) {
+		     $screen = get_current_screen();
+		     if ( $screen && $screen->id == 'shop_order' ) {
+			     global $post;
+			     if ( $post ) {
+				     $order_locale = pll_get_post_language( $post->ID );
+				     return pll_translate_string( $email_string, $order_locale );
+			     }
+		     }
+	     }
+	     $trans = pll__( $email_string );
+	     if ( $trans ) {
+		     return $trans;
+	     }
+	     return $email_string;
+     }
+
 
     /**
      * Translate to the order language, the email subject of processing order email notifications to the customer.
@@ -664,49 +681,82 @@ class Emails
     /**
      * Translates Woocommerce email subjects and headings content to the order language.
      *
-     * @param string   $string      Subject or heading not translated
+     * @param string   $formatted_string      Subject or heading not translated but already with token replacements
      * @param WC_Order $order       Order object
      * @param string   $string_type Type of string to translate <subject | heading>
      * @param string   $email_type  Email template
      *
      * @return string Translated string, returns the original $string on error
      */
-    public function translateEmailStringToOrderLanguage($string, $order, $string_type, $email_type)
-    {
+	public function translateEmailStringToOrderLanguage( $formatted_string, $order, $string_type, $email_type ) 
+	{
+
       //allow function to be called with no order to try to pick up pll locale for footer, from address and name
-      $order_language = ($order) ? pll_get_post_language( Utilities::get_orderid( $order ), 'locale' ) : '';
-      if ( $order_language == '' ) {
-        $order_language = pll_current_language( 'locale' );
-        if ( ! ($order_language) ) {
-          return $string;
+		$order_locale = ($order) ? pll_get_post_language( Utilities::get_orderid( $order ), 'locale' ) : '';
+		if ( $order_locale == '' ) {
+			$order_locale = pll_current_language( 'locale' );
+			if ( ! ($order_locale) ) {
+				return $formatted_string;
         }
       }
-      $locale = get_locale();
 
-      // Get setting used to register string in the Polylang strings translation table
-      $_string = $string; // Store original string to return in case of error
+		//get both current language and base language which in admin could be different both from each other and from order language
+		$current_locale = pll_current_language( 'locale' );
+		if ( ! $current_locale ) {
+			$current_locale = get_locale();
+		}
+		$base_locale = ( is_multisite() ) ? get_site_option( 'WPLANG' ) : get_option( 'WPLANG' );
+		if ( ! $base_locale ) {
+			$base_locale = pll_default_language( 'locale' );
+			if ( ! $base_locale ) {
+				$base_locale = get_locale();
+			}
+		}
+
+		//if custom string is set in WooCommerce admin settings
+		$string_template = $this->getEmailSetting( $string_type, $email_type );
+		if ( $string_template ) {
+			//check for a translation in polylang
+			$string_template_translated = pll_translate_string( $string_template, $order_locale );
+			//if there is translation, use it
+			if ( $string_template_translated != $string_template ) {
+				$string_template = $string_template_translated;
+			} elseif ( $order_locale != $base_locale ) {
+				// if there was no template translation, and other language needed
+				// get the default for the language from the translation files
       // Switch language if current locale is not the same as the order
-      if ( $order_language != $locale ) {
-        $test = $this->getEmailSetting( $string_type, $email_type );
-        if ( ! $test ) {
-          $test = $this->default_settings[ $email_type . '_' . $string_type ];
-        }
-        if ( ! $test ) {
-          return $_string; // No setting in Polylang strings translations table nor default string found to translate
-        }
-        $string = $test;
-			Utilities::switchLocale( $order_language );
-      }
-
-      // Perform the translation
-      $test = pll_translate_string( $string, $order_language );
-      if ( $test != $string ) {
-        $string = $test;
+				if ( $order_locale != $current_locale ) {
+					Utilities::switchLocale( $order_locale );
+				}
+				$string_template = $this->get_default_setting( $string_type );
+			}
+		} else {
+			//no template is set, woocommerce will be using language files
+			//in this case if order is in current language or we are not in admin
+			if ( $order_locale == $current_locale || ( ! is_admin()) ) {
+				//then the starting string should already be correct
+				return $formatted_string;
       } else {
-        // If no user translation found in Polylang Strings Translations table, use WooCommerce default translation
-        $string = __( $this->default_settings[ $email_type . '_' . $string_type ], 'woocommerce' );
+				// Switch language if current locale is not the same as the order
+				if ( $order_locale != $current_locale ) {
+					Utilities::switchLocale( $order_locale );
+				}
+				$string_template = $this->get_default_setting( $string_type );
+			}
+		}
+
+      // No setting in Polylang strings translations table nor default string
+      if ( ! $string_template ) {
+            return $formatted_string;
       }
 
+      // Switch language if current locale is not the same as the order
+      // before starting variable replacements
+      if ( $order_locale != $current_locale ) {
+          Utilities::switchLocale( $order_locale );
+      }
+
+      //perform standard replacements on template
       if ($order) {
         $find    = array();
         $replace = array();
@@ -719,9 +769,9 @@ class Emails
         $replace['order-number'] = $order->get_order_number();
         $replace['site_title']   = get_bloginfo('name');
 
-        $string = str_replace(apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $order), apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $order), $string);
+        $formatted_string = str_replace( apply_filters( HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $order ), apply_filters( HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $order ), $string_template );
       }
-      return $string;
+		return $formatted_string;
     }
 
     /**

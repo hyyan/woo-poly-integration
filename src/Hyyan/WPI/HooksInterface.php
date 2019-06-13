@@ -227,11 +227,18 @@ interface HooksInterface
     /**
      * Emails Default Settings Filter.
      *
-     * This filter may be used to adjust default settings for email templates.
+     * NO LONGER USED, SORRY, REPLACED WITH SINGLE SETTING FILTER.
      */
     const EMAILS_DEFAULT_SETTINGS_FILTER = 'woo-poly.Emails.defaultSettings';
 
     /**
+	 * Emails Default Settings Filter.
+	 *
+	 * This filter may be used to adjust default settings for email templates.
+	 */
+	const EMAILS_DEFAULT_SETTING_FILTER = 'woo-poly.Emails.defaultSetting';
+
+	/**
      * Emails Translatable Action.
      *
      * This action fires after our plugin has added filters to translate subjects and headings for email.
