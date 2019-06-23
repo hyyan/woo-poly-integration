@@ -6,6 +6,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ * TODO: consider a version of PLL_Sync_Post_Metas for products,
+ * 		suppress the postmeta actions and use the woocommerce api
  */
 namespace Hyyan\WPI\Product;
 
@@ -82,7 +84,7 @@ class Meta
     public function onImport($object, $data)
     {
         // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
         
         //sync taxonomies
         $ProductID = $object->get_id();
@@ -93,6 +95,22 @@ class Meta
             $this->syncTaxonomiesAndProductAttributes($ProductID, $object, true);
         }
     }
+
+    /*
+     * filter pll_copy_post_metas
+     *
+     * @param array  $keys keys Polylang thinks should be copied
+     * @param int    $from Id of the post from which we copy informations
+     * @param int    $to   Id of the post to which we paste informations
+     * @param string $lang Language slug
+     * @param bool   $sync True if it is synchronization, false if it is a copy
+     */
+    public static function wpi_filter_pll_metas( $keys, $from, $to, $lang, $sync ) {
+        $wpi_keys	 = static::getProductMetaToCopy( $keys );
+        $wpi_keys	 = array_diff( $wpi_keys, array( '_default_attributes' ) );
+        return $wpi_keys;
+    }
+
     /**
      * catch save from QuickEdit
      *
@@ -101,7 +119,7 @@ class Meta
     public function saveQuickEdit(\WC_Product $product)
     {
         // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
         
         //some taxonomies can actually be changed in the QuickEdit
         $this->syncTaxonomiesAndProductAttributes($product->get_id(), $product, true);
@@ -121,7 +139,7 @@ class Meta
         }
 
         // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array(__CLASS__, 'getProductMetaToCopy'));
+        add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
 
         //  new code to synchronise Taxonomies and Product attributes applied to WooCommerce 3.0
         //  which now moves product_visibility from meta to taxonomy

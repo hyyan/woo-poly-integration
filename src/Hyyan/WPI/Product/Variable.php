@@ -146,55 +146,27 @@ class Variable
         // Ignore if not 'default attribute' meta
         if ('_default_attributes' === $meta_key) {
             $product = wc_get_product($object_id);
+            $current_filter	 = current_filter();
 
             // Don't let anyone delete the meta. NO ONE!
-            if ($product && current_filter() === 'delete_post_metadata') {
+            if ( $product && $current_filter === 'delete_post_metadata' ) {
                 return false;
             }
 
             // _default_attributes meta should be unique
-            if ($product && current_filter() === 'add_post_metadata') {
+            if ($product && $current_filter === 'add_post_metadata') {
                 $old_value = get_post_meta($product->get_id(), '_default_attributes');
                 return empty($old_value) ? $check : false;
             }
 
-            // Maybe is Variable Product
-            // New translations of Variable Products are first created as simple
-            if ($product && Utilities::maybeVariableProduct($product)) {
-                // Try Polylang first
-                $lang = pll_get_post_language($product->get_id());
 
-                if (!$lang) {
-                    // Must be a new translation and Polylang doesn't stored the language yet
-                    $lang = isset($_GET['new_lang']) ? $_GET['new_lang'] : '';
-                }
-
-                foreach ($meta_value as $key => $value) {
-					//TODO JM: get_term_by is filtered by Polylang, so
-					//will not retrieve data if the term is not in the correct language
-					//so the rest of the check does not execute as expected
-					//(it is not possible to get the term without knowing the language,
-					// and not possible to get the translation without getting the term)
-					// the fix is the additional return false which prevents save of the incorrect version when Polylang attempts to synchronise it
-                    $term = get_term_by('slug', $value, $key);
-
-                    if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
-                        if ($translated_term_id = pll_get_term($term->term_id, $lang)) {
-                            $translated_term    = get_term_by('id', $translated_term_id, $term->taxonomy);
-
-                            // If meta is taxonomy managed by Polylang and is in the
-                            // correct language continue, otherwise return false to
-                            // stop execution
-                            return ($value === $translated_term->slug) ? $check : false;
-                        } else {
-                            // Attribute term has no translation
-                            return false;
-                        }
-                    }
-					// Attribute is in wrong language and must not be saved
-					return false;
-                }
-            }
+            /* #432: this check was partially incorrect and
+             * is no longer needed after removing _default_attributes
+             * from the list of meta synchronised by Polylang.
+             * (another way of doing it would be to hook the polylang filter
+             * in sync-metas maybe_translate_value
+             * and translate the default attributes there, but that is bigger change to this plugin
+             */
         }
 
         return $check;
@@ -250,7 +222,7 @@ class Variable
             foreach ($langs as $lang) {
                 $translation_id = pll_get_post($product->get_id(), $lang);
 
-                if ($translation_id != $product->get_id()) {
+                if ( $translation_id && $translation_id != $product->get_id()) {
                     update_post_meta($translation_id, '_default_attributes', $attributes_translation[$lang]);
                 }
             }

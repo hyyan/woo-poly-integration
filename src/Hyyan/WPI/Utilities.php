@@ -266,14 +266,14 @@ final class Utilities
       	  				'slug'					 => $value,
       		  			'lang'					 => pll_get_post_language( $product_id )
 		      		  );
-      				  $terms	 = get_terms( $args );
-      				  if ( $terms && ( ! is_wp_error( $terms ) ) ) {
-		      		      $term	 = array_shift( $terms );
+								$this_attr_terms = get_terms( $args );
+								if ( $this_attr_terms && ( ! is_wp_error( $this_attr_terms ) ) ) {
+      					    $term = array_shift( $this_attr_terms );
 
-                    if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
-                        $terms[] = $term;
-                    } else {
-                        $terms[] = array($key => $value);
+      					    if ($term && pll_is_translated_taxonomy($term->taxonomy)) {
+      					        $terms[] = $term;
+      					    } else {
+      					        $terms[] = array($key => $value);
                     }
       				  } else {
       					  $terms = array( array( $key => $value ) );
