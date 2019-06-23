@@ -1,6 +1,7 @@
 # Changelog
 
 ### 1.4.2
+* [fixes #432 default variation attributes were not synchronised correctly when using more than one attribute](https://github.com/hyyan/woo-poly-integration/commit/7101bcf0786e21515885d5796188420972b01831)
 * [fixes #431 multiple email translation issues in different circumstances](https://github.com/hyyan/woo-poly-integration/issues/431)
 * [fixes #430 bugfix and enhancement to allow variations to be disabled](https://github.com/hyyan/woo-poly-integration/issues/430)
 * [stock synchronisation - avoid errors being logged where product is not translated](https://github.com/hyyan/woo-poly-integration/commit/08c9913105e6ad8183f7bbf35930f25b983d4c50)
