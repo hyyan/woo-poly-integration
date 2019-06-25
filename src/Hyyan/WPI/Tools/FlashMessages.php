@@ -49,7 +49,7 @@ final class FlashMessages
         if (isset($messages[$id])) {
             $messages[$id] = array_replace_recursive($messages[$id], $data);
         } else {
-            $messages[$id] = $data;
+            $messages = $data;
         }
 
         update_option(static::getOptionName(), $messages);
