@@ -137,6 +137,5 @@ final class FlashMessages
             $messages = array();
         }
         return $messages;
-        return get_option(static::getOptionName(), array());
     }
 }

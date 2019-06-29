@@ -142,9 +142,9 @@ class Order
     public function limitPolylangFeaturesForOrders()
     {
         add_action('current_screen', function () {
-            $screen = get_current_screen();
+            $screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
 
-            if ($screen->post_type === 'shop_order') {
+            if ( $screen && $screen->post_type === 'shop_order' ) {
                 add_action('admin_print_scripts', function () {
                     $jsID = 'order-translations-buttons';
                     $code = '$(".pll_icon_add,#post-translations").fadeOut()';

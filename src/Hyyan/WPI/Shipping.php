@@ -48,8 +48,8 @@ class Shipping
      */
     public function disableSettings()
     {
-        $currentScreen = get_current_screen();
-        if ($currentScreen->id !== 'settings_page_hyyan-wpi') {
+        $currentScreen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
+        if ($currentScreen && $currentScreen->id !== 'settings_page_hyyan-wpi') {
             return false;
         }
 

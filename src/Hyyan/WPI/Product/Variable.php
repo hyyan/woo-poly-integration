@@ -384,8 +384,8 @@ class Variable
     public function shouldDisableLangSwitcher()
     {
         add_action('current_screen', function () {
-            $screen = get_current_screen();
-            if ($screen->id !== 'settings_page_mlang') {
+            $screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
+            if ($screen && $screen->id !== 'settings_page_mlang') {
                 return false;
             }
 

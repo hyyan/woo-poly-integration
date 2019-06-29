@@ -133,8 +133,8 @@ class Meta
     public function syncProductsMeta()
     {
         //change proposed Teemu Suoranta 3/Nov
-        $currentScreen = get_current_screen();
-        if ($currentScreen->post_type !== 'product') {
+        $currentScreen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
+        if ( $currentScreen && $currentScreen->post_type !== 'product' ) {
             return false;
         }
 

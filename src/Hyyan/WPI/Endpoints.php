@@ -250,11 +250,11 @@ class Endpoints
      */
     public function showFlashMessages()
     {
-        $screen = get_current_screen();
+        $screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
         /*
          * this only gets shown once before being dismissed so show only in the relevant place
          */
-        if ( $screen->id == 'woocommerce_page_wc-settings' && isset( $_GET[ 'tab' ] ) && $_GET[ 'tab' ] == 'advanced' ) {
+        if ( $screen && $screen->id == 'woocommerce_page_wc-settings' && isset( $_GET[ 'tab' ] ) && $_GET[ 'tab' ] == 'advanced' ) {
             FlashMessages::add(
 			MessagesInterface::MSG_ENDPOINTS_TRANSLATION, Plugin::getView( 'Messages/endpointsTranslations' )
             );

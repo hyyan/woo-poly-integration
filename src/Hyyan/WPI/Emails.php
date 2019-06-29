@@ -267,14 +267,15 @@ class Emails
 		     return $email_string;
 	     }
 	     if ( is_admin() ) {
-		     $screen = get_current_screen();
-		     if ( $screen && $screen->id == 'shop_order' ) {
-			     global $post;
-			     if ( $post ) {
-				     $order_locale = pll_get_post_language( $post->ID );
-				     return pll_translate_string( $email_string, $order_locale );
-			     }
-		     }
+             //#435 allow the possibility of other screens sending email, including where current_screen is not defined
+             //$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
+             //if ( $screen && $screen->id == 'shop_order' ) {
+             global $post;
+             if ( $post ) {
+                 $locale = pll_get_post_language( $post->ID );
+                 return pll_translate_string( $email_string, $locale );
+             }
+             //}
 	     }
 	     $trans = pll__( $email_string );
 	     if ( $trans ) {
