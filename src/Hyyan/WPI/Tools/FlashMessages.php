@@ -132,6 +132,11 @@ final class FlashMessages
      */
     private static function getMessages()
     {
+        $messages = get_option( static::getOptionName(), array() );
+        if ( ! is_array( $messages ) ) {
+            $messages = array();
+        }
+        return $messages;
         return get_option(static::getOptionName(), array());
     }
 }
