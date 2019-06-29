@@ -37,7 +37,8 @@ final class FlashMessages
      */
     public static function add($id, $message, array $classes = array('updated'), $persist = false)
     {
-        $messages = static::getMessages();
+	$messages = static::getMessages();
+        is_array( $messages ) ?: $messages = [];
         $data = array(
             'id' => $id,
             'message' => $message,
