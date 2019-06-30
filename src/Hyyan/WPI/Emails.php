@@ -80,8 +80,8 @@ class Emails
     public function __construct()
     {
         if ('on' === Settings::getOption('emails', Features::getID(), 'on')) {
-			add_filter( 'plugin_locale', array( $this, 'correctLocal' ), 999 );
-
+			//Note: correct locale was performing language switching functions which should not really be performed on every call to this filter - language now switched more fully on first translation call and better detection now done in translateCommonString
+			//add_filter( 'plugin_locale', array( $this, 'correctLocal' ), 999 );
             // Register WooCommerce email subjects and headings in polylang strings translations table
             $this->registerEmailStringsForTranslation(); // called only after all plugins are loaded
             // Translate WooCommerce email subjects and headings to the order language
@@ -274,8 +274,25 @@ class Emails
              if ( $post ) {
                  $locale = pll_get_post_language( $post->ID );
                  return pll_translate_string( $email_string, $locale );
+             } else { //moved from correctLocal
+				$ID = false;
+				if ( ! isset( $_REQUEST[ 'ipn_track_id' ] ) ) {
+					$search = array( 'post', 'post_ID', 'pll_post_id', 'order_id' );
+
+					foreach ( $search as $value ) {
+						if ( isset( $_REQUEST[ $value ] ) ) {
+							$ID = esc_attr( $_REQUEST[ $value ] );
+							break;
+						}
+					}
+				} else {
+					$ID = $this->getOrderIDFromIPNRequest();
+				}
+				if ( $ID ) {
+					$locale = pll_get_post_language( $ID );
+					return pll_translate_string( $email_string, $locale );
+				}
              }
-             //}
 	     }
 	     $trans = pll__( $email_string );
 	     if ( $trans ) {

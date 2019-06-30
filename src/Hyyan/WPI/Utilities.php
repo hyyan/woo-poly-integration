@@ -550,50 +550,108 @@ final class Utilities
 	 *
 	 * @param string $languageLocale Language locale (e.g. en_GB, de_DE )
 	 */
-	public static function switchLocale( $languageLocale ) {
-		if ( class_exists( 'Polylang' ) ) {
-			global $locale, $polylang, $woocommerce;
-			static $cache; // Polylang string translations cache object to avoid loading the same translations object several times
-			// Cache object not found. Create one...
-			if ( empty( $cache ) ) {
-				$cache = new \PLL_Cache();
+	public static function switchLocale( $languageLocale ) 
+	{
+		static::switch_pll_locale( $languageLocale );
+		static::switch_wp_locale( $languageLocale );
+	}
+
+	/*
+	 * switch wordpress language
+	 * Note, as per previous functions this function does not attempt to avoid switching if already switched
+	 *
+	 * @param string $languageLocale Language locale (e.g. en_GB, de_DE )
+	 */
+	public static function switch_wp_locale( $languageLocale ) {
+			if ( ! $languageLocale ) {
+			    return;
 			}
 
-			//$current_language = pll_current_language( 'locale' );
 			// unload plugin's textdomains
 			unload_textdomain( 'default' );
-			unload_textdomain( 'woocommerce' ); #
+			unload_textdomain( 'woocommerce' );
 
+			//remove any previous filter
+			remove_all_filters( 'plugin_locale', 999 );
+			//allow other plugins opportunity to unload text domain
 			do_action( HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION, $languageLocale );
 
-			// set locale to order locale
-			$locale						 = apply_filters( 'locale', $languageLocale );
-			if ( $polylang->curlang ) {
-			$polylang->curlang->locale	 = $languageLocale;
-			} elseif ( $polylang->preflang ) {
-				$polylang->preflang->locale = $languageLocale;
-			} else {
-				//if in admin mode, if there is no polylang filter set and not view a language specific page, curlang will not be set
-				return;
-				//error_log( 'woo-poly-integration: switchLocale was called when not needed, please check usage' );
-			}
-			// Cache miss
-			if ( false === $mo = $cache->get( $languageLocale ) ) {
-				$mo									 = new \PLL_MO();
-				$mo->import_from_db( $GLOBALS[ 'polylang' ]->model->get_language( $languageLocale ) );
-				$GLOBALS[ 'l10n' ][ 'pll_string' ]	 = &$mo;
-
-				// Add to cache
-				$cache->set( $languageLocale, $mo );
+			//switch locale
+			if ( function_exists( 'switch_to_locale' ) ) {
+			    switch_to_locale( $languageLocale );
 			}
 
-			// (re-)load plugin's textdomain with order locale
+			//create closure to filter plugin locale so other calls during language
+			//switching pick up correct plugin locale
+			$locale_fn = function() use ($languageLocale) {
+			    return $languageLocale;
+			};
+
+			// Filter on plugin_locale so load_plugin_textdomain loads the correct locale.
+			add_filter( 'plugin_locale', $locale_fn, 9999 );
+
+			// (re-)load plugin's textdomain with supplied locale
 			load_default_textdomain( $languageLocale );
+			global $woocommerce;
+			if ( $woocommerce ) {
+			    $woocommerce->load_plugin_textdomain();
+			}
 
-			$woocommerce->load_plugin_textdomain();
+			//allow other plugins opportunity to reload text domain
 			do_action( HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION, $languageLocale );
 
 			$wp_locale = new \WP_Locale();
+			//remove_filter does not work with closure so use remove_all_filters with priority
+			//remove_filter( 'plugin_locale', $locale_fn, 9999 );
+			remove_all_filters( 'plugin_locale', 9999 );
+	}
+
+	/*
+	 * set polylang current language, which in admin mode may be different from both user interface language and shop base language
+	 * For example, shop in English, shop manager in Spanish, polylang filter could be set to Show all languages or eg to filter on French
+	 * So after performing specific operations in a particular language polylang should be reset to initial value
+	 *
+	 * @param string $languageLocale Language locale (e.g. en_GB, de_DE )
+	 * 							   or false to return pll to Show all languages
+	 */
+	public static function switch_pll_locale( $languageLocale ) {
+		if ( ! class_exists( 'Polylang' ) ) {
+			return;
+		}
+
+		global $polylang;
+		static $cache; // Polylang string translations cache object to avoid loading the same translations object several times
+		// Cache object not found. Create one...
+		if ( empty( $cache ) ) {
+			$cache = new \PLL_Cache();
+		}
+
+		//if we are switching languages, set the polylang curlang
+		//and load string translations for that language
+		if ( $languageLocale ) {
+			$pll_lang = $polylang->model->get_language( $languageLocale );
+			if ( $pll_lang ) {
+				$polylang->curlang = $pll_lang;
+				$GLOBALS[ 'text_direction' ] = $pll_lang->is_rtl ? 'rtl' : 'ltr';
+			} else {
+				//20190630: old code used in previous versions of this plugin
+				$polylang->curlang->locale = $languageLocale;
+			}
+			// Cache miss
+			$mo = $cache->get( $languageLocale );
+			//if it is a valid language which does not yet have string translations loaded
+			if ( $pll_lang && ! $mo ) {
+				$mo = new \PLL_MO();
+				$mo->import_from_db( $pll_lang );
+				// Add to cache
+				$cache->set( $languageLocale, $mo );
+			}
+			if ( $mo ) {
+				$GLOBALS[ 'l10n' ][ 'pll_string' ] = &$mo;
+			}
+		} else {
+			//if the $languageLocale is not set return to Show all languages
+			$polylang->curlang = false;
 		}
 	}
 
