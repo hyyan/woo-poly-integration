@@ -137,6 +137,12 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog == 
 
 
+== 1.4.3 ==
+* [fixes #434 page checks duplicating pages and other language switching issues](https://github.com/hyyan/woo-poly-integration/commit/8c54fb23afad1bec1f98b2077d6f552646f253b8)
+* [fixes #435 fix get_current_screen errors when this plugin called in unanticipated circumstances props danieleftodi YITH Gift Cards](https://github.com/hyyan/woo-poly-integration/commit/7d428208ff3b3a2472ce42f5a2259604ce2128c8)
+* [fixes #436 Illegal string offset and Invalid argument in FlashMessages](https://github.com/hyyan/woo-poly-integration/commit/feedc68431bcd26c8d9bd2b4afacf4d7a86a62a1)
+
+
 == 1.4.2 ==
 * [fixes #432 default variation attributes were not synchronised correctly when using more than one attribute](https://github.com/hyyan/woo-poly-integration/commit/7101bcf0786e21515885d5796188420972b01831)
 * [fixes #431 multiple email translation issues in different circumstances](https://github.com/hyyan/woo-poly-integration/issues/431)
