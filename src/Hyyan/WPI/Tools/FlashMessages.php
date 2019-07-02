@@ -94,6 +94,9 @@ final class FlashMessages
                     false : true;
 
             if (true === $display || !@$message['displayed']) {
+                if (!isset($message['classes']))
+					continue;
+                
                 $message['classes'][] = 'is-dismissible notice';
                 $classesString = implode(' ', $message['classes']);
                 printf(
