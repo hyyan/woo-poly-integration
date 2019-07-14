@@ -406,17 +406,17 @@ class Meta
                         if (pll_is_translated_taxonomy($tax)) {
                             $translated_term = pll_get_term($t->term_id, $lang);
                             if ($translated_term) {
-                                $new_terms[] = get_term_by('id', $translated_term, $tax)->slug;
+								$new_terms[] = get_term_by( 'id', $translated_term, $tax )->term_id;
                             } else {
                                 //if no translation exists then create one
-                                $result = static::createDefaultTermTranslation($tax, $t, $slug, $lang, false);
+								$result = static::createDefaultTermTranslation( $tax, $t, $slug, $lang, true );
                                 if ($result) {
                                     $new_terms[] = $result;
                                 }
                             }
                         } else {
                             //otherwise not translatable, do synchronisation
-                            $new_terms[] = $slug;
+							$new_terms[] = $t->term_id;
                         }
                 } //switch taxonomy slug
             } // foreach old term
