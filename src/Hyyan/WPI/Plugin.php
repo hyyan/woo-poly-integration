@@ -173,7 +173,7 @@ class Plugin
   		update_option( 'wpi_version', self::getVersion() );
       $features = get_option( Admin\Features::getID() );
       if ( ! $features ) {
-        $features = unserialize( 'a:13:{s:13:"fields-locker";s:2:"on";s:6:"emails";s:2:"on";s:7:"reports";s:2:"on";s:7:"coupons";s:2:"on";s:5:"stock";s:2:"on";s:10:"categories";s:3:"off";s:4:"tags";s:2:"on";s:10:"attributes";s:2:"on";s:24:"new-translation-defaults";s:1:"1";s:13:"localenumbers";s:3:"off";s:10:"importsync";s:2:"on";s:10:"checkpages";s:2:"on";s:19:"language-downloader";s:2:"on";}' );
+			$features = unserialize( 'a:13:{s:13:"fields-locker";s:2:"on";s:6:"emails";s:2:"on";s:7:"reports";s:2:"on";s:7:"coupons";s:2:"on";s:5:"stock";s:2:"on";s:10:"categories";s:2:"on";s:4:"tags";s:2:"on";s:10:"attributes";s:2:"on";s:24:"new-translation-defaults";s:1:"1";s:13:"localenumbers";s:2:"on";s:10:"importsync";s:2:"on";s:10:"checkpages";s:3:"off";s:19:"language-downloader";s:2:"on";}' );
         update_option( Admin\Features::getID(), $features );
       }
       Taxonomies\Taxonomies::updatePolyLangFromWooPolyFeatures( $features, $features, Admin\Features::getID() );
