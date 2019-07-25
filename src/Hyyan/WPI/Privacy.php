@@ -22,7 +22,8 @@ class Privacy
     {
         $this->registerPrivacyStrings();
         add_filter('woocommerce_get_privacy_policy_text', array($this, 'translatePrivacyPolicyText'), 10, 2);
-		    add_filter( 'woocommerce_demo_store', array( $this, 'translateDemoStoreNotice' ), 10, 2 );
+        add_filter( 'woocommerce_demo_store', array( $this, 'translateDemoStoreNotice' ), 10, 2 );
+        add_filter( 'woocommerce_get_terms_and_conditions_checkbox_text', array( $this, 'translatePrivacyPolicyText' ), 10, 2 );
     }
 
     /**
@@ -31,9 +32,10 @@ class Privacy
      */
     public function registerPrivacyStrings()
     {
-        $this->registerString('woocommerce_checkout_privacy_policy_text', get_option('woocommerce_checkout_privacy_policy_text', sprintf(__('Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.', 'woocommerce'), '[privacy_policy]')));
+        $this->registerString('woocommerce_checkout_privacy_policy_text', get_option('woocommerce_checkout_privacy_policy_text', sprintf(__('Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.', 'woocommerce'), '[privacy_policy]')));                        
         $this->registerString('woocommerce_registration_privacy_policy_text', get_option('woocommerce_registration_privacy_policy_text', sprintf(__('Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.', 'woocommerce'), '[privacy_policy]')));
-		    $this->registerString( 'woocommerce_store_notice', get_option( 'woocommerce_demo_store_notice' ) );
+        $this->registerString( 'woocommerce_store_notice', get_option( 'woocommerce_demo_store_notice' ) );
+        $this->registerString( 'woocommerce_checkout_terms_and_conditions_checkbox_text', get_option( 'woocommerce_checkout_terms_and_conditions_checkbox_text' ) );
     }
 
     
@@ -61,6 +63,8 @@ class Privacy
         if (function_exists('pll_register_string')) {
             $trans = pll__($text);
             return ($trans) ? $trans : $text;
+        } else {
+            return $text;
         }
     }
 
