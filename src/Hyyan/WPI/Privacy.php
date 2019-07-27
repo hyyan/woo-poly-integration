@@ -23,7 +23,7 @@ class Privacy
         $this->registerPrivacyStrings();
         add_filter('woocommerce_get_privacy_policy_text', array($this, 'translatePrivacyPolicyText'), 10, 2);
         add_filter( 'woocommerce_demo_store', array( $this, 'translateDemoStoreNotice' ), 10, 2 );
-        add_filter( 'woocommerce_get_terms_and_conditions_checkbox_text', array( $this, 'translatePrivacyPolicyText' ), 10, 2 );
+        add_filter( 'woocommerce_get_terms_and_conditions_checkbox_text', array( $this, 'translatePrivacyPolicyText' ), 10, 1 );
     }
 
     /**
@@ -59,6 +59,10 @@ class Privacy
      * @param string   $type        Name of privacy policy type 'checkout' or ‘registration’
      */
     public function translatePrivacyPolicyText($text, $type)
+    {
+        return $this->translateText($text);
+    }
+    public function translateText( $text )
     {
         if (function_exists('pll_register_string')) {
             $trans = pll__($text);
