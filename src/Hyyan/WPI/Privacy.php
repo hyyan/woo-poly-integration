@@ -23,7 +23,7 @@ class Privacy
         $this->registerPrivacyStrings();
         add_filter('woocommerce_get_privacy_policy_text', array($this, 'translatePrivacyPolicyText'), 10, 2);
         add_filter( 'woocommerce_demo_store', array( $this, 'translateDemoStoreNotice' ), 10, 2 );
-        add_filter( 'woocommerce_get_terms_and_conditions_checkbox_text', array( $this, 'translatePrivacyPolicyText' ), 10, 1 );
+		add_filter( 'woocommerce_get_terms_and_conditions_checkbox_text', array( $this, 'translateText' ), 10, 1 );
     }
 
     /**
