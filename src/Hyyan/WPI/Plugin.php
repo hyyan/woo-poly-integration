@@ -37,6 +37,7 @@ class Plugin
 
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
+		add_action( 'admin_init', array( __CLASS__, 'admin_activate' ) );
 
         add_action( 'pll_add_language', array( __CLASS__, 'handleNewLanguage' ) );
 
@@ -52,6 +53,13 @@ class Plugin
           }
         }
     }
+
+    /*
+     * enable admin features in admin mode
+     */
+	public static function admin_activate() {
+		include_once( plugin_dir_path( __FILE__ ) . 'Admin/StatusReport.php');
+	}
 
     /*
      * when new language is added in polylang, flag that default pages should be rechecked
