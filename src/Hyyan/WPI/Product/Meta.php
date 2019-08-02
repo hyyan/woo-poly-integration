@@ -168,7 +168,7 @@ class Meta
                 true : false;
             $ID = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
 
-            // Add the '_translation_porduct_type' meta, for the case where
+            // Add the '_translation_product_type' meta, for the case where
             // the product was created before plugin acivation.
             if ($ID) {
                 $this->addProductTypeMeta($ID);
@@ -551,12 +551,12 @@ class Meta
     public function addProductTypeMeta($ID)
     {
         if ($ID) {
-            $meta = get_post_meta($ID, '_translation_porduct_type');
+            $meta = get_post_meta($ID, '_translation_product_type');
 
             if (empty($meta)) {
                 $product = wc_get_product($ID);
                 if ($product) {
-                    update_post_meta($ID, '_translation_porduct_type', $product->get_type());
+                    update_post_meta($ID, '_translation_product_type', $product->get_type());
                 }
             }
         }
@@ -588,7 +588,7 @@ class Meta
 //                    '_featured',          //has no effect, in woo3 now product_visibility taxonomy
                     '_product_image_gallery',
                     'total_sales',
-                    '_translation_porduct_type',
+                    '_translation_product_type',
                     '_visibility',         //this setting now used to control sync of woo3 now product_visibility taxonomy
                 ),
             ),
@@ -792,16 +792,16 @@ class Meta
             $product = wc_get_product($_ID); // get_product soft deprecated for wc_get_product
             if ($product && !isset($_GET['from_post'])) {
                 $type = $product->get_type();
-                update_post_meta($_ID, '_translation_porduct_type', $type);
+                update_post_meta($_ID, '_translation_product_type', $type);
             }
         });
 
         /*
-         * If the _translation_porduct_type meta is
+         * If the _translation_product_type meta is
          * found then we add the js script to sync the product type select
          * list
          */
-        if ($ID && ($type = get_post_meta($ID, '_translation_porduct_type'))) {
+        if ($ID && ($type = get_post_meta($ID, '_translation_product_type'))) {
             add_action('admin_print_scripts', function () use ($type) {
                 $jsID = 'product-type-sync';
                 $code = sprintf(
