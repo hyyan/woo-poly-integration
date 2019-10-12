@@ -185,7 +185,7 @@ class Cart
                 $tax  = str_replace('attribute_', '', $tax);
                 $term = get_term_by('slug', $term_slug, $tax);
 
-                if ($term && $term->name === $data['value']) {
+                if ($term && isset( $data[ 'value' ] ) && $term->name === $data['value']) {
                     $term_id = $term->term_id;
                     break;
                 }
