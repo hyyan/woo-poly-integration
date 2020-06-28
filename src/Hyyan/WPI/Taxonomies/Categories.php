@@ -84,8 +84,8 @@ class Categories implements TaxonomiesInterface
         }
 
         $ID = esc_attr($_GET['from_tag']);
-        $type = get_woocommerce_term_meta($ID, 'display_type', true);
-        $thumbID = absint(get_woocommerce_term_meta($ID, 'thumbnail_id', true));
+        $type = get_term_meta($ID, 'display_type', true);
+        $thumbID = absint(get_term_meta($ID, 'thumbnail_id', true));
         $image = $thumbID ?
                 wp_get_attachment_thumb_url($thumbID) :
                 wc_placeholder_img_src(); ?>
