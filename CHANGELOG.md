@@ -1,14 +1,25 @@
 # Changelog
 
 
+### 1.4.4
+* [implements #476 adding Additional Content to translated email fields](https://github.com/hyyan/woo-poly-integration/issues/476)
+* [Addresses multiple email issues causing some fields and default values not to be picked up or translated correctly.](https://github.com/hyyan/woo-poly-integration/wiki/Email-Languages)
+* [fixes #502 Cart issues by removing addToCartHandlerVariable()](https://github.com/hyyan/woo-poly-integration/issues/502)
+* [fixes #503 Deprecated: get_woocommerce_term_meta](https://github.com/hyyan/woo-poly-integration/issues/503)
+* [fixes #466 undefined index in Cart.php on line 188 props nicmare sep 2019](https://github.com/hyyan/woo-poly-integration/issues/466)
+* [addresses #449 by adding info to woo status report props jon007 sep 2019](https://github.com/hyyan/woo-poly-integration/issues/449)
+* [fixes #446 by allow strings translation for customiser checkout text props jon007 jul 2019](https://github.com/hyyan/woo-poly-integration/issues/446)
+* [implements #441 allow taxonomy slugs to be the same in different languages props jon007 jul 2019](https://github.com/hyyan/woo-poly-integration/issues/441)
+* [fixes #442 incorrect defaults used where no saved settings exist  props jon007 jul 2019](https://github.com/hyyan/woo-poly-integration/issues/442)
+
 ### 1.4.3
 
 * [fixes #434 page checks duplicating pages and other language switching issues](https://github.com/hyyan/woo-poly-integration/commit/8c54fb23afad1bec1f98b2077d6f552646f253b8)
 * [fixes #435 fix get_current_screen errors when this plugin called in unanticipated circumstances props danieleftodi YITH Gift Cards](https://github.com/hyyan/woo-poly-integration/commit/7d428208ff3b3a2472ce42f5a2259604ce2128c8)
 * [fixes #436 Illegal string offset and Invalid argument in FlashMessages](https://github.com/hyyan/woo-poly-integration/commit/feedc68431bcd26c8d9bd2b4afacf4d7a86a62a1)
 
-
 ### 1.4.2
+
 * [fixes #432 default variation attributes were not synchronised correctly when using more than one attribute](https://github.com/hyyan/woo-poly-integration/commit/7101bcf0786e21515885d5796188420972b01831)
 * [fixes #431 multiple email translation issues in different circumstances](https://github.com/hyyan/woo-poly-integration/issues/431)
 * [fixes #430 bugfix and enhancement to allow variations to be disabled](https://github.com/hyyan/woo-poly-integration/issues/430)
@@ -16,6 +27,7 @@
 
 
 ### 1.4.1
+
 * [fixes #427 by reversal of #390, #346 Cart: retain price when switching languages due to incompatibility with currency switchers, instead a filter woo-poly.Cart.switchedItem allows customisation of behaviour where necessary](https://github.com/hyyan/woo-poly-integration/issues/427)
 
 ### 1.4.0 preview
