@@ -804,7 +804,16 @@ class Meta
         if ($ID && ($type = get_post_meta($ID, '_translation_porduct_type'))) {
             add_action('admin_print_scripts', function () use ($type) {
                 $jsID = 'product-type-sync';
-                $code = sprintf('addLoadEvent(function () { jQuery("#product-type").val(%s); });', json_encode($type[0]));
+                $code = sprintf(
+                    '// <![CDATA[ %1$s'
+                    . ' addLoadEvent(function () { %1$s'
+                    . '  jQuery("#product-type option")'
+                    . '     .removeAttr("selected");%1$s'
+                    . '  jQuery("#product-type option[value=\"%2$s\"]")'
+                    . '         .attr("selected", "selected");%1$s'
+                    . '})'
+                    . '// ]]>', PHP_EOL, $type[0]
+                );
 
                 Utilities::jsScriptWrapper($jsID, $code, false);
             }, 11);
