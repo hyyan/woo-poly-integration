@@ -56,6 +56,15 @@ class Variable
      */
     public function duplicateVariations($ID, \WP_Post $post, $update)
     {
+        static $last_id;
+
+        //JM2021: fast exit from repeated saves
+        if ($ID==$last_id){
+            //was proved this is called
+            //error_log('woopoly Variable:duplicateVariations quit from repeated save event on ' . $ID);
+            return false;
+        }
+        
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
             return false;
         }
@@ -72,12 +81,23 @@ class Variable
             return false;
         }
 
+        //JM2021: limit over-calling of this function
+        if ($product->get_type()!='variable' && !isset($_GET['from_post'])){
+            error_log('aborted save_post_product hook duplicateVariations called on product type ' . $product->get_type());
+            return false;            
+        }
+
+        $last_id = $ID;
+            
         if ($product->get_parent_id()) {
             $product = wc_get_product($product->get_parent_id());
         }
 
         $from = null;
 
+        $post_lang=pll_get_post_language($product->get_id());
+        $def_lang=pll_default_language();
+        //error_log('in save_post_product hook duplicateVariations ID ' . $ID . ' parent id ' . $product->get_id() . ' post lang ' . $post_lang . ' def lang ' . $def_lang);
         if (pll_get_post_language($product->get_id()) == pll_default_language()) {
             $from = $product;
         } else {
@@ -103,6 +123,10 @@ class Variable
         }
 
         $langs = pll_languages_list();
+        //JM2021: remove default lang since this should always be source not destination for copy
+        if (($key = array_search($def_lang, $langs)) !== false) {
+            unset($langs[$key]);
+        }
         foreach ($langs as $lang) {
             remove_action('save_post', array($this, __FUNCTION__), 10);
             add_filter( 'woocommerce_hide_invisible_variations', function() {

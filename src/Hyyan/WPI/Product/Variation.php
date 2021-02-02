@@ -79,6 +79,8 @@ class Variation
                     'post_type' => 'product_variation',
                     'post_status'	 => 'any',
                     'post_parent' => $this->to->get_id(),
+                    //JM2021:empty lang parameter required otherwise polylang adds language filter
+                    'lang' => '',  
                 ));
                 switch (count($posts)) {
                     case 1:
@@ -92,7 +94,22 @@ class Variation
                         $this->insert(wc_get_product($variation['variation_id']), $variation);
                         break;
                     default:
-                        // we can not handle , something wrong here
+                        //JM2021: duplicate translated variations detected:
+                        //-  update first variation eg original
+                        $this->update(
+                            wc_get_product($variation['variation_id']), $posts[0], $variation
+                        );
+                        //- delete duplicate variations
+                        $count = count($posts);
+                        error_log("woo-poly is deleting duplicate variations for variation " . $variation['variation_id'] . 
+                                " in product " . $this->from->get_id() . " translation " . $this->to->get_id());
+                        for($i = 1; $i < $count; $i++)
+                        {                            
+                            $duplicate = wc_get_product($posts[$i]);
+                            if ($duplicate){
+                                $duplicate->delete($force_delete = true);
+                            }
+                        }
                         break;
                 }
             }
