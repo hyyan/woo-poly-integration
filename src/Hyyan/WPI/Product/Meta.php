@@ -806,11 +806,8 @@ class Meta
                 $jsID = 'product-type-sync';
                 $code = sprintf(
                     '// <![CDATA[ %1$s'
-                    . ' addLoadEvent(function () { %1$s'
-                    . '  jQuery("#product-type option")'
-                    . '     .removeAttr("selected");%1$s'
-                    . '  jQuery("#product-type option[value=\"%2$s\"]")'
-                    . '         .attr("selected", "selected");%1$s'
+                    . ' addLoadEvent(function () { '
+                    . 'document.getElementById("product-type").value="variable";'
                     . '})'
                     . '// ]]>', PHP_EOL, $type[0]
                 );
