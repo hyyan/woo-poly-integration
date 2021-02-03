@@ -807,7 +807,7 @@ class Meta
                 $code = sprintf(
                     '// <![CDATA[ %1$s'
                     . ' addLoadEvent(function () { '
-                    . 'document.getElementById("product-type").value="%1$s";'
+                    . 'document.getElementById("product-type").value="%2$s";'
                     . '})'
                     . '// ]]>', PHP_EOL, $type[0]
                 );
