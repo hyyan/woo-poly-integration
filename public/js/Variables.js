@@ -77,7 +77,7 @@
          * @param {boolean} enable
          */
         , _changeSaveBoxState: function (enable) {
-            this.$('#submitdiv *').attr('disabled', enable);
+            this.$('#submitdiv *').prop('disabled', enable);
         }
         /**
          * Create dialog
