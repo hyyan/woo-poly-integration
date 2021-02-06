@@ -30,10 +30,10 @@
         init: function () {
 
             var self = this;
-            $('#post_lang_choice').change(function () {
+            $('#post_lang_choice').on('change', function () {
                 self.shouldAlert();
             });
-            $('#product-type').change(function () {
+            $('#product-type').on('change', function () {
                 self.shouldAlert();
             });
 
@@ -125,7 +125,7 @@
     };
 
     // bootstrap 
-    $(document).ready(function ($) {
+    $(function() {
         new Variables($, document, HYYAN_WPI_VARIABLES).init();
     });
 

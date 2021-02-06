@@ -558,7 +558,7 @@ class WeDevs_Settings_API {
     function script() {
         ?>
         <script>
-            jQuery(document).ready(function($) {
+            jQuery(function ($) {
                 //Initiate Color Picker
                 $('.wp-color-picker-field').wpColorPicker();
 
@@ -599,7 +599,7 @@ class WeDevs_Settings_API {
                 else {
                     $('.nav-tab-wrapper a:first').addClass('nav-tab-active');
                 }
-                $('.nav-tab-wrapper a').click(function(evt) {
+                $('.nav-tab-wrapper a').on('click', function(evt) {
                     $('.nav-tab-wrapper a').removeClass('nav-tab-active');
                     $(this).addClass('nav-tab-active').blur();
                     var clicked_group = $(this).attr('href');
