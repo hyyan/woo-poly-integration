@@ -74,16 +74,34 @@ class Stock {
 			$targetValue = $product_with_stock->get_stock_quantity();
 
 			//update all the translations to the same stock level..
-			$product_translations = ($product_with_stock->is_type( 'variation' )) ?
-			Variation::getRelatedVariation( get_post_meta( $product_with_stock->get_id(), Variation::DUPLICATE_KEY, true ), true ) :
-			Utilities::getProductTranslationsArrayByObject( $product_with_stock );
+			$product_translations = [];
+            if ($product_with_stock->is_type( 'variation' )) {
+                $base_variation_id = Utilities::get_translated_variation($product_with_stock->get_id(),pll_default_language());               
+    			$product_translations = Variation::getRelatedVariation( 
+                    get_post_meta( $base_variation_id, Variation::DUPLICATE_KEY, true )
+                    , true );
+                if ($base_variation_id!=$product_id_with_stock){
+                    if (($key = array_search($product_id_with_stock, $product_translations)) !== false) {
+                        unset($product_translations[$key]);
+                    }
+                    $key = array_search($base_variation_id, $product_translations);
+                    if ( $key === false ) {
+                        $product_translations[]=$base_variation_id;
+                    }
+                }
+            } else {
+    			$product_translations = Utilities::getProductTranslationsArrayByObject( $product_with_stock );
+            }
 
 			if ( $product_translations ) {
+        $target_status=$product_with_stock->get_stock_status();
 				foreach ( $product_translations as $product_translation ) {
 					if ( $product_translation != $product_with_stock->get_id() ) {
 						$translation = wc_get_product( $product_translation );
 						if ( $translation ) {
-							wc_update_product_stock( $translation, $targetValue );
+            //here the product stock is updated without saving then wc_update_product_stock_status will update and save status 
+							wc_update_product_stock( $translation, $targetValue, 'set', true );
+              wc_update_product_stock_status ($product_translation, $target_status);
 						}
 					}
 				}

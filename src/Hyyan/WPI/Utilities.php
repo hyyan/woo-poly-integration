@@ -457,6 +457,7 @@ final class Utilities
      */
     public static function get_translated_variation($product_id, $lang)
     {
+        $langparam = $lang;
         if (! $lang) {
             $lang = pll_current_language();
         }
@@ -492,6 +493,7 @@ final class Utilities
                 'meta_value' => $variationmaster,
                 'post_type' => 'product_variation',
                 'post_parent' => $translated_id,
+                'lang' => $langparam,  //allow empty param to get all languages
             ));
             //return the related variation if there is one
             if (count($posts)) {
