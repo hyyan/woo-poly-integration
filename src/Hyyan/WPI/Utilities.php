@@ -180,7 +180,7 @@ final class Utilities
 
         if (true === $jquery) {
             $result = sprintf(
-                    "%s\n jQuery(document).ready(function ($) {\n %s \n});\n %s \n", $header, $code, $footer
+                    "%s\n jQuery(function ($) {\n %s \n});\n %s \n", $header, $code, $footer
             );
         } else {
             $result = sprintf(
