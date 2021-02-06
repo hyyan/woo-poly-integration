@@ -1,7 +1,16 @@
 # Changelog
 
 
+### 1.4.5
+
+* [re-fixes #430, #524 variation duplications](https://github.com/hyyan/woo-poly-integration/issues/476)
+* [fixes #526 product type selector issues - variable product appears as simple](https://github.com/hyyan/woo-poly-integration/issues/526)
+* [fixes #522, #529 and other JQuery deprecation issues props @mrleemon](https://github.com/hyyan/woo-poly-integration/issues/522)
+* [fixes #475 variation stock issues](https://github.com/hyyan/woo-poly-integration/issues/475)
+
+
 ### 1.4.4
+
 * [implements #476 adding Additional Content to translated email fields](https://github.com/hyyan/woo-poly-integration/issues/476)
 * [Addresses multiple email issues causing some fields and default values not to be picked up or translated correctly.](https://github.com/hyyan/woo-poly-integration/wiki/Email-Languages)
 * [fixes #502 Cart issues by removing addToCartHandlerVariable()](https://github.com/hyyan/woo-poly-integration/issues/502)

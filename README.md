@@ -44,7 +44,7 @@ the same interface you love.
 
 ## What you need to know about this plugin
 
-1. The plugin needs `PHP5.3 and above`
+1. WooCommerce and therefore this plugin needs `PHP7 and above`
 2. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang)
    and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
 3. The plugin support variable products , but using them will `disallow you to

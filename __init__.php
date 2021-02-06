@@ -10,11 +10,11 @@
  * Domain Path: /languages
  * GitHub Plugin URI: hyyan/woo-poly-integration
  * License: MIT License
- * Version: 1.4.4
- * Requires At Least: 5.0
- * Tested Up To: 5.4.2
+ * Version: 1.4.5
+ * Requires At Least: 5.4
+ * Tested Up To: 5.6.1
  * WC requires at least: 3.0.0
- * WC tested up to: 4.2.2
+ * WC tested up to: 5.0
  * Requires PHP: 7.0
  */
 

@@ -1,11 +1,11 @@
 === Hyyan WooCommerce Polylang Integration===
 Contributors: hyyan, jonathanmoorebcsorg
 Tags: cms, woocommerce, multilingual, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
-Requires at least: 3.8
-Stable tag: 1.4.4
-Tested Up To: 5.4.2
+Requires at least: 5.4
+Stable tag: 1.4.5
+Tested Up To: 5.6.1
 WC requires at least: 3.0.0
-WC tested up to: 4.2.2
+WC tested up to: 5.0
 Requires PHP: 7.0
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
@@ -53,7 +53,7 @@ the same interface you love.
 
 = What you need to know about this plugin =
 
-1. The plugin needs `PHP5.3 or above`
+1. The plugin needs `PHP7.0 or above` ie same software versions as WooCommerce
 2. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang) 
    and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
 3. The plugin support variable products , but using them will `disallow you to 
@@ -135,6 +135,24 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog == 
+
+== 1.4.5 ==
+* [re-fixes #430, #524 variation duplications](https://github.com/hyyan/woo-poly-integration/issues/476)
+* [fixes #526 product type selector issues - variable product appears as simple](https://github.com/hyyan/woo-poly-integration/issues/526)
+* [fixes #522, #529 and other JQuery deprecation issues props @mrleemon](https://github.com/hyyan/woo-poly-integration/issues/522)
+* [fixes #475 variation stock issues](https://github.com/hyyan/woo-poly-integration/issues/475)
+
+
+== 1.4.4 ==
+* [implements #476 adding Additional Content to translated email fields](https://github.com/hyyan/woo-poly-integration/issues/476)
+* [Addresses multiple email issues causing some fields and default values not to be picked up or translated correctly.](https://github.com/hyyan/woo-poly-integration/wiki/Email-Languages)
+* [fixes #502 Cart issues by removing addToCartHandlerVariable()](https://github.com/hyyan/woo-poly-integration/issues/502)
+* [fixes #503 Deprecated: get_woocommerce_term_meta](https://github.com/hyyan/woo-poly-integration/issues/503)
+* [fixes #466 undefined index in Cart.php on line 188 props nicmare sep 2019](https://github.com/hyyan/woo-poly-integration/issues/466)
+* [addresses #449 by adding info to woo status report props jon007 sep 2019](https://github.com/hyyan/woo-poly-integration/issues/449)
+* [fixes #446 by allow strings translation for customiser checkout text props jon007 jul 2019](https://github.com/hyyan/woo-poly-integration/issues/446)
+* [implements #441 allow taxonomy slugs to be the same in different languages props jon007 jul 2019](https://github.com/hyyan/woo-poly-integration/issues/441)
+* [fixes #442 incorrect defaults used where no saved settings exist  props jon007 jul 2019](https://github.com/hyyan/woo-poly-integration/issues/442)
 
 
 == 1.4.3 ==
