@@ -90,9 +90,9 @@ class Categories implements TaxonomiesInterface
                 wp_get_attachment_thumb_url($thumbID) :
                 wc_placeholder_img_src(); ?>
         <script type="text/javascript">
-            jQuery('document').ready(function ($) {
+            jQuery(function ($) {
                 $('#display_type option[value="<?php echo $type ?>"]')
-                        .attr("selected", true);
+                        .prop("selected", true);
                 $('#product_cat_thumbnail img').attr('src', '<?php echo $image; ?>');
                 $('#product_cat_thumbnail_id').val('<?php echo $thumbID; ?>');
         <?php if ($thumbID): ?>
