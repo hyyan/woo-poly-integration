@@ -105,7 +105,7 @@ class Meta
      * @param string $lang Language slug
      * @param bool   $sync True if it is synchronization, false if it is a copy
      */
-    public static function wpi_filter_pll_metas( $keys, $from, $to, $lang, $sync ) {
+    public static function wpi_filter_pll_metas( $keys, $sync, $from, $to, $lang ) {
         $wpi_keys	 = static::getProductMetaToCopy( $keys );
         $wpi_keys	 = array_diff( $wpi_keys, array( '_default_attributes' ) );
         return $wpi_keys;

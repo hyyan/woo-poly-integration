@@ -333,12 +333,16 @@ final class Utilities
             $current_screen  = function_exists('get_current_screen') ? get_current_screen() : false;
             $add_new_product = $current_screen && $current_screen->post_type === 'product' && $current_screen->action === 'add';
             $is_translation  = isset($_GET['from_post']) && isset($_GET['new_lang']);
+            //new product does not in fact have variations at this point so $has_variations test always fails
+            /*
             $has_variations  = get_children(array(
                 'post_type'   => 'product_variation',
                 'post_parent' => $product->get_id()
             ));
 
             if ($add_new_product && $is_translation && $has_variations) {
+            */
+            if ($add_new_product && $is_translation ) {
                 return true;
             }
         }

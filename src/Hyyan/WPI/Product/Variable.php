@@ -83,7 +83,7 @@ class Variable
 
         //JM2021: limit over-calling of this function
         if ($product->get_type()!='variable' && !isset($_GET['from_post'])){
-            error_log('aborted save_post_product hook duplicateVariations called on product type ' . $product->get_type());
+            //error_log('aborted save_post_product hook duplicateVariations called on product type ' . $product->get_type());
             return false;            
         }
 
@@ -123,7 +123,7 @@ class Variable
         }
 
         $langs = pll_languages_list();
-        //JM2021: remove default lang since this should always be source not destination for copy
+        //JM2021: remove default lang since this should always be source not destination for copy (for variable products)
         if (($key = array_search($def_lang, $langs)) !== false) {
             unset($langs[$key]);
         }

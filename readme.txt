@@ -141,6 +141,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * [fixes #526 product type selector issues - variable product appears as simple](https://github.com/hyyan/woo-poly-integration/issues/526)
 * [fixes #522, #529 and other JQuery deprecation issues props @mrleemon](https://github.com/hyyan/woo-poly-integration/issues/522)
 * [fixes #475 variation stock issues](https://github.com/hyyan/woo-poly-integration/issues/475)
+* [fixes #527 default form value for variation lost when creating new translation](https://github.com/hyyan/woo-poly-integration/issues/527)
 
 
 == 1.4.4 ==
