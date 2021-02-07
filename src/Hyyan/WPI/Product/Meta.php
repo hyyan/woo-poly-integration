@@ -144,7 +144,8 @@ class Meta
         //  new code to synchronise Taxonomies and Product attributes applied to WooCommerce 3.0
         //  which now moves product_visibility from meta to taxonomy
         //  (includes Catalog Visibility, Featured Product previously in meta)
-        add_action('wp_insert_post', array($this, 'syncTaxonomiesAndProductAttributes'), 10, 3);
+        //JM2021: switch from wp_insert_post to save_post_product, and higher priority than variable hook 
+        add_action('save_post_product', array($this, 'syncTaxonomiesAndProductAttributes'), 5, 3);
 
         $ID = false;
         $disable = false;
@@ -211,8 +212,14 @@ class Meta
             $source_id = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
 
             if ($source_id) {
-                $this->copyTerms($source_id, $post_id, $_GET['new_lang'], $taxonomies);
-                $this->syncCustomProductAttributes($source_id, $_GET['new_lang']);
+                //JM2021: ensure new language is set on new translation early as lack of language taxonomy 
+                //causes some subsequent queries to fail
+                $new_lang = $_GET['new_lang'];
+                if (! pll_get_post_language( $post_id )){
+                    pll_set_post_language ($post_id, $new_lang);
+                }
+                $this->copyTerms($source_id, $post_id, $new_lang, $taxonomies);
+                $this->syncCustomProductAttributes($source_id, $new_lang);
             }
         } else {
             // Product edit - update terms of all product translations
@@ -860,7 +867,7 @@ class Meta
 				FROM $wpdb->posts
 				LEFT JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id )
 				WHERE $wpdb->posts.post_type IN ( 'product', 'product_variation' )
-					AND $wpdb->posts.post_status != 'trash'
+					AND $wpdb->posts.post_status NOT IN ('trash', 'auto-draft') 
 					AND $wpdb->postmeta.meta_key = '_sku' AND $wpdb->postmeta.meta_value = %s
 					AND $wpdb->postmeta.post_id <> %d
 				", wp_slash( $sku ), $product_id

@@ -8,7 +8,7 @@
 * [fixes #522, #529 and other JQuery deprecation issues props @mrleemon](https://github.com/hyyan/woo-poly-integration/issues/522)
 * [fixes #475 variation stock issues](https://github.com/hyyan/woo-poly-integration/issues/475)
 * [fixes #527 default form value for variation lost when creating new translation](https://github.com/hyyan/woo-poly-integration/issues/527)
-
+* [fixes #534 new variable translation, variations not visible until save](https://github.com/hyyan/woo-poly-integration/issues/534)
 
 ### 1.4.4
 

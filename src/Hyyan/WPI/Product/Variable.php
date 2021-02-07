@@ -122,7 +122,8 @@ class Variable
             return false;
         }
 
-        $langs = pll_languages_list();
+        //if creating a new translation, process the target language only, otherwise check all languages 
+        $langs = isset($_GET['new_lang']) ? array($_GET['new_lang']) : pll_languages_list();
         //JM2021: remove default lang since this should always be source not destination for copy (for variable products)
         if (($key = array_search($def_lang, $langs)) !== false) {
             unset($langs[$key]);

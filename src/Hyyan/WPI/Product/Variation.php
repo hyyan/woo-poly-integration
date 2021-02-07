@@ -177,16 +177,29 @@ class Variation
         // just in case the product was created before plugin acivation.
         $this->addDuplicateMeta($variation->get_id());
         $data = (array) get_post($variation->get_id());
+        $newParentId = $this->to->get_id();
         unset($data['ID']);
-        $data['post_parent'] = $this->to->get_id();
+        $data['post_parent'] = $newParentId;
         $ID = wp_insert_post($data);
         if ($ID) {
-            pll_set_post_language( $ID, pll_get_post_language( $this->to->get_id() ) );
+            //JM2021: extra protection to ensure language set as early as possible
+            //as had been failing on parent language [though now fixed]
+            $targetLang = pll_get_post_language( $newParentId );
+            if ( (! $targetLang) && isset($_GET['new_lang'])) {
+                $targetLang=$_GET['new_lang'];
+            } 
+            if ($targetLang){
+                pll_set_post_language( $ID, pll_get_post_language( $targetLang ) );
+            }
             update_post_meta(
                     $ID, self::DUPLICATE_KEY, $metas['variation_id']
             );
             $this->copyVariationMetas($variation->get_id(), $ID);
-			      Utilities::flushCacheUpdateLookupTable( $ID );
+            //JM2021:within current execution woo may cache the fact that the new product does not have children 
+            //so force flush transients etc on the *parent*
+            //wc_delete_product_transients($this->to->get_id());
+            Utilities::flushCacheUpdateLookupTable( $ID );
+            Utilities::flushCacheUpdateLookupTable( $newParentId );
         }
     }
     /**

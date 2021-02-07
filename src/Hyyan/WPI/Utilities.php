@@ -520,6 +520,7 @@ final class Utilities
 			$id			 = $product->get_id();
 			wc_delete_product_transients( $id );
 			wp_cache_delete( $id, 'post_meta' );
+			wp_cache_delete( $id, 'posts' );
 			wp_cache_delete( 'lookup_table', 'object_' . $id );
 			$productType = $product->get_type();
 
