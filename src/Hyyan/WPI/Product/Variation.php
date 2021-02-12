@@ -50,7 +50,9 @@ class Variation
     public function duplicate()
     {
         //the variations of the product in the from product language
-        $fromVariation = $this->from->get_available_variations();
+        //JM2021: needs to sync all children not only available variations
+        //$fromVariation = $this->from->get_available_variations();
+        $fromVariation = $this->from->get_children();
         if (empty($fromVariation)) {
             return false;
         }
@@ -58,7 +60,8 @@ class Variation
             /*
              * In such a case just add the duplicate meta
              */
-            foreach ($fromVariation as $variation) {
+            foreach ($fromVariation as $variation_id) {
+                $variation = $this->from->get_available_variation( $variation_id );
                 if (! metadata_exists('post', $variation['variation_id'], self::DUPLICATE_KEY)) {
                     update_post_meta(
                             $variation['variation_id'], self::DUPLICATE_KEY, $variation['variation_id']
@@ -68,14 +71,15 @@ class Variation
         } else {
             /* This could be a very long operation */
             set_time_limit(0);
-            foreach ($fromVariation as $variation) {
+            foreach ($fromVariation as $variation_id) {
+                $variation = $this->from->get_available_variation( $variation_id );
                 /*
                  * First we check if the "to" product contains the duplicate meta
                  * key to find out if we have to update or insert
                  */
                 $posts = get_posts(array(
                     'meta_key' => self::DUPLICATE_KEY,
-                    'meta_value' => $variation['variation_id'],
+                    'meta_value' => $variation_id,
                     'post_type' => 'product_variation',
                     'post_status'	 => 'any',
                     'post_parent' => $this->to->get_id(),
@@ -86,18 +90,18 @@ class Variation
                     case 1:
                         // update
                         $this->update(
-                            wc_get_product($variation['variation_id']), $posts[0], $variation
+                            wc_get_product($variation_id), $posts[0], $variation
                         );
                         break;
                     case 0:
                         // insert
-                        $this->insert(wc_get_product($variation['variation_id']), $variation);
+                        $this->insert(wc_get_product($variation_id), $variation);
                         break;
                     default:
                         //JM2021: duplicate translated variations detected:
                         //-  update first variation eg original
                         $this->update(
-                            wc_get_product($variation['variation_id']), $posts[0], $variation
+                            wc_get_product($variation_id), $posts[0], $variation
                         );
                         //- delete duplicate variations
                         $count = count($posts);
@@ -113,6 +117,9 @@ class Variation
                         break;
                 }
             }
+            $target_status=$this->from->get_stock_status();
+            wc_update_product_stock_status ($this->to->get_id(), $target_status);
+            utilities::flushCacheUpdateLookupTable($this->to->get_id());
             /* Restor original timeout */
             set_time_limit(ini_get('max_execution_time'));
         }

@@ -99,9 +99,14 @@ class Stock {
 					if ( $product_translation != $product_with_stock->get_id() ) {
 						$translation = wc_get_product( $product_translation );
 						if ( $translation ) {
-            //here the product stock is updated without saving then wc_update_product_stock_status will update and save status 
+              //here the product stock is updated without saving then wc_update_product_stock_status will update and save status 
 							wc_update_product_stock( $translation, $targetValue, 'set', true );
               wc_update_product_stock_status ($product_translation, $target_status);
+              if ($translation->get_parent_id()) {
+                $prodparent = wc_get_product($translation->get_parent_id());
+                $parentstatus = $prodparent->get_stock_status();
+                wc_update_product_stock_status ($translation->get_parent_id(), $target_status);
+              }                                           
 						}
 					}
 				}

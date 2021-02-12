@@ -38,6 +38,8 @@ class Variable
         add_filter(HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList'));
         add_filter(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors'));
 
+        add_filter( 'woocommerce_variable_children_args', array( $this, 'allow_variable_children' ), 10, 3 ); 
+
         // Variable Products limitations warnings and safe-guards
         if (is_admin()) {
             $this->handleVariableLimitation();
@@ -45,6 +47,23 @@ class Variable
         }
     }
 
+    /**
+     * Stop Polylang preventing WooCommerce from finding child variations
+     * by hooking  woocommerce_variable_children_args and 
+     * adding any langugage parameter to variable children
+     * needed since Polylang 2.8
+     *
+     * @param array    $args         array of WP_Query args
+     * @param \WC_Product $product      Product 
+     * @param bool     $visible      whether querying for visible children or not
+     * 
+     * @return $args
+    */
+    public function allow_variable_children($args, $product, $visible){
+        $args['lang'] = '';  
+        return $args;
+    }
+        
     /**
      * Translate Variation for given variable product.
      *
@@ -128,18 +147,18 @@ class Variable
         if (($key = array_search($def_lang, $langs)) !== false) {
             unset($langs[$key]);
         }
+        remove_action('save_post', array($this, __FUNCTION__), 10);
+        add_filter( 'woocommerce_hide_invisible_variations', function() {
+          return false;
+        } );
         foreach ($langs as $lang) {
-            remove_action('save_post', array($this, __FUNCTION__), 10);
-            add_filter( 'woocommerce_hide_invisible_variations', function() {
-              return false;
-            } );
             $variation = new Variation(
                     $from,
                 Utilities::getProductTranslationByObject($product, $lang)
             );
             $variation->duplicate();
-            add_action('save_post', array($this, __FUNCTION__), 10, 3);
         }
+        add_action('save_post', array($this, __FUNCTION__), 10, 3);
 
         /*
                 remove_action('save_post', array($this, __FUNCTION__), 10);
