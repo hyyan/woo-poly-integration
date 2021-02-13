@@ -196,7 +196,7 @@ class Variation
                 $targetLang=$_GET['new_lang'];
             } 
             if ($targetLang){
-                pll_set_post_language( $ID, pll_get_post_language( $targetLang ) );
+                pll_set_post_language( $ID, $targetLang );
             }
             update_post_meta(
                     $ID, self::DUPLICATE_KEY, $metas['variation_id']
