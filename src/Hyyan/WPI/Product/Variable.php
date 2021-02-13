@@ -245,8 +245,9 @@ class Variable
         // Don't sync if not a Variable Product
         $product = wc_get_product($post_id);
 
-        if ($product && 'simple' === $product->get_type() && Utilities::maybeVariableProduct($product)) {
-            // Maybe is Variable Product - new translations of Variable Products are first created as simple
+        //JM2021: new translations of Variable Products are first created as simple
+        //but now at this point are already Variable but not linked translations
+        if ($product && $_GET['from_post'] && Utilities::maybeVariableProduct($product)) {
 
             // Only need to sync for the new translation from source product
             // The other product translation stay untouched
@@ -260,13 +261,13 @@ class Variable
             // Variable Product
 
             // For each product translation, get the translated (default) terms/attributes
-            $attributes_translation = Utilities::getDefaultAttributesTranslation($product->get_id());
+            $attributes_translation = Utilities::getDefaultAttributesTranslation($post_id);
             $langs                  = pll_languages_list();
 
             foreach ($langs as $lang) {
-                $translation_id = pll_get_post($product->get_id(), $lang);
+                $translation_id = pll_get_post($post_id, $lang);
 
-                if ( $translation_id && $translation_id != $product->get_id()) {
+                if ( $translation_id && $translation_id != $post_id) {
                     update_post_meta($translation_id, '_default_attributes', $attributes_translation[$lang]);
                 }
             }

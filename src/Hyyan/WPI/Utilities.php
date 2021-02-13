@@ -247,7 +247,9 @@ final class Utilities
      */
     public static function getDefaultAttributesTranslation($product_id, $lang = '')
     {
-        $product               = wc_get_product($product_id);
+        //all variation details including default attributes must be copied from base language
+        $base_product_id = pll_get_post($product_id, pll_default_language());
+        $product               = wc_get_product($base_product_id);
         $translated_attributes = array();
 
         if ($product && 'variable' === $product->get_type()) {
@@ -333,16 +335,14 @@ final class Utilities
             $current_screen  = function_exists('get_current_screen') ? get_current_screen() : false;
             $add_new_product = $current_screen && $current_screen->post_type === 'product' && $current_screen->action === 'add';
             $is_translation  = isset($_GET['from_post']) && isset($_GET['new_lang']);
-            //new product does not in fact have variations at this point so $has_variations test always fails
-            /*
+            //new product did not appear have variations due to Polylang 2.8 aggressive filtering see #535
             $has_variations  = get_children(array(
                 'post_type'   => 'product_variation',
-                'post_parent' => $product->get_id()
+                'post_parent' => $product->get_id(),
+                'lang' => ''
             ));
 
             if ($add_new_product && $is_translation && $has_variations) {
-            */
-            if ($add_new_product && $is_translation ) {
                 return true;
             }
         }
