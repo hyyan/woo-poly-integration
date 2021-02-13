@@ -808,19 +808,22 @@ class Meta
          * found then we add the js script to sync the product type select
          * list
          */
-        if ($ID && ($type = get_post_meta($ID, '_translation_porduct_type'))) {
-            add_action('admin_print_scripts', function () use ($type) {
-                $jsID = 'product-type-sync';
-                $code = sprintf(
-                    '// <![CDATA[ %1$s'
-                    . ' addLoadEvent(function () { '
-                    . 'document.getElementById("product-type").value="%2$s";'
-                    . '})'
-                    . '// ]]>', PHP_EOL, $type[0]
-                );
+        if ($ID && (isset($_GET['from_post'])) && ($type = get_post_meta($ID, '_translation_porduct_type') ) ) {
+            //don't switch type if setting is corrupt
+            if ($type && is_array($type) && $type[0]!='' && $type[0]!='simple'){
+                add_action('admin_print_scripts', function () use ($type) {
+                    $jsID = 'product-type-sync';
+                    $code = sprintf(
+                        '// <![CDATA[ %1$s'
+                        . ' addLoadEvent(function () { '
+                        . 'document.getElementById("product-type").value="%2$s";'
+                        . '})'
+                        . '// ]]>', PHP_EOL, $type[0]
+                    );
 
-                Utilities::jsScriptWrapper($jsID, $code, false);
-            }, 11);
+                    Utilities::jsScriptWrapper($jsID, $code, false);
+                }, 11);
+            }
         }
     }
 
