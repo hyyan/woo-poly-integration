@@ -247,7 +247,7 @@ class Variable
 
         //JM2021: new translations of Variable Products are first created as simple
         //but now at this point are already Variable but not linked translations
-        if ($product && $_GET['from_post'] && Utilities::maybeVariableProduct($product)) {
+        if ($product && isset($_GET['from_post']) && Utilities::maybeVariableProduct($product)) {
 
             // Only need to sync for the new translation from source product
             // The other product translation stay untouched
