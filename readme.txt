@@ -2,7 +2,7 @@
 Contributors: hyyan, jonathanmoorebcsorg
 Tags: cms, woocommerce, multilingual, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 5.4
-Stable tag: 1.4.5
+Stable tag: 1.5.0
 Tested Up To: 5.6.1
 WC requires at least: 3.0.0
 WC tested up to: 5.0
@@ -135,6 +135,14 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 6. Control plugin features from its admin page 
 
 == Changelog == 
+
+== 1.5.0 ==
+
+* correction to fix #527
+* fixes #536 avoid over-setting product type on edit
+* re- fixes #534 new variation not visible until save
+* re- fixes #527 variation form default values
+* fixes #535 variation stock issues
 
 == 1.4.5 ==
 * [re-fixes #430, #524 variation duplications](https://github.com/hyyan/woo-poly-integration/issues/476)

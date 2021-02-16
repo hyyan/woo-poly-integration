@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.5.0
+
+* correction to fix #527
+* fixes #536 avoid over-setting product type on edit
+* re- fixes #534 new variation not visible until save
+* re- fixes #527 variation form default values
+* fixes #535 variation stock issues
 
 ### 1.4.5
 
