@@ -2,10 +2,10 @@
 Contributors: hyyan, jonathanmoorebcsorg
 Tags: cms, woocommerce, multilingual, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
 Requires at least: 5.4
-Stable tag: 1.5.0
-Tested Up To: 5.6.1
-WC requires at least: 3.0.0
-WC tested up to: 5.0
+Stable tag: 1.5.1
+Tested Up To: 5.7.1
+WC requires at least: 4.0.0
+WC tested up to: 5.2.2
 Requires PHP: 7.0
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE

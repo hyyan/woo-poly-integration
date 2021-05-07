@@ -1,5 +1,10 @@
 # Changelog
 
+###  1.5.1
+* [fixes #548 incorrect save hook caused inconsistent synchronisation behaviour, especially changing product type and visibility](https://github.com/hyyan/woo-poly-integration/issues/548)
+* [fixes #542 shop page breadcrumb in secondary language](https://github.com/hyyan/woo-poly-integration/issues/542) 
+
+
 ### 1.5.0
 
 * correction to fix #527

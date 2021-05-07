@@ -365,7 +365,6 @@ class Meta
                     }
                 }
             }
-            }
             return true;
         }
         return false;
