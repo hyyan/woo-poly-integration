@@ -145,7 +145,10 @@ class Meta
         //  which now moves product_visibility from meta to taxonomy
         //  (includes Catalog Visibility, Featured Product previously in meta)
         //JM2021: switch from wp_insert_post to save_post_product, and higher priority than variable hook 
-        add_action('save_post_product', array($this, 'syncTaxonomiesAndProductAttributes'), 5, 3);
+        //#548 action is documented in wp-includes/post.php but product not yet saved
+        //add_action('save_post_product', array($this, 'syncTaxonomiesAndProductAttributes'), 5, 3);
+        //do_action( 'woocommerce_after_' . $this->object_type . '_object_save', $this, $this->data_store );
+        add_action('woocommerce_after_product_object_save', array($this, 'syncTaxonomiesAndProductAttributesAfterProductUpdate'), 5, 2);
 
         $ID = false;
         $disable = false;
@@ -189,6 +192,13 @@ class Meta
         return true;
     }
 
+    /*
+     * wrapper for syncTaxonomiesAndProductAttributes compatibility with woocommerce_after_product_save action 
+     */
+    public function syncTaxonomiesAndProductAttributesAfterProductUpdate($product, $data_store){
+        $this->syncTaxonomiesAndProductAttributes($product->get_id(), $product, true);
+    }
+    
     /**
      * Sync Product Taxonomies and Product Attributes:
      * after WooCommerce 3.0 a new product_visibility taxonomy handles data such as
@@ -349,9 +359,12 @@ class Meta
                 foreach ($product_translations as $product_translation) {
                     if ($product_translation != $source) {
                         $product_obj = Utilities::getProductTranslationByID($product_translation);
-                        $product_obj->set_attributes($copyattrs);
+                        if ($product_obj){
+                            $product_obj->set_attributes($copyattrs);
+                        }
                     }
                 }
+            }
             }
             return true;
         }
@@ -371,9 +384,11 @@ class Meta
     public function copyTerms($old, $new, $lang, $taxonomies)
     {
         //get the polylang options for later use
+        /* unused, replaced by later pll_is_translated_taxonomy()
         global $polylang;
         $polylang_options = get_option('polylang');
         $polylang_taxs = $polylang_options['taxonomies'];
+         */
 
         //loop through taxonomies and take appropriate action
         foreach ($taxonomies as $tax) {
@@ -394,6 +409,8 @@ class Meta
                         if (! (in_array('product_shipping_class', static::getProductMetaToCopy()))) {
                             break;
                         }
+                        $new_terms[] = $slug;
+                        break;
                     //woo3 visibility and featured product
                     case "product_visibility":
                         if (! (in_array('_visibility', static::getProductMetaToCopy()))) {
@@ -429,6 +446,12 @@ class Meta
             } // foreach old term
             if (count($new_terms) > 0) {
                 wp_set_object_terms($new, $new_terms, $tax);
+            } else {
+                //#548 if there is no source term, remove term from translation
+                //occurs when resetting visibility to default (no terms), previous terms on translations not cleared
+                if (count($old_terms) == 0) {
+                    wp_set_object_terms($new, false, $tax);
+                }
             }
         } //for each taxonomy
     }

@@ -28,8 +28,11 @@ class Variable
     public function __construct()
     {
         // Handle variations duplication
-        add_action( 'save_post_product', array( $this, 'duplicateVariations' ), 10, 3 );
-        add_action( 'save_post_product', array( $this, 'syncDefaultAttributes' ), 10, 3 );
+        //#548 action is documented in wp-includes/post.php but product not yet saved
+        //add_action( 'save_post_product', array( $this, 'duplicateVariations' ), 10, 3 );
+        //add_action( 'save_post_product', array( $this, 'syncDefaultAttributes' ), 10, 3 );
+        //replace with do_action( 'woocommerce_after_' . $this->object_type . '_object_save', $this, $this->data_store );
+        add_action( 'woocommerce_after_product_object_save', array( $this, 'after_product_save' ), 10, 2 );
 
         // Remove variations
         add_action('wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9);
@@ -47,6 +50,17 @@ class Variable
         }
     }
 
+
+    /*
+     * wrapper for compatibility with woocommerce_after_product_save action 
+     */
+    public function after_product_save($product, $data_store){
+        $productid = $product->get_id();
+        $post = get_post($productid);
+        $this->duplicateVariations($productid, $post, true);
+        $this->syncDefaultAttributes($productid, $post, true);
+    }
+    
     /**
      * Stop Polylang preventing WooCommerce from finding child variations
      * by hooking  woocommerce_variable_children_args and 
@@ -147,7 +161,7 @@ class Variable
         if (($key = array_search($def_lang, $langs)) !== false) {
             unset($langs[$key]);
         }
-        remove_action('save_post', array($this, __FUNCTION__), 10);
+        remove_action('woocommerce_after_product_object_save', array($this, 'after_product_save'), 10);
         add_filter( 'woocommerce_hide_invisible_variations', function() {
           return false;
         } );
@@ -158,7 +172,7 @@ class Variable
             );
             $variation->duplicate();
         }
-        add_action('save_post', array($this, __FUNCTION__), 10, 3);
+        add_action('woocommerce_after_product_object_save', array($this, 'after_product_save'), 10, 3);
 
         /*
                 remove_action('save_post', array($this, __FUNCTION__), 10);
