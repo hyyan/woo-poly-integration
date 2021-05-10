@@ -283,6 +283,8 @@ class Variable
 
                 if ( $translation_id && $translation_id != $post_id) {
                     update_post_meta($translation_id, '_default_attributes', $attributes_translation[$lang]);
+                    $translation = wc_get_product($translation_id);
+                    $translation->set_default_attributes( $attributes_translation[ $lang ] );
                 }
             }
         }

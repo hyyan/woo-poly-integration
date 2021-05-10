@@ -136,6 +136,11 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog == 
 
+== 1.5.1 ==
+* fixes #549 Quick edit Product synchronisation issues
+* fixes #548 incorrect save hook caused inconsistent synchronisation behaviour, especially changing product type and visibility
+* fixes #542 shop page breadcrumb in secondary language 
+
 == 1.5.0 ==
 
 * correction to fix #527

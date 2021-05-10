@@ -69,6 +69,8 @@ class Variation
                 }
             }
         } else {
+            $previousVariations = $this->to->get_children();
+
             /* This could be a very long operation */
             set_time_limit(0);
             foreach ($fromVariation as $variation_id) {
@@ -92,6 +94,7 @@ class Variation
                         $this->update(
                             wc_get_product($variation_id), $posts[0], $variation
                         );
+                        unset($previousVariations[array_search($posts[0]->ID, $previousVariations)]);
                         break;
                     case 0:
                         // insert
@@ -112,9 +115,17 @@ class Variation
                             $duplicate = wc_get_product($posts[$i]);
                             if ($duplicate){
                                 $duplicate->delete($force_delete = true);
+                                unset($previousVariations[array_search($posts[$i]->ID, $previousVariations)]);
                             }
                         }
                         break;
+                }
+            }
+            //remove translated variations which no longer exist in source
+            foreach ($previousVariations as $variation_id) {
+                $removedVariation = wc_get_product($variation_id);
+                if ($removedVariation){
+                    $removedVariation->delete($force_delete = true);
                 }
             }
             $target_status=$this->from->get_stock_status();

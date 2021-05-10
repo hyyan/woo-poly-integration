@@ -35,10 +35,10 @@ class Meta
     {
         // sync product meta
         add_action(
-            'current_screen', array($this, 'syncProductsMeta')
+            'current_screen', array($this, 'handleProductScreen')
         );
         add_action(
-            'woocommerce_product_quick_edit_save', array($this, 'saveQuickEdit')
+            'woocommerce_product_quick_edit_save', array($this, 'saveQuickEdit'), 10, 1
         );
 
         // suppress "Invalid or duplicated SKU." error message when SKU syncronization is enabled
@@ -83,9 +83,6 @@ class Meta
      */
     public function onImport($object, $data)
     {
-        // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
-        
         //sync taxonomies
         $ProductID = $object->get_id();
         if ($ProductID) {
@@ -106,8 +103,11 @@ class Meta
      * @param bool   $sync True if it is synchronization, false if it is a copy
      */
     public static function wpi_filter_pll_metas( $keys, $sync, $from, $to, $lang ) {
-        $wpi_keys	 = static::getProductMetaToCopy( $keys );
-        $wpi_keys	 = array_diff( $wpi_keys, array( '_default_attributes' ) );
+        static $wpi_keys;   //this filter may be called hundreds of times within the same save process 
+        if ( ! $wpi_keys ) {        
+            $wpi_keys	 = static::getProductMetaToCopy( $keys );
+            $wpi_keys	 = array_diff( $wpi_keys, array( '_default_attributes' ) );
+        }
         return $wpi_keys;
     }
 
@@ -118,11 +118,16 @@ class Meta
      */
     public function saveQuickEdit(\WC_Product $product)
     {
-        // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
-        
-        //some taxonomies can actually be changed in the QuickEdit
         $this->syncTaxonomiesAndProductAttributes($product->get_id(), $product, true);
+    }
+    /*
+     * "correct" implementation of PLL syncing to be hooked to correct place in Woo save sequence
+     * to ensure co-dependent meta are resolved before synchronisation
+     */
+    public function syncProductMeta($from, $to, $lang, $sync = true)
+    {
+        // sync product meta with polylang
+        PLL()->sync->post_metas->copy( $from, $to, $lang, $sync );
     }
     
     /**
@@ -130,7 +135,7 @@ class Meta
      *
      * @return bool			false if the current post type is not "product"
      */
-    public function syncProductsMeta()
+    public function handleProductScreen()
     {
         //change proposed Teemu Suoranta 3/Nov
         $currentScreen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
@@ -138,12 +143,6 @@ class Meta
             return false;
         }
 
-        // sync product meta with polylang
-        add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
-
-        //  new code to synchronise Taxonomies and Product attributes applied to WooCommerce 3.0
-        //  which now moves product_visibility from meta to taxonomy
-        //  (includes Catalog Visibility, Featured Product previously in meta)
         //JM2021: switch from wp_insert_post to save_post_product, and higher priority than variable hook 
         //#548 action is documented in wp-includes/post.php but product not yet saved
         //add_action('save_post_product', array($this, 'syncTaxonomiesAndProductAttributes'), 5, 3);
@@ -186,8 +185,10 @@ class Meta
             );
         }
 
-		//wc3.6 compatibility props mrleemon #408
-		$this->syncSelectedproductType( $ID );
+        //wc3.6 compatibility props mrleemon #408
+        //the '_translation_porduct_type' meta and related workarounds were only necessary 
+        //since woopoly was hooking WP save before Woo save had completed
+        //$this->syncSelectedproductType( $ID );
 
         return true;
     }
@@ -196,6 +197,8 @@ class Meta
      * wrapper for syncTaxonomiesAndProductAttributes compatibility with woocommerce_after_product_save action 
      */
     public function syncTaxonomiesAndProductAttributesAfterProductUpdate($product, $data_store){
+        //once only trigger for current call, we don't want to retrigger this when translations are saved.. or variations which are handled separately
+        remove_action('woocommerce_after_product_object_save', array($this, 'syncTaxonomiesAndProductAttributesAfterProductUpdate'), 5, 2);
         $this->syncTaxonomiesAndProductAttributes($product->get_id(), $product, true);
     }
     
@@ -211,6 +214,9 @@ class Meta
      */
     public function syncTaxonomiesAndProductAttributes($post_id, $post, $update)
     {
+        // setup the polylang product meta filter
+        add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
+
         //get the taxonomies for the post
         $taxonomies = get_object_taxonomies(get_post_type($post_id));
 
@@ -228,6 +234,7 @@ class Meta
                 if (! pll_get_post_language( $post_id )){
                     pll_set_post_language ($post_id, $new_lang);
                 }
+                $this->syncProductMeta($source_id, $post_id, $new_lang, false);
                 $this->copyTerms($source_id, $post_id, $new_lang, $taxonomies);
                 $this->syncCustomProductAttributes($source_id, $new_lang);
             }
@@ -239,6 +246,9 @@ class Meta
                 //if a translation exists, and it is not this same post
                 $translation_id = pll_get_post($post_id, $lang);
                 if (($translation_id) && ($translation_id != $post_id)) {
+                    
+                    $this->syncProductMeta($post_id, $translation_id, $lang, true);
+
                     //set ALL the terms
                     $this->copyTerms($post_id, $translation_id, $lang, $taxonomies);
 
