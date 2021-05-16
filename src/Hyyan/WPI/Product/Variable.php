@@ -28,10 +28,9 @@ class Variable
     public function __construct()
     {
         // Handle variations duplication
-        //#548 action is documented in wp-includes/post.php but product not yet saved
-        //add_action( 'save_post_product', array( $this, 'duplicateVariations' ), 10, 3 );
-        //add_action( 'save_post_product', array( $this, 'syncDefaultAttributes' ), 10, 3 );
-        //replace with do_action( 'woocommerce_after_' . $this->object_type . '_object_save', $this, $this->data_store );
+        //#548 action is documented in wp-includes/post.php but product not yet saved, use only for new products
+        add_action('save_post_product', array($this, 'handleNewProduct'), 5, 3);
+        //for updates use do_action( 'woocommerce_after_' . $this->object_type . '_object_save', $this, $this->data_store );
         add_action( 'woocommerce_after_product_object_save', array( $this, 'after_product_save' ), 10, 2 );
 
         // Remove variations
@@ -50,6 +49,20 @@ class Variable
         }
     }
 
+    /*
+     * if a new product do the initial sync now as there is no woo save event at this point
+     *
+     * @param int       $post_id    Id of product being edited: if new product copy from source,
+     * 																if existing product synchronize translations
+     * @param \WP_Post  $post       Post object
+     * @param boolean   $update     Whether this is an existing post being updated or not
+     */
+    public function handleNewProduct($post_id, $post, $update){
+        if (! $update && (isset($_GET['from_post'])) ){
+            $this->duplicateVariations($post_id, $post, $update);
+            $this->syncDefaultAttributes($post_id, $post, $update);
+        }
+    }
 
     /*
      * wrapper for compatibility with woocommerce_after_product_save action 

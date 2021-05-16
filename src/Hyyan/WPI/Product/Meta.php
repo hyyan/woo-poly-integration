@@ -41,6 +41,9 @@ class Meta
             'woocommerce_product_quick_edit_save', array($this, 'saveQuickEdit'), 10, 1
         );
 
+        //setup new translations only which are not yet saved by WooCommerce
+        add_action('save_post_product', array($this, 'handleNewProduct'), 5, 3);
+        
         // suppress "Invalid or duplicated SKU." error message when SKU syncronization is enabled
         add_filter(
             'wc_product_has_unique_sku',
@@ -57,6 +60,19 @@ class Meta
         }
     }
 
+    /*
+     * if a new product do the initial sync now as there is no woo save event at this point
+     *
+     * @param int       $post_id    Id of product being edited: if new product copy from source,
+     * 																if existing product synchronize translations
+     * @param \WP_Post  $post       Post object
+     * @param boolean   $update     Whether this is an existing post being updated or not
+     */
+    public function handleNewProduct($post_id, $post, $update){
+        if (! $update && (isset($_GET['from_post'])) ){
+            $this->syncTaxonomiesAndProductAttributes($post_id, $post, $update);
+        }
+    }
 
     /**
      * On insert of a new product attribute, attempt to set it to translateable by default
@@ -143,10 +159,7 @@ class Meta
             return false;
         }
 
-        //JM2021: switch from wp_insert_post to save_post_product, and higher priority than variable hook 
-        //#548 action is documented in wp-includes/post.php but product not yet saved
-        //add_action('save_post_product', array($this, 'syncTaxonomiesAndProductAttributes'), 5, 3);
-        //do_action( 'woocommerce_after_' . $this->object_type . '_object_save', $this, $this->data_store );
+        //JM2021: #548 use WooCommerce save hook, and higher priority than variable hook 
         add_action('woocommerce_after_product_object_save', array($this, 'syncTaxonomiesAndProductAttributesAfterProductUpdate'), 5, 2);
 
         $ID = false;
