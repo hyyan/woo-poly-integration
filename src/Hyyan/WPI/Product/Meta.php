@@ -668,6 +668,7 @@ class Meta
                     '_stock',
                     '_backorders',
                     '_stock_status',
+                    '_low_stock_amount',
                     '_sold_individually',
                 ),
             ),

@@ -368,6 +368,7 @@ class Variable
             case '_sku':
             case '_manage_stock':
             case '_stock':
+            case '_low_stock_amount':
             case '_backorders':
             case '_stock_status':
             case '_sold_individually':
