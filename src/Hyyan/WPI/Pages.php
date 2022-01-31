@@ -180,7 +180,7 @@ class Pages
                 array_push($transIds, pll_get_post($id));
             }
 
-            $atts['ids'] = implode($transIds, ',');
+            $atts['ids'] = implode(',', $transIds);
             $query_args['post__in'] = $transIds;
             if ( isset( $query_args[ 'p' ] ) && ( $query_args[ 'p' ] != $transIds) ) {
                 unset( $query_args[ 'p' ] );
