@@ -158,3 +158,14 @@
 - Temporary nonce fixture existed only in the local lab and was removed after checks. No nonce, cookie or session material was saved. Closed the sole Chrome test instance and verified it stopped.
 - Saved contributor-chrome.json and contributor-authorization-audit.md. Preparing separate local test coverage commit. No push.
 - Next: remaining forum and checker dispositions plus original cart, attributes, email and order lifecycle acceptance. Public advisory operation mapping remains an explicit unknown.
+
+## Account email template translation (GH-556)
+- Previous turn committed contributor regression coverage as 48acfbc. Read the archived issue body and comment plus actual email locale and formatting code.
+- Existing callback found translations but discarded the template when the target was a WP_User instead of WC_Order. Both reset and new account subjects, headings and additional content were affected.
+- Added seven regression cases using real Polylang translation storage, recipient user locales, native WooCommerce format_string and an order preservation case. Baseline had six account field failures; order behavior passed.
+- Chrome requested a reset email for the disposable German customer. Local mail capture contained source English additional content, not its German translation.
+- Kept legacy order placeholder filters unchanged and moved the existing native WooCommerce formatter to the common return, applying translated account templates too.
+- Full suite passed: 54 tests and 121 assertions. Chrome repeated reset requests for German and English recipients. Captured mail used the intended help text, with site title expanded and no raw template placeholder.
+- All emails stayed in the local interceptor. Saved sanitized account-email-chrome.json with boolean markers, not email bodies, reset keys, credentials or addresses.
+- Restored original email settings, translation data and recipient locale. Closed the sole Chrome test window and verified its dedicated process stopped.
+- Preparing separate local GH-556 fix commit. No push. Browser reset flow passed; broader email catalog/type coverage, cart, coupons, product/attribute synchronization and checker/forum dispositions remain pending.

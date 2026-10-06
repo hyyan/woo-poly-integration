@@ -491,10 +491,11 @@ class Emails
             $replace['order-date'] = date_i18n(wc_date_format(), strtotime($target_object->get_date_created()));
             $formatted_string = str_replace(apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $target_object), 
                 apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $target_object), $string_template);
-            //better solution, native WooCommerce call
-            $formatted_string = $email_obj->format_string($formatted_string);
+        } else {
+            $formatted_string = $string_template;
         }
-        return $formatted_string;
+        //better solution, native WooCommerce call
+        return $email_obj->format_string($formatted_string);
     }
     /**
      * Get setting used to register string in the Polylang strings translation table.
