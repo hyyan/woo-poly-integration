@@ -810,7 +810,7 @@ class Meta
             . 'var disabledSelectors = %s;'
             . 'var metaSelectors = "";'
             . 'for (var i = 0; i < disabled.length; i++) {'
-            . '     metaSelectors += (","
+            . '     metaSelectors += ((disabledSelectors || metaSelectors ? "," : "")
                      + "." + disabled[i] + ","'
             . '       + "#" +disabled[i] + ","'
             . '      + "*[name^=\'"+disabled[i]+"\']"'
@@ -828,9 +828,8 @@ class Meta
             . 'hyyan_wpi_lockFields();'
             . '$(document).ajaxComplete(function(){'
             . '    hyyan_wpi_lockFields(); '
-            . '});', json_encode($metas), !empty($selectors) ?
-            json_encode(implode(',', $selectors)) :
-            array(rand())
+            . '});', wp_json_encode($metas, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),
+            wp_json_encode(implode(',', $selectors), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
         );
 
         Utilities::jsScriptWrapper($jsID, $code);
@@ -870,9 +869,9 @@ class Meta
                     $code = sprintf(
                         '// <![CDATA[ %1$s'
                         . ' addLoadEvent(function () { '
-                        . 'document.getElementById("product-type").value="%2$s";'
+                        . 'document.getElementById("product-type").value=%2$s;'
                         . '})'
-                        . '// ]]>', PHP_EOL, $type[0]
+                        . '// ]]>', PHP_EOL, wp_json_encode($type[0], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
                     );
 
                     Utilities::jsScriptWrapper($jsID, $code, false);

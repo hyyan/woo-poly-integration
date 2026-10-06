@@ -147,3 +147,18 @@ The full suite passes 143 tests and 416 assertions. Native Chrome creation and p
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Record changed files, verification scope and remaining findings |
 
 All 151 tests pass with 435 assertions. Native browser filtering and selection pass after removal of instrumentation. Current URL helper proof uses controlled calls because no production caller exists. The helper preserves the request host as before and performs URL sanitization, not a host authorization decision. Current inventory contains 260 production rows with 137 pending review or correction. The complete maintenance release is not yet cleared.
+
+## Inline script output batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Utilities.php | Escape script ID attributes while retaining the executable code API |
+| src/Hyyan/WPI/Taxonomies/Attributes.php | Encode PHP data, use DOM text and attributes and encode attribute search values |
+| src/Hyyan/WPI/Product/Variable.php | Encode dialog data, filter permitted dialog HTML, use text for legacy warnings and restore the native default language UI restriction |
+| src/Hyyan/WPI/Product/Meta.php | Encode fields locker and stored product type data and preserve empty selector extension behavior |
+| tests/integration/InlineScriptSecurityTest.php | Nine shared unsafe input, normal behavior, selector and current Polylang action regressions with filter cleanup |
+| docs/evidence/script-output and script-language files | Preserve baseline failures, full suite, native and controlled Chrome proof, syntax, cleanup and final complete checker output |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Preserve prior dispositions and record inspected script wrapper boundaries |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Record every changed file, compatibility findings, verification scope and remaining work |
+
+All 160 tests pass with 460 assertions. Marker script data, normal attribute search, dialog behavior, wrapper behavior, empty selectors and current native language UI were checked in Chrome. The protected product type method has no current production caller and its retained extension compatibility path has a regression. All eight active wrapper callers were inspected. The default language change restriction remains a UI behavior and does not add a new server authorization policy. Five output checker rows and the wider release audit remain pending.

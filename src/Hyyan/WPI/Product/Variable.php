@@ -459,16 +459,12 @@ class Variable
 
         add_action('admin_print_scripts', function () {
             $jsID = 'variables-data';
-            $code = sprintf(
-                    'var HYYAN_WPI_VARIABLES = {'
-                    .'     title       : "%s" ,'
-                    .'     content     : "%s" ,'
-                    .'     defaultLang : "%s"'
-                    .'};',
-                __('Wrong Language For Variable Product', 'woo-poly-integration'),
-                __("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>Read more, to know why</a>", 'woo-poly-integration'),
-                pll_default_language()
+            $data = array(
+                'title' => __('Wrong Language For Variable Product', 'woo-poly-integration'),
+                'content' => wp_kses_post(__("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>Read more, to know why</a>", 'woo-poly-integration')),
+                'defaultLang' => pll_default_language(),
             );
+            $code = 'var HYYAN_WPI_VARIABLES = '.wp_json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT).';';
 
             Utilities::jsScriptWrapper($jsID, $code, false);
         });
@@ -494,6 +490,14 @@ class Variable
      */
     public function shouldDisableLangSwitcher()
     {
+        add_filter('pll_default_lang_row_action', function ($action) {
+            $count = wp_count_posts('product_variation');
+            if (!$count || !$count->publish) {
+                return $action;
+            }
+            $message = __('You can not change the default language because you are using variable products', 'woo-poly-integration');
+            return '<div class="row-actions"><span class="default-lang"><span class="icon-default-lang" aria-disabled="true" title="'.esc_attr($message).'"><span class="screen-reader-text">'.esc_html($message).'</span></span></span></div>';
+        });
         add_action('current_screen', function () {
             $screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
             if ($screen && $screen->id !== 'settings_page_mlang') {
@@ -514,9 +518,9 @@ class Variable
                         .'     "pointer-events": "none"'
                         .'});'
                         .' $("#options-lang").prepend('
-                        .'     "<p class=\'update-nag\'>%s</p>"'
+                        .'     $("<p>").addClass("update-nag").text(%s)'
                         .');',
-                    __('You can not change the default language because you are using variable products', 'woo-poly-integration')
+                    wp_json_encode(__('You can not change the default language because you are using variable products', 'woo-poly-integration'), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
                 );
                 Utilities::jsScriptWrapper($jsID, $code);
             }, 100);

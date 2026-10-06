@@ -2171,7 +2171,7 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$result'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-195",
-    "status": "pending source or distributable review"
+    "status": "corrected script wrapper ID with attribute escaping, all eight production callers inspected, dynamic data JSON encoded with HTML hex flags, executable code contract retained, native and controlled Chrome verified"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",

@@ -1,0 +1,18 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m                                                                   1 / 1 (100%)
+
+Time: 00:00.012, Memory: 105.05 MB
+
+There was 1 failure:
+
+1) InlineScriptSecurityTest::testNativeDefaultLanguageRowActionIsDisabledForVariations
+Failed asserting that '<a href="?pll_action=default-lang">Change</a>' [ASCII](length: 45) does not contain "href=" [ASCII](length: 5).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:128
+
+[37;41mFAILURES![0m
+[37;41mTests: 1[0m[37;41m, Assertions: 1[0m[37;41m, Failures: 1[0m[37;41m.[0m

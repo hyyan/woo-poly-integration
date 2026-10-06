@@ -225,7 +225,7 @@ final class Utilities
     {
         $result = '';
         $prefix = 'hyyan-wpi-';
-        $header = sprintf('<script type="text/javascript" id="%s">', $prefix . $ID);
+        $header = sprintf('<script type="text/javascript" id="%s">', esc_attr($prefix . $ID));
         $footer = '</script>';
 
         if (true === $jquery) {

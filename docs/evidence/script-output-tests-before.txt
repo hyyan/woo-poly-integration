@@ -1,0 +1,66 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m                                                               5 / 5 (100%)
+
+Time: 00:00.017, Memory: 105.05 MB
+
+There were 5 failures:
+
+1) InlineScriptSecurityTest::testWrapperEscapesItsIdAndRetainsExecutableCode
+Failed asserting that '<script type="text/javascript" id="hyyan-wpi-" onload="alert(1)">\n
+ window.fixture = 1; \n
+</script>' [ASCII](length: 97) does not contain "id="hyyan-wpi-" onload=" [ASCII](length: 23).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:53
+
+2) InlineScriptSecurityTest::testAttributeLabelsCannotTerminateScripts
+Failed asserting that '<script type="text/javascript" id="hyyan-wpi-attrs-label-translation-button">\n
+ jQuery(function ($) {\n
+ $("<a href='http://localhost:8098/wp-admin/admin.php?page=mlang_strings&group=Marker " ' </script><img src=x onerror=alert(1)> <a href='https://example.test/'>Help</a>' class='button button-primary button-large'>Marker " ' </script><img src=x onerror=alert(1)> <a href='https://example.test/'>Help</a></a><br><br>") .insertBefore(".attributes-table"); \n
+});\n
+ </script> \n
+<script type="text/javascript" id="hyyan-wpi-attr-label-translate-search-link">\n
+ jQuery(function ($) {\n
+ $('.attributes-table .row-actions').each(function () {\n
+ var $this = $(this); var attrName = $this.parent().find("strong a").text(); var attrTranslateUrl = "http://localhost:8098/wp-admin/admin.php?page=mlang_strings&group=Marker " ' </script><img src=x onerror=alert(1)> <a href='https://example.test/'>Help</a>&s="+attrName ; var attrTranslateHref =      "<span class='translate'>"     + "| "     + "<a href='"+attrTranslateUrl+"'>Marker " ' </script><img src=x onerror=alert(1)> <a href='https://example.test/'>Help</a></a>"     + "</span>"; $this.append(attrTranslateHref);\n
+});\n
+ \n
+});\n
+ </script> \n
+' [ASCII](length: 1174) does not contain "</script><img" [ASCII](length: 13).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:62
+
+3) InlineScriptSecurityTest::testVariableDialogEncodesDataAndFiltersItsHtml
+Failed asserting that '<script type="text/javascript" id="hyyan-wpi-variables-data">\n
+ var HYYAN_WPI_VARIABLES = {     title       : "Marker " ' </script><img src=x onerror=alert(1)> <a href='https://example.test/'>Help</a>" ,     content     : "Marker " ' </script><img src=x onerror=alert(1)> <a href='https://example.test/'>Help</a>" ,     defaultLang : "en"}; \n
+</script>' [ASCII](length: 350) does not contain "</script><img" [ASCII](length: 13).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:72
+
+4) InlineScriptSecurityTest::testLanguageWarningUsesTextInsteadOfHtml
+Failed asserting that '<script type="text/javascript" id="hyyan-wpi-disable-lang-switcher">\n
+ jQuery(function ($) {\n
+ $("#options-lang #default_lang").css({     "opacity": .5,     "pointer-events": "none"}); $("#options-lang").prepend(     "<p class='update-nag'>Marker " ' </script><img src=x onerror=alert(1)> <a href='https://example.test/'>Help</a></p>"); \n
+});\n
+ </script> \n
+' [ASCII](length: 352) contains "</script><img" [ASCII](length: 13).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:86
+
+5) InlineScriptSecurityTest::testFieldsLockerSupportsEmptySelectorFilter
+Failed asserting that '<script type="text/javascript" id="hyyan-wpi-product-fields-locker">\n
+ jQuery(function ($) {\n
+ function hyyan_wpi_lockFields(){   var disabled = ["product-type","_virtual","_sku","_upsell_ids","_crosssell_ids","_children","_product_image_gallery","total_sales","_translation_porduct_type","_visibility","menu_order","_thumbnail_id","comment_status","_manage_stock","_stock","_backorders","_stock_status","_low_stock_amount","_sold_individually","_weight","_length","_width","_height","product_shipping_class","_product_attributes","_custom_product_attributes","_default_attributes","_downloadable","_downloadable_files","_download_limit","_download_expiry","_download_type","_tax_status","_tax_class","_regular_price","_sale_price","_sale_price_dates_from","_sale_price_dates_to","_price","_min_variation_price","_max_variation_price","_min_price_variation_id","_max_price_variation_id","_min_variation_regular_price","_max_variation_regular_price","_min_regular_price_variation_id","_max_regular_price_variation_id","_min_variation_sale_price","_max_variation_sale_price","_min_sale_price_variation_id","_max_sale_price_variation_id"];var disabledSelectors = Array;var metaSelectors = "";for (var i = 0; i < disabled.length; i++) {     metaSelectors += (","\n
+                     + "." + disabled[i] + ","       + "#" +disabled[i] + ","      + "*[name^='"+disabled[i]+"']"      )  }  $(disabledSelectors + metaSelectors)      .off("click")      .on("click", function (e) {e.preventDefault()})      .css({          opacity: .5,          'pointer-events': 'none',          cursor: 'not-allowed'      });};hyyan_wpi_lockFields();$(document).ajaxComplete(function(){    hyyan_wpi_lockFields(); }); \n
+});\n
+ </script> \n
+' [ASCII](length: 1709) contains "var disabledSelectors = "";" [ASCII](length: 27).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:95
+
+[37;41mFAILURES![0m
+[37;41mTests: 5[0m[37;41m, Assertions: 5[0m[37;41m, Failures: 5[0m[37;41m, Warnings: 1[0m[37;41m.[0m

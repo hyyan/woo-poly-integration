@@ -112,28 +112,23 @@ class Attributes implements TaxonomiesInterface
         /* Add attribute translate button */
         $buttonID = 'attrs-label-translation-button';
         $buttonCode = sprintf(
-                '$("<a href=\'%s\' class=\'button button-primary button-large\'>%s</a><br><br>")'
-                .' .insertBefore(".attributes-table");',
-            $stringTranslationURL,
-            __('Translate Attributes Labels', 'woo-poly-integration')
+            '$("<a>").attr("href", %s).addClass("button button-primary button-large").text(%s).insertBefore(".attributes-table");'
+            .'$("<br><br>").insertBefore(".attributes-table");',
+            wp_json_encode($stringTranslationURL, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),
+            wp_json_encode(__('Translate Attributes Labels', 'woo-poly-integration'), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
         );
 
         /* Add attribute translate search link */
         $searchLinkID = 'attr-label-translate-search-link';
         $searchLinkCode = sprintf(
-                "$('.attributes-table .row-actions').each(function () {\n"
-                .' var $this = $(this);'
-                .' var attrName = $this.parent().find("strong a").text();'
-                .' var attrTranslateUrl = "%s&s="+attrName ;'
-                .' var attrTranslateHref = '
-                .'     "<span class=\'translate\'>"'
-                .'     + "| "'
-                .'     + "<a href=\'"+attrTranslateUrl+"\'>%s</a>"'
-                .'     + "</span>";'
-                .' $this.append(attrTranslateHref);'
-                ."\n});\n",
-            $stringTranslationURL,
-            __('Translate', 'woo-poly-integration')
+            '$(".attributes-table .row-actions").each(function () {'
+            .'var $this = $(this);'
+            .'var attrName = $this.parent().find("strong a").text();'
+            .'var attrTranslateUrl = %s + "&s=" + encodeURIComponent(attrName);'
+            .'$this.append($("<span>").addClass("translate").append("| ").append($("<a>").attr("href", attrTranslateUrl).text(%s)));'
+            .'});',
+            wp_json_encode($stringTranslationURL, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),
+            wp_json_encode(__('Translate', 'woo-poly-integration'), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
         );
 
         /* Output code */
