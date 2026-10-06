@@ -640,7 +640,7 @@ final class Utilities
 			if ( $pll_lang ) {
 				$polylang->curlang = $pll_lang;
 				$GLOBALS[ 'text_direction' ] = $pll_lang->is_rtl ? 'rtl' : 'ltr';
-			} else {
+			} elseif ( is_object( $polylang->curlang ) ) {
 				//20190630: old code used in previous versions of this plugin
 				$polylang->curlang->locale = $languageLocale;
 			}

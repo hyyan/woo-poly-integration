@@ -177,3 +177,12 @@
 - Verified inventory counts, unique URLs, headings, captured body counts and all 22 source mappings. No production code changed, so no runtime or browser acceptance was claimed for this documentation work.
 - The dedicated Chrome automation process is stopped. No browser was opened during this source audit.
 - Next: triage forum report bodies, review remaining checker findings, and continue original product, cart, email and order acceptance.
+
+## Forum triage and missing Polylang locale (FORUM-020)
+- Read topics and all captured replies for FORUM-001 through FORUM-020. Recorded individual category, summary and next check. Matching search and formatter reports map to their tested fixes.
+- FORUM-020 identifies an unknown locale assignment on false still present in Utilities. Four new integration cases preceded the fix. The first invocation omitted the required environment flag and stopped at bootstrap. The corrected invocation reproduced one Error, with three preservation cases passing.
+- Chrome MCP reproduced the same Error through a temporary local route calling the existing callback. English, German, empty language and existing legacy object fallback were checked before and after.
+- Restricted the existing fallback assignment to an actual current language object. No public signature or hook changed.
+- Full suite passed: 9 unit tests with 22 assertions and 49 integration tests with 106 assertions. Chrome callback checks passed. English and German home pages loaded without fatal errors. Saved polylang-locale-chrome.json. Complete order email workflow and catalog acceptance remain pending.
+- Removed the temporary lab route. Closed the dedicated Chrome MCP process and verified it absent.
+- Next: remaining 403 forum reports, email catalogs, product/attribute synchronization, cart/order lifecycle and checker findings.

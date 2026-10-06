@@ -5,8 +5,11 @@
     "file": "forum/cfa148dbbb9bceae.html",
     "status": "captured",
     "id": "FORUM-001",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Reviewed: no runtime defect",
+    "captured_post_count": 1,
+    "category": "Administrative",
+    "report_summary": "Support was redirected to GitHub by the maintainer.",
+    "next_check": "No code change required."
   },
   {
     "url": "https://wordpress.org/support/topic/emails-is-not-translated-anymore/",
@@ -14,8 +17,11 @@
     "file": "forum/5bf1e6e62b243521.html",
     "status": "captured",
     "id": "FORUM-002",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending reproduction",
+    "captured_post_count": 1,
+    "category": "Order email catalog",
+    "report_summary": "Order language setting reportedly stopped translating emails.",
+    "next_check": "Verify full German order email catalogs and setting enabled/disabled behavior."
   },
   {
     "url": "https://wordpress.org/support/topic/emails-not-translated-3/",
@@ -23,8 +29,11 @@
     "file": "forum/7a9e431a97a07324.html",
     "status": "captured",
     "id": "FORUM-003",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending reproduction",
+    "captured_post_count": 2,
+    "category": "Order email catalog",
+    "report_summary": "Custom strings translate but the rest of the email stays in the default language.",
+    "next_check": "Verify WooCommerce catalog loading during order language switching."
   },
   {
     "url": "https://wordpress.org/support/topic/single-product-page-16/",
@@ -32,8 +41,11 @@
     "file": "forum/80c478e6543a6403.html",
     "status": "captured",
     "id": "FORUM-004",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Mapped to tested fix",
+    "captured_post_count": 1,
+    "category": "Locale formatting",
+    "report_summary": "Reported NumberFormatter input TypeError matches GH-571.",
+    "next_check": "Existing f49cb58 numeric guard and bilingual checks cover this reported failure path."
   },
   {
     "url": "https://wordpress.org/support/topic/issue-with-availability-of-product-translated/",
@@ -41,8 +53,11 @@
     "file": "forum/7d2b93f5080350c4.html",
     "status": "captured",
     "id": "FORUM-005",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending reproduction",
+    "captured_post_count": 1,
+    "category": "Product translation creation",
+    "report_summary": "New translated products are absent from the translated shop despite product language links.",
+    "next_check": "Create translations through the native product editor and check linking, publication and archive visibility."
   },
   {
     "url": "https://wordpress.org/support/topic/your-order-information-is-invalid/",
@@ -50,8 +65,11 @@
     "file": "forum/a7b28da93701be33.html",
     "status": "captured",
     "id": "FORUM-006",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending integration reproduction",
+    "captured_post_count": 2,
+    "category": "Third party gateway",
+    "report_summary": "Tamara rejects Arabic checkout with payment_type_unsupported while English succeeds.",
+    "next_check": "Inspect the Tamara integration and reproduce without assuming WooPoly owns the gateway error."
   },
   {
     "url": "https://wordpress.org/support/topic/issue-with-divi-page-bulder/",
@@ -59,8 +77,11 @@
     "file": "forum/f8b704ef3320a1d1.html",
     "status": "captured",
     "id": "FORUM-007",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending integration reproduction",
+    "captured_post_count": 2,
+    "category": "Third party page builder",
+    "report_summary": "Divi single product pages reportedly fail when the plugin is enabled.",
+    "next_check": "Requires the reported Divi setup and a reproducible error."
   },
   {
     "url": "https://wordpress.org/support/topic/disable-sync-2/",
@@ -68,8 +89,11 @@
     "file": "forum/a880043afb51ec46.html",
     "status": "captured",
     "id": "FORUM-008",
-    "review_status": "Pending report triage",
-    "captured_post_count": 3
+    "review_status": "Reviewed: configuration question",
+    "captured_post_count": 3,
+    "category": "Synchronization configuration",
+    "report_summary": "Requested bulk disabling of per product synchronization, which the reply distinguishes from field based settings.",
+    "next_check": "Verify enabled and disabled field settings through product acceptance. No new per product feature is implied."
   },
   {
     "url": "https://wordpress.org/support/topic/not-synchronize-custom-metadata/",
@@ -77,8 +101,11 @@
     "file": "forum/5fe9b53a8a836eeb.html",
     "status": "captured",
     "id": "FORUM-009",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending extension acceptance",
+    "captured_post_count": 2,
+    "category": "Custom metadata extension",
+    "report_summary": "Custom fields are not copied or synchronized by default.",
+    "next_check": "Verify existing metadata extension hooks with a custom field fixture."
   },
   {
     "url": "https://wordpress.org/support/topic/github-repository-has-been-archived/",
@@ -86,8 +113,11 @@
     "file": "forum/b3c1f28561fae540.html",
     "status": "captured",
     "id": "FORUM-010",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Reviewed: no runtime defect",
+    "captured_post_count": 2,
+    "category": "Administrative",
+    "report_summary": "Asks about archived maintenance and alternatives.",
+    "next_check": "No code change required."
   },
   {
     "url": "https://wordpress.org/support/topic/woocommerce-6-0/",
@@ -95,8 +125,11 @@
     "file": "forum/88e1d680b5c4b537.html",
     "status": "captured",
     "id": "FORUM-011",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Mapped to pending GH-557",
+    "captured_post_count": 1,
+    "category": "Attribute lookup tables",
+    "report_summary": "Asks whether the new WooCommerce attribute lookup filtering is compatible.",
+    "next_check": "Verify linked global attribute terms, lookup rows and storefront filtering."
   },
   {
     "url": "https://wordpress.org/support/topic/visibility-in-the-catalogue-is-not-inherited-properly/",
@@ -104,8 +137,11 @@
     "file": "forum/9b0017ea566ed22e.html",
     "status": "captured",
     "id": "FORUM-012",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending reproduction",
+    "captured_post_count": 1,
+    "category": "Product visibility",
+    "report_summary": "Translated product catalog visibility becomes hidden and cannot be changed.",
+    "next_check": "Verify visibility enabled/disabled synchronization and translated storefront publication."
   },
   {
     "url": "https://wordpress.org/support/topic/product-price-variations-no-working/",
@@ -113,8 +149,11 @@
     "file": "forum/e07cb9dc983fcdd9.html",
     "status": "captured",
     "id": "FORUM-013",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Mapped to pending GH-561",
+    "captured_post_count": 1,
+    "category": "Variation prices",
+    "report_summary": "Translated variation prices and sale badges disagree with editor values, including disabled price synchronization.",
+    "next_check": "Verify variation prices, sale scheduling and disabled field settings."
   },
   {
     "url": "https://wordpress.org/support/topic/plugin-update-for-wordpress-5-8-2/",
@@ -122,8 +161,11 @@
     "file": "forum/bd3ec7582b8dfe23.html",
     "status": "captured",
     "id": "FORUM-014",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending details and broad acceptance",
+    "captured_post_count": 1,
+    "category": "Compatibility unspecified",
+    "report_summary": "Reports a broken site after WordPress update without an error or reproduction.",
+    "next_check": "Preserve this report as unresolved and exercise the full original feature matrix."
   },
   {
     "url": "https://wordpress.org/support/topic/product-variations-stock-not-updating-on-second-and-third-language/",
@@ -131,8 +173,11 @@
     "file": "forum/9feab5221a16bab0.html",
     "status": "captured",
     "id": "FORUM-015",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending reproduction",
+    "captured_post_count": 1,
+    "category": "Variation stock and backorders",
+    "report_summary": "Global attribute variations retain stale stock or backorder status in translated languages.",
+    "next_check": "Verify variation updates, order deductions and backorder state in linked languages."
   },
   {
     "url": "https://wordpress.org/support/topic/product-reviews-not-activated/",
@@ -140,8 +185,11 @@
     "file": "forum/4ee28ebcbee36b25.html",
     "status": "captured",
     "id": "FORUM-016",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending reproduction",
+    "captured_post_count": 1,
+    "category": "Product reviews setting",
+    "report_summary": "Enabling reviews on the original product does not enable reviews on the translation.",
+    "next_check": "Verify native comment_status synchronization separately from the combined review feature request GH-120."
   },
   {
     "url": "https://wordpress.org/support/topic/import-products-with-different-languages/",
@@ -149,8 +197,11 @@
     "file": "forum/3219da396ee7e0e0.html",
     "status": "captured",
     "id": "FORUM-017",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Mapped to pending GH-208",
+    "captured_post_count": 1,
+    "category": "Import language columns",
+    "report_summary": "Asks for multilingual bulk CSV import including a language column.",
+    "next_check": "Audit original import hooks and supported CSV fields without adding an unapproved feature."
   },
   {
     "url": "https://wordpress.org/support/topic/search-page-error-2/",
@@ -158,8 +209,11 @@
     "file": "forum/63c957e16d361913.html",
     "status": "captured",
     "id": "FORUM-018",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Mapped to tested fix",
+    "captured_post_count": 2,
+    "category": "Search language URLs",
+    "report_summary": "Malformed search language URL and posted workaround explicitly refer to GH-566.",
+    "next_check": "Existing b035464 regressions and bilingual Chrome search acceptance cover the reported path."
   },
   {
     "url": "https://wordpress.org/support/topic/persitent-bug-not-able-to-translate-email-subject-and-heading/",
@@ -167,8 +221,11 @@
     "file": "forum/e023f91e43433994.html",
     "status": "captured",
     "id": "FORUM-019",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending reproduction",
+    "captured_post_count": 2,
+    "category": "Order email fields",
+    "report_summary": "Custom order payment email subject and heading fail to translate after settings changes.",
+    "next_check": "Verify default and custom order email fields with native placeholder expansion."
   },
   {
     "url": "https://wordpress.org/support/topic/use-order-language-for-order-emails-settings-causes-an-error-of-type-e_error/",
@@ -176,8 +233,11 @@
     "file": "forum/6cb20981053a6227.html",
     "status": "captured",
     "id": "FORUM-020",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Fixed and tested in current change",
+    "captured_post_count": 2,
+    "category": "Polylang locale fallback",
+    "report_summary": "Unknown requested locale attempts to assign a property on an absent current language.",
+    "next_check": "Four regressions and Chrome direct callback reproduction verify the fix, valid languages and legacy object fallback."
   },
   {
     "url": "https://wordpress.org/support/topic/custom-emails-locale-issue/",

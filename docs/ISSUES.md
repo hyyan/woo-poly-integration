@@ -43,3 +43,7 @@ Feature contract: README.md/readme.txt and wiki; existing variable-product defau
 | COMPAT-003 | Currency formatter crashes when Polylang has no current locale during checkout email rendering | Fixed in local commit 7077cf8: WordPress locale fallback, regression and Chrome checkout 200/order received pass | Normal language formatting preserved; emails render without ValueError |
 
 | COMPAT-004 | Block checkout order language missing with HPOS and German thank you redirect goes to English | Fixed for normal cookie enabled checkout: 5 order regressions and 5 Chrome purchases pass across block/classic and HPOS/legacy paths; broader client/cookie configuration acceptance pending | Classic and block orders retain language, localized redirect and email behavior in both storage modes |
+
+| FORUM-020 | Unknown locale assignment on false current Polylang language | Fixed and tested: 4 integration cases plus Chrome exact callback before/after proof | Missing language does not crash, valid language and existing object fallback preserved |
+
+Individual forum dispositions are in docs/evidence/wordpress-support-capture.json. FORUM-001 through FORUM-020 were read with captured replies. The remaining 403 reports need triage. Mapping a report to a tested fix does not close broader feature acceptance.

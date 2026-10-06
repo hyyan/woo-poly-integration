@@ -1,0 +1,39 @@
+{
+  "issue": "FORUM-020",
+  "scope": "Chrome direct existing locale callback in a temporary disposable lab route. Complete order email workflow acceptance remains pending.",
+  "before": {
+    "unknownError": "Attempt to assign property \"locale\" on false",
+    "english": "en_US",
+    "german": "de_DE",
+    "empty": false,
+    "legacyFallback": "woopoly_unknown"
+  },
+  "after": {
+    "unknown": false,
+    "unknownError": false,
+    "english": "en_US",
+    "german": "de_DE",
+    "empty": false,
+    "legacyFallback": "woopoly_unknown"
+  },
+  "tests": {
+    "baselineTests": 4,
+    "baselineAssertions": 6,
+    "baselineErrors": 1,
+    "unitTests": 9,
+    "unitAssertions": 22,
+    "integrationTests": 49,
+    "integrationAssertions": 106,
+    "finalExit": 0
+  },
+  "homeSmoke": {
+    "englishLanguage": "en-US",
+    "germanLanguage": "de-DE",
+    "fatal": false,
+    "productsTested": false
+  },
+  "cleanup": {
+    "fixtureRemoved": true,
+    "browserStopped": true
+  }
+}
