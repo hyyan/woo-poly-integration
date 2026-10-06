@@ -415,7 +415,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wc_help_tip'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-038",
-    "status": "pending source or distributable review"
+    "status": "reviewed native HTML output",
+    "evidence": "WooCommerce wc-core-functions.php lines 1538 to 1559 escape tooltip and aria attributes, Chrome preserves three native help tips"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -437,7 +438,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wc_help_tip'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-040",
-    "status": "pending source or distributable review"
+    "status": "reviewed native HTML output",
+    "evidence": "WooCommerce wc-core-functions.php lines 1538 to 1559 escape tooltip and aria attributes, Chrome preserves three native help tips"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -448,7 +450,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wc_help_tip'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-041",
-    "status": "pending source or distributable review"
+    "status": "reviewed native HTML output",
+    "evidence": "WooCommerce wc-core-functions.php lines 1538 to 1559 escape tooltip and aria attributes, Chrome preserves three native help tips"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -459,7 +462,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$langLocale'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-042",
-    "status": "pending source or distributable review"
+    "status": "fixed and regression and Chrome verified",
+    "evidence": "status-output-tests-before.txt, status-output-tests-after.txt, status-output-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -470,7 +474,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$location'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-043",
-    "status": "pending source or distributable review"
+    "status": "fixed and regression and Chrome verified",
+    "evidence": "status-output-tests-before.txt, status-output-tests-after.txt, status-output-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -481,7 +486,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$location'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-044",
-    "status": "pending source or distributable review"
+    "status": "fixed and regression and Chrome verified",
+    "evidence": "status-output-tests-before.txt, status-output-tests-after.txt, status-output-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",

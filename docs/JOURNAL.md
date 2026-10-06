@@ -234,3 +234,11 @@
 - Removed only the two sslverify overrides, retaining the repository hook, URL, timeout, filesystem flow and error behavior. WordPress now supplies its existing verified transport default.
 - Full suite passed with 78 tests and 205 assertions. Source lint and diff whitespace checks passed. Chrome observed sslverify true and successful availability. Browser then invoked the original downloader and installed the French pack successfully with verified transport on every request.
 - Removed the temporary capability and nonce protected lab route. No production endpoint was added. Next work remains checker input and output dispositions, confirmed fixes and the original compatibility matrix.
+
+## Status report output escaping
+
+- TLS certificate fix committed locally as 26fbe5f.
+- Read report output and native WooCommerce tooltip escaping. A regression failed for a controlled language object value. Temporary read only lab instrumentation showed the same unsafe output in the native Chrome status page. This identifies an output sink, not proof that Polylang accepts that value from an untrusted user.
+- Escaped only locale and translation path text with esc_html. Native tooltip HTML remains unchanged and its escaping findings have source dispositions.
+- Full suite passed with 80 tests and 211 assertions. Chrome showed the controlled marker as text without execution. The normal report retained both language locales, translation paths and all three help tips. PHP lint and diff whitespace checks passed. Repeated Plugin Check preserved for review.
+- Removed the temporary lab instrumentation. No production route was added. Remaining input, settings, template output and packaging findings stay open.

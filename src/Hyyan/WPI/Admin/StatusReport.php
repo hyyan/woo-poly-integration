@@ -33,16 +33,16 @@ function wpi_status_report() {
 					$langs = pll_languages_list( array( 'fields' => 'locale' ) );
 
 					foreach ( $langs as $langId => $langLocale ) {
-						echo($langLocale);
+						echo esc_html( $langLocale );
 						$downloaded	 = TranslationsDownloader::isDownloaded( $langLocale );
 						$location	 = sprintf(
 						trailingslashit( WP_LANG_DIR )
 						. 'plugins/woocommerce-%s.mo', $langLocale
 						);
 						if ( $downloaded ) {
-							echo(' (WooCommerce translation file found OK at ' . $location . ') ');
+							echo esc_html( ' (WooCommerce translation file found OK at ' . $location . ') ' );
 						} else {
-							echo(' Warning - missing WooCommerce translation file NOT found at ' . $location . ' ');
+							echo esc_html( ' Warning - missing WooCommerce translation file NOT found at ' . $location . ' ' );
 						}
 						echo '<br/>';
 					}
