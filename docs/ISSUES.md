@@ -36,4 +36,4 @@ Feature contract: README.md/readme.txt and wiki; existing variable-product defau
 
 | SEC-004 | [Public CVE-2026-24585](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/woo-poly-integration/hyyan-woocommerce-polylang-integration-150-missing-authorization) | Advisory confirmed; operation mapping pending | Identify exact operation; reproduce contributor denial and legitimate workflow |
 
-| COMPAT-001 | Product and category shortcodes use reversed implode arguments | Product shortcode Chrome fatal reproduced on PHP 8.5; category equivalent source confirmed; fix pending | Original ID filtering works in both languages without changing shortcode contract |
+| COMPAT-001 | Product and category shortcodes use reversed implode arguments | Fixed and verified on PHP 8.5: both language shortcode rendering and 5 regression cases pass | Original ID filtering works in both languages without changing shortcode contract |

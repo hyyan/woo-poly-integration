@@ -100,3 +100,13 @@
 - Chrome clicked the normal shop language link with orderby=price. Translated shop and sort query both survived.
 - Used one browser window and stopped the dedicated instance after acceptance. Evidence saved in search-chrome-after.json.
 - Preparing the separate local search fix commit. No push. Next: shortcode PHP crash and the remaining tracked compatibility work.
+
+## Product and category shortcode PHP compatibility
+- Previous step committed the search fix locally as b035464. Git source changes were limited to this independent shortcode fix.
+- Added WordPress regression coverage for explicit product IDs, conflicting single ID query removal, category IDs and parent translation, both languages, defaults, existing attributes and comma separated IDs.
+- Before the fix, both explicit ID callbacks raised TypeError from the reversed implode arguments. Chrome reproduced the category fatal, supplementing the existing product fatal evidence.
+- Changed only the two implode calls to separator first. Translation resolution, shortcode attributes, hook registration and filtering remain unchanged.
+- Full suite passed: 8 unit tests and 29 integration tests, 74 assertions total on PHP 8.5.11. Source lint passed.
+- Chrome verified the original failing product page, category page and linked English/German pages. Explicit IDs selected the translated products and categories. Default product shortcode output remained in the current language.
+- Saved shortcode-chrome-after.json. Used one test browser window and verified the dedicated instance stopped after acceptance.
+- Preparing a separate conventional local commit. No push. Remaining tracked issues and complete original feature acceptance remain open.

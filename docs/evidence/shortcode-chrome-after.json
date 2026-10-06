@@ -1,0 +1,47 @@
+{
+  "categoryBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/category-shortcode-baseline/\",\"title\":\"Category shortcode baseline – WooPoly Compatibility Lab\",\"text\":\"Skip to navigation\\nSkip to content\\nWooPoly Compatibility Lab\\nSearch for:\\nSearch\\nHome\\nCart\\n \\nCategory shortcode baseline\\n \\nCheckout\\n \\nMy account\\n \\nShop\\n \\nShortcode acceptance\\n \\nShortcode compatibility en\\nHome\\nCart\\n \\nCategory shortcode baseline\\n \\nCheckout\\n \\nMy account\\n \\nShop\\n \\nShortcode acceptance\\n \\nShortcode compatibility en\\n€0.00 0 items\\nLanguage acceptance\\nEnglish\\nDeutsch\\nHome/Category shortcode baseline\\nCategory shortcode baseline\\n\\nThere has been a critical error on this website.\\n\\nLearn more about troubleshooting WordPress.\"}\n```"
+      }
+    ]
+  },
+  "categoryAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/category-shortcode-baseline/\",\"criticalError\":false,\"categories\":[\"Shortcode category en\"]}\n```"
+      }
+    ]
+  },
+  "english": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/shortcode-compatibility-en/\",\"criticalError\":false,\"products\":[\"Test shirt en\",\"Security fixture en\",\"Test shirt en\"],\"categories\":[\"Shortcode category en\"],\"languageLinks\":[{\"text\":\"English\",\"href\":\"http://localhost:8098/shortcode-compatibility-en/\"},{\"text\":\"Deutsch\",\"href\":\"http://localhost:8098/de/shortcode-compatibility-de/\"}]}\n```"
+      }
+    ]
+  },
+  "german": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/shortcode-compatibility-de/\",\"criticalError\":false,\"products\":[\"Test shirt de\",\"Security fixture de\",\"Test shirt de\"],\"categories\":[\"Shortcode category de\"],\"languageLinks\":[{\"text\":\"English\",\"href\":\"http://localhost:8098/shortcode-compatibility-en/\"},{\"text\":\"Deutsch\",\"href\":\"http://localhost:8098/de/shortcode-compatibility-de/\"}]}\n```"
+      }
+    ]
+  },
+  "originalProductPage": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/shortcode-acceptance/\",\"criticalError\":false,\"products\":[\"Test shirt en\"]}\n```"
+      }
+    ]
+  },
+  "regressions": {
+    "before": "4 tests, 3 assertions, 2 errors: reversed implode arguments in Pages.php lines 183 and 204",
+    "after": "8 unit tests, 8 assertions; 29 integration tests, 66 assertions; all passed",
+    "lint": "Pages.php: no syntax errors"
+  }
+}
