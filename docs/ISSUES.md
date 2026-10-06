@@ -89,3 +89,8 @@ Forum topics FORUM-021 through FORUM-040 have individual dispositions in the for
 | COMPAT-012 | Page repair warnings call edit_post_link as a return value | Corrected to get_edit_post_link with raw context and URL escaping | Source inspected, normal draft edit link verified, automatic creation and unassigned base language branches still require native acceptance |
 | COMPAT-013 | Invalid settings URL fragment is parsed as a jQuery selector and hides forms | Reproduced in Chrome and corrected by matching registered group IDs | Invalid fragment reload shows a form without a selector error, native Meta List tab works |
 | COMPAT-014 | Selected setting value is escaped before comparison with quoted option keys | Corrected by comparing raw values and escaping attribute output | Quote and ampersand selected value regression and native matrix pass |
+
+| SEC-022 | Six optional coupon diagnostics append unvalidated full request URI | Corrected together with scalar guard, WordPress unslashing, path extraction and text sanitization | Array input has no warning, query secrets and forged lines absent, normal path retained, logging remains disabled by default |
+| COMPAT-015 | Prepared SKU duplicate query adds slashes to the search value | Corrected to pass raw SKU to the prepared string placeholder and verify duplicates even when native lookup returns false | Quotes, backslashes and SQL looking literal values detect same language duplicates, native English save rejects the quote SKU and German save preserves cross language allowance |
+
+Database and diagnostic checker rows now have explicit source dispositions. This is not a catalog performance benchmark or full coupon, stock or third party integration acceptance.

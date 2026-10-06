@@ -27,6 +27,20 @@ class Coupon
     static $enable_wjecf = false;
 
     /**
+     * Return a request path suitable for optional diagnostics.
+     *
+     * @return string
+     */
+    private static function getDiagnosticRequestPath()
+    {
+        if (!isset($_SERVER['REQUEST_URI']) || !is_string($_SERVER['REQUEST_URI'])) {
+            return 'unavailable';
+        }
+        $path = wp_parse_url(wp_unslash($_SERVER['REQUEST_URI']), PHP_URL_PATH);
+        return is_string($path) ? sanitize_text_field($path) : 'unavailable';
+    }
+
+    /**
      * Construct object.
      */
     public function __construct()
@@ -50,8 +64,7 @@ class Coupon
             if ($enable_wjecf){
                 if (self::$enable_logging) {
                     error_log('woopoly enabled wjecf translation: ' . 
-                        ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
-                        ' no $_SERVER[REQUEST_URI] available'));            
+                        ' in request: ' . self::getDiagnosticRequestPath());
                 }
                 add_filter('woocommerce_coupon_get__wjecf_enqueue_message',
                     array($this, 'translateMessage'), 10, 2);
@@ -79,8 +92,7 @@ class Coupon
         $productLang = pll_current_language();
         if (self::$enable_logging) {
             error_log('woopoly getting translated ids for: ' . $productIds . ' for coupon ' . $coupon->get_code() . 
-                ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
-                ' no $_SERVER[REQUEST_URI] available'));            
+                ' in request: ' . self::getDiagnosticRequestPath());
         }
         $productIds = explode(',', $productIds);
         $mappedIds = array();
@@ -158,8 +170,7 @@ class Coupon
             if (function_exists('pll_register_string')) {
                 if (self::$enable_logging) {
                     error_log('woopoly registering coupons for translation: ' . 
-                        ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
-                        ' no $_SERVER[REQUEST_URI] available'));            
+                        ' in request: ' . self::getDiagnosticRequestPath());
                 }
                 $coupons = $this->getCoupons();
             
@@ -208,14 +219,12 @@ class Coupon
         if ($coupon_ids) {
             if (self::$enable_logging) {
                 error_log('woopoly found coupons in transient: ' . 
-                    ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
-                    ' no $_SERVER[REQUEST_URI] available'));            
+                    ' in request: ' . self::getDiagnosticRequestPath());
             }
         } else {        
             if (self::$enable_logging) {
                 error_log('woopoly loading coupons to transient: ' . 
-                    ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
-                    ' no $_SERVER[REQUEST_URI] available'));            
+                    ' in request: ' . self::getDiagnosticRequestPath());
             }
             $args = array(
                 'posts_per_page'   => -1,
@@ -275,8 +284,7 @@ class Coupon
                 ' exclude-products:' . implode(',', $excludeProductIDS) .
                 ' include-categories:' . implode(',', $productCategoriesIDS) .
                 ' exclude-categories:' . implode(',', $excludeProductCategoriesIDS) .
-                ' in request: ' . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 
-                ' no $_SERVER[REQUEST_URI] available'));            
+                ' in request: ' . self::getDiagnosticRequestPath());
         }
 
         $coupon->set_product_ids($productIDS);

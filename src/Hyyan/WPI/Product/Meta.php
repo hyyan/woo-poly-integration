@@ -898,11 +898,10 @@ class Meta
      */
     public function suppressInvalidDuplicatedSKUErrorMsg($sku_found, $product_id, $sku)
     {
+        if ($sku === '') {
+            return $sku_found;
+        }
 
-		//if the sku is not duplicate, no further check needed
-		if ( ! $sku_found ) {
-			return false;
-		}
 		//if called with no product id from woocommerce product_duplicate
 		//no further check can be done
 		if ( ! $product_id ) {
@@ -926,7 +925,7 @@ class Meta
 					AND $wpdb->posts.post_status NOT IN ('trash', 'auto-draft') 
 					AND $wpdb->postmeta.meta_key = '_sku' AND $wpdb->postmeta.meta_value = %s
 					AND $wpdb->postmeta.post_id <> %d
-				", wp_slash( $sku ), $product_id
+				", $sku, $product_id
 		)
 		);
 		$curlang = pll_get_post_language( $product_id );

@@ -1,0 +1,34 @@
+{
+  "controlled": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n[{\"status\":403,\"body\":\"-1\"},{\"status\":403,\"body\":\"-1\"},{\"status\":200,\"body\":\"{\\\"success\\\":true,\\\"data\\\":{\\\"sku\\\":[{\\\"value\\\":\\\"plain\\\",\\\"stored\\\":\\\"plain\\\",\\\"sameLanguageDuplicate\\\":true,\\\"otherLanguageOnly\\\":false},{\\\"value\\\":\\\"quote'sku\\\",\\\"stored\\\":\\\"quote'sku\\\",\\\"sameLanguageDuplicate\\\":true,\\\"otherLanguageOnly\\\":false},{\\\"value\\\":\\\"back\\\\\\\\slash\\\",\\\"stored\\\":\\\"back\\\\\\\\slash\\\",\\\"sameLanguageDuplicate\\\":true,\\\"otherLanguageOnly\\\":false},{\\\"value\\\":\\\"sku' OR 1=1 --\\\",\\\"stored\\\":\\\"sku' OR 1=1 --\\\",\\\"sameLanguageDuplicate\\\":true,\\\"otherLanguageOnly\\\":false}],\\\"logs\\\":[{\\\"warnings\\\":[],\\\"queryLeaked\\\":false,\\\"forgedLine\\\":false,\\\"log\\\":\\\"[06-Oct-2026 19:48:37 UTC] woopoly setting related for coupon : diagnostic-browser include-products: exclude-products: include-categories: exclude-categories: in request: unavailable\\\\n\\\"},{\\\"warnings\\\":[],\\\"queryLeaked\\\":false,\\\"forgedLine\\\":false,\\\"log\\\":\\\"[06-Oct-2026 19:48:37 UTC] woopoly setting related for coupon : diagnostic-browser include-products: exclude-products: include-categories: exclude-categories: in request: \\\\/cart\\\\/\\\\n\\\"},{\\\"warnings\\\":[],\\\"queryLeaked\\\":false,\\\"forgedLine\\\":false,\\\"log\\\":\\\"[06-Oct-2026 19:48:37 UTC] woopoly setting related for coupon : diagnostic-browser include-products: exclude-products: include-categories: exclude-categories: in request: \\\\/cart\\\\/\\\\n\\\"}]}}\"}]\n```"
+      }
+    ]
+  },
+  "nativeBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/wp-admin/post.php?post=8273&action=edit\",\"sku\":\"quote'sku\",\"notices\":[\"WooCommerce has detected that some of your active plugins are incompatible with currently enabled WooCommerce features. Please review the details.\",\"Product updated. View Product\\n\\nDismiss this notice.\",\"\\n\\t\\t\\t\\n\\t\\t\\t\\tAdd descriptive pieces of information that customers can use to search for this product on your store, such as “Material” or “Size”.\\t\\t\\t\\tDismiss this notice.\\n\\t\\t\\t\\n\\t\\t\",\"\"]}\n```"
+      }
+    ]
+  },
+  "nativeAfterEnglish": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/wp-admin/post.php?post=8273&action=edit\",\"sku\":\"\",\"notices\":[\"WooCommerce has detected that some of your active plugins are incompatible with currently enabled WooCommerce features. Please review the details.\",\"Invalid or duplicated SKU.\\n\\nDismiss this notice.\",\"Product updated. View Product\\n\\nDismiss this notice.\",\"\\n\\t\\t\\t\\n\\t\\t\\t\\tAdd descriptive pieces of information that customers can use to search for this product on your store, such as “Material” or “Size”.\\t\\t\\t\\tDismiss this notice.\\n\\t\\t\\t\\n\\t\\t\",\"\"]}\n```"
+      }
+    ]
+  },
+  "nativeAfterGerman": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/wp-admin/post.php?post=8274&action=edit\",\"sku\":\"quote'sku\",\"notices\":[\"WooCommerce has detected that some of your active plugins are incompatible with currently enabled WooCommerce features. Please review the details.\",\"Product updated. View Product\\n\\nDismiss this notice.\",\"\\n\\t\\t\\t\\n\\t\\t\\t\\tAdd descriptive pieces of information that customers can use to search for this product on your store, such as “Material” or “Size”.\\t\\t\\t\\tDismiss this notice.\\n\\t\\t\\t\\n\\t\\t\",\"\"]}\n```"
+      }
+    ]
+  }
+}

@@ -185,3 +185,24 @@ All 160 tests pass with 460 assertions. Marker script data, normal attribute sea
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Batch scope, reasons, evidence and remaining work |
 
 All 181 tests pass with 532 assertions. Settings nonce rejection, unchanged save and normal forms pass in Chrome. The disable Fields Locker test action was rejected by automatic approval review and was not executed. Authorized manager behavior has native context regression and controlled callback proof. Full role login sessions and automatic missing page and base language repair remain manual acceptance cases. The FlashMessages body API retains trusted developer HTML after inspection of every internal producer, including original social widgets. No blanket HTML encoding was applied to native forms or trusted executable widgets. The full maintenance release is not yet cleared.
+
+## Query and diagnostics batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Coupon.php | Normalize request path once for all six optional logs, reject malformed shape and omit query data |
+| src/Hyyan/WPI/Product/Meta.php | Pass raw SKU to the prepared string placeholder so stored quotes and backslashes match |
+| tests/integration/QueryDiagnosticSecurityTest.php | Fourteen shared real query, immediate relationship and diagnostic input cases |
+| work/query-diagnostics-browser.php | Temporary administrator and nonce protected local instrumentation, removed from active lab before completion |
+| docs/evidence/query-diagnostics-tests-before.txt | Corrected fixture baseline with five genuine failures against committed source |
+| docs/evidence/query-diagnostics-tests-targeted.txt and query-diagnostics-tests-after.txt | Fourteen targeted cases and all 195 tests with 575 assertions |
+| docs/evidence/query-diagnostics-chrome.json | Actual controlled Chrome callback results and nonce rejection |
+| docs/evidence/query-diagnostics-plugin-check.json and query-diagnostics-plugin-check.stderr.txt | Complete raw final scan and stderr |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Current counts and explicit source dispositions with prior evidence retained |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | File reasons, scope and remaining requirements |
+
+Both direct SQL queries use prepared variable placeholders. Related variation reads stay fresh during mutation decisions. The bundled lookup queries use native WordPress query APIs. Optional diagnostics retain their existing enable flag and path context. Operational error reporting remains. Native editor SKU save rejects the same language duplicate and permits the German SKU. Coupon checkout and third party integration, large catalog profiling and older version verification remain required for wider release acceptance. Controlled API proof does not replace those native feature gates.
+
+Additional evidence: `query-diagnostics-native-tests-before.txt` records four failing native false lookup cases. `query-diagnostics-native-fixture.json` identifies only disposable products. `query-diagnostics-native-state-cleanup.txt` records their final persisted SKUs before deletion. `query-diagnostics-lint.txt` records final syntax checks. The complete test set has 14 cases and 43 assertions. The temporary browser helper preceded the native workflow, so the browser evidence distinguishes those two proof scopes.
+
+The empty SKU compatibility regression first failed after removing the false result shortcut. An explicit empty SKU guard restores the native result while nonempty stored values use the prepared query. Baseline evidence is `query-diagnostics-empty-sku-before.txt`. Original no product ID behavior remains.

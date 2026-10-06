@@ -1,0 +1,47 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+.[41;37mF[0m[41;37mF[0m[41;37mF[0m..[41;37mF[0m[41;37mF[0m.                                                           9 / 9 (100%)
+
+Time: 00:00.122, Memory: 103.05 MB
+
+There were 5 failures:
+
+1) QueryDiagnosticSecurityTest::testSkuQueryMatchesStoredValueWithoutAddingSlashes#1 with data ('quote'sku')
+Failed asserting that false is true.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/QueryDiagnosticSecurityTest.php:47
+
+2) QueryDiagnosticSecurityTest::testSkuQueryMatchesStoredValueWithoutAddingSlashes#2 with data ('back\slash')
+Failed asserting that false is true.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/QueryDiagnosticSecurityTest.php:47
+
+3) QueryDiagnosticSecurityTest::testSkuQueryMatchesStoredValueWithoutAddingSlashes#3 with data ('sku' OR 1=1 --')
+Failed asserting that false is true.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/QueryDiagnosticSecurityTest.php:47
+
+4) QueryDiagnosticSecurityTest::testOptionalCouponDiagnosticsNeverWarnForMalformedRequestShape#0 with data (['nested'])
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'Array to string conversion',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/QueryDiagnosticSecurityTest.php:83
+
+5) QueryDiagnosticSecurityTest::testOptionalCouponDiagnosticsNeverWarnForMalformedRequestShape#1 with data ('/cart/?token=private-token\nF..._ENTRY')
+Failed asserting that '[06-Oct-2026 19:49:44 UTC] woopoly setting related for coupon : diagnostic-fixture include-products: exclude-products: include-categories: exclude-categories: in request: /cart/?token=private-token\n
+FORGED_ENTRY\n
+' [ASCII](length: 211) does not contain "private-token" [ASCII](length: 13).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/QueryDiagnosticSecurityTest.php:84
+
+[37;41mFAILURES![0m
+[37;41mTests: 9[0m[37;41m, Assertions: 25[0m[37;41m, Failures: 5[0m[37;41m.[0m

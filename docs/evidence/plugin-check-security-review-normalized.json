@@ -704,7 +704,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-063",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -803,7 +804,8 @@
     "message": "Use of a direct database call is discouraged.",
     "docs": "",
     "id": "REVIEW-CHECK-072",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -814,7 +816,8 @@
     "message": "Direct database call without caching detected. Consider using wp_cache_get() / wp_cache_set() or wp_cache_delete().",
     "docs": "",
     "id": "REVIEW-CHECK-073",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Privacy.php",
@@ -1309,7 +1312,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-117",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1320,7 +1324,8 @@
     "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-118",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1331,7 +1336,8 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-119",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1342,7 +1348,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-120",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1353,7 +1360,8 @@
     "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-121",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1364,7 +1372,8 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-122",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1423,7 +1432,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-127",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1434,7 +1444,8 @@
     "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-128",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1445,7 +1456,8 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-129",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1456,7 +1468,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-130",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1467,7 +1480,8 @@
     "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-131",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1478,7 +1492,8 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-132",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1489,7 +1504,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-133",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1500,7 +1516,8 @@
     "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-134",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1511,7 +1528,8 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-135",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1522,7 +1540,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-136",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1533,7 +1552,8 @@
     "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-137",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1544,7 +1564,8 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-138",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": ".exclude-list",
@@ -2208,7 +2229,8 @@
     "message": "Detected usage of meta_key, possible slow query.",
     "docs": "",
     "id": "REVIEW-CHECK-198",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2219,7 +2241,8 @@
     "message": "Detected usage of meta_value, possible slow query.",
     "docs": "",
     "id": "REVIEW-CHECK-199",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -5117,7 +5140,8 @@
     "message": "Detected usage of meta_key, possible slow query.",
     "docs": "",
     "id": "REVIEW-CHECK-448",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5128,7 +5152,8 @@
     "message": "Detected usage of meta_value, possible slow query.",
     "docs": "",
     "id": "REVIEW-CHECK-449",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5139,7 +5164,8 @@
     "message": "error_log() found. Debug code should not normally be used in production.",
     "docs": "",
     "id": "REVIEW-CHECK-450",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5161,7 +5187,8 @@
     "message": "Use of a direct database call is discouraged.",
     "docs": "",
     "id": "REVIEW-CHECK-452",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5172,7 +5199,8 @@
     "message": "Direct database call without caching detected. Consider using wp_cache_get() / wp_cache_set() or wp_cache_delete().",
     "docs": "",
     "id": "REVIEW-CHECK-453",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5578,7 +5606,8 @@
     "message": "Detected usage of meta_key, possible slow query.",
     "docs": "",
     "id": "REVIEW-CHECK-487",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Cart.php",
@@ -5589,7 +5618,8 @@
     "message": "Detected usage of meta_value, possible slow query.",
     "docs": "",
     "id": "REVIEW-CHECK-488",
-    "status": "pending source or distributable review"
+    "status": "reviewed source query and diagnostic boundaries, prepared SQL and native query APIs retained, fresh mutation reads intentional, coupon request path corrected",
+    "evidence": "query-diagnostics-tests-after.txt, query-diagnostics-chrome.json, query-diagnostics-plugin-check.json"
   },
   {
     "file": "__init__.php",

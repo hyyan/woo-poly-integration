@@ -1,5 +1,5 @@
 {
-  "scan": "settings-output-plugin-check.json",
+  "scan": "query-diagnostics-plugin-check.json",
   "checker_findings": [
     {
       "line": 44,
@@ -494,7 +494,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
       "line": 636,
@@ -574,7 +574,7 @@
       "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 920,
+      "line": 919,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
@@ -582,10 +582,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 920,
+      "line": 919,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
@@ -593,7 +593,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 35,
@@ -948,7 +948,18 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 52,
+      "line": 39,
+      "column": 41,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Coupon.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed scalar URI guard, WordPress unslashing, path extraction and sanitize_text_field before diagnostic output. Array and query injection regression and controlled Chrome checks pass."
+    },
+    {
+      "line": 66,
       "column": 21,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -956,32 +967,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 53,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 53,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 81,
+      "line": 94,
       "column": 13,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -989,32 +978,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 82,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 82,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 106,
+      "line": 118,
       "column": 28,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.MissingTranslatorsComment",
@@ -1025,7 +992,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 106,
+      "line": 118,
       "column": 53,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -1036,7 +1003,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 142,
+      "line": 154,
       "column": 70,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -1047,7 +1014,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 142,
+      "line": 154,
       "column": 98,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -1058,7 +1025,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 142,
+      "line": 154,
       "column": 140,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -1069,7 +1036,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 160,
+      "line": 172,
       "column": 21,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -1077,32 +1044,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 161,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 161,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 210,
+      "line": 221,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -1110,32 +1055,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 211,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 211,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 216,
+      "line": 226,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -1143,32 +1066,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 217,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 217,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 273,
+      "line": 282,
       "column": 13,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -1176,29 +1077,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 278,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 278,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
       "line": 0,
@@ -1847,7 +1726,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 547,
@@ -1858,7 +1737,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 634,
@@ -2088,6 +1967,127 @@
       "message": "unlink() is discouraged. Use wp_delete_file() to delete a file.",
       "docs": "",
       "file": "tests/integration/ProductImportSynchronizationTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 24,
+      "column": 9,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 31,
+      "column": 9,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 32,
+      "column": 9,
+      "type": "ERROR",
+      "code": "WordPress.WP.AlternativeFunctions.unlink_unlink",
+      "message": "unlink() is discouraged. Use wp_delete_file() to delete a file.",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 93,
+      "column": 9,
+      "type": "WARNING",
+      "code": "WordPress.PHP.DevelopmentFunctions.error_log_set_error_handler",
+      "message": "set_error_handler() found. Debug code should not normally be used in production.",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 98,
+      "column": 13,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 29,
+      "column": 74,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 30,
+      "column": 34,
+      "type": "WARNING",
+      "code": "WordPress.PHP.DevelopmentFunctions.error_log_set_error_handler",
+      "message": "set_error_handler() found. Debug code should not normally be used in production.",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 35,
+      "column": 76,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 35,
+      "column": 107,
+      "type": "ERROR",
+      "code": "WordPress.WP.AlternativeFunctions.unlink_unlink",
+      "message": "unlink() is discouraged. Use wp_delete_file() to delete a file.",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -4982,7 +4982,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 84,
@@ -4993,7 +4993,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 111,
@@ -5004,7 +5004,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
       "line": 135,
@@ -5026,7 +5026,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 159,
@@ -5037,7 +5037,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 216,
@@ -5455,7 +5455,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Cart.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 258,
@@ -5466,7 +5466,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Cart.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 0,
@@ -16046,17 +16046,6 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 138,
-      "column": 27,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.TextDomainMismatch",
-      "message": "Mismatched text domain. Expected 'woo-poly-integration' but got ' woo-poly-integration'.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
       "line": 367,
       "column": 21,
       "type": "ERROR",
@@ -16373,7 +16362,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
       "line": 636,
@@ -16453,7 +16442,7 @@
       "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 920,
+      "line": 916,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
@@ -16461,10 +16450,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 920,
+      "line": 916,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
@@ -16472,7 +16461,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 35,
@@ -16827,7 +16816,18 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 52,
+      "line": 39,
+      "column": 41,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Coupon.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed scalar URI guard, WordPress unslashing, path extraction and sanitize_text_field before diagnostic output. Array and query injection regression and controlled Chrome checks pass."
+    },
+    {
+      "line": 66,
       "column": 21,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16835,32 +16835,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 53,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 53,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 81,
+      "line": 94,
       "column": 13,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16868,32 +16846,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 82,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 82,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 106,
+      "line": 118,
       "column": 28,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.MissingTranslatorsComment",
@@ -16904,7 +16860,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 106,
+      "line": 118,
       "column": 53,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -16915,7 +16871,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 142,
+      "line": 154,
       "column": 70,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16926,7 +16882,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 142,
+      "line": 154,
       "column": 98,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16937,7 +16893,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 142,
+      "line": 154,
       "column": 140,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16948,7 +16904,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 160,
+      "line": 172,
       "column": 21,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16956,32 +16912,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 161,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 161,
-      "column": 77,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 210,
+      "line": 221,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16989,32 +16923,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 211,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 211,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 216,
+      "line": 226,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -17022,32 +16934,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 217,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 217,
-      "column": 73,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 273,
+      "line": 282,
       "column": 13,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -17055,29 +16945,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 278,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 278,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
       "line": 0,
@@ -17572,7 +17440,7 @@
       "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
       "file": "src/Hyyan/WPI/Tools/FlashMessages.php",
       "batch": "Output escaping",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owned HTML composition, native forms and notices retained, leaf values escaped or filtered in bundled settings callbacks and all internal notice producers, regression and native Chrome marker checks pass. FlashMessages retains trusted developer HTML including existing social widgets."
     },
     {
       "line": 71,
@@ -17605,7 +17473,7 @@
       "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "batch": "Output escaping",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owned HTML composition, native forms and notices retained, leaf values escaped or filtered in bundled settings callbacks and all internal notice producers, regression and native Chrome marker checks pass. FlashMessages retains trusted developer HTML including existing social widgets."
     },
     {
       "line": 90,
@@ -17616,7 +17484,7 @@
       "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "batch": "Output escaping",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owned HTML composition, native forms and notices retained, leaf values escaped or filtered in bundled settings callbacks and all internal notice producers, regression and native Chrome marker checks pass. FlashMessages retains trusted developer HTML including existing social widgets."
     },
     {
       "line": 154,
@@ -17726,7 +17594,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 547,
@@ -17737,7 +17605,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 634,
@@ -17814,7 +17682,7 @@
       "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
       "file": "src/Hyyan/WPI/Views/admin.php",
       "batch": "Output escaping",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owned HTML composition, native forms and notices retained, leaf values escaped or filtered in bundled settings callbacks and all internal notice producers, regression and native Chrome marker checks pass. FlashMessages retains trusted developer HTML including existing social widgets."
     },
     {
       "line": 13,
@@ -17825,7 +17693,7 @@
       "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
       "file": "src/Hyyan/WPI/Views/admin.php",
       "batch": "Output escaping",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owned HTML composition, native forms and notices retained, leaf values escaped or filtered in bundled settings callbacks and all internal notice producers, regression and native Chrome marker checks pass. FlashMessages retains trusted developer HTML including existing social widgets."
     },
     {
       "line": 21,
@@ -17967,6 +17835,127 @@
       "message": "unlink() is discouraged. Use wp_delete_file() to delete a file.",
       "docs": "",
       "file": "tests/integration/ProductImportSynchronizationTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 22,
+      "column": 9,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 29,
+      "column": 9,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 30,
+      "column": 9,
+      "type": "ERROR",
+      "code": "WordPress.WP.AlternativeFunctions.unlink_unlink",
+      "message": "unlink() is discouraged. Use wp_delete_file() to delete a file.",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 83,
+      "column": 9,
+      "type": "WARNING",
+      "code": "WordPress.PHP.DevelopmentFunctions.error_log_set_error_handler",
+      "message": "set_error_handler() found. Debug code should not normally be used in production.",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 88,
+      "column": 13,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "tests/integration/QueryDiagnosticSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 29,
+      "column": 74,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 30,
+      "column": 34,
+      "type": "WARNING",
+      "code": "WordPress.PHP.DevelopmentFunctions.error_log_set_error_handler",
+      "message": "set_error_handler() found. Debug code should not normally be used in production.",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 35,
+      "column": 76,
+      "type": "WARNING",
+      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
+      "message": "The use of function ini_set() is discouraged",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 35,
+      "column": 107,
+      "type": "ERROR",
+      "code": "WordPress.WP.AlternativeFunctions.unlink_unlink",
+      "message": "unlink() is discouraged. Use wp_delete_file() to delete a file.",
+      "docs": "",
+      "file": "work/query-diagnostics-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -18297,6 +18286,28 @@
       "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
       "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
       "file": "tests/frontend/bootstrap.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "tests/admin/bootstrap.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 5,
+      "column": 8,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound",
+      "message": "Global constants defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;WP_ADMIN&quot;.",
+      "docs": "",
+      "file": "tests/admin/bootstrap.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -18956,6 +18967,83 @@
       "code": "missing_direct_file_access_protection",
       "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
       "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/settings-notice-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 3,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$backup&quot;.",
+      "docs": "",
+      "file": "work/settings-notice-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 4,
+      "column": 116,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$name&quot;.",
+      "docs": "",
+      "file": "work/settings-notice-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 4,
+      "column": 125,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$backup&quot;.",
+      "docs": "",
+      "file": "work/settings-notice-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 7,
+      "column": 30,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$lang&quot;.",
+      "docs": "",
+      "file": "work/settings-notice-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 14,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$features&quot;.",
+      "docs": "",
+      "file": "work/settings-notice-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 14,
+      "column": 49,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$features&quot;.",
+      "docs": "",
+      "file": "work/settings-notice-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
       "file": "work/correct-category-fixtures.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
@@ -19089,6 +19177,39 @@
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "work/status-browser-check.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/settings-output-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 3,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/settings-output-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 3,
+      "column": 96,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "work/settings-output-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -19452,6 +19573,28 @@
       "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
       "docs": "",
       "file": "work/fragment-check.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/settings-role-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 4,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/settings-role-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -20707,7 +20850,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 84,
@@ -20718,7 +20861,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 111,
@@ -20729,7 +20872,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Diagnostic logging",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
       "line": 135,
@@ -20751,7 +20894,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 159,
@@ -20762,7 +20905,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 216,
@@ -21180,7 +21323,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Cart.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 258,
@@ -21191,7 +21334,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Cart.php",
       "batch": "Database query safety and cost",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 0,
