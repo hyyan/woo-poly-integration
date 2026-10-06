@@ -96,8 +96,8 @@ class Attributes implements TaxonomiesInterface
             return false;
         }
 
-        $isAttrPage = isset($_GET['page']) &&
-                esc_attr($_GET['page']) === 'product_attributes';
+        $isAttrPage = isset($_GET['page']) && is_string($_GET['page']) &&
+                sanitize_key(wp_unslash($_GET['page'])) === 'product_attributes';
 
         if (!$isAttrPage) {
             return false;

@@ -48,12 +48,16 @@ class Categories implements TaxonomiesInterface
      */
     public function syncProductCatCustomFields($termID, $ttID = '', $taxonomy = '')
     {
-        if (isset($_POST['display_type']) && 'product_cat' === $taxonomy) {
+        if (isset($_POST['display_type']) && is_string($_POST['display_type']) && 'product_cat' === $taxonomy) {
             $this->doSyncProductCatCustomFields(
-                    $termID, 'display_type', esc_attr($_POST['display_type'])
+                    $termID, 'display_type', sanitize_key(wp_unslash($_POST['display_type']))
             );
         }
-        if (isset($_POST['product_cat_thumbnail_id']) && 'product_cat' === $taxonomy) {
+        if (isset($_POST['product_cat_thumbnail_id']) &&
+                (is_int($_POST['product_cat_thumbnail_id']) ||
+                (is_string($_POST['product_cat_thumbnail_id']) &&
+                ('' === $_POST['product_cat_thumbnail_id'] || ctype_digit($_POST['product_cat_thumbnail_id'])))) &&
+                'product_cat' === $taxonomy) {
             $this->doSyncProductCatCustomFields(
                     $termID, 'thumbnail_id', absint($_POST['product_cat_thumbnail_id'])
             );
@@ -79,11 +83,15 @@ class Categories implements TaxonomiesInterface
     {
 
         /* We sync custom fields only for translation */
-        if (!(isset($_GET['from_tag']) && isset($_GET['new_lang']))) {
+        if (!(isset($_GET['from_tag'], $_GET['new_lang']) && is_string($_GET['new_lang']) &&
+                (is_int($_GET['from_tag']) || (is_string($_GET['from_tag']) && ctype_digit($_GET['from_tag']))))) {
             return false;
         }
 
-        $ID = esc_attr($_GET['from_tag']);
+        $ID = absint($_GET['from_tag']);
+        if (!$ID) {
+            return false;
+        }
         $type = get_term_meta($ID, 'display_type', true);
         $thumbID = absint(get_term_meta($ID, 'thumbnail_id', true));
         $image = $thumbID ?

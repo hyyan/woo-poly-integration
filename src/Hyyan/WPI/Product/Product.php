@@ -227,7 +227,7 @@ class Product
         $lang = '';
 
         if (isset($_GET['new_lang'])) {
-            $lang = esc_attr($_GET['new_lang']);
+            $lang = is_string($_GET['new_lang']) ? sanitize_text_field(wp_unslash($_GET['new_lang'])) : '';
         } elseif (!empty($post)) {
             $lang = pll_get_post_language($post->ID);
         } else {
@@ -244,8 +244,10 @@ class Product
     public function wpi_editor_title($title)
     {
         // Polylang sets the 'from_post' parameter
-        if (isset($_GET['from_post'])) {
-            $my_post = get_post($_GET['from_post']);
+        if (isset($_GET['from_post']) && (is_int($_GET['from_post']) ||
+                (is_string($_GET['from_post']) && ctype_digit($_GET['from_post'])))) {
+            $source_id = absint($_GET['from_post']);
+            $my_post = $source_id && current_user_can('read_post', $source_id) ? get_post($source_id) : false;
             if ($my_post) {
                 return $my_post->post_title;
             }
@@ -257,8 +259,10 @@ class Product
     public function wpi_editor_content($content)
     {
         // Polylang sets the 'from_post' parameter
-        if (isset($_GET['from_post'])) {
-            $my_post = get_post($_GET['from_post']);
+        if (isset($_GET['from_post']) && (is_int($_GET['from_post']) ||
+                (is_string($_GET['from_post']) && ctype_digit($_GET['from_post'])))) {
+            $source_id = absint($_GET['from_post']);
+            $my_post = $source_id && current_user_can('read_post', $source_id) ? get_post($source_id) : false;
             if ($my_post) {
                 return $my_post->post_content;
             }
@@ -270,8 +274,10 @@ class Product
     public function wpi_editor_excerpt($excerpt)
     {
         // Polylang sets the 'from_post' parameter
-        if (isset($_GET['from_post'])) {
-            $my_post = get_post($_GET['from_post']);
+        if (isset($_GET['from_post']) && (is_int($_GET['from_post']) ||
+                (is_string($_GET['from_post']) && ctype_digit($_GET['from_post'])))) {
+            $source_id = absint($_GET['from_post']);
+            $my_post = $source_id && current_user_can('read_post', $source_id) ? get_post($source_id) : false;
             if ($my_post) {
                 return $my_post->post_excerpt;
             }

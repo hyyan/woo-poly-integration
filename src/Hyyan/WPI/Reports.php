@@ -40,8 +40,8 @@ class Reports
      */
     public function __construct()
     {
-        $this->tab = isset($_GET['tab']) ? esc_attr($_GET['tab']) : false;
-        $this->report = isset($_GET['report']) ? esc_attr($_GET['report']) : false;
+        $this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;
+        $this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;
 
         if ('off' === Settings::getOption('reports', Features::getID(), 'on')) {
             return;
@@ -218,22 +218,27 @@ class Reports
             return false;
         }
 
-        $IDS = (array) $_GET['product_ids'];
+        $IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['product_ids']), function ($id) {
+            return is_int($id) || (is_string($id) && ctype_digit($id));
+        }));
+        $_GET['product_ids'] = $IDS;
         $extendedIDS = array();
 
         if (static::isCombine()) {
             foreach ($IDS as $ID) {
                 $translations = Utilities::getProductTranslationsArrayByID($ID);
-                $extendedIDS = array_merge($extendedIDS, $translations);
+                $extendedIDS = array_merge($extendedIDS, array_values($translations));
             }
         } elseif (
-                isset($_GET['lang']) &&
-                esc_attr($_GET['lang']) !== 'all'
+                isset($_GET['lang']) && is_string($_GET['lang']) &&
+                sanitize_key(wp_unslash($_GET['lang'])) !== 'all'
         ) {
-            $lang = esc_attr($_GET['lang']);
+            $lang = sanitize_key(wp_unslash($_GET['lang']));
             foreach ($IDS as $ID) {
                 $translation = Utilities::getProductTranslationByID($ID, $lang);
-                $extendedIDS[] = $translation->id;
+                if ($translation) {
+                    $extendedIDS[] = $translation->get_id();
+                }
             }
         }
 
@@ -265,11 +270,14 @@ class Reports
 
         if (
                 !static::isCombine() &&
-                (isset($_GET['lang']) && esc_attr($_GET['lang']) !== 'all')
+                (isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) !== 'all')
         ) {
-            $IDS = (array) $_GET['show_categories'];
+            $IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['show_categories']), function ($id) {
+                return is_int($id) || (is_string($id) && ctype_digit($id));
+            }));
+            $_GET['show_categories'] = $IDS;
             $extendedIDS = array();
-            $lang = esc_attr($_GET['lang']);
+            $lang = sanitize_key(wp_unslash($_GET['lang']));
 
             foreach ($IDS as $ID) {
                 $translation = pll_get_term($ID, $lang);
@@ -327,6 +335,6 @@ class Reports
     public static function isCombine()
     {
         return !pll_current_language() ||
-                (isset($_GET['lang']) && esc_attr($_GET['lang']) === 'all');
+                (isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');
     }
 }

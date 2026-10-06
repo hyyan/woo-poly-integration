@@ -1,0 +1,195 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m[33;1mW[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m.[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m.[41;37mF[0m                                              20 / 20 (100%)
+
+Time: 00:00.138, Memory: 103.05 MB
+
+There were 17 failures:
+
+1) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@missing nonce with data ('_wpnonce_add-lang', null)
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+2) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@wrong nonce with data ('_wpnonce_add-lang', 'invalid')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+3) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@array nonce with data ('_wpnonce_add-lang', ['invalid'])
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+4) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@missing name with data ('name', null)
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+5) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@array name with data ('name', ['name'])
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+6) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@missing locale with data ('locale', null)
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+7) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@array locale with data ('locale', ['de_DE'])
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/Array.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+8) RequestInputSecurityTest::testInvalidLanguageRequestsDoNotStartDownloads@path locale with data ('locale', '../../woopoly-request-test')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/../../woopoly-request-test.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:77
+
+9) RequestInputSecurityTest::testUnprivilegedLanguageRequestsDoNotStartDownloads#0 with data ('lab-subscriber')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:101
+
+10) RequestInputSecurityTest::testUnprivilegedLanguageRequestsDoNotStartDownloads#1 with data ('lab-customer')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:101
+
+11) RequestInputSecurityTest::testUnprivilegedLanguageRequestsDoNotStartDownloads#2 with data ('lab-manager')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => 'https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/zz_SECURITY.zip',
++]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:101
+
+12) RequestInputSecurityTest::testEditorDefaultsRespectSourceReadPermission#0 with data ('wpi_editor_title', 'post_title')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Default'
++'Private title'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:137
+
+13) RequestInputSecurityTest::testEditorDefaultsRespectSourceReadPermission#1 with data ('wpi_editor_content', 'post_content')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Default'
++'Private content'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:137
+
+14) RequestInputSecurityTest::testEditorDefaultsRespectSourceReadPermission#2 with data ('wpi_editor_excerpt', 'post_excerpt')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Default'
++'Private excerpt'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:137
+
+15) RequestInputSecurityTest::testProductLanguageRejectsArrayAndNormalizesSlashedText
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-''
++'Array'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:149
+
+16) RequestInputSecurityTest::testReportRouteRejectsArrayInput
+Failed asserting that 'Array' is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:159
+
+17) RequestInputSecurityTest::testCategoryCopyRejectsArraySourceWithoutOutput
+Failed asserting that null is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RequestInputSecurityTest.php:205
+
+[37;41mFAILURES![0m
+[37;41mTests: 20[0m[37;41m, Assertions: 43[0m[37;41m, Failures: 17[0m[37;41m, Warnings: 3[0m[37;41m.[0m

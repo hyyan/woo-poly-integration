@@ -139,7 +139,7 @@ class Coupon
     {
         if (is_admin() && (!is_ajax())) {
         global $pagenow;
-            if ( ($pagenow) && ( $pagenow == 'admin.php' ) && ($_GET[ 'page' ] == 'mlang_strings') ) {
+            if ( ($pagenow) && ( $pagenow == 'admin.php' ) && (isset($_GET['page']) && is_string($_GET['page']) && sanitize_key(wp_unslash($_GET['page'])) === 'mlang_strings') ) {
                   $this->registerCouponStringsForTranslation();
             }
         }

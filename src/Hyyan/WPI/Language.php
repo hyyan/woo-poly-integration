@@ -76,15 +76,21 @@ class Language
             return false;
         }
 
-        if (
-                !isset($_REQUEST['pll_action']) ||
-                'add' !== esc_attr($_REQUEST['pll_action'])
+        if ((!current_user_can('manage_options') && !current_user_can('manage_languages')) ||
+                !isset($_REQUEST['pll_action'], $_REQUEST['name'], $_REQUEST['locale'], $_REQUEST['_wpnonce_add-lang']) ||
+                !is_string($_REQUEST['pll_action']) || !is_string($_REQUEST['name']) ||
+                !is_string($_REQUEST['locale']) || !is_string($_REQUEST['_wpnonce_add-lang']) ||
+                'add' !== sanitize_key(wp_unslash($_REQUEST['pll_action'])) ||
+                !wp_verify_nonce(wp_unslash($_REQUEST['_wpnonce_add-lang']), 'add-lang')
         ) {
             return false;
         }
 
-        $name = esc_attr($_REQUEST['name']);
-        $locale = esc_attr($_REQUEST['locale']);
+        $name = sanitize_text_field(wp_unslash($_REQUEST['name']));
+        $locale = sanitize_text_field(wp_unslash($_REQUEST['locale']));
+        if (!preg_match('/^[A-Za-z][A-Za-z0-9_@.-]*$/D', $locale)) {
+            return false;
+        }
 
         if ('en_us' === strtolower($locale)) {
             return true;
@@ -94,7 +100,7 @@ class Language
             return TranslationsDownloader::download($locale, $name);
         } catch (\RuntimeException $ex) {
             add_settings_error(
-                    'general', $ex->getCode(), $ex->getMessage()
+                    'general', $ex->getCode(), wp_kses_post($ex->getMessage())
             );
 
             return false;

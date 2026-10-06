@@ -64,3 +64,8 @@ Forum topics FORUM-021 through FORUM-040 have individual dispositions in the for
 | SEC-009 | Executable status report and social view lack direct file guards | Fixed and verified, standalone regression and native Chrome direct and embedded checks pass | Direct requests return no content, normal WordPress report and widgets preserved |
 
 | SEC-010 | Translated template text, gateway email instructions, bank heading and notice class attributes printed without context escaping | Shared output batch corrected, 17 new regressions and Chrome before and after checks pass | Plain text escaped, permitted rich HTML and all original widgets retained |
+
+| SEC-011 | Early translation download callback accepts request data before native Polylang validation | Corrected in shared request batch, native nonce, capabilities, scalar inputs and safe locale required | Denied and malformed requests make no transport calls, permitted native form nonce reaches existing downloader |
+| SEC-012 | Editor defaults copy private source content without source read permission | Corrected in shared request batch, integer source and read_post permission checked before copying | Authorized defaults preserved, denied source title, content and excerpt retain defaults |
+| SEC-013 | Report and taxonomy request values accept malformed shapes | Corrected in shared request batch, scalar selectors and normalized integer IDs | Nested IDs ignored, report translations and native category saves and image clearing preserved |
+| COMPAT-007 | Combined product report overwrites earlier selected IDs when merging language keys | Corrected and verified in shared request batch | Both selected source products and both translations remain in the native report |

@@ -1,0 +1,50 @@
+{
+  "callbacks": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"nativeLanguageForm\":true,\"status\":200,\"result\":{\"success\":true,\"data\":{\"missing nonce\":{\"result\":false,\"transportCalls\":0},\"wrong nonce\":{\"result\":false,\"transportCalls\":0},\"array locale\":{\"result\":false,\"transportCalls\":0},\"path locale\":{\"result\":false,\"transportCalls\":0},\"normal administrator\":{\"result\":false,\"transportCalls\":1},\"lab-subscriber\":{\"result\":false,\"transportCalls\":0},\"lab-customer\":{\"result\":false,\"transportCalls\":0},\"lab-manager\":{\"result\":false,\"transportCalls\":0},\"existingFrenchPack\":true,\"errorHtml\":\"WooCommerce translation Request fixture(zz_SECURITY) can not be found in : <a href=\\\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\\\">https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2</a>\",\"administratorCopy\":[\"Private fixture title\",\"Private fixture content\",\"Private fixture excerpt\"],\"contributorCopy\":[\"Default\",\"Default\",\"Default\"],\"normalizedReports\":{\"products\":[],\"categories\":[]}}}}\n```"
+      }
+    ]
+  },
+  "nativeReport": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"heading\":\"Sales by product\",\"selectedProducts\":[\"109\",\"112\",\"115\",\"116\"],\"showing\":\"Security fixture en (#109), Security fixture de (#112), Test shirt en (#115), Test shirt de (#116)\",\"hasFatal\":false}\n```"
+      }
+    ]
+  },
+  "categoryInvalidNonce": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"status\":403,\"denied\":true,\"fatal\":false}\n```"
+      }
+    ]
+  },
+  "categorySave": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"status\":200,\"url\":\"http://localhost:8098/wp-admin/term.php?taxonomy=product_cat&tag_ID=114&post_type=product&message=3\",\"successNotice\":true,\"fatal\":false}\n```"
+      }
+    ]
+  },
+  "categoryRemove": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"thumbnailAfterNativeRemove\":\"\",\"status\":200,\"saved\":true,\"fatal\":false}\n```"
+      }
+    ]
+  },
+  "nativePages": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n[{\"path\":\"/wp-admin/edit.php?post_type=product&page=product_attributes\",\"status\":200,\"title\":\"Attributes ‹ WooPoly Compatibility Lab — WordPress\",\"fatal\":false,\"fields\":6},{\"path\":\"/wp-admin/admin.php?page=mlang_strings\",\"status\":200,\"title\":\"Translations ‹ WooPoly Compatibility Lab — WordPress\",\"fatal\":false,\"fields\":75},{\"path\":\"/wp-admin/admin.php?page=wc-settings&tab=advanced\",\"status\":200,\"title\":\"WooCommerce settings ‹ WooPoly Compatibility Lab — WordPress\",\"fatal\":false,\"fields\":21}]\n```"
+      }
+    ]
+  }
+}

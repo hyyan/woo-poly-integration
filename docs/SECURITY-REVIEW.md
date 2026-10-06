@@ -77,3 +77,42 @@ The full findings review remains incomplete. The earlier pending CSV import patc
 The shared output batch corrects seven translated templates, gateway instructions for BACS, COD and cheque, the BACS bank heading and notice class attributes. Plain translation output uses esc_html_e or esc_html__. Intended rich text uses wp_kses_post and the endpoint translation URL uses esc_url. Gateway output is filtered after formatting. Flash notice class values use esc_attr while existing owned HTML messages and social widgets retain their composition. Public hooks, message identifiers, original translation strings and signatures remain unchanged.
 
 The production file list and reasons are recorded in the journal. TemplateOutputSecurityTest.php and GatewayOutputSecurityTest.php add 17 shared regression cases. The complete suite passes 100 tests with 275 assertions. Before and after Chrome evidence and the full checker scan use the output-batch prefix. Plugin Check now reports 302 production rows, 92 errors and 210 warnings. Ten remaining output rows are explicitly reviewed native or owned HTML. The downloader error boundary, script wrapper callers and settings renderer still require source review. The batch inventory distinguishes those pending cases from corrected source and reviewed HTML. No complete release clearance is claimed.
+
+| Output batch file | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Views/admin.php | Escape the settings heading |
+| src/Hyyan/WPI/Views/Admin/about.php | Escape labels and filter translated descriptive HTML |
+| src/Hyyan/WPI/Views/Admin/getHelp.php | Escape help text and link labels |
+| src/Hyyan/WPI/Views/Admin/support.php | Escape the heading and filter translated support HTML |
+| src/Hyyan/WPI/Views/Messages/activateError.php | Escape dependency notice text and version labels |
+| src/Hyyan/WPI/Views/Messages/endpointsTranslations.php | Escape the translation URL and label and filter the formatted notice |
+| src/Hyyan/WPI/Views/Messages/support.php | Escape the heading and filter translated notice HTML |
+| src/Hyyan/WPI/Gateways/GatewayBACS.php | Filter formatted customer instructions and bank details and escape the bank heading |
+| src/Hyyan/WPI/Gateways/GatewayCOD.php | Filter formatted customer instructions in email and the thank you page |
+| src/Hyyan/WPI/Gateways/GatewayCheque.php | Filter formatted customer instructions in email and the thank you page |
+| src/Hyyan/WPI/Tools/FlashMessages.php | Escape notice class attributes and retain existing message HTML |
+| tests/integration/TemplateOutputSecurityTest.php | Shared negative and preservation cases for seven templates |
+| tests/integration/GatewayOutputSecurityTest.php | Shared negative and preservation cases for all gateways and notice attributes |
+| docs/BATCHES.md and docs/evidence/batch-inventory.json | Group checker findings and forum reports and retain explicit dispositions |
+| goal.txt, docs/ISSUES.md, docs/JOURNAL.md and this review | Record the batch workflow, verification, scope and remaining work |
+| docs/evidence files with template-output, gateway-output and output-batch prefixes | Preserve baseline failures, current regressions, browser acceptance, lint and checker output |
+| docs/evidence/plugin-check-security-review-normalized.json | Update individual output finding dispositions from the inspected batch |
+
+## Request boundary batch
+
+The next shared batch corrects the early language download request boundary and protected editor defaults. It validates and normalizes report and taxonomy request data while preserving native save verification and read only filters. The downloader exception values are data until their sole production caller displays them. Language.php now filters that HTML with wp_kses_post. The six exception escaping findings have that source disposition and a malicious translation regression.
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Language.php | Verify native language nonce and management permission, validate fields and locale, filter displayed error HTML |
+| src/Hyyan/WPI/Product/Product.php | Validate source IDs and source read permission before copying defaults, sanitize language input |
+| src/Hyyan/WPI/Reports.php | Validate route strings, normalize ID lists and retain every selected product when combining translations |
+| src/Hyyan/WPI/Taxonomies/Categories.php | Validate copy and save values, retain native empty thumbnail clearing |
+| src/Hyyan/WPI/Taxonomies/Attributes.php | Validate and sanitize the display route selector |
+| src/Hyyan/WPI/Coupon.php | Guard missing or malformed display route input |
+| src/Hyyan/WPI/Endpoints.php | Validate and sanitize the settings tab selector |
+| tests/integration/RequestInputSecurityTest.php | Shared permission, malformed input, output boundary and behavior preservation regressions |
+| docs/evidence files with request prefixes | Preserve failing cases, current suite, native browser workflows, caller boundaries, lint and full checker output |
+| docs/BATCHES.md, goal.txt, docs/ISSUES.md, docs/JOURNAL.md and security review inventories | Record shared dispositions, verification, changed files and remaining work |
+
+The complete suite passes 123 tests and 337 assertions. Current Plugin Check still has 298 production rows. Source dispositions cover 79 current request rows and 16 output rows. Native browser checks and the controlled callback checks are distinguished in the journal. The full compatibility matrix, remaining save paths, actual release archive scan and Plugins Team submission remain pending.

@@ -254,7 +254,7 @@ class Endpoints
         /*
          * this only gets shown once before being dismissed so show only in the relevant place
          */
-        if ( $screen && $screen->id == 'woocommerce_page_wc-settings' && isset( $_GET[ 'tab' ] ) && $_GET[ 'tab' ] == 'advanced' ) {
+        if ( $screen && $screen->id == 'woocommerce_page_wc-settings' && isset( $_GET[ 'tab' ] ) && is_string( $_GET[ 'tab' ] ) && sanitize_key( wp_unslash( $_GET[ 'tab' ] ) ) === 'advanced' ) {
             FlashMessages::add(
 			MessagesInterface::MSG_ENDPOINTS_TRANSLATION, Plugin::getView( 'Messages/endpointsTranslations' )
             );
