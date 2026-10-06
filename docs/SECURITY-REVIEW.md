@@ -340,3 +340,20 @@ The local fixture configures only the separate fresh package site and is exclude
 The automatic creation change operates behind the existing administration capabilities and feature setting. It copies content only from the corresponding source store page. Existing translated content is not replaced. Native block serialization is preserved without manual parsing. Classic extension shortcode filters remain. Custom translated endpoint slugs, filled checkout and account mutations have not been accepted by this batch.
 
 Content insertion uses wp_slash so serialized block JSON retains escaped quotes. The final regression and native fixtures verify this through actual WordPress insertion and block parsing.
+
+## Translated account endpoint batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Endpoints.php | Retain configured endpoint source slugs, build native target language endpoint links and preserve pagination or address values |
+| tests/integration/EndpointLanguageSwitchTest.php | Nine real WordPress and Polylang cases with saved and restored catalogs, language and native query state |
+| docs/evidence/endpoints-tests-before.txt, endpoints-tests-targeted.txt and endpoints-tests-after.txt | Eight baseline failures, nine corrected cases and all 244 tests with 680 assertions |
+| docs/evidence/endpoints-chrome.json | Actual lost endpoint baseline, bilingual native links, pretty and plain navigation, actual marked view order and helper removal |
+| docs/evidence/endpoints-lint.txt | Source and regression PHP syntax checks |
+| docs/evidence/endpoints-package-build.txt and endpoints-package-contents.json | Installed actual corrected ZIP and complete byte manifest |
+| docs/evidence/endpoints-plugin-check.json and endpoints-plugin-check.stderr.txt | Complete installed actual package check without finding exclusions |
+| docs/evidence/endpoints-forum-review.json and wordpress-support-capture.json | Eight reviewed captured topics, source fingerprints, evidence and individual unresolved cases |
+| docs/evidence/batch-inventory.json | Current package dispositions and report content status |
+| docs/ACCEPTANCE.md, docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Shared cause, scoped proof, counts and remaining gates |
+
+Endpoint links keep native page origin and query data. This change does not bypass native account, order or password permissions and does not create account mutations. The read only local helper invoked native Polylang output behind local environment, owned table prefix and administrator guards and was removed. Quoted block page preservation from the prior batch remains covered by the full suite. Payment and receipt endpoints still require real checkout acceptance.

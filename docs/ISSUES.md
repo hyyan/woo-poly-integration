@@ -51,7 +51,7 @@ Individual forum dispositions are in docs/evidence/wordpress-support-capture.jso
 | COMPAT-005 / FORUM-022 | Cart fragments declare jquery-cookie while consuming Cookies | Fixed and verified: native graph regression, Chrome isolated before/after and bilingual mini cart flow | Existing cookie API is loaded before fragments, quantities and translated contents preserved |
 | COMPAT-006 | English product page shows German related product | Resolved as malformed lab data: German simple product had English category. Native category correction and bilingual Chrome checks pass. No production change | Correct fixture categories, preserve existing product behavior |
 
-Forum topics FORUM-021 through FORUM-040 have individual dispositions in the forum inventory. Forty topics are triaged and 383 remain pending.
+Forum topics FORUM-021 through FORUM-040 have individual dispositions in the forum inventory. At that checkpoint, forty topics were triaged and 383 remained pending. Current counts appear in the endpoint batch below.
 
 | SEC-005 | Security maintenance review and expanded regression coverage | Reported removal paths and native client inspected, 72 tests and 189 assertions pass, current Chrome rejection and native deletion pass | Full checker dispositions and actual release artifact review remain pending, see SECURITY-REVIEW.md |
 
@@ -124,3 +124,7 @@ The actual update archive scan retains 231 rows with inspected source dispositio
 | COMPAT-024 | Automatic page creation replaces native WooCommerce block cart and checkout with classic shortcodes | Corrected both page types together, preserving classic paths | Two baseline failures, four format regressions pass, identical native block content hashes and actual German block cart render |
 
 Fresh store page acceptance covers native creation and empty cart, checkout and account routing in English and German. Custom endpoint translations, actual purchases and the full store matrix remain pending.
+
+| COMPAT-025 | Native language switch loses the active account endpoint and uses canonical keys instead of configured source slugs | Corrected in shared endpoint batch using existing URL builder and retained source slug map, including endpoint values | Eight baseline failures, nine shared cases pass, actual native custom and translated slugs, order pagination, address type, lost password and plain permalink language navigation pass |
+
+Eight related forum contents were reviewed together. FORUM-119 reproduces the endpoint loss symptom corrected by this batch. Setup, catalog and theme reports retain their individual limits. Forty eight forum reports now have content dispositions and 375 await content review. Order payment and receipt endpoint purchases remain pending.

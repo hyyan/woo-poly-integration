@@ -6212,10 +6212,12 @@
       "file": "forum/49f76a8a7e4e018d.html",
       "status": "captured",
       "id": "FORUM-051",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: configuration guidance, catalog acceptance pending",
       "captured_post_count": 2,
-      "batch": "Needs content classification",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "English endpoint UI with Polylang enabled. Replies require linked pages, endpoint string translation and permalink refresh. Current custom endpoint paths work in both languages.",
+      "next_check": "Complete native German catalog display acceptance."
     },
     {
       "url": "https://wordpress.org/support/topic/products-not-added-to-translated-categories/",
@@ -6443,10 +6445,12 @@
       "file": "forum/8b872684863c0eb5.html",
       "status": "captured",
       "id": "FORUM-072",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: dependency catalog problem, Greek reproduction pending",
       "captured_post_count": 11,
-      "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "Greek WooCommerce strings remain mixed even with Polylang and this plugin disabled. Report includes WooCommerce 3.6.5, WordPress 5.2.2 and PHP 7.2.11. Linked page creation does not prove catalog loading.",
+      "next_check": "Verify Greek native WooCommerce catalogs and locale loading with plugin enabled and disabled."
     },
     {
       "url": "https://wordpress.org/support/topic/1-string-in-default-language-woocommerce-terms-and-conditions-checkbox-text/",
@@ -6960,10 +6964,12 @@
       "file": "forum/f50588dfaed3e6b0.html",
       "status": "captured",
       "id": "FORUM-119",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: reproduced endpoint switch defect corrected",
       "captured_post_count": 1,
-      "batch": "Needs content classification",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "Lost password and other translated endpoints disappear on language switching. Actual current native language links reproduced the lost endpoint. Shared correction preserves source slugs and values.",
+      "next_check": "Account routes verified, payment and order receipt endpoints still need purchase acceptance."
     },
     {
       "url": "https://wordpress.org/support/topic/dissable-payment-gateway-for-second-language-2/",
@@ -7521,10 +7527,12 @@
       "file": "forum/1c425fed7e875a1c.html",
       "status": "captured",
       "id": "FORUM-170",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: order receipt integration reproduction pending",
       "captured_post_count": 3,
-      "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "English order received route fails after payment on WooCommerce 3.2.6, Dutch works. Replies request endpoint translations, permalink refresh and a standard gateway comparison. No followup reproduction.",
+      "next_check": "Complete bilingual purchases and gateway receipt paths."
     },
     {
       "url": "https://wordpress.org/support/topic/hyyan-woocommerce-issue-when-clicking-products/",
@@ -8291,10 +8299,12 @@
       "file": "forum/0b303a11469edd1c.html",
       "status": "captured",
       "id": "FORUM-240",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: page and catalog setup, Spanish acceptance pending",
       "captured_post_count": 3,
-      "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "Spanish cart, checkout and account translation report. Replies require WooCommerce catalogs and linked store pages. No confirmed source defect in captured discussion.",
+      "next_check": "Verify native Spanish catalogs and full linked checkout."
     },
     {
       "url": "https://wordpress.org/support/topic/rest-api-slow/",
@@ -8753,10 +8763,12 @@
       "file": "forum/423d69a881024028.html",
       "status": "captured",
       "id": "FORUM-282",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: historical theme or filter interaction, full reproduction pending",
       "captured_post_count": 11,
-      "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "Understrap shop links and checkout fail despite individually working pages. Discussion proposes reselected options and page ID filter priority. Later replies still report wrong cart notice links.",
+      "next_check": "Run actual cart notice and checkout acceptance, then isolate theme overrides without arbitrary filter priority changes."
     },
     {
       "url": "https://wordpress.org/support/topic/cart-checkout-my-account-doesnt-translated/",
@@ -8764,10 +8776,12 @@
       "file": "forum/037d0b52eb29cbb5.html",
       "status": "captured",
       "id": "FORUM-283",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: primary setup resolved, secondary Spanish case pending",
       "captured_post_count": 6,
-      "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "Initial author confirms adding page translations from default language resolves the report. Another Spanish user reports continued failure without sufficient reproduction.",
+      "next_check": "Keep the secondary Spanish catalog and checkout case open."
     },
     {
       "url": "https://wordpress.org/support/topic/woo-product-details-page-doesnt-work/",
@@ -8973,10 +8987,12 @@
       "file": "forum/f79bd07d578d95da.html",
       "status": "captured",
       "id": "FORUM-302",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed: historical endpoint stacking not reproduced currently",
       "captured_post_count": 3,
-      "batch": "Needs content classification",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch": "Language and page translation",
+      "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered",
+      "report_summary": "WooCommerce 2.6.1 and plugin 0.25 account menu links stack endpoint paths. Reply says a maintained fork corrected it. Current actual nested order route menu links stay at the account base.",
+      "next_check": "Current native menu proof retained, older supported stack acceptance still required."
     },
     {
       "url": "https://wordpress.org/support/topic/fatal-error-call-to-a-member-function-is_visible-on-boolean/",
@@ -21304,7 +21320,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "store-pages-plugin-check.json",
+  "package_scan": "endpoints-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -23617,7 +23633,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.copyCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
-      "line": 257,
+      "line": 262,
       "column": 81,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23628,7 +23644,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 257,
+      "line": 262,
       "column": 112,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23639,7 +23655,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 257,
+      "line": 262,
       "column": 158,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23848,7 +23864,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceReplace. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_archive_sha256": "47561872ab7f281b2600f532dadb5bad4df0e12eb5d05a3b30dd56fe6f60a76b",
+  "package_archive_sha256": "8c3da7a373fa1786f7f3d68dfab66cf2e08d4b2566fb59d32d69da34c1b3eda4",
   "package_file_count": 73,
-  "previous_package_scan": "distribution-package-plugin-check.json"
+  "previous_package_scan": "store-pages-plugin-check.json"
 }

@@ -26,6 +26,8 @@ class Endpoints
      */
     protected $endpoints = array();
 
+    protected $endpointSources = array();
+
     /**
      * Construct object.
      */
@@ -87,6 +89,7 @@ class Endpoints
         }
 
         $vars = WC()->query->get_query_vars();
+        $this->endpointSources = $vars;
         foreach ($vars as $key => $value) {
             WC()->query->query_vars[$key] = $this->getEndpointTranslation($value);
         }
@@ -173,6 +176,7 @@ class Endpoints
             $url = trailingslashit($permalink)
                     .$endpoint
                     .'/'
+                    .($value !== '' ? trailingslashit($value) : '')
                     .$query_string;
         } else {
             $url = add_query_arg($endpoint, $value, $permalink);
@@ -199,8 +203,9 @@ class Endpoints
         $endpoints = WC()->query->get_query_vars();
         foreach ($endpoints as $key => $value) {
             if (isset($wp->query_vars[$key])) {
-                $link = str_replace(
-                        $value, pll_translate_string($key, $slug), $link
+                $source = isset($this->endpointSources[$key]) ? $this->endpointSources[$key] : $key;
+                $link = $this->rebuildUrl(
+                        pll_translate_string($source, $slug), $wp->query_vars[$key], $link
                 );
                 break;
             }

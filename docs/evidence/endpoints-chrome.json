@@ -1,0 +1,227 @@
+{
+  "before": {
+    "url": "http://localhost:8098/woopoly-package-lab/my-account/order-history/",
+    "title": "Orders \u2013 WooPoly package acceptance",
+    "active": "Orders",
+    "languages": [
+      {
+        "text": "English",
+        "url": "http://localhost:8098/woopoly-package-lab/my-account/"
+      },
+      {
+        "text": "Deutsch",
+        "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/"
+      }
+    ],
+    "account": [
+      {
+        "text": "Dashboard",
+        "url": "http://localhost:8098/woopoly-package-lab/my-account/"
+      },
+      {
+        "text": "Orders",
+        "url": "http://localhost:8098/woopoly-package-lab/my-account/order-history/"
+      },
+      {
+        "text": "Downloads",
+        "url": "http://localhost:8098/woopoly-package-lab/my-account/downloads/"
+      },
+      {
+        "text": "Addresses",
+        "url": "http://localhost:8098/woopoly-package-lab/my-account/edit-address/"
+      },
+      {
+        "text": "Account details",
+        "url": "http://localhost:8098/woopoly-package-lab/my-account/edit-account/"
+      }
+    ]
+  },
+  "after": [
+    {
+      "path": "my-account/order-history/2/",
+      "status": 200,
+      "url": "http://localhost:8098/woopoly-package-lab/my-account/order-history/2/",
+      "title": "Orders (page 2) \u2013 WooPoly package acceptance",
+      "languages": [
+        {
+          "text": "English",
+          "url": "http://localhost:8098/woopoly-package-lab/my-account/order-history/2/"
+        },
+        {
+          "text": "Deutsch",
+          "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellverlauf/2/"
+        }
+      ],
+      "active": "Orders",
+      "criticalError": false
+    },
+    {
+      "path": "de/my-account-2/bestellverlauf/2/",
+      "status": 200,
+      "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellverlauf/2/",
+      "title": "Orders (page 2) \u2013 WooPoly package acceptance",
+      "languages": [
+        {
+          "text": "English",
+          "url": "http://localhost:8098/woopoly-package-lab/my-account/order-history/2/"
+        },
+        {
+          "text": "Deutsch",
+          "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellverlauf/2/"
+        }
+      ],
+      "active": "Orders",
+      "criticalError": false
+    },
+    {
+      "path": "my-account/edit-address/billing/",
+      "status": 200,
+      "url": "http://localhost:8098/woopoly-package-lab/my-account/edit-address/billing/",
+      "title": "Addresses \u2013 WooPoly package acceptance",
+      "languages": [
+        {
+          "text": "English",
+          "url": "http://localhost:8098/woopoly-package-lab/my-account/edit-address/billing/"
+        },
+        {
+          "text": "Deutsch",
+          "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/adressen/billing/"
+        }
+      ],
+      "active": "Addresses",
+      "criticalError": false
+    },
+    {
+      "path": "de/my-account-2/adressen/billing/",
+      "status": 200,
+      "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/adressen/billing/",
+      "title": "Addresses \u2013 WooPoly package acceptance",
+      "languages": [
+        {
+          "text": "English",
+          "url": "http://localhost:8098/woopoly-package-lab/my-account/edit-address/billing/"
+        },
+        {
+          "text": "Deutsch",
+          "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/adressen/billing/"
+        }
+      ],
+      "active": "Addresses",
+      "criticalError": false
+    },
+    {
+      "path": "my-account/lost-password/",
+      "status": 200,
+      "url": "http://localhost:8098/woopoly-package-lab/my-account/lost-password/",
+      "title": "Lost password \u2013 WooPoly package acceptance",
+      "languages": [
+        {
+          "text": "English",
+          "url": "http://localhost:8098/woopoly-package-lab/my-account/lost-password/"
+        },
+        {
+          "text": "Deutsch",
+          "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/passwort-vergessen/"
+        }
+      ],
+      "criticalError": false
+    },
+    {
+      "path": "de/my-account-2/passwort-vergessen/",
+      "status": 200,
+      "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/passwort-vergessen/",
+      "title": "Lost password \u2013 WooPoly package acceptance",
+      "languages": [
+        {
+          "text": "English",
+          "url": "http://localhost:8098/woopoly-package-lab/my-account/lost-password/"
+        },
+        {
+          "text": "Deutsch",
+          "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/passwort-vergessen/"
+        }
+      ],
+      "criticalError": false
+    }
+  ],
+  "clicked": {
+    "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellverlauf/2/",
+    "title": "Orders (page 2) \u2013 WooPoly package acceptance",
+    "active": "Orders",
+    "menuUrls": [
+      "http://localhost:8098/woopoly-package-lab/de/my-account-2/",
+      "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellverlauf/",
+      "http://localhost:8098/woopoly-package-lab/de/my-account-2/downloads-de/",
+      "http://localhost:8098/woopoly-package-lab/de/my-account-2/adressen/",
+      "http://localhost:8098/woopoly-package-lab/de/my-account-2/edit-account/"
+    ],
+    "criticalError": false
+  },
+  "plain": {
+    "url": "http://localhost:8098/woopoly-package-lab/?page_id=8&order-history=2",
+    "title": "Orders (page 2) \u2013 WooPoly package acceptance",
+    "active": "Orders",
+    "languages": [
+      {
+        "text": "English",
+        "url": "http://localhost:8098/woopoly-package-lab/?page_id=8&order-history=2"
+      },
+      {
+        "text": "Deutsch",
+        "url": "http://localhost:8098/woopoly-package-lab/?page_id=13&lang=de&bestellverlauf=2"
+      }
+    ],
+    "criticalError": false
+  },
+  "plainClicked": {
+    "url": "http://localhost:8098/woopoly-package-lab/?page_id=13&bestellverlauf=2&lang=de",
+    "title": "Orders (page 2) \u2013 WooPoly package acceptance",
+    "active": "Orders",
+    "languages": [
+      {
+        "text": "English",
+        "url": "http://localhost:8098/woopoly-package-lab/?page_id=8&order-history=2"
+      },
+      {
+        "text": "Deutsch",
+        "url": "http://localhost:8098/woopoly-package-lab/?page_id=13&lang=de&bestellverlauf=2"
+      }
+    ],
+    "criticalError": false
+  },
+  "cleanup": {
+    "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellverlauf/2/",
+    "title": "Orders (page 2) \u2013 WooPoly package acceptance",
+    "helperRemoved": true,
+    "active": "Orders",
+    "criticalError": false
+  },
+  "numericViewOrder": {
+    "before": {
+      "url": "http://localhost:8098/woopoly-package-lab/my-account/view-order/21/",
+      "title": "Order #21 \u2013 WooPoly package acceptance",
+      "viewOrder": true,
+      "denied": false,
+      "languages": [
+        {
+          "text": "English",
+          "url": "http://localhost:8098/woopoly-package-lab/my-account/view-order/21/"
+        },
+        {
+          "text": "Deutsch",
+          "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellung/21/"
+        }
+      ],
+      "criticalError": false
+    },
+    "after": {
+      "url": "http://localhost:8098/woopoly-package-lab/de/my-account-2/bestellung/21/",
+      "title": "Order #21 \u2013 WooPoly package acceptance",
+      "viewOrder": true,
+      "denied": false,
+      "criticalError": false
+    },
+    "fixtureDeleted": true,
+    "helperRemoved": true
+  }
+}

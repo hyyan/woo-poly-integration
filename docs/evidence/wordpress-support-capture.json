@@ -217,7 +217,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/persitent-bug-not-able-to-translate-email-subject-and-heading/",
-    "title": "Persitent bug – not able to translate email subject and heading",
+    "title": "Persitent bug \u2013 not able to translate email subject and heading",
     "file": "forum/e023f91e43433994.html",
     "status": "captured",
     "id": "FORUM-019",
@@ -313,7 +313,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/the-links-on-the-woocommerce-my-account-page-do-not-work-properly/",
-    "title": "The links on the WooCommerce “My Account” page do not work properly",
+    "title": "The links on the WooCommerce \u201cMy Account\u201d page do not work properly",
     "file": "forum/7a5b10b49ac511ea.html",
     "status": "captured",
     "id": "FORUM-027",
@@ -361,7 +361,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/dont-sync-cart-item-data/",
-    "title": "don’t sync cart item data",
+    "title": "don\u2019t sync cart item data",
     "file": "forum/ad156c139f2fdbc7.html",
     "status": "captured",
     "id": "FORUM-031",
@@ -385,7 +385,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/variation-bug-doubletriple-amount/",
-    "title": "Variation bug – Double,Triple amount",
+    "title": "Variation bug \u2013 Double,Triple amount",
     "file": "forum/954254da770e3389.html",
     "status": "captured",
     "id": "FORUM-033",
@@ -575,8 +575,12 @@
     "file": "forum/49f76a8a7e4e018d.html",
     "status": "captured",
     "id": "FORUM-051",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Reviewed: configuration guidance, catalog acceptance pending",
+    "captured_post_count": 2,
+    "report_summary": "English endpoint UI with Polylang enabled. Replies require linked pages, endpoint string translation and permalink refresh. Current custom endpoint paths work in both languages.",
+    "next_check": "Complete native German catalog display acceptance.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/products-not-added-to-translated-categories/",
@@ -589,7 +593,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/shop-two-languages/",
-    "title": "shop – two languages",
+    "title": "shop \u2013 two languages",
     "file": "forum/2a449668ddfe54d7.html",
     "status": "captured",
     "id": "FORUM-053",
@@ -607,7 +611,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/why-the-from-text-isnt-being-translated/",
-    "title": "why the “from” text isn’t being translated",
+    "title": "why the \u201cfrom\u201d text isn\u2019t being translated",
     "file": "forum/9c346c677cf93268.html",
     "status": "captured",
     "id": "FORUM-055",
@@ -634,7 +638,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/cart-product-image-iconic-product-configurator/",
-    "title": "Cart – Product Image (Iconic Product Configurator)",
+    "title": "Cart \u2013 Product Image (Iconic Product Configurator)",
     "file": "forum/52ef8e6a8ccf9c72.html",
     "status": "captured",
     "id": "FORUM-058",
@@ -764,12 +768,16 @@
     "file": "forum/8b872684863c0eb5.html",
     "status": "captured",
     "id": "FORUM-072",
-    "review_status": "Pending report triage",
-    "captured_post_count": 11
+    "review_status": "Reviewed: dependency catalog problem, Greek reproduction pending",
+    "captured_post_count": 11,
+    "report_summary": "Greek WooCommerce strings remain mixed even with Polylang and this plugin disabled. Report includes WooCommerce 3.6.5, WordPress 5.2.2 and PHP 7.2.11. Linked page creation does not prove catalog loading.",
+    "next_check": "Verify Greek native WooCommerce catalogs and locale loading with plugin enabled and disabled.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/1-string-in-default-language-woocommerce-terms-and-conditions-checkbox-text/",
-    "title": "1 string in default language – woocommerce-terms-and-conditions-checkbox-text",
+    "title": "1 string in default language \u2013 woocommerce-terms-and-conditions-checkbox-text",
     "file": "forum/a611af0105482fc1.html",
     "status": "captured",
     "id": "FORUM-073",
@@ -985,7 +993,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/product-category-missing-alignment-mutilingual/",
-    "title": "product category missing alignment – mutilingual",
+    "title": "product category missing alignment \u2013 mutilingual",
     "file": "forum/83340780958e00ba.html",
     "status": "captured",
     "id": "FORUM-097",
@@ -1012,7 +1020,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/wc-3-6-1-cant-use-cart-template-for-another-lang/",
-    "title": "WC 3.6.1 Can’t use cart template for another lang",
+    "title": "WC 3.6.1 Can\u2019t use cart template for another lang",
     "file": "forum/c3b132bf6aa0b485.html",
     "status": "captured",
     "id": "FORUM-100",
@@ -1021,7 +1029,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/woo-poly-payment-gateway-reduce-stock-issue/",
-    "title": "Woo Poly + Payment gateway – reduce stock issue",
+    "title": "Woo Poly + Payment gateway \u2013 reduce stock issue",
     "file": "forum/6d1c78928615705e.html",
     "status": "captured",
     "id": "FORUM-101",
@@ -1093,7 +1101,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/woocommerce-booking-dont-sync/",
-    "title": "Woocommerce Booking don’t sync",
+    "title": "Woocommerce Booking don\u2019t sync",
     "file": "forum/f57c519e8d2af38f.html",
     "status": "captured",
     "id": "FORUM-109",
@@ -1187,8 +1195,12 @@
     "file": "forum/f50588dfaed3e6b0.html",
     "status": "captured",
     "id": "FORUM-119",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Reviewed: reproduced endpoint switch defect corrected",
+    "captured_post_count": 1,
+    "report_summary": "Lost password and other translated endpoints disappear on language switching. Actual current native language links reproduced the lost endpoint. Shared correction preserves source slugs and values.",
+    "next_check": "Account routes verified, payment and order receipt endpoints still need purchase acceptance.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/dissable-payment-gateway-for-second-language-2/",
@@ -1237,7 +1249,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/attributes-default-values-are-lost-on-translation/",
-    "title": "Attributes’ default values are lost on translation",
+    "title": "Attributes\u2019 default values are lost on translation",
     "file": "forum/d88c862dea7d9602.html",
     "status": "captured",
     "id": "FORUM-125",
@@ -1282,7 +1294,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/cant-translate-categories-2/",
-    "title": "Can’t translate categories",
+    "title": "Can\u2019t translate categories",
     "file": "forum/a1a24150d41f79de.html",
     "status": "captured",
     "id": "FORUM-130",
@@ -1318,7 +1330,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/polylang-now-displays-a-compatibility-notice-on-every-admin-page/",
-    "title": "Polylang now displays a compatibility notice on every admin page…",
+    "title": "Polylang now displays a compatibility notice on every admin page\u2026",
     "file": "forum/21069828cab5c751.html",
     "status": "captured",
     "id": "FORUM-134",
@@ -1444,7 +1456,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/ive-read-and-accept-the-terms-conditions-only-in-default-language/",
-    "title": "“I’ve read and accept the terms & conditions” only in default language",
+    "title": "\u201cI\u2019ve read and accept the terms & conditions\u201d only in default language",
     "file": "forum/782bfa96af61b008.html",
     "status": "captured",
     "id": "FORUM-148",
@@ -1453,7 +1465,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/ive-read-and-accept-the-terms-conditions-only-in-default-language/page/2/",
-    "title": "“I’ve read and accept the terms & conditions” only in default language",
+    "title": "\u201cI\u2019ve read and accept the terms & conditions\u201d only in default language",
     "file": "forum/5b524e735f705eb9.html",
     "status": "captured",
     "id": "FORUM-149",
@@ -1480,7 +1492,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/in-variable-products-additional-product-price-isnt-adding-in-cart-2/",
-    "title": "in variable products additional product price isn’t adding in cart.",
+    "title": "in variable products additional product price isn\u2019t adding in cart.",
     "file": "forum/cb53ead833d52ac8.html",
     "status": "captured",
     "id": "FORUM-152",
@@ -1525,7 +1537,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/message-hello-my-name/",
-    "title": "Message – Hello, my name…",
+    "title": "Message \u2013 Hello, my name\u2026",
     "file": "forum/260a14527ea1e60e.html",
     "status": "captured",
     "id": "FORUM-157",
@@ -1561,7 +1573,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/cant-translate-the-woocommerce-products/",
-    "title": "can’t translate the woocommerce products",
+    "title": "can\u2019t translate the woocommerce products",
     "file": "forum/973d6d8b16096194.html",
     "status": "captured",
     "id": "FORUM-161",
@@ -1646,8 +1658,12 @@
     "file": "forum/1c425fed7e875a1c.html",
     "status": "captured",
     "id": "FORUM-170",
-    "review_status": "Pending report triage",
-    "captured_post_count": 3
+    "review_status": "Reviewed: order receipt integration reproduction pending",
+    "captured_post_count": 3,
+    "report_summary": "English order received route fails after payment on WooCommerce 3.2.6, Dutch works. Replies request endpoint translations, permalink refresh and a standard gateway comparison. No followup reproduction.",
+    "next_check": "Complete bilingual purchases and gateway receipt paths.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/hyyan-woocommerce-issue-when-clicking-products/",
@@ -1741,7 +1757,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/remove-filterpricesuffix-in-functions-php/",
-    "title": "Remove “filterPriceSuffix” in functions.php",
+    "title": "Remove \u201cfilterPriceSuffix\u201d in functions.php",
     "file": "forum/ed680ee5b65c9489.html",
     "status": "captured",
     "id": "FORUM-181",
@@ -1813,7 +1829,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/how-can-i-remove-bank-account-details-in-every-place/",
-    "title": "How can I remove “Bank Account Details” in every place?",
+    "title": "How can I remove \u201cBank Account Details\u201d in every place?",
     "file": "forum/12d37a1c02a07a04.html",
     "status": "captured",
     "id": "FORUM-189",
@@ -1885,7 +1901,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/bank-details-is-not-translated-to-german/",
-    "title": "“Our Bank Details” is not translated to German",
+    "title": "\u201cOur Bank Details\u201d is not translated to German",
     "file": "forum/304a4bb50cfc66e5.html",
     "status": "captured",
     "id": "FORUM-197",
@@ -1939,7 +1955,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/categories-dont-translate/",
-    "title": "Categories don’t translate",
+    "title": "Categories don\u2019t translate",
     "file": "forum/25b900eb77b841ff.html",
     "status": "captured",
     "id": "FORUM-203",
@@ -1957,7 +1973,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/auto-select-product-option/",
-    "title": "Auto Select “Product” option",
+    "title": "Auto Select \u201cProduct\u201d option",
     "file": "forum/6edfb0e842efb30d.html",
     "status": "captured",
     "id": "FORUM-205",
@@ -2056,7 +2072,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/wp_nav_menu-doesnt-get-different-language-products/",
-    "title": "wp_nav_menu doesn’t get different language products",
+    "title": "wp_nav_menu doesn\u2019t get different language products",
     "file": "forum/e4c6f4deaa46ecbf.html",
     "status": "captured",
     "id": "FORUM-216",
@@ -2092,7 +2108,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/cant-edit-product-price-while-plugin-in-active/",
-    "title": "Can’t edit product price while plugin is active",
+    "title": "Can\u2019t edit product price while plugin is active",
     "file": "forum/f4090dfce9cebda9.html",
     "status": "captured",
     "id": "FORUM-220",
@@ -2182,7 +2198,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/product-page-cant-change-product-option-ad-cant-see-price/",
-    "title": "Product page – can’t change product option ad. can’t see price.",
+    "title": "Product page \u2013 can\u2019t change product option ad. can\u2019t see price.",
     "file": "forum/2cd2ef69e754e90e.html",
     "status": "captured",
     "id": "FORUM-230",
@@ -2227,7 +2243,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/my-account-order-list-only-in-current-language-fix-did-not-help/",
-    "title": "My account: order list only in current language – FIX did not help",
+    "title": "My account: order list only in current language \u2013 FIX did not help",
     "file": "forum/64554b84fd9ec0cc.html",
     "status": "captured",
     "id": "FORUM-235",
@@ -2272,12 +2288,16 @@
   },
   {
     "url": "https://wordpress.org/support/topic/cart-checkout-my-account-doesnt-translated-2/",
-    "title": "Cart, Checkout, My Account doesn’t translated",
+    "title": "Cart, Checkout, My Account doesn\u2019t translated",
     "file": "forum/0b303a11469edd1c.html",
     "status": "captured",
     "id": "FORUM-240",
-    "review_status": "Pending report triage",
-    "captured_post_count": 3
+    "review_status": "Reviewed: page and catalog setup, Spanish acceptance pending",
+    "captured_post_count": 3,
+    "report_summary": "Spanish cart, checkout and account translation report. Replies require WooCommerce catalogs and linked store pages. No confirmed source defect in captured discussion.",
+    "next_check": "Verify native Spanish catalogs and full linked checkout.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/rest-api-slow/",
@@ -2308,7 +2328,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/cant-create-product-categories/",
-    "title": "Can’t create product categories",
+    "title": "Can\u2019t create product categories",
     "file": "forum/3689b7bd77768383.html",
     "status": "captured",
     "id": "FORUM-244",
@@ -2326,7 +2346,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/my-account-order-list-only-in-current-language/",
-    "title": "My account – Order list only in current language",
+    "title": "My account \u2013 Order list only in current language",
     "file": "forum/78e27c78a7833985.html",
     "status": "captured",
     "id": "FORUM-246",
@@ -2461,7 +2481,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/the-plugin-doesnt-see-woocommerce-and-polylang-plugins/",
-    "title": "the plugin doesn’t see WooCommerce and Polylang plugins",
+    "title": "the plugin doesn\u2019t see WooCommerce and Polylang plugins",
     "file": "forum/66a69f1a97b16dd7.html",
     "status": "captured",
     "id": "FORUM-261",
@@ -2470,7 +2490,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/it-doesnt-work-139/",
-    "title": "It doesn’t work",
+    "title": "It doesn\u2019t work",
     "file": "forum/6594626c08924903.html",
     "status": "captured",
     "id": "FORUM-262",
@@ -2515,7 +2535,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/the-variations-put-out-stock-get-an-error-when-saving-the-page/",
-    "title": "The variations put out stock – get an error when saving the page",
+    "title": "The variations put out stock \u2013 get an error when saving the page",
     "file": "forum/3991605f41d08cb7.html",
     "status": "captured",
     "id": "FORUM-267",
@@ -2605,7 +2625,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/suddenly-some-translations-dont-work-anymore/",
-    "title": "Suddenly some translations don´t work anymore",
+    "title": "Suddenly some translations don\u00b4t work anymore",
     "file": "forum/6190b74120207939.html",
     "status": "captured",
     "id": "FORUM-277",
@@ -2654,8 +2674,12 @@
     "file": "forum/423d69a881024028.html",
     "status": "captured",
     "id": "FORUM-282",
-    "review_status": "Pending report triage",
-    "captured_post_count": 11
+    "review_status": "Reviewed: historical theme or filter interaction, full reproduction pending",
+    "captured_post_count": 11,
+    "report_summary": "Understrap shop links and checkout fail despite individually working pages. Discussion proposes reselected options and page ID filter priority. Later replies still report wrong cart notice links.",
+    "next_check": "Run actual cart notice and checkout acceptance, then isolate theme overrides without arbitrary filter priority changes.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/cart-checkout-my-account-doesnt-translated/",
@@ -2663,8 +2687,12 @@
     "file": "forum/037d0b52eb29cbb5.html",
     "status": "captured",
     "id": "FORUM-283",
-    "review_status": "Pending report triage",
-    "captured_post_count": 6
+    "review_status": "Reviewed: primary setup resolved, secondary Spanish case pending",
+    "captured_post_count": 6,
+    "report_summary": "Initial author confirms adding page translations from default language resolves the report. Another Spanish user reports continued failure without sufficient reproduction.",
+    "next_check": "Keep the secondary Spanish catalog and checkout case open.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/woo-product-details-page-doesnt-work/",
@@ -2834,8 +2862,12 @@
     "file": "forum/f79bd07d578d95da.html",
     "status": "captured",
     "id": "FORUM-302",
-    "review_status": "Pending report triage",
-    "captured_post_count": 3
+    "review_status": "Reviewed: historical endpoint stacking not reproduced currently",
+    "captured_post_count": 3,
+    "report_summary": "WooCommerce 2.6.1 and plugin 0.25 account menu links stack endpoint paths. Reply says a maintained fork corrected it. Current actual nested order route menu links stay at the account base.",
+    "next_check": "Current native menu proof retained, older supported stack acceptance still required.",
+    "batch": "Language and page translation",
+    "batch_basis": "Captured topic and replies read, native store and translated account endpoint evidence considered"
   },
   {
     "url": "https://wordpress.org/support/topic/fatal-error-call-to-a-member-function-is_visible-on-boolean/",
@@ -2857,7 +2889,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/urgent-10-usd-offered-for-the-solution-translate-product-permalink-base/",
-    "title": "URGENT – 10 USD offered for the solution – translate product permalink base",
+    "title": "URGENT \u2013 10 USD offered for the solution \u2013 translate product permalink base",
     "file": "forum/e88aa6a376ff5090.html",
     "status": "captured",
     "id": "FORUM-305",
@@ -3127,7 +3159,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/prodcut-misspell-inaccessible-product-category-pages/",
-    "title": "prodCUT misspell – inaccessible product category pages",
+    "title": "prodCUT misspell \u2013 inaccessible product category pages",
     "file": "forum/9e5d5b97c6b084b2.html",
     "status": "captured",
     "id": "FORUM-335",
@@ -3469,7 +3501,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/woocommerce-messagesdont-translated/",
-    "title": "Woocommerce messages…dont translated",
+    "title": "Woocommerce messages\u2026dont translated",
     "file": "forum/30981e6a69999e2e.html",
     "status": "captured",
     "id": "FORUM-373",
@@ -3505,7 +3537,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/translate-menus/",
-    "title": "Translate menús",
+    "title": "Translate men\u00fas",
     "file": "forum/c4dea5f783d48662.html",
     "status": "captured",
     "id": "FORUM-377",
@@ -3703,7 +3735,7 @@
   },
   {
     "url": "https://wordpress.org/support/topic/variable-product-price-on-cart-page-is-wrong/",
-    "title": "Variable – Product price on cart page is wrong",
+    "title": "Variable \u2013 Product price on cart page is wrong",
     "file": "forum/50ad93ad44871856.html",
     "status": "captured",
     "id": "FORUM-399",

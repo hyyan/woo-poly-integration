@@ -6,7 +6,7 @@ The README feature list defines the preservation contract. A pending row blocks 
 | --- | --- | --- |
 | WooCommerce translation downloads | Language installation downloads and loads the correct catalog | Pending |
 | Store pages | Shop, cart, checkout and account route to linked language pages | Native automatic creation, both language shop and account routes and empty cart and checkout redirects pass. Filled checkout and custom translated slugs pending |
-| Endpoints | Account and checkout endpoints work in both languages | Four authenticated account endpoints pass in each language. Custom translated slugs and checkout endpoints pending |
+| Endpoints | Account and checkout endpoints work in both languages | Four authenticated account endpoints pass in each language. Custom slug, order pagination, address type and lost password language switching pass with pretty and plain URLs. Checkout endpoint purchase acceptance pending |
 | Products | Create translation from original admin flow and preserve independent content | Pending |
 | Categories and tags | Linked terms, URLs and archive filtering in both languages | Linked category archive filtering and related product fixtures pass in Chrome. Native term creation, hierarchy and tags pending |
 | Attributes | Global and custom attributes translate and select correctly | Custom variable selection checked, global attributes pending |
@@ -30,3 +30,5 @@ The README feature list defines the preservation contract. A pending row blocks 
 Existing documented limitations remain: default language cannot be changed after variable products are created, and the content based language URL mode is unsupported. These limitations are not new fixes or compatibility claims.
 
 Automatic page creation retains native block cart and checkout content with identical source and target hashes. Four format regression cases preserve block and classic behavior. Evidence: store-pages prefixes. The fresh site initially lacked Apache rewrite configuration and reached the original lab. Saved native rules for the owned subdirectory before claiming routing acceptance. No purchase claim follows from empty checkout redirects.
+
+Translated endpoint proof uses native Polylang string catalogs and a configured WooCommerce order-history slug. Chrome follows native language links with order page 2, preserving the target slug and value. Address type and lost password links stay on their respective endpoint. Plain permalink navigation also passes. Native account menu links do not accumulate endpoints. The owned read only language helper was removed and pretty permalinks restored.
