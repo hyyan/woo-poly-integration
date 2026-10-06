@@ -1,0 +1,33 @@
+name: Regression tests
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.3', '8.4', '8.5']
+    env:
+      WORDPRESS_IMAGE: wordpress:7.1.2-php${{ matrix.php }}-apache
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare disposable WordPress integration site
+        run: tests/bin/setup.sh
+      - name: Run unit and WordPress integration regressions
+        run: tests/bin/run.sh
+      - name: Collect runtime diagnostics
+        if: always()
+        run: |
+          mkdir -p artifacts
+          docker compose -f tests/compose.yaml logs --no-color > artifacts/containers.log
+          docker compose -f tests/compose.yaml exec -T wordpress cat wp-content/debug.log > artifacts/wordpress-debug.log || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: diagnostics-php-${{ matrix.php }}
+          path: artifacts/
