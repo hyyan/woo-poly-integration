@@ -134,7 +134,7 @@ class Pages
     {
         $result = $url;
 
-        if (!is_post_type_archive('product')) {
+        if (is_search() || !is_post_type_archive('product')) {
             return $result;
         }
 

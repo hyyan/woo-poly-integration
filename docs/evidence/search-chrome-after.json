@@ -1,0 +1,46 @@
+{
+  "english": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/?s=e&post_type=product\",\"languageLinks\":[{\"text\":\"English\",\"href\":\"http://localhost:8098/?s=e&post_type=product\"},{\"text\":\"Deutsch\",\"href\":\"http://localhost:8098/de/?s=e&post_type=product\"}],\"products\":[\"Security fixture en\",\"Test shirt en\"]}\n```"
+      }
+    ]
+  },
+  "german": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/?s=e&post_type=product\",\"languageLinks\":[{\"text\":\"English\",\"href\":\"http://localhost:8098/?s=e&post_type=product\"},{\"text\":\"Deutsch\",\"href\":\"http://localhost:8098/de/?s=e&post_type=product\"}],\"products\":[\"Security fixture de\",\"Test shirt de\"]}\n```"
+      }
+    ]
+  },
+  "roundTrip": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/?s=e&post_type=product\",\"products\":[\"Security fixture en\",\"Test shirt en\"]}\n```"
+      }
+    ]
+  },
+  "shopEnglish": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/shop/?orderby=price\",\"languageLinks\":[{\"text\":\"English\",\"href\":\"http://localhost:8098/shop/?orderby=price\"},{\"text\":\"Deutsch\",\"href\":\"http://localhost:8098/de/shop-de-2/?orderby=price\"}],\"products\":[\"Security fixture en\",\"Test shirt en\"]}\n```"
+      }
+    ]
+  },
+  "shopGerman": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/shop-de-2/?orderby=price\",\"languageLinks\":[{\"text\":\"English\",\"href\":\"http://localhost:8098/shop/?orderby=price\"},{\"text\":\"Deutsch\",\"href\":\"http://localhost:8098/de/shop-de-2/?orderby=price\"}],\"products\":[\"Security fixture de\",\"Test shirt de\"]}\n```"
+      }
+    ]
+  },
+  "regressions": {
+    "baseline": "3 tests, 4 assertions, 1 failure: German product search URL rewritten with shop slug",
+    "after": "8 unit tests, 8 assertions; 24 integration tests, 49 assertions; all passed"
+  }
+}

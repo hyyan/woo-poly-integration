@@ -89,4 +89,14 @@
 - Normal administrator star click featured both products. Normal shop manager star click cleared both flags. Unrelated variable product 109 remained unchanged.
 - With visibility synchronization disabled in the existing setting, an administrator star click changed only the original product. Restored the exact prior setting.
 - Chrome POST nonce path then toggled both products back to unfeatured. Saved request, UI, database and screenshot evidence under featured-chrome-after.
-- This verified fix is ready for its separate local commit. No remote publication. Next: reproduced search URL defect, shortcode PHP crash and the remaining compatibility acceptance matrix.
+- Committed locally as 0ec30b1. No remote publication. Next: reproduced search URL defect, shortcode PHP crash and the remaining compatibility acceptance matrix.
+
+## Search language links
+- Previous turn closed leftover role test windows and verified the dedicated Chrome instance stopped.
+- Added three WordPress regressions in the existing Pages callback. Baseline failed because a German search URL was overwritten by the translated shop slug.
+- Added only an is_search early return. Polylang keeps its existing search URLs. Shop archive translation remains unchanged.
+- Full suite passed: 8 unit tests and 24 integration tests, 57 assertions total, on PHP 8.5.11.
+- Chrome clicked the native language switcher English to German and back. Search query and product post type survived, and results matched each language.
+- Chrome clicked the normal shop language link with orderby=price. Translated shop and sort query both survived.
+- Used one browser window and stopped the dedicated instance after acceptance. Evidence saved in search-chrome-after.json.
+- Preparing the separate local search fix commit. No push. Next: shortcode PHP crash and the remaining tracked compatibility work.
