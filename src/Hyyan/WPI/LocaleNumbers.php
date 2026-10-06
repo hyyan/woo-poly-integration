@@ -91,10 +91,10 @@ class LocaleNumbers
         $retval = $wooFormattedValue;
 
         //don't touch values on admin screens, save as plain number using woo defaults
-        if ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax'])) {
+        if (is_numeric($input) && ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax']))) {
             $a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::DECIMAL);
             if ($a) {
-                $retval = $a->format($input, \NumberFormatter::TYPE_DOUBLE);
+                $retval = $a->format((float) $input, \NumberFormatter::TYPE_DOUBLE);
             }
         }
         return $retval;

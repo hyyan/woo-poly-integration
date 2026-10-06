@@ -1,0 +1,36 @@
+{
+  "germanPage": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/product/security-fixture-de/\",\"price\":\"€12,50\",\"variations\":[{\"id\":114,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"size\":\"Large\"}],\"critical\":false}\n```"
+      }
+    ]
+  },
+  "germanCart": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/product/security-fixture-de/\",\"title\":\"Security fixture de – WooPoly Compatibility Lab\",\"notice\":\"“Security fixture de” has been added to your cart.\\nView cart\",\"price\":\"€12,50\",\"variations\":[{\"id\":114,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"size\":\"Large\"}],\"critical\":false}\n```"
+      }
+    ]
+  },
+  "english": {
+    "url": "http://localhost:8098/product/security-fixture-en/",
+    "price": "€12.50",
+    "notice": "Security fixture en has been added to your cart",
+    "critical": false
+  },
+  "adminEndpoint": {
+    "status": 200,
+    "regularPrice": "12.50",
+    "weight": "",
+    "length": ""
+  },
+  "versions": {
+    "wordpress": "7.1.2",
+    "php": "8.5.11",
+    "woocommerce": "11.1.2",
+    "polylang": "3.8.10"
+  }
+}
