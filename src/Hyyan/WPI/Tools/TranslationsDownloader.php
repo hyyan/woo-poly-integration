@@ -54,7 +54,7 @@ class TranslationsDownloader
                 __('Unable to download WooCommerce translation %s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
         );
         $response = wp_remote_get(
-                sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('sslverify' => false, 'timeout' => 200)
+                sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('timeout' => 200)
         );
 
         if (
@@ -111,7 +111,7 @@ class TranslationsDownloader
     public static function isAvaliable($locale)
     {
         $response = wp_remote_get(
-                sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('sslverify' => false, 'timeout' => 200)
+                sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('timeout' => 200)
         );
 
         if (

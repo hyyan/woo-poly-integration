@@ -226,3 +226,11 @@
 - Full suite passed with 75 tests and 200 assertions. Chrome marker stopped executing. Existing subcategories display type, image URL, thumbnail 5 and visible Remove button were preserved. Source lint and diff whitespace checks passed.
 - Repeated Plugin Check. The category output escaping findings no longer appear. Other category input and save hook findings remain pending review.
 - Saved before and after regressions, Chrome evidence and the checker report. Next confirmed security issue is certificate verification disabled in translation pack requests.
+
+## Translation transport certificate verification
+
+- Category output fix committed locally as 4b02c13.
+- Both translation request methods explicitly disabled certificate verification. Two regression cases failed before the change, and the existing transport error case passed. Chrome observed sslverify false on the real WordPress.org request.
+- Removed only the two sslverify overrides, retaining the repository hook, URL, timeout, filesystem flow and error behavior. WordPress now supplies its existing verified transport default.
+- Full suite passed with 78 tests and 205 assertions. Source lint and diff whitespace checks passed. Chrome observed sslverify true and successful availability. Browser then invoked the original downloader and installed the French pack successfully with verified transport on every request.
+- Removed the temporary capability and nonce protected lab route. No production endpoint was added. Next work remains checker input and output dispositions, confirmed fixes and the original compatibility matrix.

@@ -56,3 +56,5 @@ Forum topics FORUM-021 through FORUM-040 have individual dispositions in the for
 | SEC-005 | Security maintenance review and expanded regression coverage | Reported removal paths and native client inspected, 72 tests and 189 assertions pass, current Chrome rejection and native deletion pass | Full checker dispositions and actual release artifact review remain pending, see SECURITY-REVIEW.md |
 
 | SEC-006 | Stored category metadata and image values can break out of inline JavaScript | Fixed, 3 regressions and native Chrome marker and normal thumbnail copying pass | Category display type and thumbnail ID, image and Remove button retained |
+
+| SEC-007 | Translation availability and download disable certificate verification | Fixed and verified, 3 regressions and Chrome real availability and download pass | Both original requests verify certificates, French pack installed successfully |

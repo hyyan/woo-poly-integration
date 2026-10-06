@@ -1,0 +1,27 @@
+{
+  "before": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"status\":200,\"result\":{\"success\":true,\"data\":{\"available\":true,\"requests\":[{\"url\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/fr_FR.zip\",\"sslverify\":false}]}}}\n```"
+      }
+    ]
+  },
+  "after": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"status\":200,\"result\":{\"success\":true,\"data\":{\"available\":true,\"requests\":[{\"url\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2/fr_FR.zip\",\"sslverify\":true}]}}}\n```"
+      }
+    ]
+  },
+  "download": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"status\":200,\"body\":\"{\\\"success\\\":true,\\\"data\\\":{\\\"available\\\":true,\\\"downloaded\\\":true,\\\"requests\\\":[{\\\"url\\\":\\\"https:\\\\/\\\\/downloads.wordpress.org\\\\/translation\\\\/plugin\\\\/woocommerce\\\\/11.1.2\\\\/fr_FR.zip\\\",\\\"sslverify\\\":true},{\\\"url\\\":\\\"https:\\\\/\\\\/downloads.wordpress.org\\\\/translation\\\\/plugin\\\\/woocommerce\\\\/11.1.2\\\\/fr_FR.zip\\\",\\\"sslverify\\\":true},{\\\"url\\\":\\\"https:\\\\/\\\\/downloads.wordpress.org\\\\/translation\\\\/plugin\\\\/woocommerce\\\\/11.1.2\\\\/fr_FR.zip\\\",\\\"sslverify\\\":true}]}}\"}\n```"
+      }
+    ]
+  },
+  "translationFileInstalled": true
+}
