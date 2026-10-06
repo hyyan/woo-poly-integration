@@ -118,7 +118,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
     "id": "CHECK-0011",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.language.repoUrl",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:172",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Tools/TranslationsDownloader.php:156"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 161,
@@ -701,7 +707,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Product/Meta.php",
     "id": "CHECK-0064",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.product.metaSync",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:38",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Product/Meta.php:630"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 654,
@@ -734,7 +746,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Product/Meta.php",
     "id": "CHECK-0067",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.product.disabledMetaSync",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:218",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Product/Meta.php:761"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 798,
@@ -745,7 +763,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Product/Meta.php",
     "id": "CHECK-0068",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.fieldsLockerSelectors",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:55",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Product/Meta.php:798"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 827,
@@ -1152,7 +1176,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Gateways.php",
     "id": "CHECK-0105",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.gateway.loadClassExtention.{gateway_id}",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:192",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Gateways.php:134"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 194,
@@ -1592,7 +1622,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Admin/Settings.php",
     "id": "CHECK-0145",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.settings.sections",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:147",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Admin/Settings.php:71"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 81,
@@ -1603,7 +1639,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Admin/Settings.php",
     "id": "CHECK-0146",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.settings.fields",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:165",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Admin/Settings.php:81"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 89,
@@ -1757,7 +1799,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Utilities.php",
     "id": "CHECK-0160",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Emails.switchLanguage",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:253",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Utilities.php:584"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 608,
@@ -1768,7 +1816,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Utilities.php",
     "id": "CHECK-0161",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Emails.afterSwitchLanguage",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:260",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Utilities.php:608"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 15,
@@ -2197,7 +2251,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
     "id": "CHECK-0200",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.product.syncCategoryCustomFields",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:91",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Taxonomies/Categories.php:65"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 82,
@@ -2296,7 +2356,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
     "id": "CHECK-0209",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.product.copyCategoryCustomFields",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:110",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Taxonomies/Categories.php:107"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 45,
@@ -2571,7 +2637,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Product/Variation.php",
     "id": "CHECK-0234",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.product.variation.copyMeta",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:199",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Product/Variation.php:393"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 0,
@@ -3418,7 +3490,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Product/Variable.php",
     "id": "CHECK-0311",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.fieldsLockerVariableExcludeSelectors",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:62",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Product/Variable.php:421"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 416,
@@ -3902,7 +3980,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Cart.php",
     "id": "CHECK-0355",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Cart.switchedItem",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:284",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Cart.php:112"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 257,
@@ -3968,7 +4052,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
     "id": "CHECK-0361",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.settings.{settings_id}_sections",
+    "definition_evidence": "src/Hyyan/WPI/Admin/AbstractSettings.php:73",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Admin/AbstractSettings.php:43"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 61,
@@ -3979,7 +4069,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
     "id": "CHECK-0362",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.settings.{settings_id}_fields",
+    "definition_evidence": "src/Hyyan/WPI/Admin/AbstractSettings.php:83",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Admin/AbstractSettings.php:61"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 109,
@@ -3990,7 +4086,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Emails.php",
     "id": "CHECK-0363",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Emails.defaultSetting",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:239",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Emails.php:109"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 188,
@@ -4001,7 +4103,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Emails.php",
     "id": "CHECK-0364",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Emails.translation",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:246",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Emails.php:188"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 197,
@@ -4012,7 +4120,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Emails.php",
     "id": "CHECK-0365",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Emails.translatableEmails",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:225",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Emails.php:197"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 492,
@@ -4023,7 +4137,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Emails.php",
     "id": "CHECK-0366",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Emails.orderFindReplaceFind",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:267",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Emails.php:492"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 493,
@@ -4034,7 +4154,13 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Emails.php",
     "id": "CHECK-0367",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.Emails.orderFindReplaceReplace",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:274",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Emails.php:493"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   },
   {
     "line": 29,
@@ -4045,6 +4171,12 @@
     "docs": "",
     "file": "src/Hyyan/WPI/Pages.php",
     "id": "CHECK-0368",
-    "status": "Pending source review"
+    "status": "Reviewed: preserve existing prefixed public hook",
+    "resolved_hook": "woo-poly.pages.list",
+    "definition_evidence": "src/Hyyan/WPI/HooksInterface.php:129",
+    "current_call_evidence": [
+      "src/Hyyan/WPI/Pages.php:29"
+    ],
+    "rationale": "The resolved hook starts with woo-poly. The checker flags the dynamic expression. Preserve the existing extension contract and spelling."
   }
 ]

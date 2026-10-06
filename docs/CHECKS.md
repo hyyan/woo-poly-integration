@@ -49,3 +49,7 @@ The original CLI output is grouped by FILE followed by a JSON array for that fil
 | WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound | 1 |
 
 Review the owning source before deciding the disposition. Preserve public hooks and native WooCommerce translations. Confirmed defects need regression and Chrome proof. Packaging findings need the actual distributable artifact. Document supported false positives precisely rather than changing working behavior to silence the checker.
+
+## Dynamic public hook review
+
+All 22 DynamicHooknameFound baseline findings were reviewed against the current call and hook definition. Every resolved name starts with woo-poly. The settings methods keep that prefix before their settings ID, and the gateway extension keeps it before the gateway ID. These are preserved public extension contracts, not names to replace. Each finding records its resolved name, current call location and definition evidence in the normalized inventory. This disposition addresses naming only. It does not prove the callback behavior or resolve other checker findings.

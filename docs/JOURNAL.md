@@ -169,3 +169,11 @@
 - All emails stayed in the local interceptor. Saved sanitized account-email-chrome.json with boolean markers, not email bodies, reset keys, credentials or addresses.
 - Restored original email settings, translation data and recipient locale. Closed the sole Chrome test window and verified its dedicated process stopped.
 - Preparing separate local GH-556 fix commit. No push. Browser reset flow passed; broader email catalog/type coverage, cart, coupons, product/attribute synchronization and checker/forum dispositions remain pending.
+
+## Forum inventory correction and public hook review
+- Confirmed the account email fix is committed locally as c1afb22. No push.
+- Parsed all 423 saved forum pages with the standard HTML parser. Corrected 79 titles that had captured an age instead of the topic heading. Every topic has its actual heading, a stable FORUM identifier and captured post count. The inventory contains 1697 captured topic/reply bodies. Individual report triage remains pending.
+- Reviewed all 22 dynamic hook naming warnings against current calls and definitions. All resolve to existing woo-poly prefixed extension hooks, including settings and gateway suffixes. Recorded individual source evidence and preserved public names and spelling.
+- Verified inventory counts, unique URLs, headings, captured body counts and all 22 source mappings. No production code changed, so no runtime or browser acceptance was claimed for this documentation work.
+- The dedicated Chrome automation process is stopped. No browser was opened during this source audit.
+- Next: triage forum report bodies, review remaining checker findings, and continue original product, cart, email and order acceptance.
