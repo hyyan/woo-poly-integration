@@ -264,3 +264,20 @@ The ignored work/runtime-context-browser.php helper is local instrumentation and
 | docs/BATCHES.md, docs/CHECKS.md, docs/JOURNAL.md, goal.txt and this review | Scope, evidence, reasons and remaining requirements |
 
 No production files changed in this review. All dynamic names keep the existing plugin prefix. Dependency hooks and retained legacy symbols preserve their contracts. Source naming review does not substitute for remaining native feature acceptance. Native status reports missing WooCommerce catalog files, which remains a catalog acceptance requirement. The current raw Plugin Check remains applicable because production source is unchanged. Eight production runtime rows remain pending, along with distribution and full report review.
+
+## Server runtime compatibility batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Ajax.php and src/Hyyan/WPI/Endpoints.php | Use WordPress URL parsing at all three variable URL component reads |
+| src/Hyyan/WPI/Product/Variation.php | Capture original timeout, use guarded WooCommerce helper and restore on all exits |
+| tests/integration/RuntimeCompatibilityTest.php | Ten shared URL, persisted variation, timeout and exception cases, also run with native function disabled |
+| docs/evidence/runtime-server-tests-before.txt and runtime-server-disabled-before.txt | Actual timeout failures and disabled function fatal errors |
+| docs/evidence/runtime-server-tests-targeted.txt, runtime-server-disabled-after.txt and runtime-server-tests-after.txt | Ten batch cases, restricted hosting cases and all 225 tests with 639 assertions |
+| docs/evidence/runtime-server-chrome.json | Actual protected production copier invocation, nonce rejection, timeout, linked variation and native fragment results |
+| docs/evidence/runtime-server-lint.txt | Four final PHP syntax checks |
+| docs/evidence/runtime-server-plugin-check.json and runtime-server-plugin-check.stderr.txt | Complete final raw Plugin Check and stderr |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Current counts and corrected server dispositions, prior contracts retained |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Scope, reasons, evidence and remaining gates |
+
+The ignored work/runtime-server-browser.php instrument requires local environment, administrator capability and a native AJAX nonce. It deletes only its own products in finally and was removed from the active lab. Variation browser evidence is controlled invocation rather than native editor acceptance. Native translated cart fragments use the expected URL and response. Server success and exception behavior and restricted hosting are verified. Three remote badge rows, related social resource review, distribution review, report content review and the full compatibility matrix remain open.

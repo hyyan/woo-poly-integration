@@ -42,6 +42,6 @@ class Ajax
     {
         global $polylang;
         $lang = ( $polylang->curlang ) ? $polylang->curlang : $polylang->pref_lang;
-        return parse_url($polylang->filters_links->links->get_home_url($lang), PHP_URL_PATH) . '?' . parse_url($url, PHP_URL_QUERY);
+        return wp_parse_url($polylang->filters_links->links->get_home_url($lang), PHP_URL_PATH) . '?' . wp_parse_url($url, PHP_URL_QUERY);
     }
 }

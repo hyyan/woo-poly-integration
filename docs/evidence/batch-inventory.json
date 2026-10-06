@@ -1,5 +1,5 @@
 {
-  "scan": "runtime-context-plugin-check.json",
+  "scan": "runtime-server-plugin-check.json",
   "checker_findings": [
     {
       "line": 46,
@@ -1861,72 +1861,6 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 45,
-      "column": 16,
-      "type": "ERROR",
-      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
-      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Ajax.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 45,
-      "column": 102,
-      "type": "ERROR",
-      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
-      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Ajax.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 168,
-      "column": 37,
-      "type": "ERROR",
-      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
-      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 257,
-      "column": 81,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
-    },
-    {
-      "line": 257,
-      "column": 112,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
-    },
-    {
-      "line": 257,
-      "column": 158,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
-    },
-    {
       "line": 0,
       "column": 0,
       "type": "ERROR",
@@ -2979,6 +2913,28 @@
       "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$evidence&quot;.",
       "docs": "",
       "file": "work/correct-category-fixtures.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/runtime-server-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/runtime-server-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -4336,6 +4292,39 @@
       "disposition": "Reviewed read only report filters, ID list shape validation and WordPress integer normalization before query use, shared regressions and native report verified"
     },
     {
+      "line": 257,
+      "column": 81,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Endpoints.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
+    },
+    {
+      "line": 257,
+      "column": 112,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Endpoints.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
+    },
+    {
+      "line": 257,
+      "column": 158,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Endpoints.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
+    },
+    {
       "line": 61,
       "column": 33,
       "type": "WARNING",
@@ -4897,19 +4886,8 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 75,
-      "column": 13,
-      "type": "WARNING",
-      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
-      "message": "The use of function set_time_limit() is discouraged",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 83,
-      "column": 21,
+      "line": 84,
+      "column": 25,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_key",
       "message": "Detected usage of meta_key, possible slow query.",
@@ -4919,8 +4897,8 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 84,
-      "column": 21,
+      "line": 85,
+      "column": 25,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_value",
       "message": "Detected usage of meta_value, possible slow query.",
@@ -4930,8 +4908,8 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 111,
-      "column": 25,
+      "line": 112,
+      "column": 29,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
       "message": "error_log() found. Debug code should not normally be used in production.",
@@ -4941,18 +4919,7 @@
       "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 135,
-      "column": 13,
-      "type": "WARNING",
-      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
-      "message": "The use of function set_time_limit() is discouraged",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 159,
+      "line": 161,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
@@ -4963,7 +4930,7 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 159,
+      "line": 161,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
@@ -4974,7 +4941,7 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 216,
+      "line": 218,
       "column": 43,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -4985,7 +4952,7 @@
       "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 393,
+      "line": 395,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -15900,7 +15867,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.language.repoUrl. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 161,
@@ -16054,7 +16021,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/StatusReport.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed legacy plugin callback with wpi prefix. Registered on native WooCommerce status action. Escaping regressions and current native status page pass. Preserve existing symbol."
     },
     {
       "line": 25,
@@ -16340,7 +16307,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.gateway.loadClassExtention.. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 194,
@@ -17044,7 +17011,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.settings.sections. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 81,
@@ -17055,7 +17022,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.settings.fields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 89,
@@ -17209,7 +17176,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.switchLanguage. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 658,
@@ -17220,7 +17187,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.afterSwitchLanguage. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 20,
@@ -19209,6 +19176,28 @@
       "code": "missing_direct_file_access_protection",
       "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
       "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/runtime-context-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/runtime-context-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
       "file": "work/settings-role-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
@@ -19566,6 +19555,39 @@
       "disposition": "Pending source review"
     },
     {
+      "line": 17,
+      "column": 23,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/frontend/StockRequestContextTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 11,
+      "column": 21,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/integration/LocaleNumberContextTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 25,
+      "column": 21,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/integration/LocaleNumberContextTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
       "line": 20,
       "column": 30,
       "type": "WARNING",
@@ -19628,6 +19650,17 @@
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "tests/integration/VariationSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 12,
+      "column": 48,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/integration/StockAdminContextTest.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -20157,7 +20190,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.fieldsLockerVariableExcludeSelectors. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 452,
@@ -20446,15 +20479,48 @@
       "disposition": "Reviewed integer source IDs and read_post permission before copying, read only language filter, existing featured nonce verification, regressions and Chrome verified"
     },
     {
-      "line": 24,
-      "column": 64,
+      "line": 26,
+      "column": 23,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Missing",
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Stock.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
+    },
+    {
+      "line": 26,
+      "column": 44,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Stock.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
+    },
+    {
+      "line": 27,
+      "column": 23,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Stock.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
+    },
+    {
+      "line": 27,
+      "column": 60,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Stock.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
     },
     {
       "line": 72,
@@ -20476,7 +20542,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned hook at Polylang src/crud-posts.php:146. Plugin passes ID, WP_Post and translations, verified by existing native import regression. Preserve dependency name."
     },
     {
       "line": 179,
@@ -20531,7 +20597,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.metaSync. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 767,
@@ -20542,7 +20608,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.disabledMetaSync. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 804,
@@ -20553,7 +20619,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.fieldsLockerSelectors. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 853,
@@ -20696,7 +20762,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.variation.copyMeta. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 94,
@@ -20707,7 +20773,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed pure formatting selectors with no state mutation. Legacy scalar and array presence semantics retained. Native admin fallback and localized output verified."
     },
     {
       "line": 115,
@@ -20718,7 +20784,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed pure formatting selectors with no state mutation. Legacy scalar and array presence semantics retained. Native admin fallback and localized output verified."
     },
     {
       "line": 84,
@@ -20894,7 +20960,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.syncCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 86,
@@ -21004,7 +21070,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.copyCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 52,
@@ -21070,7 +21136,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed retained legacy navigation global. Current WooCommerce uses WC_Query::$chosen_attributes and sanitized filter query. Plugin updates both query and legacy global, existing frontend regressions verify current and legacy values. Naming alone is not a defect."
     },
     {
       "line": 112,
@@ -21081,7 +21147,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Cart.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Cart.switchedItem. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 257,
@@ -21147,7 +21213,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owning methods, woo-poly.settings.%s_sections retains plugin prefix before native settings ID. Preserve public contract."
     },
     {
       "line": 61,
@@ -21158,7 +21224,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owning methods, woo-poly.settings.%s_fields retains plugin prefix before native settings ID. Preserve public contract."
     },
     {
       "line": 109,
@@ -21169,7 +21235,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.defaultSetting. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 188,
@@ -21180,7 +21246,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.translation. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 197,
@@ -21191,7 +21257,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.translatableEmails. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 492,
@@ -21202,7 +21268,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceFind. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 493,
@@ -21213,7 +21279,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceReplace. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 29,
@@ -21224,7 +21290,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Pages.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ]
 }

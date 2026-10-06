@@ -71,68 +71,70 @@ class Variation
         } else {
             $previousVariations = $this->to->get_children();
 
-            /* This could be a very long operation */
-            set_time_limit(0);
-            foreach ($fromVariation as $variation_id) {
-                $variation = $this->from->get_available_variation( $variation_id );
-                /*
-                 * First we check if the "to" product contains the duplicate meta
-                 * key to find out if we have to update or insert
-                 */
-                $posts = get_posts(array(
-                    'meta_key' => self::DUPLICATE_KEY,
-                    'meta_value' => $variation_id,
-                    'post_type' => 'product_variation',
-                    'post_status'	 => 'any',
-                    'post_parent' => $this->to->get_id(),
-                    //JM2021:empty lang parameter required otherwise polylang adds language filter
-                    'lang' => '',  
-                ));
-                switch (count($posts)) {
-                    case 1:
-                        // update
-                        $this->update(
-                            wc_get_product($variation_id), $posts[0], $variation
-                        );
-                        unset($previousVariations[array_search($posts[0]->ID, $previousVariations)]);
-                        break;
-                    case 0:
-                        // insert
-                        $this->insert(wc_get_product($variation_id), $variation);
-                        break;
-                    default:
-                        //JM2021: duplicate translated variations detected:
-                        //-  update first variation eg original
-                        $this->update(
-                            wc_get_product($variation_id), $posts[0], $variation
-                        );
-                        //- delete duplicate variations
-                        $count = count($posts);
-                        error_log("woo-poly is deleting duplicate variations for variation " . $variation['variation_id'] . 
-                                " in product " . $this->from->get_id() . " translation " . $this->to->get_id());
-                        for($i = 1; $i < $count; $i++)
-                        {                            
-                            $duplicate = wc_get_product($posts[$i]);
-                            if ($duplicate){
-                                $duplicate->delete($force_delete = true);
-                                unset($previousVariations[array_search($posts[$i]->ID, $previousVariations)]);
+            $originalTimeout = (int) ini_get('max_execution_time');
+            wc_set_time_limit(0);
+            try {
+                foreach ($fromVariation as $variation_id) {
+                    $variation = $this->from->get_available_variation( $variation_id );
+                    /*
+                     * First we check if the "to" product contains the duplicate meta
+                     * key to find out if we have to update or insert
+                     */
+                    $posts = get_posts(array(
+                        'meta_key' => self::DUPLICATE_KEY,
+                        'meta_value' => $variation_id,
+                        'post_type' => 'product_variation',
+                        'post_status'	 => 'any',
+                        'post_parent' => $this->to->get_id(),
+                        //JM2021:empty lang parameter required otherwise polylang adds language filter
+                        'lang' => '',
+                    ));
+                    switch (count($posts)) {
+                        case 1:
+                            // update
+                            $this->update(
+                                wc_get_product($variation_id), $posts[0], $variation
+                            );
+                            unset($previousVariations[array_search($posts[0]->ID, $previousVariations)]);
+                            break;
+                        case 0:
+                            // insert
+                            $this->insert(wc_get_product($variation_id), $variation);
+                            break;
+                        default:
+                            //JM2021: duplicate translated variations detected:
+                            //-  update first variation eg original
+                            $this->update(
+                                wc_get_product($variation_id), $posts[0], $variation
+                            );
+                            //- delete duplicate variations
+                            $count = count($posts);
+                            error_log("woo-poly is deleting duplicate variations for variation " . $variation['variation_id'] .
+                                    " in product " . $this->from->get_id() . " translation " . $this->to->get_id());
+                            for($i = 1; $i < $count; $i++)
+                            {
+                                $duplicate = wc_get_product($posts[$i]);
+                                if ($duplicate){
+                                    $duplicate->delete($force_delete = true);
+                                    unset($previousVariations[array_search($posts[$i]->ID, $previousVariations)]);
+                                }
                             }
-                        }
-                        break;
+                            break;
+                    }
                 }
-            }
-            //remove translated variations which no longer exist in source
-            foreach ($previousVariations as $variation_id) {
-                $removedVariation = wc_get_product($variation_id);
-                if ($removedVariation){
-                    $removedVariation->delete($force_delete = true);
+                //remove translated variations which no longer exist in source
+                foreach ($previousVariations as $variation_id) {
+                    $removedVariation = wc_get_product($variation_id);
+                    if ($removedVariation){
+                        $removedVariation->delete($force_delete = true);
+                    }
                 }
+                $target_status=$this->from->get_stock_status();
+                wc_update_product_stock_status ($this->to->get_id(), $target_status);
+                utilities::flushCacheUpdateLookupTable($this->to->get_id());
+            } finally {
+                wc_set_time_limit($originalTimeout);
             }
-            $target_status=$this->from->get_stock_status();
-            wc_update_product_stock_status ($this->to->get_id(), $target_status);
-            utilities::flushCacheUpdateLookupTable($this->to->get_id());
-            /* Restor original timeout */
-            set_time_limit(ini_get('max_execution_time'));
         }
     }
     /**

@@ -4,13 +4,13 @@ Findings are grouped by shared cause. A checker row is not a confirmed defect. F
 
 | Batch | Current checker rows | State |
 | --- | ---: | --- |
-| Distribution and development files | 270 | Pending source review |
+| Distribution and development files | 272 | Pending source review |
 | Request validation and authorization | 114 | All current rows have source dispositions, stock and formatting contexts verified together |
 | Translation contracts | 45 | Source reviewed, owned calls corrected, dependency catalogs and legacy keys preserved |
 | Public hooks and symbol ownership | 25 | All current names source reviewed, existing contracts retained |
 | Output escaping | 22 | Settings and notice batch corrected, all 22 current HTML, script composition and exception data rows reviewed |
 | Database query safety and cost | 10 | Prepared and native query boundaries reviewed, fresh reads retained |
-| Runtime and network compatibility | 8 | Pending source review |
+| Runtime and network compatibility | 3 | Server URL and variation timeout findings corrected, remote badge rows pending |
 | Diagnostic logging | 8 | Intentional diagnostics reviewed, request paths corrected |
 
 The template output and inline script batches are corrected and verified. Templates and the three payment gateways share regression cases for unsafe translations and preserved rich text. The first request batch is corrected and reviewed together. The product cloning and synchronization request batch is corrected and verified. Navigation and current URL handling are corrected and verified together. Remaining context flags and diagnostic request data are reviewed with their owning feature batches. Public hook findings are reviewed together without renaming existing extension contracts. Development file findings are handled through the release archive rather than production source changes.
@@ -29,10 +29,12 @@ The template output and inline script batches are corrected and verified. Templa
 
 Each feature batch uses one fixture set and acceptance matrix across related GitHub and forum reports. The batch inventory retains every report URL and existing summary. Reports without a summary remain unreviewed. Nothing is marked fixed from a title or from disappearing checker output alone.
 
-Evidence: `evidence/batch-inventory.json`. Current counts use `runtime-context-plugin-check.json`. The previous snapshot is retained. There are 232 current production rows, including 72 errors and 160 warnings. There are eight production rows awaiting review or correction, all in runtime and network compatibility. Counts are scan rows, not unique defects. Reviewed rows remain in the complete raw report, with their source dispositions available for re-review.
+Evidence: `evidence/batch-inventory.json`. Current counts use `runtime-server-plugin-check.json`. The previous snapshot is retained. There are 227 current production rows, including 69 errors and 158 warnings. There are three production rows awaiting review or correction, all remote badge resources. Counts are scan rows, not unique defects. Reviewed rows remain in the complete raw report, with their source dispositions available for re-review.
 
-Translation contracts were handled together with unchanged source catalog keys, corrected plugin domains and placeholder guidance. Release archive review contains 270 development or packaging rows. Forum content review still has 383 reports pending. Native feature acceptance, catalog language acceptance, third party integrations, large catalog performance and older stack verification remain separate completion gates.
+Translation contracts were handled together with unchanged source catalog keys, corrected plugin domains and placeholder guidance. Release archive review contains 272 development or packaging rows. Forum content review still has 383 reports pending. Native feature acceptance, catalog language acceptance, third party integrations, large catalog performance and older stack verification remain separate completion gates.
 
 Stock and numeric formatting request contexts were verified in one batch. Native frontend checkout, legacy admin AJAX checkout and product editing preserve linked stock. Pure formatting flags retain their legacy presence contract. The full suite passes 215 tests with 624 assertions.
 
 Public naming review preserves all 25 existing contracts. Current call and definition evidence is in public-contract-source-review.json. Relevant existing regressions pass 17 tests with 62 assertions. Native WooCommerce status renders the retained callback. This naming disposition does not imply complete feature acceptance.
+
+Server runtime findings were corrected in one batch. WordPress URL parsing preserves native localized fragments and account queries. WooCommerce guarded timeout handling restores the captured limit on success and exceptions and supports disabled native functions. All 225 tests pass with 639 assertions. Three remote badge rows remain, and source inspection also identified related social embeds for the network batch.

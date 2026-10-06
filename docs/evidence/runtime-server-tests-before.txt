@@ -1,0 +1,33 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+........[41;37mF[0m[41;37mF[0m                                                        10 / 10 (100%)
+
+Time: 00:00.261, Memory: 103.05 MB
+
+There were 2 failures:
+
+1) RuntimeCompatibilityTest::testVariationCopyRestoresTimeoutAndSupportsRestrictedHosts#0 with data (false)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'31'
++'0'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RuntimeCompatibilityTest.php:70
+
+2) RuntimeCompatibilityTest::testVariationCopyRestoresTimeoutAndSupportsRestrictedHosts#1 with data (true)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'31'
++'0'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RuntimeCompatibilityTest.php:70
+
+[37;41mFAILURES![0m
+[37;41mTests: 10[0m[37;41m, Assertions: 12[0m[37;41m, Failures: 2[0m[37;41m.[0m

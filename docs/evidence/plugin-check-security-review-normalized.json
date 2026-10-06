@@ -3083,7 +3083,8 @@
     "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
     "docs": "",
     "id": "REVIEW-CHECK-264",
-    "status": "pending source or distributable review"
+    "status": "Corrected native URL helper or guarded variation timeout restoration, real regression and browser invocation verified",
+    "evidence": "runtime-server-tests-after.txt, runtime-server-disabled-after.txt, runtime-server-chrome.json, runtime-server-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Ajax.php",
@@ -3094,7 +3095,8 @@
     "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
     "docs": "",
     "id": "REVIEW-CHECK-265",
-    "status": "pending source or distributable review"
+    "status": "Corrected native URL helper or guarded variation timeout restoration, real regression and browser invocation verified",
+    "evidence": "runtime-server-tests-after.txt, runtime-server-disabled-after.txt, runtime-server-chrome.json, runtime-server-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Endpoints.php",
@@ -3105,7 +3107,8 @@
     "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
     "docs": "",
     "id": "REVIEW-CHECK-266",
-    "status": "pending source or distributable review"
+    "status": "Corrected native URL helper or guarded variation timeout restoration, real regression and browser invocation verified",
+    "evidence": "runtime-server-tests-after.txt, runtime-server-disabled-after.txt, runtime-server-chrome.json, runtime-server-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Endpoints.php",
@@ -5207,7 +5210,8 @@
     "message": "The use of function set_time_limit() is discouraged",
     "docs": "",
     "id": "REVIEW-CHECK-447",
-    "status": "pending source or distributable review"
+    "status": "Corrected native URL helper or guarded variation timeout restoration, real regression and browser invocation verified",
+    "evidence": "runtime-server-tests-after.txt, runtime-server-disabled-after.txt, runtime-server-chrome.json, runtime-server-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5254,7 +5258,8 @@
     "message": "The use of function set_time_limit() is discouraged",
     "docs": "",
     "id": "REVIEW-CHECK-451",
-    "status": "pending source or distributable review"
+    "status": "Corrected native URL helper or guarded variation timeout restoration, real regression and browser invocation verified",
+    "evidence": "runtime-server-tests-after.txt, runtime-server-disabled-after.txt, runtime-server-chrome.json, runtime-server-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",

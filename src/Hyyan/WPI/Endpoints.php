@@ -165,7 +165,7 @@ class Endpoints
     {
         if (get_option('permalink_structure')) {
             if (strstr($permalink, '?')) {
-                $query_string = '?'.parse_url($permalink, PHP_URL_QUERY);
+                $query_string = '?'.wp_parse_url($permalink, PHP_URL_QUERY);
                 $permalink = current(explode('?', $permalink));
             } else {
                 $query_string = '';
