@@ -99,3 +99,8 @@ Database and diagnostic checker rows now have explicit source dispositions. This
 | COMPAT-017 | Features translation call has an extra domain argument and a concatenated source literal | Corrected without changing the existing runtime catalog key or setting values | Full suite, catalog key regression and native radio values pass |
 
 Translation catalog, placeholder and domain checker rows have explicit dispositions. Intentional WooCommerce catalogs and runtime business string translation remain. Source catalog keys were preserved rather than renamed to silence static warnings. Full Arabic and Spanish catalog acceptance and wider native shipping and payment scenarios remain feature gates.
+
+| SEC-023 | Posted product type disables stock hooks outside authorized product editing | Restrict deferral to native product screen or authorized admin editpost with scalar type | Frontend malformed flags, denied roles and unrelated manager AJAX actions retain hooks. Native frontend and legacy checkout synchronize both language stocks |
+| COMPAT-018 | Empty currency formatting passes decimal fallback as the grouping fallback | Use the existing thousand separator argument | Failing fallback regression corrected, native admin and legacy localized formatting preserved |
+
+Stock and formatting selectors have explicit source dispositions. Actual writers retain WordPress and WooCommerce permission and nonce checks. Pure formatting flags do not change persistent state. Full block checkout, variation stock, HPOS and external formatting integration acceptance remain broader feature gates.

@@ -71,7 +71,7 @@ class LocaleNumbers
         } else {
             //otherwise if no currency is set, get localized separators only as other parms depend on currency
             $args['decimal_separator'] = $this->getLocaleDecimalSeparator($args['decimal_separator']);
-            $args['thousand_separator'] = $this->getLocaleThousandSeparator($args['decimal_separator']);
+            $args['thousand_separator'] = $this->getLocaleThousandSeparator($args['thousand_separator']);
         }
         return $args;
     }

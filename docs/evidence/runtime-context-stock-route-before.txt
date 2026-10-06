@@ -1,0 +1,23 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+......[41;37mF[0m[41;37mF[0m                                                            8 / 8 (100%)
+
+Time: 00:00.022, Memory: 107.05 MB
+
+There were 2 failures:
+
+1) StockAdminContextTest::testOnlyAuthorizedProductEditorContextDefersStockHooks#6 with data ('lab-manager', 'simple', 'dashboard', true, 'woocommerce_checkout')
+Failed asserting that false is identical to true.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StockAdminContextTest.php:20
+
+2) StockAdminContextTest::testOnlyAuthorizedProductEditorContextDefersStockHooks#7 with data ('lab-manager', 'simple', 'dashboard', true, 'woocommerce_save_order_items')
+Failed asserting that false is identical to true.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StockAdminContextTest.php:20
+
+[37;41mFAILURES![0m
+[37;41mTests: 8[0m[37;41m, Assertions: 14[0m[37;41m, Failures: 2[0m[37;41m.[0m

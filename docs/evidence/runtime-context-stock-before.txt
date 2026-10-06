@@ -1,0 +1,23 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-frontend.xml
+
+.[41;37mF[0m[41;37mF[0m                                                                 3 / 3 (100%)
+
+Time: 00:00.228, Memory: 105.05 MB
+
+There were 2 failures:
+
+1) StockRequestContextTest::testFrontendRequestCannotDisableTranslatedStockSynchronization#1 with data (['simple'])
+Failed asserting that false is not false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/frontend/StockRequestContextTest.php:42
+
+2) StockRequestContextTest::testFrontendRequestCannotDisableTranslatedStockSynchronization#2 with data ([['variable']])
+Failed asserting that false is not false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/frontend/StockRequestContextTest.php:42
+
+[37;41mFAILURES![0m
+[37;41mTests: 3[0m[37;41m, Assertions: 8[0m[37;41m, Failures: 2[0m[37;41m.[0m

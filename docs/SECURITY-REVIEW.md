@@ -229,3 +229,25 @@ The empty SKU compatibility regression first failed after removing the false res
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Changed file reasons, evidence scope and remaining gates |
 
 Existing source keys and catalogs remain unchanged. Fully ordered translated placeholders work with retained legacy keys. Dependency text stays in the WooCommerce catalog and business strings stay in Polylang runtime translation. Static reviewed rows remain visible and require their explanations in the Plugins Team review package. Complete Arabic and Spanish coverage, native multilingual shipping and payment workflows and older stack acceptance remain unverified here. The maintenance release is not yet cleared.
+
+## Shared stock and formatting request context batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Product/Stock.php | Prevent posted type flags from disabling stock synchronization outside authorized native product editing |
+| src/Hyyan/WPI/LocaleNumbers.php | Preserve the distinct grouping separator fallback |
+| tests/frontend/StockRequestContextTest.php | Three genuine frontend contexts verify persisted translated stock |
+| tests/integration/StockAdminContextTest.php | Eight role, shape, screen and AJAX action contexts verify both stock hooks |
+| tests/integration/LocaleNumberContextTest.php | Four native and legacy formatting cases preserve output and fallback |
+| docs/evidence/runtime-context-stock-before.txt, runtime-context-stock-admin-before.txt, runtime-context-stock-route-before.txt and runtime-context-locale-before.txt | Reproduced failures before the corresponding fixes |
+| docs/evidence/runtime-context-stock-after.txt and runtime-context-tests-after.txt | Targeted frontend pass and full 215 test, 624 assertion pass |
+| docs/evidence/runtime-context-fixture.json and runtime-context-legacy-fixture.json | Disposable fixture IDs |
+| docs/evidence/runtime-context-chrome.json | Native browser verification with sensitive receipt URLs and customer data omitted |
+| docs/evidence/runtime-context-native-state.txt, runtime-context-legacy-stock.txt and runtime-context-final-native-state.txt | Persisted linked stock and actual order language checks |
+| docs/evidence/runtime-context-cleanup.txt and runtime-context-final-cleanup.txt | Owned fixture cleanup |
+| docs/evidence/runtime-context-lint.txt | Final PHP syntax checks |
+| docs/evidence/runtime-context-plugin-check.json and runtime-context-plugin-check.stderr.txt | Complete raw final Plugin Check and stderr |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Current and historical source dispositions |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Changed file reasons, verification scope and remaining gates |
+
+The ignored work/runtime-context-browser.php helper is local instrumentation and was removed from the active lab. Native state writers retain WordPress and WooCommerce verification. Pure formatting selectors preserve their existing read only contract. Original product edit synchronization remains. Native classic frontend and legacy admin AJAX checkout and editor saves pass. Block checkout, variation stock, HPOS, external integrations and older stacks remain separate acceptance gates. There are 33 pending production review rows and 383 forum reports awaiting content review. The complete maintenance release is not yet cleared.

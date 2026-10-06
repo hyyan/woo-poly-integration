@@ -1,0 +1,68 @@
+{
+  "formatter": {
+    "status": 200,
+    "result": {
+      "success": true,
+      "data": {
+        "0": {
+          "decimal": ".",
+          "number": "1234.5"
+        },
+        "1": {
+          "decimal": ",",
+          "number": "1.234,5"
+        },
+        "2": {
+          "decimal": ",",
+          "number": "1.234,5"
+        },
+        "fallback": {
+          "currency": "",
+          "decimal_separator": ".",
+          "thousand_separator": ","
+        }
+      }
+    }
+  },
+  "frontendCheckout": {
+    "order": "10524",
+    "receipt": "Thank you. Your order has been received.",
+    "errors": [],
+    "request": {
+      "productType": "simple",
+      "nativeNoncePresent": true,
+      "paymentMethod": "cod"
+    }
+  },
+  "legacyFirstAttempt": {
+    "order": "10846",
+    "receipt": "Thank you. Your order has been received.",
+    "errors": [],
+    "request": {
+      "url": "/de/?wc-ajax=checkout",
+      "productType": "simple",
+      "noncePresent": true
+    }
+  },
+  "legacyCheckout": {
+    "order": "10847",
+    "receipt": "Thank you. Your order has been received.",
+    "errors": [],
+    "request": {
+      "url": "/wp-admin/admin-ajax.php?action=woocommerce_checkout",
+      "productType": "simple",
+      "noncePresent": true
+    }
+  },
+  "finalEditor": {
+    "stock": "17",
+    "productUpdated": true,
+    "compatibilityBannerPresent": true
+  },
+  "cleanup": {
+    "forms": 2,
+    "temporaryNonce": false,
+    "cartItems": 0
+  },
+  "redaction": "Receipt URLs, order access keys and customer details omitted. Fixture orders and products deleted."
+}

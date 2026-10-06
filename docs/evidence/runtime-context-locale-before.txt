@@ -1,0 +1,23 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+...[41;37mF[0m                                                                4 / 4 (100%)
+
+Time: 00:00.004, Memory: 103.05 MB
+
+There was 1 failure:
+
+1) LocaleNumberContextTest::testNativeAdminFallbackKeepsDistinctDecimalAndThousandSeparators
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-','
++'.'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:31
+
+[37;41mFAILURES![0m
+[37;41mTests: 4[0m[37;41m, Assertions: 8[0m[37;41m, Failures: 1[0m[37;41m.[0m

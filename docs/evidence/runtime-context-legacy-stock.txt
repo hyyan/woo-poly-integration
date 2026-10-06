@@ -1,0 +1,2 @@
+{"language":"en","product":10844,"stock":18}
+{"language":"de","product":10845,"stock":18}

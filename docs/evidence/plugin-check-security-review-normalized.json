@@ -5181,7 +5181,8 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-446",
-    "status": "pending source or distributable review"
+    "status": "reviewed request context, stock hook suppression corrected, pure formatting contract retained",
+    "evidence": "runtime-context-tests-after.txt, runtime-context-chrome.json, runtime-context-final-native-state.txt"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5373,7 +5374,8 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-463",
-    "status": "pending source or distributable review"
+    "status": "reviewed request context, stock hook suppression corrected, pure formatting contract retained",
+    "evidence": "runtime-context-tests-after.txt, runtime-context-chrome.json, runtime-context-final-native-state.txt"
   },
   {
     "file": "src/Hyyan/WPI/LocaleNumbers.php",
@@ -5384,7 +5386,8 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-464",
-    "status": "pending source or distributable review"
+    "status": "reviewed request context, stock hook suppression corrected, pure formatting contract retained",
+    "evidence": "runtime-context-tests-after.txt, runtime-context-chrome.json, runtime-context-final-native-state.txt"
   },
   {
     "file": "src/Hyyan/WPI/Language.php",

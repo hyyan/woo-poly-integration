@@ -1,5 +1,5 @@
 {
-  "scan": "translation-contract-plugin-check.json",
+  "scan": "runtime-context-plugin-check.json",
   "checker_findings": [
     {
       "line": 46,
@@ -3407,6 +3407,28 @@
       "code": "missing_direct_file_access_protection",
       "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
       "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/runtime-context-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/runtime-context-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
       "file": "work/settings-role-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
@@ -3764,6 +3786,39 @@
       "disposition": "Pending source review"
     },
     {
+      "line": 17,
+      "column": 23,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/frontend/StockRequestContextTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 11,
+      "column": 21,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/integration/LocaleNumberContextTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 25,
+      "column": 21,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/integration/LocaleNumberContextTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
       "line": 20,
       "column": 30,
       "type": "WARNING",
@@ -3826,6 +3881,17 @@
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "tests/integration/VariationSecurityTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 12,
+      "column": 48,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/integration/StockAdminContextTest.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -4644,15 +4710,48 @@
       "disposition": "Reviewed integer source IDs and read_post permission before copying, read only language filter, existing featured nonce verification, regressions and Chrome verified"
     },
     {
-      "line": 24,
-      "column": 64,
+      "line": 26,
+      "column": 23,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Missing",
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Stock.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
+    },
+    {
+      "line": 26,
+      "column": 44,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Stock.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
+    },
+    {
+      "line": 27,
+      "column": 23,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Stock.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
+    },
+    {
+      "line": 27,
+      "column": 60,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Missing",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Stock.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed hook deferral context restricted to authorized native editpost and scalar product type. Native writers verify permissions and nonces. Frontend and legacy AJAX checkout retain stock hooks. Regression and native checkout and editor evidence verified."
     },
     {
       "line": 72,
@@ -4905,7 +5004,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed pure formatting selectors with no state mutation. Legacy scalar and array presence semantics retained. Native admin fallback and localized output verified."
     },
     {
       "line": 115,
@@ -4916,7 +5015,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed pure formatting selectors with no state mutation. Legacy scalar and array presence semantics retained. Native admin fallback and localized output verified."
     },
     {
       "line": 84,
@@ -15705,18 +15804,7 @@
   ],
   "previous_checker_findings": [
     {
-      "line": 44,
-      "column": 21,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 45,
+      "line": 46,
       "column": 29,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText",
@@ -15724,10 +15812,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed existing source catalog keys, argument meanings documented, fully ordered translated formats verified for both downloader errors and endpoint link. Existing lookup keys retained for installed translations."
     },
     {
-      "line": 49,
+      "line": 50,
       "column": 41,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.ExceptionNotEscaped",
@@ -15738,18 +15826,7 @@
       "disposition": "Reviewed exception data, sole production caller filters error HTML with wp_kses_post before native settings error display, malicious translation regression verified"
     },
     {
-      "line": 54,
-      "column": 17,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 54,
+      "line": 56,
       "column": 20,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText",
@@ -15757,10 +15834,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed existing source catalog keys, argument meanings documented, fully ordered translated formats verified for both downloader errors and endpoint link. Existing lookup keys retained for installed translations."
     },
     {
-      "line": 72,
+      "line": 74,
       "column": 49,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.ExceptionNotEscaped",
@@ -15771,7 +15848,7 @@
       "disposition": "Reviewed exception data, sole production caller filters error HTML with wp_kses_post before native settings error display, malicious translation regression verified"
     },
     {
-      "line": 76,
+      "line": 78,
       "column": 49,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.ExceptionNotEscaped",
@@ -15782,7 +15859,7 @@
       "disposition": "Reviewed exception data, sole production caller filters error HTML with wp_kses_post before native settings error display, malicious translation regression verified"
     },
     {
-      "line": 85,
+      "line": 87,
       "column": 45,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.ExceptionNotEscaped",
@@ -15793,7 +15870,7 @@
       "disposition": "Reviewed exception data, sole production caller filters error HTML with wp_kses_post before native settings error display, malicious translation regression verified"
     },
     {
-      "line": 92,
+      "line": 94,
       "column": 45,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.ExceptionNotEscaped",
@@ -15804,7 +15881,7 @@
       "disposition": "Reviewed exception data, sole production caller filters error HTML with wp_kses_post before native settings error display, malicious translation regression verified"
     },
     {
-      "line": 100,
+      "line": 102,
       "column": 41,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.ExceptionNotEscaped",
@@ -15815,7 +15892,7 @@
       "disposition": "Reviewed exception data, sole production caller filters error HTML with wp_kses_post before native settings error display, malicious translation regression verified"
     },
     {
-      "line": 156,
+      "line": 158,
       "column": 30,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -15834,7 +15911,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Shipping.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 161,
@@ -15845,7 +15922,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Shipping.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 185,
@@ -15856,7 +15933,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Shipping.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 185,
@@ -15867,7 +15944,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Shipping.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 77,
@@ -15878,43 +15955,10 @@
       "docs": "https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed bundled Arabic and Spanish catalog registration, retained local and older supported installation behavior. No reliance on directory hosted language packs only."
     },
     {
-      "line": 367,
-      "column": 21,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 370,
-      "column": 21,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 395,
-      "column": 21,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 423,
+      "line": 426,
       "column": 85,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15922,10 +15966,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 424,
+      "line": 427,
       "column": 86,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15933,10 +15977,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 428,
+      "line": 431,
       "column": 85,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15944,10 +15988,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 429,
+      "line": 432,
       "column": 86,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15955,10 +15999,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 433,
+      "line": 436,
       "column": 89,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15966,10 +16010,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 434,
+      "line": 437,
       "column": 90,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15977,10 +16021,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 438,
+      "line": 441,
       "column": 91,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15988,10 +16032,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 439,
+      "line": 442,
       "column": 92,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -15999,84 +16043,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 462,
-      "column": 33,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 465,
-      "column": 33,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 483,
-      "column": 37,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 486,
-      "column": 37,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 492,
-      "column": 29,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 99,
-      "column": 40,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.TooManyFunctionArgs",
-      "message": "Too many parameters passed to function \"__()\". Expected: 2 parameters, received: 3",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
-      "file": "src/Hyyan/WPI/Admin/Features.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 140,
-      "column": 25,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.NonSingularStringLiteralText",
-      "message": "The $text parameter must be a single text string literal. Found: 'When creating new translations, start with blank text, copy or machine translation?' .\\n                                            ' (You may want to turn this off if using Polylang Pro, Lingotek or other automatic copy-or-translation solution.) '",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
-      "file": "src/Hyyan/WPI/Admin/Features.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 13,
@@ -16109,7 +16076,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Admin/StatusReport.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 30,
@@ -16134,183 +16101,7 @@
       "disposition": "Reviewed native HTML, wc_help_tip escapes its data, existing status report evidence"
     },
     {
-      "line": 72,
-      "column": 33,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
-    },
-    {
-      "line": 105,
-      "column": 23,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound",
-      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;pll_save_post&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 179,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
-    },
-    {
-      "line": 184,
-      "column": 25,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
-    },
-    {
-      "line": 234,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
-    },
-    {
-      "line": 532,
-      "column": 13,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Diagnostic logging",
-      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
-    },
-    {
-      "line": 636,
-      "column": 34,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_META_SYNC_FILTER&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 660,
-      "column": 21,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingArgDomain",
-      "message": "Missing $domain parameter in function call to __().",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 698,
-      "column": 21,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingArgDomain",
-      "message": "Missing $domain parameter in function call to __().",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 767,
-      "column": 30,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 804,
-      "column": 36,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 853,
-      "column": 36,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
-    },
-    {
-      "line": 864,
-      "column": 27,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
-    },
-    {
-      "line": 919,
-      "column": 20,
-      "type": "WARNING",
-      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
-      "message": "Use of a direct database call is discouraged.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Database query safety and cost",
-      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
-    },
-    {
-      "line": 919,
-      "column": 20,
-      "type": "WARNING",
-      "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
-      "message": "Direct database call without caching detected. Consider using wp_cache_get() / wp_cache_set() or wp_cache_delete().",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Database query safety and cost",
-      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
-    },
-    {
-      "line": 35,
-      "column": 138,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Privacy.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 35,
+      "line": 36,
       "column": 292,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -16318,21 +16109,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Privacy.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 36,
-      "column": 146,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Privacy.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 36,
+      "line": 38,
       "column": 314,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -16340,10 +16120,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Privacy.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 79,
+      "line": 81,
       "column": 185,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -16351,7 +16131,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Privacy.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 35,
@@ -16362,7 +16142,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 35,
@@ -16373,7 +16153,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 54,
@@ -16384,7 +16164,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 54,
@@ -16395,7 +16175,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 83,
@@ -16406,7 +16186,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 103,
@@ -16417,7 +16197,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 107,
@@ -16428,7 +16208,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 115,
@@ -16439,7 +16219,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 119,
@@ -16450,7 +16230,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 135,
@@ -16461,7 +16241,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 36,
@@ -16472,7 +16252,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 36,
@@ -16483,7 +16263,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 53,
@@ -16494,7 +16274,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 53,
@@ -16505,7 +16285,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 36,
@@ -16516,7 +16296,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 36,
@@ -16527,7 +16307,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 53,
@@ -16538,7 +16318,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 53,
@@ -16549,7 +16329,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 134,
@@ -16571,7 +16351,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 194,
@@ -16582,7 +16362,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 207,
@@ -16593,7 +16373,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 207,
@@ -16604,7 +16384,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
       "line": 221,
@@ -16615,7 +16395,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed runtime stored shipping labels, payment labels and instructions. Polylang string translation is the production path, dependency catalog fallback retained. Business data is not a static plugin source string."
     },
     {
       "line": 221,
@@ -16626,21 +16406,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 11,
-      "column": 5,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 11,
+      "line": 12,
       "column": 9,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.UnorderedPlaceholdersText",
@@ -16648,7 +16417,7 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#variables",
       "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed existing source catalog keys, argument meanings documented, fully ordered translated formats verified for both downloader errors and endpoint link. Existing lookup keys retained for installed translations."
     },
     {
       "line": 39,
@@ -16684,18 +16453,7 @@
       "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 118,
-      "column": 28,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MissingTranslatorsComment",
-      "message": "A function call to esc_html__() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
-      "file": "src/Hyyan/WPI/Coupon.php",
-      "batch": "Translation contracts",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 118,
+      "line": 119,
       "column": 53,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -16703,10 +16461,10 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Coupon.php",
       "batch": "Translation contracts",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 154,
+      "line": 155,
       "column": 70,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16717,7 +16475,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 154,
+      "line": 155,
       "column": 98,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16728,7 +16486,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 154,
+      "line": 155,
       "column": 140,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16739,7 +16497,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 172,
+      "line": 173,
       "column": 21,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16750,7 +16508,7 @@
       "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 221,
+      "line": 222,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16761,7 +16519,7 @@
       "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 226,
+      "line": 227,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16772,7 +16530,7 @@
       "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 282,
+      "line": 283,
       "column": 13,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -18539,6 +18297,39 @@
       "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$categories&quot;.",
       "docs": "",
       "file": "work/fixtures.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/translation-contract-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/translation-contract-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 4,
+      "column": 55,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "work/translation-contract-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -20664,6 +20455,149 @@
       "file": "src/Hyyan/WPI/Product/Stock.php",
       "batch": "Request validation and authorization",
       "disposition": "Pending source review"
+    },
+    {
+      "line": 72,
+      "column": 33,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 105,
+      "column": 23,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound",
+      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;pll_save_post&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Public hooks and symbol ownership",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 179,
+      "column": 19,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 184,
+      "column": 25,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 234,
+      "column": 19,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 532,
+      "column": 13,
+      "type": "WARNING",
+      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
+      "message": "error_log() found. Debug code should not normally be used in production.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Diagnostic logging",
+      "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
+    },
+    {
+      "line": 636,
+      "column": 34,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_META_SYNC_FILTER&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Public hooks and symbol ownership",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 767,
+      "column": 30,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Public hooks and symbol ownership",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 804,
+      "column": 36,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Public hooks and symbol ownership",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 853,
+      "column": 36,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 864,
+      "column": 27,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 919,
+      "column": 20,
+      "type": "WARNING",
+      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+      "message": "Use of a direct database call is discouraged.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Database query safety and cost",
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
+    },
+    {
+      "line": 919,
+      "column": 20,
+      "type": "WARNING",
+      "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
+      "message": "Direct database call without caching detected. Consider using wp_cache_get() / wp_cache_set() or wp_cache_delete().",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "batch": "Database query safety and cost",
+      "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
       "line": 75,

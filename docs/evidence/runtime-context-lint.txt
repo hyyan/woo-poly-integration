@@ -1,0 +1,5 @@
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Stock.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/LocaleNumbers.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/frontend/StockRequestContextTest.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StockAdminContextTest.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php

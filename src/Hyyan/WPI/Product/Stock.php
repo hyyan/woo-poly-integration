@@ -21,7 +21,10 @@ class Stock {
 
 		//disable on product edit screen as this has its own synchronisation on save
 		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
-		if ( ($screen && $screen->post_type === 'product') || isset( $_POST[ 'product-type' ] ) ) {
+		if ( ($screen && $screen->post_type === 'product') ||
+                (is_admin() && current_user_can('edit_products') &&
+                isset($_POST['action']) && $_POST['action'] === 'editpost' &&
+                isset($_POST['product-type']) && is_string($_POST['product-type'])) ) {
 			return;
 		}
 

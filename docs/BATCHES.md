@@ -4,8 +4,8 @@ Findings are grouped by shared cause. A checker row is not a confirmed defect. F
 
 | Batch | Current checker rows | State |
 | --- | ---: | --- |
-| Distribution and development files | 264 | Pending source review |
-| Request validation and authorization | 111 | 108 current rows have source dispositions, three context selectors remain pending |
+| Distribution and development files | 270 | Pending source review |
+| Request validation and authorization | 114 | All current rows have source dispositions, stock and formatting contexts verified together |
 | Translation contracts | 45 | Source reviewed, owned calls corrected, dependency catalogs and legacy keys preserved |
 | Public hooks and symbol ownership | 25 | Pending source review |
 | Output escaping | 22 | Settings and notice batch corrected, all 22 current HTML, script composition and exception data rows reviewed |
@@ -29,6 +29,8 @@ The template output and inline script batches are corrected and verified. Templa
 
 Each feature batch uses one fixture set and acceptance matrix across related GitHub and forum reports. The batch inventory retains every report URL and existing summary. Reports without a summary remain unreviewed. Nothing is marked fixed from a title or from disappearing checker output alone.
 
-Evidence: `evidence/batch-inventory.json`. Current counts use `translation-contract-plugin-check.json`. The previous snapshot is retained. There are 229 current production rows, including 72 errors and 157 warnings. There are 36 production rows awaiting review or correction: 25 public contract rows, eight runtime rows and three request context selectors. Counts are scan rows, not unique defects. Reviewed rows remain in the complete raw report, with their source dispositions available for re-review.
+Evidence: `evidence/batch-inventory.json`. Current counts use `runtime-context-plugin-check.json`. The previous snapshot is retained. There are 232 current production rows, including 72 errors and 160 warnings. There are 33 production rows awaiting review or correction: 25 public contract rows and eight runtime rows. Counts are scan rows, not unique defects. Reviewed rows remain in the complete raw report, with their source dispositions available for re-review.
 
-Translation contracts were handled together with unchanged source catalog keys, corrected plugin domains and placeholder guidance. Release archive review contains 264 development or packaging rows. Forum content review still has 383 reports pending. Native feature acceptance, catalog language acceptance, third party integrations, large catalog performance and older stack verification remain separate completion gates.
+Translation contracts were handled together with unchanged source catalog keys, corrected plugin domains and placeholder guidance. Release archive review contains 270 development or packaging rows. Forum content review still has 383 reports pending. Native feature acceptance, catalog language acceptance, third party integrations, large catalog performance and older stack verification remain separate completion gates.
+
+Stock and numeric formatting request contexts were verified in one batch. Native frontend checkout, legacy admin AJAX checkout and product editing preserve linked stock. Pure formatting flags retain their legacy presence contract. The full suite passes 215 tests with 624 assertions.
