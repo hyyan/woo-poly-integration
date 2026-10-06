@@ -110,3 +110,14 @@
 - Chrome verified the original failing product page, category page and linked English/German pages. Explicit IDs selected the translated products and categories. Default product shortcode output remained in the current language.
 - Saved shortcode-chrome-after.json. Used one test browser window and verified the dedicated instance stopped after acceptance.
 - Preparing a separate conventional local commit. No push. Remaining tracked issues and complete original feature acceptance remain open.
+
+## Shipping zone zero compatibility
+- Previous step committed the shortcode PHP fix locally as a88c467.
+- Read installed WooCommerce zone constructor and get_shipping_methods behavior. No argument means an unsaved zone with null ID and no methods; explicit 0 loads the existing rest of world zone.
+- Added two integration regressions. Baseline raised a PHP 8.5 null array key deprecation and omitted the rest of world flat rate fixture. Configured zone behavior remains covered.
+- Changed only the existing Shipping collector constructor argument to 0. Full suite passed: 8 unit tests and 31 integration tests, 79 assertions total.
+- Added an enabled flat rate to disposable lab zone 0. Chrome filtered Polylang translations by shipping group, saved English/German labels through its native form, and verified the labels and unchanged 5 euro rate in cart and checkout.
+- Initial translation listing was paginated. An absent title on its first page was not evidence of missing registration and is not used as baseline proof.
+- The existing browser cart contains mixed language products from earlier tests. Full cart language transition and completed checkout are still pending, not claimed accepted by this shipping check.
+- Saved shipping-chrome-after.json. Closed the sole dedicated Chrome test instance after acceptance.
+- Preparing a separate local shipping fix commit. No push. Next: order storage, checkout and remaining issue reproduction.

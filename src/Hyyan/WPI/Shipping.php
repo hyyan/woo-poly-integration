@@ -108,7 +108,7 @@ class Shipping
         $zones = array();
 
         // Rest of the World zone
-        $zone                                              = new \WC_Shipping_Zone();
+        $zone                                              = new \WC_Shipping_Zone(0);
         $zones[$zone->get_id()]                            = $zone->get_data();
         $zones[$zone->get_id()]['formatted_zone_location'] = $zone->get_formatted_location();
         $zones[$zone->get_id()]['shipping_methods']        = $zone->get_shipping_methods();

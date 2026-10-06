@@ -1,0 +1,50 @@
+{
+  "registration": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/wp-admin/admin.php?page=mlang_strings&s&group=WooCommerce+Shipping+Methods&paged=1\",\"rows\":[{\"text\":\"Select Lab international deliveryLab international deliveryShow more detailswoocommerce_flat_rate_5_shipping_methodWooCommerce Shipping MethodsEnglish\\nDeutsch\",\"inputs\":[{\"name\":\"strings[]\",\"value\":\"4c69b4ebbebcfa7f3905a605aa3ec341\"},{\"name\":\"translation[en][4c69b4ebbebcfa7f3905a605aa3ec341]\",\"value\":\"\"},{\"name\":\"translation[de][4c69b4ebbebcfa7f3905a605aa3ec341]\",\"value\":\"\"}]}]}\n```"
+      }
+    ]
+  },
+  "cartEnglish": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/cart/?add-to-cart=115\",\"cart\":\"Products in cart\\nPRODUCT\\t\\nDETAILS\\n\\tTOTAL\\n\\n\\t\\nSecurity fixture de\\n€12.50\\nSize: Large\\n−\\n+\\n\\t\\n€25.00\\n\\n\\n\\t\\nSecurity fixture en\\n€12.50\\nSize: Large\\n−\\n+\\n\\t\\n€12.50\\n\\n\\n\\t\\nTest shirt en\\n€20.00\\n−\\n+\\n\\t\\n€20.00\\nCART TOTALS\\nAdd coupons\\nSubtotal\\n€57.50\\nLab international delivery\\n€5.00\\nEstimated total\\n€62.50\",\"forms\":[]}\n```"
+      }
+    ]
+  },
+  "cartGerman": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/cart-de-2/\",\"cart\":\"Products in cart\\nPRODUCT\\t\\nDETAILS\\n\\tTOTAL\\n\\n\\t\\n\\t\\n\\n\\n\\t\\n\\t\\nCART TOTALS\\nAdd coupons\\nSubtotal\\nLab internationaler Versand\\nEstimated total\"}\n```"
+      }
+    ]
+  },
+  "checkoutGerman": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/checkout-de/\",\"content\":\"Contact information\\nContact information\\nEmail address\\nShipping address\\nShipping address\\nCountry/Region\\nSelect a country/region\\nAfghanistan\\nÅland Islands\\nAlbania\\nAlgeria\\nAmerican Samoa\\nAndorra\\nAngola\\nAnguilla\\nAntarctica\\nAntigua and Barbuda\\nArgentina\\nArmenia\\nAruba\\nAustralia\\nAustria\\nAzerbaijan\\nBahamas\\nBahrain\\nBangladesh\\nBarbados\\nBelarus\\nBelau\\nBelgium\\nBelize\\nBenin\\nBermuda\\nBhutan\\nBolivia\\nBonaire, Saint Eustatius and Saba\\nBosnia and Herzegovina\\nBotswana\\nBouvet Island\\nBrazil\\nBritish Indian Ocean Territory\\nBrunei\\nBulgaria\\nBurkina Faso\\nBurundi\\nCambodia\\nCameroon\\nCanada\\nCape Verde\\nCayman Islands\\nCentral African Republic\\nChad\\nChile\\nChina\\nChristmas Island\\nCocos (Keeling) Islands\\nColombia\\nComoros\\nCongo (Brazzaville)\\nCongo (Kinshasa)\\nCook Islands\\nCosta Rica\\nCroatia\\nCuba\\nCuraçao\\nCyprus\\nCzech Republic\\nDenmark\\nDjibouti\\nDominica\\nDominican Republic\\nEcuador\\nEgypt\\nEl Salvador\\nEquatorial Guinea\\nEritrea\\nEstonia\\nEswatini\\nEthiopia\\nFalkland Islands\\nFaroe Islands\\nFiji\\nFinland\\nFrance\\nFrench Guiana\\nFrench Polynesia\\nFrench Southern Territories\\nGabon\\nGambia\\nGeorgia\\nGermany\\nGhana\\nGibraltar\\nGreece\\nGreenland\\nGrenada\\nGuadeloupe\\nGuam\\nGuatemala\\nGuernsey\\nGuinea\\nGuinea-Bissau\\nGuyana\\nHaiti\\nHeard Island and McDonald Islands\\nHonduras\\nHong Kong\\nHungary\\nIceland\\nIndia\\nIndonesia\\nIran\\nIraq\\nIreland\\nIsle of Man\\nIsrael\\nItaly\\nIvory Coast\\nJamaica\\nJapan\\nJersey\\nJordan\\nKazakhstan\\nKenya\\nKiribati\\nKosovo\\nKuwait\\nKyrgyzstan\\nLaos\\nLatvia\\nLebanon\\nLesotho\\nLiberia\\nLibya\\nLiechtenstein\\nLithuania\\nLuxembourg\\nMacao\\nMadagascar\\nMalawi\\nMalaysia\\nMaldives\\nMali\\nMalta\\nMarshall Islands\\nMartinique\\nMauritania\\nMauritius\\nMayotte\\nMexico\\nMicronesia\\nMoldova\\nMonaco\\nMongolia\\nMontenegro\\nMontserrat\\nMorocco\\nMozambique\\nMyanmar\\nNamibia\\nNauru\\nNepal\\nNetherlands\\nNew Caledonia\\nNew Zealand\\nNicaragua\\nNiger\\nNigeria\\nNiue\\nNorfolk Island\\nNorth Korea\\nNorth Macedonia\\nNorthern Mariana Islands\\nNorway\\nOman\\nPakistan\\nPalestinian Territory\\nPanama\\nPapua New Guinea\\nParaguay\\nPeru\\nPhilippines\\nPitcairn\\nPoland\\nPortugal\\nPuerto Rico\\nQatar\\nReunion\\nRomania\\nRussia\\nRwanda\\nSaint Barthélemy\\nSaint Helena\\nSaint Kitts and Nevis\\nSaint Lucia\\nSaint Martin (Dutch part)\\nSaint Martin (French part)\\nSaint Pierre and Miquelon\\nSaint Vincent and the Grenadines\\nSamoa\\nSan Marino\\nSão Tomé and Príncipe\\nSaudi Arabia\\nSenegal\\nSerbia\\nSeychelles\\nSierra Leone\\nSingapore\\nSlovakia\\nSlovenia\\nSolomon Islands\\nSomalia\\nSouth Africa\\nSouth Georgia/Sandwich Islands\\nSouth Korea\\nSouth Sudan\\nSpain\\nSri Lanka\\nSudan\\nSuriname\\nSvalbard and Jan Mayen\\nSweden\\nSwitzerland\\nSyria\\nTaiwan\\nTajikistan\\nTanzania\\nThailand\\nTimor-Leste\\nTogo\\nTokelau\\nTonga\\nTrinidad and Tobago\\nTürkiye\\nTunisia\\nTurkmenistan\\nTurks and Caicos Islands\\nTuvalu\\nUganda\\nUkraine\\nUnited Arab Emirates\\nUnited Kingdom (UK)\\nUnited States (US)\\nUnited States (US) Minor Outlying Islands\\nUruguay\\nUzbekistan\\nVanuatu\\nVatican\\nVenezuela\\nVietnam\\nVirgin Islands (British)\\nVirgin Islands (US)\\nWallis and Futuna\\nWestern Sahara\\nYemen\\nZambia\\nZimbabwe\\nFirst name\\nLast name\\nAddress\\n+ Add apartment, suite, etc.\\nPostal code\\nCity\\nState/County (optional)\\nSelect a state/county (optional)\\nBaden-Württemberg\\nBavaria\\nBerlin\\nBrandenburg\\nBremen\\nHamburg\\nHesse\\nMecklenburg-Vorpommern\\nLower Saxony\\nNorth Rhine-Westphalia\\nRhineland-Palatinate\\nSaarland\\nSaxony\\nSaxony-Anhalt\\nSchleswig-Holstein\\nThuringia\\nPhone (optional)\\nUse same address for billing\\nShipping options\\nShipping options\\nLab internationaler Versand\\n€5,00\\nPayment options\\nPayment options\\nCash on delivery\\nLocal test payment\\nAdd a note to your order\\nBy proceeding with your purchase you agree to our Terms and Conditions and Privacy Policy\\nPlace Order\\n\\nOrder summary\\n\\n2\\n2 items\\nSecurity fixture de\\n€12,50\\nSize: Large\\nTotal price for 2 Security fixture de items: €25,00\\n€25,00\\n1\\n1 item\\nSecurity fixture en\\n€12,50\\nSize: Large\\nTotal price for 1 Security fixture en item: €12,50\\n€12,50\\n1\\n1 item\\nTest shirt en\\n€20,00\\nTotal price for 1 Test shirt en item: €20,00\\n€20,00\\nAdd coupons\\nSubtotal\\n€57,50\\nLab internationaler Versand\\n€5,00\\nTotal\\n€62,50\",\"criticalError\":false}\n```"
+      }
+    ]
+  },
+  "checkoutEnglish": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/checkout/\",\"shipping\":[\"Lab international delivery\\n€5.00\",\"Lab international delivery\\n€5.00\"],\"criticalError\":false}\n```"
+      }
+    ]
+  },
+  "regressions": {
+    "before": "2 tests: 1 error for null array key, 1 failure for missing flat_rate rest of world instance, 3 deprecations",
+    "after": "8 unit tests, 8 assertions; 31 integration tests, 71 assertions; all passed"
+  },
+  "notes": [
+    "Initial unfiltered translation listing was paginated; absence on page one is not proof of missing registration.",
+    "Existing browser cart contains mixed language items from earlier tests. Shipping label/rate acceptance does not prove cart translation or completed purchase."
+  ]
+}
