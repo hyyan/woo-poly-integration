@@ -1,0 +1,26 @@
+{
+  "marker": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"translatedHelpLinks\":[\"http://localhost:8098/wp-admin/admin.php?page=mlang_settings\",\"http://localhost:8098/wp-admin/admin.php?page=mlang_settings\"],\"featureText\":false,\"forms\":2,\"values\":[{\"value\":\"0\",\"checked\":false},{\"value\":\"1\",\"checked\":true},{\"value\":\"2\",\"checked\":false}]}\n```"
+      }
+    ]
+  },
+  "features": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"featureTranslation\":true,\"radioValues\":[\"0\",\"1\",\"2\"],\"nonceFields\":2}\n```"
+      }
+    ]
+  },
+  "normal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"forms\":2,\"helpLinks\":[\"http://localhost:8098/wp-admin/admin.php?page=mlang_settings\",\"http://localhost:8098/wp-admin/admin.php?page=mlang_settings\"],\"markerPresent\":false}\n```"
+      }
+    ]
+  }
+}

@@ -8,7 +8,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-001",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
@@ -19,7 +20,8 @@
     "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'WooCommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-002",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
@@ -42,7 +44,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-004",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
@@ -53,7 +56,8 @@
     "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'Unable to download WooCommerce translation %s from : <a href=\"%2$s\">%2$s</a>'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-005",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
@@ -135,7 +139,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $label",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-012",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Shipping.php",
@@ -146,7 +151,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-013",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Shipping.php",
@@ -157,7 +163,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $shipping",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-014",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Shipping.php",
@@ -168,7 +175,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-015",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -179,7 +187,8 @@
     "message": "load_plugin_textdomain() has been discouraged since WordPress version 4.6. When your plugin is hosted on WordPress.org, you no longer need to manually include this function call for translations under your plugin slug. WordPress will automatically load the translations for you as needed.",
     "docs": "https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/",
     "id": "REVIEW-CHECK-016",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -202,7 +211,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-018",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -213,7 +223,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-019",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -224,7 +235,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-020",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -235,7 +247,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-021",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -246,7 +259,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-022",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -257,7 +271,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-023",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -268,7 +283,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-024",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -279,7 +295,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-025",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -290,7 +307,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-026",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -301,7 +319,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-027",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -312,7 +331,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-028",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -323,7 +343,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-029",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -334,7 +355,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-030",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -345,7 +367,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-031",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -356,7 +379,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-032",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -367,7 +391,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-033",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/Features.php",
@@ -378,7 +403,8 @@
     "message": "Too many parameters passed to function \"__()\". Expected: 2 parameters, received: 3",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-034",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/Features.php",
@@ -389,7 +415,8 @@
     "message": "The $text parameter must be a single text string literal. Found: 'When creating new translations, start with blank text, copy or machine translation?' .\\n                                            ' (You may want to turn this off if using Polylang Pro, Lingotek or other automatic copy-or-translation solution.) '",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-035",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -435,7 +462,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-039",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -727,7 +755,8 @@
     "message": "Missing $domain parameter in function call to __().",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-065",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -738,7 +767,8 @@
     "message": "Missing $domain parameter in function call to __().",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-066",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -828,7 +858,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-074",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Privacy.php",
@@ -839,7 +870,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-075",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Privacy.php",
@@ -850,7 +882,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-076",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Privacy.php",
@@ -861,7 +894,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-077",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Privacy.php",
@@ -872,7 +906,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-078",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -895,7 +930,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $this->instructions",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-080",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -906,7 +942,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-081",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -929,7 +966,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $this->instructions",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-083",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -940,7 +978,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-084",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -951,7 +990,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-085",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -962,7 +1002,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-086",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -973,7 +1014,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-087",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -984,7 +1026,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-088",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -995,7 +1038,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-089",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -1018,7 +1062,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-091",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -1053,7 +1098,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $this->instructions",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-094",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
@@ -1064,7 +1110,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-095",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
@@ -1087,7 +1134,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $this->instructions",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-097",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
@@ -1098,7 +1146,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-098",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
@@ -1121,7 +1170,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $this->instructions",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-100",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
@@ -1132,7 +1182,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-101",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
@@ -1155,7 +1206,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $this->instructions",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-103",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
@@ -1166,7 +1218,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-104",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways.php",
@@ -1188,7 +1241,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $title",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-106",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways.php",
@@ -1199,7 +1253,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-107",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways.php",
@@ -1210,7 +1265,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $description",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-108",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways.php",
@@ -1221,7 +1277,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-109",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways.php",
@@ -1232,7 +1289,8 @@
     "message": "The $text parameter must be a single text string literal. Found: $total_rows['payment_method']['value']",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#basic-strings",
     "id": "REVIEW-CHECK-110",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways.php",
@@ -1243,7 +1301,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-111",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
@@ -1254,7 +1313,8 @@
     "message": "A function call to __() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-112",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
@@ -1277,7 +1337,8 @@
     "message": "Multiple placeholders in translatable strings should be ordered. Expected \"%1$s, %2$s\", but got \"%s, %s\" in 'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target=\"_blank\" href=\"%s\">%s</a>'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#variables",
     "id": "REVIEW-CHECK-114",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
@@ -1384,7 +1445,8 @@
     "message": "A function call to esc_html__() with texts containing placeholders was found, but was not accompanied by a \"translators:\" comment on the line above to clarify the meaning of the placeholders.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions",
     "id": "REVIEW-CHECK-123",
-    "status": "pending source or distributable review"
+    "status": "corrected plugin domain, translation call or placeholder documentation, source inspected and full regression and native settings acceptance pass",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -1395,7 +1457,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-124",
-    "status": "pending source or distributable review"
+    "status": "reviewed dependency catalog, runtime business data or stable legacy source key, original lookup and formatting contracts retained with explicit source dispositions",
+    "evidence": "translation-contract-tests-after.txt, translation-contract-chrome.json, translation-contract-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",

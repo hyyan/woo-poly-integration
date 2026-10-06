@@ -97,7 +97,7 @@ class Features extends AbstractSettings
                             __(
                         'Sync stock for product and its translations', 'woo-poly-integration'
                 ) . '.</a> <strong>' . __(
-                        'Note: this setting affects user actions on stock, to control synchronisation when editing products check the settings for Metas List, Stock Metas.', 'woo-poly-integration', 'woo-poly-integration'
+                        'Note: this setting affects user actions on stock, to control synchronisation when editing products check the settings for Metas List, Stock Metas.', 'woo-poly-integration'
                 ) . '</strong>',
             ),
             array(
@@ -137,8 +137,7 @@ class Features extends AbstractSettings
                 'default' => '0',   //starting this off for backwards compatibility, users should test before turning on
                 'label' => __('New Translation Behaviour', 'woo-poly-integration'),
                 'desc' => __(
-                        'When creating new translations, start with blank text, copy or machine translation?' .
-                                            ' (You may want to turn this off if using Polylang Pro, Lingotek or other automatic copy-or-translation solution.) ', 'woo-poly-integration'
+                        'When creating new translations, start with blank text, copy or machine translation? (You may want to turn this off if using Polylang Pro, Lingotek or other automatic copy-or-translation solution.) ', 'woo-poly-integration'
                 ),
                 'options' => array(
                     '0' => 'Blank Text',

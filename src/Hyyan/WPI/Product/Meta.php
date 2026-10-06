@@ -657,7 +657,7 @@ class Meta
                 'name' => __('Polylang Metas', 'woo-poly-integration'),
                 'desc' => __('To control these values please check ', 'woo-poly-integration') .
                     ' <a href="' . get_admin_url() . 'admin.php?page=mlang_settings">' .
-                    __('Polylang admin menu "Languages, Settings"') . '</a> ' .
+                    __('Polylang admin menu "Languages, Settings"', 'woo-poly-integration') . '</a> ' .
                     __('Synchronisation section values for Page order, Featured image, Comment Status', 'woo-poly-integration'),
                 'metas' => array(
                     'menu_order',           //controlled by Polylang Languages, Settings, Page order
@@ -695,7 +695,7 @@ class Meta
                 'name' => __('Attributes Metas', 'woo-poly-integration'),
                 'desc' => __('To select individual Product Attributes for translation or synchronization, turn on here and check', 'woo-poly-integration') .
                     ' <a href="' . get_admin_url() . 'admin.php?page=mlang_settings">' .
-                    __('Polylang admin menu "Languages, Settings"') . '</a> ' .
+                    __('Polylang admin menu "Languages, Settings"', 'woo-poly-integration') . '</a> ' .
                     __(' "Custom post types and Taxonomies", "Custom Taxonomies"', 'woo-poly-integration'),
                 'metas' => array(
                     '_product_attributes',

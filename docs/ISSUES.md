@@ -94,3 +94,8 @@ Forum topics FORUM-021 through FORUM-040 have individual dispositions in the for
 | COMPAT-015 | Prepared SKU duplicate query adds slashes to the search value | Corrected to pass raw SKU to the prepared string placeholder and verify duplicates even when native lookup returns false | Quotes, backslashes and SQL looking literal values detect same language duplicates, native English save rejects the quote SKU and German save preserves cross language allowance |
 
 Database and diagnostic checker rows now have explicit source dispositions. This is not a catalog performance benchmark or full coupon, stock or third party integration acceptance.
+
+| COMPAT-016 | Two plugin settings help labels use the default WordPress domain | Corrected to the plugin domain without changing source text | Failing regression reproduced, both native links show controlled translated labels and retain destinations |
+| COMPAT-017 | Features translation call has an extra domain argument and a concatenated source literal | Corrected without changing the existing runtime catalog key or setting values | Full suite, catalog key regression and native radio values pass |
+
+Translation catalog, placeholder and domain checker rows have explicit dispositions. Intentional WooCommerce catalogs and runtime business string translation remain. Source catalog keys were preserved rather than renamed to silence static warnings. Full Arabic and Spanish catalog acceptance and wider native shipping and payment scenarios remain feature gates.

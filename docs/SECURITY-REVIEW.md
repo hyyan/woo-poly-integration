@@ -206,3 +206,26 @@ Both direct SQL queries use prepared variable placeholders. Related variation re
 Additional evidence: `query-diagnostics-native-tests-before.txt` records four failing native false lookup cases. `query-diagnostics-native-fixture.json` identifies only disposable products. `query-diagnostics-native-state-cleanup.txt` records their final persisted SKUs before deletion. `query-diagnostics-lint.txt` records final syntax checks. The complete test set has 14 cases and 43 assertions. The temporary browser helper preceded the native workflow, so the browser evidence distinguishes those two proof scopes.
 
 The empty SKU compatibility regression first failed after removing the false result shortcut. An explicit empty SKU guard restores the native result while nonempty stored values use the prepared query. Baseline evidence is `query-diagnostics-empty-sku-before.txt`. Original no product ID behavior remains.
+
+## Translation contract batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Admin/Features.php | Remove extra translation argument and retain one literal with the exact original catalog key |
+| src/Hyyan/WPI/Product/Meta.php | Use the plugin domain for both owned settings help labels |
+| src/Hyyan/WPI/Tools/TranslationsDownloader.php | Document language and repository arguments while retaining installed lookup keys |
+| src/Hyyan/WPI/Plugin.php | Document page warning placeholders |
+| src/Hyyan/WPI/Privacy.php | Document privacy policy link placeholders, retain WooCommerce defaults and catalog |
+| src/Hyyan/WPI/Coupon.php | Document the translated coupon code placeholder |
+| src/Hyyan/WPI/Views/Messages/endpointsTranslations.php | Document link arguments and translated placeholder ordering |
+| tests/integration/TranslationContractTest.php | Five shared domain, error, endpoint and stable feature key cases |
+| work/translation-contract-browser.php | Read only authenticated marker instrumentation, removed from the active lab |
+| docs/evidence/translation-contract-tests-before.txt | Reproduced missing plugin domain |
+| docs/evidence/translation-contract-tests-targeted.txt and translation-contract-tests-after.txt | Five targeted cases and the full 200 test, 588 assertion suite |
+| docs/evidence/translation-contract-chrome.json | Actual translated native settings markers and normal page after cleanup |
+| docs/evidence/translation-contract-lint.txt | All touched PHP file syntax checks |
+| docs/evidence/translation-contract-plugin-check.json and translation-contract-plugin-check.stderr.txt | Complete raw final scan and stderr |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Preserve current and historical source dispositions and complete remaining rows |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Changed file reasons, evidence scope and remaining gates |
+
+Existing source keys and catalogs remain unchanged. Fully ordered translated placeholders work with retained legacy keys. Dependency text stays in the WooCommerce catalog and business strings stay in Polylang runtime translation. Static reviewed rows remain visible and require their explanations in the Plugins Team review package. Complete Arabic and Spanish coverage, native multilingual shipping and payment workflows and older stack acceptance remain unverified here. The maintenance release is not yet cleared.

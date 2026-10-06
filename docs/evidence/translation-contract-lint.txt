@@ -1,0 +1,8 @@
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Admin/Features.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Plugin.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Coupon.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Privacy.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Tools/TranslationsDownloader.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Messages/endpointsTranslations.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/integration/TranslationContractTest.php

@@ -364,9 +364,11 @@ class Plugin
 				    \WC_Install::create_pages();
 				    $pageid = wc_get_page_id( $page_type );
 					$warnings[ $page_type . '::' . $default_locale ] = sprintf(
+					/* translators: 1: Page type, 2: Locale, 3: Page edit URL, 4: Page ID. */
 					__( '%1$s page in base language %2$s was not found and was created using woocommerce create_pages() as page <a href="%3$s">%4$s</a>', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $default_locale ), esc_url( get_edit_post_link( $pageid, 'raw' ) ), absint( $pageid ) );
 				} else {
 					$warnings[ $page_type . '::' . $default_locale ] = sprintf(
+					/* translators: 1: Page type, 2: Locale, 3: Settings link HTML. */
 					__( '%1$s page in language %2$s was not found and must be created for the shop to work: this will be done automatically if Check WooCommerce Pages option is enabled in %3$s.  Translations for this page may also be missing.', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $default_locale ), static::settingsLinkHTML() );
 					$failure										 = true;
 				}
@@ -392,6 +394,7 @@ class Plugin
 					$orig_postlang									 = $default_lang;
 					pll_set_post_language( $orig_page_id, $orig_postlang );
 					$warnings[ $page_type . '::' . $default_locale ] = sprintf(
+					/* translators: 1: Page type, 2: Locale, 3: Page edit URL, 4: Page ID. */
 					__( '%1$s page did not have language - language set to %2$s on page <a href="%3$s">%4$s</a>', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $default_locale ), esc_url( get_edit_post_link( $orig_page_id, 'raw' ) ), absint( $orig_page_id ) );
 				}
 				$translations[ $orig_postlang ] = $orig_page_id;
@@ -459,9 +462,11 @@ class Plugin
 							    pll_set_post_language( $translation_id, $langSlug );
 							    $changed = true;
 								$warnings[ $page_type . '::' . $langLocale ] = sprintf(
+								/* translators: 1: Page type, 2: Locale, 3: Page edit URL, 4: Page ID. */
 								__( '%1$s page in language %2$s was not found and was created as page <a href="%3$s">%4$s</a>', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $langLocale ), esc_url( get_edit_post_link( $translation_id, 'raw' ) ), absint( $translation_id ) );
 							} else {
 								$warnings[ $page_type . '::' . $langLocale ] = sprintf(
+								/* translators: 1: Page type, 2: Locale, 3: Settings link HTML. */
 								__( '%1$s page in language %2$s was not found and must be created for the shop to work in this language: this will be done automatically if Check WooCommerce Pages option is enabled in %3$s.', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $langLocale ), static::settingsLinkHTML() );
 								$failure									 = true;
 							}
@@ -480,15 +485,18 @@ class Plugin
 								$baseURL = is_multisite() ? get_admin_url() : admin_url();
 								if ( $postStatus == 'trash' ) {
 									$warnings[ $page_type . '::' . $langSlug ] = sprintf(
+									/* translators: 1: Page type, 2: Locale, 3: Trash URL, 4: Page ID. */
 									__( '%1$s page in language %2$s has been deleted, please check the <a href="%3$s">trash</a>, and restore page %4$s', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $langLocale ), esc_url( add_query_arg( array( 'post_status' => 'trash', 'post_type' => 'page', 'lang' => $langSlug ), $baseURL.'edit.php' ) ), absint( $translation_id ) );
 								} else {
 									$warnings[ $page_type . '::' . $langSlug ] = sprintf(
+									/* translators: 1: Page type, 2: Locale, 3: Post status, 4: Page edit URL, 5: Page ID. */
 									__( '%1$s page in language %2$s is in status %3$s and needs to be published for the shop to work properly, check page <a href="%4$s">%5$s</a>', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $langLocale ), esc_html( $postStatus ), esc_url( get_edit_post_link( $translation_id, 'raw' ) ), absint( $translation_id ) );
 								}
 								$failure = true;
 							}
 						} else {
 								$warnings[ $page_type . '::' . $langSlug ] = sprintf(
+							/* translators: 1: Page type, 2: Locale, 3: Missing page ID. */
 							__( '%1$s page in language %2$s was linked in polylang but cannot be found, link will be removed to missing page %3$s', 'woo-poly-integration' ), esc_html( $page_type ), esc_html( $langLocale ), absint( $translation_id ) );
 							unset( $translations[ $langSlug ] );
 							$failure									 = true;

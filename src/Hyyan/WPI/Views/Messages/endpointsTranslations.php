@@ -8,6 +8,7 @@ if (!defined('ABSPATH')) {
 <?php
 
 echo wp_kses_post(sprintf(
+    /* translators: 1: String translations URL, 2: Link label. Translations may use numbered placeholders to reorder the arguments. */
     __( 'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%s">%s</a>', 'woo-poly-integration'), 
     esc_url(add_query_arg(
         array(

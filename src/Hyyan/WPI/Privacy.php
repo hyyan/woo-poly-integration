@@ -32,7 +32,9 @@ class Privacy
      */
     public function registerPrivacyStrings()
     {
+        /* translators: %s: Privacy policy link placeholder. */
         $this->registerString('woocommerce_checkout_privacy_policy_text', get_option('woocommerce_checkout_privacy_policy_text', sprintf(__('Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.', 'woocommerce'), '[privacy_policy]')));                        
+        /* translators: %s: Privacy policy link placeholder. */
         $this->registerString('woocommerce_registration_privacy_policy_text', get_option('woocommerce_registration_privacy_policy_text', sprintf(__('Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.', 'woocommerce'), '[privacy_policy]')));
         $this->registerString( 'woocommerce_store_notice', get_option( 'woocommerce_demo_store_notice' ) );
         $this->registerString( 'woocommerce_checkout_terms_and_conditions_checkbox_text', get_option( 'woocommerce_checkout_terms_and_conditions_checkbox_text' ) );
