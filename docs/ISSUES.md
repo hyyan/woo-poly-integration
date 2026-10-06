@@ -38,4 +38,8 @@ Feature contract: README.md/readme.txt and wiki; existing variable-product defau
 
 | COMPAT-001 | Product and category shortcodes use reversed implode arguments | Fixed in local commit a88c467 on PHP 8.5: both language shortcode rendering and 5 regression cases pass | Original ID filtering works in both languages without changing shortcode contract |
 
-| COMPAT-002 | Shipping collector creates unsaved zone instead of rest of world zone 0 | Fixed and verified: 2 regressions and Chrome translated shipping labels/rates pass | No null key warning; rest of world and configured methods retain instance keys |
+| COMPAT-002 | Shipping collector creates unsaved zone instead of rest of world zone 0 | Fixed in local commit 93f6226: 2 regressions and Chrome translated shipping labels/rates pass | No null key warning; rest of world and configured methods retain instance keys |
+
+| COMPAT-003 | Currency formatter crashes when Polylang has no current locale during checkout email rendering | Fixed and verified: WordPress locale fallback, regression and Chrome checkout 200/order received pass | Normal language formatting preserved; emails render without ValueError |
+
+| COMPAT-004 | Block checkout order language missing with HPOS and German thank you redirect goes to English | Chrome reproduced orders 1041 and 1143 with language false; fix pending | Classic and block orders retain language, localized redirect and email behavior in both storage modes |

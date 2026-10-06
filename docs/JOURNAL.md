@@ -121,3 +121,16 @@
 - The existing browser cart contains mixed language products from earlier tests. Full cart language transition and completed checkout are still pending, not claimed accepted by this shipping check.
 - Saved shipping-chrome-after.json. Closed the sole dedicated Chrome test instance after acceptance.
 - Preparing a separate local shipping fix commit. No push. Next: order storage, checkout and remaining issue reproduction.
+
+## Checkout currency formatter without current language
+- Previous turn committed shipping zone fix as 93f6226. Read Order, Emails and installed classic and Store API checkout source before testing.
+- Lab has HPOS enabled with legacy synchronization disabled. Original Order callback registers only the classic checkout hook.
+- Chrome German block checkout created processing order 1041 without language, then returned HTTP 500. PHP log identified NumberFormatter ValueError for locale @currency=EUR while rendering the order email.
+- Added a lab only pre_wp_mail interceptor before checkout. Messages are captured locally and never sent externally.
+- Added a regression that failed with the same ValueError. Added WordPress locale fallback to all four existing NumberFormatter paths only when Polylang returns no locale.
+- Full suite passed: 9 unit tests and 31 integration tests, 93 assertions total. Existing empty dimension and normal locale cases remain covered.
+- Chrome repeated checkout after the fix. Store API returned 200, processing order 1143 reached order received with total 62.50, and order emails rendered into the local capture.
+- German block checkout still redirected to English and order language remained false. These reproduced defects require their own order storage/Store API fix.
+- Automatic approval review rejected storing raw network evidence containing session material. Saved only sanitized results, with cookies, headers, nonces, keys and customer details omitted.
+- Used one browser test window and closed the dedicated instance after acceptance. Preparing separate local formatter commit. No push.
+- Next: order hook regression coverage, language persistence, email locale and localized thank you routing for blocks/HPOS while preserving classic order behavior.

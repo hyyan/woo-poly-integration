@@ -57,7 +57,7 @@ class LocaleNumbers
         //if there is a currency provided, attempt a full reset of formatting parameters
         if ((isset($args['currency'])) && ($args['currency'] != '')) {
             $currency = $args['currency'];
-            $locale = pll_current_language('locale');
+            $locale = pll_current_language('locale') ?: get_locale();
             $formatter = new \NumberFormatter($locale . '@currency=' . $currency, \NumberFormatter::CURRENCY);
             $args['decimal_separator'] = $formatter->getSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL);
             $args['thousand_separator'] = $formatter->getSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL);
@@ -92,7 +92,7 @@ class LocaleNumbers
 
         //don't touch values on admin screens, save as plain number using woo defaults
         if (is_numeric($input) && ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax']))) {
-            $a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::DECIMAL);
+            $a = new \NumberFormatter(pll_current_language('locale') ?: get_locale(), \NumberFormatter::DECIMAL);
             if ($a) {
                 $retval = $a->format((float) $input, \NumberFormatter::TYPE_DOUBLE);
             }
@@ -113,7 +113,7 @@ class LocaleNumbers
         $retval = $separator;
         //don't touch values on admin screens, save as plain number using woo defaults
         if ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax'])) {
-            $locale = pll_current_language('locale');
+            $locale = pll_current_language('locale') ?: get_locale();
             $a = new \NumberFormatter($locale, \NumberFormatter::DECIMAL);
             if ($a) {
                 $locale_result = $a->getSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL);
@@ -138,7 +138,7 @@ class LocaleNumbers
         $retval = $separator;
         //don't touch values on admin screens, save as plain number using woo defaults
         if (!is_admin()) {
-            $a = new \NumberFormatter(pll_current_language('locale'), \NumberFormatter::DECIMAL);
+            $a = new \NumberFormatter(pll_current_language('locale') ?: get_locale(), \NumberFormatter::DECIMAL);
             if ($a) {
                 $retval = $a->getSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL);
             }
