@@ -190,7 +190,8 @@
     "message": "Mismatched text domain. Expected 'woo-poly-integration' but got ' woo-poly-integration'.",
     "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
     "id": "REVIEW-CHECK-017",
-    "status": "pending source or distributable review"
+    "status": "fixed settings link text domain, escaped label and destination, regression and native Chrome checks pass",
+    "evidence": "settings-output-tests-after.txt, settings-output-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Plugin.php",
@@ -2050,7 +2051,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$message['message']'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-184",
-    "status": "pending source or distributable review"
+    "status": "reviewed owned HTML composition, all internal leaf producers inspected and corrected, native forms and trusted developer HTML preserved",
+    "evidence": "settings-output-tests-after.txt, settings-output-chrome.json, settings-output-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/Settings.php",
@@ -2083,7 +2085,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'Hyyan'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-187",
-    "status": "pending source or distributable review"
+    "status": "reviewed owned HTML composition, all internal leaf producers inspected and corrected, native forms and trusted developer HTML preserved",
+    "evidence": "settings-output-tests-after.txt, settings-output-chrome.json, settings-output-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/Settings.php",
@@ -2094,7 +2097,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$this'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-188",
-    "status": "pending source or distributable review"
+    "status": "reviewed owned HTML composition, all internal leaf producers inspected and corrected, native forms and trusted developer HTML preserved",
+    "evidence": "settings-output-tests-after.txt, settings-output-chrome.json, settings-output-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2568,7 +2572,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'Hyyan'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-229",
-    "status": "pending source or distributable review"
+    "status": "reviewed owned HTML composition, all internal leaf producers inspected and corrected, native forms and trusted developer HTML preserved",
+    "evidence": "settings-output-tests-after.txt, settings-output-chrome.json, settings-output-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/admin.php",
@@ -2579,7 +2584,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$vars'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-230",
-    "status": "pending source or distributable review"
+    "status": "reviewed owned HTML composition, all internal leaf producers inspected and corrected, native forms and trusted developer HTML preserved",
+    "evidence": "settings-output-tests-after.txt, settings-output-chrome.json, settings-output-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/admin.php",

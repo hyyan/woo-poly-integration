@@ -1,0 +1,28 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-admin.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m..                                                               5 / 5 (100%)
+
+Time: 00:00.411, Memory: 109.05 MB
+
+There were 3 failures:
+
+1) PageMaintenanceSecurityTest::testDeniedRolesCannotRunPageMaintenance#0 with data ('lab-subscriber')
+Failed asserting that '0' is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/PageMaintenanceSecurityTest.php:60
+
+2) PageMaintenanceSecurityTest::testDeniedRolesCannotRunPageMaintenance#1 with data ('lab-customer')
+Failed asserting that '0' is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/PageMaintenanceSecurityTest.php:60
+
+3) PageMaintenanceSecurityTest::testDeniedRolesCannotRunPageMaintenance#2 with data ('lab-contributor')
+Failed asserting that '0' is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/PageMaintenanceSecurityTest.php:60
+
+[37;41mFAILURES![0m
+[37;41mTests: 5[0m[37;41m, Assertions: 9[0m[37;41m, Failures: 3[0m[37;41m, Deprecations: 1[0m[37;41m.[0m

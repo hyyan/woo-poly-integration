@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/admin/bootstrap.php" colors="true" cacheDirectory="/tmp/woopoly-phpunit-admin">
+  <testsuites><testsuite name="Admin"><directory>tests/admin</directory></testsuite></testsuites>
+</phpunit>

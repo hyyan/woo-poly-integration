@@ -162,3 +162,26 @@ All 151 tests pass with 435 assertions. Native browser filtering and selection p
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Record every changed file, compatibility findings, verification scope and remaining work |
 
 All 160 tests pass with 460 assertions. Marker script data, normal attribute search, dialog behavior, wrapper behavior, empty selectors and current native language UI were checked in Chrome. The protected product type method has no current production caller and its retained extension compatibility path has a regression. All eight active wrapper callers were inspected. The default language change restriction remains a UI behavior and does not add a new server authorization policy. Five output checker rows and the wider release audit remain pending.
+
+## Settings output and page maintenance batch
+
+| File | Reason |
+| --- | --- |
+| vendor/class.settings-api.php | Escape attributes and plain labels, filter rich descriptions, preserve quoted selection and native editor, match owned tab IDs |
+| src/Hyyan/WPI/Plugin.php | Escape action links and warning values, return native edit URLs, filter composed page warnings and authorize page maintenance |
+| src/Hyyan/WPI/Admin/Settings.php | Escape native menu labels |
+| tests/integration/SettingsRendererSecurityTest.php | Sixteen shared field, section, link, quote selection and editor regressions |
+| tests/admin/bootstrap.php | Run actual normal admin context without AJAX bypass |
+| tests/admin/PageMaintenanceSecurityTest.php | Denied roles, authorized manager warning and translated notice regressions |
+| phpunit-admin.xml | Configure normal admin maintenance suite |
+| tests/bin/run.sh | Run the admin suite with existing suites |
+| docs/evidence/settings-output-tests-before.txt and settings-output-tests-targeted.txt | Preserve failing baseline and initial targeted acceptance |
+| docs/evidence/settings-maintenance-tests-before.txt and settings-maintenance-deprecation.txt | Preserve failing role baseline and final clean admin checks |
+| docs/evidence/settings-output-tests-after.txt and settings-output-lint.txt | Final four suites and syntax results |
+| docs/evidence/settings-output-chrome.json | Native and controlled browser evidence, before and after fragment failure and rejected test action |
+| docs/evidence/settings-native-saved.txt and settings-fixture-cleanup.txt | Retained Fields Locker value and restored fixture state |
+| docs/evidence/settings-output-plugin-check.json and settings-output-plugin-check.stderr.txt | Complete final scan and stderr |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Preserve exact prior dispositions, refresh reviewed boundaries and current counts |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Batch scope, reasons, evidence and remaining work |
+
+All 181 tests pass with 532 assertions. Settings nonce rejection, unchanged save and normal forms pass in Chrome. The disable Fields Locker test action was rejected by automatic approval review and was not executed. Authorized manager behavior has native context regression and controlled callback proof. Full role login sessions and automatic missing page and base language repair remain manual acceptance cases. The FlashMessages body API retains trusted developer HTML after inspection of every internal producer, including original social widgets. No blanket HTML encoding was applied to native forms or trusted executable widgets. The full maintenance release is not yet cleared.
