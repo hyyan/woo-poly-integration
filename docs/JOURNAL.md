@@ -134,3 +134,17 @@
 - Automatic approval review rejected storing raw network evidence containing session material. Saved only sanitized results, with cookies, headers, nonces, keys and customer details omitted.
 - Used one browser test window and closed the dedicated instance after acceptance. Preparing separate local formatter commit. No push.
 - Next: order hook regression coverage, language persistence, email locale and localized thank you routing for blocks/HPOS while preserving classic order behavior.
+
+## Block checkout order language
+- Previous turn committed the missing formatter locale fix locally as 7077cf8.
+- Read installed Polylang REST source: it selects language from an explicit lang parameter, and the normal Store API request lacks that parameter. Read WooCommerce's existing Store API order metadata hook.
+- Direct classic HPOS probe showed the preserved Polylang taxonomy contract works on the reserved shop_order_placehold ID. No new order metadata or changed getter was necessary.
+- Added five order regressions. Baseline had three failures for block language assignment. Classic language assignment passed.
+- Registered the existing saveOrderLanguage callback on the Store API metadata action and accepted its WC_Order argument. When current language is absent only on this object path, a valid Polylang language cookie selects the locale through the existing Utilities switcher. Explicit language wins. Invalid or nested cookies preserve existing order language.
+- Chrome block HPOS purchases passed for German order 1256 and English order 1257. Both processing orders retained language, totals 25.00 and the correct localized order received path.
+- Chrome classic HPOS German order 1262 passed. Legacy switch was initially refused because orders were unsynchronized. Used supported wp wc hpos sync, then verified the selected storage option was no.
+- Corrected a test fixture assumption: Polylang automatically assigns default language to new legacy order posts. Invalid cookie regression now asserts preservation of an explicit existing language, rather than assuming a blank one.
+- Five order regressions passed with legacy storage. Chrome classic legacy English order 1278 and German order 1279 passed with correct languages and paths.
+- Synced the two new legacy orders with the supported command and restored original block page IDs 7/8, HPOS yes and compatibility synchronization false. Final full suite passed: 45 tests, 104 assertions.
+- Saved sanitized order-language-chrome.json. Closed and verified the sole Chrome testing instance stopped. No remote publication.
+- Preparing the separate local order fix commit. Broader cookie disabled/client language handling, localized email catalog acceptance, stock/refunds, coupons, reports and complete checkout matrix remain open.

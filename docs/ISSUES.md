@@ -40,6 +40,6 @@ Feature contract: README.md/readme.txt and wiki; existing variable-product defau
 
 | COMPAT-002 | Shipping collector creates unsaved zone instead of rest of world zone 0 | Fixed in local commit 93f6226: 2 regressions and Chrome translated shipping labels/rates pass | No null key warning; rest of world and configured methods retain instance keys |
 
-| COMPAT-003 | Currency formatter crashes when Polylang has no current locale during checkout email rendering | Fixed and verified: WordPress locale fallback, regression and Chrome checkout 200/order received pass | Normal language formatting preserved; emails render without ValueError |
+| COMPAT-003 | Currency formatter crashes when Polylang has no current locale during checkout email rendering | Fixed in local commit 7077cf8: WordPress locale fallback, regression and Chrome checkout 200/order received pass | Normal language formatting preserved; emails render without ValueError |
 
-| COMPAT-004 | Block checkout order language missing with HPOS and German thank you redirect goes to English | Chrome reproduced orders 1041 and 1143 with language false; fix pending | Classic and block orders retain language, localized redirect and email behavior in both storage modes |
+| COMPAT-004 | Block checkout order language missing with HPOS and German thank you redirect goes to English | Fixed for normal cookie enabled checkout: 5 order regressions and 5 Chrome purchases pass across block/classic and HPOS/legacy paths; broader client/cookie configuration acceptance pending | Classic and block orders retain language, localized redirect and email behavior in both storage modes |

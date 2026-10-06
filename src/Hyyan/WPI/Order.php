@@ -36,6 +36,9 @@ class Order
         add_action(
                 'woocommerce_checkout_update_order_meta', array($this, 'saveOrderLanguage')
         );
+        add_action(
+                'woocommerce_store_api_checkout_update_order_meta', array($this, 'saveOrderLanguage')
+        );
 
         if (is_admin()) {
             $this->limitPolylangFeaturesForOrders();
@@ -75,13 +78,22 @@ class Order
     /**
      * Save the order language with every checkout.
      *
-     * @param int $order the order object
+     * @param int|\WC_Order $order Order ID or Store API order object
      */
     public function saveOrderLanguage($order)
     {
         $current = pll_current_language();
+        if (!$current && $order instanceof \WC_Order && defined('PLL_COOKIE') &&
+                isset($_COOKIE[PLL_COOKIE]) && is_string($_COOKIE[PLL_COOKIE])) {
+            $language = PLL()->model->get_language(sanitize_key(wp_unslash($_COOKIE[PLL_COOKIE])));
+            if ($language) {
+                Utilities::switchLocale($language->locale);
+                $current = $language->slug;
+            }
+        }
         if ($current) {
-            pll_set_post_language($order, $current);
+            $ID = $order instanceof \WC_Order ? $order->get_id() : $order;
+            pll_set_post_language($ID, $current);
         }
     }
 
