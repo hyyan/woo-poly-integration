@@ -245,8 +245,11 @@
     "file": "forum/cac63657725d7860.html",
     "status": "captured",
     "id": "FORUM-021",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending hook acceptance",
+    "captured_post_count": 2,
+    "category": "Custom email extensions",
+    "report_summary": "Order Status Manager custom email types do not use the order language.",
+    "next_check": "Verify existing EMAILS_TRANSLATABLE_FILTER and custom type locale hooks before treating this as a missing API."
   },
   {
     "url": "https://wordpress.org/support/topic/uncaught-referenceerror-cookies-is-not-defined-5/",
@@ -254,8 +257,11 @@
     "file": "forum/33a1ca631e1fe771.html",
     "status": "captured",
     "id": "FORUM-022",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Fixed and tested in current change",
+    "captured_post_count": 1,
+    "category": "Cart cookie dependency",
+    "report_summary": "The fragment script uses Cookies but declares jquery-cookie as its dependency.",
+    "next_check": "Isolated native dependency regression and Chrome before/after error proof pass. Native bilingual mini cart quantity/subtotal also pass."
   },
   {
     "url": "https://wordpress.org/support/topic/infinite-loading-on-a-2nd-lang-checkout-page/",
@@ -263,8 +269,11 @@
     "file": "forum/0654059d17f4a904.html",
     "status": "captured",
     "id": "FORUM-023",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending reproduction",
+    "captured_post_count": 2,
+    "category": "Checkout loading",
+    "report_summary": "Second language checkout loads indefinitely, with no isolated gateway/version details.",
+    "next_check": "Exercise supported checkout matrix and isolate gateways before assigning a cause."
   },
   {
     "url": "https://wordpress.org/support/topic/update-product-data-why-disable-after-install-plugin-2/",
@@ -272,8 +281,11 @@
     "file": "forum/cd783875bdee39ab.html",
     "status": "captured",
     "id": "FORUM-024",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Reviewed: documented behavior, acceptance pending",
+    "captured_post_count": 2,
+    "category": "Fields locker configuration",
+    "report_summary": "Synchronized translated product fields are disabled by Fields Locker.",
+    "next_check": "Verify field synchronization locks and disabling Fields Locker through native settings."
   },
   {
     "url": "https://wordpress.org/support/topic/category-entries/",
@@ -281,8 +293,11 @@
     "file": "forum/23453b7adb900053.html",
     "status": "captured",
     "id": "FORUM-025",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Mapped to pending GH-543",
+    "captured_post_count": 2,
+    "category": "Category hierarchy",
+    "report_summary": "Translated category child entries with products are absent.",
+    "next_check": "Verify child term language links, assignments, counts and archives."
   },
   {
     "url": "https://wordpress.org/support/topic/stripe-for-woocommerce-support/",
@@ -290,8 +305,11 @@
     "file": "forum/6a80664d601593f7.html",
     "status": "captured",
     "id": "FORUM-026",
-    "review_status": "Pending report triage",
-    "captured_post_count": 3
+    "review_status": "Reviewed: external integration scope, reproduction pending",
+    "captured_post_count": 3,
+    "category": "Third party Stripe strings",
+    "report_summary": "Stripe client validation strings are absent from Polylang translation settings.",
+    "next_check": "Preserve built in gateway support and verify existing extension hooks. Do not assume support for every external gateway's own strings."
   },
   {
     "url": "https://wordpress.org/support/topic/the-links-on-the-woocommerce-my-account-page-do-not-work-properly/",
@@ -299,8 +317,11 @@
     "file": "forum/7a5b10b49ac511ea.html",
     "status": "captured",
     "id": "FORUM-027",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending reproduction",
+    "captured_post_count": 2,
+    "category": "Account endpoints",
+    "report_summary": "Order view, address, payment, account and logout links do not work.",
+    "next_check": "Verify every account endpoint in both languages using native links."
   },
   {
     "url": "https://wordpress.org/support/topic/stock-doesnt-sync/",
@@ -308,8 +329,11 @@
     "file": "forum/4323adfc048cc39d.html",
     "status": "captured",
     "id": "FORUM-028",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending reproduction",
+    "captured_post_count": 2,
+    "category": "Variation stock and duplication",
+    "report_summary": "Variation stock fails to synchronize and translated variation creation produces duplicates.",
+    "next_check": "Verify global attribute variation generation and repeated product translation/update without duplicates."
   },
   {
     "url": "https://wordpress.org/support/topic/inability-to-add-properties-to-the-second-language/",
@@ -317,8 +341,11 @@
     "file": "forum/75f37609af68eaef.html",
     "status": "captured",
     "id": "FORUM-029",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending reproduction",
+    "captured_post_count": 2,
+    "category": "Translated product attributes",
+    "report_summary": "Selected translated product properties disappear on the storefront.",
+    "next_check": "Verify attribute storage, visibility, term translations and storefront rendering."
   },
   {
     "url": "https://wordpress.org/support/topic/variable-product-issue-6/",
@@ -326,8 +353,11 @@
     "file": "forum/b263c9df40fa94ae.html",
     "status": "captured",
     "id": "FORUM-030",
-    "review_status": "Pending report triage",
-    "captured_post_count": 7
+    "review_status": "Pending reproduction",
+    "captured_post_count": 7,
+    "category": "Variable product editor and dependency deactivation",
+    "report_summary": "Variable products appear as simple and variation controls fail. A reply also reports pll_default_language fatal after dependencies are deactivated.",
+    "next_check": "Verify native editor type persistence, variation controls and Polylang deactivation without changing data."
   },
   {
     "url": "https://wordpress.org/support/topic/dont-sync-cart-item-data/",
@@ -335,8 +365,11 @@
     "file": "forum/ad156c139f2fdbc7.html",
     "status": "captured",
     "id": "FORUM-031",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Mapped to GH-537 design request",
+    "captured_post_count": 2,
+    "category": "Optional cart synchronization",
+    "report_summary": "Requests independent carts by language to avoid country/currency confusion.",
+    "next_check": "Preserve original shared translated cart behavior and assess optional cart behavior separately from compatibility fixes."
   },
   {
     "url": "https://wordpress.org/support/topic/bugreport-with-woo-4-4-1-and-wp-5-5/",
@@ -344,8 +377,11 @@
     "file": "forum/fcdac106081984f5.html",
     "status": "captured",
     "id": "FORUM-032",
-    "review_status": "Pending report triage",
-    "captured_post_count": 5
+    "review_status": "Pending reproduction",
+    "captured_post_count": 5,
+    "category": "Variable product editor",
+    "report_summary": "Saving variations resets displayed product type, including reports after earlier fixes.",
+    "next_check": "Verify current native editor save/reload and stored product type."
   },
   {
     "url": "https://wordpress.org/support/topic/variation-bug-doubletriple-amount/",
@@ -353,8 +389,11 @@
     "file": "forum/954254da770e3389.html",
     "status": "captured",
     "id": "FORUM-033",
-    "review_status": "Pending report triage",
-    "captured_post_count": 5
+    "review_status": "Pending preservation acceptance",
+    "captured_post_count": 5,
+    "category": "Duplicate translated variations",
+    "report_summary": "Translation creates duplicate variation rows. A later reply reports the draft release solved it.",
+    "next_check": "Verify current repeat create/update flow rather than assuming historical resolution still holds."
   },
   {
     "url": "https://wordpress.org/support/topic/variable-product-reverts-to-simple-after-saving/",
@@ -362,8 +401,11 @@
     "file": "forum/321a45213482ae37.html",
     "status": "captured",
     "id": "FORUM-034",
-    "review_status": "Pending report triage",
-    "captured_post_count": 10
+    "review_status": "Pending reproduction",
+    "captured_post_count": 10,
+    "category": "Variable product editor",
+    "report_summary": "Editor displays simple type despite reports that persisted product data remains variable.",
+    "next_check": "Separate editor display, stored type and storefront option behavior in current reproduction."
   },
   {
     "url": "https://wordpress.org/support/topic/product-show-on-one-language-only/",
@@ -371,8 +413,11 @@
     "file": "forum/fba6b050831aa053.html",
     "status": "captured",
     "id": "FORUM-035",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending reproduction",
+    "captured_post_count": 1,
+    "category": "Translated shop archives and shortcodes",
+    "report_summary": "Only the configured shop language shows products and translated shop shortcode results are absent.",
+    "next_check": "Verify linked shop archives and shortcode filtering without unsetting the native shop page."
   },
   {
     "url": "https://wordpress.org/support/topic/plugin-slows-down-website-3/",
@@ -380,8 +425,11 @@
     "file": "forum/ee12e561b9921830.html",
     "status": "captured",
     "id": "FORUM-036",
-    "review_status": "Pending report triage",
-    "captured_post_count": 1
+    "review_status": "Pending reproduction",
+    "captured_post_count": 1,
+    "category": "Gateway performance and conditional activation",
+    "report_summary": "Reports slower pages and incorrect thank you language when Plugin Organizer conditionally disables WooPoly.",
+    "next_check": "Measure actual gateway query overhead and distinguish full activation from third party conditional loading."
   },
   {
     "url": "https://wordpress.org/support/topic/products-do-not-appear-in-categories/",
@@ -389,8 +437,11 @@
     "file": "forum/17415eec445c5b0e.html",
     "status": "captured",
     "id": "FORUM-037",
-    "review_status": "Pending report triage",
-    "captured_post_count": 3
+    "review_status": "Pending reproduction",
+    "captured_post_count": 3,
+    "category": "Translated category product visibility",
+    "report_summary": "Translated category archives omit products. Discussion links GitHub issue 497.",
+    "next_check": "Verify term links, assignments and archive queries, then read the linked issue evidence."
   },
   {
     "url": "https://wordpress.org/support/topic/custom-payment-gateways-description-not-working/",
@@ -398,8 +449,11 @@
     "file": "forum/42b31c2d954ebc50.html",
     "status": "captured",
     "id": "FORUM-038",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Reviewed: configuration guidance, acceptance pending",
+    "captured_post_count": 2,
+    "category": "Gateway description translation",
+    "report_summary": "Custom payment descriptions remain in their source language. Reply explains settings use base language and checkout displays translated values.",
+    "next_check": "Verify gateway descriptions through translation settings and bilingual checkout."
   },
   {
     "url": "https://wordpress.org/support/topic/product-language-matches-email-language/",
@@ -407,8 +461,11 @@
     "file": "forum/ca2d551a096ba236.html",
     "status": "captured",
     "id": "FORUM-039",
-    "review_status": "Pending report triage",
-    "captured_post_count": 2
+    "review_status": "Pending behavior acceptance",
+    "captured_post_count": 2,
+    "category": "Order line item names and email language",
+    "report_summary": "Changing checkout language translates email text but reported product names remain in original language.",
+    "next_check": "Verify original order line name contract and email recipient locale separately before changing stored order names."
   },
   {
     "url": "https://wordpress.org/support/topic/custom-product-sorting-3/",
@@ -416,8 +473,11 @@
     "file": "forum/cf33d90e193de81c.html",
     "status": "captured",
     "id": "FORUM-040",
-    "review_status": "Pending report triage",
-    "captured_post_count": 3
+    "review_status": "Reviewed: reporter resolved configuration, acceptance pending",
+    "captured_post_count": 3,
+    "category": "Menu order synchronization",
+    "report_summary": "Translated product sort order remains unchanged after editing the source product. Reporter found the synchronization setting.",
+    "next_check": "Verify enabled/disabled menu order synchronization and storefront sorting."
   },
   {
     "url": "https://wordpress.org/support/topic/product-parent-categories-unchecked/",

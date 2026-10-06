@@ -1,0 +1,55 @@
+{
+  "issue": "FORUM-022",
+  "scope": "Standalone cart fragment dependency graph and normal linked product mini cart flow",
+  "baseline": {
+    "integrationTests": 1,
+    "assertions": 2,
+    "failures": 1,
+    "browserCookieApi": "undefined",
+    "browserError": "Uncaught ReferenceError: Cookies is not defined",
+    "loadedCookieAsset": "jquery-cookie/jquery.cookie.min.js"
+  },
+  "after": {
+    "unitTests": 9,
+    "unitAssertions": 22,
+    "integrationTests": 50,
+    "integrationAssertions": 109,
+    "exitCode": 0,
+    "browserCookieApi": "object",
+    "loadedCookieAsset": "js-cookie/js.cookie.min.js",
+    "isolatedConsoleErrors": 0
+  },
+  "nativeMiniCart": {
+    "english": {
+      "product": "Test shirt en",
+      "quantity": 2,
+      "unitPrice": "20.00",
+      "subtotal": "40.00"
+    },
+    "german": {
+      "product": "Test shirt de",
+      "quantity": 2,
+      "unitPrice": "20,00",
+      "subtotal": "40,00",
+      "productPath": "/de/product/test-shirt-de/",
+      "cartPath": "/de/cart-de-2/",
+      "checkoutPath": "/de/checkout-de-2/"
+    },
+    "englishReturn": {
+      "product": "Test shirt en",
+      "quantity": 2,
+      "subtotal": "40.00"
+    },
+    "germanConsoleErrors": 0,
+    "cleanupItemCount": 0
+  },
+  "cleanup": {
+    "temporaryFixtureRemoved": true,
+    "dedicatedChromeStopped": true
+  },
+  "limits": [
+    "Full cart variation, coupon and checkout matrix remains pending.",
+    "Other WooCommerce scripts masked the defect on the initial homepage. The isolated route proves the declared dependency's failure.",
+    "Older supported stack browser acceptance remains pending."
+  ]
+}

@@ -186,3 +186,14 @@
 - Full suite passed: 9 unit tests with 22 assertions and 49 integration tests with 106 assertions. Chrome callback checks passed. English and German home pages loaded without fatal errors. Saved polylang-locale-chrome.json. Complete order email workflow and catalog acceptance remain pending.
 - Removed the temporary lab route. Closed the dedicated Chrome MCP process and verified it absent.
 - Next: remaining 403 forum reports, email catalogs, product/attribute synchronization, cart/order lifecycle and checker findings.
+
+## Forum cart dependency fix and continued triage
+- Confirmed prior locale fix is local commit 76e3f53.
+- Read all captured posts for FORUM-021 through FORUM-040 and recorded individual summaries, categories and next checks. Forty forum topics are now triaged, with 383 pending.
+- FORUM-022 reports Cookies is not defined. Current Cart registers jquery-cookie while both script variants already use the Cookies API. Installed WooCommerce registers js-cookie as a supported alias for its existing wc-js-cookie library. No new dependency was added.
+- Current homepage masks the failure by loading another cookie consumer. An isolated native WordPress script graph regression failed before the fix. A temporary lab route rendering only the fragment dependency chain reproduced the ReferenceError in Chrome MCP.
+- Replaced only the incorrect dependency handle with js-cookie. Full suite passed: 9 unit tests/22 assertions and 50 integration tests/109 assertions. Isolated Chrome route loaded the correct API with no console errors.
+- Native product UI added two Test shirt en items. English mini cart showed 2 x 20.00 and subtotal 40.00. German language link changed the name, product/cart/checkout paths and decimal display while retaining quantity and subtotal. Returning to English preserved the contents.
+- The first removal click failed because the header mini cart was hidden. Hovering the header then using its remove button emptied the cart. Saved cart-fragment-chrome.json.
+- Observed German Test shirt de in related products on the English product page. Recorded COMPAT-006 for source investigation rather than attributing a cause.
+- Removed the temporary route, closed the sole dedicated Chrome process and verified it absent. Older stack, complete cart/coupon/variation behavior and remaining acceptance rows are still open.
