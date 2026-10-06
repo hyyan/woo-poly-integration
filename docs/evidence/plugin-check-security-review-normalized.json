@@ -2105,7 +2105,7 @@
     "message": "Detected usage of a possibly undefined superglobal array index: $_SERVER[&#039;HTTP_HOST&#039;]. Check that the array index exists before using it.",
     "docs": "",
     "id": "REVIEW-CHECK-189",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2116,7 +2116,7 @@
     "message": "$_SERVER[&#039;HTTP_HOST&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-190",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2127,7 +2127,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;HTTP_HOST&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-191",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2138,7 +2138,7 @@
     "message": "Detected usage of a possibly undefined superglobal array index: $_SERVER[&#039;REQUEST_URI&#039;]. Check that the array index exists before using it.",
     "docs": "",
     "id": "REVIEW-CHECK-192",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2149,7 +2149,7 @@
     "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-193",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2160,7 +2160,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-194",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -5506,7 +5506,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-481",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
@@ -5517,7 +5517,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-482",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
@@ -5528,7 +5528,7 @@
     "message": "$_GET[$name] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-483",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
@@ -5539,7 +5539,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[$name]",
     "docs": "",
     "id": "REVIEW-CHECK-484",
-    "status": "pending source or distributable review"
+    "status": "corrected navigation request batch, shape validation and WordPress sanitization, native shop filtering and controlled URL helper browser checks verified"
   },
   {
     "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",

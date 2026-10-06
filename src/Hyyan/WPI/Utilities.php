@@ -198,9 +198,13 @@ final class Utilities
      */
     public static function getCurrentUrl()
     {
-        return (is_ssl() ? 'https://' : 'http://')
-                . $_SERVER['HTTP_HOST']
-                . $_SERVER['REQUEST_URI'];
+        if (!isset($_SERVER['HTTP_HOST'], $_SERVER['REQUEST_URI']) ||
+                !is_string($_SERVER['HTTP_HOST']) || !is_string($_SERVER['REQUEST_URI'])) {
+            return home_url('/');
+        }
+        return esc_url_raw((is_ssl() ? 'https://' : 'http://')
+                . wp_unslash($_SERVER['HTTP_HOST'])
+                . wp_unslash($_SERVER['REQUEST_URI']), array('http', 'https'));
     }
 
     /**

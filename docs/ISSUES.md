@@ -73,3 +73,7 @@ Forum topics FORUM-021 through FORUM-040 have individual dispositions in the for
 | COMPAT-008 | CSV import passes a WooCommerce product object to the Polylang post save contract | Corrected and verified in native importer and two regressions | Both prices synchronize while post dates, menu order and review settings remain intact |
 
 | SEC-014 | Product synchronization accepts malformed source and language query values | Corrected together in four files with shared integer and registered language helpers and source read permission | 20 regressions and native creation, variation display and publish preserve metadata, defaults and price |
+
+| SEC-015 | Layered navigation passes malformed filter arrays to string operations | Corrected in shared navigation batch, invalid shapes removed before plugin and native widget processing | Real frontend regression and native German shop render without a critical error |
+| COMPAT-009 | Layered navigation translates numeric IDs but leaves current WooCommerce source slugs untranslated | Corrected through registered taxonomy lookup across languages | Native German shop filters the translated product and widget selects and clears normally, legacy ID contract retained |
+| SEC-016 | Public current URL helper concatenates missing or malformed server values without sanitization | Corrected with shape checks, WordPress unslashing and URL sanitization, no production callers found | Missing and array values return home, valid host, port, path and query retained, control characters removed |

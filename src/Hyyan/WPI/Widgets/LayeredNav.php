@@ -49,16 +49,30 @@ class LayeredNav
             $taxonomy = wc_attribute_taxonomy_name($attribute);
             $name = 'filter_'.$attribute;
 
-            if (!(!empty($_GET[$name]) && taxonomy_exists($taxonomy))) {
+            if (isset($_GET[$name]) && !is_string($_GET[$name])) {
+                unset($_GET[$name]);
+                continue;
+            }
+            if (empty($_GET[$name]) || !taxonomy_exists($taxonomy)) {
                 continue;
             }
 
-            $terms = explode(',', $_GET[$name]);
+            $terms = explode(',', wc_clean(wp_unslash($_GET[$name])));
             $termsTranslations = array();
 
-            foreach ($terms as $ID) {
-                $translation = pll_get_term($ID);
-                $termsTranslations [] = $translation ? $translation : $ID;
+            foreach ($terms as $value) {
+                if (ctype_digit($value)) {
+                    $ID = absint($value);
+                    $translation = pll_get_term($ID);
+                    $termsTranslations[] = $translation ? absint($translation) : $ID;
+                } else {
+                    $slug = sanitize_title($value);
+                    $matches = get_terms(array('taxonomy' => $taxonomy, 'slug' => $slug, 'hide_empty' => false, 'number' => 1, 'lang' => ''));
+                    $term = !is_wp_error($matches) && $matches ? reset($matches) : false;
+                    $translation = $term ? pll_get_term($term->term_id) : false;
+                    $translated = $translation ? get_term($translation, $taxonomy) : false;
+                    $termsTranslations[] = $translated && !is_wp_error($translated) ? $translated->slug : $slug;
+                }
             }
 
             $_GET[$name] = implode(',', $termsTranslations);

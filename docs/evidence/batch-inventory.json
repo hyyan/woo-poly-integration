@@ -1,5 +1,5 @@
 {
-  "scan": "product-request-plugin-check.json",
+  "scan": "navigation-request-plugin-check.json",
   "checker_findings": [
     {
       "line": 44,
@@ -1850,73 +1850,7 @@
       "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 202,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
-      "message": "Detected usage of a possibly undefined superglobal array index: $_SERVER[&#039;HTTP_HOST&#039;]. Check that the array index exists before using it.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 202,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;HTTP_HOST&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 202,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;HTTP_HOST&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 203,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
-      "message": "Detected usage of a possibly undefined superglobal array index: $_SERVER[&#039;REQUEST_URI&#039;]. Check that the array index exists before using it.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 203,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_SERVER[&#039;REQUEST_URI&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 203,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 238,
+      "line": 242,
       "column": 18,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
@@ -1927,7 +1861,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 542,
+      "line": 546,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_key",
@@ -1938,7 +1872,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 543,
+      "line": 547,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_value",
@@ -1949,7 +1883,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 630,
+      "line": 634,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -1960,7 +1894,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 654,
+      "line": 658,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -2505,6 +2439,17 @@
       "code": "missing_direct_file_access_protection",
       "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
       "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "tests/frontend/bootstrap.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
       "file": "work/request-browser-check.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
@@ -2891,6 +2836,215 @@
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "work/template-browser-check.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 3,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$backup&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 5,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$attribute&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 9,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$terms&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 9,
+      "column": 19,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$products&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 10,
+      "column": 63,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$language&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 10,
+      "column": 76,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$slug&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 12,
+      "column": 5,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$terms&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 14,
+      "column": 5,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$p&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 18,
+      "column": 5,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$a&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 22,
+      "column": 5,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$products&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 26,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$widgets&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 27,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$widgets&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 29,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$sidebars&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 30,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$sidebars&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 32,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$data&quot;.",
+      "docs": "",
+      "file": "work/navigation-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/navigation-url-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 4,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/navigation-url-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 5,
+      "column": 73,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "work/navigation-url-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -3584,6 +3738,160 @@
       "message": "GitHub workflow directory \".github\" detected. This directory should not be included in production plugins.",
       "docs": "",
       "file": ".github",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 19,
+      "column": 26,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 62,
+      "column": 60,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 69,
+      "column": 40,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 69,
+      "column": 40,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
+      "message": "Detected usage of a possibly undefined superglobal array index: $_GET[&#039;filter_navregression&#039;]. Check that the array index exists before using it.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 69,
+      "column": 40,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
+      "message": "$_GET[&#039;filter_navregression&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 69,
+      "column": 40,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;filter_navregression&#039;]",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 77,
+      "column": 55,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 77,
+      "column": 55,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
+      "message": "Detected usage of a possibly undefined superglobal array index: $_GET[&#039;filter_navregression&#039;]. Check that the array index exists before using it.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 77,
+      "column": 55,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
+      "message": "$_GET[&#039;filter_navregression&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 77,
+      "column": 55,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;filter_navregression&#039;]",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 85,
+      "column": 53,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 85,
+      "column": 53,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
+      "message": "Detected usage of a possibly undefined superglobal array index: $_GET[&#039;filter_navregression&#039;]. Check that the array index exists before using it.",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 85,
+      "column": 53,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
+      "message": "$_GET[&#039;filter_navregression&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 85,
+      "column": 53,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;filter_navregression&#039;]",
+      "docs": "",
+      "file": "tests/frontend/NavigationRequestTest.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -4876,50 +5184,61 @@
     },
     {
       "line": 52,
-      "column": 26,
+      "column": 23,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed read only shop filtering, malformed shapes removed before native renderer, values unslashed and cleaned then normalized as integer IDs or sanitized slugs, translated registered taxonomy values preserved, real frontend and native Chrome verified"
     },
     {
-      "line": 56,
-      "column": 35,
+      "line": 52,
+      "column": 51,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed read only shop filtering, malformed shapes removed before native renderer, values unslashed and cleaned then normalized as integer IDs or sanitized slugs, translated registered taxonomy values preserved, real frontend and native Chrome verified"
     },
     {
       "line": 56,
-      "column": 35,
+      "column": 23,
       "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[$name] not unslashed before sanitization. Use wp_unslash() or similar",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed read only shop filtering, malformed shapes removed before native renderer, values unslashed and cleaned then normalized as integer IDs or sanitized slugs, translated registered taxonomy values preserved, real frontend and native Chrome verified"
     },
     {
-      "line": 56,
-      "column": 35,
+      "line": 60,
+      "column": 55,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed read only shop filtering, malformed shapes removed before native renderer, values unslashed and cleaned then normalized as integer IDs or sanitized slugs, translated registered taxonomy values preserved, real frontend and native Chrome verified"
+    },
+    {
+      "line": 60,
+      "column": 55,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
       "message": "Detected usage of a non-sanitized input variable: $_GET[$name]",
       "docs": "",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed read only shop filtering, malformed shapes removed before native renderer, values unslashed and cleaned then normalized as integer IDs or sanitized slugs, translated registered taxonomy values preserved, real frontend and native Chrome verified"
     },
     {
-      "line": 65,
+      "line": 79,
       "column": 13,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
@@ -15812,7 +16131,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
       "line": 105,
@@ -15834,18 +16153,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 180,
-      "column": 26,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
       "line": 184,
@@ -15856,153 +16164,21 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 185,
-      "column": 30,
+      "line": 234,
+      "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 185,
-      "column": 62,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 185,
-      "column": 62,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 185,
-      "column": 62,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 187,
-      "column": 25,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 187,
-      "column": 54,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 239,
-      "column": 23,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 239,
-      "column": 51,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 243,
-      "column": 32,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 243,
-      "column": 61,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 248,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 248,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 248,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 526,
+      "line": 532,
       "column": 13,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
@@ -16013,7 +16189,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 630,
+      "line": 636,
       "column": 34,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -16024,7 +16200,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 654,
+      "line": 660,
       "column": 21,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.MissingArgDomain",
@@ -16035,7 +16211,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 692,
+      "line": 698,
       "column": 21,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.MissingArgDomain",
@@ -16046,7 +16222,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 761,
+      "line": 767,
       "column": 30,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -16057,7 +16233,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 798,
+      "line": 804,
       "column": 36,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -16068,7 +16244,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 827,
+      "line": 833,
       "column": 19,
       "type": "ERROR",
       "code": "WordPress.WP.AlternativeFunctions.rand_rand",
@@ -16079,7 +16255,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 848,
+      "line": 854,
       "column": 36,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16087,10 +16263,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 859,
+      "line": 865,
       "column": 27,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -16098,10 +16274,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 915,
+      "line": 921,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
@@ -16112,7 +16288,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 915,
+      "line": 921,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
@@ -17267,7 +17443,95 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 156,
+      "line": 154,
+      "column": 20,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 154,
+      "column": 45,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 154,
+      "column": 72,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 157,
+      "column": 29,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 157,
+      "column": 29,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+      "message": "Detected usage of a non-sanitized input variable: $_GET[$key]",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 169,
+      "column": 20,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 169,
+      "column": 47,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 172,
+      "column": 52,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Utilities.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 202,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
@@ -17278,7 +17542,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 156,
+      "line": 202,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
@@ -17289,7 +17553,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 156,
+      "line": 202,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
@@ -17300,7 +17564,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 157,
+      "line": 203,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
@@ -17311,7 +17575,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 157,
+      "line": 203,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
@@ -17322,7 +17586,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 157,
+      "line": 203,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
@@ -17333,7 +17597,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 192,
+      "line": 238,
       "column": 18,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
@@ -17344,29 +17608,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 337,
-      "column": 38,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 337,
-      "column": 67,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 496,
+      "line": 542,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_key",
@@ -17377,7 +17619,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 497,
+      "line": 543,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_value",
@@ -17388,7 +17630,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 584,
+      "line": 630,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -17399,7 +17641,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 608,
+      "line": 654,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -18714,6 +18956,83 @@
       "code": "missing_direct_file_access_protection",
       "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
       "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/product-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 3,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$backup&quot;.",
+      "docs": "",
+      "file": "work/product-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 5,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$features&quot;.",
+      "docs": "",
+      "file": "work/product-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 6,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$features&quot;.",
+      "docs": "",
+      "file": "work/product-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 8,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$product&quot;.",
+      "docs": "",
+      "file": "work/product-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 12,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$attribute&quot;.",
+      "docs": "",
+      "file": "work/product-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 20,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$variation&quot;.",
+      "docs": "",
+      "file": "work/product-request-fixture.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
       "file": "work/fragment-check.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
@@ -18950,6 +19269,17 @@
       "disposition": "Pending source review"
     },
     {
+      "line": 20,
+      "column": 30,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "tests/integration/ProductTranslationInputTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
       "line": 54,
       "column": 21,
       "type": "WARNING",
@@ -19038,7 +19368,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 191,
+      "line": 213,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -19049,7 +19379,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 191,
+      "line": 213,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
@@ -19060,7 +19390,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 191,
+      "line": 213,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
@@ -19071,7 +19401,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 191,
+      "line": 213,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
@@ -19082,7 +19412,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 195,
+      "line": 217,
       "column": 58,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -19093,7 +19423,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 195,
+      "line": 217,
       "column": 58,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
@@ -19104,7 +19434,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 195,
+      "line": 217,
       "column": 58,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
@@ -19115,7 +19445,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 195,
+      "line": 217,
       "column": 58,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
@@ -19126,7 +19456,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 216,
+      "line": 238,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -19137,7 +19467,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 216,
+      "line": 238,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
@@ -19148,7 +19478,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 216,
+      "line": 238,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
@@ -19159,7 +19489,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 216,
+      "line": 238,
       "column": 86,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
@@ -19442,10 +19772,32 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 131,
+      "line": 109,
+      "column": 20,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Variable.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 109,
+      "column": 64,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Product/Variable.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
+    },
+    {
+      "line": 137,
       "column": 56,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -19453,10 +19805,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 150,
+      "line": 156,
       "column": 23,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -19464,252 +19816,21 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 156,
-      "column": 42,
+      "line": 262,
+      "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 156,
-      "column": 42,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;from_post&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 156,
-      "column": 42,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_post&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 172,
-      "column": 24,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 172,
-      "column": 51,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 172,
-      "column": 51,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 172,
-      "column": 51,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 277,
-      "column": 31,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 281,
-      "column": 82,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 281,
-      "column": 82,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;from_post&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 281,
-      "column": 82,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_post&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 281,
-      "column": 102,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 281,
-      "column": 102,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotValidated",
-      "message": "Detected usage of a possibly undefined superglobal array index: $_GET[&#039;new_lang&#039;]. Check that the array index exists before using it.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 281,
-      "column": 102,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 281,
-      "column": 102,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 283,
-      "column": 82,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 284,
-      "column": 101,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 284,
-      "column": 101,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 284,
-      "column": 101,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 285,
-      "column": 64,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 285,
-      "column": 64,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 285,
-      "column": 64,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 317,
+      "line": 328,
       "column": 35,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
@@ -19717,10 +19838,10 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 421,
+      "line": 432,
       "column": 44,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -19731,7 +19852,7 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 441,
+      "line": 452,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -19739,7 +19860,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
       "line": 88,
@@ -20113,84 +20234,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 217,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 217,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 217,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 344,
-      "column": 51,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 344,
-      "column": 81,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 344,
-      "column": 81,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 344,
-      "column": 81,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
       "line": 393,

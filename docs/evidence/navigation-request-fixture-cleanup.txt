@@ -1,0 +1,1 @@
+{"attribute":13,"terms":{"en":1589,"de":1591},"products":{"en":5117,"de":5118}}

@@ -131,3 +131,19 @@ The complete suite passes 123 tests and 337 assertions. Current Plugin Check sti
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Batch scope, every changed file, acceptance and remaining work |
 
 The full suite passes 143 tests and 416 assertions. Native Chrome creation and publication preserve the copied defaults, variation price and weight. Malformed and denied requests are integration evidence. Current production inventory contains 265 rows with 147 pending review or correction. Navigation inputs, current URL handling, other batches, full compatibility matrix and release archive review remain pending.
+
+## Navigation request batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Widgets/LayeredNav.php | Remove malformed filter shapes before rendering, normalize legacy IDs, sanitize and translate current WooCommerce slugs |
+| src/Hyyan/WPI/Utilities.php | Validate server value shapes, unslash and sanitize current URL output and retain valid URL structure |
+| tests/frontend/bootstrap.php and phpunit-frontend.xml | Run WordPress and WooCommerce in actual frontend context without the admin integration constants |
+| tests/frontend/NavigationRequestTest.php | Cover malformed filters, current and legacy formats and multiple selection |
+| tests/integration/CurrentUrlRequestTest.php | Cover normal, missing, malformed and control character server values |
+| tests/bin/run.sh | Include the real frontend suite in the normal test command |
+| docs/evidence/navigation-request files | Preserve baseline failures, full suites, native browser and controlled helper acceptance, syntax checks, cleanup and complete checker output |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Refresh current and historical dispositions without discarding prior reviewed findings |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Record changed files, verification scope and remaining findings |
+
+All 151 tests pass with 435 assertions. Native browser filtering and selection pass after removal of instrumentation. Current URL helper proof uses controlled calls because no production caller exists. The helper preserves the request host as before and performs URL sanitization, not a host authorization decision. Current inventory contains 260 production rows with 137 pending review or correction. The complete maintenance release is not yet cleared.

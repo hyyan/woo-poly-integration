@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/frontend/bootstrap.php" colors="true" cacheDirectory="/tmp/woopoly-phpunit-frontend">
+  <testsuites><testsuite name="Frontend"><directory>tests/frontend</directory></testsuite></testsuites>
+</phpunit>

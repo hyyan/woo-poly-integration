@@ -1,0 +1,5 @@
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Widgets/LayeredNav.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Utilities.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/frontend/bootstrap.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/frontend/NavigationRequestTest.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/integration/CurrentUrlRequestTest.php
