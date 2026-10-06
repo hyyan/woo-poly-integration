@@ -40,16 +40,16 @@ final class TemplateOutputSecurityTest extends TestCase
         ));
     }
 
-    public function testExistingRichTextLinksAndWidgetsRemainAvailable(): void
+    public function testExistingRichTextLinksAndSharingActionsRemainAvailable(): void
     {
         $about = $this->render('Admin/about');
         self::assertStringContainsString('href="https://wordpress.org/plugins/woocommerce/"', $about);
         self::assertStringContainsString('href="https://wordpress.org/plugins/polylang/"', $about);
         $support = $this->render('Admin/support');
         self::assertStringContainsString('<strong>I will never ask', $support);
-        self::assertStringContainsString('twitter-share-button', $support);
-        self::assertStringContainsString('fb-share-button', $support);
-        self::assertStringContainsString('ghbtns.com/github-btn.html', $support);
+        self::assertStringContainsString('twitter.com/intent/tweet', $support);
+        self::assertStringContainsString('facebook.com/sharer/sharer.php', $support);
+        self::assertStringContainsString('https://github.com/hyyan/woo-poly-integration', $support);
         self::assertStringContainsString('<b>Thank you!</b>', $this->render('Messages/support'));
     }
 

@@ -3211,7 +3211,8 @@
     "message": "Offloading images, js, css, and other scripts to your servers or any remote service is disallowed.",
     "docs": "",
     "id": "REVIEW-CHECK-275",
-    "status": "pending source or distributable review"
+    "status": "Corrected automatic remote assets with local controls, preserved release and license access, accurate repository status link",
+    "evidence": "network-views-tests-before.txt, network-views-tests-after.txt, network-views-chrome.json, network-views-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/badges.php",
@@ -3222,7 +3223,8 @@
     "message": "Offloading images, js, css, and other scripts to your servers or any remote service is disallowed.",
     "docs": "",
     "id": "REVIEW-CHECK-276",
-    "status": "pending source or distributable review"
+    "status": "Corrected automatic remote assets with local controls, preserved release and license access, accurate repository status link",
+    "evidence": "network-views-tests-before.txt, network-views-tests-after.txt, network-views-chrome.json, network-views-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/badges.php",
@@ -3233,7 +3235,8 @@
     "message": "Offloading images, js, css, and other scripts to your servers or any remote service is disallowed.",
     "docs": "",
     "id": "REVIEW-CHECK-277",
-    "status": "pending source or distributable review"
+    "status": "Corrected automatic remote assets with local controls, preserved release and license access, accurate repository status link",
+    "evidence": "network-views-tests-before.txt, network-views-tests-after.txt, network-views-chrome.json, network-views-plugin-check.json"
   },
   {
     "file": "tests/unit/bootstrap.php",

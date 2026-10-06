@@ -281,3 +281,24 @@ No production files changed in this review. All dynamic names keep the existing 
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Scope, reasons, evidence and remaining gates |
 
 The ignored work/runtime-server-browser.php instrument requires local environment, administrator capability and a native AJAX nonce. It deletes only its own products in finally and was removed from the active lab. Variation browser evidence is controlled invocation rather than native editor acceptance. Native translated cart fragments use the expected URL and response. Server success and exception behavior and restricted hosting are verified. Three remote badge rows, related social resource review, distribution review, report content review and the full compatibility matrix remain open.
+
+## Admin network resource batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Views/badges.php | Local release, MIT license and accurate repository status controls replace offloaded images |
+| src/Hyyan/WPI/Views/social.php | Direct sharing and GitHub actions preserve original share arguments without external scripts or iframe |
+| src/Hyyan/WPI/Views/Messages/support.php | Local WordPress author icon and profile action replace the fixed remote avatar |
+| tests/integration/AdminNetworkPrivacyTest.php | Six shared network, destination, share argument and malicious label cases |
+| tests/frontend/SocialViewCompatibilityTest.php | Preserve the existing social rendering case in genuine frontend WordPress |
+| tests/unit/DirectFileAccessTest.php | Retain isolated direct access tests, move the WordPress rendering case to its proper suite |
+| tests/integration/TemplateOutputSecurityTest.php | Keep rich text and sharing action acceptance with local controls |
+| docs/evidence/network-views-tests-before.txt, network-views-tests-targeted.txt and network-views-tests-after.txt | Six reproduced failures, six corrected cases and all 231 tests with 659 assertions |
+| docs/evidence/network-views-chrome.json | Actual before and after native resources, links, support markers and cleanup |
+| docs/evidence/network-views-source-review.md | Guideline source, actual archive state, template scope and proof limits |
+| docs/evidence/network-views-lint.txt | Seven final PHP syntax checks |
+| docs/evidence/network-views-plugin-check.json and network-views-plugin-check.stderr.txt | Complete final raw scan and stderr |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Current counts and corrected network dispositions |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Scope, file reasons, verification and remaining gates |
+
+The ignored work/network-views-browser.php helper was read only, restricted to local administrator rendering and removed after acceptance. Automatic third party counters and resources are replaced by direct actions. Core product, stock, checkout and language contracts are unchanged. Links and encoded share arguments are verified, but signed account publication remains manual and was not attempted. All current production checker rows have source dispositions, with reviewed raw errors and warnings retained. The distributable archive, full report review and native compatibility matrix remain outstanding.

@@ -1,0 +1,168 @@
+{
+  "before": {
+    "remoteResources": [
+      {
+        "origin": "https://poser.pugx.org",
+        "path": "/hyyan/woo-poly-integration/v/stable.svg",
+        "type": "img"
+      },
+      {
+        "origin": "https://poser.pugx.org",
+        "path": "/hyyan/woo-poly-integration/license.svg",
+        "type": "img"
+      },
+      {
+        "origin": "http://www.repostatus.org",
+        "path": "/badges/latest/active.svg",
+        "type": "img"
+      },
+      {
+        "origin": "http://connect.facebook.net",
+        "path": "/en_GB/sdk.js",
+        "type": "script"
+      },
+      {
+        "origin": "http://platform.twitter.com",
+        "path": "/widgets.js",
+        "type": "script"
+      },
+      {
+        "origin": "https://ghbtns.com",
+        "path": "/github-btn.html",
+        "type": "iframe"
+      },
+      {
+        "origin": "https://platform.twitter.com",
+        "path": "/widgets/widget_iframe.1227a5674072e080ffb1ba14ac0c1079.html",
+        "type": "iframe"
+      },
+      {
+        "origin": "https://connect.facebook.net",
+        "path": "/en_GB/bundle/sdk.js/",
+        "type": "script"
+      },
+      {
+        "origin": "https://platform.twitter.com",
+        "path": "/js/button.2276a045429f6681b56da5eb1dcfa53c.js",
+        "type": "script"
+      },
+      {
+        "origin": "https://platform.twitter.com",
+        "path": "/widgets/tweet_button.1227a5674072e080ffb1ba14ac0c1079.en.html",
+        "type": "iframe"
+      },
+      {
+        "origin": "https://syndication.twitter.com",
+        "path": "/i/jot/embeds",
+        "type": "img"
+      },
+      {
+        "origin": "https://www.facebook.com",
+        "path": "/v2.3/plugins/share_button.php",
+        "type": "iframe"
+      }
+    ],
+    "badgeLinks": [
+      "https://wordpress.org/plugins/woo-poly-integration",
+      "https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE",
+      "http://www.gitchecker.com/hyyan/woo-poly-integration"
+    ],
+    "socialFrames": 1
+  },
+  "after": {
+    "forms": 2,
+    "remotePluginResources": [],
+    "controls": [
+      {
+        "label": "Plugin releases",
+        "url": "https://wordpress.org/plugins/woo-poly-integration",
+        "visible": true,
+        "rel": "noopener noreferrer"
+      },
+      {
+        "label": "MIT license",
+        "url": "https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE",
+        "visible": true,
+        "rel": "noopener noreferrer"
+      },
+      {
+        "label": "Project status",
+        "url": "https://github.com/hyyan/woo-poly-integration",
+        "visible": true,
+        "rel": "noopener noreferrer"
+      },
+      {
+        "label": "Tweet",
+        "url": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fwoo-poly-integration%2F&text=Hyyan%20WooCommerce%20Polylang%20Integration%20%2Cmakes%20you%20run%20multilingual%20store%20easily.&via=HyyanAF",
+        "visible": true,
+        "rel": "noopener noreferrer"
+      },
+      {
+        "label": "Share on Facebook",
+        "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwordpress.org%2Fplugins%2Fwoo-poly-integration%2F",
+        "visible": true,
+        "rel": "noopener noreferrer"
+      },
+      {
+        "label": "Star on GitHub",
+        "url": "https://github.com/hyyan/woo-poly-integration",
+        "visible": true,
+        "rel": "noopener noreferrer"
+      }
+    ],
+    "iframes": 0,
+    "criticalError": false
+  },
+  "controlledSupportRender": {
+    "normal": {
+      "present": true,
+      "links": [
+        {
+          "label": "Plugin releases",
+          "url": "https://wordpress.org/plugins/woo-poly-integration"
+        },
+        {
+          "label": "MIT license",
+          "url": "https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE"
+        },
+        {
+          "label": "Project status",
+          "url": "https://github.com/hyyan/woo-poly-integration"
+        },
+        {
+          "label": "Tweet",
+          "url": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fwoo-poly-integration%2F&text=Hyyan%20WooCommerce%20Polylang%20Integration%20%2Cmakes%20you%20run%20multilingual%20store%20easily.&via=HyyanAF"
+        },
+        {
+          "label": "Share on Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwordpress.org%2Fplugins%2Fwoo-poly-integration%2F"
+        },
+        {
+          "label": "Star on GitHub",
+          "url": "https://github.com/hyyan/woo-poly-integration"
+        }
+      ],
+      "author": "Author profile",
+      "localIcon": true,
+      "remoteElements": 0
+    },
+    "marker": {
+      "present": true,
+      "executed": false,
+      "remoteElements": 0,
+      "textEncoded": true,
+      "authorAttribute": "<img src=\"https://example.test/pixel\" onerror=\"window.wpiNetworkMarker=true\">",
+      "injectedEvent": false
+    },
+    "forms": 2
+  },
+  "cleanup": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"forms\":2,\"temporarySections\":0,\"markerExecuted\":false,\"remotePluginResources\":0}\n```"
+      }
+    ]
+  },
+  "externalActions": "Encoded share data and native links verified. No share, star or external message was published."
+}

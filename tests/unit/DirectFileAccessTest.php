@@ -33,14 +33,4 @@ final class DirectFileAccessTest extends TestCase
         return array('status' => array('Admin/StatusReport.php'), 'social' => array('Views/social.php'));
     }
 
-    public function testSocialTemplateKeepsExistingWidgetsInsideWordPress(): void
-    {
-        $path = dirname(__DIR__, 2) . '/src/Hyyan/WPI/Views/social.php';
-        list($exit, $output, $errors) = $this->runScript("define('ABSPATH', '/');require " . var_export($path, true) . ';');
-        self::assertSame(0, $exit);
-        self::assertSame('', $errors);
-        self::assertStringContainsString('twitter-share-button', $output);
-        self::assertStringContainsString('fb-share-button', $output);
-        self::assertStringContainsString('ghbtns.com/github-btn.html', $output);
-    }
 }

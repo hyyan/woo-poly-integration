@@ -6,8 +6,9 @@ if (!defined('ABSPATH')) {
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td width="20%" align="middle" style="vertical-align: central">
-            <img src="http://www.gravatar.com/avatar/4f51a48cb8de5bb5c4c2bfcb9c6ef500?s=150"
-                 style="padding: 2% ;vertical-align: top"/>
+            <a href="https://github.com/hyyan" target="_blank" rel="noopener noreferrer" aria-label="<?php esc_attr_e('Author profile', 'woo-poly-integration'); ?>">
+                <span class="dashicons dashicons-admin-users" aria-hidden="true"></span>
+            </a>
         </td>
         <td style="padding-left: 2% ; padding-right: 2%">
             <h3>

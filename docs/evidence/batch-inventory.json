@@ -1,5 +1,5 @@
 {
-  "scan": "runtime-server-plugin-check.json",
+  "scan": "network-views-plugin-check.json",
   "checker_findings": [
     {
       "line": 46,
@@ -987,6 +987,50 @@
       "code": "missing_direct_file_access_protection",
       "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
       "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/network-views-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/network-views-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 5,
+      "column": 46,
+      "type": "ERROR",
+      "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
+      "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'Hyyan'.",
+      "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
+      "file": "work/network-views-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 9,
+      "column": 52,
+      "type": "ERROR",
+      "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
+      "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'Hyyan'.",
+      "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
+      "file": "work/network-views-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
       "file": "work/languages.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
@@ -1421,7 +1465,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.afterSwitchLanguage. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
-      "line": 20,
+      "line": 21,
       "column": 28,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
@@ -1432,7 +1476,7 @@
       "disposition": "Reviewed owned HTML view, constant template path, translated leaf outputs escaped, fixed widgets retained"
     },
     {
-      "line": 34,
+      "line": 35,
       "column": 25,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
@@ -1564,13 +1608,24 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 39,
-      "column": 94,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_var_export",
-      "message": "var_export() found. Debug code should not normally be used in production.",
+      "line": 34,
+      "column": 19,
+      "type": "ERROR",
+      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
+      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
       "docs": "",
-      "file": "tests/unit/DirectFileAccessTest.php",
+      "file": "tests/integration/AdminNetworkPrivacyTest.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 38,
+      "column": 19,
+      "type": "ERROR",
+      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
+      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
+      "docs": "",
+      "file": "tests/integration/AdminNetworkPrivacyTest.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -1924,39 +1979,6 @@
       "docs": "",
       "file": "readme.txt",
       "batch": "Distribution and development files",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 7,
-      "column": 1,
-      "type": "ERROR",
-      "code": "PluginCheck.CodeAnalysis.Offloading.OffloadedContent",
-      "message": "Offloading images, js, css, and other scripts to your servers or any remote service is disallowed.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Views/badges.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 10,
-      "column": 1,
-      "type": "ERROR",
-      "code": "PluginCheck.CodeAnalysis.Offloading.OffloadedContent",
-      "message": "Offloading images, js, css, and other scripts to your servers or any remote service is disallowed.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Views/badges.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 13,
-      "column": 1,
-      "type": "ERROR",
-      "code": "PluginCheck.CodeAnalysis.Offloading.OffloadedContent",
-      "message": "Offloading images, js, css, and other scripts to your servers or any remote service is disallowed.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Views/badges.php",
-      "batch": "Runtime and network compatibility",
       "disposition": "Pending source review"
     },
     {
@@ -5478,6 +5500,28 @@
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceReplace. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+    },
+    {
+      "line": 5,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$woo_poly_tweet_url&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Views/social.php",
+      "batch": "Public hooks and symbol ownership",
+      "disposition": "Reviewed newly owned woo_poly prefixed template local. Sole production inclusion occurs inside Plugin::getView method scope. No public global is exported, raw checker cannot infer include scope. URL is escaped at output and share data regression verified."
+    },
+    {
+      "line": 10,
+      "column": 1,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$woo_poly_facebook_url&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Views/social.php",
+      "batch": "Public hooks and symbol ownership",
+      "disposition": "Reviewed newly owned woo_poly prefixed template local. Sole production inclusion occurs inside Plugin::getView method scope. No public global is exported, raw checker cannot infer include scope. URL is escaped at output and share data regression verified."
     },
     {
       "line": 29,
@@ -17630,72 +17674,6 @@
       "disposition": "Pending source review"
     },
     {
-      "line": 45,
-      "column": 16,
-      "type": "ERROR",
-      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
-      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Ajax.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 45,
-      "column": 102,
-      "type": "ERROR",
-      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
-      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Ajax.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 168,
-      "column": 37,
-      "type": "ERROR",
-      "code": "WordPress.WP.AlternativeFunctions.parse_url_parse_url",
-      "message": "parse_url() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 257,
-      "column": 81,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
-    },
-    {
-      "line": 257,
-      "column": 112,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
-    },
-    {
-      "line": 257,
-      "column": 158,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "batch": "Request validation and authorization",
-      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
-    },
-    {
       "line": 0,
       "column": 0,
       "type": "ERROR",
@@ -18748,6 +18726,28 @@
       "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$evidence&quot;.",
       "docs": "",
       "file": "work/correct-category-fixtures.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 0,
+      "column": 0,
+      "type": "ERROR",
+      "code": "missing_direct_file_access_protection",
+      "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
+      "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
+      "file": "work/runtime-server-browser.php",
+      "batch": "Distribution and development files",
+      "disposition": "Pending source review"
+    },
+    {
+      "line": 2,
+      "column": 0,
+      "type": "ERROR",
+      "code": "wp_function_not_compatible_with_requires_wp",
+      "message": "Function \"wp_get_environment_type()\" requires WordPress 5.5.0, but your plugin minimum supported version is WordPress 5.4.0.",
+      "docs": "https://developer.wordpress.org/reference/",
+      "file": "work/runtime-server-browser.php",
       "batch": "Distribution and development files",
       "disposition": "Pending source review"
     },
@@ -20105,6 +20105,39 @@
       "disposition": "Reviewed read only report filters, ID list shape validation and WordPress integer normalization before query use, shared regressions and native report verified"
     },
     {
+      "line": 257,
+      "column": 81,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Endpoints.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
+    },
+    {
+      "line": 257,
+      "column": 112,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Endpoints.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
+    },
+    {
+      "line": 257,
+      "column": 158,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Endpoints.php",
+      "batch": "Request validation and authorization",
+      "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
+    },
+    {
       "line": 61,
       "column": 33,
       "type": "WARNING",
@@ -20666,19 +20699,8 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 75,
-      "column": 13,
-      "type": "WARNING",
-      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
-      "message": "The use of function set_time_limit() is discouraged",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 83,
-      "column": 21,
+      "line": 84,
+      "column": 25,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_key",
       "message": "Detected usage of meta_key, possible slow query.",
@@ -20688,8 +20710,8 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 84,
-      "column": 21,
+      "line": 85,
+      "column": 25,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_value",
       "message": "Detected usage of meta_value, possible slow query.",
@@ -20699,8 +20721,8 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 111,
-      "column": 25,
+      "line": 112,
+      "column": 29,
       "type": "WARNING",
       "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
       "message": "error_log() found. Debug code should not normally be used in production.",
@@ -20710,18 +20732,7 @@
       "disposition": "Reviewed intentional diagnostics, six coupon messages remain disabled by default and use normalized request paths without query data. Remaining term insertion errors and duplicate variation cleanup messages report operational failures, not request bodies."
     },
     {
-      "line": 135,
-      "column": 13,
-      "type": "WARNING",
-      "code": "Squiz.PHP.DiscouragedFunctions.Discouraged",
-      "message": "The use of function set_time_limit() is discouraged",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "batch": "Runtime and network compatibility",
-      "disposition": "Pending source review"
-    },
-    {
-      "line": 159,
+      "line": 161,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
@@ -20732,7 +20743,7 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 159,
+      "line": 161,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
@@ -20743,7 +20754,7 @@
       "disposition": "Reviewed prepared direct SQL and native WordPress metadata queries, parent scoped translation lookups retained, fresh relationship and SKU decisions required during mutations. Quote SKU and immediate relationship change regressions pass. Large catalog performance remains unmeasured."
     },
     {
-      "line": 216,
+      "line": 218,
       "column": 43,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -20754,7 +20765,7 @@
       "disposition": "Reviewed product request batch, scalar integer source and registered language helpers with source read permission, native editor nonce and capabilities precede save hooks, existing removal AJAX guards retained, malformed input and normal native translation verified"
     },
     {
-      "line": 393,
+      "line": 395,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",

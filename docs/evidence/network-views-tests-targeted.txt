@@ -1,0 +1,10 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+......                                                              6 / 6 (100%)
+
+Time: 00:00.006, Memory: 103.05 MB
+
+[30;42mOK (6 tests, 20 assertions)[0m
