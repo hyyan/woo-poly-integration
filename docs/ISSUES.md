@@ -52,3 +52,5 @@ Individual forum dispositions are in docs/evidence/wordpress-support-capture.jso
 | COMPAT-006 | English product page shows German related product | Resolved as malformed lab data: German simple product had English category. Native category correction and bilingual Chrome checks pass. No production change | Correct fixture categories, preserve existing product behavior |
 
 Forum topics FORUM-021 through FORUM-040 have individual dispositions in the forum inventory. Forty topics are triaged and 383 remain pending.
+
+| SEC-005 | Security maintenance review and expanded regression coverage | Reported removal paths and native client inspected, 72 tests and 189 assertions pass, current Chrome rejection and native deletion pass | Full checker dispositions and actual release artifact review remain pending, see SECURITY-REVIEW.md |

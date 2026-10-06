@@ -53,3 +53,7 @@ Review the owning source before deciding the disposition. Preserve public hooks 
 ## Dynamic public hook review
 
 All 22 DynamicHooknameFound baseline findings were reviewed against the current call and hook definition. Every resolved name starts with woo-poly. The settings methods keep that prefix before their settings ID, and the gateway extension keeps it before the gateway ID. These are preserved public extension contracts, not names to replace. Each finding records its resolved name, current call location and definition evidence in the normalized inventory. This disposition addresses naming only. It does not prove the callback behavior or resolve other checker findings.
+
+## Current security maintenance review
+
+The new full tree scan completed with 499 findings, 173 errors and 326 warnings. Production source and scripts account for 345, tests for 30, and other files for 124. The new scan is not equivalent in scope to the original source snapshot. Preserve both reports. Current individual entries use REVIEW-CHECK identifiers in evidence/plugin-check-security-review-normalized.json. No PreparedSQL or UnescapedDBParameter findings remain in this scan. Remaining security input, save hook and output findings still require source review. The actual distributable archive has not been checked.

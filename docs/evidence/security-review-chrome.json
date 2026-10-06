@@ -1,0 +1,54 @@
+{
+  "rejections": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-admin\",\"noncePresent\":true,\"results\":[{\"case\":\"missing nonce\",\"status\":403,\"body\":\"-1\"},{\"case\":\"invalid nonce\",\"status\":403,\"body\":\"-1\"},{\"case\":\"SQL expression\",\"status\":200,\"body\":\"-1\"},{\"case\":\"valid before nested ID\",\"status\":200,\"body\":\"-1\"},{\"case\":\"decimal ID\",\"status\":200,\"body\":\"-1\"}]}\n```"
+      }
+    ]
+  },
+  "nativeRemoval": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"request\":{\"action\":\"woocommerce_remove_variations\",\"ids\":[\"2392\"],\"noncePresent\":true},\"removed\":true,\"remaining\":[\"111\"],\"panel\":\"Default Form Values:  \\nNo default Size…\\nSmall\\nLarge\\nGenerate variations Add manually \\nBulk actions\\nDelete all variations\\nToggle \\\"Enabled\\\"\\nToggle \\\"Downloadable\\\"\\nToggle \\\"Virtual\\\"\\nSet regular prices\\nIncrease regular prices (fixed amount or percentage)\\nDecrease regular prices (fixed amount or percentage)\\nSet sale prices\\nIncrease sale prices (fixed amount or percentage)\\nDecrease sale prices (fixed amount or percentage)\\nSet scheduled sale dates\\nToggle \\\"Manage stock\\\"\\nStock\\nSet Status - In stock\\nSet Status - Out of stock\\nSet Status - On backorder\\nLow stock threshold\\nLength\\nWidth\\nHeight\\nWeight\\nDownload limit\\nDownload expiry\\n1 variation (Expand / Close)\\nEdit\\nRemove\\n#111 \\nAny Size…\\nSmall\\nLarge\\nSave changes\\nCancel\\n1 variation (Expand / Close)\"}\n```"
+      }
+    ]
+  },
+  "beforeAndAfterRejections": [
+    {
+      "id": 2392,
+      "present": true
+    },
+    {
+      "id": 2393,
+      "present": true
+    },
+    {
+      "id": 111,
+      "present": true
+    },
+    {
+      "id": 114,
+      "present": true
+    }
+  ],
+  "afterNativeRemoval": [
+    {
+      "id": 2392,
+      "present": false
+    },
+    {
+      "id": 2393,
+      "present": false
+    },
+    {
+      "id": 111,
+      "present": true
+    },
+    {
+      "id": 114,
+      "present": true
+    }
+  ]
+}

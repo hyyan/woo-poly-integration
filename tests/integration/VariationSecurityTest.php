@@ -111,4 +111,60 @@ final class VariationSecurityTest extends TestCase
         self::assertNotNull(get_post($this->translated));
     }
 
+    #[DataProvider('invalidVariationIds')]
+    public function testInvalidIdTypesCannotReachTheRelatedVariationQuery($value): void
+    {
+        global $wpdb;
+        $queries = $wpdb->num_queries;
+        self::assertFalse(Variation::getRelatedVariation($value, true));
+        self::assertSame($queries, $wpdb->num_queries);
+        $this->remove(array($this->source, $value), wp_create_nonce('delete-variations'));
+        self::assertNotNull(get_post($this->source));
+        self::assertNotNull(get_post($this->translated));
+    }
+
+    public static function invalidVariationIds(): array
+    {
+        return array(
+            'sql expression' => array('1 OR 1=1'),
+            'decimal string' => array('1.5'),
+            'negative string' => array('-1'),
+            'scientific notation' => array('1e2'),
+            'empty string' => array(''),
+            'nested array' => array(array('1')),
+            'boolean' => array(true),
+            'floating point' => array(1.5),
+            'null' => array(null),
+        );
+    }
+
+    #[DataProvider('deniedParents')]
+    public function testRemovalRequiresPermissionForBothProductParents($language): void
+    {
+        $manager = get_user_by('login', 'lab-manager');
+        wp_set_current_user($manager->ID);
+        $variation = $language === 'en' ? $this->source : $this->translated;
+        $deniedParent = wp_get_post_parent_id($variation);
+        $deny = function ($caps, $cap, $user, $args) use ($deniedParent) {
+            if ($cap === 'edit_post' && isset($args[0]) && (int) $args[0] === $deniedParent) {
+                return array('do_not_allow');
+            }
+            return $caps;
+        };
+        add_filter('map_meta_cap', $deny, 100, 4);
+        try {
+            self::assertTrue(current_user_can('edit_products'));
+            $this->remove(array($this->source), wp_create_nonce('delete-variations'));
+            self::assertNotNull(get_post($this->source));
+            self::assertNotNull(get_post($this->translated));
+        } finally {
+            remove_filter('map_meta_cap', $deny, 100);
+        }
+    }
+
+    public static function deniedParents(): array
+    {
+        return array('source' => array('en'), 'translation' => array('de'));
+    }
+
 }

@@ -208,3 +208,12 @@
 - No production filter or language behavior was changed. Updated COMPAT-006 disposition and partial category acceptance. This does not resolve all external category reports.
 - Full regression suite passed unchanged: 59 tests and 131 assertions. Closed the single dedicated Chrome process and verified it absent.
 - Next: remaining forum reports, native translation creation and category hierarchy, email catalogs, cart/order lifecycle and checker dispositions.
+
+## Security maintenance review requested by maintainer
+
+- Prior turn produced a pending CSV import patch. Revalidated current source and lab. Reproduced two original import regression failures and restored the pending patch. Browser upload was denied by Chrome workspace path restrictions. Import acceptance and its commit remain pending.
+- Prioritized the explicit security maintenance request. Inspected current and baseline removal, related lookup, featured callback, native WooCommerce server and JavaScript, SKU query and settings registration. The two existing AJAX security fixes are already local commits. No unrelated production change was added.
+- Added eleven security cases covering nine invalid ID types with no related SQL lookup and denied permissions on original or translated parent. Full suite passed with 72 tests and 189 assertions. Source and test PHP lint and full diff whitespace checks passed.
+- Chrome initially refused its stale profile lock. The named process was absent. Removed only stale lock links and resumed the dedicated instance. Current administrator rejection tests preserved fresh pair 2392/2393 and siblings 111/114. Native Remove included security nonce, deleted the linked pair and preserved siblings.
+- Ran Plugin Check and preserved all 499 findings, 173 errors and 326 warnings. Production source/scripts account for 345, tests for 30 and other files for 124. No PreparedSQL or UnescapedDBParameter finding remains. Other checker findings remain unreviewed and release clearance is not claimed.
+- Added SECURITY-REVIEW.md with exact issue handling, changed file inventory, actual checks and remaining release requirements. Preserved the pending CSV change and raw forum inventory. Next security work is individual source review of remaining input, save hook and output findings, followed by distributable and supported version checks.
