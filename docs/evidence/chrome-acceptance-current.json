@@ -1,0 +1,41 @@
+{
+  "localeGerman": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/de/product/security-fixture-de/\",\"title\":\"Security fixture de – WooPoly Compatibility Lab\",\"notice\":\"“Security fixture de” has been added to your cart.\\nView cart\",\"price\":\"€12,50\",\"variations\":[{\"id\":114,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"size\":\"Large\"}],\"critical\":false}\n```"
+      }
+    ]
+  },
+  "adminRejection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n[{\"case\":\"missing nonce\",\"source\":238,\"translation\":239,\"status\":403,\"body\":\"-1\",\"elapsed_ms\":53},{\"case\":\"invalid nonce\",\"source\":238,\"translation\":239,\"status\":403,\"body\":\"-1\",\"elapsed_ms\":38},{\"case\":\"SQL expression\",\"source\":238,\"translation\":239,\"status\":200,\"body\":\"-1\",\"elapsed_ms\":36},{\"case\":\"nested ID after valid ID\",\"source\":238,\"translation\":239,\"status\":200,\"body\":\"-1\",\"elapsed_ms\":39},{\"case\":\"zero and nonexistent IDs\",\"source\":238,\"translation\":239,\"status\":200,\"body\":\"-1\",\"elapsed_ms\":38}]\n```"
+      }
+    ]
+  },
+  "subscriber": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"results\":[{\"role\":\"subscriber\",\"id\":\"238\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":54},{\"role\":\"subscriber\",\"id\":\"238 OR SLEEP(2)\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":38}]}\n```"
+      }
+    ]
+  },
+  "customer": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"account\":\"Hello lab-customer (not lab-customer? Log out)\\n\\nFrom your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.\",\"results\":[{\"role\":\"customer\",\"id\":\"238\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":63},{\"role\":\"customer\",\"id\":\"238 OR SLEEP(2)\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":39}]}\n```"
+      }
+    ]
+  },
+  "databaseAfterRejections": [
+    111,
+    114,
+    238,
+    239
+  ],
+  "note": "Earlier source IDs 110/113 were stale. Rejection cases were repeated against fresh pair 238/239 confirmed present."
+}

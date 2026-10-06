@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/773632940",
+    "html_url": "https://github.com/hyyan/woo-poly-integration/issues/514#issuecomment-773632940",
+    "issue_url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/514",
+    "id": 773632940,
+    "node_id": "MDEyOklzc3VlQ29tbWVudDc3MzYzMjk0MA==",
+    "user": {
+      "login": "Jon007",
+      "id": 6072005,
+      "node_id": "MDQ6VXNlcjYwNzIwMDU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6072005?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Jon007",
+      "html_url": "https://github.com/Jon007",
+      "followers_url": "https://api.github.com/users/Jon007/followers",
+      "following_url": "https://api.github.com/users/Jon007/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Jon007/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Jon007/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Jon007/subscriptions",
+      "organizations_url": "https://api.github.com/users/Jon007/orgs",
+      "repos_url": "https://api.github.com/users/Jon007/repos",
+      "events_url": "https://api.github.com/users/Jon007/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Jon007/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2021-02-04T22:03:29Z",
+    "updated_at": "2021-02-04T22:03:29Z",
+    "body": "I agree, the code suggested looks along the right lines, you are welcome to submit a pull request..!\r\nas there isn't rest customisation currently I'd suggest a new file.\r\nTo follow the existing plugin scheme it would be a new class file in src/Hyyan/WPI and a line to create it in registerCore() in Plugin.php... potentially also added as a setting in Features.php which allows the various features to be turned on and off.\r\n at least that's how the other bits are implemented in this plugin.",
+    "author_association": "CONTRIBUTOR",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/773632940/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

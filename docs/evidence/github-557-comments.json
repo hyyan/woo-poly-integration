@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/900076383",
+    "html_url": "https://github.com/hyyan/woo-poly-integration/issues/557#issuecomment-900076383",
+    "issue_url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/557",
+    "id": 900076383,
+    "node_id": "IC_kwDOAfEu8841phNf",
+    "user": {
+      "login": "mrleemon",
+      "id": 2060659,
+      "node_id": "MDQ6VXNlcjIwNjA2NTk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2060659?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mrleemon",
+      "html_url": "https://github.com/mrleemon",
+      "followers_url": "https://api.github.com/users/mrleemon/followers",
+      "following_url": "https://api.github.com/users/mrleemon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mrleemon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mrleemon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mrleemon/subscriptions",
+      "organizations_url": "https://api.github.com/users/mrleemon/orgs",
+      "repos_url": "https://api.github.com/users/mrleemon/repos",
+      "events_url": "https://api.github.com/users/mrleemon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mrleemon/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2021-08-17T07:52:49Z",
+    "updated_at": "2021-08-17T07:52:49Z",
+    "body": "More info about this feature:\r\n\r\nhttps://developer.woocommerce.com/2021/08/12/brace-yourselves-new-product-filtering-by-attributes-is-coming/",
+    "author_association": "CONTRIBUTOR",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/900076383/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

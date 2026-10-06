@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/1049596577",
+    "html_url": "https://github.com/hyyan/woo-poly-integration/issues/566#issuecomment-1049596577",
+    "issue_url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/566",
+    "id": 1049596577,
+    "node_id": "IC_kwDOAfEu884-j5Kh",
+    "user": {
+      "login": "tekisei",
+      "id": 100342389,
+      "node_id": "U_kgDOBfsadQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100342389?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tekisei",
+      "html_url": "https://github.com/tekisei",
+      "followers_url": "https://api.github.com/users/tekisei/followers",
+      "following_url": "https://api.github.com/users/tekisei/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tekisei/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tekisei/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tekisei/subscriptions",
+      "organizations_url": "https://api.github.com/users/tekisei/orgs",
+      "repos_url": "https://api.github.com/users/tekisei/repos",
+      "events_url": "https://api.github.com/users/tekisei/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tekisei/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2022-02-24T08:12:46Z",
+    "updated_at": "2022-02-24T08:28:14Z",
+    "body": "I had a similar problem with the language switcher on the non-default language Woocommerce shop page only.\r\n\r\nThe switcher leading to the default language shop pointed to \"http://shop/\".\r\n\r\nAdding the below code in the function `translateShopUrl()` in src/Hyyan/WPI/Pages.php will fix the issue.\r\n\r\n```\r\nif ( is_shop() ) {\r\n            return $result;\r\n        }\r\n```\r\n\r\nWoocommerce 5.9.0, Hyyan 1.5.0",
+    "author_association": "NONE",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/1049596577/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

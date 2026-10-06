@@ -1,0 +1,49 @@
+[
+  {
+    "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/855775687",
+    "html_url": "https://github.com/hyyan/woo-poly-integration/issues/556#issuecomment-855775687",
+    "issue_url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/556",
+    "id": 855775687,
+    "node_id": "MDEyOklzc3VlQ29tbWVudDg1NTc3NTY4Nw==",
+    "user": {
+      "login": "cebbinger",
+      "id": 33176934,
+      "node_id": "MDQ6VXNlcjMzMTc2OTM0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33176934?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cebbinger",
+      "html_url": "https://github.com/cebbinger",
+      "followers_url": "https://api.github.com/users/cebbinger/followers",
+      "following_url": "https://api.github.com/users/cebbinger/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cebbinger/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cebbinger/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cebbinger/subscriptions",
+      "organizations_url": "https://api.github.com/users/cebbinger/orgs",
+      "repos_url": "https://api.github.com/users/cebbinger/repos",
+      "events_url": "https://api.github.com/users/cebbinger/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cebbinger/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2021-06-07T09:38:29Z",
+    "updated_at": "2021-06-07T09:38:29Z",
+    "body": "Apparently, the plugin skips applying the translation (`$string_template`) if the `$target_object` is not a `WC_Order`.\r\n\r\nhttps://github.com/hyyan/woo-poly-integration/blob/b43c4949f60740a9fd339500f7c2674854c94892/src/Hyyan/WPI/Emails.php#L485-L497\r\n\r\nFor my individual case, the problem seems to be solved by adding the following code before returning `$formatted_string` in line 497:\r\n``` php\r\nelse {\r\n    return $email_obj->format_string($string_template);\r\n}\r\n```\r\nI'm not sure if that works in other configurations, too.",
+    "author_association": "NONE",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/hyyan/woo-poly-integration/issues/comments/855775687/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

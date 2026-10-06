@@ -1,0 +1,27 @@
+Goal: revive Hyyan WooCommerce Polylang Integration without breaking existing supported behavior.
+Authorized location: /Users/Shared/Laptop/woo-poly-integration
+Baseline: master b5f7495180d37020204a6f725307eb6ecdc29cf0; source headers 1.5.1, closure report concerns released <=1.5.0.
+
+Constraints
+- Preserve public hooks, settings, stored data, translation relationships, and original feature behavior.
+- Do not raise existing minimum PHP/WordPress/dependency requirements merely to simplify implementation.
+- Browser verification exclusively through Chrome MCP server.
+- Each independent fix receives its own conventional commit only after its regression tests and Chrome acceptance pass.
+- No claim of 100% coverage: every supported feature has explicit acceptance cases; unresolved cases block completion.
+- Local isolated disposable store only; no production data, paid services, external messages, Git push, SVN publication, or release submission.
+- Keep docs/ISSUES.md and docs/JOURNAL.md current with source, reproduction, fix, evidence, commit, and next action.
+
+Execution plan
+1. Inventory all open GitHub reports, relevant closed history, WordPress support reports, public security advisories, and the supplied closure notice. Preserve full source snapshots locally.
+2. Build reproducible localhost WordPress/WooCommerce/Polylang test environment on latest stable PHP; record actual versions and immutable image identifiers. Install Plugin Check and analysis tools. Preserve source minimum requirements.
+3. Establish two-language baseline fixtures: translated store pages, simple/variable products, attributes, shipping classes, galleries, coupons, stock, orders, emails, reports and carts. Save Chrome screenshots/network evidence and runtime logs.
+4. Fix CVE-2026-101926 SQL injection and missing authorization first. Preserve WooCommerce nonce/action contract, check permissions before any linked deletion, prepare database query and validate variation IDs. Browser test subscriber/customer rejection, missing/invalid nonce, malformed IDs, legitimate administrator/shop manager removal and unaffected variations. Commit only after all acceptance passes.
+5. Audit all other AJAX/hooks, database queries, input validation, output escaping, file/network operations, stored settings, and bundled dependencies. Reproduce and fix each confirmed issue separately with negative and original-behavior browser tests.
+6. Resolve latest WordPress/PHP/WooCommerce/Polylang compatibility and confirmed reported defects one at a time. Test classic and block cart/checkout, legacy and HPOS order storage; do not silently disable modern features or claim compatibility without evidence.
+7. Build automated regression foundation: PHPUnit for isolated logic, real WordPress integration tests for hooks/permissions/database mutations, and GitHub Actions on every pull_request and push. Every fixed defect gains a regression test. Chrome acceptance remains required before each fix commit. Run Plugin Check (all applicable categories), coding standards and PHP compatibility checks. Resolve findings individually, preserving semantics.
+8. Run complete feature acceptance matrix on latest stack and supported older compatibility stacks. Update version/readme/changelog only to versions actually tested. Assemble review package with evidence, remaining limitations and release steps. SVN/email submission awaits separate authorization.
+
+Completion gate
+All reported defects are triaged with evidence; confirmed in-scope defects fixed; no unresolved security/checker findings; original supported behavior passes explicit Chrome scenarios; upgrade retains data/settings/hooks; commits individually evidenced; journal and tracker accurate.
+
+Current: latest local stack is running. Variation removal and locale formatting fixes pass targeted automated and Chrome checks. Local fix commits: 01bfb80 and f49cb58. Regression runner and CI definition committed as 2c9aaa3. No remote push or publication. All other tracked reports and the full compatibility matrix remain open.
