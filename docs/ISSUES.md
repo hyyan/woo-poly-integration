@@ -49,6 +49,6 @@ Feature contract: README.md/readme.txt and wiki; existing variable-product defau
 Individual forum dispositions are in docs/evidence/wordpress-support-capture.json. FORUM-001 through FORUM-020 were read with captured replies. The remaining 403 reports need triage. Mapping a report to a tested fix does not close broader feature acceptance.
 
 | COMPAT-005 / FORUM-022 | Cart fragments declare jquery-cookie while consuming Cookies | Fixed and verified: native graph regression, Chrome isolated before/after and bilingual mini cart flow | Existing cookie API is loaded before fragments, quantities and translated contents preserved |
-| COMPAT-006 | English product page shows German related product | Observed in Chrome, owning source and reproduction pending | Related products follow the original language filtering contract |
+| COMPAT-006 | English product page shows German related product | Resolved as malformed lab data: German simple product had English category. Native category correction and bilingual Chrome checks pass. No production change | Correct fixture categories, preserve existing product behavior |
 
 Forum topics FORUM-021 through FORUM-040 have individual dispositions in the forum inventory. Forty topics are triaged and 383 remain pending.

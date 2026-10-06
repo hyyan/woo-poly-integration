@@ -1,0 +1,68 @@
+{
+  "issue": "COMPAT-006",
+  "disposition": "Resolved as malformed disposable lab data. No production code change.",
+  "sourceReview": {
+    "product": "src/Hyyan/WPI/Product/Product.php",
+    "note": "Existing language mapping is registered for upsells, cross sells and grouped children. No related product filter was added.",
+    "woocommerce": "includes/data-stores/class-wc-product-data-store-cpt.php:get_related_products and includes/wc-product-functions.php:wc_get_related_products",
+    "fixture": "Local fixture builder assigned the post language after saving, retaining the default English category on the German simple product."
+  },
+  "before": {
+    "englishRelated": [
+      "Test shirt de",
+      "Security fixture en"
+    ],
+    "germanSimpleProduct": {
+      "id": 116,
+      "language": "de",
+      "category": 27,
+      "categoryLanguage": "en"
+    },
+    "linkedCategoryTerms": {
+      "en": 27,
+      "de": 33
+    }
+  },
+  "dataCorrection": {
+    "product": 116,
+    "categoryBefore": 27,
+    "categoryAfter": 33,
+    "nativeProductTransientsCleared": true,
+    "fixtureBuilderCorrected": true,
+    "otherRootCategoriesPreserved": [
+      109,
+      112,
+      115
+    ]
+  },
+  "after": {
+    "englishRelated": [
+      "Security fixture en"
+    ],
+    "germanRelated": [
+      "Security fixture de"
+    ],
+    "englishCategoryArchive": [
+      "Security fixture en",
+      "Test shirt en"
+    ],
+    "germanCategoryArchive": [
+      "Security fixture de",
+      "Test shirt de"
+    ],
+    "germanConsoleErrors": 0
+  },
+  "tests": {
+    "unit": 9,
+    "integration": 50,
+    "assertions": 131,
+    "exit": 0
+  },
+  "cleanup": {
+    "dedicatedChromeStopped": true
+  },
+  "limits": [
+    "Category hierarchy, tags, image/meta synchronization and native product translation creation still need acceptance.",
+    "This result establishes the cause for these disposable fixtures, not every external report involving category visibility."
+  ]
+}

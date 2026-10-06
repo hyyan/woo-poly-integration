@@ -197,3 +197,14 @@
 - The first removal click failed because the header mini cart was hidden. Hovering the header then using its remove button emptied the cart. Saved cart-fragment-chrome.json.
 - Observed German Test shirt de in related products on the English product page. Recorded COMPAT-006 for source investigation rather than attributing a cause.
 - Removed the temporary route, closed the sole dedicated Chrome process and verified it absent. Older stack, complete cart/coupon/variation behavior and remaining acceptance rows are still open.
+
+## Related product observation resolved as fixture data (COMPAT-006)
+- Confirmed the cart dependency fix is committed locally as 132e4a2.
+- Read current Product language mapping and installed WooCommerce related product query/cache code before considering a production change.
+- The German simple fixture 116 had English category 27, despite being assigned language de. The existing category translation was term 33. The local fixture builder saved products before assigning their language, retaining the initial default category.
+- Chrome confirmed English related products included Test shirt de before correction. Updated only the malformed lab product category to its existing German translation through native APIs and cleared affected native product transients.
+- Chrome then showed only Security fixture en as English related content and Security fixture de as German related content. English and German category archives each showed the correct two fixture products and their corresponding routes. Saved category-fixture-chrome.json.
+- Verified the other fixture roots already had correct category assignments. Corrected the ignored local fixture builder to map categories after language assignment, preventing the same lab setup error in future.
+- No production filter or language behavior was changed. Updated COMPAT-006 disposition and partial category acceptance. This does not resolve all external category reports.
+- Full regression suite passed unchanged: 59 tests and 131 assertions. Closed the single dedicated Chrome process and verified it absent.
+- Next: remaining forum reports, native translation creation and category hierarchy, email catalogs, cart/order lifecycle and checker dispositions.

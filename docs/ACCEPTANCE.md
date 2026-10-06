@@ -8,7 +8,7 @@ The README feature list defines the preservation contract. A pending row blocks 
 | Store pages | Shop, cart, checkout and account route to linked language pages | Fixtures created, complete workflow pending |
 | Endpoints | Account and checkout endpoints work in both languages | Pending |
 | Products | Create translation from original admin flow and preserve independent content | Pending |
-| Categories and tags | Linked terms, URLs and archive filtering in both languages | Pending |
+| Categories and tags | Linked terms, URLs and archive filtering in both languages | Linked category archive filtering and related product fixtures pass in Chrome. Native term creation, hierarchy and tags pending |
 | Attributes | Global and custom attributes translate and select correctly | Custom variable selection checked, global attributes pending |
 | Shipping classes | Class translation and rates persist through checkout | Pending |
 | Product meta | Enabled synchronization and disabled fields behave as configured | Pending |
