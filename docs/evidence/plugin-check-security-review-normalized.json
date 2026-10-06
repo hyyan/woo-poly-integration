@@ -505,7 +505,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-045",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -527,7 +527,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-047",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -538,7 +538,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-048",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -549,7 +549,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-049",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -560,7 +560,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-050",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -571,7 +571,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-051",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -582,7 +582,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-052",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -593,7 +593,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-053",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -604,7 +604,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-054",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -615,7 +615,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-055",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -626,7 +626,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-056",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -637,7 +637,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-057",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -648,7 +648,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-058",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -659,7 +659,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-059",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -670,7 +670,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-060",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -681,7 +681,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-061",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -692,7 +692,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-062",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -780,7 +780,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-070",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -791,7 +791,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-071",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -4560,7 +4560,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-401",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4571,7 +4571,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-402",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4582,7 +4582,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-403",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4593,7 +4593,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-404",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4604,7 +4604,7 @@
     "message": "$_GET[&#039;from_post&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-405",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4615,7 +4615,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_post&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-406",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4626,7 +4626,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-407",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4637,7 +4637,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-408",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4648,7 +4648,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-409",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4659,7 +4659,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-410",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4670,7 +4670,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-411",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4681,7 +4681,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-412",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4692,7 +4692,7 @@
     "message": "$_GET[&#039;from_post&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-413",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4703,7 +4703,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_post&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-414",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4714,7 +4714,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-415",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4725,7 +4725,7 @@
     "message": "Detected usage of a possibly undefined superglobal array index: $_GET[&#039;new_lang&#039;]. Check that the array index exists before using it.",
     "docs": "",
     "id": "REVIEW-CHECK-416",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4736,7 +4736,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-417",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4747,7 +4747,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-418",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4758,7 +4758,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-419",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4769,7 +4769,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-420",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4780,7 +4780,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-421",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4791,7 +4791,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-422",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4802,7 +4802,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-423",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4813,7 +4813,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-424",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4824,7 +4824,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-425",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4835,7 +4835,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_POST[&#039;variation_ids&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-426",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -4857,7 +4857,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-428",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Product.php",
@@ -5177,7 +5177,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-454",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5188,7 +5188,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-455",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5199,7 +5199,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-456",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5210,7 +5210,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-457",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5221,7 +5221,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-458",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5232,7 +5232,7 @@
     "message": "Processing form data without nonce verification.",
     "docs": "",
     "id": "REVIEW-CHECK-459",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5243,7 +5243,7 @@
     "message": "$_GET[&#039;new_lang&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
     "docs": "",
     "id": "REVIEW-CHECK-460",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",
@@ -5254,7 +5254,7 @@
     "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;new_lang&#039;]",
     "docs": "",
     "id": "REVIEW-CHECK-461",
-    "status": "pending source or distributable review"
+    "status": "reviewed product request batch, shared scalar integer and registered language validation, source read permission, native editor verification, existing AJAX guards retained, regressions and native translation verified"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variation.php",

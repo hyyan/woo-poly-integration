@@ -214,7 +214,7 @@ class Variation
             //as had been failing on parent language [though now fixed]
             $targetLang = pll_get_post_language( $newParentId );
             if ( (! $targetLang) && isset($_GET['new_lang'])) {
-                $targetLang=$_GET['new_lang'];
+                $targetLang = Utilities::getRequestLanguage();
             } 
             if ($targetLang){
                 pll_set_post_language( $ID, $targetLang );
@@ -341,7 +341,7 @@ class Variation
                                 if ($term) {
                                     $term_id = $term->term_id;
                                     //ok we got a term to translate, now get translation if available
-                                    $lang = isset($_GET['new_lang']) ? esc_attr($_GET['new_lang']) : pll_get_post_language($this->to->get_id());
+                                    $lang = Utilities::getRequestLanguage() ?: pll_get_post_language($this->to->get_id());
                                     $translated_term = pll_get_term($term_id, $lang);
                                     if ($translated_term) {
                                         $translated[] = get_term_by('id', $translated_term, $tax)->slug;

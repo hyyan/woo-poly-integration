@@ -116,3 +116,18 @@ The next shared batch corrects the early language download request boundary and 
 | docs/BATCHES.md, goal.txt, docs/ISSUES.md, docs/JOURNAL.md and security review inventories | Record shared dispositions, verification, changed files and remaining work |
 
 The complete suite passes 123 tests and 337 assertions. Current Plugin Check still has 298 production rows. Source dispositions cover 79 current request rows and 16 output rows. Native browser checks and the controlled callback checks are distinguished in the journal. The full compatibility matrix, remaining save paths, actual release archive scan and Plugins Team submission remain pending.
+
+## Product synchronization request batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Utilities.php | Shared integer, registered language and readable source request helpers |
+| src/Hyyan/WPI/Product/Meta.php | Validate screen and copy inputs before metadata synchronization |
+| src/Hyyan/WPI/Product/Variable.php | Validate variation and default synchronization requests before mutation |
+| src/Hyyan/WPI/Product/Variation.php | Use registered target language values when creating and translating variations |
+| tests/integration/ProductTranslationInputTest.php | Shared malformed input, denied source and normal behavior regressions with callback cleanup |
+| docs/evidence/product-request files | Baseline failures, passing suite, syntax checks, native Chrome creation and publish and complete Plugin Check output |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Current and historical source dispositions with previous raw inventory preserved |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Batch scope, every changed file, acceptance and remaining work |
+
+The full suite passes 143 tests and 416 assertions. Native Chrome creation and publication preserve the copied defaults, variation price and weight. Malformed and denied requests are integration evidence. Current production inventory contains 265 rows with 147 pending review or correction. Navigation inputs, current URL handling, other batches, full compatibility matrix and release archive review remain pending.

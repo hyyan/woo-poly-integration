@@ -144,6 +144,52 @@ final class Utilities
     }
 
     /**
+     * Get a positive integer query value, or zero for invalid input.
+     *
+     * @param string $key query field
+     * @return int
+     */
+    public static function getRequestInteger($key)
+    {
+        if (!isset($_GET[$key]) || (!is_int($_GET[$key]) && !is_string($_GET[$key]))) {
+            return 0;
+        }
+        $value = wp_unslash($_GET[$key]);
+        return ctype_digit((string) $value) ? absint($value) : 0;
+    }
+
+    /**
+     * Get a registered language query value, or an empty string.
+     *
+     * @param string $key query field
+     * @return string
+     */
+    public static function getRequestLanguage($key = 'new_lang')
+    {
+        if (!isset($_GET[$key]) || !is_string($_GET[$key])) {
+            return '';
+        }
+        $language = sanitize_text_field(wp_unslash($_GET[$key]));
+        return in_array($language, pll_languages_list(), true) ? $language : '';
+    }
+
+    /**
+     * Get a product translation request with a readable source and registered language.
+     *
+     * @return array|false
+     */
+    public static function getProductTranslationRequest()
+    {
+        $source_id = static::getRequestInteger('from_post');
+        $language = static::getRequestLanguage();
+        if (!$source_id || !$language || get_post_type($source_id) !== 'product' ||
+                !current_user_can('read_post', $source_id)) {
+            return false;
+        }
+        return array('source_id' => $source_id, 'language' => $language);
+    }
+
+    /**
      * Get current url.
      *
      * Get the full url for current location
@@ -334,7 +380,7 @@ final class Utilities
         } elseif ($product && 'simple' === $product->get_type()) {
             $current_screen  = function_exists('get_current_screen') ? get_current_screen() : false;
             $add_new_product = $current_screen && $current_screen->post_type === 'product' && $current_screen->action === 'add';
-            $is_translation  = isset($_GET['from_post']) && isset($_GET['new_lang']);
+            $is_translation  = (bool) static::getProductTranslationRequest();
             //new product did not appear have variations due to Polylang 2.8 aggressive filtering see #535
             $has_variations  = get_children(array(
                 'post_type'   => 'product_variation',

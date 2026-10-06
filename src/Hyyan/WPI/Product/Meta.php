@@ -177,14 +177,15 @@ class Meta
          */
 
         if (isset($_GET['post'])) {
-            $ID = absint($_GET['post']);
+            $ID = Utilities::getRequestInteger('post');
             //#545 props mrleemon, only disable if post has a master version in site default language
             $disable = $ID && ( pll_get_post_language($ID) != pll_default_language() ) 
                 && pll_get_post( $ID, pll_default_language() );                
-        } elseif (isset($_GET['new_lang']) || $currentScreen->base == 'edit') {
-            $disable = isset($_GET['new_lang']) && (esc_attr($_GET['new_lang']) != pll_default_language()) ?
-                true : false;
-            $ID = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
+        } elseif (isset($_GET['new_lang']) || ($currentScreen && $currentScreen->base == 'edit')) {
+            $new_lang = Utilities::getRequestLanguage();
+            $disable = $new_lang && $new_lang != pll_default_language();
+            $request = Utilities::getProductTranslationRequest();
+            $ID = $request ? $request['source_id'] : false;
 
             // Add the '_translation_porduct_type' meta, for the case where
             // the product was created before plugin acivation.
@@ -229,6 +230,11 @@ class Meta
      */
     public function syncTaxonomiesAndProductAttributes($post_id, $post, $update)
     {
+        $request = Utilities::getProductTranslationRequest();
+        if (isset($_GET['from_post']) && !$request) {
+            return false;
+        }
+
         // setup the polylang product meta filter
         add_filter('pll_copy_post_metas', array( __CLASS__, 'wpi_filter_pll_metas' ), 10, 5 );
 
@@ -236,16 +242,16 @@ class Meta
         $taxonomies = get_object_taxonomies(get_post_type($post_id));
 
         //is this a new translation being created?
-        $copy = isset($_GET['new_lang']) && isset($_GET['from_post']);
+        $copy = (bool) $request;
 
         if ($copy) {
             // New translation - copy attributes from product source
-            $source_id = isset($_GET['from_post']) ? absint($_GET['from_post']) : false;
+            $source_id = $request['source_id'];
 
             if ($source_id) {
                 //JM2021: ensure new language is set on new translation early as lack of language taxonomy 
                 //causes some subsequent queries to fail
-                $new_lang = $_GET['new_lang'];
+                $new_lang = $request['language'];
                 if (! pll_get_post_language( $post_id )){
                     pll_set_post_language ($post_id, $new_lang);
                 }

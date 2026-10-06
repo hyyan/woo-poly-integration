@@ -71,3 +71,5 @@ Forum topics FORUM-021 through FORUM-040 have individual dispositions in the for
 | COMPAT-007 | Combined product report overwrites earlier selected IDs when merging language keys | Corrected and verified in shared request batch | Both selected source products and both translations remain in the native report |
 
 | COMPAT-008 | CSV import passes a WooCommerce product object to the Polylang post save contract | Corrected and verified in native importer and two regressions | Both prices synchronize while post dates, menu order and review settings remain intact |
+
+| SEC-014 | Product synchronization accepts malformed source and language query values | Corrected together in four files with shared integer and registered language helpers and source read permission | 20 regressions and native creation, variation display and publish preserve metadata, defaults and price |

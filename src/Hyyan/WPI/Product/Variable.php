@@ -104,6 +104,12 @@ class Variable
     {
         static $last_id;
 
+        $request = Utilities::getProductTranslationRequest();
+        $new_lang = Utilities::getRequestLanguage();
+        if ((isset($_GET['from_post']) && !$request) || (isset($_GET['new_lang']) && !$new_lang)) {
+            return false;
+        }
+
         //JM2021: fast exit from repeated saves
         if ($ID==$last_id){
             //was proved this is called
@@ -153,7 +159,7 @@ class Variable
                  * created for brand new products which are not saved yet by user
                  */
                 $from = Utilities::getProductTranslationByID(
-                                esc_attr($_GET['from_post']),
+                                $request['source_id'],
                     pll_default_language()
                 );
             } else {
@@ -169,7 +175,7 @@ class Variable
         }
 
         //if creating a new translation, process the target language only, otherwise check all languages 
-        $langs = isset($_GET['new_lang']) ? array($_GET['new_lang']) : pll_languages_list();
+        $langs = $new_lang ? array($new_lang) : pll_languages_list();
         //JM2021: remove default lang since this should always be source not destination for copy (for variable products)
         if (($key = array_search($def_lang, $langs)) !== false) {
             unset($langs[$key]);
@@ -252,6 +258,11 @@ class Variable
      */
     public function syncDefaultAttributes($post_id, $post, $update)
     {
+        $request = Utilities::getProductTranslationRequest();
+        if (isset($_GET['from_post']) && !$request) {
+            return;
+        }
+
         // Don't sync if not in the admin backend nor on autosave or not product page
         if (!is_admin() &&  defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || get_post_type($post_id) !== 'product') {
             return;
@@ -274,15 +285,15 @@ class Variable
 
         //JM2021: new translations of Variable Products are first created as simple
         //but now at this point are already Variable but not linked translations
-        if ($product && isset($_GET['from_post']) && Utilities::maybeVariableProduct($product)) {
+        if ($product && $request && Utilities::maybeVariableProduct($product)) {
 
             // Only need to sync for the new translation from source product
             // The other product translation stay untouched
-            $attributes_translation = Utilities::getDefaultAttributesTranslation($_GET['from_post'], $_GET['new_lang']);
+            $attributes_translation = Utilities::getDefaultAttributesTranslation($request['source_id'], $request['language']);
 
-            if (!empty($attributes_translation) && isset($attributes_translation[$_GET['new_lang']])) {
-                update_post_meta($product->get_id(), '_default_attributes', $attributes_translation[$_GET['new_lang']]);
-				$product->set_default_attributes( $attributes_translation[ $_GET[ 'new_lang' ] ] );
+            if (!empty($attributes_translation) && isset($attributes_translation[$request['language']])) {
+                update_post_meta($product->get_id(), '_default_attributes', $attributes_translation[$request['language']]);
+				$product->set_default_attributes( $attributes_translation[ $request['language'] ] );
             }
         } elseif ($product && 'variable' === $product->get_type()) {
             // Variable Product
