@@ -60,3 +60,5 @@ Forum topics FORUM-021 through FORUM-040 have individual dispositions in the for
 | SEC-007 | Translation availability and download disable certificate verification | Fixed and verified, 3 regressions and Chrome real availability and download pass | Both original requests verify certificates, French pack installed successfully |
 
 | SEC-008 | Status report prints locale and translation path text without escaping | Fixed, 2 regressions and native Chrome controlled marker and normal report checks pass | Existing report values and three native help tips retained |
+
+| SEC-009 | Executable status report and social view lack direct file guards | Fixed and verified, standalone regression and native Chrome direct and embedded checks pass | Direct requests return no content, normal WordPress report and widgets preserved |

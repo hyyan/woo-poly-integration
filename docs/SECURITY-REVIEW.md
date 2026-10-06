@@ -63,3 +63,11 @@ Original per fix security evidence remains in commits 01bfb80 and 0ec30b1. Earli
 ## Release gate
 
 Review remaining checker findings against their owning source, fix confirmed defects individually, then run Plugin Check on the actual distributable archive. Exclude development fixtures and evidence from the release archive. Recheck the oldest supported WordPress, WooCommerce, Polylang and PHP combinations, custom shop roles, variation stock behavior and upgrade preservation. The remote CI matrix has not run. Production rollout and Plugins Team submission have not occurred. These remain release verification requirements, not evidence of a new exploit.
+
+## Additional fixes from the complete findings review
+
+Separate local commits now encode category script values (4b02c13), restore translation transport certificate verification (26fbe5f), and escape status locale and path text (ecd05e6). Production direct file guards are verified as the next independent change. The current complete suite passes with 83 tests and 225 assertions. These results supersede the earlier suite counts, while the earlier checker inventory remains a dated snapshot.
+
+Additional production files changed are Taxonomies/Categories.php for script value encoding, Tools/TranslationsDownloader.php for certificate verification, Admin/StatusReport.php for text escaping and direct execution guard, and Views/social.php for direct execution guard. Additional regression files are CategoryOutputSecurityTest.php, TranslationTransportSecurityTest.php, StatusOutputSecurityTest.php and DirectFileAccessTest.php. Before and after test output, Chrome evidence and applicable checker scans use category-output, translation-tls, status-output and direct-access filename prefixes in docs/evidence. The tracker, journal and individual checker dispositions were updated for each independent change.
+
+The full findings review remains incomplete. The earlier pending CSV import patch is still separate and uncommitted. No push, deployment or Plugins Team submission occurred.

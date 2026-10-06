@@ -393,7 +393,8 @@
     "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
     "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
     "id": "REVIEW-CHECK-036",
-    "status": "pending source or distributable review"
+    "status": "fixed and standalone regression and Chrome verified",
+    "evidence": "direct-access-tests-before.txt, direct-access-tests-after.txt, direct-access-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -3955,7 +3956,8 @@
     "message": "PHP file should prevent direct access. Add a check like: if ( ! defined( 'ABSPATH' ) ) exit;",
     "docs": "https://developer.wordpress.org/plugins/wordpress-org/common-issues/#direct-file-access",
     "id": "REVIEW-CHECK-359",
-    "status": "pending source or distributable review"
+    "status": "fixed and standalone regression and Chrome verified",
+    "evidence": "direct-access-tests-before.txt, direct-access-tests-after.txt, direct-access-chrome.json"
   },
   {
     "file": ".gitignore",

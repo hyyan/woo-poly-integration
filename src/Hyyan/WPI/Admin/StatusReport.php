@@ -2,6 +2,10 @@
 
 use Hyyan\WPI\Tools\TranslationsDownloader;
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 /*
  *
  */

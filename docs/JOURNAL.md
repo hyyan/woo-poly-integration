@@ -242,3 +242,11 @@
 - Escaped only locale and translation path text with esc_html. Native tooltip HTML remains unchanged and its escaping findings have source dispositions.
 - Full suite passed with 80 tests and 211 assertions. Chrome showed the controlled marker as text without execution. The normal report retained both language locales, translation paths and all three help tips. PHP lint and diff whitespace checks passed. Repeated Plugin Check preserved for review.
 - Removed the temporary lab instrumentation. No production route was added. Remaining input, settings, template output and packaging findings stay open.
+
+## Production direct file access guards
+
+- Status escaping fix committed locally as ecd05e6. Reviewed the two production files flagged for direct access. Other matching findings are test or local fixture files that must be excluded from the distributable.
+- First test helper name collided with the final PHPUnit run method and prevented loading. Renamed that private helper, then observed the two intended baseline failures. Direct Chrome status request returned HTTP 500 before the guard.
+- Added the existing ABSPATH convention to StatusReport.php and Views/social.php. No existing widget, hook or report behavior changed.
+- Full suite passed with 83 tests and 225 assertions. PHP lint and diff whitespace checks passed. Chrome direct requests returned empty content without errors. Native status report and all existing social widgets remained present. Repeated Plugin Check has no production direct file access protection findings.
+- Updated individual checker dispositions and preserved direct request, normal browser and standalone process evidence. Template escaping, input and save hook review, packaging, supported version testing, forum triage and full original feature acceptance remain open.

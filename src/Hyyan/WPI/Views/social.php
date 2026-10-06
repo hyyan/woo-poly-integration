@@ -1,3 +1,8 @@
+<?php
+if (!defined('ABSPATH')) {
+    exit;
+}
+?>
 <style type='text/css'>
     .wpi-social-column{
         position: relative;
