@@ -1,0 +1,43 @@
+{
+  "browser": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"stock\":\"7\",\"price\":\"12.50\"}\n```"
+      }
+    ]
+  },
+  "before": [
+    {
+      "id": 111,
+      "stock": 10
+    },
+    {
+      "id": 114,
+      "stock": 10
+    }
+  ],
+  "afterVariationSave": [
+    {
+      "id": 111,
+      "stock": 7
+    },
+    {
+      "id": 114,
+      "stock": 10
+    }
+  ],
+  "afterProductUpdate": [
+    {
+      "id": 111,
+      "stock": 7,
+      "price": "12.50"
+    },
+    {
+      "id": 114,
+      "stock": 7,
+      "price": "12.50"
+    }
+  ],
+  "note": "Stock.php deliberately suppresses stock event handling during product edit. Completing product Update performs normal meta synchronization."
+}

@@ -145,17 +145,22 @@ class Variation
     public static function getRelatedVariation($variatonID, $returnIDS = false)
     {
         $result = array();
-        if ( ! $variatonID ) {
-          return false;
+        if ((!is_int($variatonID) && !is_string($variatonID)) ||
+                !ctype_digit((string) $variatonID) || (int) $variatonID < 1) {
+            return false;
         }
+        $variatonID = (int) $variatonID;
 
         //previous version of code using get_post_meta() was filtered at runtime by Polylang
         //even when adding 'suppress_filters' => true, so there was no way to adjust stock
         //on translations when processing new order
         //it also did not return all versions of post for deletion
         global $wpdb;
-        $postids=$wpdb->get_col("select post_id from " . $wpdb->postmeta . " where meta_key='" .
-            self::DUPLICATE_KEY .  "' and meta_value=" . $variatonID);
+        $postids = $wpdb->get_col($wpdb->prepare(
+            "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND meta_value = %d",
+            self::DUPLICATE_KEY,
+            $variatonID
+        ));
 
         if (true === $returnIDS) {
             return $postids;
@@ -178,9 +183,14 @@ class Variation
      */
     public static function deleteRelatedVariation($variationID)
     {
-        $products = (array) static::getRelatedVariation($variationID);
+        $products = static::getRelatedVariation($variationID);
+        if (!$products) {
+            return;
+        }
         foreach ($products as $product) {
-            wp_delete_post($product->get_id(), true);
+            if ($product->is_type('variation')) {
+                wp_delete_post($product->get_id(), true);
+            }
         }
     }
     /**

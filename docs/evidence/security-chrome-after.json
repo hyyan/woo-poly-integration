@@ -1,0 +1,72 @@
+{
+  "adminRejection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n[{\"case\":\"missing nonce\",\"source\":238,\"translation\":239,\"status\":403,\"body\":\"-1\",\"elapsed_ms\":53},{\"case\":\"invalid nonce\",\"source\":238,\"translation\":239,\"status\":403,\"body\":\"-1\",\"elapsed_ms\":38},{\"case\":\"SQL expression\",\"source\":238,\"translation\":239,\"status\":200,\"body\":\"-1\",\"elapsed_ms\":36},{\"case\":\"nested ID after valid ID\",\"source\":238,\"translation\":239,\"status\":200,\"body\":\"-1\",\"elapsed_ms\":39},{\"case\":\"zero and nonexistent IDs\",\"source\":238,\"translation\":239,\"status\":200,\"body\":\"-1\",\"elapsed_ms\":38}]\n```"
+      }
+    ]
+  },
+  "subscriber": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"results\":[{\"role\":\"subscriber\",\"id\":\"238\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":54},{\"role\":\"subscriber\",\"id\":\"238 OR SLEEP(2)\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":38}]}\n```"
+      }
+    ]
+  },
+  "customer": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"account\":\"Hello lab-customer (not lab-customer? Log out)\\n\\nFrom your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.\",\"results\":[{\"role\":\"customer\",\"id\":\"238\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":63},{\"role\":\"customer\",\"id\":\"238 OR SLEEP(2)\",\"status\":403,\"body\":\"-1\",\"elapsed_ms\":39}]}\n```"
+      }
+    ]
+  },
+  "shopManager": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-manager\",\"remaining\":[null],\"panel\":\"Default Form Values:  \\nNo default Size…\\nSmall\\nLarge\\nGenerate variations Add manually \\nBulk actions\\nDelete all variations\\nToggle \\\"Enabled\\\"\\nToggle \\\"Downloadable\\\"\\nToggle \\\"Virtual\\\"\\nSet regular prices\\nIncrease regular prices (fixed amount or percentage)\\nDecrease regular prices (fixed amount or percentage)\\nSet sale prices\\nIncrease sale prices (fixed amount or percentage)\\nDecrease sale prices (fixed amount or percentage)\\nSet scheduled sale dates\\nToggle \\\"Manage stock\\\"\\nStock\\nSet Status - In stock\\nSet Status - Out of stock\\nSet Status - On backorder\\nLow stock threshold\\nLength\\nWidth\\nHeight\\nWeight\\nDownload limit\\nDownload expiry\\n1 variation (Expand / Close)\\nEdit\\nRemove\\n#111 \\nAny Size…\\nSmall\\nLarge\\nSave changes\\nCancel\\n1 variation (Expand / Close)\"}\n```"
+      }
+    ]
+  },
+  "adminValid": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-admin\",\"panel\":\"Default Form Values:  \\nNo default Size…\\nSmall\\nLarge\\nGenerate variations Add manually \\nBulk actions\\nDelete all variations\\nToggle \\\"Enabled\\\"\\nToggle \\\"Downloadable\\\"\\nToggle \\\"Virtual\\\"\\nSet regular prices\\nIncrease regular prices (fixed amount or percentage)\\nDecrease regular prices (fixed amount or percentage)\\nSet sale prices\\nIncrease sale prices (fixed amount or percentage)\\nDecrease sale prices (fixed amount or percentage)\\nSet scheduled sale dates\\nToggle \\\"Manage stock\\\"\\nStock\\nSet Status - In stock\\nSet Status - Out of stock\\nSet Status - On backorder\\nLow stock threshold\\nLength\\nWidth\\nHeight\\nWeight\\nDownload limit\\nDownload expiry\\n1 variation (Expand / Close)\\nEdit\\nRemove\\n#111 \\nAny Size…\\nSmall\\nLarge\\nSave changes\\nCancel\\n1 variation (Expand / Close)\"}\n```"
+      }
+    ]
+  },
+  "beforeRejections": [
+    238,
+    239,
+    111,
+    114
+  ],
+  "afterRejections": [
+    238,
+    239,
+    111,
+    114
+  ],
+  "afterManager": [
+    111,
+    114
+  ],
+  "adminPair": [
+    240,
+    241
+  ],
+  "afterAdmin": [
+    111,
+    114
+  ],
+  "versions": {
+    "wordpress": "7.1.2",
+    "php": "8.5.11",
+    "woocommerce": "11.1.2",
+    "polylang": "3.8.10"
+  }
+}

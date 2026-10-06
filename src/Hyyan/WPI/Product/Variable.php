@@ -308,10 +308,35 @@ class Variable
      */
     public function removeVariations()
     {
-        if (isset($_POST['variation_ids'])) {
-            $IDS = (array) $_POST['variation_ids'];
+        // This callback runs before WooCommerce's own authorization checks.
+        check_ajax_referer('delete-variations', 'security');
+        if (!current_user_can('edit_products') || !isset($_POST['variation_ids'])) {
+            return;
+        }
 
-            foreach ($IDS as $ID) {
+        $IDS = (array) wp_unslash($_POST['variation_ids']);
+        // Validate the complete batch before deleting any translated variation.
+        foreach ($IDS as $ID) {
+            if ((!is_int($ID) && !is_string($ID)) || !ctype_digit((string) $ID)) {
+                wp_die(-1);
+            }
+            $ID = (int) $ID;
+            if ($ID < 1 || 'product_variation' !== get_post_type($ID)) {
+                continue;
+            }
+            if (!current_user_can('edit_post', wp_get_post_parent_id($ID))) {
+                wp_die(-1);
+            }
+            foreach ((array) Variation::getRelatedVariation($ID) as $variation) {
+                if (!$variation->is_type('variation') ||
+                        !current_user_can('edit_post', $variation->get_parent_id())) {
+                    wp_die(-1);
+                }
+            }
+        }
+        foreach ($IDS as $ID) {
+            $ID = (int) $ID;
+            if ($ID > 0 && 'product_variation' === get_post_type($ID)) {
                 Variation::deleteRelatedVariation($ID);
             }
         }
