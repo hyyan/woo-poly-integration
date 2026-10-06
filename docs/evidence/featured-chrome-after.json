@@ -1,0 +1,96 @@
+{
+  "subscriber": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"account\":\"Hello lab-subscriber (not lab-subscriber? Log out)\\n\\nFrom your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.\",\"status\":200,\"redirected\":true,\"url\":\"http://localhost:8098/my-account/\"}\n```"
+      }
+    ]
+  },
+  "customer": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"account\":\"Hello lab-customer (not lab-customer? Log out)\\n\\nFrom your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.\",\"status\":200,\"redirected\":true,\"url\":\"http://localhost:8098/my-account/\"}\n```"
+      }
+    ]
+  },
+  "adminDenied": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-admin\",\"results\":[{\"query\":\"missing nonce\",\"status\":403,\"redirected\":false},{\"query\":\"&_wpnonce=invalid\",\"status\":403,\"redirected\":false},{\"query\":\"&_wpnonce[0]=invalid\",\"status\":403,\"redirected\":false}],\"link\":\"http://localhost:8098/wp-admin/admin-ajax.php?action=woocommerce_feature_product&product_id=115&_wpnonce=5fd9faafe5\"}\n```"
+      }
+    ]
+  },
+  "adminStar": {
+    "source": true,
+    "translation": true,
+    "unrelated": false
+  },
+  "managerStar": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-manager\",\"source\":\"No\",\"translation\":\"No\"}\n```"
+      }
+    ]
+  },
+  "disabledVisibility": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-admin\",\"source\":\"Yes\",\"translation\":\"No\"}\n```"
+      }
+    ]
+  },
+  "postNonce": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-admin\",\"status\":200,\"redirected\":true}\n```"
+      }
+    ]
+  },
+  "final": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"user\":\"Howdy, lab-admin\",\"source\":\"No\",\"translation\":\"No\"}\n```"
+      }
+    ]
+  },
+  "database": {
+    "afterSubscriber": [
+      false,
+      false
+    ],
+    "afterCustomer": [
+      false,
+      false
+    ],
+    "afterAdminDenied": [
+      false,
+      false
+    ],
+    "afterAdminStar": [
+      true,
+      true
+    ],
+    "afterManagerStar": [
+      false,
+      false
+    ],
+    "afterDisabledStar": [
+      true,
+      false
+    ],
+    "afterPostNonce": [
+      false,
+      false
+    ],
+    "unrelated": 109,
+    "unrelatedFeatured": false
+  },
+  "settingRestored": true
+}

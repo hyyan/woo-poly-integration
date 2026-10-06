@@ -78,3 +78,15 @@
 - 2c9aaa3: run plugin regressions on pushes and pull requests. The local runner passed. The remote workflow has not run because no push was authorized or performed.
 - Committing the plan, tracker, journal, acceptance matrix, checker inventory and structured source evidence. Bulk raw HTML forum captures remain preserved locally outside these commits.
 - The commit obstacle is resolved. Remaining work is still required: featured product fix, search and shortcode regressions, other reported issues, complete checker dispositions, original feature acceptance, HPOS, checkout and older compatibility stacks.
+
+## Featured product callback fix
+- Previous goal turn completed local commits and resolved the directory hook obstacle. Revalidated current source, Git state and running lab before this step.
+- Added 9 initial WordPress regression cases. Saw 5 failures for subscriber/customer and missing, invalid or nested nonces. The original authorized and disabled visibility cases passed, and missing product ID produced a warning.
+- Updated only the existing priority 5 featured callback to check WooCommerce edit_products permission, product input shape and the unchanged woocommerce-feature-product nonce action before modifying translations.
+- Preserved WooCommerce's REQUEST nonce contract, including a nonce supplied in POST. Added a tenth regression for that path.
+- All 10 featured regressions passed with 20 assertions. Full suite passed: 8 unit tests and 21 integration tests, 53 assertions total. PHP source lint and diff whitespace checks passed.
+- Chrome subscriber and customer requests left both simple products unfeatured. Administrator requests with missing, invalid and nested nonces returned 403 without changing either flag.
+- Normal administrator star click featured both products. Normal shop manager star click cleared both flags. Unrelated variable product 109 remained unchanged.
+- With visibility synchronization disabled in the existing setting, an administrator star click changed only the original product. Restored the exact prior setting.
+- Chrome POST nonce path then toggled both products back to unfeatured. Saved request, UI, database and screenshot evidence under featured-chrome-after.
+- This verified fix is ready for its separate local commit. No remote publication. Next: reproduced search URL defect, shortcode PHP crash and the remaining compatibility acceptance matrix.

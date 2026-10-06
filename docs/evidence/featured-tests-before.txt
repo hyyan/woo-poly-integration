@@ -1,0 +1,38 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m...[33;1mW[0m                                                           9 / 9 (100%)
+
+Time: 00:01.149, Memory: 103.05 MB
+
+There were 5 failures:
+
+1) FeaturedProductSecurityTest::testUnauthorizedRoleCannotFeatureTranslationWithValidNonce#0 with data ('lab-subscriber')
+Failed asserting that true is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/FeaturedProductSecurityTest.php:64
+
+2) FeaturedProductSecurityTest::testUnauthorizedRoleCannotFeatureTranslationWithValidNonce#1 with data ('lab-customer')
+Failed asserting that true is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/FeaturedProductSecurityTest.php:64
+
+3) FeaturedProductSecurityTest::testInvalidNonceCannotFeatureTranslation@missing with data (null)
+Failed asserting that true is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/FeaturedProductSecurityTest.php:76
+
+4) FeaturedProductSecurityTest::testInvalidNonceCannotFeatureTranslation@invalid with data ('invalid')
+Failed asserting that true is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/FeaturedProductSecurityTest.php:76
+
+5) FeaturedProductSecurityTest::testInvalidNonceCannotFeatureTranslation@nested with data (['invalid'])
+Failed asserting that true is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/FeaturedProductSecurityTest.php:76
+
+[37;41mFAILURES![0m
+[37;41mTests: 9[0m[37;41m, Assertions: 19[0m[37;41m, Failures: 5[0m[37;41m, Warnings: 1[0m[37;41m.[0m

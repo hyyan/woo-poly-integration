@@ -80,6 +80,15 @@ class Product
      * by clicking on the star
      */
     public static function sync_ajax_woocommerce_feature_product() {
+      // This callback runs before WooCommerce's permission and nonce checks.
+      if ( ! current_user_can( 'edit_products' ) ||
+           ! isset( $_REQUEST['_wpnonce'], $_GET['product_id'] ) ||
+           ! is_string( $_REQUEST['_wpnonce'] ) ||
+           ! is_scalar( $_GET['product_id'] ) ||
+           ! wp_verify_nonce( wp_unslash( $_REQUEST['_wpnonce'] ), 'woocommerce-feature-product' ) ) {
+        return;
+      }
+
       $metas = Meta::getDisabledProductMetaToCopy();
       if ( in_array( '_visibility', $metas ) ) {
         return;

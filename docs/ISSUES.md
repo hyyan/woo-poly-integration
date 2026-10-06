@@ -6,7 +6,7 @@ Updated: 2026-10-06. Status is evidence based; triaged does not mean fixed.
 | --- | --- | --- | --- |
 | SEC-001 | Closure notice CVE-2026-101926: raw variation ID SQL concatenation | Fixed in local commit 01bfb80; Chrome and 11 integration checks pass | No SQL delay/extraction; legitimate linked lookup preserved |
 | SEC-002 | Variation removal missing nonce/capability checks | Fixed in local commit 01bfb80; Chrome and 11 integration checks pass | Subscriber/customer denied; authorized multilingual deletion passes |
-| SEC-003 | Featured-product AJAX mutates translations before WooCommerce checks | Chrome reproduced: subscriber toggles translated product before WooCommerce checks; fix pending | Unauthorized/invalid nonce denied; valid toggle syncs translations |
+| SEC-003 | Featured-product AJAX mutates translations before WooCommerce checks | Fixed and verified; 10 regression cases and Chrome role, nonce, normal toggle and disabled setting acceptance pass; local commit prepared | Unauthorized/invalid nonce denied; valid toggle syncs translations |
 | ENV-001 | Latest WordPress/PHP/WooCommerce/Polylang baseline | In progress | Exact versions, healthy store/admin, Chrome proof |
 | CHECK-001 | Full Plugin Check/coding standards/security audit | Pending | 368 baseline findings individually inventoried in docs/CHECKS.md; disposition and current report pending |
 | [GH-571](https://github.com/hyyan/woo-poly-integration/issues/571) | After updating the Hyyan WooCommerce Polylang Integration doesn't work on pages with options, Fatal error: Uncaught TypeError: | Fixed in local commit f49cb58; PHP 8.5 unit checks and bilingual Chrome cart workflow pass | Empty dimensions do not crash; numbers and admin values preserved |
