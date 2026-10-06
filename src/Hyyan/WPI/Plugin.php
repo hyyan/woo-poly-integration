@@ -430,12 +430,16 @@ class Plugin
                                     case 'cart':
                                         $post_name		 = _x( 'cart', 'Page slug', 'woocommerce' );
                                         $post_title		 = _x( 'Cart', 'Page title', 'woocommerce' );
-                                        $post_content	 = '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_cart_shortcode_tag', 'woocommerce_cart' ) . ']<!-- /wp:shortcode -->';
+                                        $post_content	 = has_block( 'woocommerce/cart', $orig_page->post_content )
+                                        ? $orig_page->post_content
+                                        : '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_cart_shortcode_tag', 'woocommerce_cart' ) . ']<!-- /wp:shortcode -->';
                                         break;
                                     case 'checkout':
                                         $post_name		 = _x( 'checkout', 'Page slug', 'woocommerce' );
                                         $post_title		 = _x( 'Checkout', 'Page title', 'woocommerce' );
-                                        $post_content	 = '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_checkout_shortcode_tag', 'woocommerce_checkout' ) . ']<!-- /wp:shortcode -->';
+                                        $post_content	 = has_block( 'woocommerce/checkout', $orig_page->post_content )
+                                        ? $orig_page->post_content
+                                        : '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_checkout_shortcode_tag', 'woocommerce_checkout' ) . ']<!-- /wp:shortcode -->';
                                         break;
                                     case 'myaccount':
                                         $post_name		 = _x( 'my-account', 'Page slug', 'woocommerce' );
@@ -451,7 +455,7 @@ class Plugin
                                     'post_author'	 => 1,
                                     'post_name'		 => $post_name,
                                     'post_title'	 => $post_title,
-                                    'post_content'	 => $post_content,
+                                    'post_content'	 => wp_slash( $post_content ),
                                     //'post_parent'	 => $post_parent,
                                     'comment_status' => 'closed',
                                 );

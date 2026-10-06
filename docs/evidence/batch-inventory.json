@@ -21304,7 +21304,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "distribution-package-plugin-check.json",
+  "package_scan": "store-pages-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -21362,7 +21362,7 @@
       "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 436,
+      "line": 438,
       "column": 89,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -21373,7 +21373,7 @@
       "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 437,
+      "line": 439,
       "column": 90,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -21384,7 +21384,7 @@
       "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 441,
+      "line": 445,
       "column": 91,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -21395,7 +21395,7 @@
       "disposition": "Reviewed dependency owned WooCommerce strings and catalog fallback, native page titles, bank details, privacy defaults, status help and coupon label retain the WooCommerce catalog. Installed dependency sources inspected."
     },
     {
-      "line": 442,
+      "line": 446,
       "column": 92,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -23848,6 +23848,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceReplace. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_archive_sha256": "150a9239f3ff03f116a9ea90cce218f5820a1088f54dc1556c64618f6051cc9e",
-  "package_file_count": 73
+  "package_archive_sha256": "47561872ab7f281b2600f532dadb5bad4df0e12eb5d05a3b30dd56fe6f60a76b",
+  "package_file_count": 73,
+  "previous_package_scan": "distribution-package-plugin-check.json"
 }

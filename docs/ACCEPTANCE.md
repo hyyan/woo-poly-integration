@@ -5,8 +5,8 @@ The README feature list defines the preservation contract. A pending row blocks 
 | Feature | Required proof | Current status |
 | --- | --- | --- |
 | WooCommerce translation downloads | Language installation downloads and loads the correct catalog | Pending |
-| Store pages | Shop, cart, checkout and account route to linked language pages | Fixtures created, complete workflow pending |
-| Endpoints | Account and checkout endpoints work in both languages | Pending |
+| Store pages | Shop, cart, checkout and account route to linked language pages | Native automatic creation, both language shop and account routes and empty cart and checkout redirects pass. Filled checkout and custom translated slugs pending |
+| Endpoints | Account and checkout endpoints work in both languages | Four authenticated account endpoints pass in each language. Custom translated slugs and checkout endpoints pending |
 | Products | Create translation from original admin flow and preserve independent content | Pending |
 | Categories and tags | Linked terms, URLs and archive filtering in both languages | Linked category archive filtering and related product fixtures pass in Chrome. Native term creation, hierarchy and tags pending |
 | Attributes | Global and custom attributes translate and select correctly | Custom variable selection checked, global attributes pending |
@@ -28,3 +28,5 @@ The README feature list defines the preservation contract. A pending row blocks 
 | Older supported stack | Same feature contract passes without increasing plugin minima | Pending |
 
 Existing documented limitations remain: default language cannot be changed after variable products are created, and the content based language URL mode is unsupported. These limitations are not new fixes or compatibility claims.
+
+Automatic page creation retains native block cart and checkout content with identical source and target hashes. Four format regression cases preserve block and classic behavior. Evidence: store-pages prefixes. The fresh site initially lacked Apache rewrite configuration and reached the original lab. Saved native rules for the owned subdirectory before claiming routing acceptance. No purchase claim follows from empty checkout redirects.

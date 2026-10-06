@@ -75,6 +75,29 @@ final class PageMaintenanceSecurityTest extends TestCase
         self::assertStringContainsString('post.php?post=', $link->getAttribute('href'));
         self::assertStringContainsString('action=edit', $link->getAttribute('href'));
     }
+    #[DataProvider('nativePageContents')]
+    public function testAutomaticTranslationPreservesNativePageFormat(string $type, bool $blocks): void
+    {
+        $source = wc_get_page_id($type);
+        wp_delete_post(pll_get_post($source, 'de'), true);
+        $content = $blocks
+            ? '<!-- wp:woocommerce/'.$type.' {"className":"quoted \"label\""} --><div class="wp-block-woocommerce-'.$type.'"></div><!-- /wp:woocommerce/'.$type.' -->'
+            : '<!-- wp:shortcode -->[woocommerce_'.$type.']<!-- /wp:shortcode -->';
+        wp_update_post(array('ID' => $source, 'post_content' => wp_slash($content)));
+        $features = (array) get_option('wpi-features');
+        $features['checkpages'] = 'on';
+        update_option('wpi-features', $features);
+        Plugin::wpi_ensure_woocommerce_pages_translated();
+        $target = pll_get_post($source, 'de');
+        if ($target) { $this->pages[] = $target; }
+        self::assertGreaterThan(0, $target);
+        self::assertSame($content, get_post($target)->post_content);
+        self::assertSame($content, get_post($source)->post_content);
+    }
+    public static function nativePageContents(): array
+    {
+        return array(array('cart', true), array('checkout', true), array('cart', false), array('checkout', false));
+    }
     public function testTranslatedWarningFiltersEventsAndKeepsNativeLink(): void
     {
         $filter = static function ($translated, $text, $domain) {

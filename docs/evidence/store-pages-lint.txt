@@ -1,0 +1,2 @@
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Plugin.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/PageMaintenanceSecurityTest.php

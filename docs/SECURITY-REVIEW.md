@@ -322,3 +322,21 @@ The ignored work/network-views-browser.php helper was read only, restricted to l
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Counts, inspected findings, reasons and remaining gates |
 
 The local fixture configures only the separate fresh package site and is excluded from the archive. A local mail blocker prevents fixture email delivery. The original store remains intact. No legacy deployment or publication ran. Fresh CLI notices need investigation. Store workflow, older stack and language catalog acceptance remain open. The artifact scan is not clean, and established name and slug warnings need Plugins Team review.
+
+## Store page and endpoint workflow batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Plugin.php | Preserve native block cart and checkout content during automatic translation while keeping classic shortcode filters |
+| tests/admin/PageMaintenanceSecurityTest.php | Four real WordPress block and classic page format cases with source preservation and linked creation assertions |
+| docs/evidence/store-pages-tests-before.txt, store-pages-tests-serialization-before.txt and store-pages-tests-after.txt | Two format and two serialization baseline failures and full 235 test, 671 assertion acceptance |
+| docs/evidence/store-pages-native-data.json and store-pages-chrome.json | Native linked pages, exact content hashes, eight store routes, eight account routes and actual rendered German block cart |
+| docs/evidence/store-pages-lint.txt | Production and regression PHP syntax checks |
+| docs/evidence/store-pages-package-build.txt and store-pages-package-contents.json | Corrected actual archive and complete file manifest |
+| docs/evidence/store-pages-plugin-check.json and store-pages-plugin-check.stderr.txt | Complete corrected installed package scan without exclusions |
+| docs/evidence/batch-inventory.json | Actual current package scan and inspected row dispositions |
+| docs/ACCEPTANCE.md, docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Scoped native acceptance, cause, reasons and remaining gates |
+
+The automatic creation change operates behind the existing administration capabilities and feature setting. It copies content only from the corresponding source store page. Existing translated content is not replaced. Native block serialization is preserved without manual parsing. Classic extension shortcode filters remain. Custom translated endpoint slugs, filled checkout and account mutations have not been accepted by this batch.
+
+Content insertion uses wp_slash so serialized block JSON retains escaped quotes. The final regression and native fixtures verify this through actual WordPress insertion and block parsing.

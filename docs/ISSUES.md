@@ -120,3 +120,7 @@ All current production checker rows have an explicit source disposition. This do
 | COMPAT-023 | Readme changelog heading hierarchy, excessive tags and long historical notice trigger parser warnings | Corrected together without moving original sections or dropping history | Native parser retains changelog and description, five tags and short upgrade notice, actual archive scan confirms |
 
 The actual update archive scan retains 231 rows with inspected source dispositions. Tested version and established directory name or slug review remain release gates. Fresh site CLI setup emitted early translation and CLI deprecation notices. Their origin needs investigation before a broad compatibility claim. Native browser settings requests added no runtime log lines.
+
+| COMPAT-024 | Automatic page creation replaces native WooCommerce block cart and checkout with classic shortcodes | Corrected both page types together, preserving classic paths | Two baseline failures, four format regressions pass, identical native block content hashes and actual German block cart render |
+
+Fresh store page acceptance covers native creation and empty cart, checkout and account routing in English and German. Custom endpoint translations, actual purchases and the full store matrix remain pending.
