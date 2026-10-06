@@ -1,0 +1,23 @@
+{
+    "tags": [
+        "woocommerce",
+        "multilingual",
+        "polylang",
+        "language",
+        "translation"
+    ],
+    "license": "MIT",
+    "sections": [
+        "description",
+        "installation",
+        "faq",
+        "changelog"
+    ],
+    "warnings": {
+        "contributor_ignored": [
+            "hyyan",
+            "jonathanmoorebcsorg"
+        ]
+    },
+    "changelog_present": true
+}

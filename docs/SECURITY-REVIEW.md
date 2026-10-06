@@ -302,3 +302,23 @@ The ignored work/runtime-server-browser.php instrument requires local environmen
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Scope, file reasons, verification and remaining gates |
 
 The ignored work/network-views-browser.php helper was read only, restricted to local administrator rendering and removed after acceptance. Automatic third party counters and resources are replaced by direct actions. Core product, stock, checkout and language contracts are unchanged. Links and encoded share arguments are verified, but signed account publication remains manual and was not attempted. All current production checker rows have source dispositions, with reviewed raw errors and warnings retained. The distributable archive, full report review and native compatibility matrix remain outstanding.
+
+## Distribution and metadata batch
+
+| File | Reason |
+| --- | --- |
+| .exclude-list | Reuse existing deployment exclusions and omit new development fixtures, tests and evidence |
+| .gitattributes | Omit development content from Git exports |
+| tests/bin/package.sh | Build a reproducible local archive and full byte manifest without publishing |
+| __init__.php | Match existing MIT license identifier |
+| readme.txt | Correct changelog hierarchy, five tags and bounded historical upgrade notice |
+| docs/DISTRIBUTION.md | Document safe packaging, actual artifact acceptance and remaining gates |
+| docs/evidence/distribution-package-build.txt and distribution-package-contents.json | Repeat build hashes and complete 73 file manifest |
+| docs/evidence/distribution-package-plugin-check-before.txt, distribution-package-plugin-check.json and distribution-package-plugin-check.stderr.txt | Intermediate and final complete artifact scans, update mode without exclusions |
+| docs/evidence/distribution-package-metadata.json and distribution-readme-parser.json | Native archive header and parser verification |
+| docs/evidence/distribution-tests-after.txt and distribution-lint.txt | All 231 tests with 659 assertions and root PHP syntax check |
+| docs/evidence/distribution-fresh-site.json, distribution-chrome.json, distribution-installed-files.txt and distribution-fresh-browser-log.txt | Fresh native ZIP installation, actual browser forms and served asset hashes, all installed bytes and empty browser log delta |
+| docs/evidence/batch-inventory.json | Preserve complete source rows and add actual artifact dispositions |
+| docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Counts, inspected findings, reasons and remaining gates |
+
+The local fixture configures only the separate fresh package site and is excluded from the archive. A local mail blocker prevents fixture email delivery. The original store remains intact. No legacy deployment or publication ran. Fresh CLI notices need investigation. Store workflow, older stack and language catalog acceptance remain open. The artifact scan is not clean, and established name and slug warnings need Plugins Team review.

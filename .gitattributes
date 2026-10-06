@@ -13,3 +13,16 @@
 /screenshot-4.png export-ignore
 /screenshot-5.png export-ignore
 /screenshot-6.png export-ignore
+
+/.gitattributes export-ignore
+/.exclude-list export-ignore
+/.travis.yml export-ignore
+/deploy.sh export-ignore
+/assets export-ignore
+/tests export-ignore
+/docs export-ignore
+/work export-ignore
+/goal.txt export-ignore
+/handoff.md export-ignore
+/phpunit*.xml export-ignore
+/README.md export-ignore

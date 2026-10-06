@@ -8,7 +8,7 @@ Updated: 2026-10-06. Status is evidence based; triaged does not mean fixed.
 | SEC-002 | Variation removal missing nonce/capability checks | Fixed in local commit 01bfb80; Chrome and 11 integration checks pass | Subscriber/customer denied; authorized multilingual deletion passes |
 | SEC-003 | Featured-product AJAX mutates translations before WooCommerce checks | Fixed and verified; 10 regression cases and Chrome role, nonce, normal toggle and disabled setting acceptance pass; local commit 0ec30b1 | Unauthorized/invalid nonce denied; valid toggle syncs translations |
 | ENV-001 | Latest WordPress/PHP/WooCommerce/Polylang baseline | In progress | Exact versions, healthy store/admin, Chrome proof |
-| CHECK-001 | Full Plugin Check/coding standards/security audit | Pending | Current findings grouped in docs/BATCHES.md, source dispositions and release archive scan pending |
+| CHECK-001 | Full Plugin Check/coding standards/security audit | Pending | Current findings grouped in docs/BATCHES.md, source dispositions and actual release archive scan recorded, full acceptance pending |
 | [GH-571](https://github.com/hyyan/woo-poly-integration/issues/571) | After updating the Hyyan WooCommerce Polylang Integration doesn't work on pages with options, Fatal error: Uncaught TypeError: | Fixed in local commit f49cb58; PHP 8.5 unit checks and bilingual Chrome cart workflow pass | Empty dimensions do not crash; numbers and admin values preserved |
 | [GH-569](https://github.com/hyyan/woo-poly-integration/issues/569) | The plan for a WooCommerce custom order table | Historical HPOS notice, current storage compatibility audit required | Read discussion; reproduce; classify bug/configuration/feature request; regression evidence |
 | [GH-566](https://github.com/hyyan/woo-poly-integration/issues/566) | broken language switcher links on search page | Fixed in local commit b035464: search links preserve query and switch languages; normal shop links preserve sorting; 3 regressions and Chrome acceptance pass | Read discussion; reproduce; classify bug/configuration/feature request; regression evidence |
@@ -46,7 +46,7 @@ Feature contract: README.md/readme.txt and wiki; existing variable-product defau
 
 | FORUM-020 | Unknown locale assignment on false current Polylang language | Fixed and tested: 4 integration cases plus Chrome exact callback before/after proof | Missing language does not crash, valid language and existing object fallback preserved |
 
-Individual forum dispositions are in docs/evidence/wordpress-support-capture.json. FORUM-001 through FORUM-020 were read with captured replies. The remaining 403 reports need triage. Mapping a report to a tested fix does not close broader feature acceptance.
+Individual forum dispositions are in docs/evidence/wordpress-support-capture.json. FORUM-001 through FORUM-020 were read with captured replies. At that checkpoint, 403 reports needed triage. The current remaining count is recorded below. Mapping a report to a tested fix does not close broader feature acceptance.
 
 | COMPAT-005 / FORUM-022 | Cart fragments declare jquery-cookie while consuming Cookies | Fixed and verified: native graph regression, Chrome isolated before/after and bilingual mini cart flow | Existing cookie API is loaded before fragments, quantities and translated contents preserved |
 | COMPAT-006 | English product page shows German related product | Resolved as malformed lab data: German simple product had English category. Native category correction and bilingual Chrome checks pass. No production change | Correct fixture categories, preserve existing product behavior |
@@ -114,3 +114,9 @@ Server runtime batch passes 225 tests with 639 assertions. Browser variation pro
 | COMPAT-021 | Project badge advertises active status for an archived repository | Use the actual repository status destination without a static activity claim | Archive banner verified directly in Chrome, HTTPS repository link visible in normal admin view |
 
 All current production checker rows have an explicit source disposition. This does not mean a clean raw scan or a complete maintenance release. New template variables are scoped inside Plugin::getView and are not exported globals. External account sharing and starring remain manual, with no publication performed. Packaging, complete native feature and version acceptance and report content review remain open.
+
+| SEC-025 | Development fixtures and tooling must not ship in the release archive | Corrected packaging exclusions and added reproducible local ZIP builder | Actual 73 file archive, source byte equality, fresh native installation and installed byte verification pass |
+| COMPAT-022 | Plugin license identifier differs from existing readme and MIT license | Corrected header to MIT without changing license | Actual archive metadata and Plugin Check no longer report license mismatch |
+| COMPAT-023 | Readme changelog heading hierarchy, excessive tags and long historical notice trigger parser warnings | Corrected together without moving original sections or dropping history | Native parser retains changelog and description, five tags and short upgrade notice, actual archive scan confirms |
+
+The actual update archive scan retains 231 rows with inspected source dispositions. Tested version and established directory name or slug review remain release gates. Fresh site CLI setup emitted early translation and CLI deprecation notices. Their origin needs investigation before a broad compatibility claim. Native browser settings requests added no runtime log lines.

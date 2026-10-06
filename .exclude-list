@@ -5,3 +5,12 @@ nbproject
 *.sh
 *.png
 .*
+
+build
+work
+docs
+tests
+goal.txt
+handoff.md
+phpunit*.xml
+README.md

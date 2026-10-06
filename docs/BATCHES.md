@@ -4,7 +4,7 @@ Findings are grouped by shared cause. A checker row is not a confirmed defect. F
 
 | Batch | Current checker rows | State |
 | --- | ---: | --- |
-| Distribution and development files | 277 | Pending source review |
+| Distribution and development files | 277 | 268 excluded from actual archive, four metadata rows corrected, five retained rows reviewed or awaiting release gates |
 | Request validation and authorization | 114 | All current rows have source dispositions, stock and formatting contexts verified together |
 | Translation contracts | 45 | Source reviewed, owned calls corrected, dependency catalogs and legacy keys preserved |
 | Public hooks and symbol ownership | 27 | Existing contracts and scoped template locals source reviewed |
@@ -31,7 +31,7 @@ Each feature batch uses one fixture set and acceptance matrix across related Git
 
 Evidence: `evidence/batch-inventory.json`. Current counts use `network-views-plugin-check.json`. The previous snapshot is retained. There are 226 current production rows, including 66 errors and 160 warnings. There are no current production rows awaiting an initial source disposition. Counts are scan rows, not unique defects. Reviewed rows remain in the complete raw report, with their source dispositions available for re-review.
 
-Translation contracts were handled together with unchanged source catalog keys, corrected plugin domains and placeholder guidance. Release archive review contains 277 development or packaging rows. Forum content review still has 383 reports pending. Native feature acceptance, catalog language acceptance, third party integrations, large catalog performance and older stack verification remain separate completion gates.
+Translation contracts were handled together with unchanged source catalog keys, corrected plugin domains and placeholder guidance. Release archive review covers 277 development or packaging rows. Of these, 268 are excluded, four are corrected and five remain in the artifact scan. Forum content review still has 383 reports pending. Native feature acceptance, catalog language acceptance, third party integrations, large catalog performance and older stack verification remain separate completion gates.
 
 Stock and numeric formatting request contexts were verified in one batch. Native frontend checkout, legacy admin AJAX checkout and product editing preserve linked stock. Pure formatting flags retain their legacy presence contract. At completion of that batch, the suite passed 215 tests with 624 assertions.
 
@@ -39,4 +39,6 @@ Public naming review preserves all 25 existing contracts. Current call and defin
 
 Server runtime findings were corrected in one batch. WordPress URL parsing preserves native localized fragments and account queries. WooCommerce guarded timeout handling restores the captured limit on success and exceptions and supports disabled native functions. At completion of that batch, 225 tests passed with 639 assertions. Three remote badge rows and related social embeds carried into the now completed network batch.
 
-The admin network batch replaces automatic remote images, scripts and frames with local controls and direct release, license, project, sharing and profile actions. Native Chrome and all 231 tests with 659 assertions pass. Two additional naming rows are scoped template locals with explicit source dispositions. Raw reviewed findings remain visible, and the distribution artifact and full acceptance matrix are not yet cleared.
+The admin network batch replaces automatic remote images, scripts and frames with local controls and direct release, license, project, sharing and profile actions. Native Chrome and all 231 tests with 659 assertions pass. Two additional naming rows are scoped template locals with explicit source dispositions. Raw reviewed findings remain visible, and the full acceptance matrix is not yet cleared.
+
+The distribution batch produces a reproducible 73 file ZIP and verifies every installed byte on a separate fresh WordPress site. Native activation, settings forms, nonce fields and all six script and catalog resources pass. The actual archive update scan contains 231 rows, 66 errors and 165 warnings. All 226 source rows retain their inspected dispositions. Remaining artifact metadata warnings cover the tested version header and three established name or slug notices. The original activation callback is source reviewed and preserved. Forum contents and full native compatibility remain open.

@@ -1,6 +1,6 @@
 === Hyyan WooCommerce Polylang Integration===
 Contributors: hyyan, jonathanmoorebcsorg
-Tags: cms, woocommerce, multilingual, polylang, bilingual, international, language, localization, multilanguage, multilingual, translate, translation
+Tags: woocommerce, multilingual, polylang, language, translation
 Requires at least: 5.4
 Stable tag: 1.5.1
 Tested Up To: 5.7.1
@@ -136,21 +136,20 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 
 == Changelog == 
 
-== 1.5.1 ==
+= 1.5.1 =
 * fixes #545 keep fields unlocked if products does not exist in default language props mrleemon
 * fixes #549 Quick edit Product synchronisation issues
 * fixes #548 incorrect save hook caused inconsistent synchronisation behaviour, especially changing product type and visibility
 * fixes #542 shop page breadcrumb in secondary language 
 
-== 1.5.0 ==
-
+= 1.5.0 =
 * correction to fix #527
 * fixes #536 avoid over-setting product type on edit
 * re- fixes #534 new variation not visible until save
 * re- fixes #527 variation form default values
 * fixes #535 variation stock issues
 
-== 1.4.5 ==
+= 1.4.5 =
 * [re-fixes #430, #524 variation duplications](https://github.com/hyyan/woo-poly-integration/issues/476)
 * [fixes #526 product type selector issues - variable product appears as simple](https://github.com/hyyan/woo-poly-integration/issues/526)
 * [fixes #522, #529 and other JQuery deprecation issues props @mrleemon](https://github.com/hyyan/woo-poly-integration/issues/522)
@@ -159,7 +158,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * [fixes #534 new variable translation, variations not visible until save](https://github.com/hyyan/woo-poly-integration/issues/534)
 
 
-== 1.4.4 ==
+= 1.4.4 =
 * [implements #476 adding Additional Content to translated email fields](https://github.com/hyyan/woo-poly-integration/issues/476)
 * [Addresses multiple email issues causing some fields and default values not to be picked up or translated correctly.](https://github.com/hyyan/woo-poly-integration/wiki/Email-Languages)
 * [fixes #502 Cart issues by removing addToCartHandlerVariable()](https://github.com/hyyan/woo-poly-integration/issues/502)
@@ -171,25 +170,24 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * [fixes #442 incorrect defaults used where no saved settings exist  props jon007 jul 2019](https://github.com/hyyan/woo-poly-integration/issues/442)
 
 
-== 1.4.3 ==
+= 1.4.3 =
 * [fixes #434 page checks duplicating pages and other language switching issues](https://github.com/hyyan/woo-poly-integration/commit/8c54fb23afad1bec1f98b2077d6f552646f253b8)
 * [fixes #435 fix get_current_screen errors when this plugin called in unanticipated circumstances props danieleftodi YITH Gift Cards](https://github.com/hyyan/woo-poly-integration/commit/7d428208ff3b3a2472ce42f5a2259604ce2128c8)
 * [fixes #436 Illegal string offset and Invalid argument in FlashMessages](https://github.com/hyyan/woo-poly-integration/commit/feedc68431bcd26c8d9bd2b4afacf4d7a86a62a1)
 
 
-== 1.4.2 ==
+= 1.4.2 =
 * [fixes #432 default variation attributes were not synchronised correctly when using more than one attribute](https://github.com/hyyan/woo-poly-integration/commit/7101bcf0786e21515885d5796188420972b01831)
 * [fixes #431 multiple email translation issues in different circumstances](https://github.com/hyyan/woo-poly-integration/issues/431)
 * [fixes #430 bugfix and enhancement to allow variations to be disabled](https://github.com/hyyan/woo-poly-integration/issues/430)
 * [stock synchronisation - avoid errors being logged where product is not translated](https://github.com/hyyan/woo-poly-integration/commit/08c9913105e6ad8183f7bbf35930f25b983d4c50)
 
 
-== 1.4.1 ==
+= 1.4.1 =
 * [fixes #427 by reversal of #390, #346 Cart: retain price when switching languages due to incompatibility with currency switchers, instead a filter woo-poly.Cart.switchedItem allows customisation of behaviour where necessary](https://github.com/hyyan/woo-poly-integration/issues/427)
 
 
-== 1.4.0 preview ==
-
+= 1.4.0 preview =
 **Thanks to :** 
 **@jon007**
 **@mweimerskirch **
@@ -210,8 +208,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * [fixes #419 variations: allow default variation based on custom product specific attribute](https://github.com/hyyan/woo-poly-integration/commit/a71263855dfa35915993ee7f8da8bf3232c46d53)
 
 
-== 1.3.0 ==
-
+= 1.3.0 =
 * [fixes #352 by allowing translation of 'invisible' variations](https://github.com/hyyan/woo-poly-integration/commit/cd19fdd01cafcf065fbf21dfaa80dd167ce60e63)
 * [fixes #353 by checking language of duplicate skis](https://github.com/hyyan/woo-poly-integration/commit/2a8f35955016485f07764e2fe7f6d33b6b1ceaae)
 * [improves #353 fix](https://github.com/hyyan/woo-poly-integration/commit/1d83ef23e96f35c2bb008b5fa37e5157bfc388e4)
@@ -228,15 +225,13 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 * [fixes #401 email subject and title translations](https://github.com/hyyan/woo-poly-integration/commit/89ca15df970ee410513200954f0993fcf0ab93f9)
 * [fixes #399](https://github.com/hyyan/woo-poly-integration/commit/90a9e625ead7d6a4429fb4db51174367014df701)
 
-== 1.2.0 ==
-
+= 1.2.0 =
 **Thanks for : @jon007** For his amazing work which made releasing this new version possible
 
 * [Implements #337 by enabling privacy strings translation](https://github.com/hyyan/woo-poly-integration/commit/d9592822d4041ce299c04576e0a5d2bb1de4d646)
 * [Implements #339 by translating store notice](https://github.com/hyyan/woo-poly-integration/commit/244aacfb4a6135beca73876cc856d1868834a9aa)
 
-== 1.1.0 ==
-
+= 1.1.0 =
 **Thanks for :** 
 **@jon007**
 **@nunhes**
@@ -263,8 +258,7 @@ For all the amazing work which made releasing this new version possible
 * [Merge pull request #329 from marian-kadanka/fix-319-ajax-endpoint-url-again](https://github.com/hyyan/woo-poly-integration/commit/f9e7209a79ac818bf95d9816f72ccc82eefb532f)
 * [Merge pull request #335 from ahmedofali/master](https://github.com/hyyan/woo-poly-integration/commit/70ce81c65e843e3050c282e4b661b04f74c93ac4)
 
-== 1.0.4 ==
-
+= 1.0.4 =
 * [Fix #257 , Fix #247](https://github.com/hyyan/woo-poly-integration/commit/9eaf0cabdf25425221c230d4459d26ea82c84605)
 * [Fix #248 , Fix #266 upgrader_process_complete is not ideal](https://github.com/hyyan/woo-poly-integration/commit/01bc5b2d3df1c08fa4465c585721b7fbf28ed32e)
 * [Merge pull request #253 from marian-kadanka/fix-is-front-page-conditional-tag](https://github.com/hyyan/woo-poly-integration/commit/13409a5ea2c1ec7eef252670879d8048a9207ff7)
@@ -276,11 +270,11 @@ For all the amazing work which made releasing this new version possible
 * [Fix Ajax endpoint URL](https://github.com/hyyan/woo-poly-integration/commit/9f9b7581260c87f84ce9f35100ecd872b974e58d)
 * [Fix #247 - Woocommerce [products] shortcode and Polylang](https://github.com/hyyan/woo-poly-integration/commit/c18a2735173d62f631d6cdd3679fc68d0786a682)
 
-== 1.0.3 ==
+= 1.0.3 =
 * Fix PHP Fatal error: Class 'NumberFormatter' not found
 
 
-== 1.0.2 ==
+= 1.0.2 =
 * Fixes #200 Polylang version check fails to detect Polylang PRO
 * Cart.js Updated in line with WooCommerce 3.1 cart-fragments.js
 * Fixes #215 add string translations for Coupons (includes WooCommerce Extended Coupon Features if installed)
@@ -301,8 +295,7 @@ For all the amazing work which made releasing this new version possible
 * Fixes #182 email translation extension hooks thanks to @vendidero/WooCommerce Germanized
 * Fixes #181 additional filters in Meta synchronization thanks to @vendidero/WooCommerce Germanized
 
-== 1.0.1 ==
-
+= 1.0.1 =
 * Fixes #170 when WooCommerce 3.0.8+ active, product variation titles corrected in cart and orders
 * Added Documentation links to new wiki Documentation pages
 * Added minified javascript (enable SCRIPT_DEBUG to use unminified versions)
@@ -310,8 +303,7 @@ For all the amazing work which made releasing this new version possible
 * Fixes #175 WooCommerce doesn't pass loop name for some shortcodes
 * Fixes #10  Initial setup issues if Polylang is not yet configured
 
-== 1.0.0 ==
-
+= 1.0.0 =
 **Thanks for @jon007 and @decarvalhoaa for the amazing work in order to release this new version**
 
 This release fixes a number of issues around handling of attributes and translations.
@@ -372,8 +364,7 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
 * Fix #95 WooCommmerce product shortcodes not filtering by language
 * Fix #104 Tax by allowing translation of Price Display Suffix
 
-== 0.29.1 ==
-
+= 0.29.1 =
 * Improve Multisite compatibility 
 * Fix variation description couldnt be translated
 * Fix PHP Notices when translating variable products with variations
@@ -507,15 +498,7 @@ The release includes important fixes and updates for latest version of
 woocommerce and polylang , please update immediately 
 
 = 1.0.0 =
-The release is the first release for WooCommerce 3.x.
-DO NOT install until you upgrade to WooCommerce 3.x.
-If you are currently on WooCommerce 2.x, we recommend:
-0. Take a backup. And do EVERYTHING in a test environment first.  Test. 
-WooCommerce 3 has a large number of breaking changes which may and do break other plugins.
-1. temporarily deactivate this plugin, 
-2. upgrade WooCommerce and this plugin
-3. run WooCommerce database upgrade following the wooCommerce prompt
-4. reactivate this plugin
+This release requires WooCommerce 3.x. Back up and test first. When updating from WooCommerce 2.x, deactivate this plugin, update WooCommerce and this plugin, run the WooCommerce database upgrade, then reactivate.
 
 = 1.0.2 =
 This release includes a change for Wordpress 4.8 compatibility and is tested with WooCommerce 3.1.

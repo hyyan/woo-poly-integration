@@ -1,0 +1,8 @@
+{
+    "Name": "Hyyan WooCommerce Polylang Integration",
+    "Version": "1.5.1",
+    "TextDomain": "woo-poly-integration",
+    "RequiresWP": "5.4",
+    "RequiresPHP": "7.0",
+    "License": "MIT"
+}
