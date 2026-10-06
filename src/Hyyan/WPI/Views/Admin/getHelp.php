@@ -4,13 +4,13 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <h3
-    ><span><?php _e('Need Help ?', 'woo-poly-integration'); ?></span>
+    ><span><?php esc_html_e('Need Help ?', 'woo-poly-integration'); ?></span>
 </h3>
 
 <div class="inside">
     <p>
         <?php
-        _e('Need help? Want to ask for new features?
+        esc_html_e('Need help? Want to ask for new features?
                 please contact me using one of the following methods', 'woo-poly-integration'
         )
         ?>
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
     <ol>
         <li>
             <a href="https://github.com/hyyan/woo-poly-integration/issues" target="_blank">
-                <?php _e('On Github', 'woo-poly-integration'); ?>
+                <?php esc_html_e('On Github', 'woo-poly-integration'); ?>
             </a>
         </li>
 <!--        <li>
@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
         </li>-->
         <li>
             <a href="mailto:hyyanaf@gmail.com" target="_blank">
-                <?php _e('On Email', 'woo-poly-integration'); ?>
+                <?php esc_html_e('On Email', 'woo-poly-integration'); ?>
             </a>
         </li>
     </ol>

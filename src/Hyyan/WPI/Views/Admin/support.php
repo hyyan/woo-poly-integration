@@ -5,12 +5,12 @@ if (!defined('ABSPATH')) {
 ?>
 <h3>
     <span>
-        <?php _e('Support The Plugin', 'woo-poly-integration'); ?>
+        <?php esc_html_e('Support The Plugin', 'woo-poly-integration'); ?>
     </span>
 </h3>
 <div class="inside">
     <?php
-    _e('<strong>I will never ask you for donation, now or in the future</strong>,
+    echo wp_kses_post(__('<strong>I will never ask you for donation, now or in the future</strong>,
         but the plugin still needs your support.
         please support by rating this plugin on
         <a href="https://wordpress.org/support/view/plugin-reviews/woo-poly-integration">Wordpress Repository</a>,
@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
         you can support the plugin by extending the
         translation list and your name will be added
         to the translators list', 'woo-poly-integration'
-    );
+    ));
     ?>
     <br><br>
     <?php echo \Hyyan\WPI\Plugin::getView('social') ?>

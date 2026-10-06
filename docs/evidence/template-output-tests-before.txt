@@ -1,0 +1,352 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m..                                                           9 / 9 (100%)
+
+Time: 00:00.007, Memory: 101.05 MB
+
+There were 7 failures:
+
+1) TemplateOutputSecurityTest::testTranslatedTemplateTextCannotCreateScriptElements#0 with data ('Admin/getHelp')
+Failed asserting that '<h3\n
+    ><span><script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong></span>\n
+</h3>\n
+\n
+<div class="inside">\n
+    <p>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    </p>\n
+    <ol>\n
+        <li>\n
+            <a href="https://github.com/hyyan/woo-poly-integration/issues" target="_blank">\n
+                <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            </a>\n
+        </li>\n
+<!--        <li>\n
+            <a href="https://wordpress.org/support/plugin/woo-poly-integration" target="_blank">\n
+                            </a>\n
+        </li>-->\n
+        <li>\n
+            <a href="mailto:hyyanaf@gmail.com" target="_blank">\n
+                <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            </a>\n
+        </li>\n
+    </ol>\n
+</div>\n
+' [ASCII](length: 870) does not contain "<script>window.woopolyTemplateMarker" [ASCII](length: 36).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php:28
+
+2) TemplateOutputSecurityTest::testTranslatedTemplateTextCannotCreateScriptElements#1 with data ('Admin/about')
+Failed asserting that '<h3>\n
+    <span>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    </span>\n
+</h3>\n
+<div class="inside">\n
+    <div>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>. <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong> <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki"><script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong></a>.        <br><br>\n
+\n
+        <p>\n
+            <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            <a href="https://github.com/hyyan">Hyyan Abo Fakher</a>\n
+        </p>\n
+\n
+        <a href="https://wordpress.org/plugins/woo-poly-integration" target="_blank">\n
+    <img src="https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg" />\n
+</a>\n
+<a href="https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE" target="_blank">\n
+    <img src="https://poser.pugx.org/hyyan/woo-poly-integration/license.svg"/>\n
+</a>\n
+<a href="http://www.gitchecker.com/hyyan/woo-poly-integration" target="_blank">\n
+    <img src="http://www.repostatus.org/badges/latest/active.svg" />\n
+</a>\n
+\n
+    </div>\n
+</div>\n
+' [ASCII](length: 1222) does not contain "<script>window.woopolyTemplateMarker" [ASCII](length: 36).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php:28
+
+3) TemplateOutputSecurityTest::testTranslatedTemplateTextCannotCreateScriptElements#2 with data ('Admin/support')
+Failed asserting that '<h3>\n
+    <span>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    </span>\n
+</h3>\n
+<div class="inside">\n
+    <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    <br><br>\n
+    <style type='text/css'>\n
+    .wpi-social-column{\n
+        position: relative;\n
+        float: left;\n
+        padding-left: 1%;\n
+    }\n
+</style>\n
+\n
+<script>\n
+    (function (d, s, id) {\n
+        var js, fjs = d.getElementsByTagName(s)[0];\n
+        if (d.getElementById(id))\n
+            return;\n
+        js = d.createElement(s);\n
+        js.id = id;\n
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=1419909984943357";\n
+        fjs.parentNode.insertBefore(js, fjs);\n
+    }(document, 'script', 'facebook-jssdk'));\n
+</script>\n
+\n
+<script>\n
+    !function (d, s, id) {\n
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';\n
+        if (!d.getElementById(id)) {\n
+            js = d.createElement(s);\n
+            js.id = id;\n
+            js.src = p + '://platform.twitter.com/widgets.js';\n
+            fjs.parentNode.insertBefore(js, fjs);\n
+        }\n
+    }(document, 'script', 'twitter-wjs');\n
+</script>\n
+<div class="wrap" >\n
+    <div class="wpi-social-column">\n
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wordpress.org/plugins/woo-poly-integration/" data-text="Hyyan WooCommerce Polylang Integration ,makes you run multilingual store easily." data-via="HyyanAF">Tweet</a>\n
+    </div>\n
+    <div class="wpi-social-column">\n
+        <div id="fb-root"></div>\n
+        <div class="fb-share-button" data-href="https://wordpress.org/plugins/woo-poly-integration/" data-layout="button_count"></div>\n
+    </div>\n
+    <div class="wpi-social-column">\n
+        <iframe src="https://ghbtns.com/github-btn.html?user=hyyan&repo=woo-poly-integration&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>\n
+    </div>\n
+</div>\n
+<div style="clear: both"></div>\n
+</div>\n
+' [ASCII](length: 2012) does not contain "<script>window.woopolyTemplateMarker" [ASCII](length: 36).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php:28
+
+4) TemplateOutputSecurityTest::testTranslatedTemplateTextCannotCreateScriptElements#3 with data ('Messages/activateError')
+Failed asserting that '<h3>\n
+    <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong></h3>\n
+<p>\n
+    <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong><script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong><a href="https://github.com/hyyan/woo-poly-integration/wiki/Installation"><script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong></a>.<p>\n
+<hr>\n
+<script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong><a href="https://wordpress.org/plugins/woocommerce/">\n
+    <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong> V3.0.0</a>\n
+|\n
+<a href="https://wordpress.org/plugins/polylang/">\n
+    <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong> V2.0.0</a>\n
+' [ASCII](length: 824) does not contain "<script>window.woopolyTemplateMarker" [ASCII](length: 36).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php:28
+
+5) TemplateOutputSecurityTest::testTranslatedTemplateTextCannotCreateScriptElements#4 with data ('Messages/support')
+Failed asserting that '<table width="100%" border="0" cellspacing="0" cellpadding="0">\n
+    <tr>\n
+        <td width="20%" align="middle" style="vertical-align: central">\n
+            <img src="http://www.gravatar.com/avatar/4f51a48cb8de5bb5c4c2bfcb9c6ef500?s=150"\n
+                 style="padding: 2% ;vertical-align: top"/>\n
+        </td>\n
+        <td style="padding-left: 2% ; padding-right: 2%">\n
+            <h3>\n
+                <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            </h3>\n
+            <p><a href="https://wordpress.org/plugins/woo-poly-integration" target="_blank">\n
+    <img src="https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg" />\n
+</a>\n
+<a href="https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE" target="_blank">\n
+    <img src="https://poser.pugx.org/hyyan/woo-poly-integration/license.svg"/>\n
+</a>\n
+<a href="http://www.gitchecker.com/hyyan/woo-poly-integration" target="_blank">\n
+    <img src="http://www.repostatus.org/badges/latest/active.svg" />\n
+</a>\n
+</p>\n
+            <p>\n
+                <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            <p>\n
+            <hr>\n
+            <style type='text/css'>\n
+    .wpi-social-column{\n
+        position: relative;\n
+        float: left;\n
+        padding-left: 1%;\n
+    }\n
+</style>\n
+\n
+<script>\n
+    (function (d, s, id) {\n
+        var js, fjs = d.getElementsByTagName(s)[0];\n
+        if (d.getElementById(id))\n
+            return;\n
+        js = d.createElement(s);\n
+        js.id = id;\n
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=1419909984943357";\n
+        fjs.parentNode.insertBefore(js, fjs);\n
+    }(document, 'script', 'facebook-jssdk'));\n
+</script>\n
+\n
+<script>\n
+    !function (d, s, id) {\n
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';\n
+        if (!d.getElementById(id)) {\n
+            js = d.createElement(s);\n
+            js.id = id;\n
+            js.src = p + '://platform.twitter.com/widgets.js';\n
+            fjs.parentNode.insertBefore(js, fjs);\n
+        }\n
+    }(document, 'script', 'twitter-wjs');\n
+</script>\n
+<div class="wrap" >\n
+    <div class="wpi-social-column">\n
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wordpress.org/plugins/woo-poly-integration/" data-text="Hyyan WooCommerce Polylang Integration ,makes you run multilingual store easily." data-via="HyyanAF">Tweet</a>\n
+    </div>\n
+    <div class="wpi-social-column">\n
+        <div id="fb-root"></div>\n
+        <div class="fb-share-button" data-href="https://wordpress.org/plugins/woo-poly-integration/" data-layout="button_count"></div>\n
+    </div>\n
+    <div class="wpi-social-column">\n
+        <iframe src="https://ghbtns.com/github-btn.html?user=hyyan&repo=woo-poly-integration&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>\n
+    </div>\n
+</div>\n
+<div style="clear: both"></div>\n
+        </td>\n
+    </tr>\n
+</table>\n
+' [ASCII](length: 2967) does not contain "<script>window.woopolyTemplateMarker" [ASCII](length: 36).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php:28
+
+6) TemplateOutputSecurityTest::testTranslatedTemplateTextCannotCreateScriptElements#5 with data ('Messages/endpointsTranslations')
+Failed asserting that '\n
+<script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>' [ASCII](length: 83) does not contain "<script>window.woopolyTemplateMarker" [ASCII](length: 36).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php:28
+
+7) TemplateOutputSecurityTest::testTranslatedTemplateTextCannotCreateScriptElements#6 with data ('admin')
+Failed asserting that '<div class="wrap">\n
+    <h2> <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong></h2>\n
+    <div id="poststuff">\n
+        <div id="post-body" class="metabox-holder columns-2">\n
+\n
+            <!-- main content -->\n
+            <div id="post-body-content">\n
+                \n
+<div class="postbox" style="padding: 10px;">\n
+    </div>\n
+            </div>\n
+\n
+            <!-- sidebar -->\n
+            <div id="postbox-container-1" class="postbox-container">\n
+\n
+                <!-- About the plugin -->\n
+                <div class="postbox">\n
+                    <h3>\n
+    <span>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    </span>\n
+</h3>\n
+<div class="inside">\n
+    <div>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>. <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong> <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki"><script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong></a>.        <br><br>\n
+\n
+        <p>\n
+            <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            <a href="https://github.com/hyyan">Hyyan Abo Fakher</a>\n
+        </p>\n
+\n
+        <a href="https://wordpress.org/plugins/woo-poly-integration" target="_blank">\n
+    <img src="https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg" />\n
+</a>\n
+<a href="https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE" target="_blank">\n
+    <img src="https://poser.pugx.org/hyyan/woo-poly-integration/license.svg"/>\n
+</a>\n
+<a href="http://www.gitchecker.com/hyyan/woo-poly-integration" target="_blank">\n
+    <img src="http://www.repostatus.org/badges/latest/active.svg" />\n
+</a>\n
+\n
+    </div>\n
+</div>\n
+                </div>\n
+\n
+                <!-- Support plugin -->\n
+                <div class="postbox">\n
+                    <h3>\n
+    <span>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    </span>\n
+</h3>\n
+<div class="inside">\n
+    <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    <br><br>\n
+    <style type='text/css'>\n
+    .wpi-social-column{\n
+        position: relative;\n
+        float: left;\n
+        padding-left: 1%;\n
+    }\n
+</style>\n
+\n
+<script>\n
+    (function (d, s, id) {\n
+        var js, fjs = d.getElementsByTagName(s)[0];\n
+        if (d.getElementById(id))\n
+            return;\n
+        js = d.createElement(s);\n
+        js.id = id;\n
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=1419909984943357";\n
+        fjs.parentNode.insertBefore(js, fjs);\n
+    }(document, 'script', 'facebook-jssdk'));\n
+</script>\n
+\n
+<script>\n
+    !function (d, s, id) {\n
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';\n
+        if (!d.getElementById(id)) {\n
+            js = d.createElement(s);\n
+            js.id = id;\n
+            js.src = p + '://platform.twitter.com/widgets.js';\n
+            fjs.parentNode.insertBefore(js, fjs);\n
+        }\n
+    }(document, 'script', 'twitter-wjs');\n
+</script>\n
+<div class="wrap" >\n
+    <div class="wpi-social-column">\n
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wordpress.org/plugins/woo-poly-integration/" data-text="Hyyan WooCommerce Polylang Integration ,makes you run multilingual store easily." data-via="HyyanAF">Tweet</a>\n
+    </div>\n
+    <div class="wpi-social-column">\n
+        <div id="fb-root"></div>\n
+        <div class="fb-share-button" data-href="https://wordpress.org/plugins/woo-poly-integration/" data-layout="button_count"></div>\n
+    </div>\n
+    <div class="wpi-social-column">\n
+        <iframe src="https://ghbtns.com/github-btn.html?user=hyyan&repo=woo-poly-integration&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>\n
+    </div>\n
+</div>\n
+<div style="clear: both"></div>\n
+</div>\n
+                </div>\n
+\n
+                <!-- Need help -->\n
+                <div class = "postbox">\n
+                    <h3\n
+    ><span><script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong></span>\n
+</h3>\n
+\n
+<div class="inside">\n
+    <p>\n
+        <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>    </p>\n
+    <ol>\n
+        <li>\n
+            <a href="https://github.com/hyyan/woo-poly-integration/issues" target="_blank">\n
+                <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            </a>\n
+        </li>\n
+<!--        <li>\n
+            <a href="https://wordpress.org/support/plugin/woo-poly-integration" target="_blank">\n
+                            </a>\n
+        </li>-->\n
+        <li>\n
+            <a href="mailto:hyyanaf@gmail.com" target="_blank">\n
+                <script>window.woopolyTemplateMarker=true</script><strong>Template marker</strong>            </a>\n
+        </li>\n
+    </ol>\n
+</div>\n
+                </div>\n
+            </div>\n
+        </div>\n
+    </div>\n
+</div>\n
+' [ASCII](length: 4991) does not contain "<script>window.woopolyTemplateMarker" [ASCII](length: 36).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php:28
+
+[37;41mFAILURES![0m
+[37;41mTests: 9[0m[37;41m, Assertions: 18[0m[37;41m, Failures: 7[0m[37;41m.[0m

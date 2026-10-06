@@ -32,7 +32,7 @@ class GatewayBACS extends \WC_Gateway_BACS
     public function thankyou_page($order_id)
     {
         if ($this->instructions) {
-            echo wpautop(wptexturize(wp_kses_post(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))));
+            echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))));
         }
         $this->bank_details($order_id);
     }
@@ -51,7 +51,7 @@ class GatewayBACS extends \WC_Gateway_BACS
     {
         if (!$sent_to_admin && 'bacs' === Utilities::get_payment_method($order) && $order->has_status('on-hold')) {
             if ($this->instructions) {
-                echo wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))).PHP_EOL;
+                echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce')))).PHP_EOL;
             }
             $this->bank_details(Utilities::get_orderid($order));
         }
@@ -132,7 +132,7 @@ class GatewayBACS extends \WC_Gateway_BACS
             }
 
             if ($has_details) {
-                echo '<section class="woocommerce-bacs-bank-details"><h2 class="wc-bacs-bank-details-heading">' . __('Our bank details', 'woocommerce') . '</h2>' . PHP_EOL . $account_html . '</section>';
+                echo '<section class="woocommerce-bacs-bank-details"><h2 class="wc-bacs-bank-details-heading">' . esc_html__('Our bank details', 'woocommerce') . '</h2>' . PHP_EOL . wp_kses_post($account_html) . '</section>';
             }
         }
     }

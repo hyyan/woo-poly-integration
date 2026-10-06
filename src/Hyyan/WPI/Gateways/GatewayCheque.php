@@ -33,7 +33,7 @@ class GatewayCheque extends \WC_Gateway_Cheque
     public function thankyou_page()
     {
         if ($this->instructions) {
-            echo wpautop(wptexturize(wp_kses_post(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))));
+            echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))));
         }
     }
 
@@ -50,7 +50,7 @@ class GatewayCheque extends \WC_Gateway_Cheque
     public function email_instructions($order, $sent_to_admin, $plain_text = false)
     {
         if ($this->instructions && !$sent_to_admin && 'cheque' === Utilities::get_payment_method($order) && $order->has_status('on-hold')) {
-            echo wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))).PHP_EOL;
+            echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce')))).PHP_EOL;
         }
     }
 }

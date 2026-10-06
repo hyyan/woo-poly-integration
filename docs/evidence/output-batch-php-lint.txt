@@ -1,0 +1,13 @@
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Admin/about.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Admin/getHelp.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Admin/support.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Messages/activateError.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Messages/endpointsTranslations.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Messages/support.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/admin.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayBACS.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayCOD.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayCheque.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Tools/FlashMessages.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php
+No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/integration/GatewayOutputSecurityTest.php

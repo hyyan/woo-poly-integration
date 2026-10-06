@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
         <td style="padding-left: 2% ; padding-right: 2%">
             <h3>
                 <?php
-                _e(
+                esc_html_e(
                         'Hyyan WooCommerce Polylang Integration Plugin', 'woo-poly-integration'
                 )
                 ?>
@@ -20,14 +20,14 @@ if (!defined('ABSPATH')) {
             <p><?php echo \Hyyan\WPI\Plugin::getView('badges'); ?></p>
             <p>
                 <?php
-                _e('Hello, my name is <b>Hyyan Abo Fakher</b>, and I am the developer
+                echo wp_kses_post(__('Hello, my name is <b>Hyyan Abo Fakher</b>, and I am the developer
                    of plugin <b>Hyyan WooCommerce Polylang Integration</b>.<br>
                    If you like this plugin, please write a few words about it
                    at the <a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/woo-poly-integration">wordpress.org</a>
                    or <a target="_blank" href="https://twitter.com">twitter</a>
                    It will help other people
                    find this useful plugin more quickly.<br><b>Thank you!</b>', 'woo-poly-integration'
-                );
+                ));
                 ?>
             <p>
             <hr>

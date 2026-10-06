@@ -97,7 +97,7 @@ final class FlashMessages
                 $message['classes'][] = 'is-dismissible notice';
                 $classesString = implode(' ', $message['classes']);
                 printf(
-                        '<div class="%s"><p>%s</p></div>', $classesString, $message['message']
+                        '<div class="%s"><p>%s</p></div>', esc_attr($classesString), $message['message']
                 );
             }
         }

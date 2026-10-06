@@ -873,7 +873,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wpautop'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-079",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -906,7 +907,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wpautop'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-082",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -994,7 +996,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '__'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-090",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
@@ -1016,7 +1019,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$account_html'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-092",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
@@ -1027,7 +1031,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wpautop'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-093",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
@@ -1060,7 +1065,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wpautop'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-096",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
@@ -1093,7 +1099,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wpautop'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-099",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
@@ -1126,7 +1133,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'wpautop'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-102",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
@@ -1247,7 +1255,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '__'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-113",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
@@ -1269,7 +1278,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'add_query_arg'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-115",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
@@ -1280,7 +1290,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '__'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-116",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Coupon.php",
@@ -2017,7 +2028,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$classesString'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-183",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Tools/FlashMessages.php",
@@ -2226,7 +2238,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-202",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/support.php",
@@ -2248,7 +2261,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-204",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/support.php",
@@ -2270,7 +2284,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-206",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2281,7 +2296,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-207",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2292,7 +2308,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-208",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2303,7 +2320,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-209",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2314,7 +2332,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-210",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2325,7 +2344,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-211",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2336,7 +2356,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'Hyyan'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-212",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2347,7 +2368,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-213",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/activateError.php",
@@ -2358,7 +2380,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found 'Hyyan'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-214",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/support.php",
@@ -2369,7 +2392,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-215",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/support.php",
@@ -2380,7 +2404,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-216",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/support.php",
@@ -2402,7 +2427,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-218",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/about.php",
@@ -2413,7 +2439,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-219",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/about.php",
@@ -2424,7 +2451,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-220",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/about.php",
@@ -2435,7 +2463,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-221",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/about.php",
@@ -2446,7 +2475,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-222",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/about.php",
@@ -2468,7 +2498,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-224",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/getHelp.php",
@@ -2479,7 +2510,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-225",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/getHelp.php",
@@ -2490,7 +2522,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-226",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/Admin/getHelp.php",
@@ -2501,7 +2534,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-227",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/admin.php",
@@ -2512,7 +2546,8 @@
     "message": "All output should be run through an escaping function (like esc_html_e() or esc_attr_e()), found '_e'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-with-localization",
     "id": "REVIEW-CHECK-228",
-    "status": "pending source or distributable review"
+    "status": "fixed, source inspected and batch regression and Chrome checks pass",
+    "evidence": "output-batch-tests-after.txt, output-batch-chrome.json, output-batch-plugin-check.json"
   },
   {
     "file": "src/Hyyan/WPI/Views/admin.php",
