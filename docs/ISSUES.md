@@ -54,3 +54,5 @@ Individual forum dispositions are in docs/evidence/wordpress-support-capture.jso
 Forum topics FORUM-021 through FORUM-040 have individual dispositions in the forum inventory. Forty topics are triaged and 383 remain pending.
 
 | SEC-005 | Security maintenance review and expanded regression coverage | Reported removal paths and native client inspected, 72 tests and 189 assertions pass, current Chrome rejection and native deletion pass | Full checker dispositions and actual release artifact review remain pending, see SECURITY-REVIEW.md |
+
+| SEC-006 | Stored category metadata and image values can break out of inline JavaScript | Fixed, 3 regressions and native Chrome marker and normal thumbnail copying pass | Category display type and thumbnail ID, image and Remove button retained |

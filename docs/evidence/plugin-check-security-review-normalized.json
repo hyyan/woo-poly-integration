@@ -2703,7 +2703,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$type'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-246",
-    "status": "pending source or distributable review"
+    "status": "fixed and regression and Chrome verified",
+    "evidence": "category-output-tests-before.txt, category-output-tests-after.txt, category-output-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
@@ -2714,7 +2715,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$image'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-247",
-    "status": "pending source or distributable review"
+    "status": "fixed and regression and Chrome verified",
+    "evidence": "category-output-tests-before.txt, category-output-tests-after.txt, category-output-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
@@ -2725,7 +2727,8 @@
     "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$thumbID'.",
     "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
     "id": "REVIEW-CHECK-248",
-    "status": "pending source or distributable review"
+    "status": "fixed and regression and Chrome verified",
+    "evidence": "category-output-tests-before.txt, category-output-tests-after.txt, category-output-chrome.json"
   },
   {
     "file": "src/Hyyan/WPI/Taxonomies/Categories.php",

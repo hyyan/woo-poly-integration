@@ -217,3 +217,12 @@
 - Chrome initially refused its stale profile lock. The named process was absent. Removed only stale lock links and resumed the dedicated instance. Current administrator rejection tests preserved fresh pair 2392/2393 and siblings 111/114. Native Remove included security nonce, deleted the linked pair and preserved siblings.
 - Ran Plugin Check and preserved all 499 findings, 173 errors and 326 warnings. Production source/scripts account for 345, tests for 30 and other files for 124. No PreparedSQL or UnescapedDBParameter finding remains. Other checker findings remain unreviewed and release clearance is not claimed.
 - Added SECURITY-REVIEW.md with exact issue handling, changed file inventory, actual checks and remaining release requirements. Preserved the pending CSV change and raw forum inventory. Next security work is individual source review of remaining input, save hook and output findings, followed by distributable and supported version checks.
+
+## Category translation script escaping
+
+- Security review and regression expansion committed locally as e391007. Maintainer ordered all remaining findings fixed.
+- Read the category callback and reproduced two failures before the fix. Native Chrome translation form executed a harmless stored category marker.
+- Encoded the existing selector and image strings with wp_json_encode and HTML safe JSON flags, and printed the thumbnail through absint. Existing hook and selection flow remain unchanged.
+- Full suite passed with 75 tests and 200 assertions. Chrome marker stopped executing. Existing subcategories display type, image URL, thumbnail 5 and visible Remove button were preserved. Source lint and diff whitespace checks passed.
+- Repeated Plugin Check. The category output escaping findings no longer appear. Other category input and save hook findings remain pending review.
+- Saved before and after regressions, Chrome evidence and the checker report. Next confirmed security issue is certificate verification disabled in translation pack requests.

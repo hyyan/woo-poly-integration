@@ -91,10 +91,10 @@ class Categories implements TaxonomiesInterface
                 wc_placeholder_img_src(); ?>
         <script type="text/javascript">
             jQuery(function ($) {
-                $('#display_type option[value="<?php echo $type ?>"]')
+                $(<?php echo wp_json_encode('#display_type option[value="' . $type . '"]', JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>)
                         .prop("selected", true);
-                $('#product_cat_thumbnail img').attr('src', '<?php echo $image; ?>');
-                $('#product_cat_thumbnail_id').val('<?php echo $thumbID; ?>');
+                $('#product_cat_thumbnail img').attr('src', <?php echo wp_json_encode($image, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>);
+                $('#product_cat_thumbnail_id').val('<?php echo absint($thumbID); ?>');
         <?php if ($thumbID): ?>
                     $('.remove_image_button').show();
         <?php endif; ?>

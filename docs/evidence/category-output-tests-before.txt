@@ -1,0 +1,31 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m.                                                                 3 / 3 (100%)
+
+Time: 00:00.052, Memory: 101.05 MB
+
+There were 2 failures:
+
+1) CategoryOutputSecurityTest::testStoredDisplayTypeCannotCloseTheScriptElement
+Failed asserting that 3 is identical to 1.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/CategoryOutputSecurityTest.php:46
+
+2) CategoryOutputSecurityTest::testPlaceholderUrlCannotInjectJavaScriptStatements
+Failed asserting that '        <script type="text/javascript">\n
+            jQuery(function ($) {\n
+                $('#display_type option[value=""]')\n
+                        .prop("selected", true);\n
+                $('#product_cat_thumbnail img').attr('src', 'https://example.test/image';window.woopolyImageMarker=true;//');\n
+                $('#product_cat_thumbnail_id').val('0');\n
+                    });\n
+        </script>\n
+        ' [ASCII](length: 408) contains "https://example.test/image';window.woopolyImageMarker=true;//" [ASCII](length: 61).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/CategoryOutputSecurityTest.php:57
+
+[37;41mFAILURES![0m
+[37;41mTests: 3[0m[37;41m, Assertions: 9[0m[37;41m, Failures: 2[0m[37;41m.[0m
