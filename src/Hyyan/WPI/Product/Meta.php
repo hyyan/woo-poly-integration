@@ -102,7 +102,7 @@ class Meta
         //sync taxonomies
         $ProductID = $object->get_id();
         if ($ProductID) {
-            do_action('pll_save_post', $ProductID, $object,
+            do_action('pll_save_post', $ProductID, get_post($ProductID),
                 PLL()->model->post->get_translations($ProductID));
 
             $this->syncTaxonomiesAndProductAttributes($ProductID, $object, true);

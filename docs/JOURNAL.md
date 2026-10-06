@@ -277,3 +277,11 @@
 - Current Plugin Check has 298 production rows, 92 errors and 206 warnings. Guard expressions add some checker warnings, so raw count reduction is not the security measure. Source dispositions resolve 79 current request rows and six exception data rows together. The remaining request rows are pending.
 - Changed production files are Language.php for request and error guards, Product/Product.php for protected defaults and language input, Reports.php for route and ID normalization and complete selection, Taxonomies/Categories.php for safe copy and save values, Taxonomies/Attributes.php, Coupon.php and Endpoints.php for display route validation. Added RequestInputSecurityTest.php. Evidence uses request-batch and request report or thumbnail prefixes.
 - Next request batch covers product cloning and synchronization inputs, navigation and current URL handling. Script data encoding, remaining output and translation contracts follow. The earlier CSV import patch remains separate. No push or publication.
+
+- The shared request boundary batch is committed locally as 30f9688. Reloaded the native report after removing the lab endpoint and confirmed all four selected product IDs remain. Current production inventory has 203 rows awaiting source review or correction, including 81 request rows. The earlier CSV import change remains unstaged.
+
+## Native CSV import preservation
+
+- Completed the pending CSV import fix before changing the shared metadata class further. The Polylang post save action now receives the stored WP_Post instead of WC_Product. Existing source identity and translations are retained.
+- Browser uploaded the existing fixture CSV through the native file input, confirmed ID and price mappings and completed the importer with one updated product and no failures. Both language prices became 25 while dates, menu order and review status were unchanged. The original Polylang settings were restored.
+- Two real importer regressions pass. The complete 123 test suite had already passed with the same source change. The source diff and PHP syntax checks pass. No unrelated import behavior is claimed verified. New product import, export and the remaining original feature matrix remain pending.
