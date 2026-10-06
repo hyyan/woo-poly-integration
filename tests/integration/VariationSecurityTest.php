@@ -102,4 +102,13 @@ final class VariationSecurityTest extends TestCase
         $expected = array($this->source, $this->translated); sort($expected);
         self::assertSame($expected, $ids);
     }
+    public function testContributorCannotDeleteEvenWithValidNonce(): void
+    {
+        $contributor = get_user_by('login', 'lab-contributor');
+        wp_set_current_user($contributor->ID);
+        $this->remove(array($this->source), wp_create_nonce('delete-variations'));
+        self::assertNotNull(get_post($this->source));
+        self::assertNotNull(get_post($this->translated));
+    }
+
 }

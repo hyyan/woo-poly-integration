@@ -9,7 +9,7 @@ foreach (array('en_US', 'de_DE') as $locale) {
 }
 $options = get_option('polylang'); $options['default_lang']='en'; $options['browser']=0;
 update_option('polylang', $options);
-foreach (array('lab-subscriber'=>'subscriber', 'lab-manager'=>'shop_manager', 'lab-customer'=>'customer') as $login=>$role) {
+foreach (array('lab-subscriber'=>'subscriber', 'lab-manager'=>'shop_manager', 'lab-customer'=>'customer', 'lab-contributor'=>'contributor') as $login=>$role) {
     if (!username_exists($login)) {
         $id = wp_insert_user(array('user_login'=>$login, 'user_pass'=>wp_generate_password(30), 'user_email'=>$login.'@example.test', 'role'=>$role));
         if (is_wp_error($id)) { throw new RuntimeException($id->get_error_message()); }

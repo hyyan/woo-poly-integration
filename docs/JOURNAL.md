@@ -148,3 +148,13 @@
 - Synced the two new legacy orders with the supported command and restored original block page IDs 7/8, HPOS yes and compatibility synchronization false. Final full suite passed: 45 tests, 104 assertions.
 - Saved sanitized order-language-chrome.json. Closed and verified the sole Chrome testing instance stopped. No remote publication.
 - Preparing the separate local order fix commit. Broader cookie disabled/client language handling, localized email catalog acceptance, stock/refunds, coupons, reports and complete checkout matrix remain open.
+
+## Contributor authorization coverage and advisory mapping
+- Previous turn committed block order language as 9b6780b. Revalidated the actual callbacks and settings registration source.
+- Fetched primary Wordfence and Patchstack CVE-2026-24585 advisories. They name contributor privileges but not the function or operation. Kept the advisory unmapped rather than attributing it to a guessed fix.
+- Read settings menu history: manage_options guard was added in 2019 commit 90a9e62. Native registered settings use WordPress options.php. No production settings change was justified by the public advisory alone.
+- Added contributor fixture to CI lab setup and expanded the existing variation/featured regressions. Full suite passed: 47 tests, 108 assertions.
+- Chrome contributor requests with valid same session nonces left both linked variations and featured flags unchanged. Direct settings page returned 403. Saved settings hash remained unchanged.
+- Temporary nonce fixture existed only in the local lab and was removed after checks. No nonce, cookie or session material was saved. Closed the sole Chrome test instance and verified it stopped.
+- Saved contributor-chrome.json and contributor-authorization-audit.md. Preparing separate local test coverage commit. No push.
+- Next: remaining forum and checker dispositions plus original cart, attributes, email and order lifecycle acceptance. Public advisory operation mapping remains an explicit unknown.

@@ -34,7 +34,7 @@ External sources to inventory: all WordPress.org support pages, Wordfence, Patch
 
 Feature contract: README.md/readme.txt and wiki; existing variable-product default-language and content-based URL limitations remain explicit. New feature requests are assessed separately from regressions.
 
-| SEC-004 | [Public CVE-2026-24585](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/woo-poly-integration/hyyan-woocommerce-polylang-integration-150-missing-authorization) | Advisory confirmed; operation mapping pending | Identify exact operation; reproduce contributor denial and legitimate workflow |
+| SEC-004 | [Public CVE-2026-24585](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/woo-poly-integration/hyyan-woocommerce-polylang-integration-150-missing-authorization) | Primary advisories checked again: no operation named; contributor variation/featured/settings denial verified; exact mapping unresolved | Identify exact operation; reproduce contributor denial and legitimate workflow |
 
 | COMPAT-001 | Product and category shortcodes use reversed implode arguments | Fixed in local commit a88c467 on PHP 8.5: both language shortcode rendering and 5 regression cases pass | Original ID filtering works in both languages without changing shortcode contract |
 

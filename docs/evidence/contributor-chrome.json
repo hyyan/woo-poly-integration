@@ -1,0 +1,28 @@
+{
+  "before": {
+    "chunk_id": "3a11f1",
+    "wall_time_seconds": 0.423729708,
+    "exit_code": 0,
+    "original_token_count": 47,
+    "output": "{\"variations\":{\"111\":\"product_variation\",\"114\":\"product_variation\"},\"featured\":{\"115\":false,\"116\":false},\"settings_hash\":\"330d43c54f78e5aee56bdaeff49fcb758929c3ea14337836d20284b13621223f\"}"
+  },
+  "chrome": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"variation\":{\"status\":200,\"text\":\"-1\"},\"featured\":{\"status\":200,\"redirected\":true},\"settings\":{\"status\":403,\"denied\":true}}\n```"
+      }
+    ]
+  },
+  "after": {
+    "chunk_id": "bf8774",
+    "wall_time_seconds": 0.560414333,
+    "exit_code": 0,
+    "original_token_count": 47,
+    "output": "{\"variations\":{\"111\":\"product_variation\",\"114\":\"product_variation\"},\"featured\":{\"115\":false,\"116\":false},\"settings_hash\":\"330d43c54f78e5aee56bdaeff49fcb758929c3ea14337836d20284b13621223f\"}"
+  },
+  "nonces": "Generated through a temporary local admin footer fixture for the signed in browser session. Values were not saved. Fixture removed after testing.",
+  "regressions": "9 unit tests, 22 assertions; 38 integration tests, 86 assertions; all passed.",
+  "result": "Both variation records preserved, both featured flags unchanged, settings hash unchanged.",
+  "cveMapping": "CVE-2026-24585 remains unmapped because primary public advisories do not identify the operation."
+}

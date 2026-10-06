@@ -66,7 +66,7 @@ final class FeaturedProductSecurityTest extends TestCase
 
     public static function unauthorizedRoles(): array
     {
-        return array(array('lab-subscriber'), array('lab-customer'));
+        return array(array('lab-subscriber'), array('lab-customer'), array('lab-contributor'));
     }
 
     #[DataProvider('invalidNonces')]
