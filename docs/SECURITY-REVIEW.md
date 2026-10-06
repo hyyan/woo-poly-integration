@@ -251,3 +251,16 @@ Existing source keys and catalogs remain unchanged. Fully ordered translated pla
 | docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Changed file reasons, verification scope and remaining gates |
 
 The ignored work/runtime-context-browser.php helper is local instrumentation and was removed from the active lab. Native state writers retain WordPress and WooCommerce verification. Pure formatting selectors preserve their existing read only contract. Original product edit synchronization remains. Native classic frontend and legacy admin AJAX checkout and editor saves pass. Block checkout, variation stock, HPOS, external integrations and older stacks remain separate acceptance gates. There are 33 pending production review rows and 383 forum reports awaiting content review. The complete maintenance release is not yet cleared.
+
+## Public hook and symbol contract review
+
+| File | Reason |
+| --- | --- |
+| docs/evidence/public-contract-source-review.json | Current call, resolved name and disposition for each of 25 public naming findings |
+| docs/evidence/public-contract-runtime.json | Actual installed plugin hook constants and native status callback registration |
+| docs/evidence/public-contract-chrome.json | Native status table, locale rows and help tips, with local file locations omitted |
+| docs/evidence/public-contract-integration-tests.txt and public-contract-frontend-tests.txt | Existing relevant regressions, 17 cases and 62 assertions |
+| docs/evidence/batch-inventory.json and plugin-check-security-review-normalized.json | Restore explicit naming dispositions after current source review |
+| docs/BATCHES.md, docs/CHECKS.md, docs/JOURNAL.md, goal.txt and this review | Scope, evidence, reasons and remaining requirements |
+
+No production files changed in this review. All dynamic names keep the existing plugin prefix. Dependency hooks and retained legacy symbols preserve their contracts. Source naming review does not substitute for remaining native feature acceptance. Native status reports missing WooCommerce catalog files, which remains a catalog acceptance requirement. The current raw Plugin Check remains applicable because production source is unchanged. Eight production runtime rows remain pending, along with distribution and full report review.

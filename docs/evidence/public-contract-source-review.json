@@ -1,0 +1,177 @@
+[
+  {
+    "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
+    "line": 158,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.language.repoUrl",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.language.repoUrl. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Admin/StatusReport.php",
+    "line": 13,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound",
+    "resolved_name": "wpi_status_report",
+    "disposition": "Reviewed legacy plugin callback with wpi prefix. Registered on native WooCommerce status action. Escaping regressions and current native status page pass. Preserve existing symbol."
+  },
+  {
+    "file": "src/Hyyan/WPI/Gateways.php",
+    "line": 134,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.gateway.loadClassExtention.",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.gateway.loadClassExtention.. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Admin/Settings.php",
+    "line": 71,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.settings.sections",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.settings.sections. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Admin/Settings.php",
+    "line": 81,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.settings.fields",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.settings.fields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Utilities.php",
+    "line": 634,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Emails.switchLanguage",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.switchLanguage. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Utilities.php",
+    "line": 658,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Emails.afterSwitchLanguage",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.afterSwitchLanguage. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Product/Variable.php",
+    "line": 432,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.fieldsLockerVariableExcludeSelectors",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.fieldsLockerVariableExcludeSelectors. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Product/Meta.php",
+    "line": 105,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound",
+    "resolved_name": "pll_save_post",
+    "disposition": "Reviewed dependency owned hook at Polylang src/crud-posts.php:146. Plugin passes ID, WP_Post and translations, verified by existing native import regression. Preserve dependency name."
+  },
+  {
+    "file": "src/Hyyan/WPI/Product/Meta.php",
+    "line": 636,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.product.metaSync",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.metaSync. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Product/Meta.php",
+    "line": 767,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.product.disabledMetaSync",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.disabledMetaSync. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Product/Meta.php",
+    "line": 804,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.fieldsLockerSelectors",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.fieldsLockerSelectors. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Product/Variation.php",
+    "line": 393,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.product.variation.copyMeta",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.variation.copyMeta. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
+    "line": 69,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.product.syncCategoryCustomFields",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.syncCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
+    "line": 115,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.product.copyCategoryCustomFields",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.copyCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
+    "line": 79,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+    "resolved_name": "$_chosen_attributes",
+    "disposition": "Reviewed retained legacy navigation global. Current WooCommerce uses WC_Query::$chosen_attributes and sanitized filter query. Plugin updates both query and legacy global, existing frontend regressions verify current and legacy values. Naming alone is not a defect."
+  },
+  {
+    "file": "src/Hyyan/WPI/Cart.php",
+    "line": 112,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Cart.switchedItem",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Cart.switchedItem. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
+    "line": 43,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.settings.%s_sections",
+    "disposition": "Reviewed owning methods, woo-poly.settings.%s_sections retains plugin prefix before native settings ID. Preserve public contract."
+  },
+  {
+    "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
+    "line": 61,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.settings.%s_fields",
+    "disposition": "Reviewed owning methods, woo-poly.settings.%s_fields retains plugin prefix before native settings ID. Preserve public contract."
+  },
+  {
+    "file": "src/Hyyan/WPI/Emails.php",
+    "line": 109,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Emails.defaultSetting",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.defaultSetting. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Emails.php",
+    "line": 188,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Emails.translation",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.translation. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Emails.php",
+    "line": 197,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Emails.translatableEmails",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.translatableEmails. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Emails.php",
+    "line": 492,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Emails.orderFindReplaceFind",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceFind. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Emails.php",
+    "line": 493,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.Emails.orderFindReplaceReplace",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceReplace. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  },
+  {
+    "file": "src/Hyyan/WPI/Pages.php",
+    "line": 29,
+    "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+    "resolved_name": "woo-poly.pages.list",
+    "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
+  }
+]

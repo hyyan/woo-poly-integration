@@ -98,7 +98,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.language.repoUrl. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 161,
@@ -252,7 +252,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/StatusReport.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed legacy plugin callback with wpi prefix. Registered on native WooCommerce status action. Escaping regressions and current native status page pass. Preserve existing symbol."
     },
     {
       "line": 25,
@@ -538,7 +538,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Gateways.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.gateway.loadClassExtention.. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 194,
@@ -1242,7 +1242,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.settings.sections. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 81,
@@ -1253,7 +1253,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.settings.fields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 89,
@@ -1407,7 +1407,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.switchLanguage. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 658,
@@ -1418,7 +1418,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Utilities.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.afterSwitchLanguage. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 20,
@@ -4421,7 +4421,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variable.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.fieldsLockerVariableExcludeSelectors. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 452,
@@ -4773,7 +4773,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed dependency owned hook at Polylang src/crud-posts.php:146. Plugin passes ID, WP_Post and translations, verified by existing native import regression. Preserve dependency name."
     },
     {
       "line": 179,
@@ -4828,7 +4828,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.metaSync. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 767,
@@ -4839,7 +4839,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.disabledMetaSync. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 804,
@@ -4850,7 +4850,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.fieldsLockerSelectors. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 853,
@@ -4993,7 +4993,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.variation.copyMeta. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 94,
@@ -5191,7 +5191,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.syncCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 86,
@@ -5301,7 +5301,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.copyCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 52,
@@ -5367,7 +5367,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed retained legacy navigation global. Current WooCommerce uses WC_Query::$chosen_attributes and sanitized filter query. Plugin updates both query and legacy global, existing frontend regressions verify current and legacy values. Naming alone is not a defect."
     },
     {
       "line": 112,
@@ -5378,7 +5378,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Cart.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Cart.switchedItem. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 257,
@@ -5444,7 +5444,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owning methods, woo-poly.settings.%s_sections retains plugin prefix before native settings ID. Preserve public contract."
     },
     {
       "line": 61,
@@ -5455,7 +5455,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed owning methods, woo-poly.settings.%s_fields retains plugin prefix before native settings ID. Preserve public contract."
     },
     {
       "line": 109,
@@ -5466,7 +5466,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.defaultSetting. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 188,
@@ -5477,7 +5477,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.translation. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 197,
@@ -5488,7 +5488,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.translatableEmails. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 492,
@@ -5499,7 +5499,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceFind. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 493,
@@ -5510,7 +5510,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Emails.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceReplace. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
       "line": 29,
@@ -5521,7 +5521,7 @@
       "docs": "",
       "file": "src/Hyyan/WPI/Pages.php",
       "batch": "Public hooks and symbol ownership",
-      "disposition": "Pending source review"
+      "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
   "forum_reports": [

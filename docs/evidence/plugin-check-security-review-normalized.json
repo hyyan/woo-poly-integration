@@ -128,7 +128,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::LANGUAGE_REPO_URL_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-011",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Shipping.php",
@@ -439,7 +440,8 @@
     "message": "Functions declared in the global namespace by a theme/plugin should start with the theme/plugin prefix. Found: &quot;wpi_status_report&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-037",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Admin/StatusReport.php",
@@ -545,7 +547,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;pll_save_post&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-046",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -744,7 +747,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_META_SYNC_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-064",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -779,7 +783,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-067",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -790,7 +795,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-068",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Product/Meta.php",
@@ -1230,7 +1236,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::GATEWAY_LOAD_EXTENTION.$gateway-&gt;id&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-105",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Gateways.php",
@@ -2147,7 +2154,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::SETTINGS_SECTIONS_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-185",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Admin/Settings.php",
@@ -2158,7 +2166,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::SETTINGS_FIELDS_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-186",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Admin/Settings.php",
@@ -2316,7 +2325,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-200",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Utilities.php",
@@ -2327,7 +2337,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-201",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Views/Messages/support.php",
@@ -2793,7 +2804,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-240",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
@@ -2905,7 +2917,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-249",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "tests/integration/ProductImportSynchronizationTest.php",
@@ -4938,7 +4951,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-427",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Product/Variable.php",
@@ -5363,7 +5377,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-462",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/LocaleNumbers.php",
@@ -5650,7 +5665,8 @@
     "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$_chosen_attributes&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-485",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Cart.php",
@@ -5661,7 +5677,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::CART_SWITCHED_ITEM&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-486",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Cart.php",
@@ -5729,7 +5746,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$this-&gt;getSectionsFilterName()&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-492",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
@@ -5740,7 +5758,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$this-&gt;getFieldsFilterName()&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-493",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Emails.php",
@@ -5751,7 +5770,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_DEFAULT_SETTING_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-494",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Emails.php",
@@ -5762,7 +5782,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_TRANSLATION_ACTION&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-495",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Emails.php",
@@ -5773,7 +5794,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_TRANSLATABLE_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-496",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Emails.php",
@@ -5784,7 +5806,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-497",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Emails.php",
@@ -5795,7 +5818,8 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-498",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   },
   {
     "file": "src/Hyyan/WPI/Pages.php",
@@ -5806,6 +5830,7 @@
     "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PAGES_LIST&quot;.",
     "docs": "",
     "id": "REVIEW-CHECK-499",
-    "status": "pending source or distributable review"
+    "status": "Reviewed preserved public hook or legacy integration symbol, see per-call source disposition",
+    "evidence": "public-contract-source-review.json, public-contract-runtime.json, public-contract-chrome.json, public-contract-integration-tests.txt, public-contract-frontend-tests.txt"
   }
 ]
