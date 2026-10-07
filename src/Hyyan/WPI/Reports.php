@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI;
 
+// phpcs:set WordPress.Security.ValidatedSanitizedInput customSanitizingFunctions[] hyyan\wpi\reports::sanitizereportid
+
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
 use Hyyan\WPI\Utilities;
@@ -200,6 +202,17 @@ class Reports
     }
 
     /**
+     * Normalize a valid report ID.
+     *
+     * @param mixed $id request ID
+     * @return int|false
+     */
+    private static function sanitizeReportID($id)
+    {
+        return is_int($id) || (is_string($id) && ctype_digit($id)) ? absint($id) : false;
+    }
+
+    /**
      * Translate product IDS for product report.
      *
      * @global \Polylang $polylang
@@ -219,9 +232,7 @@ class Reports
             return false;
         }
 
-        $IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['product_ids']), function ($id) {
-            return is_int($id) || (is_string($id) && ctype_digit($id));
-        }));
+        $IDS = wp_parse_id_list(array_filter(array_map('Hyyan\WPI\Reports::sanitizeReportID', (array) wp_unslash($_GET['product_ids'])), 'is_int'));
         $_GET['product_ids'] = $IDS;
         $extendedIDS = array();
 
@@ -265,9 +276,7 @@ class Reports
             return false;
         }
 
-        $IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['show_categories']), function ($id) {
-            return is_int($id) || (is_string($id) && ctype_digit($id));
-        }));
+        $IDS = wp_parse_id_list(array_filter(array_map('Hyyan\WPI\Reports::sanitizeReportID', (array) wp_unslash($_GET['show_categories'])), 'is_int'));
         $_GET['show_categories'] = $IDS;
         if (!static::isCombine() && '' !== ($lang = Utilities::getRequestLanguage('lang'))) {
             $extendedIDS = array();

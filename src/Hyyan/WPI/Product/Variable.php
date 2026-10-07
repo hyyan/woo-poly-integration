@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
+// phpcs:set WordPress.Security.ValidatedSanitizedInput customSanitizingFunctions[] hyyan\wpi\product\variable::sanitizevariationid
+
 use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Utilities;
 use Hyyan\WPI\Admin\Features;
@@ -343,13 +345,9 @@ class Variable
             return;
         }
 
-        $IDS = (array) wp_unslash($_POST['variation_ids']);
+        $IDS = array_map('Hyyan\WPI\Product\Variable::sanitizeVariationID', (array) wp_unslash($_POST['variation_ids']));
         // Validate the complete batch before deleting any translated variation.
         foreach ($IDS as $ID) {
-            if ((!is_int($ID) && !is_string($ID)) || !ctype_digit((string) $ID)) {
-                wp_die(-1);
-            }
-            $ID = (int) $ID;
             if ($ID < 1 || 'product_variation' !== get_post_type($ID)) {
                 continue;
             }
@@ -369,6 +367,20 @@ class Variable
                 Variation::deleteRelatedVariation($ID);
             }
         }
+    }
+
+    /**
+     * Normalize a variation ID or reject the request.
+     *
+     * @param mixed $id request ID
+     * @return int
+     */
+    private static function sanitizeVariationID($id)
+    {
+        if ((!is_int($id) && !is_string($id)) || !ctype_digit((string) $id)) {
+            wp_die(-1);
+        }
+        return (int) $id;
     }
 
     /**
