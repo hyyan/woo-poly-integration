@@ -1,0 +1,47 @@
+FILE: __init__.php
+[{"line":55,"column":1,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound","message":"Functions declared in the global namespace by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo_poly_integration_on_activate&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Utilities.php
+[{"line":642,"column":24,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Emails.switchLanguage&quot;.","docs":""},{"line":666,"column":24,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Emails.afterSwitchLanguage&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Cart.php
+[{"line":362,"column":57,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Cart.switchedItem&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Pages.php
+[{"line":29,"column":32,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.pages.list&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Admin/StatusReport.php
+[{"line":13,"column":1,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound","message":"Functions declared in the global namespace by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo_poly_integration_status_report&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Admin/Settings.php
+[{"line":71,"column":30,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.settings.sections&quot;.","docs":""},{"line":81,"column":30,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.settings.fields&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Admin/AbstractSettings.php
+[{"line":43,"column":17,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$this-&gt;getSectionsFilterName()&quot;.","docs":""},{"line":61,"column":21,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$this-&gt;getFieldsFilterName()&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Widgets/LayeredNav.php
+[{"line":79,"column":13,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound","message":"Global variables defined by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$_chosen_attributes&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Gateways.php
+[{"line":174,"column":23,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;&#039;woo-poly.gateway.loadClassExtention.&#039;.$gateway-&gt;id&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Product/Variable.php
+[{"line":462,"column":44,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.fieldsLockerVariableExcludeSelectors&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Product/Variation.php
+[{"line":407,"column":19,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.product.variation.copyMeta&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Product/Meta.php
+[{"line":105,"column":23,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;pll_save_post&quot;.","docs":""},{"line":668,"column":34,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.product.metaSync&quot;.","docs":""},{"line":799,"column":30,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.product.disabledMetaSync&quot;.","docs":""},{"line":836,"column":36,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.fieldsLockerSelectors&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Taxonomies/Categories.php
+[{"line":74,"column":21,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.product.syncCategoryCustomFields&quot;.","docs":""},{"line":119,"column":17,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.product.copyCategoryCustomFields&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Views/social.php
+[{"line":5,"column":1,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound","message":"Global variables defined by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$woo_poly_integration_tweet_url&quot;.","docs":""},{"line":10,"column":1,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound","message":"Global variables defined by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$woo_poly_integration_facebook_url&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Tools/TranslationsDownloader.php
+[{"line":158,"column":30,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.language.repoUrl&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Emails.php
+[{"line":116,"column":30,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Emails.defaultSetting&quot;.","docs":""},{"line":207,"column":23,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Emails.translation&quot;.","docs":""},{"line":216,"column":39,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Emails.translatableEmails&quot;.","docs":""},{"line":602,"column":59,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Emails.orderFindReplaceFind&quot;.","docs":""},{"line":603,"column":31,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;woo-poly.Emails.orderFindReplaceReplace&quot;.","docs":""}]

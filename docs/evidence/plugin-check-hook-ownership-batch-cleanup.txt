@@ -1,0 +1,1 @@
+{"posts_removed":4,"user_removed":true,"cart_page_restored":true}

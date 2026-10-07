@@ -1,6 +1,6 @@
 {
-  "source_commit": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
-  "installed_total": 100,
+  "source_commit": "3175ae8d45d131fb805671af78d48fc891f937bf",
+  "installed_total": 80,
   "open_findings": 22,
   "accepted_exceptions": 0,
   "findings": [
@@ -165,14 +165,14 @@
       "source_sha256": "3615957707c820a4d5bbc2919516efe4f0a19686d1b8bd54875f0aa031014f08"
     },
     {
-      "line": 275,
+      "line": 277,
       "column": 134,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Cart.php",
-      "source_sha256": "2e877d8a451d389d8da3474f7ad27a9dc980efe3b24ee925a29bc44dbfdcc34b"
+      "source_sha256": "8899c0532093c327306193cf7f41251d299f2752f0ccb92ac67ae33a3fb09692"
     },
     {
       "line": 28,
@@ -212,7 +212,7 @@
       "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'WooCommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
-      "source_sha256": "4fa67dfe6268e3e5f945821110340f07d865c87f42a96c23dcef2f3ecf75eccf"
+      "source_sha256": "28876689d3ef14fe22c7ab5bd441e1d3ded47b8f75ad751c4998db6a668e28b9"
     },
     {
       "line": 56,
@@ -222,7 +222,7 @@
       "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'Unable to download WooCommerce translation %s from : <a href=\"%2$s\">%2$s</a>'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
-      "source_sha256": "4fa67dfe6268e3e5f945821110340f07d865c87f42a96c23dcef2f3ecf75eccf"
+      "source_sha256": "28876689d3ef14fe22c7ab5bd441e1d3ded47b8f75ad751c4998db6a668e28b9"
     }
   ]
 }

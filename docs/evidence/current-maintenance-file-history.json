@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
-  "changed_files": 1581,
+  "through_commit": "3175ae8d45d131fb805671af78d48fc891f937bf",
+  "changed_files": 1629,
   "files": [
     {
       "file": ".exclude-list",
@@ -188,6 +188,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -248,6 +252,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -530,6 +538,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -748,6 +760,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -814,6 +830,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -868,6 +888,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -892,6 +916,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -970,6 +998,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -1006,6 +1038,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -1100,6 +1136,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -2402,6 +2442,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -2412,6 +2456,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -8376,6 +8424,246 @@
       ]
     },
     {
+      "file": "docs/evidence/legacy-cart-quantity-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-minimum-backorders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-minimum-child-with-owned-cart.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-minimum-child.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-minimum-native.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-minimum-parent.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-minimum-sold-diagnostic.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-minimum-sold.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-published-sold-diagnostic.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-upgrade-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/legacy-cart-quantity-batch-upgrade-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/locale-admin-chrome.jpg",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -11282,6 +11570,20 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-remaining-translations-review.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -11752,6 +12054,236 @@
         {
           "sha": "9526f1a9a805c7f66525fc27391d98039be53125",
           "subject": "docs: record stock and logging verification with open findings"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-published-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-upgrade-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-upgrade-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-upgrade-early-guard.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-upgrade-final.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-upgrade-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-stored-translation-batch-upgrade-prepare.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -15808,6 +16340,10 @@
         {
           "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
           "subject": "docs: record grouped checker findings and cache verification"
+        },
+        {
+          "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
+          "subject": "docs: record translation batch and minimum cart upgrade evidence"
         }
       ]
     },
@@ -15894,6 +16430,10 @@
         {
           "sha": "4b4094f1ec678816a71368ef4ad9e5bc196c939b",
           "subject": "fix: sanitize admin notices and translation error output"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -15948,6 +16488,10 @@
         {
           "sha": "37a7fbebed4e6e69a70c13175c9e05d247ff092e",
           "subject": "fix: preserve cart stock checks on WooCommerce 3.0"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -15988,6 +16532,10 @@
         {
           "sha": "ae7bbea1b03a6310b1901ece2a0f7de51135b579",
           "subject": "fix: restore caller language after translated emails"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16024,6 +16572,10 @@
         {
           "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
           "subject": "fix: translate stored checkout text through Polylang"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16126,6 +16678,10 @@
         {
           "sha": "8d6f9209987db84985a64ce485155c0103a8655f",
           "subject": "fix: replace only complete translated shop path segments"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16204,6 +16760,10 @@
         {
           "sha": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
           "subject": "fix: invalidate cached product lookups on native changes"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16274,6 +16834,10 @@
         {
           "sha": "ac630ad0351734d045498ec0e5683ae1d3838e87",
           "subject": "fix: normalize request IDs through validated sanitizers"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16312,6 +16876,10 @@
         {
           "sha": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
           "subject": "fix: invalidate cached product lookups on native changes"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16398,6 +16966,10 @@
         {
           "sha": "4e89b8eb616b2872e995921f66d6107b5d2a3026",
           "subject": "fix: validate registered languages across request filters"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16430,6 +17002,10 @@
         {
           "sha": "4b4094f1ec678816a71368ef4ad9e5bc196c939b",
           "subject": "fix: sanitize admin notices and translation error output"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },
@@ -16468,6 +17044,10 @@
         {
           "sha": "0e23d680865e3a5328ba333b3382b14cb73f8eff",
           "subject": "fix: reuse exact variation relationships across lookup paths"
+        },
+        {
+          "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
+          "subject": "fix: identify plugin hook constants with their owning prefix"
         }
       ]
     },

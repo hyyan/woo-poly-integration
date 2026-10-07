@@ -1,5 +1,6 @@
 {
-  "installed_total": 100,
+  "source_commit": "3175ae8d45d131fb805671af78d48fc891f937bf",
+  "installed_total": 80,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
@@ -31,7 +32,7 @@
         "file": "src/Hyyan/WPI/Coupon.php"
       },
       {
-        "line": 154,
+        "line": 156,
         "column": 20,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -40,7 +41,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 154,
+        "line": 156,
         "column": 45,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -49,7 +50,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 154,
+        "line": 156,
         "column": 72,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -58,7 +59,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 157,
+        "line": 159,
         "column": 40,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -67,7 +68,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 170,
+        "line": 172,
         "column": 20,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -76,7 +77,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 170,
+        "line": 172,
         "column": 47,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -85,7 +86,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 173,
+        "line": 175,
         "column": 52,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -591,7 +592,7 @@
         "file": "src/Hyyan/WPI/Privacy.php"
       },
       {
-        "line": 275,
+        "line": 277,
         "column": 134,
         "type": "ERROR",
         "code": "WordPress.WP.I18n.TextDomainMismatch",
@@ -647,114 +648,6 @@
     ],
     "public hook constants": [
       {
-        "line": 362,
-        "column": 57,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::CART_SWITCHED_ITEM&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Cart.php"
-      },
-      {
-        "line": 158,
-        "column": 30,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::LANGUAGE_REPO_URL_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php"
-      },
-      {
-        "line": 642,
-        "column": 24,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 666,
-        "column": 24,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 462,
-        "column": 44,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Variable.php"
-      },
-      {
-        "line": 407,
-        "column": 19,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Variation.php"
-      },
-      {
-        "line": 668,
-        "column": 34,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_META_SYNC_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Meta.php"
-      },
-      {
-        "line": 799,
-        "column": 30,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Meta.php"
-      },
-      {
-        "line": 836,
-        "column": 36,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Meta.php"
-      },
-      {
-        "line": 29,
-        "column": 32,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PAGES_LIST&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Pages.php"
-      },
-      {
-        "line": 71,
-        "column": 30,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::SETTINGS_SECTIONS_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Admin/Settings.php"
-      },
-      {
-        "line": 81,
-        "column": 30,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::SETTINGS_FIELDS_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Admin/Settings.php"
-      },
-      {
         "line": 43,
         "column": 17,
         "type": "WARNING",
@@ -771,78 +664,6 @@
         "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$this-&gt;getFieldsFilterName()&quot;.",
         "docs": "",
         "file": "src/Hyyan/WPI/Admin/AbstractSettings.php"
-      },
-      {
-        "line": 174,
-        "column": 23,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::GATEWAY_LOAD_EXTENTION.$gateway-&gt;id&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Gateways.php"
-      },
-      {
-        "line": 74,
-        "column": 21,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-      },
-      {
-        "line": 119,
-        "column": 17,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-      },
-      {
-        "line": 116,
-        "column": 30,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_DEFAULT_SETTING_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Emails.php"
-      },
-      {
-        "line": 207,
-        "column": 23,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_TRANSLATION_ACTION&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Emails.php"
-      },
-      {
-        "line": 216,
-        "column": 39,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_TRANSLATABLE_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Emails.php"
-      },
-      {
-        "line": 602,
-        "column": 59,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Emails.php"
-      },
-      {
-        "line": 603,
-        "column": 31,
-        "type": "WARNING",
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER&quot;.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Emails.php"
       }
     ],
     "prepared queries": [
@@ -876,7 +697,7 @@
         "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "line": 250,
+        "line": 252,
         "column": 18,
         "type": "ERROR",
         "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",

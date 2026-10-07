@@ -340,3 +340,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 
 | CHECK-015 | Dynamic gettext fallback for stored text | Required Polylang API preserves translations | dacbd61, 22 checker rows removed, native bilingual checkout and receipts |
 | CHECK-016 | WooCommerce 3.0 supplies three cart hook arguments | Native legacy hooks preserve actual quantities and rollback | 37a7fbe, native minimum version stock probes and Chrome Add to cart |
+
+| CHECK-017 | Hook constant ownership is opaque to the installed prefix check | Existing interface imports identify the actual plugin prefix | 3175ae8, twenty installed warnings removed, unchanged source semantics and native settings/cart |

@@ -1,0 +1,8 @@
+FILE: src/Hyyan/WPI/Admin/AbstractSettings.php
+[{"line":43,"column":17,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$this-&gt;getSectionsFilterName()&quot;.","docs":""},{"line":61,"column":21,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$this-&gt;getFieldsFilterName()&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Widgets/LayeredNav.php
+[{"line":79,"column":13,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound","message":"Global variables defined by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$_chosen_attributes&quot;.","docs":""}]
+
+FILE: src/Hyyan/WPI/Product/Meta.php
+[{"line":105,"column":23,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;pll_save_post&quot;.","docs":""}]
