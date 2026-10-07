@@ -1,0 +1,56 @@
+{
+    "parent": {
+        "en": {
+            "id": 111,
+            "parent": 0,
+            "language": "en",
+            "translation": 113,
+            "display": "subcategories",
+            "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product-category\/wpi-native-taxonomy-parent-en\/"
+        },
+        "de": {
+            "id": 113,
+            "parent": 0,
+            "language": "de",
+            "translation": 111,
+            "display": "subcategories",
+            "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product-category\/wpi-native-taxonomy-parent-de\/"
+        }
+    },
+    "child": {
+        "en": {
+            "id": 115,
+            "parent": 111,
+            "language": "en",
+            "translation": 117,
+            "display": "",
+            "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product-category\/wpi-native-taxonomy-parent-en\/wpi-native-taxonomy-child-en\/"
+        },
+        "de": {
+            "id": 117,
+            "parent": 113,
+            "language": "de",
+            "translation": 115,
+            "display": "",
+            "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product-category\/wpi-native-taxonomy-parent-de\/wpi-native-taxonomy-child-de\/"
+        }
+    },
+    "tag": {
+        "en": {
+            "id": 119,
+            "parent": 0,
+            "language": "en",
+            "translation": 121,
+            "display": "",
+            "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product-tag\/wpi-native-taxonomy-tag-en\/"
+        },
+        "de": {
+            "id": 121,
+            "parent": 0,
+            "language": "de",
+            "translation": 119,
+            "display": "",
+            "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product-tag\/wpi-native-taxonomy-tag-de\/"
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "users": [
+        {
+            "id": 3,
+            "roles": [
+                "customer"
+            ],
+            "stored_locale": ""
+        },
+        {
+            "id": 4,
+            "roles": [
+                "customer"
+            ],
+            "stored_locale": ""
+        }
+    ],
+    "orders": [
+        {
+            "id": 224,
+            "language": "de",
+            "customer": 3,
+            "status": "completed",
+            "total": "0.00",
+            "virtual": true,
+            "downloadable": true,
+            "downloads": 1,
+            "paid": true
+        }
+    ],
+    "stocks": {
+        "download": {
+            "en": 19,
+            "de": 19
+        },
+        "service": {
+            "en": 20,
+            "de": 20
+        }
+    },
+    "mail": [
+        {
+            "before": {
+                "locale": "de_DE",
+                "language": "de"
+            },
+            "during": [
+                {
+                    "type": "customer_new_account",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "Konto Pruefung Betreff",
+                    "english_heading": false,
+                    "german_heading": true,
+                    "english_body": false,
+                    "german_body": true,
+                    "english_footer": false,
+                    "german_footer": true
+                }
+            ],
+            "after": {
+                "locale": "de_DE",
+                "language": "de"
+            }
+        },
+        {
+            "before": {
+                "locale": "en_US",
+                "language": "en"
+            },
+            "during": [
+                {
+                    "type": "customer_new_account",
+                    "locale": "en_US",
+                    "language": "en",
+                    "subject": "Account batch subject",
+                    "english_heading": true,
+                    "german_heading": false,
+                    "english_body": true,
+                    "german_body": false,
+                    "english_footer": true,
+                    "german_footer": false
+                }
+            ],
+            "after": {
+                "locale": "en_US",
+                "language": "en"
+            }
+        },
+        {
+            "before": {
+                "locale": "de_DE",
+                "language": "de"
+            },
+            "during": [
+                {
+                    "type": "customer_completed_order",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "Konto Pruefung Betreff",
+                    "english_heading": false,
+                    "german_heading": true,
+                    "english_body": false,
+                    "german_body": true,
+                    "english_footer": false,
+                    "german_footer": true
+                },
+                {
+                    "type": "new_order",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "[WooPoly package acceptance]: You've got a new order: #224",
+                    "english_heading": false,
+                    "german_heading": false,
+                    "english_body": false,
+                    "german_body": false,
+                    "english_footer": false,
+                    "german_footer": true
+                }
+            ],
+            "after": {
+                "locale": "de_DE",
+                "language": "de"
+            }
+        }
+    ]
+}

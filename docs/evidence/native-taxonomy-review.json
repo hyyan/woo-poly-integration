@@ -1,0 +1,12 @@
+{
+  "all_native_term_pairs_linked": true,
+  "native_child_parents_translated": true,
+  "native_display_values_copied": true,
+  "native_reset_syncs_empty_display": true,
+  "product_terms_translated": true,
+  "child_and_tag_language_isolation": true,
+  "native_parent_archives_show_child": true,
+  "native_german_child_path_preserves_hierarchy": true,
+  "native_german_tag_path": true,
+  "owned_cleanup": true
+}

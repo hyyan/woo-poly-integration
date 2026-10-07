@@ -1,0 +1,6 @@
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/purchase-rules-batch-extend.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/purchase-rules-batch-packages.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/purchase-rules-batch-inspect.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/purchase-rules-batch-download.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/purchase-rules-batch-download-inspect.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/guest-purchase-batch-cleanup.php

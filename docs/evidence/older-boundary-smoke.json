@@ -1,0 +1,7 @@
+{
+    "prepared_lookup_preserves_both_languages": true,
+    "malformed_lookup_rejected": true,
+    "malformed_lookup_executes_no_query": true,
+    "store_api_class_absent": true,
+    "variation_hook_registered": true
+}

@@ -1,0 +1,14 @@
+{
+  "native_customer_and_shop_status_emails": true,
+  "new_customer_cancelled_and_failed_types_corrected": true,
+  "custom_paid_invoice_saved_in_native_settings_form": true,
+  "custom_subject_heading_body_footer_translate": true,
+  "native_customer_note_present": true,
+  "gateway_instructions_translated_once": true,
+  "all_observed_request_contexts_restored": true,
+  "completed_status_does_not_reduce_stock_twice": true,
+  "cancellation_and_failure_restore_linked_stock": true,
+  "native_partial_refund_restores_one_linked_unit": true,
+  "chrome_admin_errors_empty": true,
+  "transport_suppressed": true
+}

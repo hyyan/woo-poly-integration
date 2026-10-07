@@ -1,0 +1,16 @@
+{
+    "en": {
+        "id": 127,
+        "featured": "129",
+        "gallery_raw": [],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/media-acceptance-source\/"
+    },
+    "de": {
+        "id": 131,
+        "featured": "132",
+        "gallery_raw": [
+            129
+        ],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/media-acceptance-german\/"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "unassigned_language": "en",
+    "renamed_attribute": "Navigation renamed",
+    "categories": {
+        "en": [
+            196
+        ],
+        "de": [
+            200
+        ]
+    },
+    "english_front": "http:\/\/localhost:8098\/woopoly-package-lab\/",
+    "german_front": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/"
+}

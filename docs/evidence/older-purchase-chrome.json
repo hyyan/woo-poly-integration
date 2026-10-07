@@ -1,0 +1,84 @@
+{
+  "polylang201_plugin_disabled": {
+    "type": "{\"id\":22,\"class\":\"WC_Product_Simple\",\"terms\":[],\"translated_taxonomies\":{\"category\":\"category\",\"post_tag\":\"post_tag\",\"product_cat\":\"product_cat\",\"product_tag\":\"product_tag\"}}",
+    "forms": 0
+  },
+  "polylang274_form": {
+    "type": "{\"id\":22,\"class\":\"WC_Product_Variable\",\"terms\":[{\"name\":\"variable\",\"slug\":\"variable\",\"id\":4}],\"translated_taxonomies\":{\"category\":\"category\",\"post_tag\":\"post_tag\",\"product_cat\":\"product_cat\",\"product_tag\":\"product_tag\"}}",
+    "forms": 1,
+    "variation": "23",
+    "price": "\u00a312.00",
+    "options": [
+      {
+        "name": "attribute_size",
+        "value": "small",
+        "options": [
+          "",
+          "small",
+          "large"
+        ]
+      }
+    ]
+  },
+  "german_large": {
+    "variation": "24",
+    "price": "\u00a314.00",
+    "enabled": true
+  },
+  "german_cart": {
+    "language": "de-DE",
+    "items": [
+      {
+        "name": "Older frontend acceptance German - large",
+        "quantity": "2",
+        "price": "\u00a314.00",
+        "subtotal": "\u00a328.00"
+      }
+    ],
+    "total": "Total\n\t\t\t\u00a328.00",
+    "checkoutPath": "30"
+  },
+  "german_receipt": {
+    "language": "de-DE",
+    "receipt": true,
+    "orderId": "33",
+    "items": [
+      {
+        "product": "Older frontend acceptance German - large",
+        "quantity": "\u00d7\u00a02",
+        "total": "\u00a328.00"
+      }
+    ]
+  },
+  "english_default": {
+    "language": "en-US",
+    "variation": "20",
+    "price": "\u00a312.00",
+    "selected": "small"
+  },
+  "english_cart": {
+    "language": "en-US",
+    "items": [
+      {
+        "name": "Older product acceptance source - small",
+        "quantity": "1",
+        "price": "\u00a312.00",
+        "subtotal": "\u00a312.00"
+      }
+    ],
+    "total": "Total\n\t\t\t\u00a312.00"
+  },
+  "english_receipt": {
+    "language": "en-US",
+    "receipt": true,
+    "orderId": "34",
+    "items": [
+      {
+        "product": "Older product acceptance source - small",
+        "quantity": "\u00d7\u00a01",
+        "total": "\u00a312.00"
+      }
+    ],
+    "critical": false
+  }
+}

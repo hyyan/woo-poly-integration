@@ -1,0 +1,58 @@
+{
+    "en": {
+        "id": 11,
+        "type": "variable",
+        "weight": "2",
+        "description": "Older source independent description",
+        "defaults": {
+            "size": "Small"
+        },
+        "children": [
+            {
+                "id": 12,
+                "source": 12,
+                "attributes": {
+                    "size": "Small"
+                },
+                "price": "12"
+            },
+            {
+                "id": 13,
+                "source": 13,
+                "attributes": {
+                    "size": "Large"
+                },
+                "price": "14"
+            }
+        ],
+        "url": "http:\/\/localhost:8099\/?product=older-product-acceptance-source&lang=en"
+    },
+    "de": {
+        "id": 16,
+        "type": "variable",
+        "weight": "2",
+        "description": "Older German independent description",
+        "defaults": {
+            "size": "Small"
+        },
+        "children": [
+            {
+                "id": 17,
+                "source": 12,
+                "attributes": {
+                    "size": "Small"
+                },
+                "price": "12"
+            },
+            {
+                "id": 18,
+                "source": 13,
+                "attributes": {
+                    "size": "Large"
+                },
+                "price": "14"
+            }
+        ],
+        "url": "http:\/\/localhost:8099\/?product=older-product-acceptance-german&lang=de"
+    }
+}

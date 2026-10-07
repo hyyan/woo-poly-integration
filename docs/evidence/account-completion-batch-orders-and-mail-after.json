@@ -1,0 +1,316 @@
+{
+    "users": [
+        {
+            "id": 5,
+            "roles": [
+                "customer"
+            ],
+            "stored_locale": ""
+        },
+        {
+            "id": 6,
+            "roles": [
+                "customer"
+            ],
+            "stored_locale": ""
+        }
+    ],
+    "orders": [
+        {
+            "id": 236,
+            "language": "de",
+            "customer": 5,
+            "status": "completed",
+            "total": "0.00",
+            "virtual": true,
+            "downloadable": true,
+            "downloads": 1,
+            "paid": true
+        },
+        {
+            "id": 237,
+            "language": "en",
+            "customer": 6,
+            "status": "completed",
+            "total": "0.00",
+            "virtual": true,
+            "downloadable": true,
+            "downloads": 1,
+            "paid": true
+        },
+        {
+            "id": 238,
+            "language": "de",
+            "customer": 5,
+            "status": "processing",
+            "total": "0.00",
+            "virtual": true,
+            "downloadable": false,
+            "downloads": 0,
+            "paid": true
+        },
+        {
+            "id": 239,
+            "language": "en",
+            "customer": 6,
+            "status": "processing",
+            "total": "0.00",
+            "virtual": true,
+            "downloadable": false,
+            "downloads": 0,
+            "paid": true
+        }
+    ],
+    "stocks": {
+        "download": {
+            "en": 18,
+            "de": 18
+        },
+        "service": {
+            "en": 18,
+            "de": 18
+        }
+    },
+    "mail": [
+        {
+            "before": {
+                "locale": "de_DE",
+                "language": "de"
+            },
+            "during": [
+                {
+                    "type": "customer_new_account",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "Konto Pruefung Betreff",
+                    "english_heading": false,
+                    "german_heading": true,
+                    "english_body": false,
+                    "german_body": true,
+                    "english_footer": false,
+                    "german_footer": true
+                }
+            ],
+            "after": {
+                "locale": "de_DE",
+                "language": "de"
+            }
+        },
+        {
+            "before": {
+                "locale": "en_US",
+                "language": "en"
+            },
+            "during": [
+                {
+                    "type": "customer_new_account",
+                    "locale": "en_US",
+                    "language": "en",
+                    "subject": "Account batch subject",
+                    "english_heading": true,
+                    "german_heading": false,
+                    "english_body": true,
+                    "german_body": false,
+                    "english_footer": true,
+                    "german_footer": false
+                }
+            ],
+            "after": {
+                "locale": "en_US",
+                "language": "en"
+            }
+        },
+        {
+            "before": {
+                "locale": "de_DE",
+                "language": "de"
+            },
+            "during": [
+                {
+                    "type": "customer_completed_order",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "Konto Pruefung Betreff",
+                    "english_heading": false,
+                    "german_heading": true,
+                    "english_body": false,
+                    "german_body": true,
+                    "english_footer": false,
+                    "german_footer": true
+                },
+                {
+                    "type": "new_order",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "[WooPoly package acceptance]: Du hast eine neue Bestellung: Nr.\u00a0236",
+                    "english_heading": false,
+                    "german_heading": false,
+                    "english_body": false,
+                    "german_body": false,
+                    "english_footer": false,
+                    "german_footer": true
+                }
+            ],
+            "after": {
+                "locale": "de_DE",
+                "language": "de"
+            }
+        },
+        {
+            "before": {
+                "locale": "en_US",
+                "language": "en"
+            },
+            "during": [
+                {
+                    "type": "customer_completed_order",
+                    "locale": "en_US",
+                    "language": "en",
+                    "subject": "Account batch subject",
+                    "english_heading": true,
+                    "german_heading": false,
+                    "english_body": true,
+                    "german_body": false,
+                    "english_footer": true,
+                    "german_footer": false
+                },
+                {
+                    "type": "new_order",
+                    "locale": "en_US",
+                    "language": "en",
+                    "subject": "[WooPoly package acceptance]: You've got a new order: #237",
+                    "english_heading": false,
+                    "german_heading": false,
+                    "english_body": false,
+                    "german_body": false,
+                    "english_footer": true,
+                    "german_footer": false
+                }
+            ],
+            "after": {
+                "locale": "en_US",
+                "language": "en"
+            }
+        },
+        {
+            "before": {
+                "locale": "de_DE",
+                "language": "de"
+            },
+            "during": [
+                {
+                    "type": "new_order",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "[WooPoly package acceptance]: Du hast eine neue Bestellung: Nr.\u00a0238",
+                    "english_heading": false,
+                    "german_heading": false,
+                    "english_body": false,
+                    "german_body": false,
+                    "english_footer": false,
+                    "german_footer": true
+                },
+                {
+                    "type": "customer_processing_order",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "Konto Pruefung Betreff",
+                    "english_heading": false,
+                    "german_heading": true,
+                    "english_body": false,
+                    "german_body": true,
+                    "english_footer": false,
+                    "german_footer": true
+                }
+            ],
+            "after": {
+                "locale": "de_DE",
+                "language": "de"
+            }
+        },
+        {
+            "before": {
+                "locale": "en_US",
+                "language": "en"
+            },
+            "during": [
+                {
+                    "type": "new_order",
+                    "locale": "en_US",
+                    "language": "en",
+                    "subject": "[WooPoly package acceptance]: You've got a new order: #239",
+                    "english_heading": false,
+                    "german_heading": false,
+                    "english_body": false,
+                    "german_body": false,
+                    "english_footer": true,
+                    "german_footer": false
+                },
+                {
+                    "type": "customer_processing_order",
+                    "locale": "en_US",
+                    "language": "en",
+                    "subject": "Account batch subject",
+                    "english_heading": true,
+                    "german_heading": false,
+                    "english_body": true,
+                    "german_body": false,
+                    "english_footer": true,
+                    "german_footer": false
+                }
+            ],
+            "after": {
+                "locale": "en_US",
+                "language": "en"
+            }
+        },
+        {
+            "before": {
+                "locale": "de_DE",
+                "language": "de"
+            },
+            "during": [
+                {
+                    "type": "customer_reset_password",
+                    "locale": "de_DE",
+                    "language": "de",
+                    "subject": "Konto Pruefung Betreff",
+                    "english_heading": false,
+                    "german_heading": true,
+                    "english_body": false,
+                    "german_body": true,
+                    "english_footer": false,
+                    "german_footer": true
+                }
+            ],
+            "after": {
+                "locale": "de_DE",
+                "language": "de"
+            }
+        },
+        {
+            "before": {
+                "locale": "en_US",
+                "language": "en"
+            },
+            "during": [
+                {
+                    "type": "customer_reset_password",
+                    "locale": "en_US",
+                    "language": "en",
+                    "subject": "Account batch subject",
+                    "english_heading": true,
+                    "german_heading": false,
+                    "english_body": true,
+                    "german_body": false,
+                    "english_footer": true,
+                    "german_footer": false
+                }
+            ],
+            "after": {
+                "locale": "en_US",
+                "language": "en"
+            }
+        }
+    ]
+}

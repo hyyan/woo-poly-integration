@@ -1,0 +1,15 @@
+{
+  "native_coupon_notice_locale_corrected": true,
+  "product_exclusion_translates_to_related_variation": true,
+  "expiry_and_minimum_spend_preserved": true,
+  "one_item_discount_limit_preserved": true,
+  "global_usage_limit_shared_between_languages": true,
+  "both_shipping_labels_and_costs_correct": true,
+  "class_surcharge_included": true,
+  "both_native_guest_orders_and_receipts_match": true,
+  "both_order_customer_ids_zero": true,
+  "linked_stock_and_sibling_stock_correct": true,
+  "native_receipt_errors_empty": true,
+  "mail_and_real_payment_transport_suppressed": true,
+  "default_stored_payment_title": "Check payments retained in both receipts, configured gateway title translation remains a separate check"
+}

@@ -1,0 +1,13 @@
+ woo-poly-older-wordpress-1 Copying /private/tmp/woo-poly-older-wp-cli to woo-poly-older-wordpress-1:/usr/local/bin/wp
+ woo-poly-older-wordpress-1 Copied /private/tmp/woo-poly-older-wp-cli to woo-poly-older-wordpress-1:/usr/local/bin/wp
+Success: WordPress installed successfully.
+Installing WooCommerce (4.0.0)
+Downloading installation package from https://downloads.wordpress.org/plugin/woocommerce.4.0.0.zip...
+The authenticity of woocommerce.4.0.0.zip could not be verified as no signature was found.
+Unpacking the package...
+Installing the plugin...
+Plugin installed successfully.
+Activating 'woocommerce'...
+Plugin 'woocommerce' activated.
+Success: Installed 1 of 1 plugins.
+Error: Can't find the requested plugin's version 2.0.0 in the WordPress.org plugin repository (HTTP code 404).

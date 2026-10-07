@@ -1,0 +1,12 @@
+{
+  "customer_action": "send_order_details",
+  "shop_action": "send_order_details_admin",
+  "after_shop": {
+    "path": "/woopoly-package-lab/wp-admin/post.php",
+    "language": "en-US",
+    "direction": "",
+    "orderUpdated": true,
+    "visibleErrors": []
+  },
+  "mail_transport_suppressed": true
+}

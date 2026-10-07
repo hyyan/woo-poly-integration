@@ -1,0 +1,258 @@
+{
+  "en_query": {
+    "path": "/woopoly-package-lab/shop/",
+    "title": "Shop",
+    "products": [
+      "Navigation product en"
+    ],
+    "errors": []
+  },
+  "de_query": {
+    "path": "/woopoly-package-lab/de/shop-2/",
+    "title": "Shop",
+    "products": [
+      "Navigation product de"
+    ],
+    "errors": []
+  },
+  "en_search": {
+    "path": "/woopoly-package-lab/product/navigation-product-en/",
+    "title": "Navigation product en",
+    "products": [
+      "Navigation product de"
+    ],
+    "errors": []
+  },
+  "de_search": {
+    "path": "/woopoly-package-lab/de/product/navigation-product-de/",
+    "title": "Navigation product de",
+    "products": [
+      "Navigation product en"
+    ],
+    "errors": []
+  },
+  "de_renamed_attribute": {
+    "path": "/woopoly-package-lab/de/product/navigation-product-de/",
+    "title": "Navigation product de",
+    "attributes": [
+      "Navigation Neu\t\n\nNavigation term de"
+    ],
+    "related": [
+      "Navigation product en"
+    ]
+  },
+  "en_renamed_attribute": {
+    "path": "/woopoly-package-lab/product/navigation-product-en/",
+    "title": "Navigation product en",
+    "attributes": [
+      "Navigation renamed\t\n\nNavigation term en"
+    ],
+    "related": [
+      "Navigation product de"
+    ]
+  },
+  "de_corrected_category": {
+    "title": "Navigation product de",
+    "related": [],
+    "attributes": [
+      "Navigation Neu\t\n\nNavigation term de"
+    ]
+  },
+  "en_corrected_category": {
+    "title": "Navigation product en",
+    "related": [],
+    "attributes": [
+      "Navigation renamed\t\n\nNavigation term en"
+    ]
+  },
+  "de_category_path": {
+    "path": "/woopoly-package-lab/de/navigation/navigation-category-de/navigation-product-de/",
+    "title": "Navigation product de",
+    "category": "Kategorie: Navigation category de",
+    "notFound": false,
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/navigation/navigation-category-en/navigation-product-en/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/navigation/navigation-category-de/navigation-product-de/"
+      }
+    ]
+  },
+  "en_category_path": {
+    "path": "/woopoly-package-lab/navigation/navigation-category-en/navigation-product-en/",
+    "title": "Navigation product en",
+    "category": "Category: Navigation category en",
+    "notFound": false,
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/navigation/navigation-category-en/navigation-product-en/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/navigation/navigation-category-de/navigation-product-de/"
+      }
+    ]
+  },
+  "en_shop_front": {
+    "path": "/woopoly-package-lab/",
+    "title": "Shop",
+    "products": [
+      "Navigation product en"
+    ],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/shop-2/"
+      }
+    ],
+    "notFound": false
+  },
+  "de_shop_front": {
+    "path": "/woopoly-package-lab/de/shop-2/",
+    "title": "Shop",
+    "products": [
+      "Navigation product de"
+    ],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/shop/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/shop-2/"
+      }
+    ],
+    "notFound": false
+  },
+  "de_language_front": {
+    "path": "/woopoly-package-lab/de/shop-2/",
+    "title": "Shop",
+    "products": [
+      "Navigation product de"
+    ],
+    "headings": [],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/shop/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/shop-2/"
+      }
+    ],
+    "notFound": false
+  },
+  "en_language_front": {
+    "path": "/woopoly-package-lab/",
+    "title": "Shop",
+    "products": [
+      "Navigation product en"
+    ],
+    "headings": [],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/shop-2/"
+      }
+    ],
+    "notFound": false
+  },
+  "de_authored_cart": {
+    "path": "/woopoly-package-lab/de/cart-2/",
+    "title": "Cart",
+    "products": [],
+    "headings": [
+      "Dein Warenkorb ist derzeit leer!",
+      "Neu im Shop"
+    ],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/cart/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/cart-2/"
+      }
+    ],
+    "notFound": false
+  },
+  "en_unchanged_cart": {
+    "path": "/woopoly-package-lab/cart/",
+    "title": "Cart",
+    "products": [],
+    "headings": [
+      "Your cart is currently empty!",
+      "New in store"
+    ],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/cart/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/cart-2/"
+      }
+    ],
+    "notFound": false
+  },
+  "de_front_after_native_cache": {
+    "path": "/woopoly-package-lab/de/shop-2/",
+    "title": "Shop",
+    "products": [
+      "Navigation product de"
+    ],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/shop/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/shop-2/"
+      }
+    ],
+    "notFound": false
+  },
+  "de_fresh_front": {
+    "path": "/woopoly-package-lab/de/",
+    "title": "Shop",
+    "products": [
+      "Navigation product de"
+    ],
+    "links": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/"
+      }
+    ],
+    "notFound": false
+  },
+  "en_fresh_front": {
+    "path": "/woopoly-package-lab/",
+    "title": "Shop",
+    "products": [
+      "Navigation product en"
+    ],
+    "notFound": false
+  }
+}

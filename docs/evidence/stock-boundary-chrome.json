@@ -1,0 +1,18 @@
+{
+  "first": {
+    "path": "/woopoly-package-lab/de/checkout-2/order-received/83/",
+    "received": true,
+    "errors": []
+  },
+  "second": {
+    "path": "/woopoly-package-lab/checkout/order-received/84/",
+    "received": true,
+    "errors": []
+  },
+  "restoredCart": {
+    "path": "/woopoly-package-lab/cart/",
+    "empty": true,
+    "fixtureProductVisible": false
+  },
+  "scope": "Native block checkout, child managed variation stock, signed customer, offline cheque gateway, CPT storage. Guest, parent managed, third language, variation refund, asynchronous gateway and HPOS variation purchase remain unverified."
+}

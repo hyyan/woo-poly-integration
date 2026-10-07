@@ -1,0 +1,13 @@
+{
+  "native_creation": true,
+  "two_global_attributes": true,
+  "three_child_links": true,
+  "missing_term_created_and_selectable": true,
+  "both_defaults_translated": true,
+  "weight_and_tax_class_copied": true,
+  "independent_content_preserved": true,
+  "repeated_updates_keep_child_ids": true,
+  "native_duplicate_unlinked": true,
+  "duplicate_child_removal_preserves_original_pair": true,
+  "clear_selection": true
+}

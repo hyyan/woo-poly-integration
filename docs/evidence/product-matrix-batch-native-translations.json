@@ -1,0 +1,29 @@
+{
+    "en": {
+        "id": 295,
+        "status": "publish",
+        "type": "variable",
+        "children": 24,
+        "image": "296",
+        "description": "Matrix source independent content.",
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/matrix-acceptance-source\/"
+    },
+    "es": {
+        "id": 346,
+        "status": "publish",
+        "type": "variable",
+        "children": 24,
+        "image": "296",
+        "description": "Matrix es independent description.",
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/es\/product\/matrix-acceptance-es\/"
+    },
+    "de": {
+        "id": 321,
+        "status": "publish",
+        "type": "variable",
+        "children": 24,
+        "image": "296",
+        "description": "Matrix de independent description.",
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/matrix-acceptance-de\/"
+    }
+}

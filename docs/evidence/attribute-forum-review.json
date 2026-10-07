@@ -1,0 +1,189 @@
+{
+  "counts": {
+    "captured_pages": 423,
+    "unique_topics": 413,
+    "reviewed_pages": 247,
+    "reviewed_topics": 242,
+    "pending_pages": 176,
+    "pending_topics": 171
+  },
+  "reviewed_post_count": 63,
+  "reviews": [
+    {
+      "id": "FORUM-048",
+      "url": "https://wordpress.org/support/topic/attributes-values-translate/",
+      "file": "forum/28577f2d2a9b0e79.html",
+      "source_sha256": "4dd7d2f4116d63d13c574857388c9b511b714708d17a583a7dae4c56e5a2a996",
+      "captured_post_count": 2,
+      "category": "Attribute translation setup",
+      "report_summary": "Question asks whether term values can translate. Reply explains per taxonomy enablement and term translation.",
+      "review_status": "Current term translation source and selected term proof available",
+      "next_check": "Native per attribute enablement and existing unassigned terms remain distinct checks."
+    },
+    {
+      "id": "FORUM-067",
+      "url": "https://wordpress.org/support/topic/attribute-swatch-picture-not-synchronizing-on-translated-page/",
+      "file": "forum/57e84a1d62e16c55.html",
+      "source_sha256": "31e983e25bcd4c9cdbb3d4b242f0576d4be4bb4ddcbfbfc0d7f10dfc02e01f08",
+      "captured_post_count": 2,
+      "category": "External swatch images",
+      "report_summary": "Translated variation swatch images missing. Replies suggest media settings and isolating swatch extension without author resolution.",
+      "review_status": "Actual swatch image integration unverified",
+      "next_check": "Requires the actual swatch tool and native image translation settings, not only variation price proof."
+    },
+    {
+      "id": "FORUM-103",
+      "url": "https://wordpress.org/support/topic/attribute-title-change-translations-dissappeard-please-help/",
+      "file": "forum/d69cf6393ff022c9.html",
+      "source_sha256": "c0f96b2b1be734d104c40632d9f9ee26588e5416146bee7f651a56498427915b",
+      "captured_post_count": 3,
+      "category": "Attribute rename",
+      "report_summary": "Changing attribute title reportedly removed language assignments. Author thanks reply about per taxonomy settings, without explicit final data verification.",
+      "review_status": "Native attribute rename acceptance pending",
+      "next_check": "Distinguish label change from slug taxonomy migration and verify existing term links."
+    },
+    {
+      "id": "FORUM-121",
+      "url": "https://wordpress.org/support/topic/attributes-once-more/",
+      "file": "forum/89592aba37c699a2.html",
+      "source_sha256": "0a3cb5fc606903aa18cfaaf69a27992bb39a19610da3e8516f98a787a1af5f94",
+      "captured_post_count": 9,
+      "category": "Multiple attribute variation",
+      "report_summary": "Initial report says Update loses translated choices. Apparent recovery is followed by explicit failure with two attributes and external swatch and theme tools.",
+      "review_status": "Current one global selection passes, two global attribute Update open",
+      "next_check": "Do not mark solved from the earlier acknowledgement. Reproduce two linked global attributes and actual original extensions separately."
+    },
+    {
+      "id": "FORUM-173",
+      "url": "https://wordpress.org/support/topic/translating-attributes-in-woocommerce-2/",
+      "file": "forum/b3892ef44e477157.html",
+      "source_sha256": "a42085c527bc944a368afbc5723eb3d71633adddd7e20b69037b20942b882aa5",
+      "captured_post_count": 5,
+      "category": "Labels and term setup",
+      "report_summary": "String labels translated but terms or widgets absent. Replies distinguish labels, term translations, visibility and language assignment, later user reports changing product language restores visibility.",
+      "review_status": "Original term and editor setup unresolved",
+      "next_check": "Native existing unassigned terms and filter widget proof remain separate from string label translation."
+    },
+    {
+      "id": "FORUM-194",
+      "url": "https://wordpress.org/support/topic/translate-attributes-label-for-attributes-created-before-plugin-activation/",
+      "file": "forum/b45d95f4c159a698.html",
+      "source_sha256": "c1c5cb20fe15e1dc6ed8b33731604fec7a1be874d65b0291f817b7ab3923ae16",
+      "captured_post_count": 4,
+      "category": "Existing attribute labels",
+      "report_summary": "Labels made before activation were missing from strings, author reports changing title exposes them but restoring original hides them.",
+      "review_status": "Current init registers every stored attribute label",
+      "next_check": "Native existing label registration and cache behavior remain acceptance checks."
+    },
+    {
+      "id": "FORUM-209",
+      "url": "https://wordpress.org/support/topic/woocommerce-rest-api-filter-by-lang/",
+      "file": "forum/a45cb283ced2cfb0.html",
+      "source_sha256": "0b3406b5890d6aededb7a1b78fbb38eb831c2fc79f3fc8503df3d36faf344571",
+      "captured_post_count": 2,
+      "category": "WooCommerce REST language",
+      "report_summary": "Question requests REST filtering by language. Reply invites testing rather than promising support.",
+      "review_status": "Feature capability question, native REST language proof pending",
+      "next_check": "Test supported native WooCommerce API and Polylang context without inventing a new API contract."
+    },
+    {
+      "id": "FORUM-245",
+      "url": "https://wordpress.org/support/topic/how-to-remove-a-filter/",
+      "file": "forum/53f6a13ce9f00c4e.html",
+      "source_sha256": "37050784cb81fd8eae54df854352ae79fa364248ec4059c6b494324514c6fae4",
+      "captured_post_count": 5,
+      "category": "Removing registered callbacks",
+      "report_summary": "Author asks to remove object callback, manually edits WordPress hook internals and maintainer discusses a future instance accessor.",
+      "review_status": "Extension API request outside current bug fixes",
+      "next_check": "Do not add a public instance accessor or remove translation behavior without a separate feature decision."
+    },
+    {
+      "id": "FORUM-254",
+      "url": "https://wordpress.org/support/topic/seperate-translations-for-attributes/",
+      "file": "forum/56d6e9f8fdba1bfe.html",
+      "source_sha256": "7737a7213dbca3c12afcaf6fc240b3f6b095b7db772a79e8f986f81c9e75a9cd",
+      "captured_post_count": 5,
+      "category": "Ingredient terms",
+      "report_summary": "Six language ingredients remain English. Replies explain the full ingredient list is one global term needing term translations, no final author verification.",
+      "review_status": "Attribute name versus term value contract inspected",
+      "next_check": "Native ingredient term with long text and six languages remains distinct from current selected color proof."
+    },
+    {
+      "id": "FORUM-279",
+      "url": "https://wordpress.org/support/topic/attribute-not-translating-for-woocommerce-api/",
+      "file": "forum/74e6bd8ad11f49fc.html",
+      "source_sha256": "01ea11ae36e5923429afe36ce6c4ce5a921135b76d806a1ad73b54ef46da2881",
+      "captured_post_count": 1,
+      "category": "REST attribute label",
+      "report_summary": "Hindi REST products have translated values but English attribute labels, no API route or resolution supplied.",
+      "review_status": "Native REST attribute label reproduction pending",
+      "next_check": "Current frontend label hook does not prove every REST schema or locale context."
+    },
+    {
+      "id": "FORUM-315",
+      "url": "https://wordpress.org/support/topic/woocommerce-attributes-translation-doesnt-work/",
+      "file": "forum/ba80a71580e6768d.html",
+      "source_sha256": "7a462b07802befef93d75238292b66a7a8f4829588329cdf6b7307aa604fa535",
+      "captured_post_count": 2,
+      "category": "Frontend labels",
+      "report_summary": "French source attribute remains on translated frontend, reply links old issue without resolution.",
+      "review_status": "Current label hook inspected, original settings unknown",
+      "next_check": "Native stored label translation and frontend display require their own acceptance."
+    },
+    {
+      "id": "FORUM-362",
+      "url": "https://wordpress.org/support/topic/deactivate-attributes-translation/",
+      "file": "forum/e2849dae9a3e8d50.html",
+      "source_sha256": "12c84af2c9e2ec07460db4d25097ae5251760897aed98862509fa37ab53e8fa9",
+      "captured_post_count": 3,
+      "category": "Empty metadata selection",
+      "report_summary": "All attribute metadata boxes became checked again after native save, three users report issue.",
+      "review_status": "Current native all unchecked save and reload passes",
+      "next_check": "Stored empty string resolves to an empty array and none of the three attribute metadata keys remain active. Original options restored."
+    },
+    {
+      "id": "FORUM-365",
+      "url": "https://wordpress.org/support/topic/the-attributes-are-displayed-only-with-the-second-language/",
+      "file": "forum/031bafe670819516.html",
+      "source_sha256": "cd975ef898156f946091ed3e8ebaad2e07ca54c7a6a0130dc6df3a39f7bb1502",
+      "captured_post_count": 4,
+      "category": "Theme string override",
+      "report_summary": "Both category languages show English attribute label. Author identifies direct theme string translation and confirms removing it fixes display.",
+      "review_status": "Historical theme cause reported",
+      "next_check": "Do not change plugin label behavior based on that theme override."
+    },
+    {
+      "id": "FORUM-369",
+      "url": "https://wordpress.org/support/topic/cant-translate-attributes-manually/",
+      "file": "forum/6c67a2a6a05fa047.html",
+      "source_sha256": "74148b5f6ffe3cd9ca416975dae87dc03369b8020ad003c88c90b4cddf550a3f",
+      "captured_post_count": 7,
+      "category": "Attribute loss and locker",
+      "report_summary": "Several users report attribute loss, disabled settings not retained and translated variable becomes simple. Replies propose later fork fixes without author validation.",
+      "review_status": "Current empty settings and native variable Update pass, creation subcases open",
+      "next_check": "Native new translation, existing old products, missing terms and actual Wootique or Lingotek context remain explicit cases."
+    },
+    {
+      "id": "FORUM-382",
+      "url": "https://wordpress.org/support/topic/request-filter-sales-by-date-report-by-language/",
+      "file": "forum/346271c7f47f7aef.html",
+      "source_sha256": "abc8e71c5ccd1f8c617da2c4b2b98de5b7865db97b40b8749cb3610d14c21968",
+      "captured_post_count": 3,
+      "category": "Sales report feature",
+      "report_summary": "Author requests language filter for Sales by Date, maintainer says they will consider it.",
+      "review_status": "Optional report feature request",
+      "next_check": "No new report feature or changed financial query is authorized by the maintenance bug fixes."
+    },
+    {
+      "id": "FORUM-411",
+      "url": "https://wordpress.org/support/topic/filter-by-attributes-not-work/",
+      "file": "forum/2a977cb9919eaace.html",
+      "source_sha256": "16edb5ffe9bb6522c5fe06ba8051729f353dd35696792741fa58715dd878c6b3",
+      "captured_post_count": 6,
+      "category": "Layered navigation conflict",
+      "report_summary": "Layered filter failure and settings complaints, author ultimately identifies JP Widget Visibility causing failure even without integration.",
+      "review_status": "Historical external widget cause reported",
+      "next_check": "Current empty settings pass. Actual layered navigation and external widget runtime remain separate checks."
+    }
+  ]
+}

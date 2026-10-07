@@ -1,0 +1,56 @@
+{
+  "en": {
+    "path": "/woopoly-package-lab/shop/",
+    "search": "?return=shop&orderby=price",
+    "hash": "#shop",
+    "lang": "en-US",
+    "links": [
+      {
+        "language": "en-US",
+        "path": "/woopoly-package-lab/shop/",
+        "search": "?return=shop&orderby=price",
+        "hash": "#shop"
+      },
+      {
+        "language": "de-DE",
+        "path": "/woopoly-package-lab/de/shop-2/",
+        "search": "?return=shop&orderby=price",
+        "hash": "#shop"
+      }
+    ],
+    "archive": true
+  },
+  "de": {
+    "path": "/woopoly-package-lab/de/shop-2/",
+    "search": "?return=shop&orderby=price",
+    "hash": "#shop",
+    "lang": "de-DE",
+    "links": [
+      {
+        "language": "en-US",
+        "path": "/woopoly-package-lab/shop/",
+        "search": "?return=shop-2&orderby=price",
+        "hash": "#shop-2"
+      },
+      {
+        "language": "de-DE",
+        "path": "/woopoly-package-lab/de/shop-2/",
+        "search": "?return=shop-2&orderby=price",
+        "hash": "#shop-2"
+      }
+    ],
+    "products": 1,
+    "errors": []
+  },
+  "returned": {
+    "path": "/woopoly-package-lab/shop/",
+    "search": "?return=shop-2&orderby=price",
+    "hash": "#shop-2",
+    "lang": "en-US",
+    "products": 1,
+    "archive": true,
+    "errors": []
+  },
+  "fixture_note": "Native Polylang switcher with prior archive filter supplying the current shop slug in query and fragment. Marked linked products populated both archives.",
+  "no_purchase": true
+}

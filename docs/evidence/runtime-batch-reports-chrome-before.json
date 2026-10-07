@@ -1,0 +1,20 @@
+{
+  "rows": [
+    {
+      "product": "Runtime report de",
+      "count": "3"
+    },
+    {
+      "product": "Runtime report en",
+      "count": "2"
+    },
+    {
+      "product": "Runtime report de",
+      "count": "$30.00"
+    },
+    {
+      "product": "Runtime report en",
+      "count": "$20.00"
+    }
+  ]
+}

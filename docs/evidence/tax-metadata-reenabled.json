@@ -1,0 +1,15 @@
+{
+    "source": {
+        "id": 125,
+        "tax_status": "taxable",
+        "tax_class": "reduced-rate",
+        "price": "20"
+    },
+    "target": {
+        "id": 126,
+        "tax_status": "taxable",
+        "tax_class": "reduced-rate",
+        "price": "20"
+    },
+    "taxes_enabled": true
+}

@@ -1,0 +1,14 @@
+{
+    "class_sync": true,
+    "class_translatable": false,
+    "products": {
+        "en": {
+            "id": 45,
+            "class": 32
+        },
+        "de": {
+            "id": 46,
+            "class": 32
+        }
+    }
+}

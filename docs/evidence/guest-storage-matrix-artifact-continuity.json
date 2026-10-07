@@ -1,0 +1,7 @@
+{
+  "source_files_match_previous_manifest": 73,
+  "archive_sha256": "f298f32474244aedd1fdb8dc5710822a8de91f0c3812e88b2a3c01022fa1458a",
+  "production_source_changed": false,
+  "previous_full_suite": "gateway-batch-suite.txt",
+  "previous_plugin_check": "gateway-batch-plugin-check.json"
+}

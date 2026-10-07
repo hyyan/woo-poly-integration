@@ -1,0 +1,23 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m                                                                   1 / 1 (100%)
+
+Time: 00:00.536, Memory: 103.05 MB
+
+There was 1 failure:
+
+1) StoreApiCartLanguageTest::testNativeCartResponseTranslatesDisplayWithoutChangingCartIdentity
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Store API cart de'
++'Store API cart en'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StoreApiCartLanguageTest.php:82
+
+[37;41mFAILURES![0m
+[37;41mTests: 1[0m[37;41m, Assertions: 48[0m[37;41m, Failures: 1[0m[37;41m.[0m

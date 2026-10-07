@@ -1,0 +1,53 @@
+{
+  "package_files": 73,
+  "archive_sha256": "9aba61f4fc629c154d781ff6960609677db560abbbe4c5b89c64a8c3b77880ec",
+  "archive_hash_matches_manifest": true,
+  "source_matches_manifest": true,
+  "archive_files_match_manifest": true,
+  "installed_files_match_manifest": true,
+  "development_fixtures_excluded": true,
+  "php_files_linted": 61,
+  "variation_security_tests": 26,
+  "variation_security_assertions": 78,
+  "full_suite_tests": 312,
+  "full_suite_assertions": 1061,
+  "checker_findings": 230,
+  "checker_errors": 66,
+  "checker_warnings": 164,
+  "findings_have_dispositions": true,
+  "forum_topics_reviewed": 413,
+  "forum_topics_pending": 0,
+  "release_complete": false,
+  "remaining_gates": [
+    "Manual Plugins Team review and separately authorized publication"
+  ],
+  "evidence": [
+    "release-security-targeted.txt",
+    "release-security-installed-lint.txt",
+    "release-metadata-suite.txt",
+    "release-metadata-package-contents.json",
+    "release-metadata-installed-hashes.json",
+    "release-metadata-plugin-check.json"
+  ],
+  "external_integration_defects_in_scope": false,
+  "committed_source_matches_tested_manifest": true,
+  "source_commit": "4df5b1a",
+  "verified_fix_commits": [
+    "67271c0 fix: preserve translated checkout receipt endpoints",
+    "c66e470 fix: preserve translated cart state and validation",
+    "ae7bbea fix: restore caller language after translated emails",
+    "6b0d805 fix: retain product defaults and reload locale catalogs",
+    "8d6f920 fix: replace only complete translated shop path segments",
+    "3a83aa6 fix: resolve validated translated variation deletion sources",
+    "d4aa1ee fix: restore stock synchronization callbacks after errors",
+    "6dd38b2 fix: preserve independent product attributes during copies",
+    "28bbc81 fix: preserve variation copy and import synchronization",
+    "d28e504 fix: preserve native translated store notice controls",
+    "5c0a0ed fix: translate configured native tax rate labels",
+    "0f31724 fix: translate configured block and receipt payment titles",
+    "df3ece1 fix: preserve language filtered reports under HPOS",
+    "4df5b1a docs: update tested versions and maintenance changelogs"
+  ],
+  "local_code_maintenance_complete": true,
+  "directory_approval_claimed": false
+}

@@ -1,0 +1,33 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m..                                                                4 / 4 (100%)
+
+Time: 00:01.497, Memory: 101.05 MB
+
+There were 2 failures:
+
+1) BlockGatewayTranslationTest::testNativePaymentDataTranslatesConfiguredFieldsAndPreservesSettings@German cart with data ('de', 'cart')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Deutsch Gateway regression cheque title'
++'Gateway regression cheque title'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/BlockGatewayTranslationTest.php:55
+
+2) BlockGatewayTranslationTest::testNativePaymentDataTranslatesConfiguredFieldsAndPreservesSettings@German checkout with data ('de', 'checkout')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Deutsch Gateway regression cheque title'
++'Gateway regression cheque title'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/BlockGatewayTranslationTest.php:55
+
+[37;41mFAILURES![0m
+[37;41mTests: 4[0m[37;41m, Assertions: 34[0m[37;41m, Failures: 2[0m[37;41m.[0m

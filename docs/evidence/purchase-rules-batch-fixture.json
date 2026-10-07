@@ -1,0 +1,30 @@
+{
+    "parents": {
+        "en": 176,
+        "de": 179
+    },
+    "variations": {
+        "en": {
+            "small": 177,
+            "large": 178
+        },
+        "de": {
+            "small": 180,
+            "large": 181
+        }
+    },
+    "coupons": {
+        "batch-guest": 182,
+        "batch-excluded": 183,
+        "batch-expired": 184
+    },
+    "methods": {
+        "flat_rate": 8,
+        "local_pickup": 9
+    },
+    "urls": {
+        "en": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/guest-purchase-batch-en\/",
+        "de": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/guest-purchase-batch-de\/"
+    },
+    "checkout": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/checkout-2\/"
+}

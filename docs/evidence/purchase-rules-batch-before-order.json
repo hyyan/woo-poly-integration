@@ -1,0 +1,22 @@
+{
+    "orders": [],
+    "stocks": {
+        "en": {
+            "small": 20,
+            "large": 20
+        },
+        "de": {
+            "small": 20,
+            "large": 20
+        }
+    },
+    "coupon": {
+        "usage_count": 0,
+        "usage_limit": 1,
+        "item_limit": 1,
+        "product_ids": [
+            177,
+            180
+        ]
+    }
+}

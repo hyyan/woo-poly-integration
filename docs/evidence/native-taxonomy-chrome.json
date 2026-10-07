@@ -1,0 +1,87 @@
+{
+  "child_en": {
+    "language": "en-US",
+    "title": "Native taxonomy acceptance child en",
+    "products": [
+      "Native taxonomy acceptance product en"
+    ],
+    "languageLinks": []
+  },
+  "child_de": {
+    "language": "de-DE",
+    "path": "/woopoly-package-lab/de/product-category/wpi-native-taxonomy-parent-de/wpi-native-taxonomy-child-de/",
+    "title": "Native taxonomy acceptance child de",
+    "products": [
+      "Native taxonomy acceptance product de"
+    ],
+    "languageLinks": [
+      {
+        "text": "English",
+        "path": "/woopoly-package-lab/product-category/wpi-native-taxonomy-parent-en/wpi-native-taxonomy-child-en/"
+      },
+      {
+        "text": "Deutsch",
+        "path": "/woopoly-package-lab/de/product-category/wpi-native-taxonomy-parent-de/wpi-native-taxonomy-child-de/"
+      }
+    ]
+  },
+  "tag_de": {
+    "language": "de-DE",
+    "path": "/woopoly-package-lab/de/product-tag/wpi-native-taxonomy-tag-de/",
+    "title": "Native taxonomy acceptance tag de",
+    "products": [
+      "Native taxonomy acceptance product de"
+    ]
+  },
+  "parent_en": {
+    "language": "en-US",
+    "path": "/woopoly-package-lab/product-category/wpi-native-taxonomy-parent-en/",
+    "title": "Native taxonomy acceptance parent en",
+    "products": [],
+    "categories": [
+      "Native taxonomy acceptance child en (1)"
+    ],
+    "links": [
+      {
+        "path": "/woopoly-package-lab/product-category/wpi-native-taxonomy-parent-en/"
+      },
+      {
+        "path": "/woopoly-package-lab/de/product-category/wpi-native-taxonomy-parent-de/"
+      }
+    ]
+  },
+  "parent_de": {
+    "language": "de-DE",
+    "path": "/woopoly-package-lab/de/product-category/wpi-native-taxonomy-parent-de/",
+    "title": "Native taxonomy acceptance parent de",
+    "products": [],
+    "categories": [
+      "Native taxonomy acceptance child de (1)"
+    ],
+    "links": [
+      {
+        "path": "/woopoly-package-lab/product-category/wpi-native-taxonomy-parent-en/"
+      },
+      {
+        "path": "/woopoly-package-lab/de/product-category/wpi-native-taxonomy-parent-de/"
+      }
+    ]
+  },
+  "tag_en": {
+    "language": "en-US",
+    "path": "/woopoly-package-lab/product-tag/wpi-native-taxonomy-tag-en/",
+    "title": "Native taxonomy acceptance tag en",
+    "products": [
+      "Native taxonomy acceptance product en"
+    ],
+    "categories": [],
+    "links": [
+      {
+        "path": "/woopoly-package-lab/product-tag/wpi-native-taxonomy-tag-en/"
+      },
+      {
+        "path": "/woopoly-package-lab/de/product-tag/wpi-native-taxonomy-tag-de/"
+      }
+    ]
+  }
+}

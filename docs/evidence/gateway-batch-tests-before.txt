@@ -1,0 +1,47 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m..                                                                4 / 4 (100%)
+
+Time: 00:01.676, Memory: 101.05 MB
+
+There were 2 failures:
+
+1) BlockGatewayTranslationTest::testNativePaymentDataTranslatesConfiguredFieldsAndPreservesSettings@German cart with data ('de', 'cart')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    'title' => 'Deutsch Gateway regression cheque title',
+-    'description' => 'Deutsch Gateway regression cheque description',
++    'title' => 'Gateway regression cheque title',
++    'description' => 'Gateway regression cheque description',
+     'supports' => Array &1 [
+         0 => 'products',
+     ],
+ ]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/BlockGatewayTranslationTest.php:51
+
+2) BlockGatewayTranslationTest::testNativePaymentDataTranslatesConfiguredFieldsAndPreservesSettings@German checkout with data ('de', 'checkout')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    'title' => 'Deutsch Gateway regression cheque title',
+-    'description' => 'Deutsch Gateway regression cheque description',
++    'title' => 'Gateway regression cheque title',
++    'description' => 'Gateway regression cheque description',
+     'supports' => Array &1 [
+         0 => 'products',
+     ],
+ ]
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/BlockGatewayTranslationTest.php:51
+
+[37;41mFAILURES![0m
+[37;41mTests: 4[0m[37;41m, Assertions: 20[0m[37;41m, Failures: 2[0m[37;41m.[0m

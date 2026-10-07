@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "case": "shippingGermanBlock",
+      "path": "/woopoly-package-lab/de/cart-2/",
+      "cart": "Produkte im Warenkorb\nPRODUKT\t\nDETAILS\n\tGESAMTSUMME\n\n\t\nShipping acceptance de\n$19,95\n−\n+\n\t\n$19,95\nWARENKORB-SUMME\nGutscheine hinzufügen\nZwischensumme\n$19,95\nPaketversand\n$10,75\nVeranschlagte Gesamtsumme\n$30,70",
+      "errors": [],
+      "criticalError": false
+    },
+    {
+      "case": "shippingEnglishBlock",
+      "path": "/woopoly-package-lab/cart/",
+      "cart": "Products in cart\nPRODUCT\t\nDETAILS\n\tTOTAL\n\n\t\nShipping acceptance de\n$19,95\n−\n+\n\t\n$19,95\nCART TOTALS\nAdd coupons\nSubtotal\n$19,95\nPaketversand\n$10,75\nEstimated total\n$30,70",
+      "criticalError": false
+    },
+    {
+      "case": "shippingEnglishClassic",
+      "path": "/woopoly-package-lab/shipping-acceptance-cart-en/",
+      "product": "Shipping acceptance en",
+      "shippingLabel": "Package ground shipping: $10.75",
+      "total": "$30.70",
+      "criticalError": false
+    },
+    {
+      "case": "shippingGermanClassic",
+      "path": "/woopoly-package-lab/de/shipping-acceptance-cart-de/",
+      "product": "Shipping acceptance de",
+      "shippingLabel": "Paketversand: $10,75",
+      "total": "$30,70",
+      "criticalError": false
+    },
+    {
+      "case": "shippingEnglishClassicClearedUpdated",
+      "path": "/woopoly-package-lab/shipping-acceptance-cart-en/",
+      "quantity": "2",
+      "shippingLabel": "Package ground shipping: $7.50",
+      "total": "$47.40",
+      "criticalError": false
+    },
+    {
+      "case": "shippingEnglishClassicClearedFinal",
+      "path": "/woopoly-package-lab/shipping-acceptance-cart-en/",
+      "quantity": "1",
+      "shippingLabel": "Package ground shipping: $7.50",
+      "total": "$27.45",
+      "criticalError": false
+    },
+    {
+      "case": "shippingGermanClassicClearedFinal",
+      "path": "/woopoly-package-lab/de/shipping-acceptance-cart-de/",
+      "quantity": "1",
+      "shippingLabel": "Paketversand: $7,50",
+      "total": "$27,45",
+      "criticalError": false
+    }
+  ],
+  "scope": "Native editor class assignment and removal. Physical simple linked products. Germany flat rate 7.50 plus shared class surcharge 3.25. Actual classic and block cart UI. English block language continuity fails."
+}

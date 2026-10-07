@@ -1,0 +1,25 @@
+{
+  "cart": {
+    "path": "/woopoly-package-lab/fr/panier/",
+    "title": "Panier",
+    "content": "Panier\nYour cart is currently empty!\nNew in store",
+    "errors": []
+  },
+  "account": {
+    "path": "/woopoly-package-lab/fr/mon-compte/",
+    "title": "Mon compte",
+    "content": "Mon compte\nSe connecter\n\nIdentifiant ou e-mail *\nObligatoire\n\nMot de passe *\nObligatoire\n\n Se souvenir de moi\nSe connecter\n\nMot de passe perdu ?",
+    "errors": []
+  },
+  "shop": {
+    "path": "/woopoly-package-lab/fr/boutique/",
+    "title": "Boutique",
+    "errors": []
+  },
+  "checkout": {
+    "path": "/woopoly-package-lab/fr/panier/",
+    "title": "Panier",
+    "content": "Panier\nYour cart is currently empty!\nNew in store",
+    "errors": []
+  }
+}

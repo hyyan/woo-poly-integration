@@ -1,0 +1,12 @@
+{
+  "page": "Native Plugins admin",
+  "plugin": "woo-poly-integration/__init__.php",
+  "active": true,
+  "version": "1.5.1",
+  "dependencies": {
+    "polylang": "3.8.10",
+    "woocommerce": "11.1.2"
+  },
+  "visible_error_notices": [],
+  "initial_selector_correction": "Native row uses data-plugin rather than data-slug."
+}

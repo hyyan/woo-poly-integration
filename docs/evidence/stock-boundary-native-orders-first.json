@@ -1,0 +1,42 @@
+{
+    "orders": [
+        {
+            "id": 83,
+            "status": "on-hold",
+            "language": "de",
+            "total": "14.95",
+            "payment": "cheque",
+            "items": [
+                {
+                    "product": 79,
+                    "variation": 81,
+                    "quantity": 1
+                }
+            ]
+        }
+    ],
+    "stocks": {
+        "en": {
+            "Small": {
+                "stock": 7,
+                "status": "instock"
+            },
+            "Large": {
+                "stock": 0,
+                "status": "outofstock"
+            },
+            "parent_status": "instock"
+        },
+        "de": {
+            "Small": {
+                "stock": 7,
+                "status": "instock"
+            },
+            "Large": {
+                "stock": 0,
+                "status": "outofstock"
+            },
+            "parent_status": "instock"
+        }
+    }
+}

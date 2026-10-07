@@ -1,0 +1,65 @@
+{
+  "before_default": {
+    "language": "de-DE",
+    "selected": [
+      {
+        "name": "attribute_pa_wpi_creation_colour",
+        "value": "blau"
+      },
+      {
+        "name": "attribute_pa_wpi_creation_size",
+        "value": "klein"
+      }
+    ],
+    "variation": "140",
+    "price": "$12,00",
+    "enabled": true
+  },
+  "before_large": {
+    "variation": "141",
+    "price": "$14,00"
+  },
+  "before_red": {
+    "variation": "142",
+    "price": "$18,00"
+  },
+  "after_default": {
+    "language": "de-DE",
+    "variation": "140",
+    "price": "$12,00",
+    "colourOptions": [
+      {
+        "value": "",
+        "disabled": false
+      },
+      {
+        "value": "blau",
+        "disabled": false
+      }
+    ],
+    "selectValues": [
+      "blau",
+      "klein"
+    ]
+  },
+  "after_large": {
+    "variation": "141",
+    "price": "$14,00",
+    "enabled": true
+  },
+  "after_english": {
+    "language": "en-US",
+    "variation": "136",
+    "price": "$12.00",
+    "colourOptions": [
+      {
+        "value": "",
+        "disabled": false
+      },
+      {
+        "value": "blue",
+        "disabled": false
+      }
+    ]
+  }
+}

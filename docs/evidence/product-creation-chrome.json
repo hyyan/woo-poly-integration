@@ -1,0 +1,109 @@
+{
+  "en": {
+    "path": "/woopoly-package-lab/product/product-creation-acceptance-source/",
+    "language": "en-US",
+    "selectors": [
+      {
+        "name": "attribute_pa_wpi_creation_colour",
+        "selected": "blue"
+      },
+      {
+        "name": "attribute_pa_wpi_creation_size",
+        "selected": "small"
+      }
+    ],
+    "prices": [
+      12,
+      14,
+      18
+    ],
+    "selected": "104",
+    "price": "$12.00",
+    "errors": []
+  },
+  "de_default": {
+    "path": "/woopoly-package-lab/de/product/produkt-erstellung-akzeptiert/",
+    "language": "de-DE",
+    "title": "Produkt Erstellung akzeptiert",
+    "selectors": [
+      {
+        "name": "attribute_pa_wpi_creation_colour",
+        "selected": "blau",
+        "options": [
+          {
+            "value": "",
+            "label": "Option auswählen"
+          },
+          {
+            "value": "blau",
+            "label": "Blau"
+          }
+        ]
+      },
+      {
+        "name": "attribute_pa_wpi_creation_size",
+        "selected": "klein",
+        "options": [
+          {
+            "value": "",
+            "label": "Option auswählen"
+          },
+          {
+            "value": "gross",
+            "label": "Gross"
+          },
+          {
+            "value": "klein",
+            "label": "Klein"
+          }
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "id": 108,
+        "attributes": {
+          "attribute_pa_wpi_creation_colour": "blau",
+          "attribute_pa_wpi_creation_size": "klein"
+        },
+        "price": 12
+      },
+      {
+        "id": 109,
+        "attributes": {
+          "attribute_pa_wpi_creation_colour": "blau",
+          "attribute_pa_wpi_creation_size": "gross"
+        },
+        "price": 14
+      },
+      {
+        "id": 110,
+        "attributes": {
+          "attribute_pa_wpi_creation_colour": "red-de",
+          "attribute_pa_wpi_creation_size": "gross"
+        },
+        "price": 18
+      }
+    ],
+    "selected": "108",
+    "price": "$12,00"
+  },
+  "de_created_term_selection": {
+    "path": "/woopoly-package-lab/de/product/produkt-erstellung-akzeptiert/",
+    "language": "de-DE",
+    "colour": "red-de",
+    "size": "gross",
+    "variation": "110",
+    "price": "$18,00",
+    "enabled": true
+  },
+  "clear": {
+    "values": [
+      "",
+      ""
+    ],
+    "variation": "",
+    "disabled": true
+  },
+  "no_purchase": true
+}

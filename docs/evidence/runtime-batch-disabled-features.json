@@ -1,0 +1,25 @@
+{
+    "version": "1.5.1",
+    "features_exact": true,
+    "metas_exact": true,
+    "callbacks": {
+        "woocommerce_email_subject_customer_completed_order": [],
+        "woocommerce_product_set_stock": [],
+        "woocommerce_product_import_inserted_product_object": [],
+        "woocommerce_reports_get_order_report_data": [
+            {
+                "class": "Hyyan\\WPI\\Reports",
+                "method": "combineProductsByLanguage",
+                "priority": 10
+            }
+        ]
+    },
+    "stock": {
+        "en": 15,
+        "de": 15
+    },
+    "languages": [
+        "en",
+        "de"
+    ]
+}

@@ -1,0 +1,43 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m                                                                 3 / 3 (100%)
+
+Time: 00:00.007, Memory: 101.05 MB
+
+There were 3 failures:
+
+1) StoreNoticeTranslationTest::testTranslationPreservesNativeNoticeControls#0 with data ('Notice regression', 'Hinweis Pruefung')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'6037d0aa2fa514c7a8d75231dbc50cad'
++''
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StoreNoticeTranslationTest.php:31
+
+2) StoreNoticeTranslationTest::testTranslationPreservesNativeNoticeControls#1 with data ('Dismiss', 'Hinweis Schliessen')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'c8a59e7135a20b362f9c768b09454fdb'
++''
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StoreNoticeTranslationTest.php:31
+
+3) StoreNoticeTranslationTest::testTranslationPreservesNativeNoticeControls#2 with data ('<strong>Notice regression</strong>', '<strong onclick="alert(1)">Hi...cript>')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'25ef4aabaaec3e5a9d190df6fb5c23c3'
++''
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StoreNoticeTranslationTest.php:31
+
+[37;41mFAILURES![0m
+[37;41mTests: 3[0m[37;41m, Assertions: 6[0m[37;41m, Failures: 3[0m[37;41m.[0m

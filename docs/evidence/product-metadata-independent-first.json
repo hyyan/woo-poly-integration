@@ -1,0 +1,108 @@
+{
+    "en": {
+        "id": 115,
+        "language": "en",
+        "type": "variable",
+        "status": "publish",
+        "title": "Product creation acceptance source",
+        "description": "Source description remains independent.",
+        "defaults": {
+            "pa_wpi_creation_colour": "blue",
+            "pa_wpi_creation_size": "small"
+        },
+        "weight": "5",
+        "tax_class": "reduced-rate",
+        "children": [
+            {
+                "id": 117,
+                "source": 117,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blue",
+                    "pa_wpi_creation_size": "large"
+                },
+                "price": "13"
+            },
+            {
+                "id": 118,
+                "source": 118,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blue",
+                    "pa_wpi_creation_size": "small"
+                },
+                "price": "13"
+            },
+            {
+                "id": 119,
+                "source": 119,
+                "attributes": {
+                    "pa_wpi_creation_colour": "red",
+                    "pa_wpi_creation_size": "large"
+                },
+                "price": "13"
+            },
+            {
+                "id": 120,
+                "source": 120,
+                "attributes": {
+                    "pa_wpi_creation_colour": "red",
+                    "pa_wpi_creation_size": "small"
+                },
+                "price": "13"
+            }
+        ],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/product-creation-acceptance-source\/"
+    },
+    "de": {
+        "id": 116,
+        "language": "de",
+        "type": "variable",
+        "status": "publish",
+        "title": "Metadata acceptance German",
+        "description": "German independent description",
+        "defaults": {
+            "pa_wpi_creation_colour": "blau",
+            "pa_wpi_creation_size": "klein"
+        },
+        "weight": "5",
+        "tax_class": "reduced-rate",
+        "children": [
+            {
+                "id": 121,
+                "source": 117,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blau",
+                    "pa_wpi_creation_size": "gross"
+                },
+                "price": "17"
+            },
+            {
+                "id": 122,
+                "source": 118,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blau",
+                    "pa_wpi_creation_size": "klein"
+                },
+                "price": "17"
+            },
+            {
+                "id": 123,
+                "source": 119,
+                "attributes": {
+                    "pa_wpi_creation_colour": "red-de",
+                    "pa_wpi_creation_size": "gross"
+                },
+                "price": "17"
+            },
+            {
+                "id": 124,
+                "source": 120,
+                "attributes": {
+                    "pa_wpi_creation_colour": "red-de",
+                    "pa_wpi_creation_size": "klein"
+                },
+                "price": "17"
+            }
+        ],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/metadata-acceptance-german\/"
+    }
+}

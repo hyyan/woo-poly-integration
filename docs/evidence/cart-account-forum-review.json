@@ -1,0 +1,202 @@
+[
+  {
+    "id": "FORUM-045",
+    "url": "https://wordpress.org/support/topic/error-when-i-add-the-product-to-the-cart-2/",
+    "file": "forum/0c2180c3126d72f5.html",
+    "source_sha256": "6d100c86e80b8d5d047103b9e54309d23719f071229492897c004760babcaff4",
+    "review_status": "Historical call absent, integration pending",
+    "category": "Third party hooks",
+    "report_summary": "Facebook tracking failed because an old plugin call supplied only one redirect filter argument. A maintainer reply says the offending code would be removed.",
+    "next_check": "Current Cart.php has no invocation of woocommerce_add_to_cart_redirect. Exact Facebook tracking integration remains untested."
+  },
+  {
+    "id": "FORUM-058",
+    "url": "https://wordpress.org/support/topic/cart-product-image-iconic-product-configurator/",
+    "file": "forum/52ef8e6a8ccf9c72.html",
+    "source_sha256": "e98fee64c8da92196b36fa049c6ee33131d990c639602ae5a89e71c45b3c0aaa",
+    "review_status": "Pending commercial integration",
+    "category": "Third party images",
+    "report_summary": "Iconic Product Configurator layer images were replaced by featured images for translated cart products.",
+    "next_check": "Inspect the commercial plugin image contract if its source is supplied. Native featured image proof cannot establish configurator compatibility."
+  },
+  {
+    "id": "FORUM-100",
+    "url": "https://wordpress.org/support/topic/wc-3-6-1-cant-use-cart-template-for-another-lang/",
+    "file": "forum/c3b132bf6aa0b485.html",
+    "source_sha256": "ebbb77a175655c59c377357860d4ca2522b87e2b3bd831a58079cb6ee3a1d947",
+    "review_status": "Native current cart verified, historical setup pending",
+    "category": "Store page setup",
+    "report_summary": "Translated cart page was blank on WooCommerce 3.6.1. Reply describes version limitations but says the cart itself works.",
+    "next_check": "Current native block and classic checkout matrix passes. Exact historical theme and setup were not supplied."
+  },
+  {
+    "id": "FORUM-118",
+    "url": "https://wordpress.org/support/topic/shopping-cart-not-showing-in-other-language/",
+    "file": "forum/9b809dd4db978734.html",
+    "source_sha256": "06a091ff37804a9d6f988cb9e3ac11fcf09ca7b7e90c4ed8530963b490915a71",
+    "review_status": "Pending theme and page setup",
+    "category": "Store page setup",
+    "report_summary": "Translated cart showed only its title with GeneratePress and WP Menu Cart. Reporter asks whether the free menu plugin restriction causes it.",
+    "next_check": "Verify native linked page content first, then exact theme and menu integration if available. No confirmed causal diagnosis in the captured topic."
+  },
+  {
+    "id": "FORUM-144",
+    "url": "https://wordpress.org/support/topic/missing-argument-2-for-hyyanwpicarttranslatecartitempermalink/",
+    "file": "forum/90a2d1c53f7e4fee.html",
+    "source_sha256": "f3e887dc52dc0433278ad2aae9eca56e56e41001549af80ce31908022b2c121a",
+    "review_status": "Native contract retained, external caller pending",
+    "category": "Third party hooks",
+    "report_summary": "A missing cart permalink argument warning was attributed in replies to a theme or plugin invoking the filter with too few arguments.",
+    "next_check": "Current callback registers two arguments and expects cart item data. Exact offending caller is unidentified. No public signature change made."
+  },
+  {
+    "id": "FORUM-150",
+    "url": "https://wordpress.org/support/topic/cart-not-translating/",
+    "file": "forum/178baf83731133f3.html",
+    "source_sha256": "fdb07ad6c36c677f970108e501ba1431179e43db6f45b53dced5f8b19542e30f",
+    "review_status": "Pending locale and fragment acceptance",
+    "category": "Cart fragments",
+    "report_summary": "Portuguese cart stopped translating. Reply points to historical WooCommerce 3.3 AJAX compatibility tracking.",
+    "next_check": "Verify current native fragments and Portuguese catalogs. English and German purchases alone do not establish the exact configuration."
+  },
+  {
+    "id": "FORUM-151",
+    "url": "https://wordpress.org/support/topic/checkout-partly-in-other-language/",
+    "file": "forum/6cc3bbdd06e5e55d.html",
+    "source_sha256": "0fea57fa1ade0777606f624043802e5132b22e36a3b6dec941d90958230b8822",
+    "review_status": "Pending locale and fragment acceptance",
+    "category": "Cart fragments",
+    "report_summary": "English checkout displayed French products, shipping and payment content below the order heading. Reply links historical AJAX compatibility tracking.",
+    "next_check": "Verify native French checkout fragments, shipping and payment settings. Current simple bilingual purchases cover a narrower scenario."
+  },
+  {
+    "id": "FORUM-155",
+    "url": "https://wordpress.org/support/topic/cart-page-partially-translated/",
+    "file": "forum/841bfeffa8714f29.html",
+    "source_sha256": "8bcf51eda8784c2df583d4847165a32a096ee3c20ed6fd1ec86a4d061b7c572e",
+    "review_status": "Reporter confirmed configuration resolution",
+    "category": "Translation catalogs",
+    "report_summary": "Cart labels were untranslated. Replies identify WooCommerce catalogs and theme translations. Reporter confirms both caused the issue and that it was solved.",
+    "next_check": "No code defect demonstrated by this report. Complete current catalog and theme acceptance remains a separate gate."
+  },
+  {
+    "id": "FORUM-182",
+    "url": "https://wordpress.org/support/topic/wrong-product-language-in-woocommerce-cart-2/",
+    "file": "forum/c47a503cd7a335a1.html",
+    "source_sha256": "9958afb233d003875753a5897c20b4cca9aee418a41dbde58a3a871cdd9a5778",
+    "review_status": "Historical release resolution, variable fragments pending",
+    "category": "Cart fragments",
+    "report_summary": "Variable product titles reverted to German in mini cart and checkout while the full English cart was correct. Replies state release 1.0.4 resolved it.",
+    "next_check": "Verify current variable cart, mini cart and checkout fragments with German as default language. Preserve the historical resolution without claiming current full acceptance."
+  },
+  {
+    "id": "FORUM-183",
+    "url": "https://wordpress.org/support/topic/woocommerce-cart-and-checkout-preview-problem/",
+    "file": "forum/fe99458b69659bd3.html",
+    "source_sha256": "82d4bcbbb10cffb5eb221288142f15ad9443181f1b02f0202fcf61a7ed60c49c",
+    "review_status": "Pending locale and fragment acceptance",
+    "category": "Cart fragments",
+    "report_summary": "WooCommerce 3.2.1 replaced translated Italian mini cart and checkout fragments with the original language.",
+    "next_check": "Verify current native fragment replacement and catalog loading. Captured reply recommends an older release and does not demonstrate a fix."
+  },
+  {
+    "id": "FORUM-187",
+    "url": "https://wordpress.org/support/topic/checkout-page-in-english-german-and-spanish-not-working-for-spanish/",
+    "file": "forum/ed94f2086873b584.html",
+    "source_sha256": "de220bf1d9451fa3bf59db5f6bcda9f9825d25687df8a978002c62a1bdccb6b8",
+    "review_status": "Historical closure, Spanish catalog pending",
+    "category": "Translation catalogs",
+    "report_summary": "English and German checkout worked but Spanish did not. A reply later says the Spanish checkout appeared to work and closes the topic.",
+    "next_check": "Current Spanish checkout and catalog coverage remain unverified. Historical closure is not current acceptance."
+  },
+  {
+    "id": "FORUM-235",
+    "url": "https://wordpress.org/support/topic/my-account-order-list-only-in-current-language-fix-did-not-help/",
+    "file": "forum/64554b84fd9ec0cc.html",
+    "source_sha256": "683868f00cde6e6a1dce607efe76dce88d3bb6d391819e0c7ee1634082ac73c2",
+    "review_status": "Current native order visibility verified",
+    "category": "Account order visibility",
+    "report_summary": "Language restricted order history persisted while testing a WooCommerce 2.7 beta and a copied Order.php. Replies distinguish the corrected commit and later release.",
+    "next_check": "Native current account lists show both marked language orders in both language pages under legacy and HPOS without synchronization. Older supported stacks and exact beta configuration remain untested."
+  },
+  {
+    "id": "FORUM-246",
+    "url": "https://wordpress.org/support/topic/my-account-order-list-only-in-current-language/",
+    "file": "forum/78e27c78a7833985.html",
+    "source_sha256": "7ec4a51124fdfd2a854c06008d09e7dc6704c01167c875a1290c95e33a7f68fb",
+    "review_status": "Current native order visibility verified",
+    "category": "Account order visibility",
+    "report_summary": "WooCommerce order querying ignored the added language argument so account history showed only one language. Replies describe a later release correction.",
+    "next_check": "Inspected current legacy query adaptation. Four native Chrome cases show both language orders with legacy and HPOS without synchronization. Older stacks remain a separate gate."
+  },
+  {
+    "id": "FORUM-265",
+    "url": "https://wordpress.org/support/topic/cart-is-not-translated-2/",
+    "file": "forum/ea4930581b3a2000.html",
+    "source_sha256": "670e39bbaeb4f05e36543290abb4486bcec23b61121acfb4ef57850b1c42968e",
+    "review_status": "Pending Latvian catalog acceptance",
+    "category": "Translation catalogs",
+    "report_summary": "Latvian cart remained untranslated despite a linked page and shortcode. Replies discuss installed and complete WooCommerce language files.",
+    "next_check": "Verify installed Latvian catalogs and exact theme strings. Captured topic does not prove a plugin defect or a resolution."
+  },
+  {
+    "id": "FORUM-270",
+    "url": "https://wordpress.org/support/topic/cart-senteces-some-translation-problem/",
+    "file": "forum/8fd451d9c9d0f6e3.html",
+    "source_sha256": "f1a774b4ed85921c40f7f278299cae492f660a53be4ff592266a5a3b67c0e52a",
+    "review_status": "Configurable string contract explained",
+    "category": "Payment setting strings",
+    "report_summary": "Cash on delivery title and instructions remained untranslated. Replies explain that gateway settings are database strings translated through Polylang rather than static catalogs.",
+    "next_check": "Verify native payment title and instructions with actual Polylang setting translations. Do not replace the established stored string contract."
+  },
+  {
+    "id": "FORUM-289",
+    "url": "https://wordpress.org/support/topic/translation-error-on-page-shopping-cart/",
+    "file": "forum/ab8457ad48190cbd.html",
+    "source_sha256": "f25515fab7f3c05e5c1ebcc8467f46935be176ea7904b993f3c955b948c993fe",
+    "review_status": "Reporter confirmed dependency update resolution",
+    "category": "Translation catalogs",
+    "report_summary": "Cart and account labels stopped translating after an update. Reporter says a Polylang update resolved the problem.",
+    "next_check": "No present code defect demonstrated. Current catalog coverage remains a separate acceptance gate."
+  },
+  {
+    "id": "FORUM-313",
+    "url": "https://wordpress.org/support/topic/cart-and-checkout-pages-in-two-different-languages/",
+    "file": "forum/5c581d73cd0e9534.html",
+    "source_sha256": "c4357c443a4b6f3ed84725c46dcacd927cd1684a7dd8cac8f0d597976b68d595",
+    "review_status": "Pending three language page routing",
+    "category": "Store page setup",
+    "report_summary": "Cart always selected traditional Chinese while checkout selected English in a three language site. No diagnosis or resolution is present.",
+    "next_check": "Verify linked source pages and three language routes, including simplified and traditional Chinese catalogs."
+  },
+  {
+    "id": "FORUM-319",
+    "url": "https://wordpress.org/support/topic/shoping-cart-drowdown-not-translated/",
+    "file": "forum/ebfbfb0db282a0b3.html",
+    "source_sha256": "3376adc151a0d850c0bc4c0fb777ce4e94911997ed765cc6bd747debfc1c8fb4",
+    "review_status": "Pending theme fragment integration",
+    "category": "Cart fragments",
+    "report_summary": "Customizr mini cart text and buttons stayed in the source language while clicking its cart icon reached the translated page.",
+    "next_check": "Native Storefront proof does not establish Customizr template or cache behavior. Verify exact theme fragment integration if available."
+  },
+  {
+    "id": "FORUM-344",
+    "url": "https://wordpress.org/support/topic/shopping-cart-button-text-translation-jumps/",
+    "file": "forum/aa6019d77af5fad2.html",
+    "source_sha256": "f7da0be54b74c0cee17344b4b39fa99885a6972dab18b601f5ce6e14b8f5abcb",
+    "review_status": "Pending theme fragment integration",
+    "category": "Cart fragments",
+    "report_summary": "Cart label briefly translated before reverting to Dutch in English and German views. No reply establishes the cause.",
+    "next_check": "Verify native fragment replacement with Dutch default language and distinguish theme supplied labels from WooCommerce catalogs."
+  },
+  {
+    "id": "FORUM-353",
+    "url": "https://wordpress.org/support/topic/clicking-add-to-cart-does-not-add-products-to-the-cart-in-second-language/",
+    "file": "forum/fd993a109f5ecc5a.html",
+    "source_sha256": "41f0f0164d24a2d0f01c0e1d2f6c343a743eca3e50dddb7689186b45a1b13828",
+    "review_status": "Pending Swedish add to cart reproduction",
+    "category": "Cart language continuity",
+    "report_summary": "Add to cart stopped working only on the Swedish site. The topic lacks versions, request details and a diagnosis.",
+    "next_check": "Current native English and German purchases pass. Verify Swedish page and product relationships and native request behavior before classifying a defect."
+  }
+]

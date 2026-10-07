@@ -1,0 +1,95 @@
+{
+  "purchaseCategoryExclude": {
+    "couponPanel": "Gutscheine hinzufügen\nCode eingeben\nAnwenden\n\nDer Gutschein „purchase-category-exclude“ ist leider nicht auf die ausgewählten Produkte anwendbar.",
+    "errors": [
+      "Der Gutschein „purchase-category-exclude“ ist leider nicht auf die ausgewählten Produkte anwendbar."
+    ],
+    "total": "Gesamtsumme\n$65,50",
+    "discount": "Rabatt\n-$10,00\npurchase-category-include\nGutschein: purchase-category-include"
+  },
+  "purchaseCategoryInclude": {
+    "sidebar": "WARENKORB-SUMME\nGutscheine hinzufügen\nZwischensumme\n$50,00\nRabatt\n-$10,00\npurchase-category-include\nGutschein: purchase-category-include\nVeranschlagte Gesamtsumme\n$40,00\n\nVersand wird an der Kasse berechnet",
+    "discount": "Rabatt\n-$10,00\npurchase-category-include\nGutschein: purchase-category-include",
+    "errors": []
+  },
+  "purchasePackagesInitial": {
+    "shipping": [
+      "Sendung 1\nGuest purchase batch de - small\nGuest purchase batch de - small (1 Einheit)\nPaket Boden\n$10,75\nPaket Abholung\n$2,50\nSendung 2\nGuest purchase batch de - large\nGuest purchase batch de - large (1 Einheit)\nPaket Boden\n$14,75\nPaket Abholung\n$2,50"
+    ],
+    "totals": "1\n1 Artikel\nGuest purchase batch de\n$20,00\nsize: small\nGesamtpreis für 1 Guest purchase batch de Artikel: $20,00\n$20,00\n1\n1 Artikel\nGuest purchase batch de\n$30,00\nsize: large\nGesamtpreis für 1 Guest purchase batch de Artikel: $30,00\n$30,00\nGutscheine hinzufügen\nZwischensumme\n$50,00\nRabatt\n-$10,00\npurchase-category-include\nGutschein: purchase-category-include\nLieferung\n$25,50\nPaket Boden\nGesamtsumme\n$65,50",
+    "radios": [
+      {
+        "id": "radio-control-0-flat_rate:8",
+        "value": "flat_rate:8",
+        "checked": true
+      },
+      {
+        "id": "radio-control-0-local_pickup:9",
+        "value": "local_pickup:9",
+        "checked": false
+      },
+      {
+        "id": "radio-control-1-flat_rate:8",
+        "value": "flat_rate:8",
+        "checked": true
+      },
+      {
+        "id": "radio-control-1-local_pickup:9",
+        "value": "local_pickup:9",
+        "checked": false
+      },
+      {
+        "id": "radio-control-wc-payment-method-options-cheque",
+        "value": "cheque",
+        "checked": true
+      }
+    ],
+    "errors": []
+  },
+  "purchasePackagesMixed": {
+    "total": "Gesamtsumme\n$53,25",
+    "shipping": [
+      "Sendung 1\nGuest purchase batch de - small\nGuest purchase batch de - small (1 Einheit)\nPaket Boden\n$10,75\nPaket Abholung\n$2,50\nSendung 2\nGuest purchase batch de - large\nGuest purchase batch de - large (1 Einheit)\nPaket Boden\n$14,75\nPaket Abholung\n$2,50"
+    ],
+    "selected": [
+      "radio-control-0-flat_rate:8",
+      "radio-control-1-local_pickup:9"
+    ]
+  },
+  "purchaseRulesReceipt": {
+    "path": "/woopoly-package-lab/de/checkout-2/order-received/189/",
+    "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+    "rows": [
+      "Zwischensumme:\t50,00$",
+      "Rabatt:\t-10,00$",
+      "Versand:\t25,50$ via Paket Boden, Paket Boden",
+      "Gesamt:\t65,50$",
+      "Zahlungsart:\tCheck payments"
+    ],
+    "errors": []
+  },
+  "purchaseRulesDownload": {
+    "path": "/woopoly-package-lab/de/checkout-2/order-received/189/",
+    "downloadTable": "Downloads\nProdukt\tVerbleibende Downloads\tLäuft ab\tDownload\nGuest purchase batch de - large\t∞\tNie\tPurchase rules file",
+    "validStatus": 200,
+    "contentMatches": true,
+    "bytes": 34,
+    "invalidKeyStatus": 404,
+    "invalidKeyCannotReadFile": true
+  },
+  "purchaseRulesEnglishCart": {
+    "path": "/woopoly-package-lab/cart/",
+    "discount": "Discount\n-$10.00\npurchase-category-include\nCoupon: purchase-category-include",
+    "total": "Estimated total\n$65.50",
+    "errors": []
+  },
+  "purchaseRulesEnglishCheckout": {
+    "path": "/woopoly-package-lab/checkout/",
+    "shipping": [
+      "Shipment 1\nGuest purchase batch en - small\nGuest purchase batch en - small (1 unit)\nBatch ground\n$10.75\nBatch pickup\n$2.50\nShipment 2\nGuest purchase batch en - large\nGuest purchase batch en - large (1 unit)\nBatch ground\n$14.75\nBatch pickup\n$2.50"
+    ],
+    "total": "Total\n$65.50",
+    "discount": "Discount\n-$10.00\npurchase-category-include\nCoupon: purchase-category-include",
+    "errors": []
+  }
+}

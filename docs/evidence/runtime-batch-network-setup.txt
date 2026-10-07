@@ -1,0 +1,11 @@
+Created single site database tables.
+Set up multisite database tables.
+Added multisite constants to 'wp-config.php'.
+Deprecated: Using null as an array offset is deprecated, use an empty string instead in phar:///usr/local/bin/wp/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 95
+Success: Network installed. Don't forget to set up rewrite rules (and a .htaccess file, if using Apache).
+Plugin 'woocommerce' network activated.
+Plugin 'polylang' network activated.
+Deprecated: Using null as an array offset is deprecated, use an empty string instead in phar:///usr/local/bin/wp/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 95
+Success: Network activated 2 of 2 plugins.
+Success: Site 2 created: http://localhost:8098/woopoly-network-lab/secondary/
+Deprecated: Using null as an array offset is deprecated, use an empty string instead in phar:///usr/local/bin/wp/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 95

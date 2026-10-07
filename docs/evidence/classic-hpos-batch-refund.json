@@ -1,0 +1,28 @@
+{
+    "refunds": [
+        {
+            "id": 174,
+            "parent": 172,
+            "amount": "17.50",
+            "items": [
+                {
+                    "product": 162,
+                    "variation": 163,
+                    "quantity": -1,
+                    "total": "-17.5"
+                }
+            ]
+        }
+    ],
+    "stocks": {
+        "en": {
+            "small": 17,
+            "large": 20
+        },
+        "de": {
+            "small": 17,
+            "large": 20
+        }
+    },
+    "hpos": true
+}

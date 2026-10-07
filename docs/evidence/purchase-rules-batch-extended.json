@@ -1,0 +1,35 @@
+{
+    "parents": {
+        "en": 176,
+        "de": 179
+    },
+    "variations": {
+        "en": {
+            "small": 177,
+            "large": 178
+        },
+        "de": {
+            "small": 180,
+            "large": 181
+        }
+    },
+    "categories": {
+        "parent": {
+            "en": 150,
+            "de": 152
+        },
+        "child": {
+            "en": 155,
+            "de": 157
+        }
+    },
+    "override_class": 159,
+    "coupons": {
+        "include": "purchase-category-include",
+        "exclude": "purchase-category-exclude"
+    },
+    "urls": {
+        "en": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/guest-purchase-batch-en\/",
+        "de": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/guest-purchase-batch-de\/"
+    }
+}

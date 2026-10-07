@@ -1,0 +1,20 @@
+{
+    "fixture_removed": true,
+    "observations_removed": true,
+    "owned_orders_removed": [
+        true,
+        true,
+        true,
+        true,
+        true
+    ],
+    "owned_users_removed": [
+        true,
+        true,
+        true
+    ],
+    "owned_folder_removed": true,
+    "approved_directory_removed": true,
+    "directory_enforcement": "enabled",
+    "observer_removed": true
+}

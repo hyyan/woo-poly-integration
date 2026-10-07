@@ -1,0 +1,64 @@
+{
+    "sends": [
+        {
+            "type": "customer_processing_order",
+            "locale": "en_US",
+            "language": "de"
+        },
+        {
+            "type": "new_order",
+            "locale": "en_US",
+            "language": "de"
+        },
+        {
+            "type": "cancelled_order",
+            "locale": "en_US",
+            "language": "de"
+        },
+        {
+            "type": "failed_order",
+            "locale": "en_US",
+            "language": "de"
+        },
+        {
+            "type": "customer_processing_order",
+            "locale": "en_US",
+            "language": "de"
+        },
+        {
+            "type": "new_order",
+            "locale": "en_US",
+            "language": "en"
+        }
+    ],
+    "after": {
+        "WC_Email_Customer_Processing_Order": [
+            "en_US",
+            false
+        ],
+        "WC_Email_New_Order": [
+            "en_US",
+            false
+        ],
+        "WC_Email_Cancelled_Order": [
+            "en_US",
+            false
+        ],
+        "WC_Email_Failed_Order": [
+            "en_US",
+            false
+        ]
+    },
+    "nested_outer_restored": [
+        "en_US",
+        "de"
+    ],
+    "nested_caller_restored": [
+        "en_US",
+        false
+    ],
+    "baseline": [
+        "en_US",
+        false
+    ]
+}

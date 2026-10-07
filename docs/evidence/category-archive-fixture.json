@@ -1,0 +1,34 @@
+{
+    "terms": {
+        "en": {
+            "parent": 56,
+            "child": 58
+        },
+        "de": {
+            "parent": 60,
+            "child": 63
+        }
+    },
+    "products": [
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+    ],
+    "editor_pair": {
+        "en": 69,
+        "de": 70
+    },
+    "urls": {
+        "en": {
+            "parent": "http:\/\/localhost:8098\/woopoly-package-lab\/product-category\/archive-acceptance-parent-en\/",
+            "child": "http:\/\/localhost:8098\/woopoly-package-lab\/product-category\/archive-acceptance-parent-en\/archive-acceptance-child-en\/"
+        },
+        "de": {
+            "parent": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product-category\/archive-acceptance-parent-de\/",
+            "child": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product-category\/archive-acceptance-parent-de\/archive-acceptance-child-de\/"
+        }
+    }
+}

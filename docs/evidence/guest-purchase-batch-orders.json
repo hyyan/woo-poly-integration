@@ -1,0 +1,81 @@
+{
+    "orders": [
+        {
+            "id": 157,
+            "customer": 0,
+            "language": "de",
+            "status": "on-hold",
+            "discount": "5",
+            "shipping": "10.75",
+            "total": "45.75",
+            "payment": "cheque",
+            "coupons": [
+                "batch-guest"
+            ],
+            "items": [
+                {
+                    "product": 151,
+                    "variation": 152,
+                    "quantity": 2,
+                    "subtotal": "40",
+                    "total": "35"
+                }
+            ],
+            "shipping_items": [
+                {
+                    "method": "flat_rate",
+                    "instance": "4",
+                    "label": "Paket Boden",
+                    "total": "10.75"
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "customer": 0,
+            "language": "en",
+            "status": "on-hold",
+            "discount": "0",
+            "shipping": "2.5",
+            "total": "42.50",
+            "payment": "cheque",
+            "coupons": [],
+            "items": [
+                {
+                    "product": 148,
+                    "variation": 149,
+                    "quantity": 2,
+                    "subtotal": "40",
+                    "total": "40"
+                }
+            ],
+            "shipping_items": [
+                {
+                    "method": "local_pickup",
+                    "instance": "5",
+                    "label": "Batch pickup",
+                    "total": "2.50"
+                }
+            ]
+        }
+    ],
+    "stocks": {
+        "en": {
+            "small": 16,
+            "large": 20
+        },
+        "de": {
+            "small": 16,
+            "large": 20
+        }
+    },
+    "coupon": {
+        "usage_count": 1,
+        "usage_limit": 1,
+        "item_limit": 1,
+        "product_ids": [
+            149,
+            152
+        ]
+    }
+}

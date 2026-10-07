@@ -1,0 +1,3 @@
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/language-catalog-batch-setup.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/language-catalog-batch-observer.php
+No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/language-catalog-batch-cleanup.php

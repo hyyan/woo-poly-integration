@@ -1,0 +1,5 @@
+{
+    "german_woocommerce_catalog_loaded": true,
+    "new_shop_subject_translation_exists": true,
+    "new_shop_subject_catalog_value": "[{site_title}]: Du hast eine neue Bestellung: Nr.\u00a0{order_number}"
+}

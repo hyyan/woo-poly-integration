@@ -1,0 +1,16 @@
+{
+    "storage": "yes",
+    "synchronization": "no",
+    "orders": [
+        {
+            "id": 43,
+            "language": "en",
+            "data_store": "Automattic\\WooCommerce\\Internal\\DataStores\\Orders\\OrdersTableDataStore"
+        },
+        {
+            "id": 44,
+            "language": "de",
+            "data_store": "Automattic\\WooCommerce\\Internal\\DataStores\\Orders\\OrdersTableDataStore"
+        }
+    ]
+}

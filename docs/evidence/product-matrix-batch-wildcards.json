@@ -1,0 +1,29 @@
+{
+    "en": {
+        "id": 297,
+        "attributes": {
+            "pa_matrix-colour": "",
+            "pa_matrix-size": "matrix-large-en",
+            "pa_matrix-finish": "matrix-gloss-en"
+        },
+        "price": "20"
+    },
+    "de": {
+        "id": 322,
+        "attributes": {
+            "pa_matrix-colour": "",
+            "pa_matrix-size": "matrix-gross-de",
+            "pa_matrix-finish": "matrix-glanz-de"
+        },
+        "price": "20"
+    },
+    "es": {
+        "id": 347,
+        "attributes": {
+            "pa_matrix-colour": "",
+            "pa_matrix-size": "matrix-grande-es",
+            "pa_matrix-finish": "matrix-brillo-es"
+        },
+        "price": "20"
+    }
+}

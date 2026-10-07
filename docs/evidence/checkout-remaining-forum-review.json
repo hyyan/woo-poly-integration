@@ -1,0 +1,262 @@
+{
+  "counts": {
+    "captured_pages": 423,
+    "unique_topics": 413,
+    "reviewed_pages": 101,
+    "pending_pages": 322,
+    "reviewed_topics": 99,
+    "pending_topics": 314
+  },
+  "reviews": [
+    {
+      "id": "FORUM-120",
+      "url": "https://wordpress.org/support/topic/dissable-payment-gateway-for-second-language-2/",
+      "file": "forum/69773df9bef574f2.html",
+      "source_sha256": "1b18e98760ea5eccbc75fef84901206436ac10163aa4958fee883e2f3b5cd9da",
+      "review_status": "Feature request, no demonstrated defect",
+      "category": "Gateway availability",
+      "report_summary": "Request to disable cash on delivery only in a second language. Replies discuss country or currency based availability.",
+      "next_check": "No existing plugin language restriction contract is demonstrated. Preserve configured WooCommerce availability without adding an unsolicited feature."
+    },
+    {
+      "id": "FORUM-122",
+      "url": "https://wordpress.org/support/topic/payment-method-16/",
+      "file": "forum/3a50de1d41de22f3.html",
+      "source_sha256": "e35ade25eb6cef1edf09d474dc2f13f914a0f5dded60b4e82c4e4a86bcea764b",
+      "review_status": "Pending unnamed gateway integration",
+      "category": "External gateways",
+      "report_summary": "An unnamed Israeli credit card gateway accepts Hebrew or English language parameters and advertises WPML support.",
+      "next_check": "Exact gateway identity and source are missing. Native stored order language does not establish external hosted payment form language."
+    },
+    {
+      "id": "FORUM-135",
+      "url": "https://wordpress.org/support/topic/wrong-shipping-costs-calculated-on-primary-language-website/",
+      "file": "forum/8a5ebb83aca4743c.html",
+      "source_sha256": "25a2ae6377e7065e0ec98775cd34c3e6ebd33cee63b82c58a30946ee585ebeae",
+      "review_status": "Pending native shipping calculation matrix",
+      "category": "Shipping rates",
+      "report_summary": "Shipping doubled in the primary language. Replies suggest class consistency and isolating theme or shipping integrations.",
+      "next_check": "Verify native flat rate and class charges in both languages. No reproduced calculation defect or confirmed external cause in the captured topic."
+    },
+    {
+      "id": "FORUM-152",
+      "url": "https://wordpress.org/support/topic/in-variable-products-additional-product-price-isnt-adding-in-cart-2/",
+      "file": "forum/cb53ead833d52ac8.html",
+      "source_sha256": "8c83d85f64061613c9098175255245abfcb0fdf48c10a6796035de8c8e724ec2",
+      "review_status": "Pending product addon integration",
+      "category": "Third party product prices",
+      "report_summary": "Product Addons accessory prices disappear from variable cart display when integration is active.",
+      "next_check": "Current Cart.php replaces the displayed translated product and exposes CART_SWITCHED_ITEM. Exact addon integration and dynamic price retention remain unverified."
+    },
+    {
+      "id": "FORUM-166",
+      "url": "https://wordpress.org/support/topic/shipping-class-6/",
+      "file": "forum/910a8bd1d6eb7f5c.html",
+      "source_sha256": "13f9181946af3a0f994f0e05695f0ab164f8b15a27ee79c65b3c9964c31f6f53",
+      "review_status": "Shared class contract inspected, native editing pending",
+      "category": "Shipping classes",
+      "report_summary": "Linking translated products removed the shipping class. Replies recommend disabling shipping class taxonomy translation while retaining synchronization.",
+      "next_check": "Current Meta::copyTerms copies the existing shipping class slug when synchronization is enabled. Old syncShippingClass body is commented out. Native create and edit proof remains pending."
+    },
+    {
+      "id": "FORUM-169",
+      "url": "https://wordpress.org/support/topic/menu-order-19/",
+      "file": "forum/22b7890586a02953.html",
+      "source_sha256": "2c0383d94ae2f8bfd40fd24cb2fa625da3521e10e91a56c5c3587aee896a2276",
+      "review_status": "Historical creation limitation, native workflow pending",
+      "category": "Product creation and ordering",
+      "report_summary": "Duplicate and language plus workflows differed in copied menu order and variable attributes. Replies describe menu order updating after translation as a workaround.",
+      "next_check": "Current import synchronization tests cover menu_order but do not prove native plus or duplicate UI creation. Verify both workflow contracts before claiming a fix."
+    },
+    {
+      "id": "FORUM-172",
+      "url": "https://wordpress.org/support/topic/associating-shipping-classes-between-languages/",
+      "file": "forum/081beac12188aea4.html",
+      "source_sha256": "f073814a59220cac94b7640420c6d887dcc51dd5c6237415d1bf2e316b06dc55",
+      "review_status": "Shared class contract inspected, linking feature request",
+      "category": "Shipping classes",
+      "report_summary": "Reporter created separate language classes and asked to link them. Replies distinguish translated shipping methods from class synchronization and describe a feature request.",
+      "next_check": "Current class synchronization copies a shared slug. No new language specific class linking feature is introduced. Verify native class assignment and synchronization."
+    },
+    {
+      "id": "FORUM-243",
+      "url": "https://wordpress.org/support/topic/translation-for-shipping-table-rate-not-shipping-class/",
+      "file": "forum/35ee6f830f8bdf38.html",
+      "source_sha256": "db0c3f2f90fb9c9f6156362111026a96ef742f31aa0b05cea30b59f9e6392712",
+      "review_status": "Reporter confirmed native flat rate workaround",
+      "category": "External shipping methods",
+      "report_summary": "Third party table rate option labels were not translatable. Reporter switched to multiple native flat rates and confirmed those translated.",
+      "next_check": "Verify current native flat rate title registration and rendering. Exact table rate plugin remains unavailable and unverified."
+    },
+    {
+      "id": "FORUM-253",
+      "url": "https://wordpress.org/support/topic/add-to-basket-links-to-wrong-language/",
+      "file": "forum/8732ff5149f3de2a.html",
+      "source_sha256": "6f262d05725fdd9cc0660bdd4d546af06fd2ffc3f7fa13fa73fb544338a529f2",
+      "review_status": "Mixed historical routing cases, exact configurations pending",
+      "category": "Cart language continuity",
+      "report_summary": "Adding a product redirected to the source cart. Replies include unsupported content based URLs, missing rewrite rules and a later development version confirmation.",
+      "next_check": "Current native English and German purchases pass. Preserve unsupported content based URL limitation and distinguish separate reporters. Dutch and Spanish exact add to cart configurations remain pending."
+    },
+    {
+      "id": "FORUM-273",
+      "url": "https://wordpress.org/support/topic/error-on-ordertranslateproductnameinordersdetails/",
+      "file": "forum/5598aa8bf11d31e8.html",
+      "source_sha256": "55843af754f157d082fe0eeb50b88ea2067a5d4f8d9be422c975c52caf545cb0",
+      "review_status": "Historical callbacks replaced, disabled endpoint guard present",
+      "category": "Order details and endpoints",
+      "report_summary": "Old order name callback required a missing visibility argument. A secondary report exposed strpos with a disabled empty endpoint. Replies confirm both manual fixes.",
+      "next_check": "Current Order uses translateProductsInOrdersDetails with one required product argument. Current Endpoints guards empty values before strpos. Native empty endpoint configuration and email rendering remain separate acceptance checks."
+    },
+    {
+      "id": "FORUM-275",
+      "url": "https://wordpress.org/support/topic/cart-only-showing-lowest-variable-product-price/",
+      "file": "forum/a6e0790cf78e27d6.html",
+      "source_sha256": "62eaf6b27d9c0ef4c3e0c87c54f9bd859dc32600dfb6967e48fb4941ff3b7799",
+      "review_status": "Current selected custom variation price and totals verified, translated repeated add corrected",
+      "category": "Variable cart prices",
+      "report_summary": "Variable cart displayed the lowest price while totals were correct. Removing the translation filter hid the symptom but stopped language switching.",
+      "next_check": "Native English and German custom Large selection retains 14.95 unit price in classic and block carts. Linked add merges to one line and stock boundary rejects overflow. Exact historical stacks, global attributes, parent managed stock, guest purchase and external addons remain unproved. Evidence: variable-cart prefixes."
+    },
+    {
+      "id": "FORUM-290",
+      "url": "https://wordpress.org/support/topic/shipping-class-does-not-synchronize-between-products/",
+      "file": "forum/4d893b5dcf03c2c2.html",
+      "source_sha256": "d8d76cb00e5c98bebcf6960005ecfaffe08001c4943fe99e7ada8ba06877d49f",
+      "review_status": "Historical master claim, native synchronization pending",
+      "category": "Shipping classes",
+      "report_summary": "Shipping class did not copy across three language products. Reply says master should resolve it without proof from the reporter.",
+      "next_check": "Current shared class synchronization source inspected. Native three language edit and creation acceptance remains pending."
+    },
+    {
+      "id": "FORUM-312",
+      "url": "https://wordpress.org/support/topic/woocommerce-currency-switcher-1/",
+      "file": "forum/ddadbc2adf838670.html",
+      "source_sha256": "a666bd1d5da00e548de6a0a58280bda5d45827e066859426cb450a6d7916c4af",
+      "review_status": "Pending third party widget translation",
+      "category": "Third party currency widgets",
+      "report_summary": "Currency Switcher widget title remained English despite a Spanish string translation. Reply refers to another widget topic.",
+      "next_check": "Exact third party widget contract is not inspected or installed. Native number formatting proof does not cover widget titles."
+    },
+    {
+      "id": "FORUM-342",
+      "url": "https://wordpress.org/support/topic/shipping-classes-not-syncing/",
+      "file": "forum/fa39812188345f15.html",
+      "source_sha256": "815e0facfc7cda197b23a5e4f2af1aa91c0728beab96c76ccc8fdcd9743cb465",
+      "review_status": "Pending native class synchronization matrix",
+      "category": "Shipping classes",
+      "report_summary": "Classes remained unsynchronized although class translation was disabled and synchronization enabled. No reply establishes a resolution.",
+      "next_check": "Reproduce native edit and creation with the shared class taxonomy. Verify enabled and disabled synchronization without inferring a cause from the title."
+    },
+    {
+      "id": "FORUM-359",
+      "url": "https://wordpress.org/support/topic/restock-not-working-when-order-cancelled/",
+      "file": "forum/32f6603c18ee9ccd.html",
+      "source_sha256": "d73560beda55bf47e88d3fca35fc5c4a4b91d196589fb5cad68b0c4ffbf0b016",
+      "review_status": "Pending external cancellation restock",
+      "category": "Third party stock",
+      "report_summary": "Auto Restore Stock cancellation did not synchronize translated products. No diagnosis is present.",
+      "next_check": "Native purchase and manual refund pass but do not establish third party cancellation behavior. Inspect the named restock integration before classifying a defect."
+    },
+    {
+      "id": "FORUM-375",
+      "url": "https://wordpress.org/support/topic/deactivate-the-cartcheckout-etc-translation/",
+      "file": "forum/e7e9ea2e64577442.html",
+      "source_sha256": "e0de7a9000d0ddc948fdd619240ee405f6b77451e5ded624175a067bc1e08dcf",
+      "review_status": "Feature request, translation behavior intentional",
+      "category": "Cart language continuity",
+      "report_summary": "Request to disable cart language switching because translated products represent different objects or prices.",
+      "next_check": "Current Cart explicitly switches to linked product translations. Preserve this established behavior. Do not silently disable it to resolve unrelated price symptoms."
+    },
+    {
+      "id": "FORUM-380",
+      "url": "https://wordpress.org/support/topic/order-of-products-on-page-with-shortcode-doesnt-work/",
+      "file": "forum/0026e9373ed207fe.html",
+      "source_sha256": "ee4e3247c3284776ae092cea4c81d7e344f4b14b04e02a25e63521ce9f3b094a",
+      "review_status": "Reporter workaround, catalog filtering pending",
+      "category": "Catalog ordering",
+      "report_summary": "Shop showed products from both languages and category shortcodes did not respect desired price ordering. Reporter says a custom shortcode worked.",
+      "next_check": "Native archive language filtering and shortcode ordering remain distinct acceptance cases. The previously observed linked related product also remains unclassified."
+    },
+    {
+      "id": "FORUM-381",
+      "url": "https://wordpress.org/support/topic/pre-existing-orders-incorrectly-visible-after-activation-of-plugin/",
+      "file": "forum/912f47d7e4c89984.html",
+      "source_sha256": "b7893f419103afbce78db05df97bb64b42d87de7ca01c2cb21821925f7ecda0a",
+      "review_status": "Pending activation and existing order migration",
+      "category": "Existing order visibility",
+      "report_summary": "Orders from before activation displayed inconsistent admin counts and columns. Reporter isolated old Polylang order data and removed it as a workaround.",
+      "next_check": "Verify activation and admin listing with existing completed, cancelled and refunded orders. Newly marked account order visibility proof does not cover migration."
+    },
+    {
+      "id": "FORUM-385",
+      "url": "https://wordpress.org/support/topic/add-to-cart-became-add-to-basket-paypal-description-and-shipping-method-names/",
+      "file": "forum/1d87661f32dc4131.html",
+      "source_sha256": "dc8191544ec31a1a742a40e151c8ea512825e8be69bb68a7a3780ce0134f42b4",
+      "review_status": "Pending French catalog and setting translation",
+      "category": "Shipping and gateway labels",
+      "report_summary": "English add to cart became add to basket while French PayPal description and shipping name remained untranslated.",
+      "next_check": "Distinguish WooCommerce English locale catalog wording from stored method or gateway settings. Current strings registration exists but full French native rendering remains unverified."
+    },
+    {
+      "id": "FORUM-388",
+      "url": "https://wordpress.org/support/topic/little-bug-in-the-order-list/",
+      "file": "forum/c73248a44f7c8332.html",
+      "source_sha256": "8a29559c7602dffba810087a25e430fe372878e2cf35f448f1b9cc6c61ca750c",
+      "review_status": "Historical HTML name callback replaced",
+      "category": "Order details",
+      "report_summary": "Order list product names contained unwanted markup. A reply removes an anchor from the old name callback.",
+      "next_check": "Current Order translates product objects instead of constructing the old name anchor. Exact native admin and email display still require acceptance."
+    },
+    {
+      "id": "FORUM-393",
+      "url": "https://wordpress.org/support/topic/translating-shipping-options-and-payment-options/",
+      "file": "forum/0eb836d355cd5588.html",
+      "source_sha256": "1fe0f652454d7683fc2956d0e4503398d78aab90b8d9d732b8958d88a9c6f2b1",
+      "review_status": "Current translation paths inspected, native matrix pending",
+      "category": "Shipping and gateway labels",
+      "report_summary": "First page discusses missing shipping or payment label and instruction translation, checkout language changes and PayPal propagation. Replies propose translation hooks.",
+      "next_check": "Current Shipping registers and translates titles. Gateways registers title, description and instructions, with three offline instruction adapters. Verify current native rates, checkout, receipts and email separately."
+    },
+    {
+      "id": "FORUM-394",
+      "url": "https://wordpress.org/support/topic/translating-shipping-options-and-payment-options/page/2/",
+      "file": "forum/764f911fe4f25b13.html",
+      "source_sha256": "92830da89fb1b299679994ef795ba3f9f7a8fd9f734307f20f4516f25b062155",
+      "review_status": "Same topic continuation, catalog case remains pending",
+      "category": "Shipping and gateway labels",
+      "report_summary": "Second page reports fork fixes for gateway instructions and shipping zones, with reporter confirmations. Later Arabic generic shipping label remains unresolved by a supported native contract.",
+      "next_check": "Same topic as FORUM-393. Preserve historical confirmations and separate the Arabic catalog label report. Do not adopt core file edits as a maintenance fix."
+    },
+    {
+      "id": "FORUM-395",
+      "url": "https://wordpress.org/support/topic/translating-shipping-options-and-payment-options/page/3/",
+      "file": "forum/be9b7084813eb094.html",
+      "source_sha256": "25e9e1f3656ce17b41336a060df16e4395b6ea393d30fbb94313a038168fee80",
+      "review_status": "Same topic final continuation",
+      "category": "Shipping and gateway labels",
+      "report_summary": "Final page asks for a screenshot of the Arabic shipping label after the reporter changed files manually.",
+      "next_check": "Same topic as FORUM-393 and FORUM-394. No additional independent defect or verified current resolution is demonstrated."
+    },
+    {
+      "id": "FORUM-399",
+      "url": "https://wordpress.org/support/topic/variable-product-price-on-cart-page-is-wrong/",
+      "file": "forum/50ad93ad44871856.html",
+      "source_sha256": "9d763b75efda7923e442d2c387042986c2e414c828cae795f2f5f2d939bce967",
+      "review_status": "Current selected custom variation price and totals verified, translated repeated add corrected",
+      "category": "Variable cart prices",
+      "report_summary": "Selected packing variation cart prices were wrong while cart totals were correct. Removing translation hooks hid prices but another reporter lost second language add to cart.",
+      "next_check": "Native English and German custom Large selection retains 14.95 unit price in classic and block carts. Linked add merges to one line and stock boundary rejects overflow. Exact historical stacks, global attributes, parent managed stock, guest purchase and external addons remain unproved. Evidence: variable-cart prefixes."
+    },
+    {
+      "id": "FORUM-419",
+      "url": "https://wordpress.org/support/topic/unable-to-open-order-details-after-20-upgrade/",
+      "file": "forum/8afa468a18d7ada0.html",
+      "source_sha256": "8fb5408f02834c4ea2f50168ec73e547c1bc9ddcff040310016397f808252dfb",
+      "review_status": "Reporter confirmed historical release resolution",
+      "category": "Email locale bootstrap",
+      "report_summary": "Order details failed because WP_Locale was not found. Replies say release 0.24 corrected it and reporter confirms it works.",
+      "next_check": "Current locale construction uses the global WP_Locale class in Utilities. Full email language and older stack acceptance remain separate gates."
+    }
+  ]
+}

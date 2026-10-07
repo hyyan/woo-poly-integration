@@ -1,0 +1,14 @@
+{
+    "attribute": 8,
+    "taxonomy": "pa_navigation-batch",
+    "unassigned": 203,
+    "unassigned_language": false,
+    "products": {
+        "en": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/navigation-product-en\/",
+        "de": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/navigation-product-de\/"
+    },
+    "shop": [
+        "http:\/\/localhost:8098\/woopoly-package-lab\/shop\/",
+        "http:\/\/localhost:8098\/woopoly-package-lab\/de\/shop-2\/"
+    ]
+}

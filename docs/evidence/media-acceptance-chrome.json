@@ -1,0 +1,50 @@
+{
+  "gallery": {
+    "images": [
+      {
+        "file": "wpi-media-one.png",
+        "loaded": true
+      },
+      {
+        "file": "wpi-media-one.png",
+        "loaded": true
+      },
+      {
+        "file": "wpi-media-three.png",
+        "loaded": true
+      },
+      {
+        "file": "wpi-media-two.png",
+        "loaded": true
+      }
+    ]
+  },
+  "translated_gallery": {
+    "images": [
+      {
+        "alt": "German gallery acceptance image",
+        "file": "wpi-media-two.png",
+        "loaded": true
+      },
+      {
+        "alt": "",
+        "file": "wpi-media-two.png",
+        "loaded": true
+      }
+    ]
+  },
+  "translated_featured": {
+    "images": [
+      {
+        "alt": "German gallery acceptance image",
+        "file": "wpi-media-two.png",
+        "loaded": true
+      },
+      {
+        "alt": "",
+        "file": "wpi-media-two.png",
+        "loaded": true
+      }
+    ]
+  }
+}

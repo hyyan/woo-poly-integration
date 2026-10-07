@@ -1,0 +1,13 @@
+{
+  "simple_translation_published": true,
+  "native_conversion_both_variable": true,
+  "four_children_each": true,
+  "translated_children_linked": true,
+  "enabled_prices_copied": true,
+  "hidden_both": true,
+  "visible_both": true,
+  "independent_prices_preserved_after_source_update": true,
+  "independent_descriptions": true,
+  "native_storefront_prices": true,
+  "exact_settings_restored": true
+}

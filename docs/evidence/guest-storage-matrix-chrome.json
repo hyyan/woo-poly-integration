@@ -1,0 +1,266 @@
+[
+  {
+    "mode": "block-sync",
+    "language": "de",
+    "checkout": {
+      "path": "/woopoly-package-lab/de/checkout-2/",
+      "total": "Gesamtsumme\n$30,75",
+      "shipping": "Paket Boden\n$10,75\nPaket Abholung\n$2,50",
+      "payment": "Zahlungsoptionen\nZahlungsoptionen\nPruefung Scheck\nPruefung Scheckbeschreibung",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/de/checkout-2/order-received/203/",
+      "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+      "rows": [
+        "Zwischensumme:\t20,00$",
+        "Versand:\t10,75$ via Paket Boden",
+        "Gesamt:\t30,75$",
+        "Zahlungsart:\tPruefung Scheck"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "block-sync",
+    "language": "en",
+    "checkout": {
+      "path": "/woopoly-package-lab/checkout/",
+      "total": "Total\n$30.75",
+      "shipping": "Batch ground\n$10.75\nBatch pickup\n$2.50",
+      "payment": "Payment options\nPayment options\nBatch cheque\nBatch cheque description",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/checkout/order-received/204/",
+      "received": "Thank you. Your order has been received.",
+      "rows": [
+        "Subtotal:\t$20.00",
+        "Shipping:\t$10.75 via Batch ground",
+        "Total:\t$30.75",
+        "Payment method:\tBatch cheque"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "block-nosync",
+    "language": "de",
+    "checkout": {
+      "path": "/woopoly-package-lab/de/checkout-2/",
+      "total": "Gesamtsumme\n$30,75",
+      "shipping": "Paket Boden\n$10,75\nPaket Abholung\n$2,50",
+      "payment": "Zahlungsoptionen\nZahlungsoptionen\nPruefung Scheck\nPruefung Scheckbeschreibung",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/de/checkout-2/order-received/205/",
+      "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+      "rows": [
+        "Zwischensumme:\t20,00$",
+        "Versand:\t10,75$ via Paket Boden",
+        "Gesamt:\t30,75$",
+        "Zahlungsart:\tPruefung Scheck"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "block-nosync",
+    "language": "en",
+    "checkout": {
+      "path": "/woopoly-package-lab/checkout/",
+      "total": "Total\n$30.75",
+      "shipping": "Batch ground\n$10.75\nBatch pickup\n$2.50",
+      "payment": "Payment options\nPayment options\nBatch cheque\nBatch cheque description",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/checkout/order-received/206/",
+      "received": "Thank you. Your order has been received.",
+      "rows": [
+        "Subtotal:\t$20.00",
+        "Shipping:\t$10.75 via Batch ground",
+        "Total:\t$30.75",
+        "Payment method:\tBatch cheque"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "classic-nosync",
+    "language": "de",
+    "checkout": {
+      "path": "/woopoly-package-lab/de/classic-hpos-checkout-de/",
+      "total": "Gesamtsumme\t$30,75",
+      "shipping": "Paket Boden: $10,75\nPaket Abholung: $2,50",
+      "payment": " Pruefung Scheck\n\nPruefung Scheckbeschreibung\n\nZahlungspflichtig bestellen",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/de/classic-hpos-checkout-de/order-received/207/",
+      "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+      "rows": [
+        "Zwischensumme:\t20,00$",
+        "Versand:\t10,75$ via Paket Boden",
+        "Gesamt:\t30,75$",
+        "Zahlungsart:\tPruefung Scheck"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "classic-nosync",
+    "language": "en",
+    "checkout": {
+      "path": "/woopoly-package-lab/classic-hpos-checkout-en/",
+      "total": "Total\t$30.75",
+      "shipping": "Batch ground: $10.75\nBatch pickup: $2.50",
+      "payment": " Batch cheque\n\nBatch cheque description\n\nPlace order",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/classic-hpos-checkout-en/order-received/208/",
+      "received": "Thank you. Your order has been received.",
+      "rows": [
+        "Subtotal:\t$20.00",
+        "Shipping:\t$10.75 via Batch ground",
+        "Total:\t$30.75",
+        "Payment method:\tBatch cheque"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "classic-sync",
+    "language": "de",
+    "checkout": {
+      "path": "/woopoly-package-lab/de/classic-hpos-checkout-de/",
+      "total": "Gesamtsumme\t$30,75",
+      "shipping": "Paket Boden: $10,75\nPaket Abholung: $2,50",
+      "payment": " Pruefung Scheck\n\nPruefung Scheckbeschreibung\n\nZahlungspflichtig bestellen",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/de/classic-hpos-checkout-de/order-received/209/",
+      "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+      "rows": [
+        "Zwischensumme:\t20,00$",
+        "Versand:\t10,75$ via Paket Boden",
+        "Gesamt:\t30,75$",
+        "Zahlungsart:\tPruefung Scheck"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "classic-sync",
+    "language": "en",
+    "checkout": {
+      "path": "/woopoly-package-lab/classic-hpos-checkout-en/",
+      "total": "Total\t$30.75",
+      "shipping": "Batch ground: $10.75\nBatch pickup: $2.50",
+      "payment": " Batch cheque\n\nBatch cheque description\n\nPlace order",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/classic-hpos-checkout-en/order-received/210/",
+      "received": "Thank you. Your order has been received.",
+      "rows": [
+        "Subtotal:\t$20.00",
+        "Shipping:\t$10.75 via Batch ground",
+        "Total:\t$30.75",
+        "Payment method:\tBatch cheque"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "block-cpt",
+    "language": "de",
+    "checkout": {
+      "path": "/woopoly-package-lab/de/checkout-2/",
+      "total": "Gesamtsumme\n$30,75",
+      "shipping": "Paket Boden\n$10,75\nPaket Abholung\n$2,50",
+      "payment": "Zahlungsoptionen\nZahlungsoptionen\nPruefung Scheck\nPruefung Scheckbeschreibung",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/de/checkout-2/order-received/211/",
+      "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+      "rows": [
+        "Zwischensumme:\t20,00$",
+        "Versand:\t10,75$ via Paket Boden",
+        "Gesamt:\t30,75$",
+        "Zahlungsart:\tPruefung Scheck"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "block-cpt",
+    "language": "en",
+    "checkout": {
+      "path": "/woopoly-package-lab/checkout/",
+      "total": "Total\n$30.75",
+      "shipping": "Batch ground\n$10.75\nBatch pickup\n$2.50",
+      "payment": "Payment options\nPayment options\nBatch cheque\nBatch cheque description",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/checkout/order-received/212/",
+      "received": "Thank you. Your order has been received.",
+      "rows": [
+        "Subtotal:\t$20.00",
+        "Shipping:\t$10.75 via Batch ground",
+        "Total:\t$30.75",
+        "Payment method:\tBatch cheque"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "classic-cpt",
+    "language": "de",
+    "checkout": {
+      "path": "/woopoly-package-lab/de/classic-hpos-checkout-de/",
+      "total": "Gesamtsumme\t$30,75",
+      "shipping": "Paket Boden: $10,75\nPaket Abholung: $2,50",
+      "payment": " Pruefung Scheck\n\nPruefung Scheckbeschreibung\n\nZahlungspflichtig bestellen",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/de/classic-hpos-checkout-de/order-received/213/",
+      "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+      "rows": [
+        "Zwischensumme:\t20,00$",
+        "Versand:\t10,75$ via Paket Boden",
+        "Gesamt:\t30,75$",
+        "Zahlungsart:\tPruefung Scheck"
+      ],
+      "errors": []
+    }
+  },
+  {
+    "mode": "classic-cpt",
+    "language": "en",
+    "checkout": {
+      "path": "/woopoly-package-lab/classic-hpos-checkout-en/",
+      "total": "Total\t$30.75",
+      "shipping": "Batch ground: $10.75\nBatch pickup: $2.50",
+      "payment": " Batch cheque\n\nBatch cheque description\n\nPlace order",
+      "errors": []
+    },
+    "receipt": {
+      "path": "/woopoly-package-lab/classic-hpos-checkout-en/order-received/214/",
+      "received": "Thank you. Your order has been received.",
+      "rows": [
+        "Subtotal:\t$20.00",
+        "Shipping:\t$10.75 via Batch ground",
+        "Total:\t$30.75",
+        "Payment method:\tBatch cheque"
+      ],
+      "errors": []
+    }
+  }
+]

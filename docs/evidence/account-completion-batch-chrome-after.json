@@ -1,0 +1,90 @@
+{
+  "de_registration": {
+    "path": "/woopoly-package-lab/de/my-account-2/",
+    "authenticated": true,
+    "errors": []
+  },
+  "en_registration": {
+    "path": "/woopoly-package-lab/my-account/",
+    "authenticated": true,
+    "errors": []
+  },
+  "de_download_checkout": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/",
+    "total": "Gesamtsumme\t$0,00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "en_download_checkout": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/",
+    "total": "Total\t$0.00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "de_download_receipt": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/order-received/236/",
+    "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+    "rows": [
+      "Zwischensumme:\t0,00$",
+      "Gesamt:\t0,00$"
+    ],
+    "downloadCount": 1,
+    "errors": []
+  },
+  "en_download_receipt": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/order-received/237/",
+    "received": "Thank you. Your order has been received.",
+    "rows": [
+      "Subtotal:\t$0.00",
+      "Total:\t$0.00"
+    ],
+    "downloadCount": 1,
+    "errors": []
+  },
+  "de_service_checkout": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/",
+    "total": "Gesamtsumme\t$0,00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "en_service_checkout": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/",
+    "total": "Total\t$0.00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "de_service_receipt": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/order-received/238/",
+    "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+    "rows": [
+      "Zwischensumme:\t0,00$",
+      "Gesamt:\t0,00$"
+    ],
+    "downloadCount": 0,
+    "errors": []
+  },
+  "en_service_receipt": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/order-received/239/",
+    "received": "Thank you. Your order has been received.",
+    "rows": [
+      "Subtotal:\t$0.00",
+      "Total:\t$0.00"
+    ],
+    "downloadCount": 0,
+    "errors": []
+  },
+  "de_reset": {
+    "path": "/woopoly-package-lab/de/my-account-2/passwort-vergessen/",
+    "messages": [
+      "Es wurde eine E-Mail zum Zurücksetzen des Passworts versandt."
+    ],
+    "errors": []
+  },
+  "en_reset": {
+    "path": "/woopoly-package-lab/my-account/lost-password/",
+    "messages": [
+      "Password reset email has been sent."
+    ],
+    "errors": []
+  }
+}

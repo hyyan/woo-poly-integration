@@ -1,0 +1,58 @@
+{
+    "en": {
+        "id": 19,
+        "type": "variable",
+        "weight": "2",
+        "description": "Older source independent description",
+        "defaults": {
+            "size": "small"
+        },
+        "children": [
+            {
+                "id": 20,
+                "source": 20,
+                "attributes": {
+                    "size": "small"
+                },
+                "price": "12"
+            },
+            {
+                "id": 21,
+                "source": 21,
+                "attributes": {
+                    "size": "large"
+                },
+                "price": "14"
+            }
+        ],
+        "url": "http:\/\/localhost:8099\/?product=older-product-acceptance-source&lang=en"
+    },
+    "de": {
+        "id": 22,
+        "type": "variable",
+        "weight": "2",
+        "description": "Older source independent description",
+        "defaults": {
+            "size": "small"
+        },
+        "children": [
+            {
+                "id": 23,
+                "source": 20,
+                "attributes": {
+                    "size": "small"
+                },
+                "price": "12"
+            },
+            {
+                "id": 24,
+                "source": 21,
+                "attributes": {
+                    "size": "large"
+                },
+                "price": "14"
+            }
+        ],
+        "url": "http:\/\/localhost:8099\/?product=older-frontend-acceptance-german&lang=de"
+    }
+}

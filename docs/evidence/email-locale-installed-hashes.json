@@ -1,0 +1,294 @@
+[
+  {
+    "path": "woo-poly-integration/CHANGELOG.md",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/LICENSE",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/__init__.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/index.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/languages/woo-poly-integration-ar.mo",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/languages/woo-poly-integration-ar.po",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/languages/woo-poly-integration-es_ES.mo",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/languages/woo-poly-integration-es_ES.po",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/languages/woo-poly-integration.pot",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/public/js/Cart.js",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/public/js/Cart.min.js",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/public/js/Variables.js",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/public/js/Variables.min.js",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/readme.txt",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Admin/AbstractSettings.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Admin/Features.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Admin/MetasList.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Admin/Settings.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Admin/SettingsInterface.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Admin/StatusReport.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Ajax.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Autoloader.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Breadcrumb.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Cart.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Coupon.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Emails.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Endpoints.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayBACS.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayCOD.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayCheque.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Gateways.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/HooksInterface.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Language.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/LocaleNumbers.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Login.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Media.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/MessagesInterface.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Order.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Pages.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Permalinks.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Plugin.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Privacy.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Product/Duplicator.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Product/Meta.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Product/Product.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Product/Stock.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Product/Variable.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Product/Variation.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Reports.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Shipping.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Tax.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Attributes.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Categories.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/ShippingCalss.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Tags.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Taxonomies.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/TaxonomiesInterface.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Tools/FlashMessages.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Tools/TranslationsDownloader.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Utilities.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/about.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/getHelp.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/main.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/support.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/Messages/activateError.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/Messages/support.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/admin.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/badges.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Views/social.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Widgets/LayeredNav.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/src/Hyyan/WPI/Widgets/SearchWidget.php",
+    "matches": true
+  },
+  {
+    "path": "woo-poly-integration/vendor/class.settings-api.php",
+    "matches": true
+  }
+]

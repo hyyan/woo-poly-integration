@@ -1,0 +1,4 @@
+There are 4 orders to be synced.
+Sync completed.
+Success: 4 orders were synced in 0 seconds.
+Deprecated: Using null as an array offset is deprecated, use an empty string instead in phar:///usr/local/bin/wp/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 95

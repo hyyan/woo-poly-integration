@@ -1,0 +1,9 @@
+{
+    "filesystem": "WP_Filesystem_Direct",
+    "http": 200,
+    "bytes": 1514184,
+    "upload_error": false,
+    "written": true,
+    "file_exists": true,
+    "unzip": true
+}

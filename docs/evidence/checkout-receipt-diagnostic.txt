@@ -1,0 +1,57 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+{"5":["purchase-complete","kauf-abgeschlossen"]}
+[41;37mF[0m{"5":["purchase-complete","kauf-abgeschlossen"]}
+[41;37mF[0m{"5":["purchase-complete","kauf-abgeschlossen"]}
+[41;37mF[0m{"5":["purchase-complete","kauf-abgeschlossen"]}
+[41;37mF[0m                                                                4 / 4 (100%)
+
+Time: 00:00.021, Memory: 103.05 MB
+
+There were 4 failures:
+
+1) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#0 with data ('/%postname%/', 'https://example.test/de/checkout/', 'https://example.test/de/check...n/123/')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'kauf-abgeschlossen'
++'purchase-complete'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:84
+
+2) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#1 with data ('/%postname%', 'https://example.test/de/checkout/', 'https://example.test/de/check...en/123')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'kauf-abgeschlossen'
++'purchase-complete'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:84
+
+3) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#2 with data ('/%postname%/', 'https://example.test/de/check...%26two', 'https://example.test/de/check...%26two')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'kauf-abgeschlossen'
++'purchase-complete'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:84
+
+4) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#3 with data ('', 'https://example.test/?page_id...ang=de', 'https://example.test/?page_id...en=123')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'kauf-abgeschlossen'
++'purchase-complete'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:84
+
+[37;41mFAILURES![0m
+[37;41mTests: 4[0m[37;41m, Assertions: 8[0m[37;41m, Failures: 4[0m[37;41m.[0m

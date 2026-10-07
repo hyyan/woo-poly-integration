@@ -1,0 +1,167 @@
+{
+  "counts": {
+    "captured_pages": 423,
+    "unique_topics": 413,
+    "reviewed_pages": 141,
+    "reviewed_topics": 139,
+    "pending_pages": 282,
+    "pending_topics": 274
+  },
+  "reviewed_post_count": 54,
+  "reviews": [
+    {
+      "id": "FORUM-064",
+      "url": "https://wordpress.org/support/topic/stock-sync-2/",
+      "file": "forum/fa719801b1a25e06.html",
+      "source_sha256": "cdb04aeed407e4d0fb57b71e36994463d96d89549fc236e5237884a0096b1f7c",
+      "captured_post_count": 2,
+      "category": "Shared stock contract",
+      "report_summary": "Report expected separate inventories after translation. Replies describe shared stock and optional synchronization settings.",
+      "review_status": "Current shared inventory verified",
+      "next_check": "Disabled stock synchronization and retained metadata require separate verification."
+    },
+    {
+      "id": "FORUM-091",
+      "url": "https://wordpress.org/support/topic/problems-with-variations-stock/",
+      "file": "forum/2305c66ab4d24a3e.html",
+      "source_sha256": "6eb9c1d7706d828532914487e49574a54b92cd3b13e43ac4f4ad33774622d195",
+      "captured_post_count": 9,
+      "category": "Variation stock and prices",
+      "report_summary": "Nondefault zero stock reportedly did not synchronize. A replacement file fixed stock for the author but they also reported a price update problem.",
+      "review_status": "Current zero stock and sibling availability verified",
+      "next_check": "Native price editing follow up remains open."
+    },
+    {
+      "id": "FORUM-096",
+      "url": "https://wordpress.org/support/topic/woocommerce-stock-synchronization-issue/",
+      "file": "forum/fa90c1764a09b5c3.html",
+      "source_sha256": "f0200919858f26e611ec7a969c91b6bbd1eed85fea953260ffeb6653a9142391",
+      "captured_post_count": 4,
+      "category": "Purchase deduction",
+      "report_summary": "English and French purchases reportedly deducted incorrect quantities. Replies reference an old fix without author verification.",
+      "review_status": "Current bilingual native variation purchases verified",
+      "next_check": "Exact French settings and older stack remain unverified."
+    },
+    {
+      "id": "FORUM-106",
+      "url": "https://wordpress.org/support/topic/variable-products-stock-managing-problem-2/",
+      "file": "forum/f22eddf79a9b1fe3.html",
+      "source_sha256": "aec14e9664b37bc8847133cab7bf9b4490cbb20fdd903818348e538b86747670",
+      "captured_post_count": 2,
+      "category": "Parent inventory",
+      "report_summary": "Parent managed product with fourteen variations reportedly deducted two units per purchase. No isolated resolution.",
+      "review_status": "Parent managed purchase reproduction pending",
+      "next_check": "Current child managed purchases do not close parent managed order deduction."
+    },
+    {
+      "id": "FORUM-115",
+      "url": "https://wordpress.org/support/topic/stock-sync-problems/",
+      "file": "forum/ecdbc5116ec0073f.html",
+      "source_sha256": "382ee3be1cfb2264676f5b38c3d031ee6c9d25788bcad2fb32a7abd0c1871e4a",
+      "captured_post_count": 5,
+      "category": "Multiple languages",
+      "report_summary": "Three language inventory reportedly deducted twice on translated products. Reply references an old fix.",
+      "review_status": "Current two language deduction verified",
+      "next_check": "Native three language purchases remain open."
+    },
+    {
+      "id": "FORUM-132",
+      "url": "https://wordpress.org/support/topic/stock-quantity/",
+      "file": "forum/1cb43f83ed10bd6a.html",
+      "source_sha256": "caba48577087b348778621676d8538751e0296b1de8c29f3c78f28ff082f6100",
+      "captured_post_count": 3,
+      "category": "Shared stock contract",
+      "report_summary": "Report asks whether language purchases use one shared quantity. Replies describe settings and an old deduction issue.",
+      "review_status": "Current paired purchases and shared inventory verified",
+      "next_check": "Disabled synchronization and original stack remain separate cases."
+    },
+    {
+      "id": "FORUM-136",
+      "url": "https://wordpress.org/support/topic/problems-with-stock-synchronisation/",
+      "file": "forum/02c4f017d2db59c4.html",
+      "source_sha256": "35ebbb9c9983342f1fefd24a5456ff12fb892ce16129f8d9a6d22292c7865675",
+      "captured_post_count": 2,
+      "category": "Variation identity",
+      "report_summary": "Nondefault purchase reportedly changed parent inventory without changing the selected default variation. No resolution.",
+      "review_status": "Native selected variation identity and paired child stock verified",
+      "next_check": "Parent inventory and exact older stack remain open."
+    },
+    {
+      "id": "FORUM-168",
+      "url": "https://wordpress.org/support/topic/produts-stock-problem/",
+      "file": "forum/2518a2f063a0497f.html",
+      "source_sha256": "508ff6b65f07bfd609a913666a73d412ac72a775a5b6becbe2fe3876fac6497d",
+      "captured_post_count": 5,
+      "category": "Manual order stock",
+      "report_summary": "Native order increase and decrease stock buttons reportedly failed to synchronize. Replies eventually confirm native support.",
+      "review_status": "Native variation manual order stock verification pending",
+      "next_check": "Prior simple refund proof does not close variation order controls."
+    },
+    {
+      "id": "FORUM-176",
+      "url": "https://wordpress.org/support/topic/stock-not-syncing-properly-between-translations/",
+      "file": "forum/1242e4ff1d27ffb8.html",
+      "source_sha256": "2111dd3bc7153c63004629d6acefee8d2e4eeae39552ba3a8f98ed3a70161fb2",
+      "captured_post_count": 3,
+      "category": "Asynchronous purchase stock",
+      "report_summary": "Old callback skipped products by current order language. Author and replies propose source product based updates.",
+      "review_status": "Current source identity inspected and native purchases verified",
+      "next_check": "Gateway IPN or webhook execution without frontend language context remains open."
+    },
+    {
+      "id": "FORUM-222",
+      "url": "https://wordpress.org/support/topic/variable-product-stock-sync/",
+      "file": "forum/4d6f9df1d6cf8941.html",
+      "source_sha256": "4c66dbafbb0c0d52519a81af000bc9f4782b5384259b9ce9f017418b91d9192a",
+      "captured_post_count": 3,
+      "category": "Duplicate deduction",
+      "report_summary": "Variation purchase reportedly deducted twice. Reply references a historical fix and author thanks them.",
+      "review_status": "Current native purchases deduct once on both linked variations",
+      "next_check": "Historical acknowledgement is not proof for external gateways or old stacks."
+    },
+    {
+      "id": "FORUM-267",
+      "url": "https://wordpress.org/support/topic/the-variations-put-out-stock-get-an-error-when-saving-the-page/",
+      "file": "forum/3991605f41d08cb7.html",
+      "source_sha256": "ff34545624beb49cb69c05467c15f2f2a06c54d3b0cdb76e40fa41c7ce377ff7",
+      "captured_post_count": 4,
+      "category": "Out of stock administration",
+      "report_summary": "Out of stock variable product reportedly caused blank admin save. Maintainer requested reproduction steps.",
+      "review_status": "Native out of stock admin Update verification pending",
+      "next_check": "Frontend depletion and available sibling proof does not close an all zero native admin save."
+    },
+    {
+      "id": "FORUM-314",
+      "url": "https://wordpress.org/support/topic/inventory-not-updated-in-products-translation/",
+      "file": "forum/397239a15dab8b9b.html",
+      "source_sha256": "5c7abedcbf45773ffeed2ce5eef2eab5a5ce5f6030df08daed0942f1535d29e1",
+      "captured_post_count": 7,
+      "category": "Inventory updates",
+      "report_summary": "Old inventory changes reportedly stopped propagating after translation. Replies suggest other tools without isolated plugin fix.",
+      "review_status": "Current native stock hooks and child depletion verified",
+      "next_check": "Original settings and older stack unresolved. Alternative forks are not plugin verification."
+    },
+    {
+      "id": "FORUM-343",
+      "url": "https://wordpress.org/support/topic/stock-quick-edit/",
+      "file": "forum/e335a91d5fa2ca48.html",
+      "source_sha256": "471095b1bf326f5cb82a80da7a2072781dc06de7942a0d72c0d20d2972e46055",
+      "captured_post_count": 1,
+      "category": "Quick Edit stock",
+      "report_summary": "Stock Quick Edit reportedly did not copy. Author manually changed Polylang core stock keys.",
+      "review_status": "Native Quick Edit stock reproduction pending",
+      "next_check": "Inspect native Quick Edit without changing dependency source."
+    },
+    {
+      "id": "FORUM-410",
+      "url": "https://wordpress.org/support/topic/stock-synchronization/",
+      "file": "forum/48b2baff88961c00.html",
+      "source_sha256": "ca97b7b598874ff05bb66283292bf214018c3a19a536c73c996c5883b472b5f4",
+      "captured_post_count": 4,
+      "category": "Stock and variation UI",
+      "report_summary": "Reply confirms cross language stock sharing. Later author reports missing variation tab, then says it works.",
+      "review_status": "Shared stock verified with historical UI recovery",
+      "next_check": "Exact variation tab failure lacks a reproducible cause."
+    }
+  ]
+}

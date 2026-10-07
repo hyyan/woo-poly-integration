@@ -1,0 +1,24 @@
+{
+    "en": {
+        "id": 133,
+        "categories": [
+            115,
+            27
+        ],
+        "tags": [
+            119
+        ],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/native-taxonomy-acceptance-product-en\/"
+    },
+    "de": {
+        "id": 134,
+        "categories": [
+            117,
+            34
+        ],
+        "tags": [
+            121
+        ],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/native-taxonomy-acceptance-product-de\/"
+    }
+}

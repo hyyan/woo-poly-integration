@@ -1,0 +1,9 @@
+{
+    "mode": "block-sync",
+    "hpos": true,
+    "sync": "yes",
+    "checkout_urls": [
+        "http:\/\/localhost:8098\/woopoly-package-lab\/checkout\/",
+        "http:\/\/localhost:8098\/woopoly-package-lab\/de\/checkout-2\/"
+    ]
+}

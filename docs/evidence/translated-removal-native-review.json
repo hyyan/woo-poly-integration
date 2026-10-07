@@ -1,0 +1,12 @@
+{
+  "native_modern_creation_preserves_metadata": true,
+  "native_modern_creation_preserves_three_prices": true,
+  "native_translated_removal_deletes_selected_source_and_target": true,
+  "sibling_records_unchanged": true,
+  "both_updates_do_not_recreate_deleted_pair": true,
+  "parent_metadata_unchanged": true,
+  "native_three_initial_choices": true,
+  "native_surviving_choices": true,
+  "deleted_choice_absent_in_both_languages": true,
+  "settings_restored": true
+}

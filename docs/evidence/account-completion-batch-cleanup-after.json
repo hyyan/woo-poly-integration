@@ -1,0 +1,14 @@
+{
+    "orders_deleted": 4,
+    "users_deleted": 2,
+    "owned_customer_sessions_deleted": 0,
+    "products_deleted": 4,
+    "classic_pages_deleted": 4,
+    "exact_options_restored": 10,
+    "exact_language_strings_restored": 2,
+    "owned_file_and_approved_directory_removed": true,
+    "download_permissions_removed": true,
+    "observer_removed": true,
+    "fixture_options_removed": true,
+    "mail_transport_still_suppressed": true
+}

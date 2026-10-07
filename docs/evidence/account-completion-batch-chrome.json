@@ -1,0 +1,90 @@
+{
+  "accountCompletionDeRegistration": {
+    "path": "/woopoly-package-lab/de/my-account-2/",
+    "authenticated": true,
+    "errors": []
+  },
+  "account_de_reset": {
+    "path": "/woopoly-package-lab/de/my-account-2/passwort-vergessen/",
+    "messages": [
+      "Es wurde eine E-Mail zum Zurücksetzen des Passworts versandt."
+    ],
+    "errors": []
+  },
+  "account_download_de_checkout": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/",
+    "total": "Gesamtsumme\t$0,00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "account_download_de_receipt": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/order-received/224/",
+    "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+    "rows": [
+      "Zwischensumme:\t0,00$",
+      "Gesamt:\t0,00$"
+    ],
+    "downloadCount": 1,
+    "errors": []
+  },
+  "account_service_de_checkout": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/",
+    "total": "Gesamtsumme\t$0,00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "account_service_de_receipt": {
+    "path": "/woopoly-package-lab/de/account-completion-checkout-de/order-received/225/",
+    "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+    "rows": [
+      "Zwischensumme:\t0,00$",
+      "Gesamt:\t0,00$"
+    ],
+    "downloadCount": 0,
+    "errors": []
+  },
+  "accountCompletionEnRegistration": {
+    "path": "/woopoly-package-lab/my-account/",
+    "authenticated": true,
+    "errors": []
+  },
+  "account_en_reset": {
+    "path": "/woopoly-package-lab/my-account/lost-password/",
+    "messages": [
+      "Password reset email has been sent."
+    ],
+    "errors": []
+  },
+  "account_download_en_checkout": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/",
+    "total": "Total\t$0.00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "account_download_en_receipt": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/order-received/226/",
+    "received": "Thank you. Your order has been received.",
+    "rows": [
+      "Subtotal:\t$0.00",
+      "Total:\t$0.00"
+    ],
+    "downloadCount": 1,
+    "errors": []
+  },
+  "account_service_en_checkout": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/",
+    "total": "Total\t$0.00",
+    "paymentOptions": false,
+    "errors": []
+  },
+  "account_service_en_receipt": {
+    "path": "/woopoly-package-lab/account-completion-checkout-en/order-received/227/",
+    "received": "Thank you. Your order has been received.",
+    "rows": [
+      "Subtotal:\t$0.00",
+      "Total:\t$0.00"
+    ],
+    "downloadCount": 0,
+    "errors": []
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "browser": "Chrome",
+  "easy_booking": {
+    "url": "https://wordpress.org/plugins/woocommerce-easy-booking-system/",
+    "version": "3.5.6",
+    "date_stock_management": "Listed as Easy Booking PRO feature",
+    "free_package_reproduces_reported_calendar_stock_case": false,
+    "forum_reports": [
+      "FORUM-109",
+      "FORUM-191"
+    ],
+    "historical_contract": "Original maintainer states separate booking integration is not implemented; shared WooCommerce stock does not establish date based availability."
+  },
+  "auto_restore_stock": {
+    "url": "https://wordpress.org/plugins/woocommerce-auto-restore-stock/",
+    "version": "1.0.1",
+    "directory_download_available": false,
+    "closed_date": "2025-04-08",
+    "directory_reason": "Guideline Violation",
+    "tested_wordpress": "3.7.41",
+    "forum_report": "FORUM-359",
+    "current_native_cancellation_proof": "order-email-batch evidence covers native cancellation and linked stock restoration. It does not establish compatibility with the original extension."
+  },
+  "remaining_requirement": "Original addon packages and exact reported configurations are required. No substitute package or unsupported new calendar integration is introduced.",
+  "maintenance_release_scope": "Excluded by maintainer: external plugin defects, missing features and service configurations are not release requirements.",
+  "blocks_maintenance_release": false
+}

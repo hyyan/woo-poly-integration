@@ -1,0 +1,19 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[31;1mE[0m                                                                   1 / 1 (100%)
+
+Time: 00:00.001, Memory: 101.05 MB
+
+There was 1 error:
+
+1) MetadataCopyCompatibilityTest::testLegacySynchronizationReceiverGetsNativeCopyArguments
+Error: Call to a member function copy() on null
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:146
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/MetadataCopyCompatibilityTest.php:20
+
+[37;41mERRORS![0m
+[37;41mTests: 1[0m[37;41m, Assertions: 0[0m[37;41m, Errors: 1[0m[37;41m, Warnings: 1[0m[37;41m.[0m

@@ -1,0 +1,90 @@
+{
+    "en": {
+        "id": 103,
+        "language": "en",
+        "type": "variable",
+        "status": "publish",
+        "title": "Product creation acceptance source",
+        "description": "Source description remains independent.",
+        "defaults": {
+            "pa_wpi_creation_colour": "blue",
+            "pa_wpi_creation_size": "small"
+        },
+        "weight": "5",
+        "tax_class": "reduced-rate",
+        "children": [
+            {
+                "id": 104,
+                "source": 104,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blue",
+                    "pa_wpi_creation_size": "small"
+                },
+                "price": "12"
+            },
+            {
+                "id": 105,
+                "source": 105,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blue",
+                    "pa_wpi_creation_size": "large"
+                },
+                "price": "14"
+            },
+            {
+                "id": 106,
+                "source": 106,
+                "attributes": {
+                    "pa_wpi_creation_colour": "red",
+                    "pa_wpi_creation_size": "large"
+                },
+                "price": "18"
+            }
+        ],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/product-creation-acceptance-source\/"
+    },
+    "de": {
+        "id": 107,
+        "language": "de",
+        "type": "variable",
+        "status": "publish",
+        "title": "Produkt Erstellung akzeptiert",
+        "description": "Deutsche Beschreibung bleibt eigenstaendig.",
+        "defaults": {
+            "pa_wpi_creation_colour": "blau",
+            "pa_wpi_creation_size": "klein"
+        },
+        "weight": "5",
+        "tax_class": "reduced-rate",
+        "children": [
+            {
+                "id": 108,
+                "source": 104,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blau",
+                    "pa_wpi_creation_size": "klein"
+                },
+                "price": "12"
+            },
+            {
+                "id": 109,
+                "source": 105,
+                "attributes": {
+                    "pa_wpi_creation_colour": "blau",
+                    "pa_wpi_creation_size": "gross"
+                },
+                "price": "14"
+            },
+            {
+                "id": 110,
+                "source": 106,
+                "attributes": {
+                    "pa_wpi_creation_colour": "red-de",
+                    "pa_wpi_creation_size": "gross"
+                },
+                "price": "18"
+            }
+        ],
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/produkt-erstellung-akzeptiert\/"
+    }
+}

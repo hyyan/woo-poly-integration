@@ -1,0 +1,11 @@
+{
+    "deleted_owned_variations": 4,
+    "deleted_owned_parents": 2,
+    "deleted_owned_pages": 2,
+    "cart_page": "6"
+}
+{
+    "deleted_owned_attribute": 1,
+    "deleted_owned_terms": 4,
+    "restored_polylang_options": true
+}

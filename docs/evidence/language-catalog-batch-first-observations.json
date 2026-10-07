@@ -1,0 +1,27 @@
+[
+    {
+        "path": "\/translation\/plugin\/woocommerce\/11.1.2\/fr_FR.zip",
+        "status": 200,
+        "verification": true
+    },
+    {
+        "path": "\/translation\/plugin\/woocommerce\/11.1.2\/fr_FR.zip",
+        "status": 200,
+        "verification": true
+    },
+    {
+        "native_add_language": true,
+        "request_locale": "fr_FR",
+        "native_nonce_valid": true
+    },
+    {
+        "path": "\/translation\/plugin\/woocommerce\/11.1.2\/fr_FR.zip",
+        "status": 200,
+        "verification": true
+    },
+    {
+        "path": "\/translation\/plugin\/woocommerce\/11.1.2\/fr_FR.zip",
+        "status": 200,
+        "verification": true
+    }
+]

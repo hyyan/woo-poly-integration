@@ -1,0 +1,20 @@
+{
+    "before": {
+        "locale": "en_US",
+        "language": false,
+        "direction": null
+    },
+    "during": [
+        {
+            "locale": "en_US",
+            "language": "de",
+            "subject": "Details for order #94 on WooPoly package acceptance"
+        }
+    ],
+    "after": {
+        "locale": "en_US",
+        "language": false,
+        "direction": null
+    },
+    "mail_transport_suppressed": true
+}

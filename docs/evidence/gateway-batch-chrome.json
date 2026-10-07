@@ -1,0 +1,88 @@
+{
+  "gatewayBefore": {
+    "path": "/woopoly-package-lab/de/checkout-2/",
+    "labels": [
+      "Zahlungsoptionen\nZahlungsoptionen\nBatch bacs\nBatch bacs description\nBatch cheque\nBatch cod"
+    ],
+    "total": "Gesamtsumme\n$30,75",
+    "errors": []
+  },
+  "gatewayAfterDe": {
+    "path": "/woopoly-package-lab/de/checkout-2/",
+    "labels": [
+      "Zahlungsoptionen\nZahlungsoptionen\nPruefung Batch bacs\nPruefung Batch bacs description\nPruefung Scheck\nPruefung Batch cod"
+    ],
+    "total": "Gesamtsumme\n$30,75",
+    "data": {
+      "cheque": {
+        "title": "Pruefung Scheck",
+        "description": "Pruefung Scheckbeschreibung",
+        "supports": [
+          "products"
+        ]
+      },
+      "bacs": {
+        "title": "Pruefung Batch bacs",
+        "description": "Pruefung Batch bacs description",
+        "supports": [
+          "products"
+        ]
+      },
+      "cod": {
+        "title": "Pruefung Batch cod",
+        "description": "Pruefung Batch cod description",
+        "enableForVirtual": false,
+        "enableForShippingMethods": [],
+        "supports": [
+          "products"
+        ]
+      }
+    },
+    "receiptInHistory": true,
+    "errors": []
+  },
+  "gatewayReceiptAfter": {
+    "path": "/woopoly-package-lab/de/checkout-2/order-received/175/",
+    "received": "Vielen Dank. Deine Bestellung ist eingegangen.",
+    "total": "GESAMT:\n30,75$",
+    "payment": "ZAHLUNGSART:\nPruefung Scheck",
+    "paymentRows": [
+      "Zahlungsart:\tPruefung Scheck"
+    ],
+    "instructions": true,
+    "errors": []
+  },
+  "gatewayAfterEn": {
+    "path": "/woopoly-package-lab/checkout/",
+    "labels": [
+      "Payment options\nPayment options\nBatch bacs\nBatch bacs description\nBatch cheque\nBatch cod"
+    ],
+    "total": "Total\n$30.75",
+    "data": {
+      "cheque": {
+        "title": "Batch cheque",
+        "description": "Batch cheque description",
+        "supports": [
+          "products"
+        ]
+      },
+      "bacs": {
+        "title": "Batch bacs",
+        "description": "Batch bacs description",
+        "supports": [
+          "products"
+        ]
+      },
+      "cod": {
+        "title": "Batch cod",
+        "description": "Batch cod description",
+        "enableForVirtual": false,
+        "enableForShippingMethods": [],
+        "supports": [
+          "products"
+        ]
+      }
+    },
+    "errors": []
+  }
+}

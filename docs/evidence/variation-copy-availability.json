@@ -1,0 +1,16 @@
+{
+    "en": {
+        "id": 95,
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/copy-lifecycle-acceptance-en\/",
+        "children": 2,
+        "available": 1,
+        "price": 12
+    },
+    "de": {
+        "id": 96,
+        "url": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/copy-lifecycle-acceptance-de\/",
+        "children": 2,
+        "available": 1,
+        "price": 12
+    }
+}

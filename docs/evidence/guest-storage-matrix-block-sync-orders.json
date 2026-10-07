@@ -1,0 +1,45 @@
+{
+    "current_mode": "block-sync",
+    "hpos": true,
+    "sync": "yes",
+    "orders": [
+        {
+            "id": 203,
+            "mode": "block-sync",
+            "language": "de",
+            "customer": 0,
+            "status": "on-hold",
+            "store": "Automattic\\WooCommerce\\Internal\\DataStores\\Orders\\OrdersTableDataStore",
+            "post_type": "shop_order",
+            "variation": 194,
+            "quantity": 1,
+            "shipping": "10.75",
+            "total": "30.75",
+            "stored_payment_title": "Batch cheque"
+        },
+        {
+            "id": 204,
+            "mode": "block-sync",
+            "language": "en",
+            "customer": 0,
+            "status": "on-hold",
+            "store": "Automattic\\WooCommerce\\Internal\\DataStores\\Orders\\OrdersTableDataStore",
+            "post_type": "shop_order",
+            "variation": 191,
+            "quantity": 1,
+            "shipping": "10.75",
+            "total": "30.75",
+            "stored_payment_title": "Batch cheque"
+        }
+    ],
+    "stocks": {
+        "en": {
+            "small": 18,
+            "large": 20
+        },
+        "de": {
+            "small": 18,
+            "large": 20
+        }
+    }
+}

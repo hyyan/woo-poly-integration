@@ -1,0 +1,3326 @@
+{
+  "counts": {
+    "captured_pages": 423,
+    "unique_topics": 413,
+    "reviewed_pages": 423,
+    "reviewed_topics": 413,
+    "pending_pages": 0,
+    "pending_topics": 0
+  },
+  "groups": [
+    {
+      "url": "https://wordpress.org/support/topic/no-support-on-wordpress-froum/",
+      "capture_ids": [
+        "FORUM-001"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/emails-is-not-translated-anymore/",
+      "capture_ids": [
+        "FORUM-002"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/emails-not-translated-3/",
+      "capture_ids": [
+        "FORUM-003"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/single-product-page-16/",
+      "capture_ids": [
+        "FORUM-004"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/issue-with-availability-of-product-translated/",
+      "capture_ids": [
+        "FORUM-005"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/your-order-information-is-invalid/",
+      "capture_ids": [
+        "FORUM-006"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/issue-with-divi-page-bulder/",
+      "capture_ids": [
+        "FORUM-007"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/disable-sync-2/",
+      "capture_ids": [
+        "FORUM-008"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-synchronize-custom-metadata/",
+      "capture_ids": [
+        "FORUM-009"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/github-repository-has-been-archived/",
+      "capture_ids": [
+        "FORUM-010"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-6-0/",
+      "capture_ids": [
+        "FORUM-011"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/visibility-in-the-catalogue-is-not-inherited-properly/",
+      "capture_ids": [
+        "FORUM-012"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-price-variations-no-working/",
+      "capture_ids": [
+        "FORUM-013"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/plugin-update-for-wordpress-5-8-2/",
+      "capture_ids": [
+        "FORUM-014"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-variations-stock-not-updating-on-second-and-third-language/",
+      "capture_ids": [
+        "FORUM-015"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-reviews-not-activated/",
+      "capture_ids": [
+        "FORUM-016"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/import-products-with-different-languages/",
+      "capture_ids": [
+        "FORUM-017"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/search-page-error-2/",
+      "capture_ids": [
+        "FORUM-018"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/persitent-bug-not-able-to-translate-email-subject-and-heading/",
+      "capture_ids": [
+        "FORUM-019"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/use-order-language-for-order-emails-settings-causes-an-error-of-type-e_error/",
+      "capture_ids": [
+        "FORUM-020"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/custom-emails-locale-issue/",
+      "capture_ids": [
+        "FORUM-021"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/uncaught-referenceerror-cookies-is-not-defined-5/",
+      "capture_ids": [
+        "FORUM-022"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/infinite-loading-on-a-2nd-lang-checkout-page/",
+      "capture_ids": [
+        "FORUM-023"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/update-product-data-why-disable-after-install-plugin-2/",
+      "capture_ids": [
+        "FORUM-024"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/category-entries/",
+      "capture_ids": [
+        "FORUM-025"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stripe-for-woocommerce-support/",
+      "capture_ids": [
+        "FORUM-026"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-links-on-the-woocommerce-my-account-page-do-not-work-properly/",
+      "capture_ids": [
+        "FORUM-027"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stock-doesnt-sync/",
+      "capture_ids": [
+        "FORUM-028"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/inability-to-add-properties-to-the-second-language/",
+      "capture_ids": [
+        "FORUM-029"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-product-issue-6/",
+      "capture_ids": [
+        "FORUM-030"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/dont-sync-cart-item-data/",
+      "capture_ids": [
+        "FORUM-031"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/bugreport-with-woo-4-4-1-and-wp-5-5/",
+      "capture_ids": [
+        "FORUM-032"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variation-bug-doubletriple-amount/",
+      "capture_ids": [
+        "FORUM-033"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-product-reverts-to-simple-after-saving/",
+      "capture_ids": [
+        "FORUM-034"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-show-on-one-language-only/",
+      "capture_ids": [
+        "FORUM-035"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/plugin-slows-down-website-3/",
+      "capture_ids": [
+        "FORUM-036"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/products-do-not-appear-in-categories/",
+      "capture_ids": [
+        "FORUM-037"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/custom-payment-gateways-description-not-working/",
+      "capture_ids": [
+        "FORUM-038"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-language-matches-email-language/",
+      "capture_ids": [
+        "FORUM-039"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/custom-product-sorting-3/",
+      "capture_ids": [
+        "FORUM-040"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-parent-categories-unchecked/",
+      "capture_ids": [
+        "FORUM-041"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/create-translation-programmatically/",
+      "capture_ids": [
+        "FORUM-042"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/compatible-with-woocommerce-4-0-3/",
+      "capture_ids": [
+        "FORUM-043",
+        "FORUM-044"
+      ],
+      "captured_pages": 2,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-when-i-add-the-product-to-the-cart-2/",
+      "capture_ids": [
+        "FORUM-045"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translation-issue-117/",
+      "capture_ids": [
+        "FORUM-046"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wordpress-dashboard-direction-switched/",
+      "capture_ids": [
+        "FORUM-047"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/attributes-values-translate/",
+      "capture_ids": [
+        "FORUM-048"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/compatible-with-woocommerce-3-9-3/",
+      "capture_ids": [
+        "FORUM-049"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/keep-creating-variations/",
+      "capture_ids": [
+        "FORUM-050"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-endpoints-pages/",
+      "capture_ids": [
+        "FORUM-051"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/products-not-added-to-translated-categories/",
+      "capture_ids": [
+        "FORUM-052"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shop-two-languages/",
+      "capture_ids": [
+        "FORUM-053"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-variable-products/",
+      "capture_ids": [
+        "FORUM-054"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/why-the-from-text-isnt-being-translated/",
+      "capture_ids": [
+        "FORUM-055"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/404-order-received-page-when-disabling-the-plugin/",
+      "capture_ids": [
+        "FORUM-056"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/update-for-woocommerce-3-7-1/",
+      "capture_ids": [
+        "FORUM-057"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-product-image-iconic-product-configurator/",
+      "capture_ids": [
+        "FORUM-058"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/products-reviews-not-sync/",
+      "capture_ids": [
+        "FORUM-059"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/has-anyone-moved-from-hyyan-to-paid-polylang-woocommerce/",
+      "capture_ids": [
+        "FORUM-060"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/prices-product-variations-not-syncing/",
+      "capture_ids": [
+        "FORUM-061"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/plugin-breaks-shop-pages-woocommerce-shortcodes/",
+      "capture_ids": [
+        "FORUM-062"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/products-visibility-synchronization-2/",
+      "capture_ids": [
+        "FORUM-063"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stock-sync-2/",
+      "capture_ids": [
+        "FORUM-064"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/copy-short-description/",
+      "capture_ids": [
+        "FORUM-065"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-3-7-2/",
+      "capture_ids": [
+        "FORUM-066"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/attribute-swatch-picture-not-synchronizing-on-translated-page/",
+      "capture_ids": [
+        "FORUM-067"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-not-showing-in-the-category/",
+      "capture_ids": [
+        "FORUM-068"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-products-55/",
+      "capture_ids": [
+        "FORUM-069"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-extra-field-in-variation-product/",
+      "capture_ids": [
+        "FORUM-070"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-custom-post_meta/",
+      "capture_ids": [
+        "FORUM-071"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cannot-translate-cart-checkout-myaccount-2/",
+      "capture_ids": [
+        "FORUM-072"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/1-string-in-default-language-woocommerce-terms-and-conditions-checkbox-text/",
+      "capture_ids": [
+        "FORUM-073"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/a-new-email-administrator-order-will-not-be-sent/",
+      "capture_ids": [
+        "FORUM-074"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-translate-woocommerence/",
+      "capture_ids": [
+        "FORUM-075"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/no-products-in-categorys/",
+      "capture_ids": [
+        "FORUM-076"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/plugin-create-woocommerce-pages-himself/",
+      "capture_ids": [
+        "FORUM-077"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/email-in-english/",
+      "capture_ids": [
+        "FORUM-078"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/hyyan-admin-notice/",
+      "capture_ids": [
+        "FORUM-079"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-taxnomy-category-tag-translation/",
+      "capture_ids": [
+        "FORUM-080"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/bugs-on-latest-updates/",
+      "capture_ids": [
+        "FORUM-081"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/processing-order-email-subject-issue/",
+      "capture_ids": [
+        "FORUM-082"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/release-date-of-1-4-version/",
+      "capture_ids": [
+        "FORUM-083"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/no-synchronization-between-cross-sells/",
+      "capture_ids": [
+        "FORUM-084"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/conflict-with-woocommerce-54/",
+      "capture_ids": [
+        "FORUM-085"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/new-order-email-notifications-2/",
+      "capture_ids": [
+        "FORUM-086"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-not-translated/",
+      "capture_ids": [
+        "FORUM-087"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problems-with-open-price/",
+      "capture_ids": [
+        "FORUM-088"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/categories-sync/",
+      "capture_ids": [
+        "FORUM-089"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-plugin-can-not-function-correctly/",
+      "capture_ids": [
+        "FORUM-090"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problems-with-variations-stock/",
+      "capture_ids": [
+        "FORUM-091"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/language-added-to-the-domain-polylang-switcher/",
+      "capture_ids": [
+        "FORUM-092",
+        "FORUM-093"
+      ],
+      "captured_pages": 2,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-3-6-is-not-supported/",
+      "capture_ids": [
+        "FORUM-094"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-products-change-to-simple-in-translated-version/",
+      "capture_ids": [
+        "FORUM-095"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-stock-synchronization-issue/",
+      "capture_ids": [
+        "FORUM-096"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-category-missing-alignment-mutilingual/",
+      "capture_ids": [
+        "FORUM-097"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/crash-when-submitting-post-warning-array_shift-expects-parameter-1-to-be-arr/",
+      "capture_ids": [
+        "FORUM-098"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/emails-header-titles-are-not-translated-after-last-update/",
+      "capture_ids": [
+        "FORUM-099"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wc-3-6-1-cant-use-cart-template-for-another-lang/",
+      "capture_ids": [
+        "FORUM-100"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woo-poly-payment-gateway-reduce-stock-issue/",
+      "capture_ids": [
+        "FORUM-101"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/no-follow-up-wanted/",
+      "capture_ids": [
+        "FORUM-102"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/attribute-title-change-translations-dissappeard-please-help/",
+      "capture_ids": [
+        "FORUM-103"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-support-update-to-wp-5-1/",
+      "capture_ids": [
+        "FORUM-104"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/emails-translation-issues/",
+      "capture_ids": [
+        "FORUM-105"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-products-stock-managing-problem-2/",
+      "capture_ids": [
+        "FORUM-106"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/customer-completed-order-email-translation/",
+      "capture_ids": [
+        "FORUM-107"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-category-translation-disconnects/",
+      "capture_ids": [
+        "FORUM-108"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-booking-dont-sync/",
+      "capture_ids": [
+        "FORUM-109"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/conflict-with-woocommerce-show-single-variations-2/",
+      "capture_ids": [
+        "FORUM-110"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/_trashed-in-permalink-category/",
+      "capture_ids": [
+        "FORUM-111"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-plugin-can-not-function-correctly-woocommerce-version-3-polylang-2/",
+      "capture_ids": [
+        "FORUM-112"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/order-email-subject-is-not-translated/",
+      "capture_ids": [
+        "FORUM-113"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/products-visibility-synchronization/",
+      "capture_ids": [
+        "FORUM-114"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stock-sync-problems/",
+      "capture_ids": [
+        "FORUM-115"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-working-on-last-version-woocommerce/",
+      "capture_ids": [
+        "FORUM-116"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/setting-up-additional-meta-for-sync/",
+      "capture_ids": [
+        "FORUM-117"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shopping-cart-not-showing-in-other-language/",
+      "capture_ids": [
+        "FORUM-118"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-endpoints-2/",
+      "capture_ids": [
+        "FORUM-119"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/dissable-payment-gateway-for-second-language-2/",
+      "capture_ids": [
+        "FORUM-120"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/attributes-once-more/",
+      "capture_ids": [
+        "FORUM-121"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/payment-method-16/",
+      "capture_ids": [
+        "FORUM-122"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/selecting-pagemlang_settings-and-my-shop-page-is-empty/",
+      "capture_ids": [
+        "FORUM-123"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-edit-product-attributes-2/",
+      "capture_ids": [
+        "FORUM-124"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/attributes-default-values-are-lost-on-translation/",
+      "capture_ids": [
+        "FORUM-125"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/did-the-latest-polylang-update-knock-out-this-plugin/",
+      "capture_ids": [
+        "FORUM-126"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/languages-disappear-from-some-products-attributes-lists/",
+      "capture_ids": [
+        "FORUM-127"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/untranslated-string-3/",
+      "capture_ids": [
+        "FORUM-128"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/change-new-order-email-by-country/",
+      "capture_ids": [
+        "FORUM-129"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-translate-categories-2/",
+      "capture_ids": [
+        "FORUM-130"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-footer-menu-widget-not-shown-4/",
+      "capture_ids": [
+        "FORUM-131"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stock-quantity/",
+      "capture_ids": [
+        "FORUM-132"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/demo-for-plugin/",
+      "capture_ids": [
+        "FORUM-133"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/polylang-now-displays-a-compatibility-notice-on-every-admin-page/",
+      "capture_ids": [
+        "FORUM-134"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wrong-shipping-costs-calculated-on-primary-language-website/",
+      "capture_ids": [
+        "FORUM-135"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problems-with-stock-synchronisation/",
+      "capture_ids": [
+        "FORUM-136"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/language-field-missing-from-woocommerce-import/",
+      "capture_ids": [
+        "FORUM-137"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/terms-conditions-checkbox-remains-untranslated/",
+      "capture_ids": [
+        "FORUM-138"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/blank-shop-page-2/",
+      "capture_ids": [
+        "FORUM-139"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-with-woocommerce-name-your-price-plugin/",
+      "capture_ids": [
+        "FORUM-140"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-attributes-11/",
+      "capture_ids": [
+        "FORUM-141"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-privacy-policy-text/",
+      "capture_ids": [
+        "FORUM-142"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/custom-post-types-and-taxonomies-error/",
+      "capture_ids": [
+        "FORUM-143"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/missing-argument-2-for-hyyanwpicarttranslatecartitempermalink/",
+      "capture_ids": [
+        "FORUM-144"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/white-screen-120/",
+      "capture_ids": [
+        "FORUM-145"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/function-create_function-is-deprecated-4/",
+      "capture_ids": [
+        "FORUM-146"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-sign-in-and-sign-out-part-of-the-primary-menu/",
+      "capture_ids": [
+        "FORUM-147"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/ive-read-and-accept-the-terms-conditions-only-in-default-language/",
+      "capture_ids": [
+        "FORUM-148",
+        "FORUM-149"
+      ],
+      "captured_pages": 2,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-not-translating/",
+      "capture_ids": [
+        "FORUM-150"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/checkout-partly-in-other-language/",
+      "capture_ids": [
+        "FORUM-151"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/in-variable-products-additional-product-price-isnt-adding-in-cart-2/",
+      "capture_ids": [
+        "FORUM-152"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-data-description-tab/",
+      "capture_ids": [
+        "FORUM-153"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-emails-in-english/",
+      "capture_ids": [
+        "FORUM-154"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-page-partially-translated/",
+      "capture_ids": [
+        "FORUM-155"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variaton-product-problems/",
+      "capture_ids": [
+        "FORUM-156"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/message-hello-my-name/",
+      "capture_ids": [
+        "FORUM-157"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-order-received-page-is-not-loaded-on-one-language/",
+      "capture_ids": [
+        "FORUM-158"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translation-of-store-notice-in-customizer/",
+      "capture_ids": [
+        "FORUM-159"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/default-language-not-set-on-existing-products-categories/",
+      "capture_ids": [
+        "FORUM-160"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-translate-the-woocommerce-products/",
+      "capture_ids": [
+        "FORUM-161"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/subcategories-disappeared-in-second-language/",
+      "capture_ids": [
+        "FORUM-162"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/language-switcher-problem-3/",
+      "capture_ids": [
+        "FORUM-163"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-when-using-woocommerce-composite-products/",
+      "capture_ids": [
+        "FORUM-164"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/hyyan-woocommerce-variable-products-issues/",
+      "capture_ids": [
+        "FORUM-165"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shipping-class-6/",
+      "capture_ids": [
+        "FORUM-166"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/hyyan-woocommerce-translating-topbar/",
+      "capture_ids": [
+        "FORUM-167"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/produts-stock-problem/",
+      "capture_ids": [
+        "FORUM-168"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/menu-order-19/",
+      "capture_ids": [
+        "FORUM-169"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-woocommerce-endpoint-order-received-page/",
+      "capture_ids": [
+        "FORUM-170"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/hyyan-woocommerce-issue-when-clicking-products/",
+      "capture_ids": [
+        "FORUM-171"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/associating-shipping-classes-between-languages/",
+      "capture_ids": [
+        "FORUM-172"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translating-attributes-in-woocommerce-2/",
+      "capture_ids": [
+        "FORUM-173"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-vs-produkt-in-url/",
+      "capture_ids": [
+        "FORUM-174"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/tax-class-not-syncing-between-translations/",
+      "capture_ids": [
+        "FORUM-175"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stock-not-syncing-properly-between-translations/",
+      "capture_ids": [
+        "FORUM-176"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/plub-inn-not-working/",
+      "capture_ids": [
+        "FORUM-177"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/range-of-prices-is-missing/",
+      "capture_ids": [
+        "FORUM-178"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-footer-menu-widget-not-shown-2/",
+      "capture_ids": [
+        "FORUM-179"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/after-checkout-redirect-on-emty-cart/",
+      "capture_ids": [
+        "FORUM-180"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/remove-filterpricesuffix-in-functions-php/",
+      "capture_ids": [
+        "FORUM-181"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wrong-product-language-in-woocommerce-cart-2/",
+      "capture_ids": [
+        "FORUM-182"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-cart-and-checkout-preview-problem/",
+      "capture_ids": [
+        "FORUM-183"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-translation-products-strings-emails/",
+      "capture_ids": [
+        "FORUM-184"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/checkout-language-after-ajax-call/",
+      "capture_ids": [
+        "FORUM-185"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/products-category-cannot-be-displayed/",
+      "capture_ids": [
+        "FORUM-186"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/checkout-page-in-english-german-and-spanish-not-working-for-spanish/",
+      "capture_ids": [
+        "FORUM-187"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/issues-with-product-open-pricing-plugin/",
+      "capture_ids": [
+        "FORUM-188"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-can-i-remove-bank-account-details-in-every-place/",
+      "capture_ids": [
+        "FORUM-189"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-language-switch-on-store-page/",
+      "capture_ids": [
+        "FORUM-190"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-easy-booking-integration/",
+      "capture_ids": [
+        "FORUM-191"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-body-classes-custom-post-types/",
+      "capture_ids": [
+        "FORUM-192"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/php-fatal-error-117/",
+      "capture_ids": [
+        "FORUM-193"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-attributes-label-for-attributes-created-before-plugin-activation/",
+      "capture_ids": [
+        "FORUM-194"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-working-for-me-190/",
+      "capture_ids": [
+        "FORUM-195"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/compatibility-of-last-version/",
+      "capture_ids": [
+        "FORUM-196"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/bank-details-is-not-translated-to-german/",
+      "capture_ids": [
+        "FORUM-197"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/delivery-methods-are-not-translated/",
+      "capture_ids": [
+        "FORUM-198"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/store-error-using-different-domains/",
+      "capture_ids": [
+        "FORUM-199"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-importing-data/",
+      "capture_ids": [
+        "FORUM-200"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/previous-version-needed/",
+      "capture_ids": [
+        "FORUM-201"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/do-not-install-wordpress-4-8-if-you-use-variations/",
+      "capture_ids": [
+        "FORUM-202"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/categories-dont-translate/",
+      "capture_ids": [
+        "FORUM-203"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-message-after-upgrade-5/",
+      "capture_ids": [
+        "FORUM-204"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/auto-select-product-option/",
+      "capture_ids": [
+        "FORUM-205"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/exclude-translate-_custom_tab-and-_custom_tab_title/",
+      "capture_ids": [
+        "FORUM-206"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-3-0-14/",
+      "capture_ids": [
+        "FORUM-207"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-change-the-woocommerce-button-text/",
+      "capture_ids": [
+        "FORUM-208"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-rest-api-filter-by-lang/",
+      "capture_ids": [
+        "FORUM-209"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-messages-are-not-translated/",
+      "capture_ids": [
+        "FORUM-210"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/2-fatal-system-error-after-checkout-process/",
+      "capture_ids": [
+        "FORUM-211"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-picture-is-not-being-displayed/",
+      "capture_ids": [
+        "FORUM-212"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-prices-2/",
+      "capture_ids": [
+        "FORUM-213"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/code-changes-necessary-to-be-compatible-with-woocommerce-3-0/",
+      "capture_ids": [
+        "FORUM-214"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/fatal-error-uncaught-typeerror/",
+      "capture_ids": [
+        "FORUM-215"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wp_nav_menu-doesnt-get-different-language-products/",
+      "capture_ids": [
+        "FORUM-216"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-after-update-to-woocommerce-3-0-1/",
+      "capture_ids": [
+        "FORUM-217"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-email-heading/",
+      "capture_ids": [
+        "FORUM-218"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-3-0-6/",
+      "capture_ids": [
+        "FORUM-219"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-edit-product-price-while-plugin-in-active/",
+      "capture_ids": [
+        "FORUM-220"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-attribut-translation/",
+      "capture_ids": [
+        "FORUM-221"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-product-stock-sync/",
+      "capture_ids": [
+        "FORUM-222"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-polylang-attributes-and-variable-products/",
+      "capture_ids": [
+        "FORUM-223"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variation-not-synchronize-correctly/",
+      "capture_ids": [
+        "FORUM-224"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/text-attributes-of-simple-product-not-duplicated-in-translations/",
+      "capture_ids": [
+        "FORUM-225"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-image-7/",
+      "capture_ids": [
+        "FORUM-226"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-variation-translation-2/",
+      "capture_ids": [
+        "FORUM-227"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-variation-translation/",
+      "capture_ids": [
+        "FORUM-228"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/tax-title-string-translation/",
+      "capture_ids": [
+        "FORUM-229"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-page-cant-change-product-option-ad-cant-see-price/",
+      "capture_ids": [
+        "FORUM-230"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-attributes-parent-child-relationship/",
+      "capture_ids": [
+        "FORUM-231"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/picture-of-product-categories-is-synchronize/",
+      "capture_ids": [
+        "FORUM-232"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/i-cannot-enter-my-producs/",
+      "capture_ids": [
+        "FORUM-233"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-emails-not-sent-in-order-language-and-there-is-no-option-to-change/",
+      "capture_ids": [
+        "FORUM-234"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/my-account-order-list-only-in-current-language-fix-did-not-help/",
+      "capture_ids": [
+        "FORUM-235"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/attribute-values-missing-in-traslated-product/",
+      "capture_ids": [
+        "FORUM-236"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-show-variation/",
+      "capture_ids": [
+        "FORUM-237"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/media-library-gallery-keep-loading-in-default-language-only/",
+      "capture_ids": [
+        "FORUM-238"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/auto-download-woocommerce-translation-files/",
+      "capture_ids": [
+        "FORUM-239"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-checkout-my-account-doesnt-translated-2/",
+      "capture_ids": [
+        "FORUM-240"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/rest-api-slow/",
+      "capture_ids": [
+        "FORUM-241"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variation-information-not-editable-after-site-migration/",
+      "capture_ids": [
+        "FORUM-242"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translation-for-shipping-table-rate-not-shipping-class/",
+      "capture_ids": [
+        "FORUM-243"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-create-product-categories/",
+      "capture_ids": [
+        "FORUM-244"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-remove-a-filter/",
+      "capture_ids": [
+        "FORUM-245"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/my-account-order-list-only-in-current-language/",
+      "capture_ids": [
+        "FORUM-246"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/slugs-not-changing-correctly-to-polylang-slugs/",
+      "capture_ids": [
+        "FORUM-247"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-translate-strings-in-woocommerce-template/",
+      "capture_ids": [
+        "FORUM-248"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-add-ruler-woocommerce/",
+      "capture_ids": [
+        "FORUM-249"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/new-update-does-not-work-with-wc-or-polylang/",
+      "capture_ids": [
+        "FORUM-250"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-product-loses-price-option/",
+      "capture_ids": [
+        "FORUM-251"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/e-mail-language-does-not-correspond/",
+      "capture_ids": [
+        "FORUM-252"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/add-to-basket-links-to-wrong-language/",
+      "capture_ids": [
+        "FORUM-253"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/seperate-translations-for-attributes/",
+      "capture_ids": [
+        "FORUM-254"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/email-footers/",
+      "capture_ids": [
+        "FORUM-255"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/language-switcher-not-working-properly/",
+      "capture_ids": [
+        "FORUM-256"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/after-installing-your-plugin-you-can-not-add-the-new-language-in-polylang/",
+      "capture_ids": [
+        "FORUM-257"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/email-subject-and-header-title-translation/",
+      "capture_ids": [
+        "FORUM-258",
+        "FORUM-259"
+      ],
+      "captured_pages": 2,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-translating-variation-descriptions-and-setting-default-variation/",
+      "capture_ids": [
+        "FORUM-260"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-plugin-doesnt-see-woocommerce-and-polylang-plugins/",
+      "capture_ids": [
+        "FORUM-261"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/it-doesnt-work-139/",
+      "capture_ids": [
+        "FORUM-262"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translation-problems-16/",
+      "capture_ids": [
+        "FORUM-263"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/multiple-domains-wrong-urls/",
+      "capture_ids": [
+        "FORUM-264"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-is-not-translated-2/",
+      "capture_ids": [
+        "FORUM-265"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-permalink/",
+      "capture_ids": [
+        "FORUM-266"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-variations-put-out-stock-get-an-error-when-saving-the-page/",
+      "capture_ids": [
+        "FORUM-267"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/enable-ifthenpay-gateway-instructions-on-order-emails/",
+      "capture_ids": [
+        "FORUM-268"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/tabs-buttons-breadcrumbs-review-tab-content/",
+      "capture_ids": [
+        "FORUM-269"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-senteces-some-translation-problem/",
+      "capture_ids": [
+        "FORUM-270"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/strings-are-not-getting-translated/",
+      "capture_ids": [
+        "FORUM-271"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/empty-needle-error-after-update/",
+      "capture_ids": [
+        "FORUM-272"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-on-ordertranslateproductnameinordersdetails/",
+      "capture_ids": [
+        "FORUM-273"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-data-problem/",
+      "capture_ids": [
+        "FORUM-274"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-only-showing-lowest-variable-product-price/",
+      "capture_ids": [
+        "FORUM-275"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-use-different-currencies-for-different-languages/",
+      "capture_ids": [
+        "FORUM-276"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/suddenly-some-translations-dont-work-anymore/",
+      "capture_ids": [
+        "FORUM-277"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/image-title-and-alternative-text-translation-not-working/",
+      "capture_ids": [
+        "FORUM-278"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/attribute-not-translating-for-woocommerce-api/",
+      "capture_ids": [
+        "FORUM-279"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translation-issue-55/",
+      "capture_ids": [
+        "FORUM-280"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/sos-troubles-with-image-product/",
+      "capture_ids": [
+        "FORUM-281"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-checkout-my-account-doesnt-linked-and-working-after-translation/",
+      "capture_ids": [
+        "FORUM-282"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-checkout-my-account-doesnt-translated/",
+      "capture_ids": [
+        "FORUM-283"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woo-product-details-page-doesnt-work/",
+      "capture_ids": [
+        "FORUM-284"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/i-can-not-see-the-product-of-the-second-language/",
+      "capture_ids": [
+        "FORUM-285"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-create-associate-product-category-translations/",
+      "capture_ids": [
+        "FORUM-286"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/installing-and-activation-error-message/",
+      "capture_ids": [
+        "FORUM-287"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/to-translate-tax-name/",
+      "capture_ids": [
+        "FORUM-288"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translation-error-on-page-shopping-cart/",
+      "capture_ids": [
+        "FORUM-289"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shipping-class-does-not-synchronize-between-products/",
+      "capture_ids": [
+        "FORUM-290"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/unable-to-download-woocommerce-translation-xxxxxxx_x-from-httpsdownloads/",
+      "capture_ids": [
+        "FORUM-291"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/activate-fatal-error-3/",
+      "capture_ids": [
+        "FORUM-292"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/i-dont-need-to-translate-products-only-attributes/",
+      "capture_ids": [
+        "FORUM-293"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-polylang-integration/",
+      "capture_ids": [
+        "FORUM-294"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/fresh-install-woo-poly-hyyan-and-error-on-front/",
+      "capture_ids": [
+        "FORUM-295"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/duplicated-products-in-english-version/",
+      "capture_ids": [
+        "FORUM-296"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/set-language-for-registration-email-in-code/",
+      "capture_ids": [
+        "FORUM-297"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/plugin-settings-missing-how-to-translate-emails/",
+      "capture_ids": [
+        "FORUM-298"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-in-translation-1/",
+      "capture_ids": [
+        "FORUM-299"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wordpress-453/",
+      "capture_ids": [
+        "FORUM-300"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/default-language-20/",
+      "capture_ids": [
+        "FORUM-301"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-my-account-end-points/",
+      "capture_ids": [
+        "FORUM-302"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/fatal-error-call-to-a-member-function-is_visible-on-boolean/",
+      "capture_ids": [
+        "FORUM-303"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/hyyan-heartbeat-admin-ajaxphp-slow-load-time/",
+      "capture_ids": [
+        "FORUM-304"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/urgent-10-usd-offered-for-the-solution-translate-product-permalink-base/",
+      "capture_ids": [
+        "FORUM-305"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-url-3/",
+      "capture_ids": [
+        "FORUM-306"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-26-27/",
+      "capture_ids": [
+        "FORUM-307",
+        "FORUM-308",
+        "FORUM-309"
+      ],
+      "captured_pages": 3,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/delete-plugin-6/",
+      "capture_ids": [
+        "FORUM-310"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/widget-titles-not-translated/",
+      "capture_ids": [
+        "FORUM-311"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-currency-switcher-1/",
+      "capture_ids": [
+        "FORUM-312"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cart-and-checkout-pages-in-two-different-languages/",
+      "capture_ids": [
+        "FORUM-313"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/inventory-not-updated-in-products-translation/",
+      "capture_ids": [
+        "FORUM-314"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-attributes-translation-doesnt-work/",
+      "capture_ids": [
+        "FORUM-315"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/hyyan-woocommerce-polylang-integration-with-polylang-pro/",
+      "capture_ids": [
+        "FORUM-316"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wrong-language-after-proceed-to-credit-card/",
+      "capture_ids": [
+        "FORUM-317"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/email-not-in-correct-language/",
+      "capture_ids": [
+        "FORUM-318"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shoping-cart-drowdown-not-translated/",
+      "capture_ids": [
+        "FORUM-319"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-plugin-is-slowing-loading-times/",
+      "capture_ids": [
+        "FORUM-320"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/same-price-in-rounded-down-in-one-language/",
+      "capture_ids": [
+        "FORUM-321"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/mergesync-product-reviews-between-languages/",
+      "capture_ids": [
+        "FORUM-322"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/url-product-and-product-category-are-not-translated/",
+      "capture_ids": [
+        "FORUM-323"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/mass-import-of-goods-in-the-shop-working-with-your-plug-hayyan-woocommerce-poly/",
+      "capture_ids": [
+        "FORUM-324"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shop-in-another-language-doesnt-work/",
+      "capture_ids": [
+        "FORUM-325"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/breaks-revolution-slider-1/",
+      "capture_ids": [
+        "FORUM-326"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/credit-card-payment-return-url/",
+      "capture_ids": [
+        "FORUM-327"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-plugin-can-not-function-correctly-the-plugin-requires-woocommerce-and-poly/",
+      "capture_ids": [
+        "FORUM-328"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-translate-wc-products-and-cateroies/",
+      "capture_ids": [
+        "FORUM-329"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/some-javascript-is-interferring-with-another-plug-in/",
+      "capture_ids": [
+        "FORUM-330"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-with-polilang-19/",
+      "capture_ids": [
+        "FORUM-331"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/how-to-edit-auto-translated-text/",
+      "capture_ids": [
+        "FORUM-332"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/polylang-18-and-woocommerce-25/",
+      "capture_ids": [
+        "FORUM-333"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-default-form-values/",
+      "capture_ids": [
+        "FORUM-334"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/prodcut-misspell-inaccessible-product-category-pages/",
+      "capture_ids": [
+        "FORUM-335"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/after-update-one-of-languages-doesnt-respond/",
+      "capture_ids": [
+        "FORUM-336"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/flush_rewrite_rules-being-called-on-every-request/",
+      "capture_ids": [
+        "FORUM-337"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/discount-code-error-value-must-be-less-than-or-equal-to-0/",
+      "capture_ids": [
+        "FORUM-338"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/manual-sync-of-categories-products/",
+      "capture_ids": [
+        "FORUM-339"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variation-product-issue/",
+      "capture_ids": [
+        "FORUM-340"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/500-internal-server-error-446/",
+      "capture_ids": [
+        "FORUM-341"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shipping-classes-not-syncing/",
+      "capture_ids": [
+        "FORUM-342"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stock-quick-edit/",
+      "capture_ids": [
+        "FORUM-343"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/shopping-cart-button-text-translation-jumps/",
+      "capture_ids": [
+        "FORUM-344"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/product-category-pagination-problem/",
+      "capture_ids": [
+        "FORUM-345"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-product-permalink-base/",
+      "capture_ids": [
+        "FORUM-346"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/tanslated-product-error-404-405/",
+      "capture_ids": [
+        "FORUM-347"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/default-attribute-values-empty-for-translated-products/",
+      "capture_ids": [
+        "FORUM-348"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/problem-with-variable-products-1/",
+      "capture_ids": [
+        "FORUM-349"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/view-bastet-button-linking-to-wrong-page/",
+      "capture_ids": [
+        "FORUM-350"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/bank-transfert-not-translated/",
+      "capture_ids": [
+        "FORUM-351"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/polylang-variable-products-default-form-values/",
+      "capture_ids": [
+        "FORUM-352"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/clicking-add-to-cart-does-not-add-products-to-the-cart-in-second-language/",
+      "capture_ids": [
+        "FORUM-353"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/get-a-warning-for-invalid-argument-for-foreach/",
+      "capture_ids": [
+        "FORUM-354"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/menu-not-appearing-in-spanish-on-mobile/",
+      "capture_ids": [
+        "FORUM-355"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wrong-return-url-after-payment-due-to-the-hyyan-woocommerce-polylang-plugin/",
+      "capture_ids": [
+        "FORUM-356"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-point-of-sale-custom-product-compatibility-2/",
+      "capture_ids": [
+        "FORUM-357"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-point-of-sale-custom-product-compatibility/",
+      "capture_ids": [
+        "FORUM-358"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/restock-not-working-when-order-cancelled/",
+      "capture_ids": [
+        "FORUM-359"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-message-when-quick-edit-page/",
+      "capture_ids": [
+        "FORUM-360"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/mydomainencategorytest-not-found-404/",
+      "capture_ids": [
+        "FORUM-361"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/deactivate-attributes-translation/",
+      "capture_ids": [
+        "FORUM-362"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-possible-to-change-sku/",
+      "capture_ids": [
+        "FORUM-363"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cannot-get-single-product-page/",
+      "capture_ids": [
+        "FORUM-364"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-attributes-are-displayed-only-with-the-second-language/",
+      "capture_ids": [
+        "FORUM-365"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-message-tooltip-link-resolves-to-default-language/",
+      "capture_ids": [
+        "FORUM-366"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/support-for-woo-commerce-paid-listings-subscriptions-re-asking/",
+      "capture_ids": [
+        "FORUM-367"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/when-activated-only-3-products-left-empty-admin-product-page-white-page-when-s/",
+      "capture_ids": [
+        "FORUM-368"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-translate-attributes-manually/",
+      "capture_ids": [
+        "FORUM-369"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/all-commerce-pages-not-translating/",
+      "capture_ids": [
+        "FORUM-370"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/no-products-found-in-some-product-categories/",
+      "capture_ids": [
+        "FORUM-371"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/support-for-woo-commerce-paid-listings-subscriptions/",
+      "capture_ids": [
+        "FORUM-372"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-messagesdont-translated/",
+      "capture_ids": [
+        "FORUM-373"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/i-dont-see-subcategories/",
+      "capture_ids": [
+        "FORUM-374"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/deactivate-the-cartcheckout-etc-translation/",
+      "capture_ids": [
+        "FORUM-375"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/support-for-woocommerce-subscriptions/",
+      "capture_ids": [
+        "FORUM-376"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-menus/",
+      "capture_ids": [
+        "FORUM-377"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/no-products-in-products-categories/",
+      "capture_ids": [
+        "FORUM-378"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/misspelling-of-product/",
+      "capture_ids": [
+        "FORUM-379"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/order-of-products-on-page-with-shortcode-doesnt-work/",
+      "capture_ids": [
+        "FORUM-380"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/pre-existing-orders-incorrectly-visible-after-activation-of-plugin/",
+      "capture_ids": [
+        "FORUM-381"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/request-filter-sales-by-date-report-by-language/",
+      "capture_ids": [
+        "FORUM-382"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/incorrect-link-to-french-shop-from-english/",
+      "capture_ids": [
+        "FORUM-383"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/transactional-emails-not-working/",
+      "capture_ids": [
+        "FORUM-384"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/add-to-cart-became-add-to-basket-paypal-description-and-shipping-method-names/",
+      "capture_ids": [
+        "FORUM-385"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/language-switch-in-shop-page/",
+      "capture_ids": [
+        "FORUM-386"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-plugin-could-not-be-activated-because-it-triggered-a-fatal-error-1/",
+      "capture_ids": [
+        "FORUM-387"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/little-bug-in-the-order-list/",
+      "capture_ids": [
+        "FORUM-388"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/tax-class-not-synchronize-when-duplicated/",
+      "capture_ids": [
+        "FORUM-389"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translate-woocommerce/",
+      "capture_ids": [
+        "FORUM-390"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/duplicate-listings-error/",
+      "capture_ids": [
+        "FORUM-391"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/error-enabling-plugin/",
+      "capture_ids": [
+        "FORUM-392"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translating-shipping-options-and-payment-options/",
+      "capture_ids": [
+        "FORUM-393",
+        "FORUM-394",
+        "FORUM-395"
+      ],
+      "captured_pages": 3,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variation-problem/",
+      "capture_ids": [
+        "FORUM-396"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/polylang-woocommerce-product-filter/",
+      "capture_ids": [
+        "FORUM-397"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/some-strings-not-translated/",
+      "capture_ids": [
+        "FORUM-398"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-product-price-on-cart-page-is-wrong/",
+      "capture_ids": [
+        "FORUM-399"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-product-price-problem/",
+      "capture_ids": [
+        "FORUM-400"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/variable-product-missing-attribute-values/",
+      "capture_ids": [
+        "FORUM-401"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/mail-translation-according-to-order-language/",
+      "capture_ids": [
+        "FORUM-402"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/you-can-not-change-the-default-language-becuase-you-are-using-variable-products/",
+      "capture_ids": [
+        "FORUM-403"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-edit-translated-product/",
+      "capture_ids": [
+        "FORUM-404"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-working-at-all-93/",
+      "capture_ids": [
+        "FORUM-405"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/cant-display-localized-product-page/",
+      "capture_ids": [
+        "FORUM-406"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/yoast-seo-on-translated-products/",
+      "capture_ids": [
+        "FORUM-407"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/subject-emails/",
+      "capture_ids": [
+        "FORUM-408"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/single-product-page-problem/",
+      "capture_ids": [
+        "FORUM-409"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/stock-synchronization/",
+      "capture_ids": [
+        "FORUM-410"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/filter-by-attributes-not-work/",
+      "capture_ids": [
+        "FORUM-411"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/woocommerce-pages-translation/",
+      "capture_ids": [
+        "FORUM-412"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/the-translation-of-my-store-page-does-not-appear/",
+      "capture_ids": [
+        "FORUM-413"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/wrong-redirection-2/",
+      "capture_ids": [
+        "FORUM-414"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/not-visible-on-new-product/",
+      "capture_ids": [
+        "FORUM-415"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/duplicated-search-result/",
+      "capture_ids": [
+        "FORUM-416",
+        "FORUM-417",
+        "FORUM-418"
+      ],
+      "captured_pages": 3,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/unable-to-open-order-details-after-20-upgrade/",
+      "capture_ids": [
+        "FORUM-419"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/parse-error-330/",
+      "capture_ids": [
+        "FORUM-420"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/web-site-stop-working-after-update-018/",
+      "capture_ids": [
+        "FORUM-421"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/translation-of-emails/",
+      "capture_ids": [
+        "FORUM-422"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    },
+    {
+      "url": "https://wordpress.org/support/topic/products-duplicate/",
+      "capture_ids": [
+        "FORUM-423"
+      ],
+      "captured_pages": 1,
+      "content_review_complete": true
+    }
+  ]
+}

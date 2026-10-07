@@ -1,0 +1,32 @@
+{
+  "en": {
+    "language": "en-US",
+    "parentPrice": "$13.00",
+    "variation": "118",
+    "selected": [
+      {
+        "name": "attribute_pa_wpi_creation_colour",
+        "value": "blue"
+      },
+      {
+        "name": "attribute_pa_wpi_creation_size",
+        "value": "small"
+      }
+    ]
+  },
+  "de": {
+    "language": "de-DE",
+    "parentPrice": "$17,00",
+    "variation": "122",
+    "selected": [
+      {
+        "name": "attribute_pa_wpi_creation_colour",
+        "value": "blau"
+      },
+      {
+        "name": "attribute_pa_wpi_creation_size",
+        "value": "klein"
+      }
+    ]
+  }
+}

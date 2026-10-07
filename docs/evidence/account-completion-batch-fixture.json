@@ -1,0 +1,31 @@
+{
+    "products": {
+        "download": {
+            "en": 228,
+            "de": 229
+        },
+        "service": {
+            "en": 230,
+            "de": 231
+        }
+    },
+    "product_urls": {
+        "download": {
+            "en": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/account-completion-download-en\/",
+            "de": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/account-completion-download-de\/"
+        },
+        "service": {
+            "en": "http:\/\/localhost:8098\/woopoly-package-lab\/product\/account-completion-service-en\/",
+            "de": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/product\/account-completion-service-de\/"
+        }
+    },
+    "account_urls": [
+        "http:\/\/localhost:8098\/woopoly-package-lab\/my-account\/",
+        "http:\/\/localhost:8098\/woopoly-package-lab\/de\/my-account-2\/"
+    ],
+    "checkout_urls": {
+        "en": "http:\/\/localhost:8098\/woopoly-package-lab\/account-completion-checkout-en\/",
+        "de": "http:\/\/localhost:8098\/woopoly-package-lab\/de\/account-completion-checkout-de\/"
+    },
+    "mail_transport": "suppressed"
+}

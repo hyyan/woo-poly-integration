@@ -1,0 +1,54 @@
+{
+    "category_coupon_rules": {
+        "include": {
+            "en": {
+                "small": true,
+                "large": true
+            },
+            "de": {
+                "small": true,
+                "large": true
+            }
+        },
+        "exclude": {
+            "en": {
+                "small": false,
+                "large": false
+            },
+            "de": {
+                "small": false,
+                "large": false
+            }
+        }
+    },
+    "variation_classes": {
+        "en": {
+            "small": 148,
+            "large": 159
+        },
+        "de": {
+            "small": 148,
+            "large": 159
+        }
+    },
+    "loaded_categories": {
+        "include": {
+            "include": [
+                150,
+                152
+            ],
+            "exclude": []
+        },
+        "exclude": {
+            "include": [],
+            "exclude": [
+                150,
+                152
+            ]
+        }
+    },
+    "outside_category": {
+        "include": false,
+        "exclude": true
+    }
+}

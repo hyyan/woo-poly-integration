@@ -1,0 +1,10 @@
+{
+    "source_defaults": {
+        "size": "Small",
+        "finish": "Matte"
+    },
+    "target_defaults": {
+        "size": "Small",
+        "finish": "Matte"
+    }
+}
