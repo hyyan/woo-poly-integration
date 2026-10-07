@@ -9,8 +9,8 @@ if (!defined('ABSPATH')) {
 /*
  *
  */
-add_action( 'woocommerce_system_status_report', 'wpi_status_report' );
-function wpi_status_report() {
+add_action( 'woocommerce_system_status_report', 'woo_poly_integration_status_report' );
+function woo_poly_integration_status_report() {
 	$allowed_tip_html = array(
 		'span' => array( 'class' => true, 'tabindex' => true, 'aria-label' => true, 'data-tip' => true ),
 	);

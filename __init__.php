@@ -52,10 +52,10 @@ new Hyyan\WPI\Plugin();
 /*
  * called when plugin is activated in settings, plugins
  */
-function onActivate() {
+function woo_poly_integration_on_activate() {
 	update_option( 'wpi_wcpagecheck_passed', false );
 	update_option( 'hyyan-wpi-flash-messages', '' );
 }
 
-register_activation_hook( __FILE__, 'onActivate' );
+register_activation_hook( __FILE__, 'woo_poly_integration_on_activate' );
 

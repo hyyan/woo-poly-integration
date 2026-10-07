@@ -87,7 +87,7 @@ final class TemplateOutputSecurityTest extends TestCase
         add_filter('wc_help_tip', $filter);
         ob_start();
         try {
-            wpi_status_report();
+            woo_poly_integration_status_report();
             $output = ob_get_contents();
         } finally {
             ob_end_clean();

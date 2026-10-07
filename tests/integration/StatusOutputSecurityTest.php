@@ -11,7 +11,7 @@ final class StatusOutputSecurityTest extends TestCase
         $language->locale = '<script>window.woopolyStatusMarker=true</script>';
         ob_start();
         try {
-            wpi_status_report();
+            do_action('woocommerce_system_status_report');
             $output = ob_get_contents();
             self::assertStringNotContainsString('<script>', $output);
             self::assertStringContainsString('&lt;script&gt;', $output);
@@ -26,7 +26,7 @@ final class StatusOutputSecurityTest extends TestCase
         require_once dirname(Hyyan_WPI_DIR) . '/src/Hyyan/WPI/Admin/StatusReport.php';
         ob_start();
         try {
-            wpi_status_report();
+            do_action('woocommerce_system_status_report');
             $output = ob_get_contents();
             self::assertStringContainsString('en_US', $output);
             self::assertStringContainsString('de_DE', $output);
