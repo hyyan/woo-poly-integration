@@ -1,0 +1,44 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-unit.xml
+
+...........                                                       11 / 11 (100%)
+
+Time: 00:00.036, Memory: 28.05 MB
+
+[30;42mOK (11 tests, 30 assertions)[0m
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+...............................................................  63 / 312 ( 20%)
+............................................................... 126 / 312 ( 40%)
+............................................................... 189 / 312 ( 60%)
+............................................................... 252 / 312 ( 80%)
+............................................................    312 / 312 (100%)
+
+Time: 00:24.500, Memory: 127.05 MB
+
+[30;42mOK (312 tests, 1077 assertions)[0m
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-frontend.xml
+
+.........                                                           9 / 9 (100%)
+
+Time: 00:00.735, Memory: 105.05 MB
+
+[30;42mOK (9 tests, 46 assertions)[0m
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-admin.xml
+
+.........                                                           9 / 9 (100%)
+
+Time: 00:00.873, Memory: 115.05 MB
+
+[30;42mOK (9 tests, 24 assertions)[0m

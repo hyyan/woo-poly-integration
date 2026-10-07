@@ -22445,7 +22445,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "plugin-check-screen-batch-plugin-check.json",
+  "package_scan": "plugin-check-language-batch-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -23141,43 +23141,7 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 234,
-      "column": 23,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 234,
-      "column": 51,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 235,
-      "column": 41,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 237,
-      "column": 45,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 268,
+      "line": 264,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23186,7 +23150,7 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 272,
+      "line": 268,
       "column": 65,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23195,7 +23159,7 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 272,
+      "line": 268,
       "column": 65,
       "type": "WARNING",
       "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
@@ -23204,7 +23168,7 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 278,
+      "line": 331,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23213,7 +23177,7 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 278,
+      "line": 331,
       "column": 52,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23222,43 +23186,7 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 278,
-      "column": 94,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 281,
-      "column": 45,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 339,
-      "column": 24,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 339,
-      "column": 52,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 339,
+      "line": 331,
       "column": 94,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23395,24 +23323,6 @@
     {
       "line": 229,
       "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 230,
-      "column": 31,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 230,
-      "column": 83,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
@@ -23591,42 +23501,6 @@
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php"
     },
     {
-      "line": 74,
-      "column": 21,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 91,
-      "column": 20,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 91,
-      "column": 53,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 119,
-      "column": 17,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
       "line": 284,
       "column": 81,
       "type": "WARNING",
@@ -23726,6 +23600,24 @@
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php"
     },
     {
+      "line": 74,
+      "column": 21,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
+    },
+    {
+      "line": 119,
+      "column": 17,
+      "type": "WARNING",
+      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+      "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS&quot;.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
+    },
+    {
       "line": 116,
       "column": 30,
       "type": "WARNING",
@@ -23771,9 +23663,9 @@
       "file": "src/Hyyan/WPI/Emails.php"
     }
   ],
-  "package_archive_sha256": "f7b04c2d3f1025d85db1e4ab96ef7a5a224915d6d9c1371e5161921b2c911605",
+  "package_archive_sha256": "be8a64971b15de8ab99260e3714b33e428dc0a2da270f9310f7ff361cdaa958d",
   "package_file_count": 73,
-  "previous_package_scan": "plugin-check-obsolete-batch-plugin-check.json",
+  "previous_package_scan": "plugin-check-screen-batch-plugin-check.json",
   "forum_counts": {
     "captured_pages": 423,
     "unique_topics": 413,
@@ -23786,12 +23678,12 @@
   "active_plugin_check_goal": {
     "status": "active",
     "baseline": 230,
-    "remaining": 147,
+    "remaining": 135,
     "errors": 45,
-    "warnings": 102,
-    "resolved_this_batch": 0,
+    "warnings": 90,
+    "resolved_this_batch": 12,
     "dispositions_are_not_fixes": true,
-    "source_commit": "4564602",
+    "source_commit": "4e89b8e",
     "translation_exception_acceptance": "awaiting explicit maintainer response",
     "translation_findings_requested_for_exception": 44,
     "catalog_loading_exception": "verified compatibility need, not accepted",

@@ -1,0 +1,38 @@
+{
+  "german_product_report": {
+    "selectedProducts": [],
+    "productInputs": [
+      {
+        "tag": "INPUT",
+        "name": "product_ids[]",
+        "value": "418"
+      },
+      {
+        "tag": "SELECT",
+        "name": "product_ids[]",
+        "value": ""
+      }
+    ],
+    "fatalError": false
+  },
+  "combined_product_report": {
+    "selectedProducts": [
+      417,
+      418
+    ],
+    "fatalError": false
+  },
+  "german_category_report": {
+    "categories": [],
+    "inputs": [
+      304
+    ],
+    "fatalError": false
+  },
+  "native_category_copy": {
+    "languageLabel": "Deutsch",
+    "displayType": "subcategories",
+    "thumbnail": "0",
+    "fatalError": false
+  }
+}

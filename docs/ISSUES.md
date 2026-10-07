@@ -315,3 +315,5 @@ Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and shari
 | CHECK-005 | Unused product type callback contains two unverified query reads | Removed obsolete protected method and sole reflection test, no production callers | Full suites, native editor, installed scan and archive hashes pass, source commit 166bab9 |
 
 | CHECK-006 | Editor GET backfills metadata on a source with read permission only | Corrected by moving backfill into existing native product save callback | Three baseline failures, full suites, native Polylang Publish, older save boundary and archive checks pass. Checker count remains 147. Source commit 4564602 |
+
+| CHECK-007 | Report, category copy and legacy attribute paths do not consistently validate registered languages | Corrected using the existing shared language request helper | Three baseline failures, full suites, native German and combined reports, category copy, older behavior and archive hashes pass. Twelve rows removed, source commit 4e89b8e |
