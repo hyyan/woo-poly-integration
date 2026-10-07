@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI\Product;
 
+// phpcs:set WordPress.Security.NonceVerification customNonceVerificationFunctions[] woo_poly_integration_get_product_translation_request
+
 // phpcs:set WordPress.Security.ValidatedSanitizedInput customSanitizingFunctions[] hyyan\wpi\product\variable::sanitizevariationid
 
 use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
@@ -117,7 +119,7 @@ class Variable
     {
         static $last_id;
 
-        $request = Utilities::getProductTranslationRequest();
+        $request = woo_poly_integration_get_product_translation_request();
         $new_lang = Utilities::getRequestLanguage();
         if ((isset($_GET['from_post']) && !$request) || (isset($_GET['new_lang']) && !$new_lang)) {
             return false;
@@ -278,7 +280,7 @@ class Variable
      */
     public function syncDefaultAttributes($post_id, $post, $update)
     {
-        $request = Utilities::getProductTranslationRequest();
+        $request = woo_poly_integration_get_product_translation_request();
         if (isset($_GET['from_post']) && !$request) {
             return;
         }

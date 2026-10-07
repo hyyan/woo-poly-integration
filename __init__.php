@@ -45,6 +45,16 @@ add_action('before_woocommerce_init', static function () {
     }
 });
 
+/**
+ * Get a product translation request after nonce and permission verification.
+ *
+ * @return array|false source and language, or false when verification fails
+ */
+function woo_poly_integration_get_product_translation_request()
+{
+    return Hyyan\WPI\Utilities::getProductTranslationRequest();
+}
+
 /* bootstrap the plugin */
 new Hyyan\WPI\Plugin();
 

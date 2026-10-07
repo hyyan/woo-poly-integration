@@ -11,6 +11,8 @@
  */
 namespace Hyyan\WPI\Product;
 
+// phpcs:set WordPress.Security.NonceVerification customNonceVerificationFunctions[] woo_poly_integration_get_product_translation_request
+
 use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
 use Hyyan\WPI\Utilities;
 use Hyyan\WPI\Admin\Settings;
@@ -262,7 +264,7 @@ class Meta
      */
     public function syncTaxonomiesAndProductAttributes($post_id, $post, $update)
     {
-        $request = Utilities::getProductTranslationRequest();
+        $request = woo_poly_integration_get_product_translation_request();
         if (isset($_GET['from_post']) && !$request) {
             return false;
         }
