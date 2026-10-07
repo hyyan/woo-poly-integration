@@ -164,11 +164,16 @@ class Variation
         //on translations when processing new order
         //it also did not return all versions of post for deletion
         global $wpdb;
-        $postids = $wpdb->get_col($wpdb->prepare(
-            "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY) = %s",
-            self::DUPLICATE_KEY,
-            (string) $variatonID
-        ));
+        $cacheKey = 'related_variations:' . $variatonID . ':' . wp_cache_get_last_changed('posts');
+        $postids = wp_cache_get($cacheKey, 'woo_poly_integration', false, $found);
+        if (!$found) {
+            $postids = $wpdb->get_col($wpdb->prepare(
+                "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY) = %s",
+                self::DUPLICATE_KEY,
+                (string) $variatonID
+            ));
+            wp_cache_set($cacheKey, $postids, 'woo_poly_integration', 60);
+        }
 
         if (true === $returnIDS) {
             return $postids;

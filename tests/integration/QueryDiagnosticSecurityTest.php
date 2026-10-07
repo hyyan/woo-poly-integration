@@ -84,6 +84,70 @@ final class QueryDiagnosticSecurityTest extends TestCase
         delete_post_meta($target, Variation::DUPLICATE_KEY);
         self::assertNotContains((string) $target, Variation::getRelatedVariation($source, true));
     }
+    public function testRelationshipQueryCachesRepeatedReadsAndRefreshesAfterMetadataWrites(): void
+    {
+        $source = $this->product('en', 'cache-relationship-source');
+        $target = $this->product('de', 'cache-relationship-target');
+        update_post_meta($target, Variation::DUPLICATE_KEY, $source);
+        $queries = 0;
+        $observer = static function ($sql) use (&$queries) {
+            if (str_contains($sql, "CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY)")) {
+                ++$queries;
+            }
+            return $sql;
+        };
+        add_filter('query', $observer);
+        try {
+            self::assertContains((string) $target, Variation::getRelatedVariation($source, true));
+            self::assertContains((string) $target, Variation::getRelatedVariation($source, true));
+            self::assertSame(1, $queries);
+            update_post_meta($target, Variation::DUPLICATE_KEY, (string) $source . 'suffix');
+            self::assertNotContains((string) $target, Variation::getRelatedVariation($source, true));
+            self::assertSame(2, $queries);
+            delete_post_meta($target, Variation::DUPLICATE_KEY);
+            update_post_meta($target, Variation::DUPLICATE_KEY, '000' . $source);
+            self::assertContains((string) $target, Variation::getRelatedVariation($source, true));
+            self::assertSame(3, $queries);
+            wp_delete_post($target, true);
+            self::assertNotContains((string) $target, Variation::getRelatedVariation($source, true));
+        } finally {
+            remove_filter('query', $observer);
+        }
+    }
+
+    public function testSkuQueryCachesRepeatedReadsAndRefreshesAfterMetadataAndStatusWrites(): void
+    {
+        $sku = 'cache-sku-fixture';
+        $source = $this->product('en', $sku);
+        $target = $this->product('en', $sku);
+        $meta = (new ReflectionClass(Meta::class))->newInstanceWithoutConstructor();
+        $queries = 0;
+        $observer = static function ($sql) use (&$queries) {
+            if (str_contains($sql, "post_status NOT IN ('trash', 'auto-draft')")) {
+                ++$queries;
+            }
+            return $sql;
+        };
+        add_filter('query', $observer);
+        try {
+            self::assertTrue($meta->suppressInvalidDuplicatedSKUErrorMsg(false, $source, $sku));
+            self::assertTrue($meta->suppressInvalidDuplicatedSKUErrorMsg(false, $source, $sku));
+            self::assertSame(1, $queries);
+            update_post_meta($target, '_sku', 'changed-cache-sku');
+            self::assertFalse($meta->suppressInvalidDuplicatedSKUErrorMsg(true, $source, $sku));
+            self::assertFalse($meta->suppressInvalidDuplicatedSKUErrorMsg(true, $source, $sku));
+            self::assertSame(2, $queries);
+            update_post_meta($target, '_sku', $sku);
+            self::assertTrue($meta->suppressInvalidDuplicatedSKUErrorMsg(false, $source, $sku));
+            wp_update_post(array('ID' => $target, 'post_status' => 'trash'));
+            self::assertFalse($meta->suppressInvalidDuplicatedSKUErrorMsg(true, $source, $sku));
+            wp_update_post(array('ID' => $target, 'post_status' => 'publish'));
+            self::assertTrue($meta->suppressInvalidDuplicatedSKUErrorMsg(false, $source, $sku));
+        } finally {
+            remove_filter('query', $observer);
+        }
+    }
+
     #[DataProvider('requests')]
     public function testOptionalCouponDiagnosticsNeverWarnForMalformedRequestShape($uri): void
     {
