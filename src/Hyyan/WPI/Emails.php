@@ -25,6 +25,7 @@ class Emails
     /** @var array Array of email types */
     public $emails;
     public $switched_lang = '';
+    private $language_contexts = array();
 
     /*
      * gets the woocommerce default value for the string type:
@@ -51,6 +52,12 @@ class Emails
                 break;
             case 'failed_order':
                 $emailobj = $emails['WC_Email_Failed_Order'];
+                break;
+            case 'customer_cancelled_order':
+                $emailobj = $emails['WC_Email_Customer_Cancelled_Order'] ?? $emailobj;
+                break;
+            case 'customer_failed_order':
+                $emailobj = $emails['WC_Email_Customer_Failed_Order'] ?? $emailobj;
                 break;
             case 'customer_on_hold_order':
                 $emailobj = $emails['WC_Email_Customer_On_Hold_Order'];
@@ -176,6 +183,12 @@ class Emails
             add_filter('woocommerce_email_recipient_failed_order', array($this, 'filter_email_recipient'), 10, 3);
             add_filter('woocommerce_email_additional_content_failed_order', array($this, 'filter_email_additional_content'), 10, 3);
 
+            foreach (array('customer_cancelled_order', 'customer_failed_order') as $type) {
+                add_filter('woocommerce_email_subject_' . $type, array($this, 'filter_email_subject'), 10, 3);
+                add_filter('woocommerce_email_heading_' . $type, array($this, 'filter_email_heading'), 10, 3);
+                add_filter('woocommerce_email_additional_content_' . $type, array($this, 'filter_email_additional_content'), 10, 3);
+            }
+
             // strings for all emails
             add_filter('woocommerce_email_footer_text', array($this, 'translateCommonString'));
             add_filter('woocommerce_email_from_address', array($this, 'translateCommonString'));
@@ -184,6 +197,12 @@ class Emails
             //reset language switch on woocommerce events
             add_filter('woocommerce_email_setup_locale', array($this, 'reset_lang_switch'));
             add_filter('woocommerce_email_restore_locale', array($this, 'reset_lang_switch'));
+            add_action('woocommerce_email_sent', array($this, 'reset_lang_switch'));
+            if (version_compare(WC_VERSION, '5.6.0', '<')) {
+                add_filter('woocommerce_mail_callback', function ($callback) {
+                    return $this->wrapMailCallback($callback);
+                });
+            }
 
             do_action(HooksInterface::EMAILS_TRANSLATION_ACTION, $this);
         }
@@ -198,6 +217,8 @@ class Emails
             'new_order',
             'cancelled_order',
             'failed_order',
+            'customer_cancelled_order',
+            'customer_failed_order',
             'customer_on_hold_order',
             'customer_processing_order',
             'customer_completed_order',
@@ -404,7 +425,22 @@ class Emails
         } else if (is_a($target_object, 'WP_User')) {
             $target_language = get_user_locale($target_object->ID);
         }
-        Utilities::switchLocale($target_language);
+        if (empty($this->language_contexts)) {
+            $this->beginLanguageContext(false);
+        }
+        $index = count($this->language_contexts) - 1;
+        $this->language_contexts[$index]['context'] = array(
+            'locale' => $locale,
+            'language' => PLL()->curlang,
+            'direction' => $GLOBALS['text_direction'] ?? null,
+            'strings' => $GLOBALS['l10n']['pll_string'] ?? null,
+        );
+        try {
+            Utilities::switchLocale($target_language);
+        } catch (\Throwable $error) {
+            $this->restoreLanguageContext(true);
+            throw $error;
+        }
         $this->switched_lang = $target_language;
         return $target_language;
     }
@@ -413,8 +449,75 @@ class Emails
      */
     public function reset_lang_switch()
     {
-        $this->switched_lang = '';
+        switch (current_filter()) {
+            case 'woocommerce_email_setup_locale':
+                $this->beginLanguageContext(true);
+                break;
+            case 'woocommerce_email_restore_locale':
+                $this->restoreLanguageContext(true);
+                break;
+            case 'woocommerce_email_sent':
+                $this->restoreLanguageContext(false);
+                break;
+            default:
+                $this->switched_lang = '';
+        }
         return false;
+    }
+
+    private function wrapMailCallback($callback)
+    {
+        return function (...$arguments) use ($callback) {
+            try {
+                return $callback(...$arguments);
+            } finally {
+                $this->restoreLanguageContext(false);
+            }
+        };
+    }
+
+    private function beginLanguageContext($restore_event)
+    {
+        $this->language_contexts[] = array(
+            'email' => null,
+            'context' => null,
+            'previous_switch' => $this->switched_lang,
+            'restore_event' => $restore_event,
+        );
+        $this->switched_lang = '';
+    }
+
+    private function restoreLanguageContext($restore_event)
+    {
+        if (empty($this->language_contexts)) {
+            $this->switched_lang = '';
+            return;
+        }
+        $index = count($this->language_contexts) - 1;
+        $context = $this->language_contexts[$index]['context'];
+        $this->language_contexts[$index]['context'] = null;
+        if ($context !== null) {
+            if (get_locale() !== $context['locale'] && is_locale_switched()) {
+                restore_previous_locale();
+            }
+            PLL()->curlang = $context['language'];
+            if ($context['direction'] === null) {
+                unset($GLOBALS['text_direction']);
+            } else {
+                $GLOBALS['text_direction'] = $context['direction'];
+            }
+            if ($context['strings'] === null) {
+                unset($GLOBALS['l10n']['pll_string']);
+            } else {
+                $GLOBALS['l10n']['pll_string'] = $context['strings'];
+            }
+        }
+        if ($restore_event || !$this->language_contexts[$index]['restore_event']) {
+            $frame = array_pop($this->language_contexts);
+            $this->switched_lang = $frame['previous_switch'];
+        } else {
+            $this->switched_lang = '';
+        }
     }
     /**
      * Translates Woocommerce email subjects and headings content to the order language.
@@ -428,6 +531,13 @@ class Emails
      */
     public function translateEmailStringToObjectLanguage($formatted_string, $target_object, $string_type, $email_obj)
     {
+        $index = count($this->language_contexts) - 1;
+        if ($index < 0 || ($this->language_contexts[$index]['email'] !== null &&
+                $this->language_contexts[$index]['email'] !== $email_obj)) {
+            $this->beginLanguageContext(false);
+            $index = count($this->language_contexts) - 1;
+        }
+        $this->language_contexts[$index]['email'] = $email_obj;
         $target_language = $this->maybeSwitchLanguage($target_object);
         $email_type = $email_obj->id;
 
