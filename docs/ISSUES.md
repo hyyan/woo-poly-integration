@@ -344,3 +344,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-017 | Hook constant ownership is opaque to the installed prefix check | Existing interface imports identify the actual plugin prefix | 3175ae8, twenty installed warnings removed, unchanged source semantics and native settings/cart |
 
 | CHECK-018 | The nonce check cannot identify a class method as a verifier | Recognized plugin entry delegates to the existing nonce and permission boundary | 22ace96, six nonce rows removed, native rejection and authorized Publish, minimum stack verifier cases |
+
+| CHECK-019 | Creation entry delegates before verification and attribute links route from raw parameters | Verify the shared request before callbacks and use the resolved native screen | 24325be, 20 failures reproduced, 441 tests pass, native Chrome acceptance, six checker rows removed |

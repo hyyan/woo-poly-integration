@@ -1,7 +1,7 @@
 {
-  "source_commit": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
-  "installed_total": 74,
-  "open_findings": 52,
+  "source_commit": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+  "installed_total": 68,
+  "open_findings": 46,
   "accepted_exceptions": 0,
   "findings": [
     {
@@ -370,27 +370,16 @@
     {
       "id": "EX-034",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 70,
-      "column": 33,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "handleNewProduct",
-      "reason": "Delegates creation copying to callbacks that require Utilities::getProductTranslationRequest, which verifies new-post-translation nonce, edit_products and source read permission.",
-      "current_source": "if (! $update && (isset($_GET['from_post'])) ){",
-      "source_sha256": "349849c43f3d4e3929820a6ace3f61de91b1f2bbdf6a82455d732f9ed059c84e"
-    },
-    {
-      "id": "EX-035",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
       "line": 484,
       "column": 19,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleVariableLimitation",
       "reason": "Presence of the source query parameter selects an editor warning. Its script values use WordPress JSON with all HTML hex flags.",
       "current_source": "if (isset($_GET['from_post'])) {",
-      "source_sha256": "349849c43f3d4e3929820a6ace3f61de91b1f2bbdf6a82455d732f9ed059c84e"
+      "source_sha256": "37bed05cd9459ccd4034fada2758746a2c7b1003036fcf2878597e83be7a715c"
     },
     {
-      "id": "EX-036",
+      "id": "EX-035",
       "file": "src/Hyyan/WPI/Product/Product.php",
       "line": 249,
       "column": 19,
@@ -401,40 +390,7 @@
       "source_sha256": "2b3142b0019458be3f26a1b6afc8587f4a4cb1363de8f32d602dbe08484615fa"
     },
     {
-      "id": "EX-037",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 170,
-      "column": 24,
-      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
-      "method": "getRelatedVariation",
-      "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Native posts cache versions invalidate on metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared SQL predicates remain unchanged. Large catalog performance remains unmeasured.",
-      "current_source": "$postids = $wpdb->get_col($wpdb->prepare(",
-      "source_sha256": "de772318c69c70206f2c13f69395b6dc813529f7d12275ad08f17dc33dbbf599"
-    },
-    {
-      "id": "EX-038",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 229,
-      "column": 43,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "insert",
-      "reason": "Protected variation insertion is called from duplication under verified creation or native save/import context. Request language is only a validated fallback for the target parent language.",
-      "current_source": "if ( (! $targetLang) && isset($_GET['new_lang'])) {",
-      "source_sha256": "de772318c69c70206f2c13f69395b6dc813529f7d12275ad08f17dc33dbbf599"
-    },
-    {
-      "id": "EX-039",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 74,
-      "column": 33,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "handleNewProduct",
-      "reason": "Delegates creation copying to callbacks that require Utilities::getProductTranslationRequest, which verifies new-post-translation nonce, edit_products and source read permission.",
-      "current_source": "if (! $update && (isset($_GET['from_post'])) ){",
-      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
-    },
-    {
-      "id": "EX-040",
+      "id": "EX-036",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 107,
       "column": 23,
@@ -442,10 +398,10 @@
       "method": "onImport",
       "reason": "Dependency owned pll_save_post action retains the native Polylang name and arguments. Current native Polylang dispatches this exact action from its save callback.",
       "current_source": "do_action('pll_save_post', $ProductID, get_post($ProductID),",
-      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
+      "source_sha256": "1c97d8a160579ed41c2f476eb70c6de01f957e9e3abcbb460271856860fd926e"
     },
     {
-      "id": "EX-041",
+      "id": "EX-037",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 225,
       "column": 19,
@@ -453,10 +409,10 @@
       "method": "handleProductScreen",
       "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
       "current_source": "if (isset($_GET['post'])) {",
-      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
+      "source_sha256": "1c97d8a160579ed41c2f476eb70c6de01f957e9e3abcbb460271856860fd926e"
     },
     {
-      "id": "EX-042",
+      "id": "EX-038",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 230,
       "column": 25,
@@ -464,54 +420,21 @@
       "method": "handleProductScreen",
       "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
       "current_source": "} elseif (isset($_GET['new_lang']) || ($currentScreen && $currentScreen->base == 'edit')) {",
-      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
+      "source_sha256": "1c97d8a160579ed41c2f476eb70c6de01f957e9e3abcbb460271856860fd926e"
     },
     {
-      "id": "EX-043",
+      "id": "EX-039",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 910,
       "column": 24,
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
       "method": "suppressInvalidDuplicatedSKUErrorMsg",
-      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Native posts cache versions invalidate on metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared SQL predicates remain unchanged. Large catalog performance remains unmeasured.",
+      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Fresh reads preserve relationship and duplicate SKU decisions after mutations. Persistent cache behavior is not introduced. Large catalog performance remains unmeasured.",
       "current_source": "$postids = $wpdb->get_col(",
-      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
+      "source_sha256": "1c97d8a160579ed41c2f476eb70c6de01f957e9e3abcbb460271856860fd926e"
     },
     {
-      "id": "EX-044",
-      "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
-      "line": 99,
-      "column": 29,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "addAttrsTranslateLinks",
-      "reason": "Sanitized page selector emits translation links. Dynamic labels and URLs are encoded as WordPress JSON before script output.",
-      "current_source": "$isAttrPage = isset($_GET['page']) && is_string($_GET['page']) &&",
-      "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
-    },
-    {
-      "id": "EX-045",
-      "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
-      "line": 99,
-      "column": 57,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "addAttrsTranslateLinks",
-      "reason": "Sanitized page selector emits translation links. Dynamic labels and URLs are encoded as WordPress JSON before script output.",
-      "current_source": "$isAttrPage = isset($_GET['page']) && is_string($_GET['page']) &&",
-      "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
-    },
-    {
-      "id": "EX-046",
-      "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
-      "line": 100,
-      "column": 41,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "addAttrsTranslateLinks",
-      "reason": "Sanitized page selector emits translation links. Dynamic labels and URLs are encoded as WordPress JSON before script output.",
-      "current_source": "sanitize_key(wp_unslash($_GET['page'])) === 'product_attributes';",
-      "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
-    },
-    {
-      "id": "EX-047",
+      "id": "EX-040",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 81,
@@ -522,7 +445,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-048",
+      "id": "EX-041",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 112,
@@ -533,7 +456,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-049",
+      "id": "EX-042",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 158,
@@ -544,7 +467,18 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-050",
+      "id": "EX-043",
+      "file": "src/Hyyan/WPI/Product/Variation.php",
+      "line": 170,
+      "column": 24,
+      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+      "method": "getRelatedVariation",
+      "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Fresh reads preserve relationship and duplicate SKU decisions after mutations. Persistent cache behavior is not introduced. Large catalog performance remains unmeasured.",
+      "current_source": "$postids = $wpdb->get_col($wpdb->prepare(",
+      "source_sha256": "3f817e70fe60b000bfb08c597183aaae9b28f61606de36e6a09e2d6f1e2b712e"
+    },
+    {
+      "id": "EX-044",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -555,7 +489,7 @@
       "source_sha256": "0166473b8fa1d37c5d7d9014fea5cc36de9bfc2e38bb612a1be7e51165d2bb6c"
     },
     {
-      "id": "EX-051",
+      "id": "EX-045",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -566,7 +500,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-052",
+      "id": "EX-046",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,

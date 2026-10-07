@@ -1,0 +1,141 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m<script type="text/javascript" id="hyyan-wpi-attrs-label-translation-button">
+ jQuery(function ($) {
+ $("<a>").attr("href", "http:\/\/localhost:8098\/wp-admin\/admin.php?page=mlang_strings\u0026group=WooCommerce Attributes").addClass("button button-primary button-large").text("Translate Attributes Labels").insertBefore(".attributes-table");$("<br><br>").insertBefore(".attributes-table");
+});
+ </script>
+<script type="text/javascript" id="hyyan-wpi-attr-label-translate-search-link">
+ jQuery(function ($) {
+ $(".attributes-table .row-actions").each(function () {var $this = $(this);var attrName = $this.parent().find("strong a").text();var attrTranslateUrl = "http:\/\/localhost:8098\/wp-admin\/admin.php?page=mlang_strings\u0026group=WooCommerce Attributes" + "&s=" + encodeURIComponent(attrName);$this.append($("<span>").addClass("translate").append("| ").append($("<a>").attr("href", attrTranslateUrl).text("Translate")));});
+});
+ </script>
+[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m....[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m....                                      28 / 28 (100%)
+
+Time: 00:02.840, Memory: 111.05 MB
+
+There were 20 failures:
+
+1) InlineScriptSecurityTest::testAttributeLinksUseTheResolvedScreenWithoutQueryInput
+Failed asserting that '' [ASCII](length: 0) contains "encodeURIComponent(attrName)" [ASCII](length: 28).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:73
+
+2) InlineScriptSecurityTest::testAttributeQueryCannotSelectAnotherResolvedScreen
+Failed asserting that null is false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:81
+
+3) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta missing nonce with data ('Hyyan\WPI\Product\Meta', 'missing nonce', 'lab-admin', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52607, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+4) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta invalid nonce with data ('Hyyan\WPI\Product\Meta', 'invalid nonce', 'lab-admin', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52610, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+5) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta array nonce with data ('Hyyan\WPI\Product\Meta', 'array nonce', 'lab-admin', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52613, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+6) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta wrong action with data ('Hyyan\WPI\Product\Meta', 'wrong action', 'lab-admin', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52616, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+7) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta malformed source with data ('Hyyan\WPI\Product\Meta', 'malformed source', 'lab-admin', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52619, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+8) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta unknown language with data ('Hyyan\WPI\Product\Meta', 'unknown language', 'lab-admin', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52622, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+9) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta denied lab-subscriber with data ('Hyyan\WPI\Product\Meta', 'valid', 'lab-subscriber', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52625, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+10) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta denied lab-customer with data ('Hyyan\WPI\Product\Meta', 'valid', 'lab-customer', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52628, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+11) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Meta denied lab-contributor with data ('Hyyan\WPI\Product\Meta', 'valid', 'lab-contributor', false, false)
+Hyyan\WPI\Product\Meta::syncTaxonomiesAndProductAttributes(52631, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php:75
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+12) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable missing nonce with data ('Hyyan\WPI\Product\Variable', 'missing nonce', 'lab-admin', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52646, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+13) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable invalid nonce with data ('Hyyan\WPI\Product\Variable', 'invalid nonce', 'lab-admin', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52649, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+14) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable array nonce with data ('Hyyan\WPI\Product\Variable', 'array nonce', 'lab-admin', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52652, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+15) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable wrong action with data ('Hyyan\WPI\Product\Variable', 'wrong action', 'lab-admin', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52655, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+16) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable malformed source with data ('Hyyan\WPI\Product\Variable', 'malformed source', 'lab-admin', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52658, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+17) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable unknown language with data ('Hyyan\WPI\Product\Variable', 'unknown language', 'lab-admin', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52661, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+18) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable denied lab-subscriber with data ('Hyyan\WPI\Product\Variable', 'valid', 'lab-subscriber', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52664, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+19) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable denied lab-customer with data ('Hyyan\WPI\Product\Variable', 'valid', 'lab-customer', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52667, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+20) ProductTranslationInputTest::testCreationEntryVerifiesBeforeCallbacks@Hyyan\WPI\Product\Variable denied lab-contributor with data ('Hyyan\WPI\Product\Variable', 'valid', 'lab-contributor', false, false)
+Hyyan\WPI\Product\Variable::duplicateVariations(52670, WP_Post Object (...), false) was not expected to be called.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php:71
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php:210
+
+[37;41mFAILURES![0m
+[37;41mTests: 28[0m[37;41m, Assertions: 46[0m[37;41m, Failures: 20[0m[37;41m.[0m

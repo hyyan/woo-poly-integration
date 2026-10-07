@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
-  "changed_files": 1650,
+  "through_commit": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+  "changed_files": 1675,
   "files": [
     {
       "file": ".exclude-list",
@@ -200,6 +200,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -268,6 +272,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -558,6 +566,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -784,6 +796,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -858,6 +874,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -920,6 +940,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -1034,6 +1058,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -1078,6 +1106,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -1180,6 +1212,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -2490,6 +2526,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -2508,6 +2548,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -11836,6 +11880,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -11850,6 +11898,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -12550,6 +12602,256 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-first-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-first-native-created.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-first-native-denial.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-first-native-published.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-first-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-first-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-minimum-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-minimum.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-native-created.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-native-denial.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-native-published.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-verified-creation-boundary-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -16614,6 +16916,10 @@
         {
           "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
           "subject": "docs: record hook ownership verification and remaining batches"
+        },
+        {
+          "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
+          "subject": "docs: record verified creation boundary and native acceptance"
         }
       ]
     },
@@ -17038,6 +17344,10 @@
         {
           "sha": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
           "subject": "fix: expose verified product creation requests to security checks"
+        },
+        {
+          "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+          "subject": "fix: verify creation callbacks and resolve attribute screens"
         }
       ]
     },
@@ -17116,6 +17426,10 @@
         {
           "sha": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
           "subject": "fix: expose verified product creation requests to security checks"
+        },
+        {
+          "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+          "subject": "fix: verify creation callbacks and resolve attribute screens"
         }
       ]
     },
@@ -17158,6 +17472,10 @@
         {
           "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
           "subject": "fix: identify plugin hook constants with their owning prefix"
+        },
+        {
+          "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+          "subject": "fix: verify creation callbacks and resolve attribute screens"
         }
       ]
     },
@@ -17222,6 +17540,10 @@
         {
           "sha": "02851f2fca3d1429a9606a9f9bcb4662e8e0e4d6",
           "subject": "fix: secure inline script data and preserve editor restrictions"
+        },
+        {
+          "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+          "subject": "fix: verify creation callbacks and resolve attribute screens"
         }
       ]
     },
@@ -17780,6 +18102,10 @@
         {
           "sha": "166bab95b4e8b760392657ea6c781b76b67555ea",
           "subject": "fix: remove obsolete product type request callbacks"
+        },
+        {
+          "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+          "subject": "fix: verify creation callbacks and resolve attribute screens"
         }
       ]
     },
@@ -17868,6 +18194,10 @@
         {
           "sha": "344363ec04bd699d3c06c1f67ddf3ccd54accf7e",
           "subject": "fix: verify early product translation creation requests"
+        },
+        {
+          "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
+          "subject": "fix: verify creation callbacks and resolve attribute screens"
         }
       ]
     },
