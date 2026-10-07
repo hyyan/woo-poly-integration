@@ -45,8 +45,11 @@ class Stock {
 	public static function SyncStockSimple( \WC_Product $product ) {
 		//first remove this action to avoid recusive call when setting translation stock
 		remove_action( 'woocommerce_product_set_stock', array( __CLASS__, __FUNCTION__ ), 10 );
-		static::SyncStock( $product );
-		add_action( 'woocommerce_product_set_stock', array( __CLASS__, __FUNCTION__ ), 10 );
+		try {
+			static::SyncStock( $product );
+		} finally {
+			add_action( 'woocommerce_product_set_stock', array( __CLASS__, __FUNCTION__ ), 10 );
+		}
 	}
 
 	/*
@@ -57,8 +60,11 @@ class Stock {
 	public static function SyncStockVariation( \WC_Product $product ) {
 		//first remove this action to avoid recusive call when setting translation stock
 		remove_action( 'woocommerce_variation_set_stock', array( __CLASS__, __FUNCTION__ ), 10 );
-		static::SyncStock( $product );
-		add_action( 'woocommerce_variation_set_stock', array( __CLASS__, __FUNCTION__ ), 10 );
+		try {
+			static::SyncStock( $product );
+		} finally {
+			add_action( 'woocommerce_variation_set_stock', array( __CLASS__, __FUNCTION__ ), 10 );
+		}
 	}
 
 	/*
