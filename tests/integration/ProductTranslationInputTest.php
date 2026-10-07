@@ -188,6 +188,47 @@ final class ProductTranslationInputTest extends TestCase
         return $cases;
     }
 
+    #[DataProvider('creationEntryRequests')]
+    public function testCreationEntryVerifiesBeforeCallbacks(string $class, string $case, string $login, bool $expected, bool $update): void
+    {
+        if ($login !== 'lab-admin') { wp_set_current_user(get_user_by('login', $login)->ID); }
+        $_GET['_wpnonce'] = wp_create_nonce('new-post-translation');
+        if ($case === 'missing nonce') { unset($_GET['_wpnonce']); }
+        if ($case === 'invalid nonce') { $_GET['_wpnonce'] = 'invalid'; }
+        if ($case === 'array nonce') { $_GET['_wpnonce'] = array('invalid'); }
+        if ($case === 'wrong action') { $_GET['_wpnonce'] = wp_create_nonce('update-post_' . $this->target->get_id()); }
+        if ($case === 'no source') { unset($_GET['from_post']); }
+        if ($case === 'malformed source') { $_GET['from_post'] .= ' OR 1=1'; }
+        if ($case === 'unknown language') { $_GET['new_lang'] = 'not-registered'; }
+        $methods = $class === Meta::class ? array('syncTaxonomiesAndProductAttributes') : array('duplicateVariations', 'syncDefaultAttributes');
+        $handler = $this->getMockBuilder($class)->disableOriginalConstructor()->onlyMethods($methods)->getMock();
+        $post = get_post($this->target->get_id());
+        foreach ($methods as $method) {
+            $handler->expects($expected ? $this->once() : $this->never())->method($method)
+                ->with($this->target->get_id(), $post, $update);
+        }
+        $handler->handleNewProduct($this->target->get_id(), $post, $update);
+    }
+
+    public static function creationEntryRequests(): array
+    {
+        $cases = array();
+        foreach (array(Meta::class, Variable::class) as $class) {
+            foreach (array('missing nonce', 'invalid nonce', 'array nonce', 'wrong action', 'malformed source', 'unknown language') as $case) {
+                $cases[$class . ' ' . $case] = array($class, $case, 'lab-admin', false, false);
+            }
+            foreach (array('lab-subscriber', 'lab-customer', 'lab-contributor') as $login) {
+                $cases[$class . ' denied ' . $login] = array($class, 'valid', $login, false, false);
+            }
+            foreach (array('lab-admin', 'lab-manager') as $login) {
+                $cases[$class . ' authorized ' . $login] = array($class, 'valid', $login, true, false);
+            }
+            $cases[$class . ' existing update'] = array($class, 'valid', 'lab-admin', false, true);
+            $cases[$class . ' no source'] = array($class, 'no source', 'lab-admin', false, false);
+        }
+        return $cases;
+    }
+
     public function testShopManagerNativeCreationNoncePreservesProductCopy(): void
     {
         wp_set_current_user(get_user_by('login', 'lab-manager')->ID);

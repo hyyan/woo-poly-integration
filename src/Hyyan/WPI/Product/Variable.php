@@ -67,7 +67,7 @@ class Variable
      * @param boolean   $update     Whether this is an existing post being updated or not
      */
     public function handleNewProduct($post_id, $post, $update){
-        if (! $update && (isset($_GET['from_post'])) ){
+        if (! $update && woo_poly_integration_get_product_translation_request()) {
             $this->duplicateVariations($post_id, $post, $update);
             $this->syncDefaultAttributes($post_id, $post, $update);
         }

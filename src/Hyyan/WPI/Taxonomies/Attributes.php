@@ -85,21 +85,12 @@ class Attributes implements TaxonomiesInterface
      * Add a button before the attributes table to let the user know how to
      * translate the attributes labels.
      *
-     * @global type $pagenow
-     *
      * @return bool false if not attributes page
      */
     public function addAttrsTranslateLinks()
     {
-        global $pagenow;
-        if ($pagenow !== 'edit.php') {
-            return false;
-        }
-
-        $isAttrPage = isset($_GET['page']) && is_string($_GET['page']) &&
-                sanitize_key(wp_unslash($_GET['page'])) === 'product_attributes';
-
-        if (!$isAttrPage) {
+        $screen = function_exists('get_current_screen') ? get_current_screen() : false;
+        if (!$screen || $screen->id !== 'product_page_product_attributes') {
             return false;
         }
 

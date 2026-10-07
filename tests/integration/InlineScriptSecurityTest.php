@@ -57,12 +57,31 @@ final class InlineScriptSecurityTest extends TestCase
     public function testAttributeLabelsCannotTerminateScripts(): void
     {
         $_GET = array('page' => 'product_attributes'); $GLOBALS['pagenow'] = 'edit.php';
+        set_current_screen('product_page_product_attributes');
         add_filter('gettext', $this->translation, 10, 3);
         $output = $this->capture(fn() => $this->handler(Attributes::class)->addAttrsTranslateLinks());
         self::assertStringNotContainsString('</script><img', $output);
         self::assertStringContainsString('encodeURIComponent(attrName)', $output);
         self::assertStringContainsString('.text(', $output);
     }
+    public function testAttributeLinksUseTheResolvedScreenWithoutQueryInput(): void
+    {
+        $_GET = array();
+        $GLOBALS['pagenow'] = 'edit.php';
+        set_current_screen('product_page_product_attributes');
+        $output = $this->capture(fn() => $this->handler(Attributes::class)->addAttrsTranslateLinks());
+        self::assertStringContainsString('encodeURIComponent(attrName)', $output);
+    }
+
+    public function testAttributeQueryCannotSelectAnotherResolvedScreen(): void
+    {
+        $_GET = array('page' => 'product_attributes');
+        $GLOBALS['pagenow'] = 'edit.php';
+        set_current_screen('edit-product');
+        self::assertFalse($this->handler(Attributes::class)->addAttrsTranslateLinks());
+        self::assertSame('', $this->capture(fn() => $this->handler(Attributes::class)->addAttrsTranslateLinks()));
+    }
+
     public function testVariableDialogEncodesDataAndFiltersItsHtml(): void
     {
         $_GET = array(); $GLOBALS['pagenow'] = 'post-new.php'; PLL()->curlang = PLL()->model->get_language('de');

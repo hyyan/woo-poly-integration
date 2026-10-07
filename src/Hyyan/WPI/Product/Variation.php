@@ -226,7 +226,7 @@ class Variation
             //JM2021: extra protection to ensure language set as early as possible
             //as had been failing on parent language [though now fixed]
             $targetLang = pll_get_post_language( $newParentId );
-            if ( (! $targetLang) && isset($_GET['new_lang'])) {
+            if (!$targetLang) {
                 $targetLang = Utilities::getRequestLanguage();
             } 
             if ($targetLang){
