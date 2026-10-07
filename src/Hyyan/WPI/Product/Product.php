@@ -29,6 +29,8 @@ class Product
     public function __construct()
     {
 
+        add_filter('pll_get_new_post_translation_link', array(__CLASS__, 'addTranslationRequestNonce'), 10, 3);
+
         // manage product translation
         add_filter(
                 'pll_get_post_types', array($this, 'manageProductTranslation')
@@ -74,6 +76,24 @@ class Product
         }
     }
 
+
+    /**
+     * Add request verification to legacy Polylang product creation links.
+     *
+     * @param string $link translation creation URL
+     * @param object $language target language
+     * @param int $source_id source post ID
+     * @return string
+     */
+    public static function addTranslationRequestNonce($link, $language, $source_id)
+    {
+        $source_id = absint($source_id);
+        if (!$link || !$source_id || get_post_type($source_id) !== 'product') {
+            return $link;
+        }
+        wp_parse_str((string) wp_parse_url(html_entity_decode($link, ENT_QUOTES, 'UTF-8'), PHP_URL_QUERY), $args);
+        return isset($args['_wpnonce']) ? $link : wp_nonce_url($link, 'new-post-translation');
+    }
 
     /*
      * #234 WooCommerce allows featured to be toggled in the products admin list

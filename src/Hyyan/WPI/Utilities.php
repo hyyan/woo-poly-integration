@@ -175,12 +175,19 @@ final class Utilities
     }
 
     /**
-     * Get a product translation request with a readable source and registered language.
+     * Get a verified product translation request with a readable source and registered language.
      *
      * @return array|false
      */
     public static function getProductTranslationRequest()
     {
+        // Product copy callbacks can run before Polylang verifies its creation link.
+        if (!current_user_can('edit_products') || !isset($_GET['_wpnonce']) ||
+                !is_string($_GET['_wpnonce']) ||
+                !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['_wpnonce'])), 'new-post-translation')) {
+            return false;
+        }
+
         $source_id = static::getRequestInteger('from_post');
         $language = static::getRequestLanguage();
         if (!$source_id || !$language || get_post_type($source_id) !== 'product' ||

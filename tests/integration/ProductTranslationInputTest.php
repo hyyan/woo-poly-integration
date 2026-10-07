@@ -52,7 +52,8 @@ final class ProductTranslationInputTest extends TestCase
         $variation->save();
         $this->ids[] = $variation->get_id();
         $GLOBALS['pagenow'] = 'post-new.php';
-        $_GET = array('from_post' => (string) $this->source->get_id(), 'new_lang' => 'de');
+        $_GET = array('from_post' => (string) $this->source->get_id(), 'new_lang' => 'de',
+            '_wpnonce' => wp_create_nonce('new-post-translation'));
     }
 
     protected function tearDown(): void
@@ -157,4 +158,74 @@ final class ProductTranslationInputTest extends TestCase
         $this->invoke('syncTaxonomiesAndProductAttributes');
         self::assertSame('1', get_post_meta($this->target->get_id(), '_weight', true));
     }
+
+    #[DataProvider('unverifiedCreationRequests')]
+    public function testUnverifiedCreationCannotCopyProducts(string $method, string $nonceCase, string $login): void
+    {
+        if ($login !== 'lab-admin') { wp_set_current_user(get_user_by('login', $login)->ID); }
+        $_GET['_wpnonce'] = wp_create_nonce('new-post-translation');
+        if ($nonceCase === 'missing') { unset($_GET['_wpnonce']); }
+        if ($nonceCase === 'invalid') { $_GET['_wpnonce'] = 'invalid'; }
+        if ($nonceCase === 'array') { $_GET['_wpnonce'] = array('invalid'); }
+        if ($nonceCase === 'wrong action') { $_GET['_wpnonce'] = wp_create_nonce('update-post_' . $this->target->get_id()); }
+        $this->invoke($method);
+        self::assertSame('1', get_post_meta($this->target->get_id(), '_weight', true));
+        self::assertSame(array('size' => 'large'), get_post_meta($this->target->get_id(), '_default_attributes', true));
+        self::assertSame(array(), wc_get_product($this->target->get_id())->get_children());
+    }
+
+    public static function unverifiedCreationRequests(): array
+    {
+        $cases = array();
+        foreach (array('syncTaxonomiesAndProductAttributes', 'duplicateVariations', 'syncDefaultAttributes') as $method) {
+            foreach (array('missing', 'invalid', 'array', 'wrong action') as $nonce) {
+                $cases[$method . ' ' . $nonce] = array($method, $nonce, 'lab-admin');
+            }
+            foreach (array('lab-subscriber', 'lab-customer', 'lab-contributor') as $login) {
+                $cases[$method . ' ' . $login] = array($method, 'valid', $login);
+            }
+        }
+        return $cases;
+    }
+
+    public function testShopManagerNativeCreationNoncePreservesProductCopy(): void
+    {
+        wp_set_current_user(get_user_by('login', 'lab-manager')->ID);
+        $_GET['_wpnonce'] = wp_create_nonce('new-post-translation');
+        self::assertTrue(current_user_can('edit_products'));
+        $this->invoke('syncTaxonomiesAndProductAttributes');
+        $this->invoke('duplicateVariations');
+        $this->invoke('syncDefaultAttributes');
+        self::assertSame('5', get_post_meta($this->target->get_id(), '_weight', true));
+        self::assertSame(array('size' => 'small'), get_post_meta($this->target->get_id(), '_default_attributes', true));
+        self::assertCount(1, wc_get_product($this->target->get_id())->get_children());
+    }
+
+
+    public function testLegacyNativeProductTranslationLinkReceivesCreationNonce(): void
+    {
+        $link = add_query_arg(array('post_type' => 'product', 'from_post' => $this->source->get_id(),
+            'new_lang' => 'de'), admin_url('post-new.php'));
+        $result = apply_filters('pll_get_new_post_translation_link', $link,
+            PLL()->model->get_language('de'), $this->source->get_id());
+        wp_parse_str(wp_parse_url(html_entity_decode($result, ENT_QUOTES, 'UTF-8'), PHP_URL_QUERY), $args);
+        self::assertArrayHasKey('_wpnonce', $args);
+        self::assertNotFalse(wp_verify_nonce($args['_wpnonce'], 'new-post-translation'));
+        unset($args['_wpnonce']);
+        self::assertSame(array('post_type' => 'product', 'from_post' => (string) $this->source->get_id(), 'new_lang' => 'de'), $args);
+    }
+
+    public function testCurrentNativeProductTranslationLinkIsUnchanged(): void
+    {
+        $link = wp_nonce_url(add_query_arg(array('post_type' => 'product', 'from_post' => $this->source->get_id(),
+            'new_lang' => 'de'), admin_url('post-new.php')), 'new-post-translation');
+        self::assertSame($link, apply_filters('pll_get_new_post_translation_link', $link,
+            PLL()->model->get_language('de'), $this->source->get_id()));
+        $page = wp_insert_post(array('post_type' => 'page', 'post_status' => 'draft', 'post_title' => 'Nonce page fixture'));
+        $this->ids[] = $page;
+        $pageLink = add_query_arg(array('post_type' => 'page', 'from_post' => $page, 'new_lang' => 'de'), admin_url('post-new.php'));
+        self::assertSame($pageLink, apply_filters('pll_get_new_post_translation_link', $pageLink,
+            PLL()->model->get_language('de'), $page));
+    }
+
 }
