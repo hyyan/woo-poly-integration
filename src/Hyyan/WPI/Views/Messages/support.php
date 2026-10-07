@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
                 )
                 ?>
             </h3>
-            <p><?php echo \Hyyan\WPI\Plugin::getView('badges'); ?></p>
+            <p><?php include dirname(__DIR__).'/badges.php'; ?></p>
             <p>
                 <?php
                 echo wp_kses_post(__('Hello, my name is <b>Hyyan Abo Fakher</b>, and I am the developer
@@ -32,7 +32,7 @@ if (!defined('ABSPATH')) {
                 ?>
             <p>
             <hr>
-            <?php echo \Hyyan\WPI\Plugin::getView('social') ?>
+            <?php include dirname(__DIR__).'/social.php'; ?>
         </td>
     </tr>
 </table>

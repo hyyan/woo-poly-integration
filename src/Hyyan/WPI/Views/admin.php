@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 
             <!-- main content -->
             <div id="post-body-content">
-                <?php echo \Hyyan\WPI\Plugin::getView('Admin/main', $vars) ?>
+                <?php include __DIR__.'/Admin/main.php'; ?>
             </div>
 
             <!-- sidebar -->
@@ -18,17 +18,17 @@ if (!defined('ABSPATH')) {
 
                 <!-- About the plugin -->
                 <div class="postbox">
-                    <?php echo \Hyyan\WPI\Plugin::getView('Admin/about') ?>
+                    <?php include __DIR__.'/Admin/about.php'; ?>
                 </div>
 
                 <!-- Support plugin -->
                 <div class="postbox">
-                    <?php echo \Hyyan\WPI\Plugin::getView('Admin/support') ?>
+                    <?php include __DIR__.'/Admin/support.php'; ?>
                 </div>
 
                 <!-- Need help -->
                 <div class = "postbox">
-                    <?php echo \Hyyan\WPI\Plugin::getView('Admin/getHelp') ?>
+                    <?php include __DIR__.'/Admin/getHelp.php'; ?>
                 </div>
             </div>
         </div>

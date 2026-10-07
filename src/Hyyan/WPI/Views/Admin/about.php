@@ -29,7 +29,7 @@ if (!defined('ABSPATH')) {
             <a href="https://github.com/hyyan">Hyyan Abo Fakher</a>
         </p>
 
-        <?php echo \Hyyan\WPI\Plugin::getView('badges'); ?>
+        <?php include dirname(__DIR__).'/badges.php'; ?>
 
     </div>
 </div>

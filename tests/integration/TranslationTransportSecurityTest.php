@@ -1,6 +1,7 @@
 <?php
 use Hyyan\WPI\Tools\TranslationsDownloader;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 final class TranslationTransportSecurityTest extends TestCase
 {
@@ -47,6 +48,49 @@ final class TranslationTransportSecurityTest extends TestCase
         } finally {
             remove_filter('pre_http_request', $filter, 10);
         }
+    }
+
+    #[DataProvider('availabilityCases')]
+    public function testDownloadErrorsEscapeLanguageNamesAndRemoveUnsafeTranslationMarkup(bool $available): void
+    {
+        $requests = 0;
+        $transport = function () use (&$requests, $available) {
+            ++$requests;
+            return $available && $requests === 1
+                ? array('response' => array('code' => 200), 'body' => '')
+                : new WP_Error('http_request_failed', 'Download failed');
+        };
+        $translation = function ($translated, $text, $domain) {
+            if ($domain === 'woo-poly-integration' && strpos($text, 'WooCommerce translation %s') !== false) {
+                return '<script>alert(1)</script><strong onclick="alert(1)">%1$s</strong> <a href="%2$s">Repository</a>';
+            }
+            return $translated;
+        };
+        add_filter('pre_http_request', $transport);
+        add_filter('gettext', $translation, 10, 3);
+        try {
+            try {
+                TranslationsDownloader::download('zz_SECURITY', '<img src=x onerror="alert(1)">Language');
+                self::fail('A failed download must throw an exception.');
+            } catch (RuntimeException $error) {
+                $message = $error->getMessage();
+                self::assertStringNotContainsString('<script>', $message);
+                self::assertStringNotContainsString('onclick=', $message);
+                self::assertStringNotContainsString('<img', $message);
+                self::assertStringContainsString('&lt;img', $message);
+                self::assertStringContainsString('zz_SECURITY', $message);
+                self::assertStringContainsString('href="'.TranslationsDownloader::getRepoUrl().'"', $message);
+                self::assertStringContainsString('</strong>', $message);
+            }
+        } finally {
+            remove_filter('pre_http_request', $transport);
+            remove_filter('gettext', $translation, 10);
+        }
+    }
+
+    public static function availabilityCases(): array
+    {
+        return array('unavailable' => array(false), 'download failed' => array(true));
     }
 
     public function testFailedTransportIsNotReportedAsAvailable(): void

@@ -90,13 +90,16 @@ final class GatewayOutputSecurityTest extends TestCase
     {
         $original = get_option(FlashMessages::getOptionName());
         FlashMessages::clearMessages();
-        FlashMessages::add('output-test', '<b>Notice</b><a href="https://example.org/help">Help</a>', array('updated" data-marker="unsafe'));
+        FlashMessages::add('output-test', '<script>window.woopolyNoticeMarker=true</script><b onclick="alert(1)">Notice</b><a href="https://example.org/help">Help</a><a href="javascript:alert(1)">Unsafe</a>', array('updated" data-marker="unsafe'));
         $bufferLevel = ob_get_level();
         ob_start();
         try {
             FlashMessages::display();
             $html = ob_get_clean();
             self::assertStringNotContainsString(' data-marker="unsafe', $html);
+            self::assertStringNotContainsString('<script>', $html);
+            self::assertStringNotContainsString('onclick=', $html);
+            self::assertStringNotContainsString('javascript:', $html);
             self::assertStringContainsString('<b>Notice</b>', $html);
             self::assertStringContainsString('href="https://example.org/help"', $html);
         } finally {

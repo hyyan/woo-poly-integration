@@ -44,16 +44,16 @@ class TranslationsDownloader
                     /* translators: 1: Language name and locale, 2: Translation repository URL. */
                     __(
                             'WooCommerce translation %s can not be found in : <a href="%2$s">%2$s</a>', 'woo-poly-integration'
-                    ), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
+                    ), esc_html(sprintf('%s(%s)', $name, $locale)), esc_url(static::getRepoUrl())
             );
 
-            throw new \RuntimeException($notAvaliable);
+            throw new \RuntimeException(wp_kses_post($notAvaliable));
         }
 
         /* Download the language pack */
         $cantDownload = sprintf(
                 /* translators: 1: Language name and locale, 2: Translation repository URL. */
-                __('Unable to download WooCommerce translation %s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), sprintf('%s(%s)', $name, $locale), static::getRepoUrl()
+                __('Unable to download WooCommerce translation %s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), esc_html(sprintf('%s(%s)', $name, $locale)), esc_url(static::getRepoUrl())
         );
         $response = wp_remote_get(
                 sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('timeout' => 200)
@@ -71,11 +71,11 @@ class TranslationsDownloader
                 require_once ABSPATH.'/wp-admin/includes/file.php';
 
                 if (false === ($creds = request_filesystem_credentials('', '', false, false, null))) {
-                    throw new \RuntimeException($cantDownload);
+                    throw new \RuntimeException(wp_kses_post($cantDownload));
                 }
 
                 if (!WP_Filesystem($creds)) {
-                    throw new \RuntimeException($cantDownload);
+                    throw new \RuntimeException(wp_kses_post($cantDownload));
                 }
             }
 
@@ -84,14 +84,14 @@ class TranslationsDownloader
 
             /* Save the zip file */
             if (!$wp_filesystem->put_contents($file, $response['body'], FS_CHMOD_FILE)) {
-                throw new \RuntimeException($cantDownload);
+                throw new \RuntimeException(wp_kses_post($cantDownload));
             }
 
             /* Unzip the file to wp-content/languages/plugins directory */
             $dir = trailingslashit(WP_LANG_DIR).'plugins/';
             $unzip = unzip_file($file, $dir);
             if (true !== $unzip) {
-                throw new \RuntimeException($cantDownload);
+                throw new \RuntimeException(wp_kses_post($cantDownload));
             }
 
             /* Delete the package file */
@@ -99,7 +99,7 @@ class TranslationsDownloader
 
             return true;
         } else {
-            throw new \RuntimeException($cantDownload);
+            throw new \RuntimeException(wp_kses_post($cantDownload));
         }
     }
 

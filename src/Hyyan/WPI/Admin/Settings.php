@@ -86,9 +86,8 @@ class Settings extends \WeDevs_Settings_API
      */
     public function outputPage()
     {
-        echo \Hyyan\WPI\Plugin::getView('admin', array(
-            'self' => $this,
-        ));
+        $vars = array('self' => $this);
+        include dirname(__DIR__).'/Views/admin.php';
     }
 
     /**

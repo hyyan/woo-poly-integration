@@ -23,5 +23,5 @@ if (!defined('ABSPATH')) {
     ));
     ?>
     <br><br>
-    <?php echo \Hyyan\WPI\Plugin::getView('social') ?>
+    <?php include dirname(__DIR__).'/social.php'; ?>
 </div>
