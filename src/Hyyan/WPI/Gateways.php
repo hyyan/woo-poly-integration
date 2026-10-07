@@ -10,6 +10,10 @@
 
 namespace Hyyan\WPI;
 
+use Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry;
+use Automattic\WooCommerce\Blocks\Package;
+use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
+
 /**
  * Gateways.
  *
@@ -34,10 +38,46 @@ class Gateways
 
         // Payment gateway title and respective description
         add_filter('woocommerce_gateway_title', array($this, 'translatePaymentGatewayTitle'), 10, 2);
+        add_filter('woocommerce_order_get_payment_method_title', array($this, 'translatePaymentGatewayTitle'), 10, 2);
         add_filter('woocommerce_gateway_description', array($this, 'translatePaymentGatewayDescription'), 10, 2);
+
+        add_action('woocommerce_blocks_cart_enqueue_data', array($this, 'translateBlockPaymentData'), 9);
+        add_action('woocommerce_blocks_checkout_enqueue_data', array($this, 'translateBlockPaymentData'), 9);
 
         // Payment method in Thank You and Order View pages
         //add_filter( 'woocommerce_get_order_item_totals', array( $this, 'translateWoocommerceOrderPaymentMethod' ), 10, 2 ); // @todo: Needs further testing before enabling
+    }
+
+    /**
+     * Translate configured block payment titles and descriptions.
+     */
+    public function translateBlockPaymentData()
+    {
+        if (!class_exists(Package::class) || !class_exists(PaymentMethodRegistry::class) ||
+            !class_exists(AssetDataRegistry::class)) {
+            return;
+        }
+        $assets = Package::container()->get(AssetDataRegistry::class);
+        if ($assets->exists('paymentMethodData')) {
+            return;
+        }
+        $data = Package::container()->get(PaymentMethodRegistry::class)->get_all_registered_script_data();
+        if (!isset($data['paymentMethodData']) || !is_array($data['paymentMethodData'])) {
+            return;
+        }
+        foreach ($data['paymentMethodData'] as $id => &$method) {
+            if (!is_array($method)) {
+                continue;
+            }
+            if (isset($method['title']) && is_string($method['title'])) {
+                $method['title'] = $this->translatePaymentGatewayTitle($method['title'], $id);
+            }
+            if (isset($method['description']) && is_string($method['description'])) {
+                $method['description'] = $this->translatePaymentGatewayDescription($method['description'], $id);
+            }
+        }
+        unset($method);
+        $assets->add('paymentMethodData', $data['paymentMethodData']);
     }
 
     /**
