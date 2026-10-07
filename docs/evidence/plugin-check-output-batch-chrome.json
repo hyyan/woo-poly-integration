@@ -1,0 +1,49 @@
+{
+  "settings": {
+    "noticeMarkerExecuted": false,
+    "downloadMarkerExecuted": false,
+    "notices": [
+      {
+        "text": "window.woopolyNoticeMarker=trueOutput batch notice HelpUnsafeDismiss this notice.",
+        "scripts": 0,
+        "events": 0,
+        "unsafeLinks": 0,
+        "help": true
+      },
+      {
+        "text": "window.woopolyDownloadMarker=true<img src=x onerror=\"window.woopolyDownloadMarker=true\">Browser language(zz_OUTPUT) RepositoryDismiss this notice.",
+        "scripts": 0,
+        "events": 0,
+        "unsafeLinks": 0,
+        "help": false
+      }
+    ],
+    "forms": 2,
+    "nonceInputs": 2,
+    "saveButtons": 2,
+    "sharingLinks": 1
+  },
+  "status": {
+    "statusTable": true,
+    "tips": [
+      {
+        "label": "The current language used by WordPress. Default = English",
+        "tabIndex": "0",
+        "tooltipText": "The current language used by WordPress. Default = English",
+        "visible": true
+      },
+      {
+        "label": "The default language set in Polylang",
+        "tabIndex": "0",
+        "tooltipText": "The default language set in Polylang",
+        "visible": true
+      },
+      {
+        "label": "The available languages in Polylang",
+        "tabIndex": "0",
+        "tooltipText": "The available languages in Polylang",
+        "visible": true
+      }
+    ]
+  }
+}
