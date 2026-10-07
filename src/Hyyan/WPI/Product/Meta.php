@@ -124,7 +124,11 @@ class Meta
             $wpi_keys	 = static::getProductMetaToCopy( $keys );
             $wpi_keys	 = array_diff( $wpi_keys, array( '_default_attributes' ) );
         }
-        return $wpi_keys;
+        $keys = $wpi_keys;
+        if ($sync && !in_array('_custom_product_attributes', $keys, true)) {
+            $keys = array_diff($keys, array('_product_attributes'));
+        }
+        return $keys;
     }
 
     /**
@@ -142,8 +146,48 @@ class Meta
      */
     public function syncProductMeta($from, $to, $lang, $sync = true)
     {
-        // sync product meta with polylang
-        PLL()->sync->post_metas->copy( $from, $to, $lang, $sync );
+        $preserve = null;
+        $copyAttributes = null;
+        $metas = static::getProductMetaToCopy();
+        if ($sync && in_array('_product_attributes', $metas, true)
+            && !in_array('_custom_product_attributes', $metas, true)) {
+            $attributes = get_post_meta($to, '_product_attributes', true);
+            $preserve = function ($value, $key, $language, $source, $target) use ($attributes, $from, $to) {
+                if ($key !== '_product_attributes' || (int) $source !== (int) $from
+                    || (int) $target !== (int) $to || !is_array($value)) {
+                    return $value;
+                }
+                $value = array_filter($value, function ($attribute) {
+                    return !empty($attribute['is_taxonomy']);
+                });
+                foreach ((array) $attributes as $name => $attribute) {
+                    if (empty($attribute['is_taxonomy'])) {
+                        $value[$name] = $attribute;
+                    }
+                }
+                return $value;
+            };
+            $copyAttributes = function ($keys, $synchronize, $source, $target) use ($from, $to) {
+                if ($synchronize && (int) $source === (int) $from && (int) $target === (int) $to) {
+                    $keys[] = '_product_attributes';
+                }
+                return array_unique($keys);
+            };
+            add_filter('pll_copy_post_metas', $copyAttributes, 11, 4);
+            add_filter('pll_translate_post_meta', $preserve, 10, 5);
+        }
+        try {
+            if (isset(PLL()->sync->post_metas)) {
+                PLL()->sync->post_metas->copy($from, $to, $lang, $sync);
+            } else {
+                PLL()->sync->copy_post_metas($from, $to, $lang, $sync);
+            }
+        } finally {
+            if ($preserve) {
+                remove_filter('pll_translate_post_meta', $preserve, 10);
+                remove_filter('pll_copy_post_metas', $copyAttributes, 11);
+            }
+        }
     }
     
     /**
