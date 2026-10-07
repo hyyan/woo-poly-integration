@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
-  "changed_files": 1694,
+  "through_commit": "9790467ae606f94656b2f9afcdd2541428dce86d",
+  "changed_files": 1716,
   "files": [
     {
       "file": ".exclude-list",
@@ -208,6 +208,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -284,6 +288,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -582,6 +590,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -816,6 +828,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -898,6 +914,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -968,6 +988,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -1090,6 +1114,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -1142,6 +1170,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -1252,6 +1284,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -2570,6 +2606,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -2596,6 +2636,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -10170,6 +10214,206 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-admin-route-batch-admin-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-older-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-older-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-older-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-older-target-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-admin-route-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-baseline-normalized.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -12112,6 +12356,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -12134,6 +12382,10 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
         }
       ]
     },
@@ -17156,6 +17408,20 @@
         {
           "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
           "subject": "docs: record grouped request and screen verification"
+        },
+        {
+          "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
+          "subject": "docs: record native admin route acceptance"
+        }
+      ]
+    },
+    {
+      "file": "languages/woo-poly-integration.pot",
+      "purpose": "Changes recorded in the referenced maintenance commits.",
+      "commits": [
+        {
+          "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
+          "subject": "fix: number translation formats and preserve legacy catalogs"
         }
       ]
     },
@@ -17438,6 +17704,16 @@
       ]
     },
     {
+      "file": "src/Hyyan/WPI/HooksInterface.php",
+      "purpose": "Changes recorded in the referenced maintenance commits.",
+      "commits": [
+        {
+          "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
+          "subject": "fix: number translation formats and preserve legacy catalogs"
+        }
+      ]
+    },
+    {
       "file": "src/Hyyan/WPI/Language.php",
       "purpose": "Changes recorded in the referenced maintenance commits.",
       "commits": [
@@ -17516,6 +17792,10 @@
         {
           "sha": "791192bbe2563bd2c2367ad4c707ee2acb6dd82e",
           "subject": "fix: preserve native block store page translations"
+        },
+        {
+          "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
+          "subject": "fix: number translation formats and preserve legacy catalogs"
         }
       ]
     },
@@ -17588,6 +17868,10 @@
         {
           "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
           "subject": "fix: verify creation callbacks and resolve attribute screens"
+        },
+        {
+          "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
+          "subject": "fix: number translation formats and preserve legacy catalogs"
         }
       ]
     },
@@ -17850,6 +18134,10 @@
         {
           "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
           "subject": "fix: identify plugin hook constants with their owning prefix"
+        },
+        {
+          "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
+          "subject": "fix: number translation formats and preserve legacy catalogs"
         }
       ]
     },
@@ -17954,6 +18242,10 @@
         {
           "sha": "e0cf70df6641ffedb50b9f96820bb675f364283a",
           "subject": "fix: correct translation calls and preserve catalog contracts"
+        },
+        {
+          "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
+          "subject": "fix: number translation formats and preserve legacy catalogs"
         }
       ]
     },
@@ -18704,6 +18996,10 @@
         {
           "sha": "e0cf70df6641ffedb50b9f96820bb675f364283a",
           "subject": "fix: correct translation calls and preserve catalog contracts"
+        },
+        {
+          "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
+          "subject": "fix: number translation formats and preserve legacy catalogs"
         }
       ]
     },

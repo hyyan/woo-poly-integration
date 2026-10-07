@@ -1,28 +1,25 @@
 # Remaining translation findings
 
-These 22 findings remain open. Eleven dynamic fallback calls were corrected, removing 22 findings. Nineteen remaining rows concern native WooCommerce catalog domains and three concern existing format keys. Catalog behavior must be preserved while correcting these findings. No exception or suppression is accepted. Source fingerprints and exact locations are in evidence/plugin-check-remaining-translations-review.json.
+These 19 findings remain open and concern native WooCommerce catalog domains. The three format errors are corrected with numbered current keys and a native legacy catalog fallback. All existing PO and MO catalogs remain byte identical. No exception or suppression is accepted. Exact current locations and source fingerprints are in evidence/plugin-check-remaining-translations-review.json.
 
-| File | Line | Code |
-| --- | --- | --- |
-| src/Hyyan/WPI/Plugin.php | 426 | TextDomainMismatch |
-| src/Hyyan/WPI/Plugin.php | 427 | TextDomainMismatch |
-| src/Hyyan/WPI/Plugin.php | 431 | TextDomainMismatch |
-| src/Hyyan/WPI/Plugin.php | 432 | TextDomainMismatch |
-| src/Hyyan/WPI/Plugin.php | 438 | TextDomainMismatch |
-| src/Hyyan/WPI/Plugin.php | 439 | TextDomainMismatch |
-| src/Hyyan/WPI/Plugin.php | 445 | TextDomainMismatch |
-| src/Hyyan/WPI/Plugin.php | 446 | TextDomainMismatch |
-| src/Hyyan/WPI/Gateways/GatewayBACS.php | 83 | TextDomainMismatch |
-| src/Hyyan/WPI/Gateways/GatewayBACS.php | 103 | TextDomainMismatch |
-| src/Hyyan/WPI/Gateways/GatewayBACS.php | 107 | TextDomainMismatch |
-| src/Hyyan/WPI/Gateways/GatewayBACS.php | 115 | TextDomainMismatch |
-| src/Hyyan/WPI/Gateways/GatewayBACS.php | 119 | TextDomainMismatch |
-| src/Hyyan/WPI/Gateways/GatewayBACS.php | 135 | TextDomainMismatch |
-| src/Hyyan/WPI/Privacy.php | 36 | TextDomainMismatch |
-| src/Hyyan/WPI/Privacy.php | 38 | TextDomainMismatch |
-| src/Hyyan/WPI/Cart.php | 275 | TextDomainMismatch |
-| src/Hyyan/WPI/Admin/StatusReport.php | 28 | TextDomainMismatch |
-| src/Hyyan/WPI/Coupon.php | 119 | TextDomainMismatch |
-| src/Hyyan/WPI/Views/Messages/endpointsTranslations.php | 12 | UnorderedPlaceholdersText |
-| src/Hyyan/WPI/Tools/TranslationsDownloader.php | 46 | MixedOrderedPlaceholdersText |
-| src/Hyyan/WPI/Tools/TranslationsDownloader.php | 56 | MixedOrderedPlaceholdersText |
+| File and line | Finding |
+| --- | --- |
+| src/Hyyan/WPI/Plugin.php:467 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Plugin.php:468 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Plugin.php:472 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Plugin.php:473 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Plugin.php:479 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Plugin.php:480 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Plugin.php:486 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Plugin.php:487 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Gateways/GatewayBACS.php:83 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Gateways/GatewayBACS.php:103 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Gateways/GatewayBACS.php:107 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Gateways/GatewayBACS.php:115 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Gateways/GatewayBACS.php:119 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Gateways/GatewayBACS.php:135 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Privacy.php:36 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Privacy.php:38 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Cart.php:277 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Admin/StatusReport.php:28 | WordPress.WP.I18n.TextDomainMismatch |
+| src/Hyyan/WPI/Coupon.php:119 | WordPress.WP.I18n.TextDomainMismatch |

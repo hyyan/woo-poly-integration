@@ -1,88 +1,88 @@
 {
-  "source_commit": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
-  "installed_total": 64,
-  "open_findings": 22,
+  "source_commit": "9790467ae606f94656b2f9afcdd2541428dce86d",
+  "installed_total": 60,
+  "open_findings": 19,
   "accepted_exceptions": 0,
   "findings": [
     {
-      "line": 426,
+      "line": 467,
       "column": 85,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
-      "line": 427,
+      "line": 468,
       "column": 86,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
-      "line": 431,
+      "line": 472,
       "column": 85,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
-      "line": 432,
+      "line": 473,
       "column": 86,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
-      "line": 438,
+      "line": 479,
       "column": 89,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
-      "line": 439,
+      "line": 480,
       "column": 90,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
-      "line": 445,
+      "line": 486,
       "column": 91,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
-      "line": 446,
+      "line": 487,
       "column": 92,
       "type": "ERROR",
       "code": "WordPress.WP.I18n.TextDomainMismatch",
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Plugin.php",
-      "source_sha256": "c606b548b5616d1a61a9c912b1ca05737c426a952338daf380cf4c94f68e1361"
+      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
     },
     {
       "line": 83,
@@ -193,36 +193,6 @@
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Coupon.php",
       "source_sha256": "8f829142a4e51787edc8ef303eca1b7748fc5a9065c5d4490ee96b940b2f6d65"
-    },
-    {
-      "line": 12,
-      "column": 9,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.UnorderedPlaceholdersText",
-      "message": "Multiple placeholders in translatable strings should be ordered. Expected \"%1$s, %2$s\", but got \"%s, %s\" in 'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target=\"_blank\" href=\"%s\">%s</a>'.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#variables",
-      "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
-      "source_sha256": "2b82c2161f8db6e3d2fdbec01212dbcad2056397fad485fdbc919178279e3be3"
-    },
-    {
-      "line": 46,
-      "column": 29,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText",
-      "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'WooCommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>'.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-      "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
-      "source_sha256": "28876689d3ef14fe22c7ab5bd441e1d3ded47b8f75ad751c4998db6a668e28b9"
-    },
-    {
-      "line": 56,
-      "column": 20,
-      "type": "ERROR",
-      "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText",
-      "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'Unable to download WooCommerce translation %s from : <a href=\"%2$s\">%2$s</a>'.",
-      "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-      "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
-      "source_sha256": "28876689d3ef14fe22c7ab5bd441e1d3ded47b8f75ad751c4998db6a668e28b9"
     }
   ]
 }

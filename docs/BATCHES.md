@@ -1,6 +1,6 @@
 # Maintenance batches
 
-Current verified source 4ac655a: 446 tests with 1498 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 64 findings, 23 errors and 41 warnings. This removes 166 actual rows from the 230 finding baseline. Remaining batches contain 33 request checks, 22 translation checks, two overridable public hook checks, two prepared query checks and five other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-admin-route-batch.
+Current verified source 9790467: 460 tests with 1512 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 60 findings, 20 errors and 40 warnings. This removes 170 actual rows from the 230 finding baseline. Remaining batches contain 33 request checks, 19 translation checks, two overridable public hook checks, two prepared query checks and four other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-format-catalog-batch.
 
 Historical installed static and runtime Plugin Check reports contain 122 findings, 45 errors and 77 warnings. This is 108 actual removed rows from the 230 finding baseline. The current batches are mapped to every exact source location in evidence/current-plugin-check-batches.json.
 

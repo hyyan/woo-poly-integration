@@ -1,0 +1,26 @@
+{
+  "legacy": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"mode\":\"legacy\",\"notice\":\"\\nLegacy browser: Translate\",\"links\":[{\"text\":\"Translate\",\"href\":\"http://localhost:8098/woopoly-package-lab/wp-admin/admin.php?page=mlang_strings&group=WooCommerce%20Endpoints\"}],\"downloads\":[{\"text\":\"Legacy browser: Format browser language(zz_FORMAT_BROWSER)\",\"href\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\"},{\"text\":\"Legacy browser: Format browser language(zz_FORMAT_BROWSER)\",\"href\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\"}],\"error\":false}\n```"
+      }
+    ]
+  },
+  "current": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"mode\":\"current\",\"notice\":\"\\nCurrent browser: Translate\",\"links\":[{\"text\":\"Translate\",\"href\":\"http://localhost:8098/woopoly-package-lab/wp-admin/admin.php?page=mlang_strings&group=WooCommerce%20Endpoints\"}],\"downloads\":[{\"text\":\"Current browser: Format browser language(zz_FORMAT_BROWSER)\",\"href\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\"},{\"text\":\"Current browser: Format browser language(zz_FORMAT_BROWSER)\",\"href\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\"}],\"error\":false}\n```"
+      }
+    ]
+  },
+  "source": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"mode\":\"source\",\"notice\":\"\\nYou can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. Translate\",\"links\":[{\"text\":\"Translate\",\"href\":\"http://localhost:8098/woopoly-package-lab/wp-admin/admin.php?page=mlang_strings&group=WooCommerce%20Endpoints\"}],\"downloads\":[{\"text\":\"WooCommerce translation Format browser language(zz_FORMAT_BROWSER) can not be found in : https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\",\"href\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\"},{\"text\":\"Unable to download WooCommerce translation Format browser language(zz_FORMAT_BROWSER) from : https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\",\"href\":\"https://downloads.wordpress.org/translation/plugin/woocommerce/11.1.2\"}],\"error\":false}\n```"
+      }
+    ]
+  }
+}
