@@ -22445,7 +22445,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "plugin-check-request-batch-plugin-check.json",
+  "package_scan": "plugin-check-stock-log-batch-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -22862,24 +22862,6 @@
       "file": "src/Hyyan/WPI/Gateways.php"
     },
     {
-      "line": 66,
-      "column": 21,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php"
-    },
-    {
-      "line": 94,
-      "column": 13,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php"
-    },
-    {
       "line": 119,
       "column": 53,
       "type": "ERROR",
@@ -22912,42 +22894,6 @@
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php"
-    },
-    {
-      "line": 173,
-      "column": 21,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php"
-    },
-    {
-      "line": 222,
-      "column": 17,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php"
-    },
-    {
-      "line": 227,
-      "column": 17,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php"
-    },
-    {
-      "line": 283,
-      "column": 13,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
       "docs": "",
       "file": "src/Hyyan/WPI/Coupon.php"
     },
@@ -23501,16 +23447,7 @@
       "file": "src/Hyyan/WPI/Product/Variation.php"
     },
     {
-      "line": 112,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Variation.php"
-    },
-    {
-      "line": 166,
+      "line": 167,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
@@ -23519,7 +23456,7 @@
       "file": "src/Hyyan/WPI/Product/Variation.php"
     },
     {
-      "line": 166,
+      "line": 167,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
@@ -23528,7 +23465,7 @@
       "file": "src/Hyyan/WPI/Product/Variation.php"
     },
     {
-      "line": 223,
+      "line": 224,
       "column": 43,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23537,7 +23474,7 @@
       "file": "src/Hyyan/WPI/Product/Variation.php"
     },
     {
-      "line": 400,
+      "line": 401,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23587,15 +23524,6 @@
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php"
-    },
-    {
-      "line": 576,
-      "column": 13,
-      "type": "WARNING",
-      "code": "WordPress.PHP.DevelopmentFunctions.error_log_error_log",
-      "message": "error_log() found. Debug code should not normally be used in production.",
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php"
     },
@@ -23661,42 +23589,6 @@
       "message": "Direct database call without caching detected. Consider using wp_cache_get() / wp_cache_set() or wp_cache_delete().",
       "docs": "",
       "file": "src/Hyyan/WPI/Product/Meta.php"
-    },
-    {
-      "line": 26,
-      "column": 23,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Stock.php"
-    },
-    {
-      "line": 26,
-      "column": 44,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Stock.php"
-    },
-    {
-      "line": 27,
-      "column": 23,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Stock.php"
-    },
-    {
-      "line": 27,
-      "column": 60,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Stock.php"
     },
     {
       "line": 99,
@@ -23933,9 +23825,9 @@
       "file": "src/Hyyan/WPI/Emails.php"
     }
   ],
-  "package_archive_sha256": "10e2e83d84cfeb6b526cd9afbc801b35701762e039d976cea359ff60e08a16d7",
+  "package_archive_sha256": "f4fe3a3b7c8f52ddd8f3fe091fd846650a36b8ae8a446c6c17c8e78c40d523b2",
   "package_file_count": 73,
-  "previous_package_scan": "plugin-check-output-batch-plugin-check.json",
+  "previous_package_scan": "plugin-check-request-batch-plugin-check.json",
   "forum_counts": {
     "captured_pages": 423,
     "unique_topics": 413,
@@ -23948,11 +23840,11 @@
   "active_plugin_check_goal": {
     "status": "active",
     "baseline": 230,
-    "remaining": 165,
+    "remaining": 153,
     "errors": 45,
-    "warnings": 120,
-    "resolved_this_batch": 44,
+    "warnings": 108,
+    "resolved_this_batch": 12,
     "dispositions_are_not_fixes": true,
-    "source_commit": "cb91bae"
+    "source_commit": "b7b33b0"
   }
 }

@@ -303,3 +303,7 @@ CHECK-001: Output and exception batch resolved. Twenty one findings removed by t
 Committed CHECK-001 as 4b4094f, fix: sanitize admin notices and translation error output. Eight production files and three test files changed. The installed package source matches this commit. The goal stays active with 209 findings.
 
 CHECK-002: Verified category posted field authorization, integer and request normalization, and combined report normalization. Forty four installed warnings removed, 165 findings remain. Evidence uses plugin-check-request-batch. Goal active.
+
+CHECK-003: Product edit stock hook suppression verifies nonce and product permission. Native WooCommerce diagnostics replace eight PHP logging calls. Twelve installed warnings removed. Goal active with 153 findings. Evidence uses plugin-check-stock-log-batch.
+
+Committed CHECK-003 as b7b33b0, fix: verify stock edit requests and use native diagnostics. Four production files and two test files changed. The active goal retains 153 installed findings.

@@ -1,0 +1,15 @@
+{
+  "before": {
+    "stock": "20",
+    "manageStock": true,
+    "noncePresent": true,
+    "logger": "{\"level\":\"debug\",\"message\":\"woopoly setting related for coupon : stock-log-diagnostic-fixture include-products: exclude-products: include-categories: exclude-categories: in request: \\/woopoly-package-lab\\/wp-admin\\/post.php\",\"source\":\"woo-poly-integration\"}",
+    "fatalError": false
+  },
+  "after": {
+    "translatedStock": "13",
+    "manageStock": true,
+    "logger": "{\"level\":\"debug\",\"message\":\"woopoly setting related for coupon : stock-log-diagnostic-fixture include-products: exclude-products: include-categories: exclude-categories: in request: \\/woopoly-package-lab\\/wp-admin\\/post.php\",\"source\":\"woo-poly-integration\"}",
+    "fatalError": false
+  }
+}

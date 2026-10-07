@@ -1,3 +1,5 @@
+Current status: incomplete. The Plugin Check remediation goal remains active. The latest installed scan has 153 findings, 45 errors and 108 warnings. Earlier completion conclusions below are historical and do not satisfy this active goal. Current evidence is recorded in PLUGIN-CHECK-REMEDIATION.md and the plugin-check-stock-log-batch reports.
+
 # Maintenance completion audit
 
 This audit covers confirmed defects in this plugin and its existing supported behavior. The maintainer excludes defects and missing features owned by external plugins. Evidence establishes the documented scenarios, not every possible store configuration.
