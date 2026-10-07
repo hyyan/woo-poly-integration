@@ -301,3 +301,5 @@ New active goal: resolve the 230 remaining installed Plugin Check findings, comp
 CHECK-001: Output and exception batch resolved. Twenty one findings removed by the fresh installed scan. Evidence: plugin-check-output-batch files. The remaining inline script warning belongs to a separate inspected output contract. Overall goal stays active with 209 findings.
 
 Committed CHECK-001 as 4b4094f, fix: sanitize admin notices and translation error output. Eight production files and three test files changed. The installed package source matches this commit. The goal stays active with 209 findings.
+
+CHECK-002: Verified category posted field authorization, integer and request normalization, and combined report normalization. Forty four installed warnings removed, 165 findings remain. Evidence uses plugin-check-request-batch. Goal active.

@@ -22445,7 +22445,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "plugin-check-output-batch-plugin-check.json",
+  "package_scan": "plugin-check-request-batch-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -22862,15 +22862,6 @@
       "file": "src/Hyyan/WPI/Gateways.php"
     },
     {
-      "line": 39,
-      "column": 41,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_SERVER[&#039;REQUEST_URI&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Coupon.php"
-    },
-    {
       "line": 66,
       "column": 21,
       "type": "WARNING",
@@ -23025,7 +23016,7 @@
     },
     {
       "line": 157,
-      "column": 29,
+      "column": 40,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
@@ -23033,16 +23024,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 157,
-      "column": 29,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[$key]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Utilities.php"
-    },
-    {
-      "line": 169,
+      "line": 170,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23051,7 +23033,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 169,
+      "line": 170,
       "column": 47,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23060,7 +23042,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 172,
+      "line": 173,
       "column": 52,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23069,7 +23051,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 242,
+      "line": 243,
       "column": 18,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
@@ -23078,7 +23060,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 546,
+      "line": 547,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_key",
@@ -23087,7 +23069,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 547,
+      "line": 548,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_value",
@@ -23096,7 +23078,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 634,
+      "line": 635,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23105,7 +23087,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 658,
+      "line": 659,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23267,7 +23249,25 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 274,
+      "line": 272,
+      "column": 65,
+      "type": "WARNING",
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "message": "Processing form data without nonce verification.",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Reports.php"
+    },
+    {
+      "line": 272,
+      "column": 65,
+      "type": "WARNING",
+      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
+      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;show_categories&#039;]",
+      "docs": "",
+      "file": "src/Hyyan/WPI/Reports.php"
+    },
+    {
+      "line": 278,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23276,7 +23276,7 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 274,
+      "line": 278,
       "column": 52,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23285,29 +23285,11 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 274,
+      "line": 278,
       "column": 94,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 276,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Reports.php"
-    },
-    {
-      "line": 276,
-      "column": 69,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;show_categories&#039;]",
       "docs": "",
       "file": "src/Hyyan/WPI/Reports.php"
     },
@@ -23348,15 +23330,6 @@
       "file": "src/Hyyan/WPI/Reports.php"
     },
     {
-      "line": 84,
-      "column": 45,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_REQUEST[&#039;_wpnonce_add-lang&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Language.php"
-    },
-    {
       "line": 52,
       "column": 23,
       "type": "WARNING",
@@ -23385,19 +23358,10 @@
     },
     {
       "line": 60,
-      "column": 55,
+      "column": 66,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
-    },
-    {
-      "line": 60,
-      "column": 55,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[$name]",
       "docs": "",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
     },
@@ -23492,15 +23456,6 @@
       "file": "src/Hyyan/WPI/Product/Variable.php"
     },
     {
-      "line": 88,
-      "column": 43,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_REQUEST[&#039;_wpnonce&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
       "line": 229,
       "column": 19,
       "type": "WARNING",
@@ -23521,195 +23476,6 @@
     {
       "line": 230,
       "column": 83,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 247,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 247,
-      "column": 50,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 248,
-      "column": 28,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 248,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 248,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;from_post&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 248,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_post&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 249,
-      "column": 33,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 262,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 262,
-      "column": 50,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 263,
-      "column": 28,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 263,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 263,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;from_post&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 263,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_post&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 264,
-      "column": 33,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 277,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 277,
-      "column": 50,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 278,
-      "column": 28,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 278,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 278,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;from_post&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 278,
-      "column": 63,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_post&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Product.php"
-    },
-    {
-      "line": 279,
-      "column": 33,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
@@ -23960,106 +23726,7 @@
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php"
     },
     {
-      "line": 51,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 51,
-      "column": 56,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 53,
-      "column": 70,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 56,
-      "column": 19,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 57,
-      "column": 25,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 58,
-      "column": 28,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 59,
-      "column": 25,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 59,
-      "column": 75,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 59,
-      "column": 75,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_POST[&#039;product_cat_thumbnail_id&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 59,
-      "column": 75,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_POST[&#039;product_cat_thumbnail_id&#039;]",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 62,
-      "column": 53,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Missing",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 69,
+      "line": 74,
       "column": 21,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -24068,80 +23735,17 @@
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
     },
     {
-      "line": 86,
-      "column": 21,
+      "line": 91,
+      "column": 20,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 86,
-      "column": 40,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 86,
-      "column": 72,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 87,
-      "column": 25,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 87,
-      "column": 58,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 87,
-      "column": 92,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 87,
-      "column": 92,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.MissingUnslash",
-      "message": "$_GET[&#039;from_tag&#039;] not unslashed before sanitization. Use wp_unslash() or similar",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
-    },
-    {
-      "line": 87,
-      "column": 92,
-      "type": "WARNING",
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "message": "Detected usage of a non-sanitized input variable: $_GET[&#039;from_tag&#039;]",
       "docs": "",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
     },
     {
       "line": 91,
-      "column": 22,
+      "column": 53,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
       "message": "Processing form data without nonce verification.",
@@ -24149,7 +23753,7 @@
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
     },
     {
-      "line": 115,
+      "line": 119,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -24329,9 +23933,9 @@
       "file": "src/Hyyan/WPI/Emails.php"
     }
   ],
-  "package_archive_sha256": "2742332de46a5793b02ec26460eec23939890c81fa554ad8e45d1b241451958b",
+  "package_archive_sha256": "10e2e83d84cfeb6b526cd9afbc801b35701762e039d976cea359ff60e08a16d7",
   "package_file_count": 73,
-  "previous_package_scan": "release-metadata-plugin-check.json",
+  "previous_package_scan": "plugin-check-output-batch-plugin-check.json",
   "forum_counts": {
     "captured_pages": 423,
     "unique_topics": 413,
@@ -24344,11 +23948,11 @@
   "active_plugin_check_goal": {
     "status": "active",
     "baseline": 230,
-    "remaining": 209,
+    "remaining": 165,
     "errors": 45,
-    "warnings": 164,
-    "resolved_this_batch": 21,
+    "warnings": 120,
+    "resolved_this_batch": 44,
     "dispositions_are_not_fixes": true,
-    "source_commit": "4b4094f"
+    "source_commit": "cb91bae"
   }
 }
