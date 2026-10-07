@@ -3,9 +3,9 @@ Contributors: hyyan, jonathanmoorebcsorg
 Tags: woocommerce, multilingual, polylang, language, translation
 Requires at least: 5.4
 Stable tag: 1.5.1
-Tested Up To: 5.7.1
+Tested Up To: 7.1
 WC requires at least: 4.0.0
-WC tested up to: 5.3.0
+WC tested up to: 11.1.2
 Requires PHP: 7.0
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
@@ -137,6 +137,14 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog == 
 
 = 1.5.1 =
+* Secure variation removal with complete integer validation, prepared database queries, capability checks and native AJAX nonce verification.
+* Preserve translated cart quantities, prices, stock, checkout validation and configured payment text in classic and block flows.
+* Restore caller language after email operations and retain current and older WooCommerce catalog loading.
+* Preserve independent product metadata and synchronize native variation imports.
+* Correct combined and language filtered reports for legacy and HPOS order storage and declare native HPOS compatibility.
+* Preserve native store notice controls and translate configured tax labels.
+* Verify native settings upgrades and separate network site settings.
+* Tested with WordPress 7.1.3, WooCommerce 11.1.2 and PHP 8.5.11. Existing minimum requirements remain unchanged.
 * fixes #545 keep fields unlocked if products does not exist in default language props mrleemon
 * fixes #549 Quick edit Product synchronisation issues
 * fixes #548 incorrect save hook caused inconsistent synchronisation behaviour, especially changing product type and visibility
