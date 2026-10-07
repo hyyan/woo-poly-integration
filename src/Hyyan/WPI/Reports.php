@@ -106,7 +106,8 @@ class Reports
                 array($current) :
                 pll_languages_list();
 
-        $query['join'] .= PLL()->model->post->join_clause('posts');
+        $alias = isset($query['from']) && strpos($query['from'], ' AS orders') !== false ? 'orders' : 'posts';
+        $query['join'] .= PLL()->model->post->join_clause($alias);
         $query['where'] .= PLL()->model->post->where_clause($lang, 'post');
 
         return $query;
@@ -135,7 +136,7 @@ class Reports
 
         $translated = array();
         $lang = pll_current_language() ?:
-                get_user_meta(get_current_user_id(), 'user_lang', true);
+                (get_user_meta(get_current_user_id(), 'user_lang', true) ?: pll_default_language());
 
         /* Filter data by language */
         foreach ($results as $data) {

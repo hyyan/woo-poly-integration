@@ -12,9 +12,9 @@
  * License: MIT
  * Version: 1.5.1
  * Requires At Least: 5.4
- * Tested Up To: 5.7.1
+ * Tested Up To: 7.1
  * WC requires at least: 4.0.0
- * WC tested up to: 5.3.0
+ * WC tested up to: 11.1.2
  * Requires PHP: 7.0
  */
 
@@ -38,6 +38,12 @@ require_once __DIR__ . '/src/Hyyan/WPI/Autoloader.php';
 
 /* register the autoloader */
 new Hyyan\WPI\Autoloader(__DIR__ . '/src/');
+
+add_action('before_woocommerce_init', static function () {
+    if (class_exists('Automattic\\WooCommerce\\Utilities\\FeaturesUtil')) {
+        \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', __FILE__, true);
+    }
+});
 
 /* bootstrap the plugin */
 new Hyyan\WPI\Plugin();
