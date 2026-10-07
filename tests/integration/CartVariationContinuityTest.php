@@ -108,6 +108,99 @@ final class CartVariationContinuityTest extends TestCase
         }
     }
 
+    public function testLegacyCartHooksKeepLinkedQuantitiesAndNativeStockModes(): void
+    {
+        $callback = null;
+        foreach ($GLOBALS['wp_filter']['woocommerce_add_cart_item_data']->callbacks[10] as $entry) {
+            if (is_array($entry['function']) && $entry['function'][0] instanceof \Hyyan\WPI\Cart && $entry['function'][1] === 'validateLinkedCartStock') {
+                $callback = $entry['function'];
+                break;
+            }
+        }
+        self::assertNotNull($callback);
+        $hooks = array('woocommerce_add_cart_item', 'woocommerce_after_cart_item_quantity_update', 'woocommerce_update_cart_validation');
+        $original = array();
+        foreach ($hooks as $hook) {
+            $original[$hook] = isset($GLOBALS['wp_filter'][$hook]) ? clone $GLOBALS['wp_filter'][$hook] : null;
+        }
+        remove_filter('woocommerce_add_cart_item_data', $callback, 10);
+        try {
+            $register = new ReflectionMethod(\Hyyan\WPI\Cart::class, 'registerLegacyCartStockValidation');
+            $register->invoke($callback[0]);
+            $this->testLinkedVariationAddsMergeButDifferentSelectionsAndItemDataStaySeparate();
+            foreach (array('parent', 'backorders', 'sold') as $mode) {
+                $this->testNativeStockModesRetainTranslatedCartRules($mode);
+            }
+            $this->assertLegacyQuantityUpdatesKeepValidReductionsAndRejectOverflow();
+        } finally {
+            add_filter('woocommerce_add_cart_item_data', $callback, 10, 4);
+            foreach ($original as $hook => $value) {
+                if ($value === null) { unset($GLOBALS['wp_filter'][$hook]); }
+                else { $GLOBALS['wp_filter'][$hook] = $value; }
+            }
+        }
+    }
+
+    private function assertLegacyQuantityUpdatesKeepValidReductionsAndRejectOverflow(): void
+    {
+        $original = WC()->cart;
+        $notices = wc_get_notices();
+        $products = array();
+        try {
+            wc_load_cart();
+            WC()->cart = new WC_Cart();
+            foreach (array('en', 'de') as $language) {
+                $product = new WC_Product_Simple();
+                $product->set_name('Legacy quantity update ' . $language);
+                $product->set_status('publish');
+                $product->set_regular_price('10');
+                $product->set_manage_stock(true);
+                $product->set_stock_quantity(3);
+                $product->save();
+                pll_set_post_language($product->get_id(), $language);
+                $products[$language] = $product->get_id();
+            }
+            pll_save_post_translations($products);
+            $first = WC()->cart->add_to_cart($products['en'], 2);
+            $second = WC()->cart->add_to_cart($products['de'], 1);
+            self::assertNotFalse($first);
+            self::assertNotFalse($second);
+            $item = WC()->cart->cart_contents[$first];
+            self::assertFalse(apply_filters('woocommerce_update_cart_validation', true, $first, $item, 3));
+            self::assertSame(2, WC()->cart->cart_contents[$first]['quantity']);
+            self::assertTrue(apply_filters('woocommerce_update_cart_validation', true, $first, $item, 1));
+            WC()->cart->set_quantity($first, 1, false);
+            self::assertSame(1, WC()->cart->cart_contents[$first]['quantity']);
+            try {
+                WC()->cart->set_quantity($first, 3, false);
+                self::fail('A stock increase beyond the linked limit must be rejected');
+            } catch (Exception $error) {
+                self::assertStringContainsString('not enough stock', $error->getMessage());
+            }
+            self::assertSame(1, WC()->cart->cart_contents[$first]['quantity']);
+            foreach ($products as $id) {
+                $product = wc_get_product($id);
+                $product->set_stock_quantity(1);
+                $product->save();
+            }
+            foreach (array($first => $products['en'], $second => $products['de']) as $key => $id) {
+                WC()->cart->cart_contents[$key]['data'] = wc_get_product($id);
+            }
+            WC()->cart->cart_contents[$first]['quantity'] = 2;
+            $item = WC()->cart->cart_contents[$first];
+            self::assertTrue(apply_filters('woocommerce_update_cart_validation', true, $first, $item, 1));
+            WC()->cart->set_quantity($first, 1, false);
+            self::assertSame(1, WC()->cart->cart_contents[$first]['quantity']);
+            self::assertTrue(apply_filters('woocommerce_update_cart_validation', true, $first, WC()->cart->cart_contents[$first], 0));
+            WC()->cart->set_quantity($first, 0, false);
+            self::assertArrayNotHasKey($first, WC()->cart->cart_contents);
+        } finally {
+            foreach ($products as $id) { wc_get_product($id)->delete(true); }
+            WC()->cart = $original;
+            wc_set_notices($notices);
+        }
+    }
+
     public static function stockModes(): array
     {
         return array('parent'=>array('parent'),'backorders'=>array('backorders'),'sold individually'=>array('sold'));

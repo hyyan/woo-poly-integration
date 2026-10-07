@@ -33,7 +33,11 @@ class Cart
         // Handle add to cart
         add_filter('woocommerce_add_to_cart_product_id', array($this, 'addToCart'), 10, 1);
         add_filter('woocommerce_cart_id', array($this, 'retainTranslatedVariationCartKey'), 10, 5);
-        add_filter('woocommerce_add_cart_item_data', array($this, 'validateLinkedCartStock'), 10, 4);
+        if (defined('WC_VERSION') && version_compare(WC_VERSION, '3.3.0', '<')) {
+            $this->registerLegacyCartStockValidation();
+        } else {
+            add_filter('woocommerce_add_cart_item_data', array($this, 'validateLinkedCartStock'), 10, 4);
+        }
 
         // Handle the translation of displayed porducts in cart
         add_filter('woocommerce_cart_item_product', array($this, 'translateCartItemProduct'), 10, 2);
@@ -49,6 +53,37 @@ class Cart
         // Handle the update of cart widget when language is switched
         add_action('wp_enqueue_scripts', array($this, 'replaceCartFragmentsScript'), 100);
 
+    }
+
+    private function registerLegacyCartStockValidation()
+    {
+        add_filter('woocommerce_add_cart_item', function ($item) {
+            return $this->validateLinkedCartStock($item, $item['product_id'], $item['variation_id'], $item['quantity']);
+        });
+        add_action('woocommerce_after_cart_item_quantity_update', function ($key, $quantity, $previous) {
+            if ($quantity <= $previous) {
+                return;
+            }
+            $item = WC()->cart->cart_contents[$key];
+            try {
+                $this->validateLinkedCartStock($item, $item['product_id'], $item['variation_id'], 0);
+            } catch (\Exception $error) {
+                WC()->cart->cart_contents[$key]['quantity'] = $previous;
+                throw $error;
+            }
+        }, 0, 3);
+        add_filter('woocommerce_update_cart_validation', function ($passed, $key, $item, $quantity) {
+            if (!$passed || $quantity <= $item['quantity']) {
+                return $passed;
+            }
+            try {
+                $this->validateLinkedCartStock($item, $item['product_id'], $item['variation_id'], $quantity - $item['quantity']);
+            } catch (\Exception $error) {
+                wc_add_notice($error->getMessage(), 'error');
+                return false;
+            }
+            return $passed;
+        }, 10, 4);
     }
 
     public function switchStoreApiLocale($response, $handler, $request)
