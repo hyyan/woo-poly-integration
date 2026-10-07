@@ -311,3 +311,5 @@ Committed CHECK-003 as b7b33b0, fix: verify stock edit requests and use native d
 CHECK-004: Verified global callback collision and naming fixes. Four installed warnings removed. Forty four precisely listed translation exceptions await explicit acceptance and remain open. Goal active with 149 findings.
 
 Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and sharing variables. Three production files and three tests changed. Installed scan retains 149 findings. Translation exception acceptance remains pending.
+
+| CHECK-005 | Unused product type callback contains two unverified query reads | Removed obsolete protected method and sole reflection test, no production callers | Full suites, native editor, installed scan and archive hashes pass, source commit 166bab9 |

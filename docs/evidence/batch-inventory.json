@@ -22445,7 +22445,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "plugin-check-prefix-batch-plugin-check.json",
+  "package_scan": "plugin-check-obsolete-batch-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -23510,7 +23510,7 @@
       "file": "src/Hyyan/WPI/Product/Meta.php"
     },
     {
-      "line": 278,
+      "line": 277,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23519,7 +23519,7 @@
       "file": "src/Hyyan/WPI/Product/Meta.php"
     },
     {
-      "line": 680,
+      "line": 679,
       "column": 34,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23528,7 +23528,7 @@
       "file": "src/Hyyan/WPI/Product/Meta.php"
     },
     {
-      "line": 811,
+      "line": 810,
       "column": 30,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23537,7 +23537,7 @@
       "file": "src/Hyyan/WPI/Product/Meta.php"
     },
     {
-      "line": 848,
+      "line": 847,
       "column": 36,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23546,25 +23546,7 @@
       "file": "src/Hyyan/WPI/Product/Meta.php"
     },
     {
-      "line": 897,
-      "column": 36,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php"
-    },
-    {
-      "line": 908,
-      "column": 27,
-      "type": "WARNING",
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "message": "Processing form data without nonce verification.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Product/Meta.php"
-    },
-    {
-      "line": 963,
+      "line": 917,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
@@ -23573,7 +23555,7 @@
       "file": "src/Hyyan/WPI/Product/Meta.php"
     },
     {
-      "line": 963,
+      "line": 917,
       "column": 20,
       "type": "WARNING",
       "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
@@ -23789,9 +23771,9 @@
       "file": "src/Hyyan/WPI/Emails.php"
     }
   ],
-  "package_archive_sha256": "c6244e9fa70257961c765a56222b8e5ae9d5279d56e1e0b47939241042e2cf52",
+  "package_archive_sha256": "599357926ba92f9feadbb204a77097869dc1b9592f4cd62d46d9081c67fd7998",
   "package_file_count": 73,
-  "previous_package_scan": "plugin-check-stock-log-batch-plugin-check.json",
+  "previous_package_scan": "plugin-check-prefix-batch-plugin-check.json",
   "forum_counts": {
     "captured_pages": 423,
     "unique_topics": 413,
@@ -23804,12 +23786,12 @@
   "active_plugin_check_goal": {
     "status": "active",
     "baseline": 230,
-    "remaining": 149,
+    "remaining": 147,
     "errors": 45,
-    "warnings": 104,
-    "resolved_this_batch": 4,
+    "warnings": 102,
+    "resolved_this_batch": 2,
     "dispositions_are_not_fixes": true,
-    "source_commit": "df5c6fb",
+    "source_commit": "166bab9",
     "translation_exception_acceptance": "awaiting explicit maintainer response",
     "translation_findings_requested_for_exception": 44
   }
