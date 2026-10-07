@@ -1,6 +1,6 @@
 {
-  "source_commit": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
-  "installed_total": 41,
+  "source_commit": "b4e1e636fcba2a8ee5a749ab0dd378c972f4483d",
+  "installed_total": 38,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
@@ -273,33 +273,6 @@
         "message": "Processing form data without nonce verification.",
         "docs": "",
         "file": "src/Hyyan/WPI/Product/Meta.php"
-      },
-      {
-        "line": 284,
-        "column": 81,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Endpoints.php"
-      },
-      {
-        "line": 284,
-        "column": 112,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Endpoints.php"
-      },
-      {
-        "line": 284,
-        "column": 158,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Endpoints.php"
       }
     ],
     "translations": [],

@@ -1,0 +1,38 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-admin.xml
+
+[41;37mF[0m[41;37mF[0m.[41;37mF[0m[41;37mF[0m[41;37mF[0m.                                                             7 / 7 (100%)
+
+Time: 00:00.010, Memory: 109.05 MB
+
+There were 5 failures:
+
+1) EndpointScreenSecurityTest::testEndpointNoticeUsesNativeSettingsContext@native advanced without query with data ('woocommerce_page_wc-settings', 'advanced', [], true)
+Failed asserting that false is identical to true.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/EndpointScreenSecurityTest.php:48
+
+2) EndpointScreenSecurityTest::testEndpointNoticeUsesNativeSettingsContext@query cannot override advanced with data ('woocommerce_page_wc-settings', 'advanced', ['general'], true)
+Failed asserting that false is identical to true.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/EndpointScreenSecurityTest.php:48
+
+3) EndpointScreenSecurityTest::testEndpointNoticeUsesNativeSettingsContext@general ignores advanced query with data ('woocommerce_page_wc-settings', 'general', ['advanced'], false)
+Failed asserting that true is identical to false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/EndpointScreenSecurityTest.php:48
+
+4) EndpointScreenSecurityTest::testEndpointNoticeUsesNativeSettingsContext@unset native tab ignores query with data ('woocommerce_page_wc-settings', null, ['advanced'], false)
+Failed asserting that true is identical to false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/EndpointScreenSecurityTest.php:48
+
+5) EndpointScreenSecurityTest::testEndpointNoticeUsesNativeSettingsContext@non scalar native tab with data ('woocommerce_page_wc-settings', ['advanced'], ['advanced'], false)
+Failed asserting that true is identical to false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/admin/EndpointScreenSecurityTest.php:48
+
+[37;41mFAILURES![0m
+[37;41mTests: 7[0m[37;41m, Assertions: 8[0m[37;41m, Failures: 5[0m[37;41m.[0m

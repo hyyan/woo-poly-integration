@@ -1,6 +1,6 @@
 # Remaining compatibility findings
 
-These 41 findings remain open. Zero findings remains the release requirement. Inspected boundaries are not fixes or accepted exceptions. Current evidence uses plugin-check-native-catalog-batch.
+These 38 findings remain open. Zero findings remains the release requirement. Inspected boundaries are not fixes or accepted exceptions. Current evidence uses plugin-check-native-settings-batch.
 
 | ID | File and line | Finding | Inspected boundary |
 | --- | --- | --- | --- |
@@ -38,10 +38,7 @@ These 41 findings remain open. Zero findings remains the release requirement. In
 | EX-032 | src/Hyyan/WPI/Product/Meta.php:225 | Recommended | Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback. |
 | EX-033 | src/Hyyan/WPI/Product/Meta.php:230 | Recommended | Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback. |
 | EX-034 | src/Hyyan/WPI/Product/Meta.php:910 | DirectQuery | Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured. |
-| EX-035 | src/Hyyan/WPI/Endpoints.php:284 | Recommended | Sanitized tab selector and the native settings screen enqueue a fixed trusted notice. The stored notice contains no request payload and does not change endpoint configuration. |
-| EX-036 | src/Hyyan/WPI/Endpoints.php:284 | Recommended | Sanitized tab selector and the native settings screen enqueue a fixed trusted notice. The stored notice contains no request payload and does not change endpoint configuration. |
-| EX-037 | src/Hyyan/WPI/Endpoints.php:284 | Recommended | Sanitized tab selector and the native settings screen enqueue a fixed trusted notice. The stored notice contains no request payload and does not change endpoint configuration. |
-| EX-038 | src/Hyyan/WPI/Product/Variation.php:170 | DirectQuery | Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured. |
-| EX-039 | __init__.php:0 | trademarked_term | Existing WordPress.org directory slug begins with woo. Changing it changes installation and update identity. Plugins Team acceptance or a coordinated directory migration is required. |
-| EX-040 | src/Hyyan/WPI/Admin/AbstractSettings.php:43 | DynamicHooknameFound | Existing public settings hook is generated as woo-poly.settings.%s_sections. The prefix is fixed and the suffix is the native settings ID. |
-| EX-041 | src/Hyyan/WPI/Admin/AbstractSettings.php:61 | DynamicHooknameFound | Existing public settings hook is generated as woo-poly.settings.%s_fields. The prefix is fixed and the suffix is the native settings ID. |
+| EX-035 | src/Hyyan/WPI/Product/Variation.php:170 | DirectQuery | Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured. |
+| EX-036 | __init__.php:0 | trademarked_term | Existing WordPress.org directory slug begins with woo. Changing it changes installation and update identity. Plugins Team acceptance or a coordinated directory migration is required. |
+| EX-037 | src/Hyyan/WPI/Admin/AbstractSettings.php:43 | DynamicHooknameFound | Existing public settings hook is generated as woo-poly.settings.%s_sections. The prefix is fixed and the suffix is the native settings ID. |
+| EX-038 | src/Hyyan/WPI/Admin/AbstractSettings.php:61 | DynamicHooknameFound | Existing public settings hook is generated as woo-poly.settings.%s_fields. The prefix is fixed and the suffix is the native settings ID. |

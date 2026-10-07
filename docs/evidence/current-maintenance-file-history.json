@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
-  "changed_files": 1737,
+  "through_commit": "b4e1e636fcba2a8ee5a749ab0dd378c972f4483d",
+  "changed_files": 1760,
   "files": [
     {
       "file": ".exclude-list",
@@ -216,6 +216,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -300,6 +304,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -606,6 +614,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -848,6 +860,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -938,6 +954,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -1016,6 +1036,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -1048,6 +1072,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -1150,6 +1178,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -1210,6 +1242,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -1328,6 +1364,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -2654,6 +2694,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -2688,6 +2732,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -11866,6 +11914,226 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-before-detached.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-native-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-older-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-older-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-older-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-preserved-catalogs.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-catalog-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-normalized-lists-batch-package.txt",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -12612,6 +12880,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -12642,6 +12914,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -17672,6 +17948,10 @@
         {
           "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
           "subject": "docs: record translation format and catalog acceptance"
+        },
+        {
+          "sha": "c26831a4795250e90def1d818b6b8006e2ebef72",
+          "subject": "docs: record native catalog batch acceptance"
         }
       ]
     },
@@ -17916,6 +18196,10 @@
         {
           "sha": "67271c0af26a5c3a2c47b1befc64580fa2de8368",
           "subject": "fix: preserve translated checkout receipt endpoints"
+        },
+        {
+          "sha": "b4e1e636fcba2a8ee5a749ab0dd378c972f4483d",
+          "subject": "fix: use native settings context for endpoint notices"
         }
       ]
     },
@@ -18622,6 +18906,16 @@
         {
           "sha": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
           "subject": "fix: resolve coupon screens and verify translation warning bypass"
+        }
+      ]
+    },
+    {
+      "file": "tests/admin/EndpointScreenSecurityTest.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "b4e1e636fcba2a8ee5a749ab0dd378c972f4483d",
+          "subject": "fix: use native settings context for endpoint notices"
         }
       ]
     },

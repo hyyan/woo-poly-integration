@@ -352,3 +352,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-021 | Multi argument translation formats contain unnumbered placeholders | Number current formats and retain native old catalog and gettext behavior | 9790467, three failures reproduced, 460 tests pass, native Chrome catalogs, twelve minimum checks, four rows removed |
 
 | CHECK-022 | Nineteen native WooCommerce message calls use the dependency domain | Own the keys and retain native catalogs and filters | 3567186, nineteen failures reproduced, 555 tests pass, native Chrome receipts and both native probes pass, nineteen errors removed |
+
+| CHECK-023 | Raw query tab controls the endpoint notice independently of native settings context | Reuse the native resolved WooCommerce tab | b4e1e63, five failures reproduced, 562 tests pass, current and older Chrome settings pass, three warnings removed |

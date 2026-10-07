@@ -1,7 +1,7 @@
 {
-  "source_commit": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
-  "installed_total": 41,
-  "open_findings": 41,
+  "source_commit": "b4e1e636fcba2a8ee5a749ab0dd378c972f4483d",
+  "installed_total": 38,
+  "open_findings": 38,
   "accepted_exceptions": 0,
   "findings": [
     {
@@ -380,39 +380,6 @@
     },
     {
       "id": "EX-035",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "line": 284,
-      "column": 81,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "showFlashMessages",
-      "reason": "Sanitized tab selector and the native settings screen enqueue a fixed trusted notice. The stored notice contains no request payload and does not change endpoint configuration.",
-      "current_source": "if ( $screen && $screen->id == 'woocommerce_page_wc-settings' && isset( $_GET[ 'tab' ] ) && is_string( $_GET[ 'tab' ] ) && sanitize_key( wp_unslash( $_GET[ 'tab' ] ) ) === 'advanced' ) {",
-      "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
-    },
-    {
-      "id": "EX-036",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "line": 284,
-      "column": 112,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "showFlashMessages",
-      "reason": "Sanitized tab selector and the native settings screen enqueue a fixed trusted notice. The stored notice contains no request payload and does not change endpoint configuration.",
-      "current_source": "if ( $screen && $screen->id == 'woocommerce_page_wc-settings' && isset( $_GET[ 'tab' ] ) && is_string( $_GET[ 'tab' ] ) && sanitize_key( wp_unslash( $_GET[ 'tab' ] ) ) === 'advanced' ) {",
-      "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
-    },
-    {
-      "id": "EX-037",
-      "file": "src/Hyyan/WPI/Endpoints.php",
-      "line": 284,
-      "column": 158,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "showFlashMessages",
-      "reason": "Sanitized tab selector and the native settings screen enqueue a fixed trusted notice. The stored notice contains no request payload and does not change endpoint configuration.",
-      "current_source": "if ( $screen && $screen->id == 'woocommerce_page_wc-settings' && isset( $_GET[ 'tab' ] ) && is_string( $_GET[ 'tab' ] ) && sanitize_key( wp_unslash( $_GET[ 'tab' ] ) ) === 'advanced' ) {",
-      "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
-    },
-    {
-      "id": "EX-038",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 170,
       "column": 24,
@@ -423,7 +390,7 @@
       "source_sha256": "3f817e70fe60b000bfb08c597183aaae9b28f61606de36e6a09e2d6f1e2b712e"
     },
     {
-      "id": "EX-039",
+      "id": "EX-036",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -434,7 +401,7 @@
       "source_sha256": "0166473b8fa1d37c5d7d9014fea5cc36de9bfc2e38bb612a1be7e51165d2bb6c"
     },
     {
-      "id": "EX-040",
+      "id": "EX-037",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -445,7 +412,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-041",
+      "id": "EX-038",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,
