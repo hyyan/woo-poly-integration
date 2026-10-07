@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 78 maintenance commits after the baseline through 5f70301. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 81 maintenance commits after the baseline through ac630ad. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -84,5 +84,8 @@ Counts exclude test files and configuration, including the tests and work direct
 | e641f41 | 25 | docs: update release verification and remaining checker decisions |
 | 60ce0d0 | 2 | fix: retain published WooCommerce minimum requirement |
 | 5f70301 | 0 | test: enforce clean checker reports for release verification |
+| 2e226dc | 35 | docs: record strict release gates and published upgrade evidence |
+| b786461 | 4 | docs: normalize checker report endings |
+| ac630ad | 2 | fix: normalize request IDs through validated sanitizers |
 
-Latest verification passes 388 tests with 1326 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 127 findings. The goal remains incomplete. Zero checker findings and the complete published version upgrade matrix are required. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 388 tests with 1326 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 124 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

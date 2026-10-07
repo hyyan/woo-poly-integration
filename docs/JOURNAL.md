@@ -796,3 +796,16 @@ The release report gate exits with failure for either errors or warnings. It als
 Owned upgrade products and the fixture option were removed. The temporary password file was removed and Chrome returned to blank. The disposable upgrade store and its plugins remain available for further upgrade scenarios.
 
 The first staged documentation whitespace check reported extra final blank lines in three raw checker outputs. The documentation commit proceeded because that command did not stop on the check failure. The report endings were corrected in a subsequent commit. Finding contents and counts are unchanged. Both final diff checks pass.
+
+
+## CHECK-013: Validated request ID sanitizers
+
+Variable::removeVariations now normalizes the entire unslashed variation ID batch through a private validated integer sanitizer before permission lookup or mutation. Reports normalizes product and category IDs through a private integer sanitizer before the existing list parser. Malformed types are rejected or filtered with the original behavior. Existing capabilities, native nonce verification, translated permissions, zero handling and duplicate handling remain.
+
+The analyzer configuration names only these actual sanitizers. It does not disable any check. Earlier configuration probes did not remove the diagnostics because the installed analyzer requires array property syntax and lowercase callback names. Those attempts were not counted as fixes. The final installed static and runtime scans each report 124 findings, 45 errors and 79 warnings. Exactly three InputNotSanitized rows disappear, with no added codes. This brings actual removed findings to 106 from the 230 finding baseline.
+
+All four suites pass 388 tests with 1326 assertions. Both changed files pass the targeted request input static check. Installed PHP syntax and source PHP 7.0 syntax pass. All 73 source, manifest and installed hashes match the rebuilt archive. Archive SHA256 is 31cdf305c5c20362aca04f88d822e5c29bb196cf88e5813034e7860d3a01f3fa.
+
+Chrome verifies whole batch denial without database deletion, native authorized removal of the source and genuine linked child while retaining the malformed relationship child, and valid translated product and category report selections with malformed IDs rejected. Native WordPress 5.4.2, WooCommerce 4.0.0 and PHP 7.4.9 preserve report integer normalization. Owned fixtures and the temporary user are removed, the notice state restored and Chrome returned to blank.
+
+The full source diff was reviewed for permissions, callback visibility, integer conversion, invalid batch atomicity and supported PHP behavior. Source commit ac630ad, fix: normalize request IDs through validated sanitizers. Two production files changed, no configuration or test files. Evidence uses plugin-check-id-sanitizers-batch. Forty four translation findings and eighty other findings remain. The goal is active. No exception acceptance, zero finding claim, full upgrade safety claim, push or publication.

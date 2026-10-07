@@ -1,7 +1,7 @@
 {
-  "source_commit": "f659792",
-  "installed_total": 127,
-  "proposed_exceptions": 83,
+  "source_commit": "ac630ad",
+  "installed_total": 124,
+  "open_findings": 80,
   "accepted_exceptions": 0,
   "findings": [
     {
@@ -216,181 +216,159 @@
     {
       "id": "EX-020",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 43,
+      "line": 45,
       "column": 28,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-021",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 43,
+      "line": 45,
       "column": 55,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-022",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 43,
+      "line": 45,
       "column": 95,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-023",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 44,
+      "line": 46,
       "column": 31,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-024",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 44,
+      "line": 46,
       "column": 61,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-025",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 44,
+      "line": 46,
       "column": 104,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-026",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 101,
+      "line": 103,
       "column": 19,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "filterProductByLanguage",
       "reason": "Presence of product_ids selects the report query mode. Actual report identifiers are normalized before native report reads.",
       "current_source": "if (isset($_GET['product_ids'])) {",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-027",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 218,
+      "line": 231,
       "column": 20,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "translateProductIDS",
-      "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
+      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
       "current_source": "if (!isset($_GET['product_ids'])) {",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-028",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 222,
-      "column": 65,
+      "line": 235,
+      "column": 114,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "translateProductIDS",
-      "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
-      "current_source": "$IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['product_ids']), function ($id) {",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
+      "current_source": "$IDS = wp_parse_id_list(array_filter(array_map('Hyyan\\WPI\\Reports::sanitizeReportID', (array) wp_unslash($_GET['product_ids'])), 'is_int'));",
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-029",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 222,
-      "column": 65,
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "method": "translateProductIDS",
-      "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
-      "current_source": "$IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['product_ids']), function ($id) {",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "line": 275,
+      "column": 20,
+      "code": "WordPress.Security.NonceVerification.Recommended",
+      "method": "translateCategoryIDS",
+      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
+      "current_source": "if (!isset($_GET['show_categories'])) {",
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-030",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 264,
-      "column": 20,
+      "line": 279,
+      "column": 114,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "translateCategoryIDS",
-      "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
-      "current_source": "if (!isset($_GET['show_categories'])) {",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
+      "current_source": "$IDS = wp_parse_id_list(array_filter(array_map('Hyyan\\WPI\\Reports::sanitizeReportID', (array) wp_unslash($_GET['show_categories'])), 'is_int'));",
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
       "id": "EX-031",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 268,
-      "column": 65,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "translateCategoryIDS",
-      "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
-      "current_source": "$IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['show_categories']), function ($id) {",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
-    },
-    {
-      "id": "EX-032",
-      "file": "src/Hyyan/WPI/Reports.php",
-      "line": 268,
-      "column": 65,
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "method": "translateCategoryIDS",
-      "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
-      "current_source": "$IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['show_categories']), function ($id) {",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
-    },
-    {
-      "id": "EX-033",
-      "file": "src/Hyyan/WPI/Reports.php",
-      "line": 331,
+      "line": 340,
       "column": 24,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "isCombine",
       "reason": "Sanitized language selector chooses combined report mode. It does not modify persisted data.",
       "current_source": "(isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-034",
+      "id": "EX-032",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 331,
+      "line": 340,
       "column": 52,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "isCombine",
       "reason": "Sanitized language selector chooses combined report mode. It does not modify persisted data.",
       "current_source": "(isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-035",
+      "id": "EX-033",
       "file": "src/Hyyan/WPI/Reports.php",
-      "line": 331,
+      "line": 340,
       "column": 94,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "isCombine",
       "reason": "Sanitized language selector chooses combined report mode. It does not modify persisted data.",
       "current_source": "(isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');",
-      "source_sha256": "4104fa142f64ae020d66d4766fb3be167e9318169c3d8ba957a1e96eafbb19df"
+      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-036",
+      "id": "EX-034",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 23,
@@ -401,7 +379,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-037",
+      "id": "EX-035",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 51,
@@ -412,7 +390,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-038",
+      "id": "EX-036",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 56,
       "column": 23,
@@ -423,7 +401,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-039",
+      "id": "EX-037",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 60,
       "column": 66,
@@ -434,7 +412,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-040",
+      "id": "EX-038",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 79,
       "column": 13,
@@ -445,106 +423,95 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-041",
+      "id": "EX-039",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 66,
+      "line": 68,
       "column": 33,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleNewProduct",
       "reason": "Delegates creation copying to callbacks that require Utilities::getProductTranslationRequest, which verifies new-post-translation nonce, edit_products and source read permission.",
       "current_source": "if (! $update && (isset($_GET['from_post'])) ){",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-042",
+      "id": "EX-040",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 120,
+      "line": 122,
       "column": 20,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "duplicateVariations",
       "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
       "current_source": "if ((isset($_GET['from_post']) && !$request) || (isset($_GET['new_lang']) && !$new_lang)) {",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-043",
+      "id": "EX-041",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 120,
+      "line": 122,
       "column": 64,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "duplicateVariations",
       "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
       "current_source": "if ((isset($_GET['from_post']) && !$request) || (isset($_GET['new_lang']) && !$new_lang)) {",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-044",
+      "id": "EX-042",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 150,
+      "line": 152,
       "column": 56,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "duplicateVariations",
       "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
       "current_source": "if ($product->get_type()!='variable' && !isset($_GET['from_post'])){",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-045",
+      "id": "EX-043",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 169,
+      "line": 171,
       "column": 23,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "duplicateVariations",
       "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
       "current_source": "if (isset($_GET['from_post'])) {",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-046",
+      "id": "EX-044",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 280,
+      "line": 282,
       "column": 19,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "syncDefaultAttributes",
       "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks.",
       "current_source": "if (isset($_GET['from_post']) && !$request) {",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-047",
+      "id": "EX-045",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 346,
-      "column": 35,
-      "code": "WordPress.Security.ValidatedSanitizedInput.InputNotSanitized",
-      "method": "removeVariations",
-      "reason": "The whole unslashed batch is strictly validated before any deletion. Each ID is cast to an integer. Native delete-variations nonce, edit_products and source and linked parent edit permissions are required.",
-      "current_source": "$IDS = (array) wp_unslash($_POST['variation_ids']);",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
-    },
-    {
-      "id": "EX-048",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 450,
+      "line": 462,
       "column": 44,
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
       "method": "extendFieldsLockerSelectors",
       "reason": "Existing public hook resolves to woo-poly.fieldsLockerVariableExcludeSelectors. Constants keep callers and subscribers on the same established hook name.",
       "current_source": "$variable_exclude = apply_filters( HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER, $variable_exclude );",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-049",
+      "id": "EX-046",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 470,
+      "line": 482,
       "column": 19,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleVariableLimitation",
       "reason": "Presence of the source query parameter selects an editor warning. Its script values use WordPress JSON with all HTML hex flags.",
       "current_source": "if (isset($_GET['from_post'])) {",
-      "source_sha256": "10198921d5cdb214d9b2202f3b5c0884e526fc2de09a6780e1b62bd44c125b5d"
+      "source_sha256": "60975b0aad0c6cf779cd0813278b8fbe83b21398f35347cfea21a8904d626340"
     },
     {
-      "id": "EX-050",
+      "id": "EX-047",
       "file": "src/Hyyan/WPI/Product/Product.php",
       "line": 249,
       "column": 19,
@@ -555,7 +522,7 @@
       "source_sha256": "2b3142b0019458be3f26a1b6afc8587f4a4cb1363de8f32d602dbe08484615fa"
     },
     {
-      "id": "EX-051",
+      "id": "EX-048",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 167,
       "column": 20,
@@ -566,7 +533,7 @@
       "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
     },
     {
-      "id": "EX-052",
+      "id": "EX-049",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 167,
       "column": 20,
@@ -577,7 +544,7 @@
       "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
     },
     {
-      "id": "EX-053",
+      "id": "EX-050",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 224,
       "column": 43,
@@ -588,7 +555,7 @@
       "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
     },
     {
-      "id": "EX-054",
+      "id": "EX-051",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 402,
       "column": 19,
@@ -599,7 +566,7 @@
       "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
     },
     {
-      "id": "EX-055",
+      "id": "EX-052",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 72,
       "column": 33,
@@ -610,7 +577,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-056",
+      "id": "EX-053",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 105,
       "column": 23,
@@ -621,7 +588,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-057",
+      "id": "EX-054",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 223,
       "column": 19,
@@ -632,7 +599,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-058",
+      "id": "EX-055",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 228,
       "column": 25,
@@ -643,7 +610,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-059",
+      "id": "EX-056",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 266,
       "column": 19,
@@ -654,7 +621,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-060",
+      "id": "EX-057",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 668,
       "column": 34,
@@ -665,7 +632,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-061",
+      "id": "EX-058",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 799,
       "column": 30,
@@ -676,7 +643,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-062",
+      "id": "EX-059",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 836,
       "column": 36,
@@ -687,7 +654,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-063",
+      "id": "EX-060",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 906,
       "column": 20,
@@ -698,7 +665,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-064",
+      "id": "EX-061",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 906,
       "column": 20,
@@ -709,7 +676,7 @@
       "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
     },
     {
-      "id": "EX-065",
+      "id": "EX-062",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 99,
       "column": 29,
@@ -720,7 +687,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-066",
+      "id": "EX-063",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 99,
       "column": 57,
@@ -731,7 +698,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-067",
+      "id": "EX-064",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 100,
       "column": 41,
@@ -742,7 +709,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-068",
+      "id": "EX-065",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 81,
@@ -753,7 +720,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-069",
+      "id": "EX-066",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 112,
@@ -764,7 +731,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-070",
+      "id": "EX-067",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 158,
@@ -775,7 +742,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-071",
+      "id": "EX-068",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -783,10 +750,10 @@
       "method": "",
       "reason": "Existing WordPress.org directory slug begins with woo. Changing it changes installation and update identity. Plugins Team acceptance or a coordinated directory migration is required.",
       "current_source": "Existing directory slug woo-poly-integration",
-      "source_sha256": "915f877fb91a87043d050abdfdf8198e65ee4adec5dbf219ccda4c3d558c72bd"
+      "source_sha256": "040731f10332a257014a5ab90262bf85c3725c3d266d88049bddf153f441c623"
     },
     {
-      "id": "EX-072",
+      "id": "EX-069",
       "file": "src/Hyyan/WPI/Pages.php",
       "line": 29,
       "column": 32,
@@ -797,7 +764,7 @@
       "source_sha256": "f5d386c6f22a54733c6b100fbf5b05de0bcc42a57cef09ad36516b7d872f97da"
     },
     {
-      "id": "EX-073",
+      "id": "EX-070",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "line": 71,
       "column": 30,
@@ -808,7 +775,7 @@
       "source_sha256": "92a923bd40cf297e89b06f32b7fb035d07d2f2975d6c7433ae6768af0d8cf95e"
     },
     {
-      "id": "EX-074",
+      "id": "EX-071",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "line": 81,
       "column": 30,
@@ -819,7 +786,7 @@
       "source_sha256": "92a923bd40cf297e89b06f32b7fb035d07d2f2975d6c7433ae6768af0d8cf95e"
     },
     {
-      "id": "EX-075",
+      "id": "EX-072",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -830,7 +797,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-076",
+      "id": "EX-073",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,
@@ -841,7 +808,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-077",
+      "id": "EX-074",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "line": 74,
       "column": 21,
@@ -852,7 +819,7 @@
       "source_sha256": "7072faa3612fb19eb68077166c7cbf7872a58a85191527870e90c264ac3d88fc"
     },
     {
-      "id": "EX-078",
+      "id": "EX-075",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "line": 119,
       "column": 17,
@@ -863,7 +830,7 @@
       "source_sha256": "7072faa3612fb19eb68077166c7cbf7872a58a85191527870e90c264ac3d88fc"
     },
     {
-      "id": "EX-079",
+      "id": "EX-076",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 116,
       "column": 30,
@@ -874,7 +841,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-080",
+      "id": "EX-077",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 207,
       "column": 23,
@@ -885,7 +852,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-081",
+      "id": "EX-078",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 216,
       "column": 39,
@@ -896,7 +863,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-082",
+      "id": "EX-079",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 602,
       "column": 59,
@@ -907,7 +874,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-083",
+      "id": "EX-080",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 603,
       "column": 31,

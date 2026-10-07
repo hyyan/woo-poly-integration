@@ -1,5 +1,7 @@
 # Security re-review handoff
 
+Current verified request ID batch: source ac630ad, 388 tests with 1326 assertions, 73 matching archive files. Installed static and runtime Plugin Check each retain 124 findings, 45 errors and 79 warnings. Archive SHA256 is 31cdf305c5c20362aca04f88d822e5c29bb196cf88e5813034e7860d3a01f3fa. Earlier batch records below retain historical evidence. Zero findings and the complete published version upgrade feature matrix remain required. No release approval or completion claim.
+
 The four reported variation removal issues are corrected in the inspected source. The current active Plugin Check goal remains incomplete. No exception has been accepted and no WordPress.org approval or submission is claimed.
 
 | Report | Inspected correction | Evidence |

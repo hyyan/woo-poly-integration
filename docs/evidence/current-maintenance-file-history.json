@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "5f70301a693e5144f2cea6f8abea6f437a3a342a",
-  "changed_files": 1522,
+  "through_commit": "ac630ad0351734d045498ec0e5683ae1d3838e87",
+  "changed_files": 1547,
   "files": [
     {
       "file": ".exclude-list",
@@ -96,6 +96,10 @@
         {
           "sha": "ba3382210b7bf0cb39a13d5ec97b430d5cee214b",
           "subject": "docs: record verified maintenance batches and release evidence"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -228,6 +232,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -498,6 +506,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -700,6 +712,14 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "b78646148ee86e2f0c764d6879229973a0bdf091",
+          "subject": "docs: normalize checker report endings"
         }
       ]
     },
@@ -754,6 +774,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -824,6 +848,10 @@
         {
           "sha": "655a079c153ef0ebd9a282d75e9f939e28854831",
           "subject": "docs: record prefix verification and pending translation exceptions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -890,6 +918,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -914,6 +946,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -2290,6 +2326,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -10288,6 +10328,50 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-normalized-lists-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-normalized-lists-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-normalized-lists-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "b78646148ee86e2f0c764d6879229973a0bdf091",
+          "subject": "docs: normalize checker report endings"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-normalized-lists-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-obsolete-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -11948,6 +12032,224 @@
         {
           "sha": "decbfe3e0cde7fb5c23205caa1547d2d07270392",
           "subject": "docs: verify existing public integration contracts"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-existing-runner.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-gate-cases.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "b78646148ee86e2f0c764d6879229973a0bdf091",
+          "subject": "docs: normalize checker report endings"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-published-archive.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-release-gate.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "b78646148ee86e2f0c764d6879229973a0bdf091",
+          "subject": "docs: normalize checker report endings"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-upgrade-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-minimum-batch-upgrade.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -15084,6 +15386,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
+          "subject": "docs: record strict release gates and published upgrade evidence"
         }
       ]
     },
@@ -15522,6 +15828,10 @@
         {
           "sha": "28bbc81eca58c6935222e440163872d2916d7c03",
           "subject": "fix: preserve variation copy and import synchronization"
+        },
+        {
+          "sha": "ac630ad0351734d045498ec0e5683ae1d3838e87",
+          "subject": "fix: normalize request IDs through validated sanitizers"
         }
       ]
     },
@@ -15578,6 +15888,10 @@
         {
           "sha": "4e89b8eb616b2872e995921f66d6107b5d2a3026",
           "subject": "fix: validate registered languages across request filters"
+        },
+        {
+          "sha": "ac630ad0351734d045498ec0e5683ae1d3838e87",
+          "subject": "fix: normalize request IDs through validated sanitizers"
         }
       ]
     },

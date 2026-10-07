@@ -1,6 +1,6 @@
 # Security maintenance review
 
-Current state: SECURITY-REVIEW-HANDOFF.md contains the current inspected security boundaries and artifact evidence. Full suites pass 387 tests with 1323 assertions. Installed Plugin Check has 127 findings, 45 errors and 82 warnings. The goal remains active with no accepted exceptions. The following sections retain historical evidence and counts.
+Current state: SECURITY-REVIEW-HANDOFF.md contains the inspected security boundaries and current artifact evidence. Full suites pass 388 tests with 1326 assertions. Installed static and runtime Plugin Check have 124 findings, 45 errors and 79 warnings. Zero findings and the complete published version upgrade feature matrix are required. The goal remains active. The following sections retain historical evidence and counts.
 
 The reported variation removal paths were inspected against baseline b5f7495 and current source. Local commit 01bfb80 corrects the variation lookup and removal callback. Local commit 0ec30b1 corrects the equivalent early featured product callback. This review adds regression cases and current acceptance evidence. A complete release clearance remains pending.
 
@@ -9,7 +9,7 @@ The reported variation removal paths were inspected against baseline b5f7495 and
 | Report | Corrected behavior | Source |
 | --- | --- | --- |
 | Unvalidated variation IDs | Accept integer values and decimal digit strings, reject other shapes before any mutation, cast IDs before lookup and deletion, check variation post type | Product/Variable.php lines 317 to 340, Product/Variation.php lines 148 to 152 |
-| Variable data in SQL | Prepare the relationship key with %s and the normalized variation ID with %d | Product/Variation.php lines 159 to 163 |
+| Variable data in SQL | Prepare the relationship key and exact text metadata comparison with %s after integer normalization | Product/Variation.php lines 159 to 163 |
 | Missing authorization | Require edit_products and edit permission for the original and every linked variation parent before deleting any translation | Product/Variable.php lines 313 to 335 |
 | Missing request verification | Invoke check_ajax_referer with the existing delete-variations action and security request field before mutation | Product/Variable.php line 312 |
 | Client nonce | WooCommerce owns the request. Its native variation script already sends security from delete_variations_nonce. Current Chrome capture confirms the native Remove button includes it | Installed WooCommerce meta-boxes-product-variation.js lines 1057 to 1059, class-wc-admin-assets.php line 564 |
