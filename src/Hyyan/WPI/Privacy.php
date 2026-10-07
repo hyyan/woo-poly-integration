@@ -78,7 +78,7 @@ class Privacy
         $trans = '';
         if ( function_exists( 'pll_register_string' ) ) {
             $trans = pll__( $notice );
-            return '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $trans ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . '</a></p>';
+            return str_replace( '>' . wp_kses_post( $notice ) . ' <a ', '>' . wp_kses_post( $trans ) . ' <a ', $html );
         } else {
             return $html;
         }
