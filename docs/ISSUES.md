@@ -319,3 +319,6 @@ Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and shari
 | CHECK-007 | Report, category copy and legacy attribute paths do not consistently validate registered languages | Corrected using the existing shared language request helper | Three baseline failures, full suites, native German and combined reports, category copy, older behavior and archive hashes pass. Twelve rows removed, source commit 4e89b8e |
 
 | CHECK-008 | Product creation copy hooks run before native Polylang verification | Corrected native creation nonce and edit_products guard in shared request helper, legacy product links signed through native filter | Twenty one denied cases and legacy link baseline failure, full suites, shop manager Chrome creation, older copy paths and exact archive checks pass. Source commit 344363e, checker count remains 135 |
+
+
+| CHECK-009 | Numeric metadata comparison includes malformed variation relationships and writer accepts unnormalized identifiers | Prepared binary comparison preserves padded integer references and normalized writer rejects fractional input | Baseline failures, 375 tests, native shop manager removal, older lookup and archive checks pass. Source commit 02c2b76, checker count remains 135 |
