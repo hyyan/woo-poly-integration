@@ -63,8 +63,8 @@ class Coupon
             $enable_wjecf = function_exists('WJECF');
             if ($enable_wjecf){
                 if (self::$enable_logging) {
-                    error_log('woopoly enabled wjecf translation: ' . 
-                        ' in request: ' . self::getDiagnosticRequestPath());
+                    \wc_get_logger()->debug('woopoly enabled wjecf translation: ' .
+                        ' in request: ' . self::getDiagnosticRequestPath(), array('source' => 'woo-poly-integration'));
                 }
                 add_filter('woocommerce_coupon_get__wjecf_enqueue_message',
                     array($this, 'translateMessage'), 10, 2);
@@ -91,8 +91,8 @@ class Coupon
         }
         $productLang = pll_current_language();
         if (self::$enable_logging) {
-            error_log('woopoly getting translated ids for: ' . $productIds . ' for coupon ' . $coupon->get_code() . 
-                ' in request: ' . self::getDiagnosticRequestPath());
+            \wc_get_logger()->debug('woopoly getting translated ids for: ' . $productIds . ' for coupon ' . $coupon->get_code() .
+                ' in request: ' . self::getDiagnosticRequestPath(), array('source' => 'woo-poly-integration'));
         }
         $productIds = explode(',', $productIds);
         $mappedIds = array();
@@ -170,8 +170,8 @@ class Coupon
             $doingload = true;
             if (function_exists('pll_register_string')) {
                 if (self::$enable_logging) {
-                    error_log('woopoly registering coupons for translation: ' . 
-                        ' in request: ' . self::getDiagnosticRequestPath());
+                    \wc_get_logger()->debug('woopoly registering coupons for translation: ' .
+                        ' in request: ' . self::getDiagnosticRequestPath(), array('source' => 'woo-poly-integration'));
                 }
                 $coupons = $this->getCoupons();
             
@@ -219,13 +219,13 @@ class Coupon
         $coupon_ids = get_transient($tKey);
         if ($coupon_ids) {
             if (self::$enable_logging) {
-                error_log('woopoly found coupons in transient: ' . 
-                    ' in request: ' . self::getDiagnosticRequestPath());
+                \wc_get_logger()->debug('woopoly found coupons in transient: ' .
+                    ' in request: ' . self::getDiagnosticRequestPath(), array('source' => 'woo-poly-integration'));
             }
         } else {        
             if (self::$enable_logging) {
-                error_log('woopoly loading coupons to transient: ' . 
-                    ' in request: ' . self::getDiagnosticRequestPath());
+                \wc_get_logger()->debug('woopoly loading coupons to transient: ' .
+                    ' in request: ' . self::getDiagnosticRequestPath(), array('source' => 'woo-poly-integration'));
             }
             $args = array(
                 'posts_per_page'   => -1,
@@ -280,12 +280,12 @@ class Coupon
         }
 
         if (self::$enable_logging) {
-            error_log('woopoly setting related for coupon : ' . $coupon->get_code() .
+            \wc_get_logger()->debug('woopoly setting related for coupon : ' . $coupon->get_code() .
                 ' include-products:' . implode(',', $productIDS) .
                 ' exclude-products:' . implode(',', $excludeProductIDS) .
                 ' include-categories:' . implode(',', $productCategoriesIDS) .
                 ' exclude-categories:' . implode(',', $excludeProductCategoriesIDS) .
-                ' in request: ' . self::getDiagnosticRequestPath());
+                ' in request: ' . self::getDiagnosticRequestPath(), array('source' => 'woo-poly-integration'));
         }
 
         $coupon->set_product_ids($productIDS);

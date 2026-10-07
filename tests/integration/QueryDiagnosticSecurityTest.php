@@ -102,6 +102,46 @@ final class QueryDiagnosticSecurityTest extends TestCase
         self::assertStringNotContainsString('private-token', (string) file_get_contents($this->logFile));
         self::assertStringNotContainsString('FORGED_ENTRY', (string) file_get_contents($this->logFile));
     }
+    public function testOptionalDiagnosticsUseTheNativeLoggerWithoutRequestSecrets(): void
+    {
+        $handler = new class extends WC_Log_Handler {
+            public array $entries = array();
+            public function handle($timestamp, $level, $message, $context) {
+                $this->entries[] = array('level' => $level, 'message' => $message, 'context' => $context);
+                return true;
+            }
+        };
+        $originalLogger = wc_get_logger();
+        $logger = new WC_Logger(array($handler), 'debug');
+        $filter = function () use ($logger) { return $logger; };
+        add_filter('woocommerce_logging_class', $filter);
+        try {
+            $coupon = new WC_Coupon();
+            $coupon->set_code('diagnostic-native-fixture');
+            $integration = (new ReflectionClass(Coupon::class))->newInstanceWithoutConstructor();
+            $_SERVER['REQUEST_URI'] = "/cart/?token=private-token\nFORGED_ENTRY";
+            Coupon::$enable_logging = false;
+            $integration->couponLoaded($coupon);
+            self::assertSame(array(), $handler->entries);
+            Coupon::$enable_logging = true;
+            $integration->couponLoaded($coupon);
+            self::assertCount(1, $handler->entries);
+            $entry = $handler->entries[0];
+            self::assertSame('debug', $entry['level']);
+            self::assertSame('woo-poly-integration', $entry['context']['source']);
+            self::assertStringContainsString('diagnostic-native-fixture', $entry['message']);
+            self::assertStringContainsString('/cart/', $entry['message']);
+            self::assertStringNotContainsString('private-token', $entry['message']);
+            self::assertStringNotContainsString('FORGED_ENTRY', $entry['message']);
+        } finally {
+            remove_filter('woocommerce_logging_class', $filter);
+            $restore = function () use ($originalLogger) { return $originalLogger; };
+            add_filter('woocommerce_logging_class', $restore);
+            wc_get_logger();
+            remove_filter('woocommerce_logging_class', $restore);
+        }
+    }
+
     public static function requests(): array
     {
         return array(array(array('nested')), array("/cart/?token=private-token\nFORGED_ENTRY"), array('/cart/'));

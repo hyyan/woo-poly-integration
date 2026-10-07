@@ -23,8 +23,14 @@ class Stock {
 		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
 		if ( ($screen && $screen->post_type === 'product') ||
                 (is_admin() && current_user_can('edit_products') &&
-                isset($_POST['action']) && $_POST['action'] === 'editpost' &&
-                isset($_POST['product-type']) && is_string($_POST['product-type'])) ) {
+                isset($_POST['action'], $_POST['product-type'], $_POST['post_ID'], $_POST['_wpnonce']) &&
+                $_POST['action'] === 'editpost' && is_string($_POST['product-type']) &&
+                (is_int($_POST['post_ID']) || is_string($_POST['post_ID'])) &&
+                is_string($_POST['_wpnonce']) &&
+                ($post_id = filter_var(wp_unslash($_POST['post_ID']), FILTER_VALIDATE_INT,
+                    array('options' => array('min_range' => 1)))) &&
+                get_post_type($post_id) === 'product' && current_user_can('edit_post', $post_id) &&
+                wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['_wpnonce'])), 'update-post_'.$post_id)) ) {
 			return;
 		}
 

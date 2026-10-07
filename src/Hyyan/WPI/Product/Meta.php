@@ -573,7 +573,7 @@ class Meta
         //attempt to insert the new term
         $newterm = wp_insert_term($newterm_name, $tax, $args);
         if (is_wp_error($newterm)) {
-            error_log($newterm->get_error_message());
+            \wc_get_logger()->error($newterm->get_error_message(), array('source' => 'woo-poly-integration'));
             return false;
         } else {
             $newterm_id = (int) $newterm['term_id'];
