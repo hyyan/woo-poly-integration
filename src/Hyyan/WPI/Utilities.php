@@ -154,8 +154,9 @@ final class Utilities
         if (!isset($_GET[$key]) || (!is_int($_GET[$key]) && !is_string($_GET[$key]))) {
             return 0;
         }
-        $value = wp_unslash($_GET[$key]);
-        return ctype_digit((string) $value) ? absint($value) : 0;
+        $value = filter_var(wp_unslash($_GET[$key]), FILTER_VALIDATE_REGEXP,
+                array('options' => array('regexp' => '/^[0-9]+$/D')));
+        return $value !== false ? absint($value) : 0;
     }
 
     /**

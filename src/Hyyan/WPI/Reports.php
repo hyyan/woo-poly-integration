@@ -269,14 +269,14 @@ class Reports
             return false;
         }
 
+        $IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['show_categories']), function ($id) {
+            return is_int($id) || (is_string($id) && ctype_digit($id));
+        }));
+        $_GET['show_categories'] = $IDS;
         if (
                 !static::isCombine() &&
                 (isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) !== 'all')
         ) {
-            $IDS = wp_parse_id_list(array_filter((array) wp_unslash($_GET['show_categories']), function ($id) {
-                return is_int($id) || (is_string($id) && ctype_digit($id));
-            }));
-            $_GET['show_categories'] = $IDS;
             $extendedIDS = array();
             $lang = sanitize_key(wp_unslash($_GET['lang']));
 

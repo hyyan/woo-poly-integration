@@ -48,19 +48,24 @@ class Categories implements TaxonomiesInterface
      */
     public function syncProductCatCustomFields($termID, $ttID = '', $taxonomy = '')
     {
-        if (isset($_POST['display_type']) && is_string($_POST['display_type']) && 'product_cat' === $taxonomy) {
+        $verified = 'product_cat' === $taxonomy && current_user_can('edit_term', absint($termID)) && (
+            (isset($_POST['_wpnonce_add-tag']) && is_string($_POST['_wpnonce_add-tag']) &&
+                wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['_wpnonce_add-tag'])), 'add-tag')) ||
+            (isset($_POST['_wpnonce']) && is_string($_POST['_wpnonce']) &&
+                wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['_wpnonce'])), 'update-tag_'.absint($termID)))
+        );
+        if ($verified && isset($_POST['display_type']) && is_string($_POST['display_type'])) {
             $this->doSyncProductCatCustomFields(
                     $termID, 'display_type', sanitize_key(wp_unslash($_POST['display_type']))
             );
         }
-        if (isset($_POST['product_cat_thumbnail_id']) &&
-                (is_int($_POST['product_cat_thumbnail_id']) ||
-                (is_string($_POST['product_cat_thumbnail_id']) &&
-                ('' === $_POST['product_cat_thumbnail_id'] || ctype_digit($_POST['product_cat_thumbnail_id'])))) &&
-                'product_cat' === $taxonomy) {
-            $this->doSyncProductCatCustomFields(
-                    $termID, 'thumbnail_id', absint($_POST['product_cat_thumbnail_id'])
-            );
+        if ($verified && isset($_POST['product_cat_thumbnail_id']) &&
+                (is_int($_POST['product_cat_thumbnail_id']) || is_string($_POST['product_cat_thumbnail_id']))) {
+            $thumbnail = filter_var(wp_unslash($_POST['product_cat_thumbnail_id']), FILTER_VALIDATE_REGEXP,
+                    array('options' => array('regexp' => '/^[0-9]*$/D')));
+            if ($thumbnail !== false) {
+                $this->doSyncProductCatCustomFields($termID, 'thumbnail_id', absint($thumbnail));
+            }
         }
 
         if ('product_cat' === $taxonomy) {
@@ -83,12 +88,11 @@ class Categories implements TaxonomiesInterface
     {
 
         /* We sync custom fields only for translation */
-        if (!(isset($_GET['from_tag'], $_GET['new_lang']) && is_string($_GET['new_lang']) &&
-                (is_int($_GET['from_tag']) || (is_string($_GET['from_tag']) && ctype_digit($_GET['from_tag']))))) {
+        if (!isset($_GET['new_lang']) || !is_string($_GET['new_lang'])) {
             return false;
         }
 
-        $ID = absint($_GET['from_tag']);
+        $ID = Utilities::getRequestInteger('from_tag');
         if (!$ID) {
             return false;
         }

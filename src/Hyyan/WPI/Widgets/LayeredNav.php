@@ -57,7 +57,7 @@ class LayeredNav
                 continue;
             }
 
-            $terms = explode(',', wc_clean(wp_unslash($_GET[$name])));
+            $terms = explode(',', sanitize_text_field(wp_unslash($_GET[$name])));
             $termsTranslations = array();
 
             foreach ($terms as $value) {

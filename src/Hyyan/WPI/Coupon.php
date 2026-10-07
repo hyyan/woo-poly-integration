@@ -36,7 +36,7 @@ class Coupon
         if (!isset($_SERVER['REQUEST_URI']) || !is_string($_SERVER['REQUEST_URI'])) {
             return 'unavailable';
         }
-        $path = wp_parse_url(wp_unslash($_SERVER['REQUEST_URI']), PHP_URL_PATH);
+        $path = wp_parse_url(sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])), PHP_URL_PATH);
         return is_string($path) ? sanitize_text_field($path) : 'unavailable';
     }
 

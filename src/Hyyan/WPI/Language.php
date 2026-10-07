@@ -81,7 +81,7 @@ class Language
                 !is_string($_REQUEST['pll_action']) || !is_string($_REQUEST['name']) ||
                 !is_string($_REQUEST['locale']) || !is_string($_REQUEST['_wpnonce_add-lang']) ||
                 'add' !== sanitize_key(wp_unslash($_REQUEST['pll_action'])) ||
-                !wp_verify_nonce(wp_unslash($_REQUEST['_wpnonce_add-lang']), 'add-lang')
+                !wp_verify_nonce(sanitize_text_field(wp_unslash($_REQUEST['_wpnonce_add-lang'])), 'add-lang')
         ) {
             return false;
         }

@@ -85,7 +85,7 @@ class Product
            ! isset( $_REQUEST['_wpnonce'], $_GET['product_id'] ) ||
            ! is_string( $_REQUEST['_wpnonce'] ) ||
            ! is_scalar( $_GET['product_id'] ) ||
-           ! wp_verify_nonce( wp_unslash( $_REQUEST['_wpnonce'] ), 'woocommerce-feature-product' ) ) {
+           ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'woocommerce-feature-product' ) ) {
         return;
       }
 
@@ -244,9 +244,8 @@ class Product
     public function wpi_editor_title($title)
     {
         // Polylang sets the 'from_post' parameter
-        if (isset($_GET['from_post']) && (is_int($_GET['from_post']) ||
-                (is_string($_GET['from_post']) && ctype_digit($_GET['from_post'])))) {
-            $source_id = absint($_GET['from_post']);
+        $source_id = Utilities::getRequestInteger('from_post');
+        if ($source_id) {
             $my_post = $source_id && current_user_can('read_post', $source_id) ? get_post($source_id) : false;
             if ($my_post) {
                 return $my_post->post_title;
@@ -259,9 +258,8 @@ class Product
     public function wpi_editor_content($content)
     {
         // Polylang sets the 'from_post' parameter
-        if (isset($_GET['from_post']) && (is_int($_GET['from_post']) ||
-                (is_string($_GET['from_post']) && ctype_digit($_GET['from_post'])))) {
-            $source_id = absint($_GET['from_post']);
+        $source_id = Utilities::getRequestInteger('from_post');
+        if ($source_id) {
             $my_post = $source_id && current_user_can('read_post', $source_id) ? get_post($source_id) : false;
             if ($my_post) {
                 return $my_post->post_content;
@@ -274,9 +272,8 @@ class Product
     public function wpi_editor_excerpt($excerpt)
     {
         // Polylang sets the 'from_post' parameter
-        if (isset($_GET['from_post']) && (is_int($_GET['from_post']) ||
-                (is_string($_GET['from_post']) && ctype_digit($_GET['from_post'])))) {
-            $source_id = absint($_GET['from_post']);
+        $source_id = Utilities::getRequestInteger('from_post');
+        if ($source_id) {
             $my_post = $source_id && current_user_can('read_post', $source_id) ? get_post($source_id) : false;
             if ($my_post) {
                 return $my_post->post_excerpt;

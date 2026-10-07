@@ -249,24 +249,84 @@ final class RequestInputSecurityTest extends TestCase
         }
         pll_save_term_translations($this->categories);
         $handler = $this->handler(Categories::class);
-        $_POST = array('display_type' => array('both'), 'product_cat_thumbnail_id' => array('9'));
+        $_POST = array('display_type' => array('both'), 'product_cat_thumbnail_id' => array('9'), '_wpnonce' => wp_create_nonce('update-tag_'.$this->categories['en']));
         $handler->syncProductCatCustomFields($this->categories['en'], '', 'product_cat');
         foreach ($this->categories as $id) {
             self::assertSame('products', get_term_meta($id, 'display_type', true));
             self::assertSame('5', get_term_meta($id, 'thumbnail_id', true));
         }
-        $_POST = array('display_type' => 'both', 'product_cat_thumbnail_id' => '9');
+        $_POST = array('display_type' => 'both', 'product_cat_thumbnail_id' => '9', '_wpnonce' => wp_create_nonce('update-tag_'.$this->categories['en']));
         $handler->syncProductCatCustomFields($this->categories['en'], '', 'product_cat');
         foreach ($this->categories as $id) {
             self::assertSame('both', get_term_meta($id, 'display_type', true));
             self::assertSame('9', get_term_meta($id, 'thumbnail_id', true));
         }
-        $_POST = array('display_type' => '', 'product_cat_thumbnail_id' => '');
+        $_POST = array('display_type' => '', 'product_cat_thumbnail_id' => '', '_wpnonce_add-tag' => wp_create_nonce('add-tag'));
         $handler->syncProductCatCustomFields($this->categories['en'], '', 'product_cat');
         foreach ($this->categories as $id) {
             self::assertSame('', get_term_meta($id, 'display_type', true));
             self::assertSame('0', get_term_meta($id, 'thumbnail_id', true));
         }
+    }
+
+    #[DataProvider('categoryRequestCases')]
+    public function testCategorySynchronizationRequiresNativeNonceAndTermPermission(string $login, string $nonceCase): void
+    {
+        foreach (array('en', 'de') as $language) {
+            $term = wp_insert_term('Category authorization '.$language, 'product_cat');
+            $this->categories[$language] = $term['term_id'];
+            pll_set_term_language($term['term_id'], $language);
+            update_term_meta($term['term_id'], 'display_type', 'products');
+            update_term_meta($term['term_id'], 'thumbnail_id', 5);
+        }
+        pll_save_term_translations($this->categories);
+        wp_set_current_user(get_user_by('login', $login)->ID);
+        $_POST = array('display_type' => 'both', 'product_cat_thumbnail_id' => '9');
+        if ($nonceCase === 'valid') {
+            $_POST['_wpnonce'] = wp_create_nonce('update-tag_'.$this->categories['en']);
+        } elseif ($nonceCase === 'wrong term') {
+            $_POST['_wpnonce'] = wp_create_nonce('update-tag_'.$this->categories['de']);
+        } elseif ($nonceCase === 'array') {
+            $_POST['_wpnonce'] = array('invalid');
+        } elseif ($nonceCase === 'invalid') {
+            $_POST['_wpnonce'] = 'invalid';
+        }
+        $hookCalls = 0;
+        $observer = function () use (&$hookCalls) { ++$hookCalls; };
+        add_action(\Hyyan\WPI\HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS, $observer);
+        try {
+            $this->handler(Categories::class)->syncProductCatCustomFields($this->categories['en'], '', 'product_cat');
+            $allowed = $nonceCase === 'valid' && in_array($login, array('lab-admin', 'lab-manager'), true);
+            foreach ($this->categories as $id) {
+                self::assertSame($allowed ? 'both' : 'products', get_term_meta($id, 'display_type', true));
+                self::assertSame($allowed ? '9' : '5', get_term_meta($id, 'thumbnail_id', true));
+            }
+            self::assertSame(1, $hookCalls);
+        } finally {
+            remove_action(\Hyyan\WPI\HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS, $observer);
+        }
+    }
+
+    public static function categoryRequestCases(): array
+    {
+        return array(
+            'missing nonce' => array('lab-admin', 'missing'),
+            'invalid nonce' => array('lab-admin', 'invalid'),
+            'array nonce' => array('lab-admin', 'array'),
+            'other term nonce' => array('lab-admin', 'wrong term'),
+            'subscriber with valid nonce' => array('lab-subscriber', 'valid'),
+            'customer with valid nonce' => array('lab-customer', 'valid'),
+            'administrator' => array('lab-admin', 'valid'),
+            'shop manager' => array('lab-manager', 'valid'),
+        );
+    }
+
+    public function testCombinedCategoryReportNormalizesIdsBeforeNativeReportReadsThem(): void
+    {
+        PLL()->curlang = false;
+        $_GET = array('show_categories' => array('7', array('8'), '9 OR 1', -3, ''));
+        $this->handler(Reports::class)->translateCategoryIDS();
+        self::assertSame(array(7, 3), array_values($_GET['show_categories']));
     }
 
     public function testCategoryCopyRejectsArraySourceWithoutOutput(): void
