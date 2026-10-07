@@ -23,6 +23,15 @@ interface HooksInterface
     /** WordPress plugin domain translation filter. */
     const WORDPRESS_PLUGIN_GETTEXT_FILTER = 'gettext_woo-poly-integration';
 
+    /** WordPress WooCommerce domain translation filter. */
+    const WORDPRESS_WOOCOMMERCE_GETTEXT_FILTER = 'gettext_woocommerce';
+
+    /** WordPress contextual translation filter. */
+    const WORDPRESS_GETTEXT_CONTEXT_FILTER = 'gettext_with_context';
+
+    /** WordPress WooCommerce contextual translation filter. */
+    const WORDPRESS_WOOCOMMERCE_GETTEXT_CONTEXT_FILTER = 'gettext_with_context_woocommerce';
+
     /** Polylang post synchronization action. */
     const POLYLANG_SAVE_POST_ACTION = 'pll_save_post';
 

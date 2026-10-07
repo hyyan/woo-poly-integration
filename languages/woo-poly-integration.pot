@@ -639,3 +639,46 @@ msgstr ""
 #, php-format
 msgid "You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr ""
+
+#, php-format
+msgid "You cannot add that amount of &quot;%1$s&quot; to the cart because there is not enough stock (%2$s remaining)."
+msgstr ""
+
+msgid "The current language used by WordPress. Default = English"
+msgstr ""
+
+#, php-format
+msgid "Coupon: %s"
+msgstr ""
+
+msgctxt "Page slug"
+msgid "shop"
+msgstr ""
+
+msgctxt "Page title"
+msgid "Shop"
+msgstr ""
+
+msgctxt "Page slug"
+msgid "cart"
+msgstr ""
+
+msgctxt "Page title"
+msgid "Cart"
+msgstr ""
+
+msgctxt "Page slug"
+msgid "checkout"
+msgstr ""
+
+msgctxt "Page title"
+msgid "Checkout"
+msgstr ""
+
+msgctxt "Page slug"
+msgid "my-account"
+msgstr ""
+
+msgctxt "Page title"
+msgid "My account"
+msgstr ""

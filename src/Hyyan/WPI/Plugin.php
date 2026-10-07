@@ -39,6 +39,7 @@ class Plugin
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
         add_filter(Hyyan_WPI_Hooks::WORDPRESS_GETTEXT_FILTER, array($this, 'translateLegacyFormat'), PHP_INT_MAX, 3);
+        add_filter(Hyyan_WPI_Hooks::WORDPRESS_GETTEXT_CONTEXT_FILTER, array($this, 'translateWooCommerceContext'), PHP_INT_MAX, 4);
 		add_action( 'admin_init', array( __CLASS__, 'admin_activate' ) );
 
         add_action( 'pll_add_language', array( __CLASS__, 'handleNewLanguage' ) );
@@ -102,20 +103,82 @@ class Plugin
             'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%1$s">%2$s</a>' =>
                 'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%s">%s</a>',
         );
-        if (!isset($legacy_formats[$text])) {
+        if (isset($legacy_formats[$text])) {
+            return $this->getCompatibleTranslation($translation, $text, $legacy_formats[$text], 'woo-poly-integration');
+        }
+        $woocommerce_messages = array(
+            'Sort code',
+            'Bank',
+            'Account number',
+            'IBAN',
+            'BIC',
+            'Our bank details',
+            'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.',
+            'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.',
+            'You cannot add that amount of &quot;%1$s&quot; to the cart because there is not enough stock (%2$s remaining).',
+            'The current language used by WordPress. Default = English',
+            'Coupon: %s',
+        );
+        return in_array($text, $woocommerce_messages, true)
+            ? $this->getCompatibleTranslation($translation, $text, $text, 'woocommerce') : $translation;
+    }
+
+    /**
+     * Retain WooCommerce page translations for plugin messages.
+     *
+     * @param string $translation translated text
+     * @param string $text source text
+     * @param string $context translation context
+     * @param string $domain text domain
+     * @return string
+     */
+    public function translateWooCommerceContext($translation, $text, $context, $domain)
+    {
+        if ($domain !== 'woo-poly-integration' || $translation !== $text) {
             return $translation;
         }
-        $catalog = get_translations_for_domain($domain);
+        $page_messages = array(
+            'Page slug' => array('shop', 'cart', 'checkout', 'my-account'),
+            'Page title' => array('Shop', 'Cart', 'Checkout', 'My account'),
+        );
+        return isset($page_messages[$context]) && in_array($text, $page_messages[$context], true)
+            ? $this->getCompatibleTranslation($translation, $text, $text, 'woocommerce', $context) : $translation;
+    }
+
+    /**
+     * Get an earlier catalog translation when the current message is untranslated.
+     *
+     * @param string $translation current translation
+     * @param string $text current source text
+     * @param string $legacy earlier source text
+     * @param string $legacy_domain earlier text domain
+     * @param string $context translation context
+     * @return string
+     */
+    private function getCompatibleTranslation($translation, $text, $legacy, $legacy_domain, $context = '')
+    {
+        $catalog = get_translations_for_domain('woo-poly-integration');
+        $key = $context !== '' ? $context . "\x04" . $text : $text;
         if (($catalog instanceof \WP_Translations &&
-                \WP_Translation_Controller::get_instance()->has_translation($text, $domain)) ||
-                (!($catalog instanceof \WP_Translations) && isset($catalog->entries[$text]))) {
+                \WP_Translation_Controller::get_instance()->has_translation($key, 'woo-poly-integration')) ||
+                (!($catalog instanceof \WP_Translations) && isset($catalog->entries[$key]))) {
             return $translation;
         }
-        $legacy = $legacy_formats[$text];
-        $translated = $catalog->translate($legacy);
-        $translated = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_GETTEXT_FILTER, $translated, $legacy, $domain);
-        if (version_compare(get_bloginfo('version'), '5.5', '>=')) {
-            $translated = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_PLUGIN_GETTEXT_FILTER, $translated, $legacy, $domain);
+        $translated = get_translations_for_domain($legacy_domain)->translate($legacy, $context);
+        if ($context !== '') {
+            $translated = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_GETTEXT_CONTEXT_FILTER,
+                $translated, $legacy, $context, $legacy_domain);
+            if (version_compare(get_bloginfo('version'), '5.5', '>=')) {
+                $translated = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_WOOCOMMERCE_GETTEXT_CONTEXT_FILTER,
+                    $translated, $legacy, $context, $legacy_domain);
+            }
+        } else {
+            $translated = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_GETTEXT_FILTER, $translated, $legacy, $legacy_domain);
+            if (version_compare(get_bloginfo('version'), '5.5', '>=')) {
+                $translated = $legacy_domain === 'woocommerce'
+                    ? apply_filters(Hyyan_WPI_Hooks::WORDPRESS_WOOCOMMERCE_GETTEXT_FILTER, $translated, $legacy, $legacy_domain)
+                    : apply_filters(Hyyan_WPI_Hooks::WORDPRESS_PLUGIN_GETTEXT_FILTER, $translated, $legacy, $legacy_domain);
+            }
         }
         return $translated === $legacy ? $translation : $translated;
     }
@@ -464,27 +527,27 @@ class Plugin
                                 //ideally, get correct translation
                                 switch ( $page_type ) {
                                     case 'shop':
-                                        $post_name		 = _x( 'shop', 'Page slug', 'woocommerce' );
-                                        $post_title		 = _x( 'Shop', 'Page title', 'woocommerce' );
+                                        $post_name		 = _x( 'shop', 'Page slug', 'woo-poly-integration' );
+                                        $post_title		 = _x( 'Shop', 'Page title', 'woo-poly-integration' );
                                         $post_content	 = '';
                                         break;
                                     case 'cart':
-                                        $post_name		 = _x( 'cart', 'Page slug', 'woocommerce' );
-                                        $post_title		 = _x( 'Cart', 'Page title', 'woocommerce' );
+                                        $post_name		 = _x( 'cart', 'Page slug', 'woo-poly-integration' );
+                                        $post_title		 = _x( 'Cart', 'Page title', 'woo-poly-integration' );
                                         $post_content	 = has_block( 'woocommerce/cart', $orig_page->post_content )
                                         ? $orig_page->post_content
                                         : '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_cart_shortcode_tag', 'woocommerce_cart' ) . ']<!-- /wp:shortcode -->';
                                         break;
                                     case 'checkout':
-                                        $post_name		 = _x( 'checkout', 'Page slug', 'woocommerce' );
-                                        $post_title		 = _x( 'Checkout', 'Page title', 'woocommerce' );
+                                        $post_name		 = _x( 'checkout', 'Page slug', 'woo-poly-integration' );
+                                        $post_title		 = _x( 'Checkout', 'Page title', 'woo-poly-integration' );
                                         $post_content	 = has_block( 'woocommerce/checkout', $orig_page->post_content )
                                         ? $orig_page->post_content
                                         : '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_checkout_shortcode_tag', 'woocommerce_checkout' ) . ']<!-- /wp:shortcode -->';
                                         break;
                                     case 'myaccount':
-                                        $post_name		 = _x( 'my-account', 'Page slug', 'woocommerce' );
-                                        $post_title		 = _x( 'My account', 'Page title', 'woocommerce' );
+                                        $post_name		 = _x( 'my-account', 'Page slug', 'woo-poly-integration' );
+                                        $post_title		 = _x( 'My account', 'Page title', 'woo-poly-integration' );
                                         $post_content	 = '<!-- wp:shortcode -->[' . apply_filters( 'woocommerce_my_account_shortcode_tag', 'woocommerce_my_account' ) . ']<!-- /wp:shortcode -->';
                                         break;
                                 }

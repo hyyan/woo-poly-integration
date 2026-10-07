@@ -25,7 +25,7 @@ function woo_poly_integration_status_report() {
 		<tbody>
 			<tr>
 				<td data-export-label="Language Locale"><?php esc_html_e( 'Language Locale', 'woo-poly-integration' ); ?>:</td>
-				<td class="help"><?php echo wp_kses( wc_help_tip( esc_html__( 'The current language used by WordPress. Default = English', 'woocommerce' ) ), $allowed_tip_html ); ?></td>
+				<td class="help"><?php echo wp_kses( wc_help_tip( esc_html__( 'The current language used by WordPress. Default = English', 'woo-poly-integration' ) ), $allowed_tip_html ); ?></td>
 				<td><?php echo esc_html( get_locale() ); ?></td>
 			</tr>
 			<tr>

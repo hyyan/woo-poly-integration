@@ -116,7 +116,7 @@ class Coupon
         $code = $coupon->get_code();
         if ($code){
             /* translators: %s: Translated coupon code. */
-            return sprintf(esc_html__('Coupon: %s', 'woocommerce'), pll__($code));
+            return sprintf(esc_html__('Coupon: %s', 'woo-poly-integration'), pll__($code));
         } else {
             return $value;
         }

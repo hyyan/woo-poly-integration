@@ -274,7 +274,7 @@ class Cart
         if (!$product->has_enough_stock($in_cart + $quantity)) {
             throw new \Exception(esc_html(sprintf(
                 /* translators: 1: product name, 2: quantity in stock. */
-                __('You cannot add that amount of &quot;%1$s&quot; to the cart because there is not enough stock (%2$s remaining).', 'woocommerce'),
+                __('You cannot add that amount of &quot;%1$s&quot; to the cart because there is not enough stock (%2$s remaining).', 'woo-poly-integration'),
                 $product->get_name(), wc_format_stock_quantity_for_display($product->get_stock_quantity(), $product)
             )));
         }
