@@ -1,22 +1,11 @@
 {
-  "source_commit": "9790467ae606f94656b2f9afcdd2541428dce86d",
-  "installed_total": 60,
+  "source_commit": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+  "installed_total": 41,
   "open_findings": 41,
   "accepted_exceptions": 0,
   "findings": [
     {
       "id": "EX-001",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "line": 79,
-      "column": 9,
-      "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound",
-      "method": "loadTextDomain",
-      "reason": "Supported WordPress 5.4.2 loses the bundled Spanish translation before init when this loader is removed. Current WordPress automatic registration alone does not preserve the supported older bootstrap.",
-      "current_source": "load_plugin_textdomain(",
-      "source_sha256": "cb7b1f2fc04d82ca3044a34cd0d8adaf9c06c36e2eab7117a1e958577b5f20c2"
-    },
-    {
-      "id": "EX-002",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 156,
       "column": 20,
@@ -27,7 +16,7 @@
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
     },
     {
-      "id": "EX-003",
+      "id": "EX-002",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 156,
       "column": 45,
@@ -38,7 +27,7 @@
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
     },
     {
-      "id": "EX-004",
+      "id": "EX-003",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 156,
       "column": 72,
@@ -49,7 +38,7 @@
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
     },
     {
-      "id": "EX-005",
+      "id": "EX-004",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 159,
       "column": 40,
@@ -60,7 +49,7 @@
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
     },
     {
-      "id": "EX-006",
+      "id": "EX-005",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 172,
       "column": 20,
@@ -71,7 +60,7 @@
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
     },
     {
-      "id": "EX-007",
+      "id": "EX-006",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 172,
       "column": 47,
@@ -82,7 +71,7 @@
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
     },
     {
-      "id": "EX-008",
+      "id": "EX-007",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 175,
       "column": 52,
@@ -93,7 +82,7 @@
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
     },
     {
-      "id": "EX-009",
+      "id": "EX-008",
       "file": "src/Hyyan/WPI/Utilities.php",
       "line": 252,
       "column": 18,
@@ -102,6 +91,17 @@
       "reason": "Immediate trusted script wrapper escapes the element ID. All seven production callers use fixed code or WordPress JSON with HTML hex flags for dynamic values. HTML escaping the script body would break those controls and the public returned script contract.",
       "current_source": "echo $result;",
       "source_sha256": "66b3044404277b50209ec025900a2fe1e8871c3aadbb0c61d53610198287915e"
+    },
+    {
+      "id": "EX-009",
+      "file": "src/Hyyan/WPI/Plugin.php",
+      "line": 80,
+      "column": 9,
+      "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound",
+      "method": "loadTextDomain",
+      "reason": "Supported WordPress 5.4.2 loses the bundled Spanish translation before init when this loader is removed. Current WordPress automatic registration alone does not preserve the supported older bootstrap.",
+      "current_source": "load_plugin_textdomain(",
+      "source_sha256": "9b40362b6b108e13b73a71120fa986858ee0ed10b9a93f686611228814b3894e"
     },
     {
       "id": "EX-010",

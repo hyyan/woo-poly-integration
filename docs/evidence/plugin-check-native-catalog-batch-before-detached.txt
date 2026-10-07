@@ -1,0 +1,203 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m...................                            38 / 38 (100%)
+
+Time: 00:00.014, Memory: 105.05 MB
+
+There were 19 failures:
+
+1) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#0 with data ('Sort code', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Sort code'
++'Sort code'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+2) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#1 with data ('Bank', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Bank'
++'Bank'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+3) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#2 with data ('Account number', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Account number'
++'Account number'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+4) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#3 with data ('IBAN', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo IBAN'
++'IBAN'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+5) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#4 with data ('BIC', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo BIC'
++'BIC'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+6) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#5 with data ('Our bank details', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Our bank details'
++'Our bank details'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+7) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#6 with data ('Your personal data will be us...ur %s.', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.'
++'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+8) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#7 with data ('Your personal data will be us...ur %s.', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.'
++'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+9) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#8 with data ('You cannot add that amount of...ning).', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo You cannot add that amount of &quot;%1$s&quot; to the cart because there is not enough stock (%2$s remaining).'
++'You cannot add that amount of &quot;%1$s&quot; to the cart because there is not enough stock (%2$s remaining).'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+10) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#9 with data ('The current language used by ...nglish', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo The current language used by WordPress. Default = English'
++'The current language used by WordPress. Default = English'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+11) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#10 with data ('Coupon: %s', null)
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Coupon: %s'
++'Coupon: %s'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+12) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#11 with data ('shop', 'Page slug')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo shop'
++'shop'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+13) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#12 with data ('Shop', 'Page title')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Shop'
++'Shop'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+14) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#13 with data ('cart', 'Page slug')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo cart'
++'cart'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+15) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#14 with data ('Cart', 'Page title')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Cart'
++'Cart'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+16) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#15 with data ('checkout', 'Page slug')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo checkout'
++'checkout'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+17) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#16 with data ('Checkout', 'Page title')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo Checkout'
++'Checkout'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+18) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#17 with data ('my-account', 'Page slug')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo my-account'
++'my-account'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+19) NativeCatalogCompatibilityTest::testExistingWooCommerceCatalogRetainsTranslation#18 with data ('My account', 'Page title')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'Existing Woo My account'
++'My account'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogCompatibilityTest.php:37
+
+[37;41mFAILURES![0m
+[37;41mTests: 38[0m[37;41m, Assertions: 38[0m[37;41m, Failures: 19[0m[37;41m.[0m

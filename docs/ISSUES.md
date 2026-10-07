@@ -350,3 +350,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-020 | Coupon registration routes from query input and the variable warning trusts source presence | Resolve the native screen and reuse the verified creation request | 4ac655a, four reproduced failures, 446 tests pass, latest and minimum browser checks, four rows removed |
 
 | CHECK-021 | Multi argument translation formats contain unnumbered placeholders | Number current formats and retain native old catalog and gettext behavior | 9790467, three failures reproduced, 460 tests pass, native Chrome catalogs, twelve minimum checks, four rows removed |
+
+| CHECK-022 | Nineteen native WooCommerce message calls use the dependency domain | Own the keys and retain native catalogs and filters | 3567186, nineteen failures reproduced, 555 tests pass, native Chrome receipts and both native probes pass, nineteen errors removed |

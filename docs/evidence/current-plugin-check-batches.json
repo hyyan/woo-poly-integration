@@ -1,6 +1,6 @@
 {
-  "source_commit": "9790467ae606f94656b2f9afcdd2541428dce86d",
-  "installed_total": 60,
+  "source_commit": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+  "installed_total": 41,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
@@ -302,179 +302,7 @@
         "file": "src/Hyyan/WPI/Endpoints.php"
       }
     ],
-    "translations": [
-      {
-        "line": 467,
-        "column": 85,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 468,
-        "column": 86,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 472,
-        "column": 85,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 473,
-        "column": 86,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 479,
-        "column": 89,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 480,
-        "column": 90,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 486,
-        "column": 91,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 487,
-        "column": 92,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
-        "line": 83,
-        "column": 130,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
-      },
-      {
-        "line": 103,
-        "column": 47,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
-      },
-      {
-        "line": 107,
-        "column": 57,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
-      },
-      {
-        "line": 115,
-        "column": 47,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
-      },
-      {
-        "line": 119,
-        "column": 46,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
-      },
-      {
-        "line": 135,
-        "column": 146,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
-      },
-      {
-        "line": 36,
-        "column": 292,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Privacy.php"
-      },
-      {
-        "line": 38,
-        "column": 314,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Privacy.php"
-      },
-      {
-        "line": 277,
-        "column": 134,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Cart.php"
-      },
-      {
-        "line": 28,
-        "column": 140,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Admin/StatusReport.php"
-      },
-      {
-        "line": 119,
-        "column": 53,
-        "type": "ERROR",
-        "code": "WordPress.WP.I18n.TextDomainMismatch",
-        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
-        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
-        "file": "src/Hyyan/WPI/Coupon.php"
-      }
-    ],
+    "translations": [],
     "public hook constants": [
       {
         "line": 43,
@@ -517,15 +345,6 @@
     ],
     "other contracts": [
       {
-        "line": 79,
-        "column": 9,
-        "type": "WARNING",
-        "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound",
-        "message": "load_plugin_textdomain() has been discouraged since WordPress version 4.6. When your plugin is hosted on WordPress.org, you no longer need to manually include this function call for translations under your plugin slug. WordPress will automatically load the translations for you as needed.",
-        "docs": "https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/",
-        "file": "src/Hyyan/WPI/Plugin.php"
-      },
-      {
         "line": 252,
         "column": 18,
         "type": "ERROR",
@@ -533,6 +352,15 @@
         "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$result'.",
         "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
         "file": "src/Hyyan/WPI/Utilities.php"
+      },
+      {
+        "line": 80,
+        "column": 9,
+        "type": "WARNING",
+        "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound",
+        "message": "load_plugin_textdomain() has been discouraged since WordPress version 4.6. When your plugin is hosted on WordPress.org, you no longer need to manually include this function call for translations under your plugin slug. WordPress will automatically load the translations for you as needed.",
+        "docs": "https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
         "line": 79,

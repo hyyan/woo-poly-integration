@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "9790467ae606f94656b2f9afcdd2541428dce86d",
-  "changed_files": 1716,
+  "through_commit": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+  "changed_files": 1737,
   "files": [
     {
       "file": ".exclude-list",
@@ -212,6 +212,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -292,6 +296,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -594,6 +602,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -832,6 +844,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -918,6 +934,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -992,6 +1012,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -1020,6 +1044,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -1118,6 +1146,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -1174,6 +1206,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -1288,6 +1324,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -2610,6 +2650,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -2640,6 +2684,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -11128,6 +11176,206 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-older-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-older-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-older-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-preserved-catalogs.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-format-catalog-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-hook-ownership-batch-alias-probe.txt",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -12360,6 +12608,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -12386,6 +12638,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -17412,6 +17668,10 @@
         {
           "sha": "4dcacdc323792dddaf936d9b001a6e4ed54ebae7",
           "subject": "docs: record native admin route acceptance"
+        },
+        {
+          "sha": "02d7c3ec7c2698edafd29b1dce6032a69573c2c5",
+          "subject": "docs: record translation format and catalog acceptance"
         }
       ]
     },
@@ -17422,6 +17682,10 @@
         {
           "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
           "subject": "fix: number translation formats and preserve legacy catalogs"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -17534,6 +17798,10 @@
         {
           "sha": "df5c6fbcc0bb053e8d5b58610e0795e949846d67",
           "subject": "fix: prefix plugin callbacks and sharing variables"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -17570,6 +17838,10 @@
         {
           "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
           "subject": "fix: identify plugin hook constants with their owning prefix"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -17600,6 +17872,10 @@
         {
           "sha": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
           "subject": "fix: resolve coupon screens and verify translation warning bypass"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -17672,6 +17948,10 @@
         {
           "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
           "subject": "fix: translate stored checkout text through Polylang"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -17710,6 +17990,10 @@
         {
           "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
           "subject": "fix: number translation formats and preserve legacy catalogs"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -17796,6 +18080,10 @@
         {
           "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
           "subject": "fix: number translation formats and preserve legacy catalogs"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -17810,6 +18098,10 @@
         {
           "sha": "d28e504d5347a9134ae36ad864edaf11230df0b2",
           "subject": "fix: preserve native translated store notice controls"
+        },
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },
@@ -18676,6 +18968,16 @@
         {
           "sha": "6dd38b2b7a0209bb9b2686f4834fd33a38f1bdbd",
           "subject": "fix: preserve independent product attributes during copies"
+        }
+      ]
+    },
+    {
+      "file": "tests/integration/NativeCatalogCompatibilityTest.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
+          "subject": "fix: own message domains and retain WooCommerce translations"
         }
       ]
     },

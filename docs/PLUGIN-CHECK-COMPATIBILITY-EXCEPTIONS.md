@@ -1,18 +1,18 @@
 # Remaining compatibility findings
 
-These 41 findings remain open alongside 19 translation findings. Zero findings remains the release requirement. Inspected boundaries are not fixes or accepted exceptions. Current evidence uses plugin-check-format-catalog-batch.
+These 41 findings remain open. Zero findings remains the release requirement. Inspected boundaries are not fixes or accepted exceptions. Current evidence uses plugin-check-native-catalog-batch.
 
 | ID | File and line | Finding | Inspected boundary |
 | --- | --- | --- | --- |
-| EX-001 | src/Hyyan/WPI/Plugin.php:79 | load_plugin_textdomainFound | Supported WordPress 5.4.2 loses the bundled Spanish translation before init when this loader is removed. Current WordPress automatic registration alone does not preserve the supported older bootstrap. |
+| EX-001 | src/Hyyan/WPI/Utilities.php:156 | Recommended | Read only scalar getter validates ASCII digits and normalizes with absint. Mutation callers separately verify the native creation nonce, capability and source read permission. |
 | EX-002 | src/Hyyan/WPI/Utilities.php:156 | Recommended | Read only scalar getter validates ASCII digits and normalizes with absint. Mutation callers separately verify the native creation nonce, capability and source read permission. |
 | EX-003 | src/Hyyan/WPI/Utilities.php:156 | Recommended | Read only scalar getter validates ASCII digits and normalizes with absint. Mutation callers separately verify the native creation nonce, capability and source read permission. |
-| EX-004 | src/Hyyan/WPI/Utilities.php:156 | Recommended | Read only scalar getter validates ASCII digits and normalizes with absint. Mutation callers separately verify the native creation nonce, capability and source read permission. |
-| EX-005 | src/Hyyan/WPI/Utilities.php:159 | Recommended | Read only scalar getter validates ASCII digits and normalizes with absint. Mutation callers separately verify the native creation nonce, capability and source read permission. |
+| EX-004 | src/Hyyan/WPI/Utilities.php:159 | Recommended | Read only scalar getter validates ASCII digits and normalizes with absint. Mutation callers separately verify the native creation nonce, capability and source read permission. |
+| EX-005 | src/Hyyan/WPI/Utilities.php:172 | Recommended | Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request. |
 | EX-006 | src/Hyyan/WPI/Utilities.php:172 | Recommended | Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request. |
-| EX-007 | src/Hyyan/WPI/Utilities.php:172 | Recommended | Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request. |
-| EX-008 | src/Hyyan/WPI/Utilities.php:175 | Recommended | Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request. |
-| EX-009 | src/Hyyan/WPI/Utilities.php:252 | OutputNotEscaped | Immediate trusted script wrapper escapes the element ID. All seven production callers use fixed code or WordPress JSON with HTML hex flags for dynamic values. HTML escaping the script body would break those controls and the public returned script contract. |
+| EX-007 | src/Hyyan/WPI/Utilities.php:175 | Recommended | Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request. |
+| EX-008 | src/Hyyan/WPI/Utilities.php:252 | OutputNotEscaped | Immediate trusted script wrapper escapes the element ID. All seven production callers use fixed code or WordPress JSON with HTML hex flags for dynamic values. HTML escaping the script body would break those controls and the public returned script contract. |
+| EX-009 | src/Hyyan/WPI/Plugin.php:80 | load_plugin_textdomainFound | Supported WordPress 5.4.2 loses the bundled Spanish translation before init when this loader is removed. Current WordPress automatic registration alone does not preserve the supported older bootstrap. |
 | EX-010 | src/Hyyan/WPI/LocaleNumbers.php:94 | Recommended | Request flag selects numeric display formatting only. Input must be numeric. No request value is stored. |
 | EX-011 | src/Hyyan/WPI/LocaleNumbers.php:115 | Recommended | Request flag selects a display separator only. No request value is stored. |
 | EX-012 | src/Hyyan/WPI/Reports.php:45 | Recommended | Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting. |
