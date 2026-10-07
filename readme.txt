@@ -4,7 +4,7 @@ Tags: woocommerce, multilingual, polylang, language, translation
 Requires at least: 5.4
 Stable tag: 1.5.1
 Tested Up To: 7.1
-WC requires at least: 4.0.0
+WC requires at least: 3.0.0
 WC tested up to: 11.1.2
 Requires PHP: 7.0
 License: MIT
