@@ -26,6 +26,7 @@ class Tax
     public function __construct()
     {
         add_filter('woocommerce_get_price_suffix', array($this, 'filterPriceSuffix'), 10, 4);
+        add_filter('woocommerce_rate_label', array($this, 'translateTaxString'));
         $this->registerTaxStringsForTranslation();
     }
 
@@ -35,7 +36,16 @@ class Tax
      */
     public function registerTaxStringsForTranslation()
     {
-        if (wc_tax_enabled() && 'taxable') {
+        if (wc_tax_enabled()) {
+            if (function_exists('pll_register_string')) {
+                foreach (array_merge(array(''), \WC_Tax::get_tax_classes()) as $class) {
+                    foreach (\WC_Tax::get_rates_for_tax_class($class) as $id => $rate) {
+                        if ($rate->tax_rate_name) {
+                            pll_register_string('woocommerce_tax_rate_' . (int) $id, $rate->tax_rate_name, __('Woocommerce Taxes', 'woo-poly-integration'));
+                        }
+                    }
+                }
+            }
             $suffix = get_option('woocommerce_price_display_suffix');
             if ($suffix) {
                 $this->registerTaxString('woocommerce_price_display_suffix', $suffix);
@@ -74,14 +84,13 @@ class Tax
     public function translateTaxString($tax_string)
     {
         if (function_exists('pll_register_string')) {
-            $lang  = pll_current_language('locale');
             $trans = pll__($tax_string);
             if ($trans) {
                 return $trans;
-            } else {
-                return $tax_string;
             }
         }
+
+        return $tax_string;
     }
 
     /**
