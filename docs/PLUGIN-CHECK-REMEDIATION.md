@@ -1,5 +1,19 @@
 # Active Plugin Check remediation
 
+Current installed static and runtime Plugin Check reports contain 122 findings, 45 errors and 77 warnings. This is 108 actual removed rows from the 230 finding baseline. The current batches are mapped to every exact source location in evidence/current-plugin-check-batches.json.
+
+| Active batch | Remaining rows | Shared scope |
+| --- | ---: | --- |
+| Request verification | 49 | Inspect native verified calling contexts and read only selectors together |
+| Translation contracts | 44 | Preserve existing dependency catalogs, stored translations and legacy format keys |
+| Public hook constants | 22 | Preserve every existing extension hook and argument contract |
+| Prepared queries | 2 | Direct query warnings remain after both cache warnings were corrected |
+| Other contracts | 5 | Catalog loading, trusted scripts, dependency global and hook, existing directory identity |
+
+Zero findings and the complete published version upgrade feature matrix remain required. Source dispositions are not fixes. No exception acceptance or publication is authorized. The earlier inventory and batch records below retain historical evidence.
+
+## Historical batch inventory
+
 The baseline installed scan contained 230 findings: 66 errors and 164 warnings. The current installed scan contains 127 findings: 45 errors and 82 warnings. The prior dispositions explain inspected code but do not resolve the new goal.
 
 | Related batch | Findings | Verification |

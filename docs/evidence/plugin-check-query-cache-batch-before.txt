@@ -1,0 +1,23 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m                                                                  2 / 2 (100%)
+
+Time: 00:00.068, Memory: 105.05 MB
+
+There were 2 failures:
+
+1) QueryDiagnosticSecurityTest::testRelationshipQueryCachesRepeatedReadsAndRefreshesAfterMetadataWrites
+Failed asserting that 2 is identical to 1.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/QueryDiagnosticSecurityTest.php:103
+
+2) QueryDiagnosticSecurityTest::testSkuQueryCachesRepeatedReadsAndRefreshesAfterMetadataAndStatusWrites
+Failed asserting that 2 is identical to 1.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/QueryDiagnosticSecurityTest.php:135
+
+[37;41mFAILURES![0m
+[37;41mTests: 2[0m[37;41m, Assertions: 10[0m[37;41m, Failures: 2[0m[37;41m.[0m

@@ -1,0 +1,24 @@
+{
+  "actor": "disposable shop manager",
+  "installation": "installed release package",
+  "native_variation_sku_save": {
+    "duplicate_response": "Invalid or duplicated SKU.",
+    "rejected_sku_not_stored": true,
+    "after_conflicting_sku_change_response": "",
+    "stored_source_sku": "query-cache-browser-sku",
+    "related_sku": "",
+    "scope": "Native variation Save changes. No claim of SKU synchronization through this control."
+  },
+  "native_remove": {
+    "source_present": false,
+    "related_present": false,
+    "malformed_relationship_present": true
+  },
+  "cleanup": {
+    "verified_owned_post_ids": 6,
+    "temporary_user_removed": true,
+    "notice_restored": true,
+    "browser_blank": true
+  },
+  "scope": "Affected workflows only. Complete published version upgrade feature matrix remains incomplete."
+}

@@ -1,0 +1,626 @@
+{
+  "installed_total": 122,
+  "release_requirement": "zero findings",
+  "batches": {
+    "request verification": [
+      {
+        "file": "src/Hyyan/WPI/Coupon.php",
+        "line": 155,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Coupon.php",
+        "line": 155,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Coupon.php",
+        "line": 155,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 154,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 154,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 154,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 157,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 170,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 170,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 173,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/LocaleNumbers.php",
+        "line": 94,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/LocaleNumbers.php",
+        "line": 115,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 45,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 45,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 45,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 46,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 46,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 46,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 103,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 231,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 235,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 275,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 279,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 340,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 340,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Reports.php",
+        "line": 340,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
+        "line": 52,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
+        "line": 52,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
+        "line": 56,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
+        "line": 60,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 68,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 122,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 122,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 152,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 171,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 282,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 482,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Product.php",
+        "line": 249,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variation.php",
+        "line": 229,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 72,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 223,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 228,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 266,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
+        "line": 99,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
+        "line": 99,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
+        "line": 100,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Endpoints.php",
+        "line": 284,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Endpoints.php",
+        "line": 284,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      },
+      {
+        "file": "src/Hyyan/WPI/Endpoints.php",
+        "line": 284,
+        "code": "WordPress.Security.NonceVerification.Recommended"
+      }
+    ],
+    "translations": [
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 426,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 427,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 431,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 432,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 438,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 439,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 445,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 446,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
+        "line": 36,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
+        "line": 36,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
+        "line": 53,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
+        "line": 53,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
+        "line": 36,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
+        "line": 36,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
+        "line": 53,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
+        "line": 53,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 35,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 35,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 54,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 54,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 83,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 103,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 107,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 115,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 119,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
+        "line": 135,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Privacy.php",
+        "line": 36,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Privacy.php",
+        "line": 38,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Cart.php",
+        "line": 240,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Shipping.php",
+        "line": 161,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Shipping.php",
+        "line": 161,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Shipping.php",
+        "line": 185,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Shipping.php",
+        "line": 185,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Admin/StatusReport.php",
+        "line": 28,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways.php",
+        "line": 234,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways.php",
+        "line": 234,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways.php",
+        "line": 247,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways.php",
+        "line": 247,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways.php",
+        "line": 261,
+        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways.php",
+        "line": 261,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Coupon.php",
+        "line": 119,
+        "code": "WordPress.WP.I18n.TextDomainMismatch"
+      },
+      {
+        "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
+        "line": 12,
+        "code": "WordPress.WP.I18n.UnorderedPlaceholdersText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
+        "line": 46,
+        "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText"
+      },
+      {
+        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
+        "line": 56,
+        "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText"
+      }
+    ],
+    "public hook constants": [
+      {
+        "file": "src/Hyyan/WPI/Cart.php",
+        "line": 327,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Gateways.php",
+        "line": 174,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
+        "line": 158,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 642,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 666,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variable.php",
+        "line": 462,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Variation.php",
+        "line": 407,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 668,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 799,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 836,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Pages.php",
+        "line": 29,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Admin/Settings.php",
+        "line": 71,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Admin/Settings.php",
+        "line": 81,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
+        "line": 43,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
+        "line": 61,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
+        "line": 74,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
+        "line": 119,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Emails.php",
+        "line": 116,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Emails.php",
+        "line": 207,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Emails.php",
+        "line": 216,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Emails.php",
+        "line": 602,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Emails.php",
+        "line": 603,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+      }
+    ],
+    "prepared queries": [
+      {
+        "file": "src/Hyyan/WPI/Product/Variation.php",
+        "line": 170,
+        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 908,
+        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery"
+      }
+    ],
+    "other contracts": [
+      {
+        "file": "src/Hyyan/WPI/Plugin.php",
+        "line": 77,
+        "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Utilities.php",
+        "line": 250,
+        "code": "WordPress.Security.EscapeOutput.OutputNotEscaped"
+      },
+      {
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
+        "line": 79,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound"
+      },
+      {
+        "file": "src/Hyyan/WPI/Product/Meta.php",
+        "line": 105,
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound"
+      },
+      {
+        "file": "__init__.php",
+        "line": 0,
+        "code": "trademarked_term"
+      }
+    ]
+  }
+}

@@ -335,3 +335,5 @@ Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and shari
 The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers stated 4.0.0 while the runtime minimum remained 3.0.0. Both headers now retain 3.0.0. The failing release contract regression passes after correction. Actual published archive upgrade, exact eight product and settings comparisons, and English and German variable selection pass on WooCommerce 3.0.0. Full suites pass 388 tests and 1326 assertions. Installed Plugin Check remains 127 findings. Evidence uses published-minimum-batch. The overall goal is incomplete.
 
 | CHECK-013 | Request ID normalizers were not recognized by input analysis | Named validated integer sanitizers preserve existing whole batch and report behavior | Verified source ac630ad, 388 tests and native Chrome, installed static and runtime 124 findings |
+
+| CHECK-014 | Repeated prepared relationship and SKU lookups lack caching | Native posts cache version refreshes on metadata, status and deletion writes | Source dd816e0, 390 tests and native Chrome, installed static and runtime 122 findings |

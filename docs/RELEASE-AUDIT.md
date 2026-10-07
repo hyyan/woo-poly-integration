@@ -1,5 +1,7 @@
 # Current maintenance release audit
 
+Current verified database cache batch: source dd816e0, 390 tests with 1347 assertions, 73 matching archive files. Installed static and runtime Plugin Check each retain 122 findings, 45 errors and 77 warnings. Archive SHA256 is 4146862d0a27c38051f596ea3b93e555f8915b2a3ae552324ff9ef7451c6e9e6. Earlier batch records below retain historical evidence. Zero findings and the complete published version upgrade feature matrix remain required. No release approval or completion claim.
+
 Current verified request ID batch: source ac630ad, 388 tests with 1326 assertions, 73 matching archive files. Installed static and runtime Plugin Check each retain 124 findings, 45 errors and 79 warnings. Archive SHA256 is 31cdf305c5c20362aca04f88d822e5c29bb196cf88e5813034e7860d3a01f3fa. Earlier batch records below retain historical evidence. Zero findings and the complete published version upgrade feature matrix remain required. No release approval or completion claim.
 
 Current snapshot: production correction 60ce0d0, verification gate 5f70301, 388 tests with 1326 assertions, 73 matching installed files and 127 open findings from static and runtime enabled Plugin Check. Completion requires zero findings and the complete published version upgrade feature matrix. SECURITY-REVIEW-HANDOFF.md is the current release handoff. The dated batch records and historical artifact sections below retain earlier evidence.

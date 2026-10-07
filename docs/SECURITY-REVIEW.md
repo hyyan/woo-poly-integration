@@ -1,6 +1,6 @@
 # Security maintenance review
 
-Current state: SECURITY-REVIEW-HANDOFF.md contains the inspected security boundaries and current artifact evidence. Full suites pass 388 tests with 1326 assertions. Installed static and runtime Plugin Check have 124 findings, 45 errors and 79 warnings. Zero findings and the complete published version upgrade feature matrix are required. The goal remains active. The following sections retain historical evidence and counts.
+Current state: SECURITY-REVIEW-HANDOFF.md contains the inspected security boundaries and current artifact evidence. Full suites pass 390 tests with 1347 assertions. Installed static and runtime Plugin Check have 122 findings, 45 errors and 77 warnings. Zero findings and the complete published version upgrade feature matrix remain required. The goal is active. The following sections retain historical evidence and counts.
 
 The reported variation removal paths were inspected against baseline b5f7495 and current source. Local commit 01bfb80 corrects the variation lookup and removal callback. Local commit 0ec30b1 corrects the equivalent early featured product callback. This review adds regression cases and current acceptance evidence. A complete release clearance remains pending.
 

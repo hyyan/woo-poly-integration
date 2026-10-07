@@ -1,7 +1,7 @@
 {
-  "source_commit": "ac630ad",
-  "installed_total": 124,
-  "open_findings": 80,
+  "source_commit": "dd816e0",
+  "installed_total": 122,
+  "open_findings": 78,
   "accepted_exceptions": 0,
   "findings": [
     {
@@ -297,7 +297,7 @@
       "column": 20,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "translateProductIDS",
-      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
+      "reason": "Private validated sanitizers normalize IDs before native report queries. Only request memory is updated.",
       "current_source": "if (!isset($_GET['product_ids'])) {",
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
@@ -308,7 +308,7 @@
       "column": 114,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "translateProductIDS",
-      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
+      "reason": "Private validated sanitizers normalize IDs before native report queries. Only request memory is updated.",
       "current_source": "$IDS = wp_parse_id_list(array_filter(array_map('Hyyan\\WPI\\Reports::sanitizeReportID', (array) wp_unslash($_GET['product_ids'])), 'is_int'));",
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
@@ -319,7 +319,7 @@
       "column": 20,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "translateCategoryIDS",
-      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
+      "reason": "Private validated sanitizers normalize IDs before native report queries. Only request memory is updated.",
       "current_source": "if (!isset($_GET['show_categories'])) {",
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
@@ -330,7 +330,7 @@
       "column": 114,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "translateCategoryIDS",
-      "reason": "A private validated sanitizer normalizes integer and digit string IDs before wp_parse_id_list and native report queries. Only request memory is updated.",
+      "reason": "Private validated sanitizers normalize IDs before native report queries. Only request memory is updated.",
       "current_source": "$IDS = wp_parse_id_list(array_filter(array_map('Hyyan\\WPI\\Reports::sanitizeReportID', (array) wp_unslash($_GET['show_categories'])), 'is_int'));",
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
@@ -524,49 +524,38 @@
     {
       "id": "EX-048",
       "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 167,
-      "column": 20,
+      "line": 170,
+      "column": 24,
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
       "method": "getRelatedVariation",
-      "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Fresh reads preserve relationship and duplicate SKU decisions after mutations. Persistent cache behavior is not introduced. Large catalog performance remains unmeasured.",
+      "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Cache keys include the native posts cache version, invalidated by metadata and status or deletion writes. Cache lifetime is sixty seconds. SQL predicates remain prepared and unchanged. Large catalog performance remains unmeasured.",
       "current_source": "$postids = $wpdb->get_col($wpdb->prepare(",
-      "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
+      "source_sha256": "e8afa60b014db879258ad7c3e16093eba387d2bef282140eba2ad8dad81d6e85"
     },
     {
       "id": "EX-049",
       "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 167,
-      "column": 20,
-      "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
-      "method": "getRelatedVariation",
-      "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Fresh reads preserve relationship and duplicate SKU decisions after mutations. Persistent cache behavior is not introduced. Large catalog performance remains unmeasured.",
-      "current_source": "$postids = $wpdb->get_col($wpdb->prepare(",
-      "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
-    },
-    {
-      "id": "EX-050",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 224,
+      "line": 229,
       "column": 43,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "insert",
       "reason": "Protected variation insertion is called from duplication under verified creation or native save/import context. Request language is only a validated fallback for the target parent language.",
       "current_source": "if ( (! $targetLang) && isset($_GET['new_lang'])) {",
-      "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
+      "source_sha256": "e8afa60b014db879258ad7c3e16093eba387d2bef282140eba2ad8dad81d6e85"
     },
     {
-      "id": "EX-051",
+      "id": "EX-050",
       "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 402,
+      "line": 407,
       "column": 19,
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
       "method": "copyVariationMetas",
       "reason": "Existing public hook resolves to woo-poly.product.variation.copyMeta. Constants keep callers and subscribers on the same established hook name.",
       "current_source": "do_action(HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION, $from, $to, $this->from, $this->to);",
-      "source_sha256": "ba5738ca1192c099ab4562db4c3d90b5fd8c263e7636bec793026e81739ecdb3"
+      "source_sha256": "e8afa60b014db879258ad7c3e16093eba387d2bef282140eba2ad8dad81d6e85"
     },
     {
-      "id": "EX-052",
+      "id": "EX-051",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 72,
       "column": 33,
@@ -574,10 +563,10 @@
       "method": "handleNewProduct",
       "reason": "Delegates creation copying to callbacks that require Utilities::getProductTranslationRequest, which verifies new-post-translation nonce, edit_products and source read permission.",
       "current_source": "if (! $update && (isset($_GET['from_post'])) ){",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
-      "id": "EX-053",
+      "id": "EX-052",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 105,
       "column": 23,
@@ -585,10 +574,10 @@
       "method": "onImport",
       "reason": "Dependency owned pll_save_post action retains the native Polylang name and arguments. Current native Polylang dispatches this exact action from its save callback.",
       "current_source": "do_action('pll_save_post', $ProductID, get_post($ProductID),",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
-      "id": "EX-054",
+      "id": "EX-053",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 223,
       "column": 19,
@@ -596,10 +585,10 @@
       "method": "handleProductScreen",
       "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
       "current_source": "if (isset($_GET['post'])) {",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
-      "id": "EX-055",
+      "id": "EX-054",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 228,
       "column": 25,
@@ -607,10 +596,10 @@
       "method": "handleProductScreen",
       "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
       "current_source": "} elseif (isset($_GET['new_lang']) || ($currentScreen && $currentScreen->base == 'edit')) {",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
-      "id": "EX-056",
+      "id": "EX-055",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 266,
       "column": 19,
@@ -618,10 +607,10 @@
       "method": "syncTaxonomiesAndProductAttributes",
       "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save, quick edit or authorized import hooks.",
       "current_source": "if (isset($_GET['from_post']) && !$request) {",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
-      "id": "EX-057",
+      "id": "EX-056",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 668,
       "column": 34,
@@ -629,10 +618,10 @@
       "method": "getProductMetaToCopy",
       "reason": "Existing public hook resolves to woo-poly.product.metaSync. Constants keep callers and subscribers on the same established hook name.",
       "current_source": "$default = apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, array(",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
-      "id": "EX-058",
+      "id": "EX-057",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 799,
       "column": 30,
@@ -640,10 +629,10 @@
       "method": "getDisabledProductMetaToCopy",
       "reason": "Existing public hook resolves to woo-poly.product.disabledMetaSync. Constants keep callers and subscribers on the same established hook name.",
       "current_source": "return apply_filters(HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER, array_values(array_diff($metas, static::getProductMetaToCopy())));",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
-      "id": "EX-059",
+      "id": "EX-058",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 836,
       "column": 36,
@@ -651,32 +640,21 @@
       "method": "addFieldsLocker",
       "reason": "Existing public hook resolves to woo-poly.fieldsLockerSelectors. Constants keep callers and subscribers on the same established hook name.",
       "current_source": "$selectors = apply_filters(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, $selectors);",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
+    },
+    {
+      "id": "EX-059",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "line": 908,
+      "column": 24,
+      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+      "method": "suppressInvalidDuplicatedSKUErrorMsg",
+      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Cache keys include the native posts cache version, invalidated by metadata and status or deletion writes. Cache lifetime is sixty seconds. SQL predicates remain prepared and unchanged. Large catalog performance remains unmeasured.",
+      "current_source": "$postids = $wpdb->get_col(",
+      "source_sha256": "99e61c5d6b19fd5db853880e4c07e477c29d788abc9e50ebd3b771202ec82758"
     },
     {
       "id": "EX-060",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 906,
-      "column": 20,
-      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
-      "method": "suppressInvalidDuplicatedSKUErrorMsg",
-      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Fresh reads preserve relationship and duplicate SKU decisions after mutations. Persistent cache behavior is not introduced. Large catalog performance remains unmeasured.",
-      "current_source": "$postids = $wpdb->get_col(",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
-    },
-    {
-      "id": "EX-061",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 906,
-      "column": 20,
-      "code": "WordPress.DB.DirectDatabaseQuery.NoCaching",
-      "method": "suppressInvalidDuplicatedSKUErrorMsg",
-      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Fresh reads preserve relationship and duplicate SKU decisions after mutations. Persistent cache behavior is not introduced. Large catalog performance remains unmeasured.",
-      "current_source": "$postids = $wpdb->get_col(",
-      "source_sha256": "90247b517c2468fe2cfb7d52409029e42ea98cb90b4761d7f8831eb2706bdc86"
-    },
-    {
-      "id": "EX-062",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 99,
       "column": 29,
@@ -687,7 +665,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-063",
+      "id": "EX-061",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 99,
       "column": 57,
@@ -698,7 +676,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-064",
+      "id": "EX-062",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 100,
       "column": 41,
@@ -709,7 +687,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-065",
+      "id": "EX-063",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 81,
@@ -720,7 +698,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-066",
+      "id": "EX-064",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 112,
@@ -731,7 +709,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-067",
+      "id": "EX-065",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 158,
@@ -742,7 +720,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-068",
+      "id": "EX-066",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -753,7 +731,7 @@
       "source_sha256": "040731f10332a257014a5ab90262bf85c3725c3d266d88049bddf153f441c623"
     },
     {
-      "id": "EX-069",
+      "id": "EX-067",
       "file": "src/Hyyan/WPI/Pages.php",
       "line": 29,
       "column": 32,
@@ -764,7 +742,7 @@
       "source_sha256": "f5d386c6f22a54733c6b100fbf5b05de0bcc42a57cef09ad36516b7d872f97da"
     },
     {
-      "id": "EX-070",
+      "id": "EX-068",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "line": 71,
       "column": 30,
@@ -775,7 +753,7 @@
       "source_sha256": "92a923bd40cf297e89b06f32b7fb035d07d2f2975d6c7433ae6768af0d8cf95e"
     },
     {
-      "id": "EX-071",
+      "id": "EX-069",
       "file": "src/Hyyan/WPI/Admin/Settings.php",
       "line": 81,
       "column": 30,
@@ -786,7 +764,7 @@
       "source_sha256": "92a923bd40cf297e89b06f32b7fb035d07d2f2975d6c7433ae6768af0d8cf95e"
     },
     {
-      "id": "EX-072",
+      "id": "EX-070",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -797,7 +775,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-073",
+      "id": "EX-071",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,
@@ -808,7 +786,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-074",
+      "id": "EX-072",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "line": 74,
       "column": 21,
@@ -819,7 +797,7 @@
       "source_sha256": "7072faa3612fb19eb68077166c7cbf7872a58a85191527870e90c264ac3d88fc"
     },
     {
-      "id": "EX-075",
+      "id": "EX-073",
       "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
       "line": 119,
       "column": 17,
@@ -830,7 +808,7 @@
       "source_sha256": "7072faa3612fb19eb68077166c7cbf7872a58a85191527870e90c264ac3d88fc"
     },
     {
-      "id": "EX-076",
+      "id": "EX-074",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 116,
       "column": 30,
@@ -841,7 +819,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-077",
+      "id": "EX-075",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 207,
       "column": 23,
@@ -852,7 +830,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-078",
+      "id": "EX-076",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 216,
       "column": 39,
@@ -863,7 +841,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-079",
+      "id": "EX-077",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 602,
       "column": 59,
@@ -874,7 +852,7 @@
       "source_sha256": "6ac68f96ccda3de506a002edde94951c0f1e950d195e92cfd67237dc898bbfce"
     },
     {
-      "id": "EX-080",
+      "id": "EX-078",
       "file": "src/Hyyan/WPI/Emails.php",
       "line": 603,
       "column": 31,

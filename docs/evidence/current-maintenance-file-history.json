@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "ac630ad0351734d045498ec0e5683ae1d3838e87",
-  "changed_files": 1547,
+  "through_commit": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
+  "changed_files": 1562,
   "files": [
     {
       "file": ".exclude-list",
@@ -236,6 +236,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -510,6 +514,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -720,6 +728,10 @@
         {
           "sha": "b78646148ee86e2f0c764d6879229973a0bdf091",
           "subject": "docs: normalize checker report endings"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -778,6 +790,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -922,6 +938,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -950,6 +970,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -1036,6 +1060,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -2330,6 +2358,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -10198,6 +10230,156 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-older-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-id-sanitizers-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-language-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -10872,6 +11054,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -15390,6 +15576,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
+          "subject": "docs: record validated ID batch and remaining release gates"
         }
       ]
     },
@@ -15762,6 +15952,10 @@
         {
           "sha": "4564602e2e975fe5ae70fa40bca767fbb8500869",
           "subject": "fix: defer product type metadata backfill until save"
+        },
+        {
+          "sha": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
+          "subject": "fix: invalidate cached product lookups on native changes"
         }
       ]
     },
@@ -15866,6 +16060,10 @@
         {
           "sha": "0e23d680865e3a5328ba333b3382b14cb73f8eff",
           "subject": "fix: reuse exact variation relationships across lookup paths"
+        },
+        {
+          "sha": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
+          "subject": "fix: invalidate cached product lookups on native changes"
         }
       ]
     },
@@ -16574,6 +16772,10 @@
         {
           "sha": "02c2b76d9c575e1a8bc66e61e6be2d8033e219e7",
           "subject": "fix: match normalized variation relationships exactly"
+        },
+        {
+          "sha": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
+          "subject": "fix: invalidate cached product lookups on native changes"
         }
       ]
     },
