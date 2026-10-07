@@ -107,20 +107,6 @@ final class InlineScriptSecurityTest extends TestCase
         self::assertStringContainsString('target="_blank"', $data['content']);
         self::assertStringContainsString('Read more, to know why</a>', $data['content']);
     }
-    public function testStoredProductTypeCannotTerminateItsScript(): void
-    {
-        $id = wp_insert_post(array('post_type' => 'product', 'post_status' => 'draft', 'post_title' => 'Script type fixture'));
-        try {
-            $_GET = array('from_post' => (string) $id);
-            update_post_meta($id, '_translation_porduct_type', 'variable";</script><img src=x onerror=alert(1)>');
-            $method = new ReflectionMethod(Meta::class, 'syncSelectedproductType');
-            $method->invoke($this->handler(Meta::class), $id);
-            $output = $this->capture(fn() => do_action('admin_print_scripts'));
-            self::assertStringNotContainsString('</script><img', $output);
-            self::assertStringContainsString('value="variable', $output);
-        } finally { wp_delete_post($id, true); }
-    }
-
     public function testNativeDefaultLanguageRowActionIsDisabledForVariations(): void
     {
         $this->handler(Variable::class)->shouldDisableLangSwitcher();

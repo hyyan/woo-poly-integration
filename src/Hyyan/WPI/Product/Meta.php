@@ -248,7 +248,6 @@ class Meta
         //wc3.6 compatibility props mrleemon #408
         //the '_translation_porduct_type' meta and related workarounds were only necessary 
         //since woopoly was hooking WP save before Woo save had completed
-        //$this->syncSelectedproductType( $ID );
 
         return true;
     }
@@ -877,51 +876,6 @@ class Meta
         );
 
         Utilities::jsScriptWrapper($jsID, $code);
-    }
-
-    /**
-     * Sync the product select list.
-     *
-     * @param int $ID product type
-     */
-    protected function syncSelectedproductType($ID = null)
-    {
-        /*
-         * First we add save_post action to save the product type
-         * as post meta
-         *
-         * This is step is important so we can get the right product type
-         */
-        add_action('save_post', function ($_ID) {
-            $product = wc_get_product($_ID); // get_product soft deprecated for wc_get_product
-            if ($product && !isset($_GET['from_post'])) {
-                $type = $product->get_type();
-                update_post_meta($_ID, '_translation_porduct_type', $type);
-            }
-        });
-
-        /*
-         * If the _translation_porduct_type meta is
-         * found then we add the js script to sync the product type select
-         * list
-         */
-        if ($ID && (isset($_GET['from_post'])) && ($type = get_post_meta($ID, '_translation_porduct_type') ) ) {
-            //don't switch type if setting is corrupt
-            if ($type && is_array($type) && $type[0]!='' && $type[0]!='simple'){
-                add_action('admin_print_scripts', function () use ($type) {
-                    $jsID = 'product-type-sync';
-                    $code = sprintf(
-                        '// <![CDATA[ %1$s'
-                        . ' addLoadEvent(function () { '
-                        . 'document.getElementById("product-type").value=%2$s;'
-                        . '})'
-                        . '// ]]>', PHP_EOL, wp_json_encode($type[0], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)
-                    );
-
-                    Utilities::jsScriptWrapper($jsID, $code, false);
-                }, 11);
-            }
-        }
     }
 
     /**
