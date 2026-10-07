@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 100 maintenance commits after the baseline through b4e1e63. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 102 maintenance commits after the baseline through 7f8d2a8. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -106,5 +106,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | 3567186 | 8 | fix: own message domains and retain WooCommerce translations |
 | c26831a | 37 | docs: record native catalog batch acceptance |
 | b4e1e63 | 1 | fix: use native settings context for endpoint notices |
+| f5eb4f5 | 31 | docs: record native settings request acceptance |
+| 7f8d2a8 | 2 | fix: preserve catalogs with native version aware loading |
 
-Latest verification passes 562 tests with 1636 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 38 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 569 tests with 1644 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 37 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

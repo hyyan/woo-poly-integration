@@ -1,0 +1,131 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m                                                             7 / 7 (100%)
+
+Time: 00:00.010, Memory: 105.05 MB
+
+There were 7 failures:
+
+1) NativeCatalogLoaderTest::testLegacyLoaderRetainsGlobalPackPriority@minimum with data ('5.4.2')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 [
+-    0 => Array &1 [
+-        0 => '/var/www/html/wp-content/languages/plugins/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-]
++Array &0 []
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:39
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:11
+
+2) NativeCatalogLoaderTest::testLegacyLoaderRetainsGlobalPackPriority@registry with data ('6.1')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 [
+-    0 => Array &1 [
+-        0 => '/var/www/html/wp-content/languages/plugins/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-]
++Array &0 []
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:39
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:11
+
+3) NativeCatalogLoaderTest::testLegacyLoaderRetainsGlobalPackPriority@last eager with data ('6.6')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 [
+-    0 => Array &1 [
+-        0 => '/var/www/html/wp-content/languages/plugins/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-]
++Array &0 []
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:39
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:11
+
+4) NativeCatalogLoaderTest::testLegacyLoaderRetainsBundledFallback@minimum with data ('5.4.2')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 [
+-    0 => Array &1 [
+-        0 => '/var/www/html/wp-content/languages/plugins/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-    1 => Array &2 [
+-        0 => '/var/www/html/wp-content/plugins/woo-poly-integration/languages/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-]
++Array &0 []
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:39
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:17
+
+5) NativeCatalogLoaderTest::testLegacyLoaderRetainsBundledFallback@registry with data ('6.1')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 [
+-    0 => Array &1 [
+-        0 => '/var/www/html/wp-content/languages/plugins/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-    1 => Array &2 [
+-        0 => '/var/www/html/wp-content/plugins/woo-poly-integration/languages/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-]
++Array &0 []
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:39
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:17
+
+6) NativeCatalogLoaderTest::testLegacyLoaderRetainsBundledFallback@last eager with data ('6.6')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 [
+-    0 => Array &1 [
+-        0 => '/var/www/html/wp-content/languages/plugins/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-    1 => Array &2 [
+-        0 => '/var/www/html/wp-content/plugins/woo-poly-integration/languages/woo-poly-integration-es_ES.mo',
+-        1 => 'es_ES',
+-    ],
+-]
++Array &0 []
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:39
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:17
+
+7) NativeCatalogLoaderTest::testCurrentLoaderRetainsLazyRegistration
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'/var/www/html/wp-content/plugins/woo-poly-integration/__init__.phplanguages/'
++'/var/www/html/wp-content/plugins/woo-poly-integration/languages/'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/NativeCatalogLoaderTest.php:63
+
+[37;41mFAILURES![0m
+[37;41mTests: 7[0m[37;41m, Assertions: 8[0m[37;41m, Failures: 7[0m[37;41m.[0m

@@ -1,7 +1,7 @@
 {
-  "source_commit": "b4e1e636fcba2a8ee5a749ab0dd378c972f4483d",
-  "installed_total": 38,
-  "open_findings": 38,
+  "source_commit": "7f8d2a8d1c487d3fd86967db333911c4799b4e9a",
+  "installed_total": 37,
+  "open_findings": 37,
   "accepted_exceptions": 0,
   "findings": [
     {
@@ -94,17 +94,6 @@
     },
     {
       "id": "EX-009",
-      "file": "src/Hyyan/WPI/Plugin.php",
-      "line": 80,
-      "column": 9,
-      "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound",
-      "method": "loadTextDomain",
-      "reason": "Supported WordPress 5.4.2 loses the bundled Spanish translation before init when this loader is removed. Current WordPress automatic registration alone does not preserve the supported older bootstrap.",
-      "current_source": "load_plugin_textdomain(",
-      "source_sha256": "9b40362b6b108e13b73a71120fa986858ee0ed10b9a93f686611228814b3894e"
-    },
-    {
-      "id": "EX-010",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "line": 94,
       "column": 59,
@@ -115,7 +104,7 @@
       "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522"
     },
     {
-      "id": "EX-011",
+      "id": "EX-010",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "line": 115,
       "column": 36,
@@ -126,7 +115,7 @@
       "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522"
     },
     {
-      "id": "EX-012",
+      "id": "EX-011",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 45,
       "column": 28,
@@ -137,7 +126,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-013",
+      "id": "EX-012",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 45,
       "column": 55,
@@ -148,7 +137,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-014",
+      "id": "EX-013",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 45,
       "column": 95,
@@ -159,7 +148,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-015",
+      "id": "EX-014",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 46,
       "column": 31,
@@ -170,7 +159,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-016",
+      "id": "EX-015",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 46,
       "column": 61,
@@ -181,7 +170,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-017",
+      "id": "EX-016",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 46,
       "column": 104,
@@ -192,7 +181,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-018",
+      "id": "EX-017",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 103,
       "column": 19,
@@ -203,7 +192,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-019",
+      "id": "EX-018",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 231,
       "column": 20,
@@ -214,7 +203,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-020",
+      "id": "EX-019",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 235,
       "column": 114,
@@ -225,7 +214,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-021",
+      "id": "EX-020",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 275,
       "column": 20,
@@ -236,7 +225,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-022",
+      "id": "EX-021",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 279,
       "column": 114,
@@ -247,7 +236,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-023",
+      "id": "EX-022",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 340,
       "column": 24,
@@ -258,7 +247,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-024",
+      "id": "EX-023",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 340,
       "column": 52,
@@ -269,7 +258,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-025",
+      "id": "EX-024",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 340,
       "column": 94,
@@ -280,7 +269,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-026",
+      "id": "EX-025",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 23,
@@ -291,7 +280,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-027",
+      "id": "EX-026",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 51,
@@ -302,7 +291,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-028",
+      "id": "EX-027",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 56,
       "column": 23,
@@ -313,7 +302,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-029",
+      "id": "EX-028",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 60,
       "column": 66,
@@ -324,7 +313,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-030",
+      "id": "EX-029",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 79,
       "column": 13,
@@ -335,7 +324,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-031",
+      "id": "EX-030",
       "file": "src/Hyyan/WPI/Product/Product.php",
       "line": 249,
       "column": 19,
@@ -346,7 +335,7 @@
       "source_sha256": "2b3142b0019458be3f26a1b6afc8587f4a4cb1363de8f32d602dbe08484615fa"
     },
     {
-      "id": "EX-032",
+      "id": "EX-031",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 225,
       "column": 19,
@@ -357,7 +346,7 @@
       "source_sha256": "6e2091477267beee9a90ba9f705bbcd02c8062d61bf7f74b8e8e73b8d7fe219c"
     },
     {
-      "id": "EX-033",
+      "id": "EX-032",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 230,
       "column": 25,
@@ -368,7 +357,7 @@
       "source_sha256": "6e2091477267beee9a90ba9f705bbcd02c8062d61bf7f74b8e8e73b8d7fe219c"
     },
     {
-      "id": "EX-034",
+      "id": "EX-033",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 910,
       "column": 24,
@@ -379,7 +368,7 @@
       "source_sha256": "6e2091477267beee9a90ba9f705bbcd02c8062d61bf7f74b8e8e73b8d7fe219c"
     },
     {
-      "id": "EX-035",
+      "id": "EX-034",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 170,
       "column": 24,
@@ -390,7 +379,7 @@
       "source_sha256": "3f817e70fe60b000bfb08c597183aaae9b28f61606de36e6a09e2d6f1e2b712e"
     },
     {
-      "id": "EX-036",
+      "id": "EX-035",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -401,7 +390,7 @@
       "source_sha256": "0166473b8fa1d37c5d7d9014fea5cc36de9bfc2e38bb612a1be7e51165d2bb6c"
     },
     {
-      "id": "EX-037",
+      "id": "EX-036",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -412,7 +401,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-038",
+      "id": "EX-037",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,

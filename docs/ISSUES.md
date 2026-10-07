@@ -354,3 +354,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-022 | Nineteen native WooCommerce message calls use the dependency domain | Own the keys and retain native catalogs and filters | 3567186, nineteen failures reproduced, 555 tests pass, native Chrome receipts and both native probes pass, nineteen errors removed |
 
 | CHECK-023 | Raw query tab controls the endpoint notice independently of native settings context | Reuse the native resolved WooCommerce tab | b4e1e63, five failures reproduced, 562 tests pass, current and older Chrome settings pass, three warnings removed |
+
+| CHECK-024 | Discouraged plugin catalog loader call | Use version appropriate native registry and catalog loading APIs | 7f8d2a8, 569 tests pass, current and minimum native bootstrap plus Chrome Spanish settings pass, one warning removed |

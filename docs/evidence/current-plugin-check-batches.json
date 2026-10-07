@@ -1,6 +1,6 @@
 {
-  "source_commit": "b4e1e636fcba2a8ee5a749ab0dd378c972f4483d",
-  "installed_total": 38,
+  "source_commit": "7f8d2a8d1c487d3fd86967db333911c4799b4e9a",
+  "installed_total": 37,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
@@ -325,15 +325,6 @@
         "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$result'.",
         "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
         "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 80,
-        "column": 9,
-        "type": "WARNING",
-        "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound",
-        "message": "load_plugin_textdomain() has been discouraged since WordPress version 4.6. When your plugin is hosted on WordPress.org, you no longer need to manually include this function call for translations under your plugin slug. WordPress will automatically load the translations for you as needed.",
-        "docs": "https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/",
-        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
         "line": 79,

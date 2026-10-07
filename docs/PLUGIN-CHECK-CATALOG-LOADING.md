@@ -1,6 +1,8 @@
 # Bundled catalog loader compatibility evidence
 
-The installed warning PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound at src/Hyyan/WPI/Plugin.php:77 remains open. No suppression or exception has been accepted.
+Current source 7f8d2a8 removes the loader warning with native version appropriate registry and catalog APIs. Current and minimum bootstrap translations and both native Spanish settings pages retain their outputs. Full suites pass 569 tests with 1644 assertions. Installed reports retain 37 other findings. Evidence uses plugin-check-catalog-adapter-batch. The historical investigation follows.
+
+The earlier installed warning PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound at src/Hyyan/WPI/Plugin.php:77 was open at the time of this investigation. No suppression or exception has been accepted.
 
 An isolated native WordPress bootstrap removes only the plugin loadTextDomain callback at plugins_loaded priority zero. A probe records the actual Spanish Features translation at priority 99, before init, and again after the normal bootstrap and manual registration. Both labs retain their normal active dependencies. The probes only apply when the owned CLI process defines its probe constant. They change no stored locale setting and are removed after execution.
 
