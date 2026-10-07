@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "3175ae8d45d131fb805671af78d48fc891f937bf",
-  "changed_files": 1629,
+  "through_commit": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
+  "changed_files": 1650,
   "files": [
     {
       "file": ".exclude-list",
@@ -66,6 +66,10 @@
         {
           "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
           "subject": "fix: retain published WooCommerce minimum requirement"
+        },
+        {
+          "sha": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
+          "subject": "fix: expose verified product creation requests to security checks"
         }
       ]
     },
@@ -192,6 +196,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -256,6 +264,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -542,6 +554,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -764,6 +780,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -834,6 +854,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -892,6 +916,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -1002,6 +1030,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -1042,6 +1074,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -1140,6 +1176,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -2446,6 +2486,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -2460,6 +2504,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -10568,6 +10616,216 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-alias-probe.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-literal-probe.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-minimum-cart.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-minimum-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-namespace-probe.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-owned-prefix-probe.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-source-equivalence.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-hook-ownership-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-id-sanitizers-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -11574,6 +11832,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -11584,6 +11846,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -16344,6 +16610,10 @@
         {
           "sha": "ed9f334649b398a6d491b704179a089c1ecea24f",
           "subject": "docs: record translation batch and minimum cart upgrade evidence"
+        },
+        {
+          "sha": "3891232e4c4b6ba0d27cb8691f89fc8a7976d0de",
+          "subject": "docs: record hook ownership verification and remaining batches"
         }
       ]
     },
@@ -16764,6 +17034,10 @@
         {
           "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
           "subject": "fix: identify plugin hook constants with their owning prefix"
+        },
+        {
+          "sha": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
+          "subject": "fix: expose verified product creation requests to security checks"
         }
       ]
     },
@@ -16838,6 +17112,10 @@
         {
           "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
           "subject": "fix: identify plugin hook constants with their owning prefix"
+        },
+        {
+          "sha": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
+          "subject": "fix: expose verified product creation requests to security checks"
         }
       ]
     },

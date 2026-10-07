@@ -1,7 +1,7 @@
 {
-  "source_commit": "3175ae8d45d131fb805671af78d48fc891f937bf",
-  "installed_total": 80,
-  "open_findings": 58,
+  "source_commit": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
+  "installed_total": 74,
+  "open_findings": 52,
   "accepted_exceptions": 0,
   "findings": [
     {
@@ -370,82 +370,27 @@
     {
       "id": "EX-034",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 68,
+      "line": 70,
       "column": 33,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleNewProduct",
       "reason": "Delegates creation copying to callbacks that require Utilities::getProductTranslationRequest, which verifies new-post-translation nonce, edit_products and source read permission.",
       "current_source": "if (! $update && (isset($_GET['from_post'])) ){",
-      "source_sha256": "674aacc16851470124e4e49d690de3c315a073bc33080e1199ef2328c06bcc9e"
+      "source_sha256": "349849c43f3d4e3929820a6ace3f61de91b1f2bbdf6a82455d732f9ed059c84e"
     },
     {
       "id": "EX-035",
       "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 122,
-      "column": 20,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "duplicateVariations",
-      "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
-      "current_source": "if ((isset($_GET['from_post']) && !$request) || (isset($_GET['new_lang']) && !$new_lang)) {",
-      "source_sha256": "674aacc16851470124e4e49d690de3c315a073bc33080e1199ef2328c06bcc9e"
-    },
-    {
-      "id": "EX-036",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 122,
-      "column": 64,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "duplicateVariations",
-      "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
-      "current_source": "if ((isset($_GET['from_post']) && !$request) || (isset($_GET['new_lang']) && !$new_lang)) {",
-      "source_sha256": "674aacc16851470124e4e49d690de3c315a073bc33080e1199ef2328c06bcc9e"
-    },
-    {
-      "id": "EX-037",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 152,
-      "column": 56,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "duplicateVariations",
-      "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
-      "current_source": "if ($product->get_type()!='variable' && !isset($_GET['from_post'])){",
-      "source_sha256": "674aacc16851470124e4e49d690de3c315a073bc33080e1199ef2328c06bcc9e"
-    },
-    {
-      "id": "EX-038",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 171,
-      "column": 23,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "duplicateVariations",
-      "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks. Request language must be registered.",
-      "current_source": "if (isset($_GET['from_post'])) {",
-      "source_sha256": "674aacc16851470124e4e49d690de3c315a073bc33080e1199ef2328c06bcc9e"
-    },
-    {
-      "id": "EX-039",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 282,
-      "column": 19,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "syncDefaultAttributes",
-      "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save or authorized import hooks.",
-      "current_source": "if (isset($_GET['from_post']) && !$request) {",
-      "source_sha256": "674aacc16851470124e4e49d690de3c315a073bc33080e1199ef2328c06bcc9e"
-    },
-    {
-      "id": "EX-040",
-      "file": "src/Hyyan/WPI/Product/Variable.php",
-      "line": 482,
+      "line": 484,
       "column": 19,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleVariableLimitation",
       "reason": "Presence of the source query parameter selects an editor warning. Its script values use WordPress JSON with all HTML hex flags.",
       "current_source": "if (isset($_GET['from_post'])) {",
-      "source_sha256": "674aacc16851470124e4e49d690de3c315a073bc33080e1199ef2328c06bcc9e"
+      "source_sha256": "349849c43f3d4e3929820a6ace3f61de91b1f2bbdf6a82455d732f9ed059c84e"
     },
     {
-      "id": "EX-041",
+      "id": "EX-036",
       "file": "src/Hyyan/WPI/Product/Product.php",
       "line": 249,
       "column": 19,
@@ -456,7 +401,7 @@
       "source_sha256": "2b3142b0019458be3f26a1b6afc8587f4a4cb1363de8f32d602dbe08484615fa"
     },
     {
-      "id": "EX-042",
+      "id": "EX-037",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 170,
       "column": 24,
@@ -467,7 +412,7 @@
       "source_sha256": "de772318c69c70206f2c13f69395b6dc813529f7d12275ad08f17dc33dbbf599"
     },
     {
-      "id": "EX-043",
+      "id": "EX-038",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 229,
       "column": 43,
@@ -478,73 +423,62 @@
       "source_sha256": "de772318c69c70206f2c13f69395b6dc813529f7d12275ad08f17dc33dbbf599"
     },
     {
-      "id": "EX-044",
+      "id": "EX-039",
       "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 72,
+      "line": 74,
       "column": 33,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleNewProduct",
       "reason": "Delegates creation copying to callbacks that require Utilities::getProductTranslationRequest, which verifies new-post-translation nonce, edit_products and source read permission.",
       "current_source": "if (! $update && (isset($_GET['from_post'])) ){",
-      "source_sha256": "153e7a5107637725ed64ba1e136422defa2b04b2c5f5cf826ac8f26db53d9677"
+      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
     },
     {
-      "id": "EX-045",
+      "id": "EX-040",
       "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 105,
+      "line": 107,
       "column": 23,
       "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound",
       "method": "onImport",
       "reason": "Dependency owned pll_save_post action retains the native Polylang name and arguments. Current native Polylang dispatches this exact action from its save callback.",
       "current_source": "do_action('pll_save_post', $ProductID, get_post($ProductID),",
-      "source_sha256": "153e7a5107637725ed64ba1e136422defa2b04b2c5f5cf826ac8f26db53d9677"
+      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
     },
     {
-      "id": "EX-046",
+      "id": "EX-041",
       "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 223,
+      "line": 225,
       "column": 19,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleProductScreen",
       "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
       "current_source": "if (isset($_GET['post'])) {",
-      "source_sha256": "153e7a5107637725ed64ba1e136422defa2b04b2c5f5cf826ac8f26db53d9677"
+      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
     },
     {
-      "id": "EX-047",
+      "id": "EX-042",
       "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 228,
+      "line": 230,
       "column": 25,
       "code": "WordPress.Security.NonceVerification.Recommended",
       "method": "handleProductScreen",
       "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
       "current_source": "} elseif (isset($_GET['new_lang']) || ($currentScreen && $currentScreen->base == 'edit')) {",
-      "source_sha256": "153e7a5107637725ed64ba1e136422defa2b04b2c5f5cf826ac8f26db53d9677"
+      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
     },
     {
-      "id": "EX-048",
+      "id": "EX-043",
       "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 266,
-      "column": 19,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "syncTaxonomiesAndProductAttributes",
-      "reason": "Creation copying requires the verified shared request. Ordinary updates run from native verified product save, quick edit or authorized import hooks.",
-      "current_source": "if (isset($_GET['from_post']) && !$request) {",
-      "source_sha256": "153e7a5107637725ed64ba1e136422defa2b04b2c5f5cf826ac8f26db53d9677"
-    },
-    {
-      "id": "EX-049",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 908,
+      "line": 910,
       "column": 24,
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
       "method": "suppressInvalidDuplicatedSKUErrorMsg",
       "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Native posts cache versions invalidate on metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared SQL predicates remain unchanged. Large catalog performance remains unmeasured.",
       "current_source": "$postids = $wpdb->get_col(",
-      "source_sha256": "153e7a5107637725ed64ba1e136422defa2b04b2c5f5cf826ac8f26db53d9677"
+      "source_sha256": "613057bd29c2c11c33958c5cdcb2eca45bb5d7342766957e2edc306586fccef1"
     },
     {
-      "id": "EX-050",
+      "id": "EX-044",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 99,
       "column": 29,
@@ -555,7 +489,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-051",
+      "id": "EX-045",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 99,
       "column": 57,
@@ -566,7 +500,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-052",
+      "id": "EX-046",
       "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
       "line": 100,
       "column": 41,
@@ -577,7 +511,7 @@
       "source_sha256": "2e50b981fe469a6d39f9ce2397b338a4d87d195184b9a996c6ae93b45abe50be"
     },
     {
-      "id": "EX-053",
+      "id": "EX-047",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 81,
@@ -588,7 +522,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-054",
+      "id": "EX-048",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 112,
@@ -599,7 +533,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-055",
+      "id": "EX-049",
       "file": "src/Hyyan/WPI/Endpoints.php",
       "line": 284,
       "column": 158,
@@ -610,7 +544,7 @@
       "source_sha256": "cfc076e0591fea55de646c1c58e9a2d722b85901985b1a913cd3e24c70fbda58"
     },
     {
-      "id": "EX-056",
+      "id": "EX-050",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -618,10 +552,10 @@
       "method": "",
       "reason": "Existing WordPress.org directory slug begins with woo. Changing it changes installation and update identity. Plugins Team acceptance or a coordinated directory migration is required.",
       "current_source": "Existing directory slug woo-poly-integration",
-      "source_sha256": "040731f10332a257014a5ab90262bf85c3725c3d266d88049bddf153f441c623"
+      "source_sha256": "0166473b8fa1d37c5d7d9014fea5cc36de9bfc2e38bb612a1be7e51165d2bb6c"
     },
     {
-      "id": "EX-057",
+      "id": "EX-051",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -632,7 +566,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-058",
+      "id": "EX-052",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,

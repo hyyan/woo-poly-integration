@@ -1,6 +1,6 @@
 {
-  "source_commit": "3175ae8d45d131fb805671af78d48fc891f937bf",
-  "installed_total": 80,
+  "source_commit": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
+  "installed_total": 74,
   "open_findings": 22,
   "accepted_exceptions": 0,
   "findings": [

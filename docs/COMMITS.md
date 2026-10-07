@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 88 maintenance commits after the baseline through 3175ae8. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 90 maintenance commits after the baseline through 22ace96. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -94,5 +94,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | dacbd61 | 5 | fix: translate stored checkout text through Polylang |
 | ed9f334 | 62 | docs: record translation batch and minimum cart upgrade evidence |
 | 3175ae8 | 11 | fix: identify plugin hook constants with their owning prefix |
+| 3891232 | 35 | docs: record hook ownership verification and remaining batches |
+| 22ace96 | 3 | fix: expose verified product creation requests to security checks |
 
-Latest verification passes 413 tests with 1444 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 80 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 413 tests with 1444 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 74 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

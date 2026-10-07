@@ -1,0 +1,5 @@
+Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 644
+Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 645
+Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 646
+{"wordpress":"5.4.2","woocommerce":"3.0.0","checks":{"missing_nonce_rejected":true,"invalid_nonce_rejected":true,"array_nonce_rejected":true,"wrong_action_rejected":true,"native_nonce_accepted":true,"class_entry_preserved":true,"unknown_language_rejected":true,"invalid_source_rejected":true}}
+{"owned_product_removed":true}

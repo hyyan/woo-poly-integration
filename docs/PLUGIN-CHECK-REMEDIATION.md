@@ -1,6 +1,6 @@
 # Active Plugin Check remediation
 
-Current verified source 3175ae8: 413 tests with 1444 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 80 findings, 23 errors and 57 warnings. This removes 150 actual rows from the 230 finding baseline. Remaining batches contain 49 request checks, 22 translation checks, two overridable public hook checks, two prepared query checks and five other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-hook-ownership-batch.
+Current verified source 22ace96: 413 tests with 1444 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 74 findings, 23 errors and 51 warnings. This removes 156 actual rows from the 230 finding baseline. Remaining batches contain 43 request checks, 22 translation checks, two overridable public hook checks, two prepared query checks and five other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-verified-creation-boundary-batch.
 
 Current installed static and runtime Plugin Check reports contain 122 findings, 45 errors and 77 warnings. This is 108 actual removed rows from the 230 finding baseline. The current batches are mapped to every exact source location in evidence/current-plugin-check-batches.json.
 
