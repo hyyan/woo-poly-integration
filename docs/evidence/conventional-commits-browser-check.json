@@ -1,0 +1,17 @@
+{
+  "scope": "Fresh installed package frontend health, not a rerun of the feature acceptance matrix",
+  "english": {
+    "html_language": "en-US",
+    "main_present": true,
+    "woocommerce_body_class": true,
+    "fatal_error": false
+  },
+  "german": {
+    "html_language": "de-DE",
+    "main_present": true,
+    "woocommerce_body_class": true,
+    "fatal_error": false
+  },
+  "browser": "Chrome",
+  "source_unchanged": true
+}

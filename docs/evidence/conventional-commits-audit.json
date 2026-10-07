@@ -1,0 +1,283 @@
+{
+  "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
+  "through_commit": "28e71ec",
+  "standard": "https://www.conventionalcommits.org/en/v1.0.0/",
+  "full_messages_checked": 53,
+  "types": {
+    "fix": 43,
+    "test": 3,
+    "docs": 7
+  },
+  "invalid_messages": [],
+  "history_rewrite_required": false,
+  "committed_distribution_files_checked": 73,
+  "installed_distribution_files_checked": 73,
+  "distribution_mismatches": [],
+  "commits": [
+    {
+      "commit": "01bfb80",
+      "subject": "fix: validate and authorize linked variation removal",
+      "file_count": 2
+    },
+    {
+      "commit": "f49cb58",
+      "subject": "fix: preserve empty values during decimal localization",
+      "file_count": 1
+    },
+    {
+      "commit": "2c9aaa3",
+      "subject": "test: run plugin regressions on pushes and pull requests",
+      "file_count": 0
+    },
+    {
+      "commit": "692ed92",
+      "subject": "docs: track plugin modernization and acceptance evidence",
+      "file_count": 6
+    },
+    {
+      "commit": "0ec30b1",
+      "subject": "fix: authorize translated featured product toggles",
+      "file_count": 3
+    },
+    {
+      "commit": "b035464",
+      "subject": "fix: preserve product search language links",
+      "file_count": 3
+    },
+    {
+      "commit": "a88c467",
+      "subject": "fix: restore translated shortcodes on PHP 8",
+      "file_count": 3
+    },
+    {
+      "commit": "93f6226",
+      "subject": "fix: load rest of world shipping methods",
+      "file_count": 3
+    },
+    {
+      "commit": "7077cf8",
+      "subject": "fix: use WordPress locale when checkout language is unavailable",
+      "file_count": 3
+    },
+    {
+      "commit": "9b6780b",
+      "subject": "fix: preserve block checkout order language",
+      "file_count": 3
+    },
+    {
+      "commit": "48acfbc",
+      "subject": "test: cover contributor authorization boundaries",
+      "file_count": 2
+    },
+    {
+      "commit": "c1afb22",
+      "subject": "fix: translate account email templates",
+      "file_count": 3
+    },
+    {
+      "commit": "3795d36",
+      "subject": "docs: correct forum inventory and review public hook findings",
+      "file_count": 2
+    },
+    {
+      "commit": "76e3f53",
+      "subject": "fix: preserve absent Polylang language for unknown locales",
+      "file_count": 3
+    },
+    {
+      "commit": "132e4a2",
+      "subject": "fix: load the cookie API required by cart fragments",
+      "file_count": 3
+    },
+    {
+      "commit": "16ec4b5",
+      "subject": "docs: verify category fixtures and related product behavior",
+      "file_count": 3
+    },
+    {
+      "commit": "e391007",
+      "subject": "test: expand variation security and permission regressions",
+      "file_count": 4
+    },
+    {
+      "commit": "4b02c13",
+      "subject": "fix: encode category translation script values",
+      "file_count": 3
+    },
+    {
+      "commit": "26fbe5f",
+      "subject": "fix: verify translation download certificates",
+      "file_count": 3
+    },
+    {
+      "commit": "ecd05e6",
+      "subject": "fix: escape status report locale and path output",
+      "file_count": 3
+    },
+    {
+      "commit": "9d093a2",
+      "subject": "fix: guard executable files outside WordPress",
+      "file_count": 5
+    },
+    {
+      "commit": "f0f5c99",
+      "subject": "fix: escape translated template and gateway output",
+      "file_count": 16
+    },
+    {
+      "commit": "30f9688",
+      "subject": "fix: validate language and translation request boundaries",
+      "file_count": 12
+    },
+    {
+      "commit": "12aecf9",
+      "subject": "fix: preserve Polylang post fields during product import",
+      "file_count": 3
+    },
+    {
+      "commit": "a3a675f",
+      "subject": "fix: validate product synchronization request inputs",
+      "file_count": 9
+    },
+    {
+      "commit": "efd2096",
+      "subject": "fix: validate navigation filters and current URL inputs",
+      "file_count": 7
+    },
+    {
+      "commit": "02851f2",
+      "subject": "fix: secure inline script data and preserve editor restrictions",
+      "file_count": 9
+    },
+    {
+      "commit": "390162c",
+      "subject": "fix: secure settings output and restrict page maintenance",
+      "file_count": 8
+    },
+    {
+      "commit": "7df3bd5",
+      "subject": "fix: preserve literal SKU checks and secure coupon diagnostics",
+      "file_count": 7
+    },
+    {
+      "commit": "e0cf70d",
+      "subject": "fix: correct translation calls and preserve catalog contracts",
+      "file_count": 12
+    },
+    {
+      "commit": "d3cf009",
+      "subject": "fix: protect stock synchronization across request contexts",
+      "file_count": 7
+    },
+    {
+      "commit": "decbfe3",
+      "subject": "docs: verify existing public integration contracts",
+      "file_count": 5
+    },
+    {
+      "commit": "2114f83",
+      "subject": "fix: preserve native URLs and restore variation timeouts",
+      "file_count": 8
+    },
+    {
+      "commit": "7ed435c",
+      "subject": "fix: remove automatic third-party admin resources",
+      "file_count": 8
+    },
+    {
+      "commit": "9798ed6",
+      "subject": "fix: exclude development files from release packages",
+      "file_count": 8
+    },
+    {
+      "commit": "791192b",
+      "subject": "fix: preserve native block store page translations",
+      "file_count": 7
+    },
+    {
+      "commit": "b2c5117",
+      "subject": "fix: preserve translated account endpoints when switching languages",
+      "file_count": 7
+    },
+    {
+      "commit": "67271c0",
+      "subject": "fix: preserve translated checkout receipt endpoints",
+      "file_count": 8
+    },
+    {
+      "commit": "c66e470",
+      "subject": "fix: preserve translated cart state and validation",
+      "file_count": 1
+    },
+    {
+      "commit": "ae7bbea",
+      "subject": "fix: restore caller language after translated emails",
+      "file_count": 1
+    },
+    {
+      "commit": "6b0d805",
+      "subject": "fix: retain product defaults and reload locale catalogs",
+      "file_count": 1
+    },
+    {
+      "commit": "8d6f920",
+      "subject": "fix: replace only complete translated shop path segments",
+      "file_count": 1
+    },
+    {
+      "commit": "3a83aa6",
+      "subject": "fix: resolve validated translated variation deletion sources",
+      "file_count": 1
+    },
+    {
+      "commit": "d4aa1ee",
+      "subject": "fix: restore stock synchronization callbacks after errors",
+      "file_count": 1
+    },
+    {
+      "commit": "6dd38b2",
+      "subject": "fix: preserve independent product attributes during copies",
+      "file_count": 1
+    },
+    {
+      "commit": "28bbc81",
+      "subject": "fix: preserve variation copy and import synchronization",
+      "file_count": 1
+    },
+    {
+      "commit": "d28e504",
+      "subject": "fix: preserve native translated store notice controls",
+      "file_count": 1
+    },
+    {
+      "commit": "5c0a0ed",
+      "subject": "fix: translate configured native tax rate labels",
+      "file_count": 1
+    },
+    {
+      "commit": "0f31724",
+      "subject": "fix: translate configured block and receipt payment titles",
+      "file_count": 1
+    },
+    {
+      "commit": "df3ece1",
+      "subject": "fix: preserve language filtered reports under HPOS",
+      "file_count": 2
+    },
+    {
+      "commit": "4df5b1a",
+      "subject": "docs: update tested versions and maintenance changelogs",
+      "file_count": 2
+    },
+    {
+      "commit": "ba33822",
+      "subject": "docs: record verified maintenance batches and release evidence",
+      "file_count": 22
+    },
+    {
+      "commit": "28e71ec",
+      "subject": "docs: clarify preserved raw evidence formatting",
+      "file_count": 1
+    }
+  ]
+}
