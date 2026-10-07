@@ -22445,7 +22445,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "plugin-check-stock-log-batch-plugin-check.json",
+  "package_scan": "plugin-check-prefix-batch-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -22779,15 +22779,6 @@
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Shipping.php"
-    },
-    {
-      "line": 13,
-      "column": 1,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound",
-      "message": "Functions declared in the global namespace by a theme/plugin should start with the theme/plugin prefix. Found: &quot;wpi_status_report&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Admin/StatusReport.php"
     },
     {
       "line": 28,
@@ -23708,15 +23699,6 @@
       "file": "__init__.php"
     },
     {
-      "line": 55,
-      "column": 1,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound",
-      "message": "Functions declared in the global namespace by a theme/plugin should start with the theme/plugin prefix. Found: &quot;onActivate&quot;.",
-      "docs": "",
-      "file": "__init__.php"
-    },
-    {
       "line": 29,
       "column": 32,
       "type": "WARNING",
@@ -23760,24 +23742,6 @@
       "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$this-&gt;getFieldsFilterName()&quot;.",
       "docs": "",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php"
-    },
-    {
-      "line": 5,
-      "column": 1,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
-      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$woo_poly_tweet_url&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Views/social.php"
-    },
-    {
-      "line": 10,
-      "column": 1,
-      "type": "WARNING",
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
-      "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$woo_poly_facebook_url&quot;.",
-      "docs": "",
-      "file": "src/Hyyan/WPI/Views/social.php"
     },
     {
       "line": 116,
@@ -23825,9 +23789,9 @@
       "file": "src/Hyyan/WPI/Emails.php"
     }
   ],
-  "package_archive_sha256": "f4fe3a3b7c8f52ddd8f3fe091fd846650a36b8ae8a446c6c17c8e78c40d523b2",
+  "package_archive_sha256": "c6244e9fa70257961c765a56222b8e5ae9d5279d56e1e0b47939241042e2cf52",
   "package_file_count": 73,
-  "previous_package_scan": "plugin-check-request-batch-plugin-check.json",
+  "previous_package_scan": "plugin-check-stock-log-batch-plugin-check.json",
   "forum_counts": {
     "captured_pages": 423,
     "unique_topics": 413,
@@ -23840,11 +23804,13 @@
   "active_plugin_check_goal": {
     "status": "active",
     "baseline": 230,
-    "remaining": 153,
+    "remaining": 149,
     "errors": 45,
-    "warnings": 108,
-    "resolved_this_batch": 12,
+    "warnings": 104,
+    "resolved_this_batch": 4,
     "dispositions_are_not_fixes": true,
-    "source_commit": "b7b33b0"
+    "source_commit": "df5c6fb",
+    "translation_exception_acceptance": "awaiting explicit maintainer response",
+    "translation_findings_requested_for_exception": 44
   }
 }

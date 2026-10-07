@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "twitterLinks": 1,
+    "facebookLinks": 1,
+    "settingsForms": 2,
+    "fatalError": false
+  },
+  "status": {
+    "statusTable": true,
+    "tips": [
+      {
+        "label": "The current language used by WordPress. Default = English",
+        "tooltipText": "The current language used by WordPress. Default = English",
+        "visible": true
+      },
+      {
+        "label": "The default language set in Polylang",
+        "tooltipText": "The default language set in Polylang",
+        "visible": true
+      },
+      {
+        "label": "The available languages in Polylang",
+        "tooltipText": "The available languages in Polylang",
+        "visible": true
+      }
+    ]
+  }
+}

@@ -307,3 +307,7 @@ CHECK-002: Verified category posted field authorization, integer and request nor
 CHECK-003: Product edit stock hook suppression verifies nonce and product permission. Native WooCommerce diagnostics replace eight PHP logging calls. Twelve installed warnings removed. Goal active with 153 findings. Evidence uses plugin-check-stock-log-batch.
 
 Committed CHECK-003 as b7b33b0, fix: verify stock edit requests and use native diagnostics. Four production files and two test files changed. The active goal retains 153 installed findings.
+
+CHECK-004: Verified global callback collision and naming fixes. Four installed warnings removed. Forty four precisely listed translation exceptions await explicit acceptance and remain open. Goal active with 149 findings.
+
+Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and sharing variables. Three production files and three tests changed. Installed scan retains 149 findings. Translation exception acceptance remains pending.
