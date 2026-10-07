@@ -227,7 +227,7 @@ class Product
         $lang = '';
 
         if (isset($_GET['new_lang'])) {
-            $lang = is_string($_GET['new_lang']) ? sanitize_text_field(wp_unslash($_GET['new_lang'])) : '';
+            $lang = Utilities::getRequestLanguage();
         } elseif (!empty($post)) {
             $lang = pll_get_post_language($post->ID);
         } else {

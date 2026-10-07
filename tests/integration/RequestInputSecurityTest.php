@@ -215,6 +215,12 @@ final class RequestInputSecurityTest extends TestCase
         $_GET = array('lang' => 'de', 'show_categories' => array((string) $this->categories['en'], array(1), '1 OR 1'));
         $reports->translateCategoryIDS();
         self::assertSame(array($this->categories['de']), $_GET['show_categories']);
+        $_GET = array('lang' => 'd e', 'show_categories' => array((string) $this->categories['en']),
+            'product_ids' => array((string) $this->products['en']));
+        $reports->translateCategoryIDS();
+        $reports->translateProductIDS();
+        self::assertSame(array($this->categories['en']), $_GET['show_categories']);
+        self::assertSame(array($this->products['en']), $_GET['product_ids']);
     }
 
     public function testReportCombiningRetainsEverySelectedProduct(): void
@@ -344,4 +350,49 @@ final class RequestInputSecurityTest extends TestCase
             }
         }
     }
+
+    #[DataProvider('attributeLanguageQueries')]
+    public function testAttributeQueryAcceptsOnlyRegisteredRequestLanguages($language, string $expected): void
+    {
+        $_GET = array('new_lang' => $language);
+        $args = array('taxonomy' => 'pa_size', 'hide_empty' => false);
+        $result = $this->handler(Product::class)->getProductAttributesInLanguage($args);
+        self::assertSame($expected, $result['lang']);
+        unset($result['lang']);
+        self::assertSame($args, $result);
+    }
+
+    public static function attributeLanguageQueries(): array
+    {
+        return array(
+            'English' => array('en', 'en'),
+            'German' => array('de', 'de'),
+            'sanitized existing language' => array('<b>de</b>', 'de'),
+            'unregistered language' => array('missing-language', ''),
+            'array' => array(array('de'), ''),
+            'boolean' => array(true, ''),
+        );
+    }
+
+    public function testUnregisteredCategoryLanguageCannotRenderOrDispatchCopy(): void
+    {
+        $term = wp_insert_term('Category language request fixture', 'product_cat');
+        self::assertFalse(is_wp_error($term));
+        $this->categories['en'] = $term['term_id'];
+        $_GET = array('new_lang' => 'missing-language', 'from_tag' => (string) $term['term_id']);
+        $calls = 0;
+        $observer = static function () use (&$calls) { ++$calls; };
+        add_action(Hyyan\WPI\HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS, $observer);
+        ob_start();
+        try {
+            $result = $this->handler(Categories::class)->copyProductCatCustomFields();
+            self::assertFalse($result);
+            self::assertSame('', ob_get_contents());
+            self::assertSame(0, $calls);
+        } finally {
+            ob_end_clean();
+            remove_action(Hyyan\WPI\HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS, $observer);
+        }
+    }
+
 }

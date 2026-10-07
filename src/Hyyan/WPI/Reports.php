@@ -230,11 +230,7 @@ class Reports
                 $translations = Utilities::getProductTranslationsArrayByID($ID);
                 $extendedIDS = array_merge($extendedIDS, array_values($translations));
             }
-        } elseif (
-                isset($_GET['lang']) && is_string($_GET['lang']) &&
-                sanitize_key(wp_unslash($_GET['lang'])) !== 'all'
-        ) {
-            $lang = sanitize_key(wp_unslash($_GET['lang']));
+        } elseif ('' !== ($lang = Utilities::getRequestLanguage('lang'))) {
             foreach ($IDS as $ID) {
                 $translation = Utilities::getProductTranslationByID($ID, $lang);
                 if ($translation) {
@@ -273,12 +269,8 @@ class Reports
             return is_int($id) || (is_string($id) && ctype_digit($id));
         }));
         $_GET['show_categories'] = $IDS;
-        if (
-                !static::isCombine() &&
-                (isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) !== 'all')
-        ) {
+        if (!static::isCombine() && '' !== ($lang = Utilities::getRequestLanguage('lang'))) {
             $extendedIDS = array();
-            $lang = sanitize_key(wp_unslash($_GET['lang']));
 
             foreach ($IDS as $ID) {
                 $translation = pll_get_term($ID, $lang);

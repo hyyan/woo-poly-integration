@@ -88,7 +88,7 @@ class Categories implements TaxonomiesInterface
     {
 
         /* We sync custom fields only for translation */
-        if (!isset($_GET['new_lang']) || !is_string($_GET['new_lang'])) {
+        if (Utilities::getRequestLanguage() === '') {
             return false;
         }
 
