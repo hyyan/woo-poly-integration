@@ -231,7 +231,7 @@ class Gateways
      */
     public function translatePaymentGatewayTitle($title, $id)
     {
-        return function_exists('pll__') ? pll__($title) : __($title, 'woocommerce');
+        return pll__($title);
     }
 
     /**
@@ -244,7 +244,7 @@ class Gateways
      */
     public function translatePaymentGatewayDescription($description, $id)
     {
-        return function_exists('pll__') ? pll__($description) : __($description, 'woocommerce');
+        return pll__($description);
     }
 
     /**
@@ -258,7 +258,7 @@ class Gateways
     public function translateWoocommerceOrderPaymentMethod($total_rows, $order)
     {
         if (isset($total_rows['payment_method']['value'])) {
-            $total_rows['payment_method']['value'] = function_exists('pll__') ? pll__($total_rows['payment_method']['value']) : __($total_rows['payment_method']['value'], 'woocommerce');
+            $total_rows['payment_method']['value'] = pll__($total_rows['payment_method']['value']);
         }
 
         return $total_rows;

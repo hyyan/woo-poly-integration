@@ -24,7 +24,7 @@ class GatewayCheque extends \WC_Gateway_Cheque
     /**
      * Output for the order received page.
      *
-     * Note 1: The difference to WC_Gateway_Cheque is that we use pll__() or __()
+     * Note 1: The difference to WC_Gateway_Cheque is that we use pll__()
      * before passing the string through wptexturize() and wpautop().
      *
      * Note 2: We wrap the intructions strings with wp_kses_post() to sanitize
@@ -33,14 +33,14 @@ class GatewayCheque extends \WC_Gateway_Cheque
     public function thankyou_page()
     {
         if ($this->instructions) {
-            echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))));
+            echo wp_kses_post(wpautop(wptexturize(pll__($this->instructions))));
         }
     }
 
     /**
      * Add content to the WC emails.
      *
-     * Note: The difference from WC_Gateway_Cheque is that we use __() before
+     * Note: The difference from WC_Gateway_Cheque is that we use pll__() before
      * passing the string through wptexturize() and wpautop().
      *
      * @param WC_Order $order
@@ -50,7 +50,7 @@ class GatewayCheque extends \WC_Gateway_Cheque
     public function email_instructions($order, $sent_to_admin, $plain_text = false)
     {
         if ($this->instructions && !$sent_to_admin && 'cheque' === Utilities::get_payment_method($order) && $order->has_status('on-hold')) {
-            echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce')))).PHP_EOL;
+            echo wp_kses_post(wpautop(wptexturize(pll__($this->instructions)))).PHP_EOL;
         }
     }
 }

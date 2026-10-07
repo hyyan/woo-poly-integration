@@ -24,7 +24,7 @@ class GatewayBACS extends \WC_Gateway_BACS
     /**
      * Output for the order received page.
      *
-     * Note: The difference to WC_Gateway_BACS is that we use pll__() or __()
+     * Note: The difference to WC_Gateway_BACS is that we use pll__()
      * before passing the string through wptexturize() and wpautop().
      *
      * @param int $order_id
@@ -32,7 +32,7 @@ class GatewayBACS extends \WC_Gateway_BACS
     public function thankyou_page($order_id)
     {
         if ($this->instructions) {
-            echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce'))));
+            echo wp_kses_post(wpautop(wptexturize(pll__($this->instructions))));
         }
         $this->bank_details($order_id);
     }
@@ -40,7 +40,7 @@ class GatewayBACS extends \WC_Gateway_BACS
     /**
      * Add content to the WC emails.
      *
-     * Note: The difference from WC_Gateway_BACS is that we use __() before
+     * Note: The difference from WC_Gateway_BACS is that we use pll__() before
      * passing the string through wptexturize() and wpautop().
      *
      * @param WC_Order $order
@@ -51,7 +51,7 @@ class GatewayBACS extends \WC_Gateway_BACS
     {
         if (!$sent_to_admin && 'bacs' === Utilities::get_payment_method($order) && $order->has_status('on-hold')) {
             if ($this->instructions) {
-                echo wp_kses_post(wpautop(wptexturize(function_exists('pll__') ? pll__($this->instructions) : __($this->instructions, 'woocommerce')))).PHP_EOL;
+                echo wp_kses_post(wpautop(wptexturize(pll__($this->instructions)))).PHP_EOL;
             }
             $this->bank_details(Utilities::get_orderid($order));
         }

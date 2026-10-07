@@ -158,7 +158,7 @@ class Shipping
      */
     public function translateShippingLabel($label)
     {
-        return function_exists('pll__') ? pll__($label) : __($label, 'woocommerce');
+        return pll__($label);
     }
 
     /**
@@ -179,11 +179,7 @@ class Shipping
         $translated = array();
 
         foreach ($shipping_methods as $shipping) {
-            if (function_exists('pll__')) {
-                $translated[] = pll__($shipping);
-            } else {
-                $translated[] = __($shipping, 'woocommerce');
-            }
+            $translated[] = pll__($shipping);
         }
 
         // Implode array to string again
