@@ -1,4 +1,4 @@
-Current active goal: resolve all remaining Plugin Check findings. Latest installed scan has 135 findings, 45 errors and 90 warnings. The goal is active, with no accepted exceptions.
+Current active goal: resolve all remaining Plugin Check findings. Latest installed scan has 129 findings, 45 errors and 84 warnings. The goal is active, with no accepted exceptions.
 
 New active goal: resolve the 230 remaining installed Plugin Check findings, comprising 66 errors and 164 warnings. Prior source dispositions are research evidence, not completed fixes. Inspect and correct actual code in related batches, preserve existing behavior and supported contracts, verify affected paths through Chrome, run relevant regressions, rebuild the package and scan its actual installation. Do not mark complete until the installed report is clean or the maintainer explicitly accepts a precise unavoidable exception. No blanket suppression, push or publication is authorized.
 
@@ -186,3 +186,16 @@ Chrome verifies native shop manager removal on the installed package. The source
 Sixty one installed PHP files and fifty nine main entry and source files on PHP 7.0 pass syntax. All 73 source and installed distributable hashes match the rebuilt archive. Installed Plugin Check remains 135 findings, 45 errors and 90 warnings, with unchanged finding code counts and empty diagnostics. This verified correction is not counted as a checker reduction. No checker suppression, public hook change, push or publication occurs. The goal remains active, and proposed translation exceptions and display name changes remain pending.
 
 Source commit 02c2b76, fix: match normalized variation relationships exactly. One production file and one test file changed. Evidence uses plugin-check-exact-id-batch.
+
+
+CHECK-010: Shared exact relationship lookup
+
+The cart display lookup, stock and coupon translation lookup, and variation copy lookup independently compared text relationship metadata through native meta queries. Each accepted a malformed value with trailing whitespace and rejected a valid padded integer reference. All six cases reproduced before correction. They now reuse the existing prepared Variation::getRelatedVariation lookup, then retain their original native post type, parent, status, language, ordering and limit constraints. Empty relationship lists skip the native query so an empty post__in cannot select unrelated posts.
+
+Twelve new cases cover canonical, padded, trailing space and text suffix references across all three paths. The first combined run exposed an existing permission fixture using a synthetic text relationship key. Its fixture now uses the real canonical source integer while retaining every guest denial and administrator permission assertion. All four existing suites pass 387 tests with 1323 assertions using the established 256 MB test process limit.
+
+Chrome shop manager Save changes and native Update retain the existing padded target child and synchronize price thirteen. A subsequent native Update replaces the owned malformed whitespace child through the normal synchronization flow. English and German block carts preserve the small variation at price thirteen. The owned cart line is removed. WordPress 5.4.2 and WooCommerce 4.0.0 pass canonical and padded cart and stock or coupon lookups, reject trailing whitespace and reuse the existing padded child during copying. All owned products, children and the temporary shop manager are removed, the original notice option is restored and the browser is blank.
+
+Sixty one installed PHP files and fifty nine main entry and source files on PHP 7.0 pass syntax. All 73 source and installed distributable hashes match the rebuilt archive. Installed Plugin Check reports 129 findings, 45 errors and 84 warnings. Exactly three meta_key and three meta_value diagnostics disappear, with no added finding codes and empty diagnostics. No suppression is added. Full source and regression diffs were reviewed for permissions, empty ID list behavior and preserved native query constraints.
+
+Source commit 0e23d68, fix: reuse exact variation relationships across lookup paths. Three production files and two test files changed. Evidence uses plugin-check-relationship-paths. The goal remains active. Forty four translation findings and the proposed display name decision remain pending. The remaining 83 findings have precise source locations and inspected boundaries in PLUGIN-CHECK-COMPATIBILITY-EXCEPTIONS.md. Those are proposed exceptions only, not fixes or accepted findings. No push or publication.

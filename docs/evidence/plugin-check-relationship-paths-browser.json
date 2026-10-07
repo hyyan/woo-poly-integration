@@ -1,0 +1,13 @@
+{
+  "english": {
+    "title": "Cart – WooPoly package acceptance",
+    "cartText": "Products in cart\nPRODUCT\t\nDETAILS\n\tTOTAL\n\n\t\nShared relationship paths en\n$13.00\nSize: small\n−\n+\n\t\n$13.00\nCART TOTALS\nAdd coupons\nEstimated total\n$13.00",
+    "germanLinks": [],
+    "empty": false
+  },
+  "german": {
+    "title": "Cart – WooPoly package acceptance",
+    "cartText": "Produkte im Warenkorb\nPRODUKT\t\nDETAILS\n\tGESAMTSUMME\n\n\t\nShared relationship paths de\n$13,00\nSize: small\n−\n+\n\t\n$13,00\nWARENKORB-SUMME\nGutscheine hinzufügen\nVeranschlagte Gesamtsumme\n$13,00",
+    "empty": false
+  }
+}

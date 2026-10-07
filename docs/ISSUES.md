@@ -322,3 +322,6 @@ Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and shari
 
 
 | CHECK-009 | Numeric metadata comparison includes malformed variation relationships and writer accepts unnormalized identifiers | Prepared binary comparison preserves padded integer references and normalized writer rejects fractional input | Baseline failures, 375 tests, native shop manager removal, older lookup and archive checks pass. Source commit 02c2b76, checker count remains 135 |
+
+
+| CHECK-010 | Three related variation queries accept whitespace metadata and reject padded integer references | Reuse the existing prepared exact lookup while retaining native parent, status, language and ordering constraints | Six baseline failures, 387 tests, native product updates, bilingual carts, older paths and archive checks pass. Source commit 0e23d68. Six findings removed, 129 remain |

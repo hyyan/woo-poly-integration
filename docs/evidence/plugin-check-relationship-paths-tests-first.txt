@@ -1,0 +1,18 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+.[31;1mE[0m.......................................                         41 / 41 (100%)
+
+Time: 00:08.113, Memory: 109.05 MB
+
+There was 1 error:
+
+1) StoreApiCartLanguageTest::testVariationDisplayCannotExposeAPrivateTranslatedParent
+Error: Call to a member function get_id() on false
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/StoreApiCartLanguageTest.php:171
+
+[37;41mERRORS![0m
+[37;41mTests: 41[0m[37;41m, Assertions: 178[0m[37;41m, Errors: 1[0m[37;41m.[0m

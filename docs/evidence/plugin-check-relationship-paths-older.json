@@ -1,0 +1,1 @@
+{"wordpress":"5.4.2","woocommerce":"4.0.0","checks":{"canonical":{"cart":true,"stock_coupon":true},"padded":{"cart":true,"stock_coupon":true},"space":{"cart":true,"stock_coupon":true},"copy_reuses_padded_child":true},"owned_fixtures_removed":true}
