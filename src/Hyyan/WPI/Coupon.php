@@ -51,7 +51,7 @@ class Coupon
 
             add_action('woocommerce_coupon_loaded', array($this, 'couponLoaded'));
             
-            add_action('wp_loaded', array($this, 'adminRegisterCouponStrings'));
+            add_action('current_screen', array($this, 'adminRegisterCouponStrings'));
             
             //apply label filter with higher priority than woocommerce-auto-added-coupons
             add_filter('woocommerce_cart_totals_coupon_label',
@@ -150,13 +150,16 @@ class Coupon
     
     public function adminRegisterCouponStrings()
     {
-        if (is_admin() && (!is_ajax())) {
-        global $pagenow;
-            if ( ($pagenow) && ( $pagenow == 'admin.php' ) && (isset($_GET['page']) && is_string($_GET['page']) && sanitize_key(wp_unslash($_GET['page'])) === 'mlang_strings') ) {
-                  $this->registerCouponStringsForTranslation();
-            }
+        if (!is_admin() || is_ajax()) {
+            return;
         }
-	  }
+        $screen = function_exists('get_current_screen') ? get_current_screen() : false;
+        $strings_screen = method_exists('PLL_Admin_Base', 'get_screen_id')
+            ? \PLL_Admin_Base::get_screen_id('strings') : 'languages_page_mlang_strings';
+        if ($screen && $screen->id === $strings_screen) {
+            $this->registerCouponStringsForTranslation();
+        }
+    }
 
     /**
      * Register coupon titles adn descriptions in Polylang's Strings translations table.

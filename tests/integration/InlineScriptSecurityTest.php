@@ -82,6 +82,34 @@ final class InlineScriptSecurityTest extends TestCase
         self::assertSame('', $this->capture(fn() => $this->handler(Attributes::class)->addAttrsTranslateLinks()));
     }
 
+    public function testUnverifiedTranslationQueryCannotSuppressVariableWarning(): void
+    {
+        $_GET = array('from_post' => '1 OR 1=1', 'new_lang' => 'de');
+        $GLOBALS['pagenow'] = 'post-new.php';
+        PLL()->curlang = PLL()->model->get_language('de');
+        $this->handler(Variable::class)->handleVariableLimitation();
+        $output = $this->capture(fn() => do_action('admin_print_scripts'));
+        self::assertStringContainsString('HYYAN_WPI_VARIABLES', $output);
+    }
+
+    public function testVerifiedTranslationCreationPreservesVariableWarningBypass(): void
+    {
+        $product = new WC_Product_Variable();
+        $product->set_name('Verified variable warning source'); $product->set_status('publish'); $product->save();
+        $user = get_current_user_id();
+        try {
+            wp_set_current_user(1);
+            $_GET = array('from_post' => (string) $product->get_id(), 'new_lang' => 'de',
+                '_wpnonce' => wp_create_nonce('new-post-translation'));
+            $GLOBALS['pagenow'] = 'post-new.php';
+            PLL()->curlang = PLL()->model->get_language('de');
+            self::assertFalse($this->handler(Variable::class)->handleVariableLimitation());
+            self::assertSame('', $this->capture(fn() => do_action('admin_print_scripts')));
+        } finally {
+            $_GET = array(); wp_delete_post($product->get_id(), true); wp_set_current_user($user);
+        }
+    }
+
     public function testVariableDialogEncodesDataAndFiltersItsHtml(): void
     {
         $_GET = array(); $GLOBALS['pagenow'] = 'post-new.php'; PLL()->curlang = PLL()->model->get_language('de');

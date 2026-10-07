@@ -481,7 +481,7 @@ class Variable
             return false;
         }
 
-        if (isset($_GET['from_post'])) {
+        if (woo_poly_integration_get_product_translation_request()) {
             return false;
         }
 
