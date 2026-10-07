@@ -794,3 +794,5 @@ The installed package also received the runtime enabled Plugin Check scan. The f
 The release report gate exits with failure for either errors or warnings. It also rejects an empty report and failed checker output. Five automated input cases verify clean, warning, error, empty and tool failure results. The real installed report returns failure with 45 errors and 82 warnings. This is an incomplete release result. The existing suite runner now sets the same 256 MB test process limit used for successful verification, leaving production configuration unchanged.
 
 Owned upgrade products and the fixture option were removed. The temporary password file was removed and Chrome returned to blank. The disposable upgrade store and its plugins remain available for further upgrade scenarios.
+
+The first staged documentation whitespace check reported extra final blank lines in three raw checker outputs. The documentation commit proceeded because that command did not stop on the check failure. The report endings were corrected in a subsequent commit. Finding contents and counts are unchanged. Both final diff checks pass.
