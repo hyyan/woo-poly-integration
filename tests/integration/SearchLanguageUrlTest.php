@@ -1,6 +1,7 @@
 <?php
 use Hyyan\WPI\Pages;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 final class SearchLanguageUrlTest extends TestCase
 {
@@ -56,6 +57,27 @@ final class SearchLanguageUrlTest extends TestCase
         $url = home_url('/de/' . $source . '/?orderby=price');
         self::assertSame(home_url('/de/' . $translated . '/?orderby=price'),
             $this->handler->translateShopUrl($url, 'de'));
+    }
+
+    #[DataProvider('shopUrlComponents')]
+    public function testShopSlugTranslationDoesNotChangeOtherUrlComponents(string $url, string $expected): void
+    {
+        $values = array('%source%' => get_post($this->pages['en'])->post_name,
+                        '%target%' => get_post($this->pages['de'])->post_name);
+        self::assertSame(strtr($expected, $values), $this->handler->translateShopUrl(strtr($url, $values), 'de'));
+    }
+
+    public static function shopUrlComponents(): array
+    {
+        return array(
+            array('https://%source%.example.test/de/%source%/?return=%source%', 'https://%source%.example.test/de/%target%/?return=%source%'),
+            array('https://example.test/de/%source%/#%source%', 'https://example.test/de/%target%/#%source%'),
+            array('https://%source%.example.test/de/', 'https://%source%.example.test/de/'),
+            array('https://example.test/de/?return=%source%', 'https://example.test/de/?return=%source%'),
+            array('https://example.test/de/%source%-sale/', 'https://example.test/de/%source%-sale/'),
+            array('/de/%source%/page/2/?return=%source%#%source%', '/de/%target%/page/2/?return=%source%#%source%'),
+            array('//%source%.example.test/de/%source%/?return=%source%', '//%source%.example.test/de/%target%/?return=%source%'),
+        );
     }
 
     public function testNonProductArchiveRemainsUnchanged(): void

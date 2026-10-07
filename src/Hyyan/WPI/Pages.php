@@ -150,10 +150,21 @@ class Pages
             $shopPageTranslation = get_post($shopPageTranslatedID);
 
             if ($shopPageTranslation) {
-		        		$slug = $shopPage->post_name;
-        				if ( $slug != $shopPageTranslation->post_name ) {
-        					$result = substr_replace( $url, $shopPageTranslation->post_name, strrpos( $url, $slug ), strlen( $slug ) );
-        				}
+                $slug = $shopPage->post_name;
+                $parts = wp_parse_url($url);
+                if ($slug !== '' && $slug !== $shopPageTranslation->post_name &&
+                        is_array($parts) && !empty($parts['path']) &&
+                        preg_match_all('#(?:^|/)(' . preg_quote($slug, '#') . ')(?=/|$)#', $parts['path'], $matches, PREG_OFFSET_CAPTURE)) {
+                    $match = end($matches[1]);
+                    $pathOffset = strlen($url) - strlen($parts['path']);
+                    if (isset($parts['query'])) {
+                        $pathOffset -= strlen($parts['query']) + 1;
+                    }
+                    if (isset($parts['fragment'])) {
+                        $pathOffset -= strlen($parts['fragment']) + 1;
+                    }
+                    $result = substr_replace($url, $shopPageTranslation->post_name, $pathOffset + $match[1], strlen($slug));
+                }
             }
         }
 
