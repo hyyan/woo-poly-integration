@@ -1,0 +1,15 @@
+{
+  "active_plugin_row_found": true,
+  "display_name": "Hyyan Integration for WooCommerce and Polylang",
+  "native_settings_link_followed": true,
+  "settings_id": "hyyan-wpi",
+  "settings_forms": 2,
+  "settings_tabs": [
+    "Features",
+    "Metas List"
+  ],
+  "visible_error_notices": [],
+  "temporary_administrator_removed": true,
+  "notice_state_restored": true,
+  "browser_returned_to_blank": true
+}

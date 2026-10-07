@@ -1,6 +1,6 @@
 # Active Plugin Check remediation
 
-The baseline installed scan contained 230 findings: 66 errors and 164 warnings. The current installed scan contains 129 findings: 45 errors and 84 warnings. The prior dispositions explain inspected code but do not resolve the new goal.
+The baseline installed scan contained 230 findings: 66 errors and 164 warnings. The current installed scan contains 127 findings: 45 errors and 82 warnings. The prior dispositions explain inspected code but do not resolve the new goal.
 
 | Related batch | Findings | Verification |
 | --- | --- | --- |
@@ -65,3 +65,16 @@ Chrome shop manager Save changes and native Update retain the existing padded ta
 Sixty one installed PHP files and fifty nine main entry and source files on PHP 7.0 pass syntax. All 73 source and installed distributable hashes match the rebuilt archive. Installed Plugin Check reports 129 findings, 45 errors and 84 warnings. Exactly three meta_key and three meta_value diagnostics disappear, with no added finding codes and empty diagnostics. No suppression is added. Full source and regression diffs were reviewed for permissions, empty ID list behavior and preserved native query constraints.
 
 Source commit 0e23d68, fix: reuse exact variation relationships across lookup paths. Three production files and two test files changed. Evidence uses plugin-check-relationship-paths. The goal remains active. Forty four translation findings and the proposed display name decision remain pending. The remaining 83 findings have precise source locations and inspected boundaries in PLUGIN-CHECK-COMPATIBILITY-EXCEPTIONS.md. Those are proposed exceptions only, not fixes or accepted findings. No push or publication.
+
+
+CHECK-011: Release display name
+
+The plugin header and readme title now display Hyyan Integration for WooCommerce and Polylang. This is the reversible metadata correction within the authorized Plugin Check remediation. The directory slug, text domain, bundled catalog keys, hooks, settings IDs, version and minimum requirements remain. No new dependency or JavaScript sender is introduced.
+
+All four existing suites pass 387 tests with 1323 assertions. Sixty one installed PHP files and fifty nine main entry and source files on PHP 7.0 pass syntax. All 73 source and installed distributable hashes match the rebuilt archive. Chrome verifies the new name on the active plugin row and follows its existing settings link to two working native forms and the Features and Metas List tabs, with no visible error notice. WordPress 5.4.2 reads the same new name while preserving text domain, domain path, version and activation. The temporary administrator is removed, notices restored and the browser is blank.
+
+Installed Plugin Check reports 127 findings, 45 errors and 82 warnings. Exactly two display name trademark warnings disappear, with no new finding codes and empty diagnostics. The established directory slug warning remains. This completes 103 actual row removals from the 230 finding active baseline. Source commit f659792, fix: use compliant plugin display name in release headers. Two production or release files changed, with no test or configuration file change.
+
+The four original reported boundaries and actual current and older WooCommerce removal clients are inspected again. Both clients already send security from delete_variations_nonce. The plugin scripts contain no independent sender for the removal action. SECURITY-REVIEW-HANDOFF.md now states the exact prepared string comparison and current verification. The full changed file history through the source snapshot maps each file to its actual commit subjects. COMMITS.md records all 75 Conventional Commit subjects through f659792 and file counts excluding tests and configuration.
+
+The 44 translation findings and 83 precise compatibility findings remain open and unaccepted. The compatibility source fingerprints were refreshed after the header change. No suppression, remote push, publication, submission or completion claim. The goal remains active. Evidence uses plugin-check-display-name-batch.

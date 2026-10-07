@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 73 maintenance commits after the baseline through 0e23d68. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 75 maintenance commits after the baseline through f659792. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -79,5 +79,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | 02c2b76 | 1 | fix: match normalized variation relationships exactly |
 | 15fc916 | 23 | docs: record exact relationship verification and open findings |
 | 0e23d68 | 3 | fix: reuse exact variation relationships across lookup paths |
+| 7f44436 | 23 | docs: record shared lookup fixes and precise open exceptions |
+| f659792 | 2 | fix: use compliant plugin display name in release headers |
 
-Latest verification passes 387 tests with 1323 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 129 findings. The active goal remains incomplete. No push or publication.
+Latest verification passes 387 tests with 1323 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 127 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

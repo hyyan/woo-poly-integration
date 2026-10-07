@@ -1,0 +1,18 @@
+638-					variation_ids = [],
+639-					data          = {
+640:						action: 'woocommerce_remove_variations'
+641-					};
+642-
+643-				wc_meta_boxes_product_variations_ajax.block();
+644-
+645-				if ( 0 < variation ) {
+646-					variation_ids.push( variation );
+647-
+648-					data.variation_ids = variation_ids;
+649-					data.security      = woocommerce_admin_meta_boxes_variations.delete_variations_nonce;
+650-
+651-					$.post( woocommerce_admin_meta_boxes_variations.ajax_url, data, function() {
+652-						var wrapper      = $( '#variable_product_options' ).find( '.woocommerce_variations' ),
+653-							current_page = parseInt( wrapper.attr( 'data-page' ), 10 ),
+654-							total_pages  = Math.ceil( (
+655-								parseInt( wrapper.attr( 'data-total' ), 10 ) - 1

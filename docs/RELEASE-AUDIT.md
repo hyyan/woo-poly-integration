@@ -1,10 +1,12 @@
 # Current maintenance release audit
 
+Current snapshot: source f659792, 387 tests with 1323 assertions, 73 matching installed files and 127 open Plugin Check findings. SECURITY-REVIEW-HANDOFF.md is the current release handoff. The dated batch records and historical artifact sections below retain earlier evidence.
+
 The four reported variation removal issues are corrected in the inspected source. Plugin Check remediation is active. The prior disposition review did not complete resolution of the 230 remaining findings. Directory review and publication remain manual. This document records current evidence and does not replace the individual report dispositions.
 
 ## Security boundary
 
-Variable::removeVariations validates the entire request batch before mutation, accepts integers and decimal digit strings, casts each ID, checks the variation post type and requires edit_products plus edit_post for every affected parent. check_ajax_referer uses delete-variations and security before deletion. Variation::getRelatedVariation independently rejects malformed values and prepares the relationship query with %s and %d. The other direct product SKU query also uses preparation.
+Variable::removeVariations validates the entire request batch before mutation, accepts integers and decimal digit strings, casts each ID, checks the variation post type and requires edit_products plus edit_post for every affected parent. check_ajax_referer uses delete-variations and security before deletion. Variation::getRelatedVariation independently rejects malformed values and prepares the metadata key and exact text comparison with %s placeholders after integer normalization. The other direct product SKU query also uses preparation.
 
 The actual installed WooCommerce client sends security from delete_variations_nonce. Its admin assets create that nonce with delete-variations. Plugin public/js/Variables.js controls language and product type warnings and does not send removal requests. No replacement client request was added. Existing native removal and negative browser evidence is in security-review-chrome.json and product-creation evidence.
 
@@ -31,7 +33,7 @@ Current targeted security execution passes 26 tests and 78 assertions, covering 
 
 The current pending production diff was reviewed in full again after COMPAT-045 through COMPAT-049. Older block class absence is guarded, stored payment data remains unchanged and native payment processing is retained. External gateway integrations remain unverified.
 
-## Artifact evidence
+## Historical artifact evidence
 
 release-metadata-package-contents.json and release-metadata-installed-hashes.json compare the rebuilt archive and installed files with the manifest. All 73 files match. Current suites pass 312 tests and 1061 assertions. Actual installed Plugin Check reports 230 findings, 66 errors and 164 warnings. Every row retains its inspected disposition. This is not WordPress.org approval.
 
@@ -39,7 +41,7 @@ The 66 errors comprise 30 text domain findings, 16 output findings, 11 dynamic s
 
 All 423 captured pages from 413 canonical forum topics have content dispositions. Zero topics await reading. Runtime acceptance remains separate.
 
-## Remaining release requirements
+## Historical release requirements
 
 - External extension defects, missing features and service configurations are excluded by the maintainer. Retain the historical dispositions without treating unavailable external fixtures as release blockers.
 - Verify older supported WordPress, WooCommerce, Polylang and PHP combinations and custom shop roles. The current CI definition does not prove those older combinations.

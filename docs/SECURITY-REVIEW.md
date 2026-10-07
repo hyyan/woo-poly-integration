@@ -1,6 +1,6 @@
 # Security maintenance review
 
-Current state: see RELEASE-AUDIT.md, SECURITY-REVIEW-HANDOFF.md and final-source-review-audit.json. All 413 canonical forum topics and all 230 current package checker rows have inspected dispositions. The original variation boundary is corrected and current targeted regressions pass 26 tests with 78 assertions. Full suites pass 312 tests with 1061 assertions. External compatibility, checker submission treatment and release acceptance remain open. The sections below retain chronological evidence and counts for earlier batches.
+Current state: SECURITY-REVIEW-HANDOFF.md contains the current inspected security boundaries and artifact evidence. Full suites pass 387 tests with 1323 assertions. Installed Plugin Check has 127 findings, 45 errors and 82 warnings. The goal remains active with no accepted exceptions. The following sections retain historical evidence and counts.
 
 The reported variation removal paths were inspected against baseline b5f7495 and current source. Local commit 01bfb80 corrects the variation lookup and removal callback. Local commit 0ec30b1 corrects the equivalent early featured product callback. This review adds regression cases and current acceptance evidence. A complete release clearance remains pending.
 

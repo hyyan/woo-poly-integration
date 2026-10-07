@@ -1,6 +1,6 @@
 {
-  "source_commit": "0e23d68",
-  "installed_total": 129,
+  "source_commit": "f659792",
+  "installed_total": 127,
   "proposed_exceptions": 83,
   "accepted_exceptions": 0,
   "findings": [
@@ -783,7 +783,7 @@
       "method": "",
       "reason": "Existing WordPress.org directory slug begins with woo. Changing it changes installation and update identity. Plugins Team acceptance or a coordinated directory migration is required.",
       "current_source": "Existing directory slug woo-poly-integration",
-      "source_sha256": "a0f7a5fc007ee9ac8f52d7f8a5bdfce0e11b0ef40cfb5d5b45682e993a7978cd"
+      "source_sha256": "915f877fb91a87043d050abdfdf8198e65ee4adec5dbf219ccda4c3d558c72bd"
     },
     {
       "id": "EX-072",

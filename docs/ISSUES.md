@@ -325,3 +325,6 @@ Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and shari
 
 
 | CHECK-010 | Three related variation queries accept whitespace metadata and reject padded integer references | Reuse the existing prepared exact lookup while retaining native parent, status, language and ordering constraints | Six baseline failures, 387 tests, native product updates, bilingual carts, older paths and archive checks pass. Source commit 0e23d68. Six findings removed, 129 remain |
+
+
+| CHECK-011 | Display name violates the checker trademark phrase requirements in both release headers | Use Hyyan Integration for WooCommerce and Polylang while retaining directory identity and public contracts | Full suites, native plugin row and settings link, older metadata and exact archive checks pass. Source commit f659792. Two warnings removed, 127 remain |

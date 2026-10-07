@@ -2,7 +2,7 @@
 
 These 83 findings remain open. This document requests review of each listed finding and does not count retained code as a fix. No suppression or exception has been accepted.
 
-The current installed scan contains 129 findings. Forty four translation findings are separately listed in PLUGIN-CHECK-TRANSLATION-EXCEPTIONS.md. Two display name warnings await the proposed name decision. The 83 rows below account for every other finding, identified by file, line, column and complete code in the accompanying JSON evidence.
+The current installed scan contains 127 findings. Forty four translation findings are separately listed in PLUGIN-CHECK-TRANSLATION-EXCEPTIONS.md. Both display name warnings were removed by the verified release header correction. The 83 rows below account for every other finding, identified by file, line, column and complete code in the accompanying JSON evidence.
 
 The request callback review follows the actual creation helper and native product save, quick edit and import hooks. The plugin helper verifies its own creation nonce before WordPress early copy hooks. Native current WordPress checks update-post before edit_post. Native WooCommerce removal checks delete-variations and edit_products, and the plugin additionally validates the complete batch and linked parent permissions. Coupon registration was checked in current native Polylang src/api.php and src/admin/admin-strings.php and only builds an in memory list. Endpoint notices write a fixed trusted view, not request supplied endpoint settings.
 
@@ -10,7 +10,7 @@ The seven script callers were inspected in Shipping, Order, Product/Meta, Produc
 
 Prepared queries remain fresh because both relationship and SKU decisions must reflect writes immediately. This does not establish performance on a large catalog. The supported older catalog loader has separate native timing evidence in PLUGIN-CHECK-CATALOG-LOADING.md. The established directory slug requires a Plugins Team decision, and retaining it does not claim directory approval.
 
-Accepting these precise findings would retain the inspected contracts. It would not make the raw scan clean or override the Plugins Team review. The source fingerprints, columns and reasons are recorded in evidence/plugin-check-remaining-compatibility-review.json. The installed report is evidence/plugin-check-relationship-paths-plugin-check.json.
+Accepting these precise findings would retain the inspected contracts. It would not make the raw scan clean or override the Plugins Team review. The source fingerprints, columns and reasons are recorded in evidence/plugin-check-remaining-compatibility-review.json. The installed report is evidence/plugin-check-display-name-batch-plugin-check.json.
 
 | ID | File and line | Finding | Inspected boundary |
 | --- | --- | --- | --- |
