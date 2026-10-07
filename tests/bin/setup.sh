@@ -16,7 +16,9 @@ wordpress_version=${WORDPRESS_VERSION:-7.1.3}
 if [[ $("${wp[@]}" core version) != "$wordpress_version" ]]; then
   "${wp[@]}" core update --version="$wordpress_version"
 fi
+"${wp[@]}" language core install de_DE
 "${wp[@]}" plugin install woocommerce --version=11.1.2 --activate
+"${wp[@]}" language plugin install woocommerce de_DE
 "${wp[@]}" plugin install polylang --version=3.8.10 --activate
 "${wp[@]}" eval-file wp-content/plugins/woo-poly-integration/tests/setup-lab.php
 "${wp[@]}" plugin activate woo-poly-integration
