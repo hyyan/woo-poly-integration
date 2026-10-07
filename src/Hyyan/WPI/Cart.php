@@ -469,12 +469,12 @@ class Cart
 
         if ($_product_id && $meta) {
             // Get posts (variations) with duplication metadata value
-            $variation_post = get_posts(array(
-                'meta_key' => Variation::DUPLICATE_KEY,
-                'meta_value' => $meta,
+            $relatedIDS = Variation::getRelatedVariation($variation_id, true);
+            $variation_post = $relatedIDS ? get_posts(array(
+                'post__in' => $relatedIDS,
                 'post_type' => 'product_variation',
                 'post_parent' => $_product_id
-            ));
+            )) : array();
 
             // Get variation translation
             if ($variation_post && count($variation_post) == 1) {

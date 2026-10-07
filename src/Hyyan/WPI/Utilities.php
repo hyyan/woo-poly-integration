@@ -550,13 +550,13 @@ final class Utilities
                 return $product_id;
             }
             //and now the related variation for the translation
-            $posts = get_posts(array(
-                'meta_key' => '_point_to_variation',
-                'meta_value' => $variationmaster,
+            $relatedIDS = Product\Variation::getRelatedVariation($product_id, true);
+            $posts = $relatedIDS ? get_posts(array(
+                'post__in' => $relatedIDS,
                 'post_type' => 'product_variation',
                 'post_parent' => $translated_id,
                 'lang' => $langparam,  //allow empty param to get all languages
-            ));
+            )) : array();
             //return the related variation if there is one
             if (count($posts)) {
                 return $posts[0]->ID;

@@ -80,15 +80,15 @@ class Variation
                      * First we check if the "to" product contains the duplicate meta
                      * key to find out if we have to update or insert
                      */
-                    $posts = get_posts(array(
-                        'meta_key' => self::DUPLICATE_KEY,
-                        'meta_value' => $variation_id,
+                    $relatedIDS = static::getRelatedVariation($variation_id, true);
+                    $posts = $relatedIDS ? get_posts(array(
+                        'post__in' => $relatedIDS,
                         'post_type' => 'product_variation',
                         'post_status'	 => 'any',
                         'post_parent' => $this->to->get_id(),
                         //JM2021:empty lang parameter required otherwise polylang adds language filter
                         'lang' => '',
-                    ));
+                    )) : array();
                     switch (count($posts)) {
                         case 1:
                             // update

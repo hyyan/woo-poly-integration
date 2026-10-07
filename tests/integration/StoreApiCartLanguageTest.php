@@ -155,11 +155,13 @@ final class StoreApiCartLanguageTest extends TestCase
                 $variation->set_parent_id($parent->get_id());
                 $variation->set_status('publish');
                 $variation->set_regular_price('12.50');
-                $variation->update_meta_data(Hyyan\WPI\Product\Variation::DUPLICATE_KEY, 'private-cart-translation-test');
                 $variation->save();
                 $variations[$language] = $variation->get_id();
             }
             pll_save_post_translations($products);
+            foreach ($variations as $id) {
+                update_post_meta($id, Hyyan\WPI\Product\Variation::DUPLICATE_KEY, $variations['en']);
+            }
             Utilities::switch_pll_locale('en_US');
             $translator = new Hyyan\WPI\Cart();
             wp_set_current_user(0);
