@@ -328,7 +328,7 @@ final class Utilities
       					        $terms[] = array($key => $value);
                     }
       				  } else {
-      					  $terms = array( array( $key => $value ) );
+						$terms[] = array( $key => $value );
       				  }
             }
 
@@ -626,7 +626,7 @@ final class Utilities
 
 			// unload plugin's textdomains
 			unload_textdomain( 'default' );
-			unload_textdomain( 'woocommerce' );
+			unload_textdomain( 'woocommerce', true );
 
 			//remove any previous filter
 			remove_all_filters( 'plugin_locale', 999 );

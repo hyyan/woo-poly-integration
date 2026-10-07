@@ -128,6 +128,26 @@ final class ProductTranslationInputTest extends TestCase
         self::assertSame(array('size' => 'small'), get_post_meta($this->target->get_id(), '_default_attributes', true));
     }
 
+    public function testTranslationRetainsEveryCustomDefaultAttribute(): void
+    {
+        $_GET = array();
+        $GLOBALS['pagenow'] = 'index.php';
+        pll_save_post_translations(array('en' => $this->source->get_id(), 'de' => $this->target->get_id()));
+        $attributes = array();
+        foreach (array('Size' => array('Small', 'Large'), 'Finish' => array('Matte', 'Gloss')) as $name => $options) {
+            $attribute = new WC_Product_Attribute();
+            $attribute->set_name($name);
+            $attribute->set_options($options);
+            $attribute->set_variation(true);
+            $attributes[] = $attribute;
+        }
+        $this->source->set_attributes($attributes);
+        $this->source->set_default_attributes(array('size' => 'small', 'finish' => 'matte'));
+        $this->source->save();
+        self::assertSame(array('de' => array('size' => 'small', 'finish' => 'matte')),
+            Hyyan\WPI\Utilities::getDefaultAttributesTranslation($this->source->get_id(), 'de'));
+    }
+
     public function testDeniedSourceReadPermissionPreventsMetadataCopy(): void
     {
         $this->source->set_status('private');
