@@ -10,7 +10,7 @@
 
 namespace Hyyan\WPI\Admin;
 
-use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
 
 /**
  * Settings.
@@ -68,7 +68,7 @@ class Settings extends \WeDevs_Settings_API
      */
     public function getSections()
     {
-        return apply_filters(HooksInterface::SETTINGS_SECTIONS_FILTER, array());
+        return apply_filters(Hyyan_WPI_Hooks::SETTINGS_SECTIONS_FILTER, array());
     }
 
     /**
@@ -78,7 +78,7 @@ class Settings extends \WeDevs_Settings_API
      */
     public function getFields()
     {
-        return apply_filters(HooksInterface::SETTINGS_FIELDS_FILTER, array());
+        return apply_filters(Hyyan_WPI_Hooks::SETTINGS_FIELDS_FILTER, array());
     }
 
     /**

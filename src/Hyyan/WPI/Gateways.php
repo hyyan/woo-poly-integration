@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
+
 use Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry;
 use Automattic\WooCommerce\Blocks\Package;
 use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
@@ -171,7 +173,7 @@ class Gateways
             }
 
             // Allows other plugins to load payment gateways class extentions or change the gateway object
-            do_action(HooksInterface::GATEWAY_LOAD_EXTENTION.$gateway->id, $gateway, $this->enabledGateways);
+            do_action(Hyyan_WPI_Hooks::GATEWAY_LOAD_EXTENTION.$gateway->id, $gateway, $this->enabledGateways);
         }
     }
 

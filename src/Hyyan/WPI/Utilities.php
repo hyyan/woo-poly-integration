@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
+
 /**
  * Utilities.
  *
@@ -639,7 +641,7 @@ final class Utilities
 			//remove any previous filter
 			remove_all_filters( 'plugin_locale', 999 );
 			//allow other plugins opportunity to unload text domain
-			do_action( HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION, $languageLocale );
+			do_action( Hyyan_WPI_Hooks::EMAILS_SWITCH_LANGUAGE_ACTION, $languageLocale );
 
 			//switch locale
 			if ( function_exists( 'switch_to_locale' ) ) {
@@ -663,7 +665,7 @@ final class Utilities
 			}
 
 			//allow other plugins opportunity to reload text domain
-			do_action( HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION, $languageLocale );
+			do_action( Hyyan_WPI_Hooks::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION, $languageLocale );
 
 			$wp_locale = new \WP_Locale();
 			//remove_filter does not work with closure so use remove_all_filters with priority

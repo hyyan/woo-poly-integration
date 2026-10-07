@@ -8,6 +8,8 @@
  */
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
+
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
 use Hyyan\WPI\Utilities;
@@ -113,7 +115,7 @@ class Emails
                     break;
             }
         }
-        return apply_filters(HooksInterface::EMAILS_DEFAULT_SETTING_FILTER, $return, $string_type, $email_type);
+        return apply_filters(Hyyan_WPI_Hooks::EMAILS_DEFAULT_SETTING_FILTER, $return, $string_type, $email_type);
     }
     /**
      * Construct object.
@@ -204,7 +206,7 @@ class Emails
                 });
             }
 
-            do_action(HooksInterface::EMAILS_TRANSLATION_ACTION, $this);
+            do_action(Hyyan_WPI_Hooks::EMAILS_TRANSLATION_ACTION, $this);
         }
     }
     /**
@@ -213,7 +215,7 @@ class Emails
      */
     public function registerEmailStringsForTranslation()
     {
-        $this->emails = apply_filters(HooksInterface::EMAILS_TRANSLATABLE_FILTER, array(
+        $this->emails = apply_filters(Hyyan_WPI_Hooks::EMAILS_TRANSLATABLE_FILTER, array(
             'new_order',
             'cancelled_order',
             'failed_order',
@@ -599,8 +601,8 @@ class Emails
             $replace = array();
             $find['order-date'] = '{order_date}';
             $replace['order-date'] = date_i18n(wc_date_format(), strtotime($target_object->get_date_created()));
-            $formatted_string = str_replace(apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $target_object), 
-                apply_filters(HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $target_object), $string_template);
+            $formatted_string = str_replace(apply_filters(Hyyan_WPI_Hooks::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER, $find, $target_object),
+                apply_filters(Hyyan_WPI_Hooks::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER, $replace, $target_object), $string_template);
         } else {
             $formatted_string = $string_template;
         }

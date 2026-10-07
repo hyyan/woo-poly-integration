@@ -11,7 +11,7 @@
  */
 namespace Hyyan\WPI\Product;
 
-use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
 use Hyyan\WPI\Utilities;
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
@@ -665,7 +665,7 @@ class Meta
      */
     public static function getProductMetaToCopy(array $metas = array(), $flat = true)
     {
-        $default = apply_filters(HooksInterface::PRODUCT_META_SYNC_FILTER, array(
+        $default = apply_filters(Hyyan_WPI_Hooks::PRODUCT_META_SYNC_FILTER, array(
             // general
             'general' => array(
                 'name' => __('General Metas', 'woo-poly-integration'),
@@ -796,7 +796,7 @@ class Meta
         foreach (static::getProductMetaToCopy(array(), false) as $group) {
             $metas = array_merge($metas, $group['metas']);
         }
-        return apply_filters(HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER, array_values(array_diff($metas, static::getProductMetaToCopy())));
+        return apply_filters(Hyyan_WPI_Hooks::PRODUCT_DISABLED_META_SYNC_FILTER, array_values(array_diff($metas, static::getProductMetaToCopy())));
     }
 
     /**
@@ -833,7 +833,7 @@ class Meta
         }
         
         //filters hooked by Variable class to add locking for variations section
-        $selectors = apply_filters(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, $selectors);
+        $selectors = apply_filters(Hyyan_WPI_Hooks::FIELDS_LOCKER_SELECTORS_FILTER, $selectors);
 
         $jsID = 'product-fields-locker';
         $code = sprintf(

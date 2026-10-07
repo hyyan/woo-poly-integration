@@ -10,7 +10,7 @@
 
 namespace Hyyan\WPI\Tools;
 
-use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
 
 /**
  * TranslationsDownloader.
@@ -155,6 +155,6 @@ class TranslationsDownloader
                 'https://downloads.wordpress.org/translation/plugin/woocommerce/%s', WC()->version
         );
 
-        return apply_filters(HooksInterface::LANGUAGE_REPO_URL_FILTER, $url);
+        return apply_filters(Hyyan_WPI_Hooks::LANGUAGE_REPO_URL_FILTER, $url);
     }
 }

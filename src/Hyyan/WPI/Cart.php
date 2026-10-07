@@ -8,6 +8,8 @@
  */
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
+
 use Hyyan\WPI\Product\Variation;
 use Hyyan\WPI\Product\Meta;
 use Hyyan\WPI\Utilities;
@@ -359,7 +361,7 @@ class Cart
 
         // If we are changing the product to the right language
         if ($cart_item_data_translation->get_id() != $cart_item_data->get_id()) {
-            $cart_item_data_translation = apply_filters(HooksInterface::CART_SWITCHED_ITEM, $cart_item_data_translation, $cart_item_data, $cart_item);
+            $cart_item_data_translation = apply_filters(Hyyan_WPI_Hooks::CART_SWITCHED_ITEM, $cart_item_data_translation, $cart_item_data, $cart_item);
         }
 
         return $this->canReadCartProduct($cart_item_data_translation) ? $cart_item_data_translation : $cart_item_data;

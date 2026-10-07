@@ -10,7 +10,7 @@
 
 namespace Hyyan\WPI\Taxonomies;
 
-use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
 use Hyyan\WPI\Utilities;
 
 /**
@@ -71,7 +71,7 @@ class Categories implements TaxonomiesInterface
         if ('product_cat' === $taxonomy) {
             /* Allow other plugins to check for category custom fields */
             do_action(
-                    HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS, $this, $termID, $taxonomy
+                    Hyyan_WPI_Hooks::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS, $this, $termID, $taxonomy
             );
         }
     }
@@ -116,7 +116,7 @@ class Categories implements TaxonomiesInterface
 
         /* Allow other plugins to check for category custom fields */
         do_action(
-                HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS, $ID
+                Hyyan_WPI_Hooks::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS, $ID
         );
     }
     /**

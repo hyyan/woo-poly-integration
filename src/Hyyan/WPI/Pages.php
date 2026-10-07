@@ -10,6 +10,8 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
+
 /**
  * Pages.
  *
@@ -26,7 +28,7 @@ class Pages
     public function __construct()
     {
         $method = array($this, 'getPostTranslationID');
-        $pages = apply_filters(HooksInterface::PAGES_LIST, array(
+        $pages = apply_filters(Hyyan_WPI_Hooks::PAGES_LIST, array(
             'shop',
             'cart',
             'checkout',

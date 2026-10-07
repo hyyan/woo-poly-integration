@@ -12,7 +12,7 @@ namespace Hyyan\WPI\Product;
 
 // phpcs:set WordPress.Security.ValidatedSanitizedInput customSanitizingFunctions[] hyyan\wpi\product\variable::sanitizevariationid
 
-use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
 use Hyyan\WPI\Utilities;
 use Hyyan\WPI\Admin\Features;
 use Hyyan\WPI\Admin\Settings;
@@ -44,8 +44,8 @@ class Variable
         add_action('wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9);
 
         // Extend meta list to include variation meta and fields to lock
-        add_filter(HooksInterface::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList'));
-        add_filter(HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors'));
+        add_filter(Hyyan_WPI_Hooks::PRODUCT_META_SYNC_FILTER, array($this, 'extendProductMetaList'));
+        add_filter(Hyyan_WPI_Hooks::FIELDS_LOCKER_SELECTORS_FILTER, array($this, 'extendFieldsLockerSelectors'));
 
         add_filter( 'woocommerce_variable_children_args', array( $this, 'allow_variable_children' ), 10, 3 ); 
 
@@ -459,7 +459,7 @@ class Variable
                 $variable_exclude[]	 = '[name^="variable_is' . $meta_nosync . '"]';
           }
         }
-        $variable_exclude = apply_filters( HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER, $variable_exclude );
+        $variable_exclude = apply_filters( Hyyan_WPI_Hooks::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER, $variable_exclude );
 
         $selectors[] = '#variable_product_options :input:not(' . implode(',', $variable_exclude) . ')';
         return $selectors;
