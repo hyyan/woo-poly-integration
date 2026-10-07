@@ -49,7 +49,7 @@ final class TranslationContractTest extends TestCase
     {
         $source = null;
         $filter = static function ($translated, $text, $domain) use (&$source) {
-            if ($domain === 'woo-poly-integration' && strpos($text, 'You can translate woocommerce endpoints,') === 0) {
+            if ($domain === 'woo-poly-integration' && $text === 'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%s">%s</a>') {
                 $source = $text;
                 return '%2$s: <a href="%1$s">Open translations</a>';
             }
@@ -65,6 +65,92 @@ final class TranslationContractTest extends TestCase
             self::assertStringContainsString('href="%s">%s</a>', $source);
         } finally { remove_filter('gettext', $filter, 10); }
     }
+    #[DataProvider('legacyFormatKeys')]
+    public function testLegacyCatalogStillTranslatesNumberedFormats(string $current, string $legacy): void
+    {
+        $original = $GLOBALS['l10n']['woo-poly-integration'] ?? null;
+        $catalog = new MO();
+        $catalog->add_entry(new Translation_Entry(array('singular' => $legacy,
+            'translations' => array('%2$s before %1$s'))));
+        $GLOBALS['l10n']['woo-poly-integration'] = $catalog;
+        try {
+            self::assertSame('second before first', sprintf(__($current, 'woo-poly-integration'), 'first', 'second'));
+        } finally {
+            if ($original === null) { unset($GLOBALS['l10n']['woo-poly-integration']); }
+            else { $GLOBALS['l10n']['woo-poly-integration'] = $original; }
+        }
+    }
+
+    #[DataProvider('legacyFormatKeys')]
+    public function testCurrentCatalogFormatTakesPrecedenceOverLegacy(string $current, string $legacy): void
+    {
+        $original = $GLOBALS['l10n']['woo-poly-integration'] ?? null;
+        $catalog = new MO();
+        $catalog->add_entry(new Translation_Entry(array('singular' => $legacy,
+            'translations' => array('legacy %2$s %1$s'))));
+        $catalog->add_entry(new Translation_Entry(array('singular' => $current,
+            'translations' => array('current %2$s %1$s'))));
+        $GLOBALS['l10n']['woo-poly-integration'] = $catalog;
+        try {
+            self::assertSame('current second first', sprintf(__($current, 'woo-poly-integration'), 'first', 'second'));
+        } finally {
+            if ($original === null) { unset($GLOBALS['l10n']['woo-poly-integration']); }
+            else { $GLOBALS['l10n']['woo-poly-integration'] = $original; }
+        }
+    }
+
+    #[DataProvider('legacyFormatKeys')]
+    public function testExplicitCurrentSourceTranslationPrecedesLegacy(string $current, string $legacy): void
+    {
+        $original = $GLOBALS['l10n']['woo-poly-integration'] ?? null;
+        $catalog = new MO();
+        $catalog->add_entry(new Translation_Entry(array('singular' => $legacy, 'translations' => array('legacy text'))));
+        $catalog->add_entry(new Translation_Entry(array('singular' => $current, 'translations' => array($current))));
+        $GLOBALS['l10n']['woo-poly-integration'] = $catalog;
+        try { self::assertSame($current, __($current, 'woo-poly-integration')); }
+        finally {
+            if ($original === null) { unset($GLOBALS['l10n']['woo-poly-integration']); }
+            else { $GLOBALS['l10n']['woo-poly-integration'] = $original; }
+        }
+    }
+
+    #[DataProvider('legacyFormatKeys')]
+    public function testLegacyDomainGettextFiltersAreRetained(string $current, string $legacy): void
+    {
+        $filter = static fn($translated, $text) => $text === $legacy ? 'legacy domain %2$s %1$s' : $translated;
+        add_filter('gettext_woo-poly-integration', $filter, 10, 2);
+        try { self::assertSame('legacy domain second first', sprintf(__($current, 'woo-poly-integration'), 'first', 'second')); }
+        finally { remove_filter('gettext_woo-poly-integration', $filter, 10); }
+    }
+
+    public function testCurrentGettextFilterTakesPrecedenceOverLegacy(): void
+    {
+        list($current, $legacy) = self::legacyFormatKeys()[0];
+        $filter = static fn($translated, $text, $domain) => $domain === 'woo-poly-integration'
+            ? ($text === $current ? 'current filtered' : ($text === $legacy ? 'legacy filtered' : $translated)) : $translated;
+        add_filter('gettext', $filter, 10, 3);
+        try { self::assertSame('current filtered', __($current, 'woo-poly-integration')); }
+        finally { remove_filter('gettext', $filter, 10); }
+    }
+
+    public function testFormatCompatibilityDoesNotChangeOtherDomains(): void
+    {
+        list($current) = self::legacyFormatKeys()[0];
+        self::assertSame($current, __($current, 'woopoly-unrelated-fixture'));
+    }
+
+    public static function legacyFormatKeys(): array
+    {
+        return array(
+            array('WooCommerce translation %1$s can not be found in : <a href="%2$s">%2$s</a>',
+                'WooCommerce translation %s can not be found in : <a href="%2$s">%2$s</a>'),
+            array('Unable to download WooCommerce translation %1$s from : <a href="%2$s">%2$s</a>',
+                'Unable to download WooCommerce translation %s from : <a href="%2$s">%2$s</a>'),
+            array('You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%1$s">%2$s</a>',
+                'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%s">%s</a>'),
+        );
+    }
+
     public function testFeatureDescriptionRetainsExistingCatalogKey(): void
     {
         $key = 'When creating new translations, start with blank text, copy or machine translation? (You may want to turn this off if using Polylang Pro, Lingotek or other automatic copy-or-translation solution.) ';

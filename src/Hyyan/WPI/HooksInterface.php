@@ -17,6 +17,15 @@ namespace Hyyan\WPI;
  */
 interface HooksInterface
 {
+    /** WordPress text translation filter. */
+    const WORDPRESS_GETTEXT_FILTER = 'gettext';
+
+    /** WordPress plugin domain translation filter. */
+    const WORDPRESS_PLUGIN_GETTEXT_FILTER = 'gettext_woo-poly-integration';
+
+    /** Polylang post synchronization action. */
+    const POLYLANG_SAVE_POST_ACTION = 'pll_save_post';
+
     /**
      * Product Meta Sync Filter.
      *

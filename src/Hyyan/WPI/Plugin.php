@@ -10,6 +10,7 @@
 
 namespace Hyyan\WPI;
 
+use Hyyan\WPI\HooksInterface as Hyyan_WPI_Hooks;
 use Hyyan\WPI\Tools\FlashMessages;
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
@@ -37,6 +38,7 @@ class Plugin
 
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
+        add_filter(Hyyan_WPI_Hooks::WORDPRESS_GETTEXT_FILTER, array($this, 'translateLegacyFormat'), PHP_INT_MAX, 3);
 		add_action( 'admin_init', array( __CLASS__, 'admin_activate' ) );
 
         add_action( 'pll_add_language', array( __CLASS__, 'handleNewLanguage' ) );
@@ -77,6 +79,45 @@ class Plugin
         load_plugin_textdomain(
                 'woo-poly-integration', false, plugin_basename(dirname(Hyyan_WPI_DIR)) . '/languages'
         );
+    }
+
+    /**
+     * Retain catalog translations for earlier message formats.
+     *
+     * @param string $translation translated text
+     * @param string $text source text
+     * @param string $domain text domain
+     * @return string
+     */
+    public function translateLegacyFormat($translation, $text, $domain)
+    {
+        if ($domain !== 'woo-poly-integration' || $translation !== $text) {
+            return $translation;
+        }
+        $legacy_formats = array(
+            'WooCommerce translation %1$s can not be found in : <a href="%2$s">%2$s</a>' =>
+                'WooCommerce translation %s can not be found in : <a href="%2$s">%2$s</a>',
+            'Unable to download WooCommerce translation %1$s from : <a href="%2$s">%2$s</a>' =>
+                'Unable to download WooCommerce translation %s from : <a href="%2$s">%2$s</a>',
+            'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%1$s">%2$s</a>' =>
+                'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target="_blank" href="%s">%s</a>',
+        );
+        if (!isset($legacy_formats[$text])) {
+            return $translation;
+        }
+        $catalog = get_translations_for_domain($domain);
+        if (($catalog instanceof \WP_Translations &&
+                \WP_Translation_Controller::get_instance()->has_translation($text, $domain)) ||
+                (!($catalog instanceof \WP_Translations) && isset($catalog->entries[$text]))) {
+            return $translation;
+        }
+        $legacy = $legacy_formats[$text];
+        $translated = $catalog->translate($legacy);
+        $translated = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_GETTEXT_FILTER, $translated, $legacy, $domain);
+        if (version_compare(get_bloginfo('version'), '5.5', '>=')) {
+            $translated = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_PLUGIN_GETTEXT_FILTER, $translated, $legacy, $domain);
+        }
+        return $translated === $legacy ? $translation : $translated;
     }
 
     /**

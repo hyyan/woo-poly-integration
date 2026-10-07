@@ -43,7 +43,7 @@ class TranslationsDownloader
             $notAvaliable = sprintf(
                     /* translators: 1: Language name and locale, 2: Translation repository URL. */
                     __(
-                            'WooCommerce translation %s can not be found in : <a href="%2$s">%2$s</a>', 'woo-poly-integration'
+                            'WooCommerce translation %1$s can not be found in : <a href="%2$s">%2$s</a>', 'woo-poly-integration'
                     ), esc_html(sprintf('%s(%s)', $name, $locale)), esc_url(static::getRepoUrl())
             );
 
@@ -53,7 +53,7 @@ class TranslationsDownloader
         /* Download the language pack */
         $cantDownload = sprintf(
                 /* translators: 1: Language name and locale, 2: Translation repository URL. */
-                __('Unable to download WooCommerce translation %s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), esc_html(sprintf('%s(%s)', $name, $locale)), esc_url(static::getRepoUrl())
+                __('Unable to download WooCommerce translation %1$s from : <a href="%2$s">%2$s</a>', 'woo-poly-integration'), esc_html(sprintf('%s(%s)', $name, $locale)), esc_url(static::getRepoUrl())
         );
         $response = wp_remote_get(
                 sprintf('%s/%s.zip', static::getRepoUrl(), $locale), array('timeout' => 200)

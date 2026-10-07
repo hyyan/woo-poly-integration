@@ -624,3 +624,18 @@ msgstr ""
 #: ../src/Hyyan/WPI/Views/admin.php:7
 msgid "WooPoly Advanced Options"
 msgstr ""
+
+#: ../src/Hyyan/WPI/Tools/TranslationsDownloader.php
+#, php-format
+msgid "WooCommerce translation %1$s can not be found in : <a href=\"%2$s\">%2$s</a>"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Tools/TranslationsDownloader.php
+#, php-format
+msgid "Unable to download WooCommerce translation %1$s from : <a href=\"%2$s\">%2$s</a>"
+msgstr ""
+
+#: ../src/Hyyan/WPI/Views/Messages/endpointsTranslations.php
+#, php-format
+msgid "You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
+msgstr ""
