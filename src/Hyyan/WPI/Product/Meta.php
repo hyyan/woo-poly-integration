@@ -228,14 +228,6 @@ class Meta
         } elseif (isset($_GET['new_lang']) || ($currentScreen && $currentScreen->base == 'edit')) {
             $new_lang = Utilities::getRequestLanguage();
             $disable = $new_lang && $new_lang != pll_default_language();
-            $request = Utilities::getProductTranslationRequest();
-            $ID = $request ? $request['source_id'] : false;
-
-            // Add the '_translation_porduct_type' meta, for the case where
-            // the product was created before plugin acivation.
-            if ($ID) {
-                $this->addProductTypeMeta($ID);
-            }
         }
 
         // disable fields edit for translation
@@ -244,10 +236,6 @@ class Meta
                 'admin_print_scripts', array($this, 'addFieldsLocker'), 100
             );
         }
-
-        //wc3.6 compatibility props mrleemon #408
-        //the '_translation_porduct_type' meta and related workarounds were only necessary 
-        //since woopoly was hooking WP save before Woo save had completed
 
         return true;
     }
@@ -258,6 +246,7 @@ class Meta
     public function syncTaxonomiesAndProductAttributesAfterProductUpdate($product, $data_store){
         //once only trigger for current call, we don't want to retrigger this when translations are saved.. or variations which are handled separately
         remove_action('woocommerce_after_product_object_save', array($this, 'syncTaxonomiesAndProductAttributesAfterProductUpdate'), 5, 2);
+        $this->addProductTypeMeta($product->get_id());
         $this->syncTaxonomiesAndProductAttributes($product->get_id(), $product, true);
     }
     
