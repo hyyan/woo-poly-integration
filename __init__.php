@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Plugin Name: Hyyan WooCommerce Polylang Integration
+ * Plugin Name: Hyyan Integration for WooCommerce and Polylang
  * Plugin URI: https://github.com/hyyan/woo-poly-integration/
  * Description: Integrates Woocommerce with Polylang
  * Author: Hyyan Abo Fakher
