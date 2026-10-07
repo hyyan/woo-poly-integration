@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
-  "changed_files": 1562,
+  "through_commit": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
+  "changed_files": 1581,
   "files": [
     {
       "file": ".exclude-list",
@@ -184,6 +184,10 @@
         {
           "sha": "ba3382210b7bf0cb39a13d5ec97b430d5cee214b",
           "subject": "docs: record verified maintenance batches and release evidence"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -240,6 +244,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -518,6 +526,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -732,6 +744,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -794,6 +810,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -844,6 +864,10 @@
         {
           "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
           "subject": "docs: update release verification and remaining checker decisions"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -942,6 +966,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -974,6 +1002,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -1064,6 +1096,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -2362,6 +2398,20 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/current-plugin-check-batches.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -10884,6 +10934,176 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-query-cache-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-older-native.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-query-cache-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-relationship-paths-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -11058,6 +11278,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -15580,6 +15804,10 @@
         {
           "sha": "72ebc0f11172048bfa6d67918895bfa02f30be76",
           "subject": "docs: record validated ID batch and remaining release gates"
+        },
+        {
+          "sha": "c5d9505000c98bd9d35a9161b635ad5c5c2e3e79",
+          "subject": "docs: record grouped checker findings and cache verification"
         }
       ]
     },
@@ -15716,6 +15944,10 @@
         {
           "sha": "0e23d680865e3a5328ba333b3382b14cb73f8eff",
           "subject": "fix: reuse exact variation relationships across lookup paths"
+        },
+        {
+          "sha": "37a7fbebed4e6e69a70c13175c9e05d247ff092e",
+          "subject": "fix: preserve cart stock checks on WooCommerce 3.0"
         }
       ]
     },
@@ -15788,6 +16020,10 @@
         {
           "sha": "0f317249dcde8c624331647f520b99a3c81c49c4",
           "subject": "fix: translate configured block and receipt payment titles"
+        },
+        {
+          "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
+          "subject": "fix: translate stored checkout text through Polylang"
         }
       ]
     },
@@ -15798,6 +16034,10 @@
         {
           "sha": "f0f5c992c69192ac44a2b37b00760f7454696c49",
           "subject": "fix: escape translated template and gateway output"
+        },
+        {
+          "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
+          "subject": "fix: translate stored checkout text through Polylang"
         }
       ]
     },
@@ -15808,6 +16048,10 @@
         {
           "sha": "f0f5c992c69192ac44a2b37b00760f7454696c49",
           "subject": "fix: escape translated template and gateway output"
+        },
+        {
+          "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
+          "subject": "fix: translate stored checkout text through Polylang"
         }
       ]
     },
@@ -15818,6 +16062,10 @@
         {
           "sha": "f0f5c992c69192ac44a2b37b00760f7454696c49",
           "subject": "fix: escape translated template and gateway output"
+        },
+        {
+          "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
+          "subject": "fix: translate stored checkout text through Polylang"
         }
       ]
     },
@@ -16100,6 +16348,10 @@
         {
           "sha": "93f6226c850280e3c87fa604c0aa02d9ba5d8ea6",
           "subject": "fix: load rest of world shipping methods"
+        },
+        {
+          "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
+          "subject": "fix: translate stored checkout text through Polylang"
         }
       ]
     },
@@ -16570,6 +16822,10 @@
         {
           "sha": "c66e470eb6d58ecd79217f6f8e58a04b1ab916a8",
           "subject": "fix: preserve translated cart state and validation"
+        },
+        {
+          "sha": "37a7fbebed4e6e69a70c13175c9e05d247ff092e",
+          "subject": "fix: preserve cart stock checks on WooCommerce 3.0"
         }
       ]
     },
@@ -16950,6 +17206,16 @@
         {
           "sha": "d28e504d5347a9134ae36ad864edaf11230df0b2",
           "subject": "fix: preserve native translated store notice controls"
+        }
+      ]
+    },
+    {
+      "file": "tests/integration/StoredTranslationContractTest.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "dacbd6162d7d31f4e291cf9ca003f072b7cdc6a2",
+          "subject": "fix: translate stored checkout text through Polylang"
         }
       ]
     },

@@ -1,625 +1,915 @@
 {
-  "installed_total": 122,
+  "installed_total": 100,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
       {
-        "file": "src/Hyyan/WPI/Coupon.php",
         "line": 155,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 70,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Coupon.php"
       },
       {
-        "file": "src/Hyyan/WPI/Coupon.php",
         "line": 155,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 98,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Coupon.php"
       },
       {
-        "file": "src/Hyyan/WPI/Coupon.php",
         "line": 155,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 140,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Coupon.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 154,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 20,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 154,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 45,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 154,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 72,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 157,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 40,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 170,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 20,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 170,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 47,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 173,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 52,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/LocaleNumbers.php",
         "line": 94,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 59,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/LocaleNumbers.php"
       },
       {
-        "file": "src/Hyyan/WPI/LocaleNumbers.php",
         "line": 115,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 36,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/LocaleNumbers.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 45,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 28,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 45,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 55,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 45,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 95,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 46,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 31,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 46,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 61,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 46,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 104,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 103,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 19,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 231,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 20,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 235,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 114,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 275,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 20,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 279,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 114,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 340,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 24,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 340,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 52,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Reports.php",
         "line": 340,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 94,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
         "line": 52,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 23,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
       },
       {
-        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
         "line": 52,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 51,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
       },
       {
-        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
         "line": 56,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 23,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
       },
       {
-        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
         "line": 60,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 66,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 68,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 33,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 122,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 20,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 122,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 64,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 152,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 56,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 171,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 23,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 282,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 19,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 482,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 19,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Product.php",
         "line": 249,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 19,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Product.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variation.php",
         "line": 229,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 43,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variation.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 72,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 33,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 223,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 19,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 228,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 25,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 266,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 19,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
         "line": 99,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 29,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php"
       },
       {
-        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
         "line": 99,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 57,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php"
       },
       {
-        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php",
         "line": 100,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 41,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Taxonomies/Attributes.php"
       },
       {
-        "file": "src/Hyyan/WPI/Endpoints.php",
         "line": 284,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 81,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Endpoints.php"
       },
       {
-        "file": "src/Hyyan/WPI/Endpoints.php",
         "line": 284,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 112,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Endpoints.php"
       },
       {
-        "file": "src/Hyyan/WPI/Endpoints.php",
         "line": 284,
-        "code": "WordPress.Security.NonceVerification.Recommended"
+        "column": 158,
+        "type": "WARNING",
+        "code": "WordPress.Security.NonceVerification.Recommended",
+        "message": "Processing form data without nonce verification.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Endpoints.php"
       }
     ],
     "translations": [
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 426,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 85,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 427,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 86,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 431,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 85,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 432,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 86,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 438,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 89,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 439,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 90,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 445,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 91,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 446,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 92,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
-        "line": 36,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
-        "line": 36,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
-        "line": 53,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCOD.php",
-        "line": 53,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
-        "line": 36,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
-        "line": 36,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
-        "line": 53,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayCheque.php",
-        "line": 53,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
-        "line": 35,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
-        "line": 35,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
-        "line": 54,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
-        "line": 54,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
         "line": 83,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 130,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
         "line": 103,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 47,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
         "line": 107,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 57,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
         "line": 115,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 47,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
         "line": 119,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 46,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php",
         "line": 135,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 146,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Gateways/GatewayBACS.php"
       },
       {
-        "file": "src/Hyyan/WPI/Privacy.php",
         "line": 36,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 292,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Privacy.php"
       },
       {
-        "file": "src/Hyyan/WPI/Privacy.php",
         "line": 38,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 314,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Privacy.php"
       },
       {
-        "file": "src/Hyyan/WPI/Cart.php",
-        "line": 240,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "line": 275,
+        "column": 134,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Cart.php"
       },
       {
-        "file": "src/Hyyan/WPI/Shipping.php",
-        "line": 161,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Shipping.php",
-        "line": 161,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Shipping.php",
-        "line": 185,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Shipping.php",
-        "line": 185,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Admin/StatusReport.php",
         "line": 28,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 140,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Admin/StatusReport.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways.php",
-        "line": 234,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways.php",
-        "line": 234,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways.php",
-        "line": 247,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways.php",
-        "line": 247,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways.php",
-        "line": 261,
-        "code": "WordPress.WP.I18n.NonSingularStringLiteralText"
-      },
-      {
-        "file": "src/Hyyan/WPI/Gateways.php",
-        "line": 261,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
-      },
-      {
-        "file": "src/Hyyan/WPI/Coupon.php",
         "line": 119,
-        "code": "WordPress.WP.I18n.TextDomainMismatch"
+        "column": 53,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.TextDomainMismatch",
+        "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Coupon.php"
       },
       {
-        "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
         "line": 12,
-        "code": "WordPress.WP.I18n.UnorderedPlaceholdersText"
+        "column": 9,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.UnorderedPlaceholdersText",
+        "message": "Multiple placeholders in translatable strings should be ordered. Expected \"%1$s, %2$s\", but got \"%s, %s\" in 'You can translate woocommerce endpoints, email strings, shipping methods from polylang strings tab. <a target=\"_blank\" href=\"%s\">%s</a>'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#variables",
+        "file": "src/Hyyan/WPI/Views/Messages/endpointsTranslations.php"
       },
       {
-        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
         "line": 46,
-        "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText"
+        "column": 29,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText",
+        "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'WooCommerce translation %s can not be found in : <a href=\"%2$s\">%2$s</a>'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php"
       },
       {
-        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
         "line": 56,
-        "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText"
+        "column": 20,
+        "type": "ERROR",
+        "code": "WordPress.WP.I18n.MixedOrderedPlaceholdersText",
+        "message": "Multiple placeholders in translatable strings should be ordered. Mix of ordered and non-ordered placeholders found. Found: \"%s, %2$s, %2$s\" in 'Unable to download WooCommerce translation %s from : <a href=\"%2$s\">%2$s</a>'.",
+        "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
+        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php"
       }
     ],
     "public hook constants": [
       {
-        "file": "src/Hyyan/WPI/Cart.php",
-        "line": 327,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "line": 362,
+        "column": 57,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::CART_SWITCHED_ITEM&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Cart.php"
       },
       {
-        "file": "src/Hyyan/WPI/Gateways.php",
-        "line": 174,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
-      },
-      {
-        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php",
         "line": 158,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 30,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::LANGUAGE_REPO_URL_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Tools/TranslationsDownloader.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 642,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 24,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_SWITCH_LANGUAGE_ACTION&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 666,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 24,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_AFTER_SWITCH_LANGUAGE_ACTION&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variable.php",
         "line": 462,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 44,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_VARIABLE_EXCLUDE_SELECTORS_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Variation.php",
         "line": 407,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 19,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_VARIATION_COPY_META_ACTION&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variation.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 668,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 34,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_META_SYNC_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 799,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 30,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_DISABLED_META_SYNC_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 836,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 36,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::FIELDS_LOCKER_SELECTORS_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "src/Hyyan/WPI/Pages.php",
         "line": 29,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 32,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PAGES_LIST&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Pages.php"
       },
       {
-        "file": "src/Hyyan/WPI/Admin/Settings.php",
         "line": 71,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 30,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::SETTINGS_SECTIONS_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Admin/Settings.php"
       },
       {
-        "file": "src/Hyyan/WPI/Admin/Settings.php",
         "line": 81,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 30,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::SETTINGS_FIELDS_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Admin/Settings.php"
       },
       {
-        "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
         "line": 43,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 17,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$this-&gt;getSectionsFilterName()&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Admin/AbstractSettings.php"
       },
       {
-        "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
         "line": 61,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 21,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$this-&gt;getFieldsFilterName()&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Admin/AbstractSettings.php"
       },
       {
-        "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
+        "line": 174,
+        "column": 23,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::GATEWAY_LOAD_EXTENTION.$gateway-&gt;id&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Gateways.php"
+      },
+      {
         "line": 74,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 21,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_SYNC_CATEGORY_CUSTOM_FIELDS&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
       },
       {
-        "file": "src/Hyyan/WPI/Taxonomies/Categories.php",
         "line": 119,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 17,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::PRODUCT_COPY_CATEGORY_CUSTOM_FIELDS&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Taxonomies/Categories.php"
       },
       {
-        "file": "src/Hyyan/WPI/Emails.php",
         "line": 116,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 30,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_DEFAULT_SETTING_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Emails.php"
       },
       {
-        "file": "src/Hyyan/WPI/Emails.php",
         "line": 207,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 23,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_TRANSLATION_ACTION&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Emails.php"
       },
       {
-        "file": "src/Hyyan/WPI/Emails.php",
         "line": 216,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 39,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_TRANSLATABLE_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Emails.php"
       },
       {
-        "file": "src/Hyyan/WPI/Emails.php",
         "line": 602,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 59,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_ORDER_FIND_REPLACE_FIND_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Emails.php"
       },
       {
-        "file": "src/Hyyan/WPI/Emails.php",
         "line": 603,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound"
+        "column": 31,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;HooksInterface::EMAILS_ORDER_FIND_REPLACE_REPLACE_FILTER&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Emails.php"
       }
     ],
     "prepared queries": [
       {
-        "file": "src/Hyyan/WPI/Product/Variation.php",
         "line": 170,
-        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery"
+        "column": 24,
+        "type": "WARNING",
+        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+        "message": "Use of a direct database call is discouraged.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Variation.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 908,
-        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery"
+        "column": 24,
+        "type": "WARNING",
+        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+        "message": "Use of a direct database call is discouraged.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       }
     ],
     "other contracts": [
       {
-        "file": "src/Hyyan/WPI/Plugin.php",
         "line": 77,
-        "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound"
+        "column": 9,
+        "type": "WARNING",
+        "code": "PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound",
+        "message": "load_plugin_textdomain() has been discouraged since WordPress version 4.6. When your plugin is hosted on WordPress.org, you no longer need to manually include this function call for translations under your plugin slug. WordPress will automatically load the translations for you as needed.",
+        "docs": "https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/",
+        "file": "src/Hyyan/WPI/Plugin.php"
       },
       {
-        "file": "src/Hyyan/WPI/Utilities.php",
         "line": 250,
-        "code": "WordPress.Security.EscapeOutput.OutputNotEscaped"
+        "column": 18,
+        "type": "ERROR",
+        "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
+        "message": "All output should be run through an escaping function (see the Security sections in the WordPress Developer Handbooks), found '$result'.",
+        "docs": "https://developer.wordpress.org/apis/security/escaping/#escaping-functions",
+        "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
         "line": 79,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound"
+        "column": 13,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
+        "message": "Global variables defined by a theme/plugin should start with the theme/plugin prefix. Found: &quot;$_chosen_attributes&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
       },
       {
-        "file": "src/Hyyan/WPI/Product/Meta.php",
         "line": 105,
-        "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound"
+        "column": 23,
+        "type": "WARNING",
+        "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound",
+        "message": "Hook names invoked by a theme/plugin should start with the theme/plugin prefix. Found: &quot;pll_save_post&quot;.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       },
       {
-        "file": "__init__.php",
         "line": 0,
-        "code": "trademarked_term"
+        "column": 0,
+        "type": "WARNING",
+        "code": "trademarked_term",
+        "message": "The plugin slug includes a restricted term. Your plugin slug - \"woo-poly-integration\" - contains the restricted term \"woo\" and cannot be used to begin your plugin slug. We disallow the use of certain terms in ways that are abused, or potentially infringe on and/or are misleading with regards to trademarks. You may use the term \"woo\" elsewhere in your plugin slug, such as \"... for woo\".",
+        "docs": "",
+        "file": "__init__.php"
       }
     ]
   }

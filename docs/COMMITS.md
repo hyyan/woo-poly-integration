@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 83 maintenance commits after the baseline through dd816e0. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 86 maintenance commits after the baseline through dacbd61. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -89,5 +89,8 @@ Counts exclude test files and configuration, including the tests and work direct
 | ac630ad | 2 | fix: normalize request IDs through validated sanitizers |
 | 72ebc0f | 25 | docs: record validated ID batch and remaining release gates |
 | dd816e0 | 2 | fix: invalidate cached product lookups on native changes |
+| c5d9505 | 30 | docs: record grouped checker findings and cache verification |
+| 37a7fbe | 1 | fix: preserve cart stock checks on WooCommerce 3.0 |
+| dacbd61 | 5 | fix: translate stored checkout text through Polylang |
 
-Latest verification passes 390 tests with 1347 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 122 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 413 tests with 1444 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 100 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

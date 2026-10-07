@@ -337,3 +337,6 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-013 | Request ID normalizers were not recognized by input analysis | Named validated integer sanitizers preserve existing whole batch and report behavior | Verified source ac630ad, 388 tests and native Chrome, installed static and runtime 124 findings |
 
 | CHECK-014 | Repeated prepared relationship and SKU lookups lack caching | Native posts cache version refreshes on metadata, status and deletion writes | Source dd816e0, 390 tests and native Chrome, installed static and runtime 122 findings |
+
+| CHECK-015 | Dynamic gettext fallback for stored text | Required Polylang API preserves translations | dacbd61, 22 checker rows removed, native bilingual checkout and receipts |
+| CHECK-016 | WooCommerce 3.0 supplies three cart hook arguments | Native legacy hooks preserve actual quantities and rollback | 37a7fbe, native minimum version stock probes and Chrome Add to cart |
