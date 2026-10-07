@@ -68,6 +68,14 @@ final class VariationSecurityTest extends TestCase
         self::assertNull(get_post($this->source)); self::assertNull(get_post($this->translated));
         self::assertNotNull(get_post($this->unrelated));
     }
+    public function testTranslatedVariationRemovalDeletesItsLinkedSource(): void
+    {
+        $this->remove(array($this->translated), wp_create_nonce('delete-variations'));
+        self::assertNull(get_post($this->source));
+        self::assertNull(get_post($this->translated));
+        self::assertNotNull(get_post($this->unrelated));
+    }
+
     public function testAdministratorRemovalKeepsOriginalTranslationSynchronization(): void
     {
         $this->remove(array($this->source), wp_create_nonce('delete-variations'));
@@ -139,7 +147,7 @@ final class VariationSecurityTest extends TestCase
     }
 
     #[DataProvider('deniedParents')]
-    public function testRemovalRequiresPermissionForBothProductParents($language): void
+    public function testRemovalRequiresPermissionForBothProductParents($language, $selected = 'en'): void
     {
         $manager = get_user_by('login', 'lab-manager');
         wp_set_current_user($manager->ID);
@@ -154,7 +162,7 @@ final class VariationSecurityTest extends TestCase
         add_filter('map_meta_cap', $deny, 100, 4);
         try {
             self::assertTrue(current_user_can('edit_products'));
-            $this->remove(array($this->source), wp_create_nonce('delete-variations'));
+            $this->remove(array($selected === 'en' ? $this->source : $this->translated), wp_create_nonce('delete-variations'));
             self::assertNotNull(get_post($this->source));
             self::assertNotNull(get_post($this->translated));
         } finally {
@@ -164,7 +172,9 @@ final class VariationSecurityTest extends TestCase
 
     public static function deniedParents(): array
     {
-        return array('source' => array('en'), 'translation' => array('de'));
+        return array('source' => array('en'), 'translation' => array('de'),
+            'source from translated selection' => array('en', 'de'),
+            'translation from translated selection' => array('de', 'de'));
     }
 
 }
