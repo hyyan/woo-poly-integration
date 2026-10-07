@@ -165,9 +165,9 @@ class Variation
         //it also did not return all versions of post for deletion
         global $wpdb;
         $postids = $wpdb->get_col($wpdb->prepare(
-            "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND meta_value = %d",
+            "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY) = %s",
             self::DUPLICATE_KEY,
-            $variatonID
+            (string) $variatonID
         ));
 
         if (true === $returnIDS) {
@@ -263,7 +263,8 @@ class Variation
      */
     public function addDuplicateMeta($ID)
     {
-        if ($ID) {
+        if ((is_int($ID) || is_string($ID)) && ctype_digit((string) $ID) && (int) $ID > 0) {
+            $ID = (int) $ID;
             $meta = get_post_meta($ID, self::DUPLICATE_KEY);
             if (empty($meta)) {
                 update_post_meta($ID, self::DUPLICATE_KEY, $ID);

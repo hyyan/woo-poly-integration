@@ -146,4 +146,81 @@ final class QueryDiagnosticSecurityTest extends TestCase
     {
         return array(array(array('nested')), array("/cart/?token=private-token\nFORGED_ENTRY"), array('/cart/'));
     }
+
+    #[DataProvider('corruptRelationshipValues')]
+    public function testRelatedLookupDoesNotCoerceMalformedMetadata(string $suffix): void
+    {
+        $source = $this->product('en', 'exact-relationship-source');
+        $related = $this->product('de', 'exact-relationship-target');
+        $corrupt = $this->product('de', 'corrupt-relationship-target');
+        update_post_meta($related, Variation::DUPLICATE_KEY, $source);
+        update_post_meta($corrupt, Variation::DUPLICATE_KEY, (string) $source . $suffix);
+        $ids = Variation::getRelatedVariation($source, true);
+        self::assertContains((string) $related, $ids);
+        self::assertNotContains((string) $corrupt, $ids);
+    }
+
+    public static function corruptRelationshipValues(): array
+    {
+        return array('text suffix' => array('suffix'), 'SQL text suffix' => array(' OR 1=1'),
+            'decimal representation' => array('.0'), 'exponent representation' => array('e0'), 'trailing space' => array(' '),
+            'trailing newline' => array("\n"));
+    }
+
+    public function testRelatedLookupPreservesStoredPaddedIntegerReferences(): void
+    {
+        $source = $this->product('en', 'padded-existing-source');
+        $target = $this->product('de', 'padded-existing-target');
+        $stored = '000' . $source;
+        update_post_meta($source, Variation::DUPLICATE_KEY, $stored);
+        update_post_meta($target, Variation::DUPLICATE_KEY, $stored);
+        $ids = Variation::getRelatedVariation($target, true);
+        self::assertContains((string) $source, $ids);
+        self::assertContains((string) $target, $ids);
+        self::assertSame($stored, get_post_meta($source, Variation::DUPLICATE_KEY, true));
+        self::assertSame($stored, get_post_meta($target, Variation::DUPLICATE_KEY, true));
+    }
+
+    public function testRelatedLookupKeepsLargeNeighboringIdentifiersDistinct(): void
+    {
+        $wanted = PHP_INT_MAX - 1;
+        $related = $this->product('en', 'large-relationship-target');
+        $neighbor = $this->product('de', 'neighbor-relationship-target');
+        update_post_meta($related, Variation::DUPLICATE_KEY, (string) $wanted);
+        update_post_meta($neighbor, Variation::DUPLICATE_KEY, (string) PHP_INT_MAX);
+        $ids = Variation::getRelatedVariation($wanted, true);
+        self::assertContains((string) $related, $ids);
+        self::assertNotContains((string) $neighbor, $ids);
+    }
+
+
+    public function testRelationshipWriterStoresCanonicalIntegerIds(): void
+    {
+        $source = $this->product('en', 'padded-relationship-source');
+        $handler = (new ReflectionClass(Variation::class))->newInstanceWithoutConstructor();
+        $handler->addDuplicateMeta('000' . $source);
+        self::assertSame((string) $source, get_post_meta($source, Variation::DUPLICATE_KEY, true));
+        self::assertContains((string) $source, Variation::getRelatedVariation($source, true));
+    }
+
+    public function testRelationshipWriterRejectsFractionalIdsBeforeMetadataOperations(): void
+    {
+        $calls = array();
+        $observer = static function ($check, $id, $key, $value) use (&$calls) {
+            if ($key === Variation::DUPLICATE_KEY) {
+                $calls[] = array($id, $value);
+                return false;
+            }
+            return $check;
+        };
+        add_filter('update_post_metadata', $observer, PHP_INT_MAX, 4);
+        try {
+            $handler = (new ReflectionClass(Variation::class))->newInstanceWithoutConstructor();
+            $handler->addDuplicateMeta(1.5);
+            self::assertSame(array(), $calls);
+        } finally {
+            remove_filter('update_post_metadata', $observer, PHP_INT_MAX);
+        }
+    }
+
 }
