@@ -17,6 +17,9 @@ namespace Hyyan\WPI;
  */
 interface HooksInterface
 {
+    /** WordPress plugin locale filter. */
+    const WORDPRESS_PLUGIN_LOCALE_FILTER = 'plugin_locale';
+
     /** WordPress text translation filter. */
     const WORDPRESS_GETTEXT_FILTER = 'gettext';
 

@@ -77,9 +77,26 @@ class Plugin
      */
     public function loadTextDomain()
     {
-        load_plugin_textdomain(
-                'woo-poly-integration', false, plugin_basename(dirname(Hyyan_WPI_DIR)) . '/languages'
-        );
+        global $wp_version, $wp_textdomain_registry, $l10n;
+        $domain = 'woo-poly-integration';
+        $path = WP_PLUGIN_DIR . '/' . plugin_basename(dirname(Hyyan_WPI_DIR)) . '/languages';
+        if (version_compare($wp_version, '6.7', '>=')) {
+            $wp_textdomain_registry->set_custom_path($domain, $path);
+            if (isset($l10n[$domain]) && $l10n[$domain] instanceof \NOOP_Translations) {
+                unset($l10n[$domain]);
+            }
+            return;
+        }
+
+        $locale = apply_filters(Hyyan_WPI_Hooks::WORDPRESS_PLUGIN_LOCALE_FILTER, determine_locale(), $domain);
+        $mofile = $domain . '-' . $locale . '.mo';
+        if (load_textdomain($domain, WP_LANG_DIR . '/plugins/' . $mofile, $locale)) {
+            return;
+        }
+        if (version_compare($wp_version, '6.1', '>=')) {
+            $wp_textdomain_registry->set_custom_path($domain, $path);
+        }
+        load_textdomain($domain, $path . '/' . $mofile, $locale);
     }
 
     /**
