@@ -6269,10 +6269,13 @@
       "file": "forum/b3739e2ad62195e1.html",
       "status": "captured",
       "id": "FORUM-056",
-      "review_status": "Pending report triage",
+      "review_status": "Pending deactivation reproduction",
       "captured_post_count": 4,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "Receipt URLs returned 404 after disabling the plugin. Replies recommend saving permalinks after removal.",
+      "next_check": "Test deactivation and native rewrite refresh separately. Current enabled plugin purchases do not prove deactivation.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/update-for-woocommerce-3-7-1/",
@@ -6766,10 +6769,13 @@
       "file": "forum/6d1c78928615705e.html",
       "status": "captured",
       "id": "FORUM-101",
-      "review_status": "Pending report triage",
+      "review_status": "Native stock verified, external gateway pending",
       "captured_post_count": 6,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "GoPay reported a double deduction in another language. Replies describe a historical Stock.php correction and reporter confirmation.",
+      "next_check": "Current native purchases deduct once and refund once across linked simple products. Exact GoPay gateway is not installed.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/no-follow-up-wanted/",
@@ -7395,10 +7401,13 @@
       "file": "forum/e65e7cc8c80b0493.html",
       "status": "captured",
       "id": "FORUM-158",
-      "review_status": "Pending report triage",
+      "review_status": "Pending visible default language reproduction",
       "captured_post_count": 3,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "Receipt checkout returned to the empty cart with the default language visible in URLs.",
+      "next_check": "Current corrected receipt matrix uses hidden default language URLs. Reproduce visible default language configuration.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/translation-of-store-notice-in-customizer/",
@@ -7639,10 +7648,13 @@
       "file": "forum/adeecbc7edaa3e79.html",
       "status": "captured",
       "id": "FORUM-180",
-      "review_status": "Pending report triage",
+      "review_status": "Related receipt symptom corrected, historical setup pending",
       "captured_post_count": 5,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "Checkout returned to an empty cart when integration was enabled. Replies discuss linked checkout pages and endpoint strings.",
+      "next_check": "Current late locale receipt mismatch is reproduced and corrected. The historical configuration is not sufficiently specified to claim the exact report fixed.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/remove-filterpricesuffix-in-functions-php/",
@@ -7694,10 +7706,13 @@
       "file": "forum/7047f22dc6096e0a.html",
       "status": "captured",
       "id": "FORUM-185",
-      "review_status": "Pending report triage",
+      "review_status": "Pending variable checkout fragment acceptance",
       "captured_post_count": 5,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "Checkout AJAX reportedly lost language and translated product titles or attributes. Replies describe fixes and later WooCommerce recurrence.",
+      "next_check": "Current bilingual simple purchases preserve product IDs and language. Native variable checkout fragments and attribute labels remain pending.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/products-category-cannot-be-displayed/",
@@ -7980,10 +7995,13 @@
       "file": "forum/3f2cce90603af594.html",
       "status": "captured",
       "id": "FORUM-211",
-      "review_status": "Pending report triage",
+      "review_status": "Historical source replaced, native simple stock verified",
       "captured_post_count": 6,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "Old WooCommerce product ID access and an array passed to Stock::change caused notices and a fatal error.",
+      "next_check": "Current Utilities uses get_id and Stock uses SyncStock rather than change. Current native purchase and refund pass. Variable stock remains a separate gate.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/product-picture-is-not-being-displayed/",
@@ -9264,10 +9282,13 @@
       "file": "forum/876553920ba0a2f7.html",
       "status": "captured",
       "id": "FORUM-327",
-      "review_status": "Pending report triage",
+      "review_status": "Reviewed duplicate gateway report",
       "captured_post_count": 1,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "Topic points to the PostFinance receipt URL report covered by FORUM-356.",
+      "next_check": "Track exact gateway acceptance under FORUM-356.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/the-plugin-can-not-function-correctly-the-plugin-requires-woocommerce-and-poly/",
@@ -9583,10 +9604,13 @@
       "file": "forum/0b70d3019487fa56.html",
       "status": "captured",
       "id": "FORUM-356",
-      "review_status": "Pending report triage",
+      "review_status": "Pending external payment gateway reproduction",
       "captured_post_count": 7,
       "batch": "Checkout and cart",
-      "batch_basis": "Title routing only, existing review status unchanged"
+      "batch_basis": "Captured topic and replies reviewed with the receipt and stock acceptance batch",
+      "report_summary": "PostFinance returned a malformed receipt path. Replies discuss a custom development version and possible other gateway effects.",
+      "next_check": "Current native cheque receipt paths pass. PostFinance is not installed and external payment acceptance remains unproved.",
+      "category": "Checkout, receipt and stock"
     },
     {
       "url": "https://wordpress.org/support/topic/woocommerce-point-of-sale-custom-product-compatibility-2/",
@@ -21320,7 +21344,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "endpoints-plugin-check.json",
+  "package_scan": "checkout-receipt-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -23633,7 +23657,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.product.copyCategoryCustomFields. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     },
     {
-      "line": 262,
+      "line": 284,
       "column": 81,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23644,7 +23668,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 262,
+      "line": 284,
       "column": 112,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23655,7 +23679,7 @@
       "disposition": "Reviewed display route selection, scalar check and WordPress sanitization, native page renders verified, no destructive operation"
     },
     {
-      "line": 262,
+      "line": 284,
       "column": 158,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23864,7 +23888,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.Emails.orderFindReplaceReplace. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_archive_sha256": "8c3da7a373fa1786f7f3d68dfab66cf2e08d4b2566fb59d32d69da34c1b3eda4",
+  "package_archive_sha256": "79146e16f34b83a1bcb0660bdc2863d013b3b365cdfeea3d1779e881a442fd88",
   "package_file_count": 73,
-  "previous_package_scan": "store-pages-plugin-check.json"
+  "previous_package_scan": "endpoints-plugin-check.json"
 }

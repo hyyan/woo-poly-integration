@@ -1,0 +1,3 @@
+PHP syntax: Endpoints.php and EndpointLanguageSwitchTest.php pass.
+Shell syntax: tests/bin/setup.sh passes bash -n.
+Full diff: git diff --check passes.

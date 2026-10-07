@@ -1,0 +1,14 @@
+{
+    "mode": "classic",
+    "storage": "no",
+    "classic": {
+        "cart": {
+            "en": 28,
+            "de": 29
+        },
+        "checkout": {
+            "en": 30,
+            "de": 31
+        }
+    }
+}

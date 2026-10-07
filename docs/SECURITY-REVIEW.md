@@ -357,3 +357,22 @@ Content insertion uses wp_slash so serialized block JSON retains escaped quotes.
 | docs/ACCEPTANCE.md, docs/BATCHES.md, docs/ISSUES.md, docs/JOURNAL.md, goal.txt and this review | Shared cause, scoped proof, counts and remaining gates |
 
 Endpoint links keep native page origin and query data. This change does not bypass native account, order or password permissions and does not create account mutations. The read only local helper invoked native Polylang output behind local environment, owned table prefix and administrator guards and was removed. Quoted block page preservation from the prior batch remains covered by the full suite. Payment and receipt endpoints still require real checkout acceptance.
+
+## Filled checkout and receipt batch
+
+| File | Reason |
+| --- | --- |
+| src/Hyyan/WPI/Endpoints.php | Translate native endpoint URLs after late locale selection while preserving path prefix, values and query data |
+| tests/integration/EndpointLanguageSwitchTest.php | Add five genuine endpoint regressions and restore hook, catalog and rewrite state |
+| tests/bin/setup.sh | Select the verified WordPress 7.1.3 runtime through the native updater |
+| docs/evidence/checkout-receipt-tests-before.txt, tests-targeted.txt and tests-after.txt | Baseline failures, targeted endpoint proof and full 249 tests with 685 assertions |
+| docs/evidence/checkout-latest-tests.txt and checkout-package-fixture.json | Prior full suite and installed version or fixture identity evidence |
+| docs/evidence/checkout-receipt-chrome.json, native-orders.json, refund.json and restored-cart.webp | Sanitized native purchase, persisted order language, stock and native refund evidence |
+| docs/evidence/checkout-receipt-classic-mode.json, hpos-mode.json, hpos-block-mode.json and hpos-nosync-classic-mode.json | Native checkout and storage mode configuration evidence |
+| docs/evidence/checkout-receipt-hpos-sync.txt, hpos-restore-sync.txt, cleanup-sync.txt and cleanup.json | Native synchronization and guarded restoration of owned fixtures |
+| docs/evidence/checkout-receipt-package-build.txt, package-contents.json, plugin-check.json and lint.txt | Actual installed release, complete manifest, complete checker and syntax proof |
+| docs/evidence/checkout-receipt-forum-review.json and wordpress-support-capture.json | Eight captured topic content dispositions with exact limits |
+| docs/evidence/batch-inventory.json | Complete current package dispositions and report status |
+| docs/TESTING.md, ACCEPTANCE.md, BATCHES.md, ISSUES.md, JOURNAL.md, goal.txt and this review | Runtime instructions, scoped acceptance, shared cause and remaining gates |
+
+The new filter does not grant order access or mutate orders. It preserves native WooCommerce authorization and query values. Receipt URL evidence excludes order keys and customer details. The 12 native purchases and one refund cover only the documented simple offline matrix. All owned checkout fixtures and settings were restored. Raw Plugin Check findings remain visible with inspected dispositions. Full release clearance remains pending.

@@ -12,6 +12,10 @@ wp=("${compose[@]}" exec -T -u www-data -e WP_CLI_CACHE_DIR=/tmp/wp-cli-cache wo
 if ! "${wp[@]}" core is-installed; then
   "${wp[@]}" core install --url=http://localhost:8098 --title='WooPoly test lab' --admin_user=lab-admin --admin_password="$(openssl rand -hex 24)" --admin_email=admin@example.test --skip-email
 fi
+wordpress_version=${WORDPRESS_VERSION:-7.1.3}
+if [[ $("${wp[@]}" core version) != "$wordpress_version" ]]; then
+  "${wp[@]}" core update --version="$wordpress_version"
+fi
 "${wp[@]}" plugin install woocommerce --version=11.1.2 --activate
 "${wp[@]}" plugin install polylang --version=3.8.10 --activate
 "${wp[@]}" eval-file wp-content/plugins/woo-poly-integration/tests/setup-lab.php

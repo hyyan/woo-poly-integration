@@ -37,6 +37,28 @@ class Endpoints
         /* Register endpoints to translate as polulang strings */
         $this->regsiterEndpointsTranslations();
 
+        add_filter('woocommerce_get_endpoint_url', function ($url, $endpoint, $value, $permalink) {
+            $language = pll_current_language();
+            $key = array_search($endpoint, WC()->query->get_query_vars(), true);
+            if (!$language || $key === false || !isset($this->endpointSources[$key])) {
+                return $url;
+            }
+            $translated = pll_translate_string($this->endpointSources[$key], $language);
+            if ($translated === $endpoint) { return $url; }
+            if (!get_option('permalink_structure')) {
+                $query = array();
+                wp_parse_str((string) wp_parse_url($url, PHP_URL_QUERY), $query);
+                return array_key_exists($endpoint, $query)
+                    ? add_query_arg($translated, $query[$endpoint], remove_query_arg($endpoint, $url))
+                    : $url;
+            }
+            $parts = explode('?', $url, 2);
+            $suffix = '/'.user_trailingslashit($value ? trailingslashit($endpoint).$value : $endpoint);
+            if (substr($parts[0], -strlen($suffix)) !== $suffix) { return $url; }
+            $parts[0] = substr($parts[0], 0, -strlen($suffix)).'/'.user_trailingslashit($value ? trailingslashit($translated).$value : $translated);
+            return implode('?', $parts);
+        }, 10, 4);
+
         add_action(
                 'init', array($this, 'rewriteEndpoints'), 11
         );

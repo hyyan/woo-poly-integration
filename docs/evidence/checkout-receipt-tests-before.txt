@@ -1,0 +1,63 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+........[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m[41;37mF[0m.                                                    14 / 14 (100%)
+
+Time: 00:00.043, Memory: 103.05 MB
+
+There were 5 failures:
+
+1) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#0 with data ('/%postname%/', 'https://example.test/de/checkout/', 'https://example.test/de/check...n/123/')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'https://example.test/de/checkout/kauf-abgeschlossen/123/'
++'https://example.test/de/checkout/purchase-complete/123/'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:88
+
+2) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#1 with data ('/%postname%', 'https://example.test/de/checkout/', 'https://example.test/de/check...en/123')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'https://example.test/de/checkout/kauf-abgeschlossen/123'
++'https://example.test/de/checkout/purchase-complete/123'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:88
+
+3) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#2 with data ('/%postname%/', 'https://example.test/de/check...%26two', 'https://example.test/de/check...%26two')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'https://example.test/de/checkout/kauf-abgeschlossen/123/?filter=one%26two'
++'https://example.test/de/checkout/purchase-complete/123/?filter=one%26two'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:88
+
+4) EndpointLanguageSwitchTest::testNativeEndpointUrlUsesLanguageSelectedAfterInitialization#3 with data ('', 'https://example.test/?page_id...ang=de', 'https://example.test/?page_id...en=123')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'https://example.test/?page_id=42&lang=de&kauf-abgeschlossen=123'
++'https://example.test/?page_id=42&lang=de&purchase-complete=123'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:88
+
+5) EndpointLanguageSwitchTest::testLateLanguageKeepsQueryAddedByExistingEndpointFilter
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'https://example.test/de/checkout/kauf-abgeschlossen/123/?tracking=one%26two'
++'https://example.test/de/checkout/purchase-complete/123/?tracking=one%26two'
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/EndpointLanguageSwitchTest.php:106
+
+[37;41mFAILURES![0m
+[37;41mTests: 14[0m[37;41m, Assertions: 14[0m[37;41m, Failures: 5[0m[37;41m.[0m

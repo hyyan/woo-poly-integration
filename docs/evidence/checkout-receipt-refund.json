@@ -1,0 +1,11 @@
+{
+    "id": 41,
+    "status": "refunded",
+    "refund_total": 9.95,
+    "language": "en",
+    "refund_count": 1,
+    "stock": {
+        "en": 16,
+        "de": 16
+    }
+}
