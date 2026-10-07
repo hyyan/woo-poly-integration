@@ -1,0 +1,8 @@
+{
+  "source_url": "https://plugins.svn.wordpress.org/polylang/tags/2.0.1/admin/admin-links.php",
+  "sha256": "ba1dadc75f13cd2dc502d9e91f26c93444f220016c447b453af39ac4e5debe63",
+  "native_method": "PLL_Admin_Links::get_new_post_translation_link",
+  "filter": "pll_get_new_post_translation_link",
+  "native_product_nonce_present": false,
+  "verification": "Exact native link method executed in older compatibility harness. Full Polylang 2.0.1 runtime not claimed."
+}

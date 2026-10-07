@@ -317,3 +317,5 @@ Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and shari
 | CHECK-006 | Editor GET backfills metadata on a source with read permission only | Corrected by moving backfill into existing native product save callback | Three baseline failures, full suites, native Polylang Publish, older save boundary and archive checks pass. Checker count remains 147. Source commit 4564602 |
 
 | CHECK-007 | Report, category copy and legacy attribute paths do not consistently validate registered languages | Corrected using the existing shared language request helper | Three baseline failures, full suites, native German and combined reports, category copy, older behavior and archive hashes pass. Twelve rows removed, source commit 4e89b8e |
+
+| CHECK-008 | Product creation copy hooks run before native Polylang verification | Corrected native creation nonce and edit_products guard in shared request helper, legacy product links signed through native filter | Twenty one denied cases and legacy link baseline failure, full suites, shop manager Chrome creation, older copy paths and exact archive checks pass. Source commit 344363e, checker count remains 135 |

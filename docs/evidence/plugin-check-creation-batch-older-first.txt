@@ -1,0 +1,4 @@
+First older probe failed: Error: The link you followed has expired.
+The simulated GET was not mirrored into REQUEST, unlike a native request.
+Owned failed probe products and children were identified and removed.
+Corrected request probe passes and performs guaranteed fixture cleanup.

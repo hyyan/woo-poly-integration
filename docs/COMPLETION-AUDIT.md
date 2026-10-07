@@ -1,4 +1,4 @@
-Current status: incomplete. The Plugin Check remediation goal remains active. The latest installed scan has 135 findings, 45 errors and 90 warnings. Earlier completion conclusions below are historical and do not satisfy this active goal. Current evidence is recorded in PLUGIN-CHECK-REMEDIATION.md and the plugin-check-language-batch reports.
+Current status: incomplete. The Plugin Check remediation goal remains active. The latest installed scan has 135 findings, 45 errors and 90 warnings. Earlier completion conclusions below are historical and do not satisfy this active goal. Current evidence is recorded in PLUGIN-CHECK-REMEDIATION.md and the plugin-check-creation-batch reports.
 
 # Maintenance completion audit
 

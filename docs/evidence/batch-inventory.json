@@ -22445,7 +22445,7 @@
       "disposition": "Reviewed actual constant and call, resolved public name woo-poly.pages.list. Existing extension contract retained. Naming review only, broader feature behavior remains in acceptance matrix."
     }
   ],
-  "package_scan": "plugin-check-language-batch-plugin-check.json",
+  "package_scan": "plugin-check-creation-batch-plugin-check.json",
   "package_checker_findings": [
     {
       "line": 77,
@@ -22988,7 +22988,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 243,
+      "line": 250,
       "column": 18,
       "type": "ERROR",
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
@@ -22997,7 +22997,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 547,
+      "line": 554,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_key",
@@ -23006,7 +23006,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 548,
+      "line": 555,
       "column": 17,
       "type": "WARNING",
       "code": "WordPress.DB.SlowDBQuery.slow_db_query_meta_value",
@@ -23015,7 +23015,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 635,
+      "line": 642,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23024,7 +23024,7 @@
       "file": "src/Hyyan/WPI/Utilities.php"
     },
     {
-      "line": 659,
+      "line": 666,
       "column": 24,
       "type": "WARNING",
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
@@ -23321,7 +23321,7 @@
       "file": "src/Hyyan/WPI/Product/Variable.php"
     },
     {
-      "line": 229,
+      "line": 249,
       "column": 19,
       "type": "WARNING",
       "code": "WordPress.Security.NonceVerification.Recommended",
@@ -23663,9 +23663,9 @@
       "file": "src/Hyyan/WPI/Emails.php"
     }
   ],
-  "package_archive_sha256": "be8a64971b15de8ab99260e3714b33e428dc0a2da270f9310f7ff361cdaa958d",
+  "package_archive_sha256": "6b0f45a411a21cacc16669b069ccf7fec1dd7c2adaff444a6605c10538ffd04a",
   "package_file_count": 73,
-  "previous_package_scan": "plugin-check-screen-batch-plugin-check.json",
+  "previous_package_scan": "plugin-check-language-batch-plugin-check.json",
   "forum_counts": {
     "captured_pages": 423,
     "unique_topics": 413,
@@ -23681,9 +23681,9 @@
     "remaining": 135,
     "errors": 45,
     "warnings": 90,
-    "resolved_this_batch": 12,
+    "resolved_this_batch": 0,
     "dispositions_are_not_fixes": true,
-    "source_commit": "4e89b8e",
+    "source_commit": "344363e",
     "translation_exception_acceptance": "awaiting explicit maintainer response",
     "translation_findings_requested_for_exception": 44,
     "catalog_loading_exception": "verified compatibility need, not accepted",
