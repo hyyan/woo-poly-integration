@@ -328,3 +328,8 @@ Prefix source batch committed as df5c6fb, fix: prefix plugin callbacks and shari
 
 
 | CHECK-011 | Display name violates the checker trademark phrase requirements in both release headers | Use Hyyan Integration for WooCommerce and Polylang while retaining directory identity and public contracts | Full suites, native plugin row and settings link, older metadata and exact archive checks pass. Source commit f659792. Two warnings removed, 127 remain |
+
+
+## CHECK-012 Published minimum requirement
+
+The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers stated 4.0.0 while the runtime minimum remained 3.0.0. Both headers now retain 3.0.0. The failing release contract regression passes after correction. Actual published archive upgrade, exact eight product and settings comparisons, and English and German variable selection pass on WooCommerce 3.0.0. Full suites pass 388 tests and 1326 assertions. Installed Plugin Check remains 127 findings. Evidence uses published-minimum-batch. The overall goal is incomplete.

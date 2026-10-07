@@ -1,3 +1,5 @@
+Historical exception research. The current completion requirement is zero reported findings. Acceptance of an exception is no longer a completion path. Reasons below remain source review evidence and do not waive the findings.
+
 # Translation findings awaiting explicit acceptance
 
 These 44 installed Plugin Check errors are still open. No exception has been accepted and no checker suppression is proposed. The current release scan retains all of them.

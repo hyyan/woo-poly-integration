@@ -1,3 +1,5 @@
+Historical exception research. The current completion requirement is zero reported findings. Acceptance of an exception is no longer a completion path. Reasons below remain source review evidence and do not waive the findings.
+
 # Precise remaining compatibility findings
 
 These 83 findings remain open. This document requests review of each listed finding and does not count retained code as a fix. No suppression or exception has been accepted.

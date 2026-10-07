@@ -772,3 +772,25 @@ Installed Plugin Check reports 127 findings, 45 errors and 82 warnings. Exactly 
 The four original reported boundaries and actual current and older WooCommerce removal clients are inspected again. Both clients already send security from delete_variations_nonce. The plugin scripts contain no independent sender for the removal action. SECURITY-REVIEW-HANDOFF.md now states the exact prepared string comparison and current verification. The full changed file history through the source snapshot maps each file to its actual commit subjects. COMMITS.md records all 75 Conventional Commit subjects through f659792 and file counts excluding tests and configuration.
 
 The 44 translation findings and 83 precise compatibility findings remain open and unaccepted. The compatibility source fingerprints were refreshed after the header change. No suppression, remote push, publication, submission or completion claim. The goal remains active. Evidence uses plugin-check-display-name-batch.
+
+
+## Published release upgrade and strict completion requirements
+
+The completion requirement is zero installed Plugin Check findings, including warnings. Exception acceptance is no longer a completion path. Upgrade compatibility must be verified against the actual last published archive through automated assertions and real browser workflows. No completion or directory approval is claimed.
+
+The official 1.5.0 archive declares WooCommerce 3.0.0, while the prepared headers declared 4.0.0. The runtime minimum is already 3.0.0. Both release headers now retain the published minimum. ReleaseUpgradeContractTest reproduces the header mismatch before correction and passes afterward. The complete suite passes 388 tests with 1326 assertions.
+
+The published archive was installed in a separate disposable store on WordPress 5.4.2, WooCommerce 3.0.0, Polylang 2.7.4 and PHP 7.4.9, then updated in place to the prepared archive. Eight products retain exact metadata, type, prices, quantities, SKU and language. Feature, metadata and Polylang settings remain exact. Both variation relationships remain exact. Chrome verifies the old active plugin, the new active plugin, both size selections, prices twelve and fourteen, default small and stock twenty in English and German. This batch does not establish the full feature upgrade matrix.
+
+The first settings comparison captured the baseline before the published version's first native admin_init. The original syncPostParent method changes the same Polylang setting. The actual published baseline was repeated through native admin before capture. The comparison was repeated without removing any setting assertion or changing production logic.
+
+An input collection prototype passed the full existing suite but retained all three sanitization findings. The ineffective source changes were removed, the previous source archive restored, and no checker reduction was counted. Its test and scanner evidence remains under plugin-check-normalized-lists-batch.
+
+Published minimum evidence uses published-minimum-batch. All 73 source, manifest and installed file hashes match the archive. Installed PHP and PHP 7.0 syntax pass. The actual scan remains 127 findings, 45 errors and 82 warnings, with no added or removed codes. The source correction is an upgrade compatibility correction, not a checker reduction. Remaining findings and the complete upgrade feature matrix remain unfinished.
+
+
+The installed package also received the runtime enabled Plugin Check scan. The first attempt loaded the checker CLI from a different site's installation without loading its plugin constants. The checker itself failed before scanning. Installing the same existing Plugin Check 2.1.0 tool in the package test site and using its own CLI loader corrected the setup. The successful runtime enabled scan retains 127 findings and empty diagnostics. No production checker filter or suppression was added.
+
+The release report gate exits with failure for either errors or warnings. It also rejects an empty report and failed checker output. Five automated input cases verify clean, warning, error, empty and tool failure results. The real installed report returns failure with 45 errors and 82 warnings. This is an incomplete release result. The existing suite runner now sets the same 256 MB test process limit used for successful verification, leaving production configuration unchanged.
+
+Owned upgrade products and the fixture option were removed. The temporary password file was removed and Chrome returned to blank. The disposable upgrade store and its plugins remain available for further upgrade scenarios.

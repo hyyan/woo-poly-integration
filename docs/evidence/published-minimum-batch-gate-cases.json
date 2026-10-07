@@ -1,0 +1,11 @@
+{
+  "cases": [
+    "clean report accepted",
+    "warning report rejected",
+    "error report rejected",
+    "empty report rejected",
+    "tool failure rejected"
+  ],
+  "passed": 5,
+  "installed_report_accepted": false
+}

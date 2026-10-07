@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "f659792933c313cd019d6d3a83927f5589762d5d",
-  "changed_files": 1503,
+  "through_commit": "5f70301a693e5144f2cea6f8abea6f437a3a342a",
+  "changed_files": 1522,
   "files": [
     {
       "file": ".exclude-list",
@@ -62,6 +62,10 @@
         {
           "sha": "f659792933c313cd019d6d3a83927f5589762d5d",
           "subject": "fix: use compliant plugin display name in release headers"
+        },
+        {
+          "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
+          "subject": "fix: retain published WooCommerce minimum requirement"
         }
       ]
     },
@@ -220,6 +224,10 @@
         {
           "sha": "7f44436c69e8fd2b0cf5c09cc10262d542a3bd91",
           "subject": "docs: record shared lookup fixes and precise open exceptions"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -486,6 +494,10 @@
         {
           "sha": "7f44436c69e8fd2b0cf5c09cc10262d542a3bd91",
           "subject": "docs: record shared lookup fixes and precise open exceptions"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -684,6 +696,10 @@
         {
           "sha": "7f44436c69e8fd2b0cf5c09cc10262d542a3bd91",
           "subject": "docs: record shared lookup fixes and precise open exceptions"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -734,6 +750,10 @@
         {
           "sha": "7f44436c69e8fd2b0cf5c09cc10262d542a3bd91",
           "subject": "docs: record shared lookup fixes and precise open exceptions"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -780,6 +800,10 @@
         {
           "sha": "7f44436c69e8fd2b0cf5c09cc10262d542a3bd91",
           "subject": "docs: record shared lookup fixes and precise open exceptions"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -862,6 +886,10 @@
         {
           "sha": "a9ba8ca084adee8c87595b61c5077049ecdfef3c",
           "subject": "docs: record verified creation guards and legacy link support"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -882,6 +910,10 @@
         {
           "sha": "ba3382210b7bf0cb39a13d5ec97b430d5cee214b",
           "subject": "docs: record verified maintenance batches and release evidence"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -964,6 +996,10 @@
         {
           "sha": "ba3382210b7bf0cb39a13d5ec97b430d5cee214b",
           "subject": "docs: record verified maintenance batches and release evidence"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -2244,6 +2280,16 @@
         {
           "sha": "8f012e0b80fb77560a00218241cbf1b4b36af1ed",
           "subject": "docs: verify conventional commit subjects and release state"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/current-maintenance-file-history.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -9792,6 +9838,146 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-display-name-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-native-client.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-older-client.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-older-metadata.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-display-name-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-exact-id-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -10598,6 +10784,10 @@
         {
           "sha": "7f44436c69e8fd2b0cf5c09cc10262d542a3bd91",
           "subject": "docs: record shared lookup fixes and precise open exceptions"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -14890,6 +15080,10 @@
         {
           "sha": "7f44436c69e8fd2b0cf5c09cc10262d542a3bd91",
           "subject": "docs: record shared lookup fixes and precise open exceptions"
+        },
+        {
+          "sha": "e641f413ce5d7d5ae18e7d7f922e216ad2f973e2",
+          "subject": "docs: update release verification and remaining checker decisions"
         }
       ]
     },
@@ -14948,6 +15142,10 @@
         {
           "sha": "f659792933c313cd019d6d3a83927f5589762d5d",
           "subject": "fix: use compliant plugin display name in release headers"
+        },
+        {
+          "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
+          "subject": "fix: retain published WooCommerce minimum requirement"
         }
       ]
     },
@@ -15680,6 +15878,16 @@
       ]
     },
     {
+      "file": "tests/bin/prepare-published-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
+          "subject": "fix: retain published WooCommerce minimum requirement"
+        }
+      ]
+    },
+    {
       "file": "tests/bin/run.sh",
       "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
       "commits": [
@@ -15694,6 +15902,10 @@
         {
           "sha": "390162c909f3188326f5caac723de0078f4884d0",
           "subject": "fix: secure settings output and restrict page maintenance"
+        },
+        {
+          "sha": "5f70301a693e5144f2cea6f8abea6f437a3a342a",
+          "subject": "test: enforce clean checker reports for release verification"
         }
       ]
     },
@@ -15712,6 +15924,26 @@
         {
           "sha": "c66e470eb6d58ecd79217f6f8e58a04b1ab916a8",
           "subject": "fix: preserve translated cart state and validation"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/verify-plugin-check-report.py",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "5f70301a693e5144f2cea6f8abea6f437a3a342a",
+          "subject": "test: enforce clean checker reports for release verification"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/verify-published-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
+          "subject": "fix: retain published WooCommerce minimum requirement"
         }
       ]
     },
@@ -16028,6 +16260,16 @@
         {
           "sha": "02c2b76d9c575e1a8bc66e61e6be2d8033e219e7",
           "subject": "fix: match normalized variation relationships exactly"
+        }
+      ]
+    },
+    {
+      "file": "tests/integration/ReleaseUpgradeContractTest.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
+          "subject": "fix: retain published WooCommerce minimum requirement"
         }
       ]
     },

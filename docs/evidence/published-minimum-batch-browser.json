@@ -1,0 +1,40 @@
+{
+  "baseline": {
+    "stage": "published-1.5.0",
+    "title": "Published upgrade variable en – Published release upgrade acceptance",
+    "price": "£12.00 – £14.00",
+    "defaultSize": "small",
+    "variationId": "7",
+    "cartButton": "Add to cart",
+    "stock": "20 in stock"
+  },
+  "after": [
+    {
+      "language": "en",
+      "size": "large",
+      "variationId": "8",
+      "price": "£14.00",
+      "stock": "20 in stock",
+      "buttonEnabled": true
+    },
+    {
+      "language": "de-DE",
+      "title": "Published upgrade variable de – Published release upgrade acceptance",
+      "size": "small",
+      "variationId": "11",
+      "price": "£12.00",
+      "stock": "20 in stock",
+      "buttonEnabled": true
+    },
+    {
+      "language": "de",
+      "size": "large",
+      "variationId": "12",
+      "price": "£14.00",
+      "stock": "20 in stock",
+      "buttonEnabled": true
+    }
+  ],
+  "scope": "Actual published 1.5.0 archive updated in place to maintenance 1.5.1 on WordPress 5.4.2, WooCommerce 3.0.0, Polylang 2.7.4 and PHP 7.4.9. Only the listed upgrade cases are verified.",
+  "first_probe": "The initial Polylang settings comparison ran before the published version's first admin_init. The original version's syncPostParent performs the same update. The baseline was repeated through native admin before capturing settings. No production logic or assertion was removed."
+}

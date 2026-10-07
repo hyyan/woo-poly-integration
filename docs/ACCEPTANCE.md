@@ -1,3 +1,5 @@
+Current completion requirement: zero installed Plugin Check findings and preserved supported features after an update from the actual published 1.5.0 archive, verified in tests and Chrome. The published-minimum-batch proves exact eight product and settings preservation plus bilingual variation selection on WooCommerce 3.0.0. The full published archive upgrade feature matrix remains unfinished. Earlier feature acceptance below remains historical evidence and does not replace that upgrade matrix.
+
 # Original feature acceptance
 
 The README feature list defines the preservation contract. A pending row blocks a complete compatibility claim. Each row needs Chrome steps, expected and actual results, saved evidence and relevant automated regression coverage.

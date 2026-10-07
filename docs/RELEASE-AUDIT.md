@@ -1,6 +1,6 @@
 # Current maintenance release audit
 
-Current snapshot: source f659792, 387 tests with 1323 assertions, 73 matching installed files and 127 open Plugin Check findings. SECURITY-REVIEW-HANDOFF.md is the current release handoff. The dated batch records and historical artifact sections below retain earlier evidence.
+Current snapshot: production correction 60ce0d0, verification gate 5f70301, 388 tests with 1326 assertions, 73 matching installed files and 127 open findings from static and runtime enabled Plugin Check. Completion requires zero findings and the complete published version upgrade feature matrix. SECURITY-REVIEW-HANDOFF.md is the current release handoff. The dated batch records and historical artifact sections below retain earlier evidence.
 
 The four reported variation removal issues are corrected in the inspected source. Plugin Check remediation is active. The prior disposition review did not complete resolution of the 230 remaining findings. Directory review and publication remain manual. This document records current evidence and does not replace the individual report dispositions.
 
