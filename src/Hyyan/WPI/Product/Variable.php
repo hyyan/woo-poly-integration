@@ -12,6 +12,8 @@ namespace Hyyan\WPI\Product;
 
 use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Utilities;
+use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\Admin\Settings;
 
 /**
  * Variable.
@@ -32,6 +34,9 @@ class Variable
         add_action('save_post_product', array($this, 'handleNewProduct'), 5, 3);
         //for updates use do_action( 'woocommerce_after_' . $this->object_type . '_object_save', $this, $this->data_store );
         add_action( 'woocommerce_after_product_object_save', array( $this, 'after_product_save' ), 10, 2 );
+        if ('on' === Settings::getOption('importsync', Features::getID(), 'on')) {
+            add_action('woocommerce_product_import_inserted_product_object', array($this, 'after_product_save'), 20, 2);
+        }
 
         // Remove variations
         add_action('wp_ajax_woocommerce_remove_variations', array($this, 'removeVariations'), 9);
@@ -68,6 +73,12 @@ class Variable
      * wrapper for compatibility with woocommerce_after_product_save action 
      */
     public function after_product_save($product, $data_store){
+        if (doing_action('woocommerce_product_import_inserted_product_object') && $product->is_type('variation')) {
+            $product = wc_get_product($product->get_parent_id());
+            if (!$product) {
+                return;
+            }
+        }
         $productid = $product->get_id();
         $post = get_post($productid);
         $this->duplicateVariations($productid, $post, true);
@@ -111,7 +122,8 @@ class Variable
         }
 
         //JM2021: fast exit from repeated saves
-        if ($ID==$last_id){
+        $importing = doing_action('woocommerce_product_import_inserted_product_object');
+        if ($ID==$last_id && !$importing){
             //was proved this is called
             //error_log('woopoly Variable:duplicateVariations quit from repeated save event on ' . $ID);
             return false;
@@ -122,7 +134,8 @@ class Variable
         }
 
         global $pagenow;
-        if (!in_array($pagenow, array('post.php', 'post-new.php'))  || $post->post_type !== 'product') {
+        if ((!$importing && !in_array($pagenow, array('post.php', 'post-new.php')))
+            || $post->post_type !== 'product') {
             //note, arrives here for example when duplicating variable product from products screen
             return false;
         }
@@ -181,17 +194,22 @@ class Variable
             unset($langs[$key]);
         }
         remove_action('woocommerce_after_product_object_save', array($this, 'after_product_save'), 10);
-        add_filter( 'woocommerce_hide_invisible_variations', function() {
-          return false;
-        } );
-        foreach ($langs as $lang) {
-            $variation = new Variation(
-                    $from,
-                Utilities::getProductTranslationByObject($product, $lang)
-            );
-            $variation->duplicate();
+        $includeInvisibleVariations = static function () {
+            return false;
+        };
+        add_filter('woocommerce_hide_invisible_variations', $includeInvisibleVariations);
+        try {
+            foreach ($langs as $lang) {
+                $variation = new Variation(
+                        $from,
+                    Utilities::getProductTranslationByObject($product, $lang)
+                );
+                $variation->duplicate();
+            }
+        } finally {
+            remove_filter('woocommerce_hide_invisible_variations', $includeInvisibleVariations);
+            add_action('woocommerce_after_product_object_save', array($this, 'after_product_save'), 10, 3);
         }
-        add_action('woocommerce_after_product_object_save', array($this, 'after_product_save'), 10, 3);
 
         /*
                 remove_action('save_post', array($this, __FUNCTION__), 10);
