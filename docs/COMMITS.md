@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 92 maintenance commits after the baseline through 24325be. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 94 maintenance commits after the baseline through 4ac655a. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -98,5 +98,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | 22ace96 | 3 | fix: expose verified product creation requests to security checks |
 | 9e8b6db | 39 | docs: record verified creation boundary and native acceptance |
 | 24325be | 4 | fix: verify creation callbacks and resolve attribute screens |
+| 6592adb | 32 | docs: record grouped request and screen verification |
+| 4ac655a | 2 | fix: resolve coupon screens and verify translation warning bypass |
 
-Latest verification passes 441 tests with 1491 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 68 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 446 tests with 1498 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 64 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

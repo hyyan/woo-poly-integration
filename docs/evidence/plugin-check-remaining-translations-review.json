@@ -1,6 +1,6 @@
 {
-  "source_commit": "24325be9498d1e36d9fc935e4fb671449f8d8924",
-  "installed_total": 68,
+  "source_commit": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
+  "installed_total": 64,
   "open_findings": 22,
   "accepted_exceptions": 0,
   "findings": [
@@ -192,7 +192,7 @@
       "message": "Mismatched text domain. Expected 'woo-poly-integration' but got 'woocommerce'.",
       "docs": "https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/",
       "file": "src/Hyyan/WPI/Coupon.php",
-      "source_sha256": "0937fb729d240fce13a7c5002e7149dfcedbf1207661f4bb677cda29f72f6885"
+      "source_sha256": "8f829142a4e51787edc8ef303eca1b7748fc5a9065c5d4490ee96b940b2f6d65"
     },
     {
       "line": 12,

@@ -1,36 +1,9 @@
 {
-  "source_commit": "24325be9498d1e36d9fc935e4fb671449f8d8924",
-  "installed_total": 68,
+  "source_commit": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
+  "installed_total": 64,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
-      {
-        "line": 155,
-        "column": 70,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Coupon.php"
-      },
-      {
-        "line": 155,
-        "column": 98,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Coupon.php"
-      },
-      {
-        "line": 155,
-        "column": 140,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Coupon.php"
-      },
       {
         "line": 156,
         "column": 20,
@@ -273,15 +246,6 @@
         "message": "Processing form data without nonce verification.",
         "docs": "",
         "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
-      },
-      {
-        "line": 484,
-        "column": 19,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Variable.php"
       },
       {
         "line": 249,

@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "24325be9498d1e36d9fc935e4fb671449f8d8924",
-  "changed_files": 1675,
+  "through_commit": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
+  "changed_files": 1694,
   "files": [
     {
       "file": ".exclude-list",
@@ -204,6 +204,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -276,6 +280,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -570,6 +578,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -800,6 +812,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -878,6 +894,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -944,6 +964,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -1062,6 +1086,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -1110,6 +1138,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -1216,6 +1248,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -2530,6 +2566,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -2552,6 +2592,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -10480,6 +10524,186 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-browser-products.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-browser-storefront.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-entry-screen-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-exact-id-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -11884,6 +12108,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -11902,6 +12130,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -16920,6 +17152,10 @@
         {
           "sha": "9e8b6db6404f681ad94f383776af31ffd477a5c0",
           "subject": "docs: record verified creation boundary and native acceptance"
+        },
+        {
+          "sha": "6592adbd07a268171473e068cad8fce5d90e5dea",
+          "subject": "docs: record grouped request and screen verification"
         }
       ]
     },
@@ -17094,6 +17330,10 @@
         {
           "sha": "b7b33b0d52d6bc761da9862be5d00497dc764911",
           "subject": "fix: verify stock edit requests and use native diagnostics"
+        },
+        {
+          "sha": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
+          "subject": "fix: resolve coupon screens and verify translation warning bypass"
         }
       ]
     },
@@ -17430,6 +17670,10 @@
         {
           "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
           "subject": "fix: verify creation callbacks and resolve attribute screens"
+        },
+        {
+          "sha": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
+          "subject": "fix: resolve coupon screens and verify translation warning bypass"
         }
       ]
     },
@@ -17788,6 +18032,16 @@
       ]
     },
     {
+      "file": "tests/admin/CouponScreenSecurityTest.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
+          "subject": "fix: resolve coupon screens and verify translation warning bypass"
+        }
+      ]
+    },
+    {
       "file": "tests/admin/PageMaintenanceSecurityTest.php",
       "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
       "commits": [
@@ -18106,6 +18360,10 @@
         {
           "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
           "subject": "fix: verify creation callbacks and resolve attribute screens"
+        },
+        {
+          "sha": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
+          "subject": "fix: resolve coupon screens and verify translation warning bypass"
         }
       ]
     },

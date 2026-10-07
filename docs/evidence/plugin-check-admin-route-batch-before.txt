@@ -1,0 +1,27 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+[41;37mF[0m.[41;37mF[0m[41;37mF[0m.                                                               5 / 5 (100%)
+
+Time: 00:00.066, Memory: 109.05 MB
+
+There were 3 failures:
+
+1) InlineScriptSecurityTest::testCouponStringsUseTheResolvedNativeScreen
+Expectation failed for method name is "registerCouponStringsForTranslation" when invoked 1 time.
+Method was expected to be called 1 time, actually called 0 times.
+
+2) InlineScriptSecurityTest::testCouponRegistrationWaitsForNativeScreenResolution
+Failed asserting that false is not false.
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:109
+
+3) InlineScriptSecurityTest::testUnverifiedTranslationQueryCannotSuppressVariableWarning
+Failed asserting that '' [ASCII](length: 0) contains "HYYAN_WPI_VARIABLES" [ASCII](length: 19).
+
+/var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/InlineScriptSecurityTest.php:120
+
+[37;41mFAILURES![0m
+[37;41mTests: 5[0m[37;41m, Assertions: 6[0m[37;41m, Failures: 3[0m[37;41m.[0m
