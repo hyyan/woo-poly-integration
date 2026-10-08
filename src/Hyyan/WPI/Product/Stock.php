@@ -92,7 +92,7 @@ class Stock {
 			$product_translations = [];
             if ($product_with_stock->is_type( 'variation' )) {
                 $base_variation_id = Utilities::get_translated_variation($product_with_stock->get_id(),pll_default_language());               
-    			$product_translations = Variation::getRelatedVariation( 
+            $product_translations = (array) Variation::getRelatedVariation(
                     get_post_meta( $base_variation_id, Variation::DUPLICATE_KEY, true )
                     , true );
                 if ($base_variation_id!=$product_id_with_stock){

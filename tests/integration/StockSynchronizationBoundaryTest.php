@@ -67,4 +67,48 @@ final class StockSynchronizationBoundaryTest extends TestCase
         return array('simple'=>array('simple'),'variation'=>array('variation'));
     }
 
+    #[PHPUnit\Framework\Attributes\DataProvider('invalidSourceRelationships')]
+    public function testNativeVariationLinkSurvivesInvalidSourceRelationship(?string $source): void
+    {
+        $products = array();
+        $parents = array();
+        try {
+            foreach (array('en', 'de') as $lang) {
+                $parent = new WC_Product_Variable();
+                $parent->set_name('Invalid source stock ' . $lang);
+                $parent->set_status('publish');
+                $parent->save();
+                pll_set_post_language($parent->get_id(), $lang);
+                $parents[$lang] = $parent->get_id();
+                $child = new WC_Product_Variation();
+                $child->set_parent_id($parent->get_id());
+                $child->set_status('publish');
+                $child->set_regular_price('12');
+                $child->set_manage_stock(true);
+                $child->set_stock_quantity(5);
+                $child->save();
+                pll_set_post_language($child->get_id(), $lang);
+                $products[$lang] = $child->get_id();
+            }
+            pll_save_post_translations($parents);
+            pll_save_post_translations($products);
+            update_post_meta($products['de'], Variation::DUPLICATE_KEY, '000' . $products['en']);
+            if ($source !== null) { update_post_meta($products['en'], Variation::DUPLICATE_KEY, $source); }
+            self::assertSame($products['en'], pll_get_post($products['de'], 'en'));
+            wc_update_product_stock(wc_get_product($products['de']), 4, 'set');
+            self::assertSame(4, wc_get_product($products['de'])->get_stock_quantity());
+            self::assertSame(4, wc_get_product($products['en'])->get_stock_quantity());
+            self::assertSame(10, has_action('woocommerce_variation_set_stock', array(Stock::class, 'SyncStockVariation')));
+        } finally {
+            foreach ($products as $id) { wp_delete_post($id, true); }
+            foreach ($parents as $id) { wp_delete_post($id, true); }
+        }
+    }
+
+    public static function invalidSourceRelationships(): array
+    {
+        return array('missing' => array(null), 'malformed' => array('not-a-variation'),
+            'overflow' => array((string) PHP_INT_MAX . '0'));
+    }
+
 }

@@ -155,4 +155,27 @@ final class VariationRelationshipPathsTest extends TestCase
         return array('canonical' => array('canonical', true), 'padded' => array('padded', true),
             'trailing space' => array('space', false), 'text suffix' => array('suffix', false));
     }
+    #[DataProvider('invalidSourceMetadata')]
+    public function testRepeatedCopyRetainsVariationWithInvalidSourceMetadata(?string $value): void
+    {
+        $padded = '000' . $this->children['en'];
+        update_post_meta($this->children['de'], Variation::DUPLICATE_KEY, $padded);
+        delete_post_meta($this->children['en'], Variation::DUPLICATE_KEY);
+        if ($value !== null) { update_post_meta($this->children['en'], Variation::DUPLICATE_KEY, $value); }
+        $copy = new Variation(wc_get_product($this->parents['en']), wc_get_product($this->parents['de']));
+        $copy->duplicate();
+        $copy->duplicate();
+        self::assertNotNull(get_post($this->children['de']));
+        self::assertSame($padded, get_post_meta($this->children['de'], Variation::DUPLICATE_KEY, true));
+        $children = get_posts(array('post_type' => 'product_variation', 'post_parent' => $this->parents['de'],
+            'post_status' => 'any', 'numberposts' => -1, 'lang' => '', 'fields' => 'ids'));
+        self::assertSame(array($this->children['de']), $children);
+    }
+
+    public static function invalidSourceMetadata(): array
+    {
+        return array('missing' => array(null), 'malformed' => array('not-a-variation'),
+            'overflow' => array((string) PHP_INT_MAX . '0'));
+    }
+
 }

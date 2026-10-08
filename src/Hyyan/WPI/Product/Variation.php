@@ -340,6 +340,8 @@ class Variation
         $keys           = array_unique(array_merge(array_keys($metas_from), array_keys($metas_to)));
         /* metas disabled for sync */
         $metas_nosync   = Meta::getDisabledProductMetaToCopy();
+        // Variation insertion manages the relationship independently of copied fields.
+        $metas_nosync[] = self::DUPLICATE_KEY;
         /*
          * _variation_description meta is a text-based string and generally needs to be translated.
          * _variation_description meta is copied from product in default language to the translations
