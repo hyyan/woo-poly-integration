@@ -1,5 +1,5 @@
 {
-  "source_commit": "df79acb",
+  "source_commit": "c2487d4",
   "installed_total": 13,
   "open_findings": 13,
   "accepted_exceptions": 0,
@@ -7,13 +7,14 @@
     {
       "id": "EX-001",
       "file": "src/Hyyan/WPI/Utilities.php",
-      "line": 272,
+      "line": 274,
       "column": 18,
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
       "method": "jsScriptWrapper",
       "reason": "Immediate trusted script wrapper escapes the element ID. All seven production callers use fixed code or WordPress JSON with HTML hex flags for dynamic values. HTML escaping the script body would break those controls and the public returned script contract.",
       "current_source": "echo $result;",
-      "source_sha256": "3e1de1552f588dd6784ae468d6b92b02261c5489c0600585e4c12d7c8c2f7039"
+      "source_sha256": "33ccb6c2bb65eb6fa140b59b4d2a5b8a8423549c3f40a97509d045afbce5c719",
+      "type": "ERROR"
     },
     {
       "id": "EX-002",
@@ -24,7 +25,8 @@
       "method": "getLocalizedDecimal",
       "reason": "Request flag selects numeric display formatting only. Input must be numeric. No request value is stored.",
       "current_source": "if (is_numeric($input) && ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax']))) {",
-      "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522"
+      "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522",
+      "type": "WARNING"
     },
     {
       "id": "EX-003",
@@ -35,7 +37,8 @@
       "method": "getLocaleDecimalSeparator",
       "reason": "Request flag selects a display separator only. No request value is stored.",
       "current_source": "if ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax'])) {",
-      "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522"
+      "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522",
+      "type": "WARNING"
     },
     {
       "id": "EX-004",
@@ -46,7 +49,8 @@
       "method": "layeredNavInit",
       "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
       "current_source": "if (isset($_GET[$name]) && !is_string($_GET[$name])) {",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
+      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
+      "type": "WARNING"
     },
     {
       "id": "EX-005",
@@ -57,7 +61,8 @@
       "method": "layeredNavInit",
       "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
       "current_source": "if (isset($_GET[$name]) && !is_string($_GET[$name])) {",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
+      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
+      "type": "WARNING"
     },
     {
       "id": "EX-006",
@@ -68,7 +73,8 @@
       "method": "layeredNavInit",
       "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
       "current_source": "if (empty($_GET[$name]) || !taxonomy_exists($taxonomy)) {",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
+      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
+      "type": "WARNING"
     },
     {
       "id": "EX-007",
@@ -79,7 +85,8 @@
       "method": "layeredNavInit",
       "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
       "current_source": "$terms = explode(',', sanitize_text_field(wp_unslash($_GET[$name])));",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
+      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
+      "type": "WARNING"
     },
     {
       "id": "EX-008",
@@ -88,20 +95,22 @@
       "column": 13,
       "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
       "method": "layeredNavInit",
-      "reason": "The legacy native WooCommerce chosen attribute global retains its public name. Values are sanitized and translated before assignment. Renaming it would disconnect existing consumers.",
+      "reason": "The legacy chosen attribute global is exposed under its existing name. Values are sanitized and translated before assignment. Renaming it changes that exposed contract. No specific external consumer is claimed verified.",
       "current_source": "$_chosen_attributes[$taxonomy]['terms'] = $termsTranslations;",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
+      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
+      "type": "WARNING"
     },
     {
       "id": "EX-009",
       "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 170,
+      "line": 178,
       "column": 24,
       "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
       "method": "getRelatedVariation",
       "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured.",
       "current_source": "$postids = $wpdb->get_col($wpdb->prepare(",
-      "source_sha256": "3f817e70fe60b000bfb08c597183aaae9b28f61606de36e6a09e2d6f1e2b712e"
+      "source_sha256": "43430bfca0bef91bd9af48b731aaa530be2eb2b73cb35210bce11b1dd2f46348",
+      "type": "WARNING"
     },
     {
       "id": "EX-010",
@@ -112,7 +121,8 @@
       "method": "suppressInvalidDuplicatedSKUErrorMsg",
       "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured.",
       "current_source": "$postids = $wpdb->get_col(",
-      "source_sha256": "286d8a162b54b79181c2694e25caab8a86994de2e50e011f51d96823a67cb242"
+      "source_sha256": "286d8a162b54b79181c2694e25caab8a86994de2e50e011f51d96823a67cb242",
+      "type": "WARNING"
     },
     {
       "id": "EX-011",
@@ -122,8 +132,9 @@
       "code": "trademarked_term",
       "method": "",
       "reason": "Existing WordPress.org directory slug begins with woo. Changing it changes installation and update identity. Plugins Team acceptance or a coordinated directory migration is required.",
-      "current_source": "Existing directory slug woo-poly-integration",
-      "source_sha256": "cb680178fa87c7b6d82339dc0ee8f3e63e54fa149dd62471b4b69de45527f254"
+      "current_source": "Existing directory identity: woo-poly-integration",
+      "source_sha256": "cb680178fa87c7b6d82339dc0ee8f3e63e54fa149dd62471b4b69de45527f254",
+      "type": "WARNING"
     },
     {
       "id": "EX-012",
@@ -132,9 +143,10 @@
       "column": 17,
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
       "method": "getSections",
-      "reason": "Existing public settings hook is generated as woo-poly.settings.%s_sections. The prefix is fixed and the suffix is the native settings ID.",
+      "reason": "The default settings hook is woo-poly.settings.%s_sections. Its protected name method remains overridable. Replacing its return with a fixed prefix would change custom subclass hook names.",
       "current_source": "$this->getSectionsFilterName(), (array) $this->doGetSections()",
-      "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
+      "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112",
+      "type": "WARNING"
     },
     {
       "id": "EX-013",
@@ -143,9 +155,27 @@
       "column": 21,
       "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
       "method": "getFields",
-      "reason": "Existing public settings hook is generated as woo-poly.settings.%s_fields. The prefix is fixed and the suffix is the native settings ID.",
+      "reason": "The default settings hook is woo-poly.settings.%s_fields. Its protected name method remains overridable. Replacing its return with a fixed prefix would change custom subclass hook names.",
       "current_source": "$this->getFieldsFilterName(), (array) $this->doGetFields()",
-      "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
+      "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112",
+      "type": "WARNING"
     }
-  ]
+  ],
+  "verification_commit": "a73ff74",
+  "completion_requires_zero_findings": true,
+  "native_script_api_review": {
+    "minimum_wordpress": "5.4.2",
+    "minimum_renderer": "WP_Scripts::print_inline_script",
+    "minimum_renderer_has_id_attribute": false,
+    "modern_renderer": "wp_print_inline_script_tag",
+    "modern_renderer_available_on_minimum": false,
+    "decision": "No production change. Preserving the existing script ID and minimum version is still required."
+  },
+  "directory_review": {
+    "rule": "Trademarks_Check::check_for_slug checks plugin slug against its restricted list, which includes woo-.",
+    "existing_identity": "woo-poly-integration",
+    "same_identity_scan_clean": false,
+    "directory_migration_approved": false,
+    "scanner_modified": false
+  }
 }

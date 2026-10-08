@@ -1,6 +1,8 @@
 # Security maintenance review
 
-Current state: Current verified source eaaeb29: 593 tests with 1722 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 37 findings, one error and 36 warnings. This removes 193 actual rows from the 230 finding baseline. Remaining batches contain 30 request checks, zero translation checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-native-sku-batch.
+Current state: production c2487d4, verification a73ff74, 699 tests with 1935 assertions, 73 matching installed archive files and thirteen open findings. SECURITY-REVIEW-HANDOFF.md contains the current release evidence and limits. The records below are historical and retain their original counts.
+
+## Historical review records
 
 The reported variation removal paths were inspected against baseline b5f7495 and current source. Local commit 01bfb80 corrects the variation lookup and removal callback. Local commit 0ec30b1 corrects the equivalent early featured product callback. This review adds regression cases and current acceptance evidence. A complete release clearance remains pending.
 

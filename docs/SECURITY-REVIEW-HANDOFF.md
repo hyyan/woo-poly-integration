@@ -1,48 +1,44 @@
-# Security re-review handoff
+# Security review handoff
 
-Current verified source df79acb: 687 tests with 1842 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 13 findings, one error and 12 warnings. This removes 217 actual rows from the 230 finding baseline. Remaining batches contain six request checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-report-range-batch.
+Current production source is c2487d4. Refund verification is committed in a73ff74 and its evidence in 5c0979d. The four existing suites pass 699 tests with 1935 assertions. The actual installed release scan has thirteen findings, one error and twelve warnings. The goal is incomplete. No exception is accepted. No WordPress.org approval, submission, publication or push is claimed.
 
-Current verified database cache batch: source dd816e0, 390 tests with 1347 assertions, 73 matching archive files. Installed static and runtime Plugin Check each retain 122 findings, 45 errors and 77 warnings. Archive SHA256 is 4146862d0a27c38051f596ea3b93e555f8915b2a3ae552324ff9ef7451c6e9e6. Earlier batch records below retain historical evidence. Zero findings and the complete published version upgrade feature matrix remain required. No release approval or completion claim.
+## Reported security issues
 
-Current verified request ID batch: source ac630ad, 388 tests with 1326 assertions, 73 matching archive files. Installed static and runtime Plugin Check each retain 124 findings, 45 errors and 79 warnings. Archive SHA256 is 31cdf305c5c20362aca04f88d822e5c29bb196cf88e5813034e7860d3a01f3fa. Earlier batch records below retain historical evidence. Zero findings and the complete published version upgrade feature matrix remain required. No release approval or completion claim.
+The variation AJAX callback runs at priority nine before WooCommerce's callback. It verifies delete-variations through check_ajax_referer using the security field, then requires edit_products. Every request member must be an integer or ASCII digit string within the native integer range before any batch deletion. Leading zeros remain supported. The callback validates actual variation types and requires edit_post on the selected parent and every related parent. Corrupt related product types cause rejection before deletion.
 
-The four reported variation removal issues are corrected in the inspected source. The current active Plugin Check goal remains incomplete. No exception has been accepted and no WordPress.org approval or submission is claimed.
+Variation::getRelatedVariation independently validates direct input and canonical source metadata before database access. Its cached query uses wpdb->prepare with string placeholders for the metadata key and exact normalized text comparison. Binary comparison rejects malformed suffixes and whitespace while retaining padded integer references. Duplicate metadata writes reject overflowing IDs. The shared request integer reader also rejects overflow. Stock and coupon consumers independently restrict variation relationships to actual variation posts.
 
-| Report | Inspected correction | Evidence |
+Both actual installed WooCommerce clients, versions 3.0.0 and 11.1.2, already send security from delete_variations_nonce for woocommerce_remove_variations. Their source was inspected again. The plugin has no independent removal AJAX sender. No duplicate client or dependency asset modification was added. The first current asset lookup used a missing development path and was corrected to the installed assets path.
+
+Regression and native browser evidence includes malformed and mixed batch rejection, overflow rejection, missing and invalid nonce, denied roles and parent permissions, authorized administrator and shop manager removal, real linked deletion and unrelated product preservation. These checks cover the inspected paths and do not prove every possible deployment or extension.
+
+## Artifact and upgrade evidence
+
+Archive SHA256 is 660c13f5dbada861f4cd4e9c27872fdb702d7704e9af9cb42d82936634dcf074. Both installed stores match all 73 manifest file hashes. Tests, tools and review documents are excluded from the archive. Version remains 1.5.1. The directory slug, text domain, catalogs, settings IDs, public hooks and published minimum requirements remain.
+
+The current store uses WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10 and PHP 8.5.11. The minimum upgrade store uses WordPress 5.4.2, WooCommerce 3.0.0, Polylang 2.7.4 and PHP 7.4.9. The latest native helper passes PHP 7.0 syntax. The preceding production integer range batch retains its full source syntax evidence.
+
+Published archive 1.5.0 update checks cover stored product, term, media, shipping and coupon data, populated translated taxonomy pages, native reports, classic guest carts, simple and custom variation checkout, linked stock and partial refunds. The refund batch creates native orders programmatically and executes eight refunds through Chrome, with twelve browser comparisons. Published orders and refunds retain their exact business snapshots across the update. Native edit locks are excluded from those snapshots because viewing an order changes them. Fixture data, settings and temporary users are cleaned up.
+
+The complete published upgrade feature matrix is unfinished. Remaining cases include broader global and wildcard variation selection, parent managed stock, backorders, account purchases, shipping, current block checkout and HPOS upgrade scenarios. Prior candidate behavior checks are retained but are not substituted for complete published upgrade proof. A native old WordPress and WooCommerce admin thumbnail defect is reproduced under the published baseline and recorded separately. External plugin, theme, transport and service defects remain outside the owned plugin correction scope.
+
+## Thirteen remaining findings
+
+| Group | Count | Current evidence |
 | --- | --- | --- |
-| Unvalidated request variation IDs | Variable::removeVariations validates every member before deletion, accepts integer or ASCII digit string IDs, casts IDs to integers and checks the actual variation type. Variation::getRelatedVariation independently validates direct callers | VariationSecurityTest covers malformed values, whole batch rejection and real database effects |
-| Variable data reaches raw related deletion SQL | The relationship query uses wpdb->prepare with %s for the key and the normalized integer represented as a string for the text metadata comparison. Binary comparison rejects malformed suffixes and whitespace while leading zero integer references remain valid. The SKU query uses %s for SKU and %d for excluded product ID | QueryDiagnosticSecurityTest and VariationRelationshipPathsTest, native removal and older exact lookup probes |
-| Authenticated users lack sufficient operation restrictions | The early handler requires edit_products and edit_post for the source parent and every affected linked parent before mutation | Subscriber, customer and contributor denial, denied source and target parent cases, authorized administrator and shop manager cases |
-| State changing AJAX request lacks verification | The early handler invokes check_ajax_referer with delete-variations and security before deletion | Missing and invalid nonce regressions and native WooCommerce Remove acceptance |
+| Request verification | 6 | Two currency switcher display flag reads and four public layered navigation reads retain existing unsigned client and link behavior |
+| Public hook naming | 2 | Protected filter name methods retain their existing default names and subclass overrides |
+| Direct database queries | 2 | Relationship and duplicate SKU queries are prepared and cached. Scanner warnings remain |
+| Other contracts | 3 | Trusted inline script output, legacy chosen attribute global and the existing directory slug |
 
-## Actual client and equivalent paths
+The exact current locations, source fingerprints and reasons are in evidence/plugin-check-remaining-compatibility-review.json. These dispositions do not resolve findings. All thirteen remain open.
 
-The current WooCommerce 11.1.2 and supported older WooCommerce 4.0.0 variation clients both send security from delete_variations_nonce for woocommerce_remove_variations. Their actual source was inspected again in this batch. The plugin JavaScript has no independent sender for this action. The existing native client already supplies the required nonce, so no duplicate sender or dependency JavaScript patch was introduced. Evidence is in plugin-check-display-name-batch-native-client.txt and plugin-check-display-name-batch-older-client.txt.
+The minimum WordPress inline script renderer does not emit the existing ID attribute. The newer renderer that accepts attributes is absent from the minimum version. No version increase, script identity change, whole JavaScript HTML escaping, unchecked verifier or suppression is introduced.
 
-The equivalent early featured product callback requires the native nonce and edit_products before changing translated visibility. Early creation copy hooks verify new-post-translation, edit_products and source read permission in the existing shared request helper. Legacy product creation links without a nonce receive the native nonce through the existing Polylang link filter. Current native links are retained.
+The installed trademark rule checks the existing directory name directly and its restricted list includes woo-. Changing the display name has already removed the display name findings but cannot remove this directory finding. A coordinated directory identity decision remains necessary. No directory migration is approved or performed.
 
-Cart, stock and coupon translation and variation copy paths now reuse the corrected relationship lookup. Their native post type, parent, status, language, ordering and limit constraints remain. Empty relationship lists skip the native post query. Tests retain the private parent permission assertions using real integer relationship fixtures.
+## Files, commits and completion
 
-## Current verification
+COMMITS.md lists actual Conventional Commit subjects and counts excluding tests and configuration through its stated snapshot. evidence/current-maintenance-file-history.json maps all changed files to their commits. The final documentation commit is reported separately when newer than that inventory snapshot.
 
-Latest source commit is 60ce0d0. Version remains 1.5.1. The release headers display Hyyan Integration for WooCommerce and Polylang. The directory slug, text domain, catalog keys, settings IDs, hooks and stored data are retained. WordPress 5.4, WooCommerce 3.0.0 and PHP 7.0 minimum headers retain the published release requirements.
-
-All four existing suites pass 388 tests with 1326 assertions on PHP 8.5.11. The existing default 128 MB test process exceeded its limit after the suite grew. The successful execution uses a 256 MB test process limit, with retained failure evidence and no production configuration change. The existing test runner now applies this same process limit. Sixty one installed PHP files and fifty nine main entry and source files on PHP 7.0 pass syntax. Relevant WordPress code analysis runs through the installed Plugin Check. Current source and index diff checks pass.
-
-The current 73 file archive matches source, manifest and installed package. SHA256 is df51f7017b11dc74ac87f07535e5af7db8f4cb91cbb5fb6e6f27f0aa908de547. Evidence uses plugin-check-display-name-batch, plugin-check-relationship-paths and plugin-check-exact-id-batch. Tests, tools and review documents are excluded from the release archive.
-
-Chrome verifies native shop manager removal, genuine linked deletion and preservation of malformed relationships. Later native Update retains a valid padded translated child and corrects a malformed whitespace relationship through normal synchronization. English and German carts retain the small variation and price thirteen. Chrome also verifies the active plugin row, new display name and unchanged working settings link. Owned fixtures and temporary users are removed, notices restored and the browser returned to blank.
-
-The current stack is WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10 and PHP 8.5.11. Older native probes use WordPress 5.4.2, WooCommerce 4.0.0 and PHP 7.4.9. The exact official Polylang 2.0.1 link method is tested in the older harness. Full historical dependency combinations are not claimed verified.
-
-Actual installed Plugin Check reports 127 findings, 45 errors and 82 warnings, with empty diagnostics. The 230 finding active baseline has 103 actual rows removed. Forty four translation findings and 83 precise compatibility findings remain open. Their source locations and reasons are in PLUGIN-CHECK-TRANSLATION-EXCEPTIONS.md and PLUGIN-CHECK-COMPATIBILITY-EXCEPTIONS.md. Written dispositions are not fixes or accepted exceptions.
-
-## Files, commits and manual requirements
-
-The original handler, query and equivalent featured fixes are in Product/Variable.php, Product/Variation.php and Product/Product.php. Later shared boundary corrections also touch Utilities.php and Cart.php. Their regression files and all maintenance changes are mapped to their actual commit subjects in evidence/current-maintenance-file-history.json. COMMITS.md lists verbatim Conventional Commit subjects and changed file counts excluding tests and configuration, through its stated snapshot commit.
-
-Release completion requires zero installed Plugin Check findings and the complete published version upgrade matrix passing in tests and Chrome. Exception acceptance is no longer a completion path. Independent Plugins Team review remains required. The existing directory slug warning requires a directory identity decision. Performance on a large catalog, remote CI success, actual email delivery and hosted payment callbacks are not claimed verified. External extension defects and service configurations are excluded by the maintainer. No remote push, publication or submission has occurred.
-
-Published minimum evidence uses published-minimum-batch. The actual official 1.5.0 archive was updated in place on WooCommerce 3.0.0. Eight products, their metadata and language relationships, feature settings and Polylang settings remain exact. Chrome verifies the old and new active plugin and bilingual small and large variation selection. Other upgrade feature scenarios remain unfinished.
-
-The runtime enabled scan of the installed package also retains 127 findings with empty diagnostics. The strict report gate rejects this report. No accepted exceptions, suppressions or clean release claim.
+Completion requires zero installed findings, the complete requested upgrade acceptance matrix, full diff review and successful relevant verification. Finite tests do not establish an absolute guarantee against every possible future defect. Independent Plugins Team review remains necessary. Large catalog performance, remote CI, real email delivery and hosted payment callbacks are not claimed verified.
