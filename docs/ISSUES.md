@@ -372,3 +372,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-031 | Published native bilingual and combined product report upgrade | Six native queries and three Chrome totals retained | ba68d11, acceptance test only, no checker finding removed |
 
 | CHECK-032 | Native report language selector | Reuse validated language reader for all report mode, preserving creation policy | 5fcd63c, 650 tests, both native stacks and published Chrome parity pass, three recommendations removed |
+
+| CHECK-033 | Custom report verification before translation | Verify native custom dates before callbacks, preserving non date contexts | df79acb, 687 tests, both native stacks and seven published Chrome cases pass, eleven recommendations removed |

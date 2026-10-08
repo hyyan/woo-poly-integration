@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "5fcd63c2a101a5043681b92189ae6789e4055d95",
-  "changed_files": 1930,
+  "through_commit": "df79acbf6d2d6482bae4d3a5bfc403d90f2c9bd8",
+  "changed_files": 1962,
   "files": [
     {
       "file": ".exclude-list",
@@ -70,6 +70,10 @@
         {
           "sha": "22ace96a19aa2ddc92894dc62c04d4aed70a93dd",
           "subject": "fix: expose verified product creation requests to security checks"
+        },
+        {
+          "sha": "df79acbf6d2d6482bae4d3a5bfc403d90f2c9bd8",
+          "subject": "fix: verify custom report requests before translation"
         }
       ]
     },
@@ -116,6 +120,10 @@
         {
           "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
           "subject": "docs: record native report upgrade acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -260,6 +268,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -384,6 +396,10 @@
         {
           "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
           "subject": "docs: record native report upgrade acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -730,6 +746,10 @@
         {
           "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
           "subject": "docs: record native report upgrade acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -1012,6 +1032,10 @@
         {
           "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
           "subject": "docs: record native report upgrade acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -1134,6 +1158,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -1240,6 +1268,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -1414,6 +1446,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -1502,6 +1538,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -3002,6 +3042,10 @@
         {
           "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
           "subject": "docs: record native report upgrade acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -3064,6 +3108,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -14496,6 +14544,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -14554,6 +14606,330 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-bootstrap-failure.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-current-native-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-current-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-install-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-install-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-intermediate-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-min-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-min-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-min-creation-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-min-native-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-minimum-creation.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-minimum-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-post-browser.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-review.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-selector-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -20024,6 +20400,10 @@
         {
           "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
           "subject": "docs: record native report upgrade acceptance"
+        },
+        {
+          "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
+          "subject": "docs: record report language selector acceptance"
         }
       ]
     },
@@ -20698,6 +21078,10 @@
         {
           "sha": "5fcd63c2a101a5043681b92189ae6789e4055d95",
           "subject": "fix: centralize native report language selection"
+        },
+        {
+          "sha": "df79acbf6d2d6482bae4d3a5bfc403d90f2c9bd8",
+          "subject": "fix: verify custom report requests before translation"
         }
       ]
     },
@@ -21586,6 +21970,10 @@
         {
           "sha": "5fcd63c2a101a5043681b92189ae6789e4055d95",
           "subject": "fix: centralize native report language selection"
+        },
+        {
+          "sha": "df79acbf6d2d6482bae4d3a5bfc403d90f2c9bd8",
+          "subject": "fix: verify custom report requests before translation"
         }
       ]
     },

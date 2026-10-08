@@ -1,12 +1,12 @@
 # Maintenance batches
 
-Current verified source 5fcd63c: 650 tests with 1787 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 24 findings, one error and 23 warnings. This removes 206 actual rows from the 230 finding baseline. Remaining batches contain 17 request checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-report-selector-batch.
+Current verified source df79acb: 687 tests with 1842 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 13 findings, one error and 12 warnings. This removes 217 actual rows from the 230 finding baseline. Remaining batches contain six request checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-report-range-batch.
 
 Historical installed static and runtime Plugin Check reports contain 122 findings, 45 errors and 77 warnings. This is 108 actual removed rows from the 230 finding baseline. The current batches are mapped to every exact source location in evidence/current-plugin-check-batches.json.
 
 | Active batch | Remaining rows | Shared scope |
 | --- | ---: | --- |
-| Request verification | 17 | Inspect native verified calling contexts and read only selectors together |
+| Request verification | 6 | Inspect native verified calling contexts and read only selectors together |
 | Translation contracts | 0 | Preserve existing dependency catalogs, stored translations and legacy format keys |
 | Public hook constants | 2 | Preserve every existing extension hook and argument contract |
 | Prepared queries | 2 | Direct query warnings remain after both cache warnings were corrected |

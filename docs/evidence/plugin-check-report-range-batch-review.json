@@ -1,0 +1,19 @@
+{
+  "source_commit": "df79acb",
+  "findings_before": 24,
+  "findings_after": 13,
+  "tests": 687,
+  "assertions": 1842,
+  "focused_tests": 128,
+  "focused_assertions": 231,
+  "added_request_cases": 37,
+  "initial_request_failures_before": 16,
+  "new_exploit_reproduced": false,
+  "native_request_cases_each_stack": 39,
+  "native_minimum_creation_cases": 70,
+  "browser_cases": 7,
+  "new_verifier": "woo_poly_integration_verify_report_request",
+  "blanket_suppression": false,
+  "protected_context": "Native custom date reports, excluding stock and customer list",
+  "full_upgrade_matrix_complete": false
+}

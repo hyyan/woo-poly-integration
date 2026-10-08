@@ -1,7 +1,7 @@
 {
-  "source_commit": "5fcd63c",
-  "installed_total": 24,
-  "removed_from_230": 206,
+  "source_commit": "df79acb",
+  "installed_total": 13,
+  "removed_from_230": 217,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
@@ -22,105 +22,6 @@
         "message": "Processing form data without nonce verification.",
         "docs": "",
         "file": "src/Hyyan/WPI/LocaleNumbers.php"
-      },
-      {
-        "line": 45,
-        "column": 28,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 45,
-        "column": 55,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 45,
-        "column": 95,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 46,
-        "column": 31,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 46,
-        "column": 61,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 46,
-        "column": 104,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 103,
-        "column": 19,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 231,
-        "column": 20,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 235,
-        "column": 114,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 275,
-        "column": 20,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 279,
-        "column": 114,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
       },
       {
         "line": 52,

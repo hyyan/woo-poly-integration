@@ -1,0 +1,148 @@
+{
+  "before": {
+    "all": {
+      "preset": {
+        "legend": "\u00a350.00\nsales for the selected items\n5\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-7day-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      },
+      "custom": {
+        "legend": "\u00a350.00\nsales for the selected items\n5\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-custom-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      }
+    },
+    "en": {
+      "preset": {
+        "legend": "\u00a320.00\nsales for the selected items\n2\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-7day-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      },
+      "custom": {
+        "legend": "\u00a320.00\nsales for the selected items\n2\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-custom-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      }
+    },
+    "de": {
+      "preset": {
+        "legend": "\u00a330.00\nsales for the selected items\n3\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-7day-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      },
+      "custom": {
+        "legend": "\u00a330.00\nsales for the selected items\n3\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-custom-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      }
+    },
+    "expired": {
+      "legend": "\u00a330.00\nsales for the selected items\n3\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    },
+    "expiredUrl": "http://localhost:8099/woopoly-upgrade-lab/wp-admin/admin.php?page=wc-reports&tab=orders&report=sales_by_product&product_ids%5B0%5D=248&lang=de"
+  },
+  "after": {
+    "all": {
+      "preset": {
+        "legend": "\u00a350.00\nsales for the selected items\n5\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-7day-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      },
+      "custom": {
+        "legend": "\u00a350.00\nsales for the selected items\n5\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-custom-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      }
+    },
+    "en": {
+      "preset": {
+        "legend": "\u00a320.00\nsales for the selected items\n2\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-7day-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      },
+      "custom": {
+        "legend": "\u00a320.00\nsales for the selected items\n2\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-custom-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      }
+    },
+    "de": {
+      "preset": {
+        "legend": "\u00a330.00\nsales for the selected items\n3\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-7day-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      },
+      "custom": {
+        "legend": "\u00a330.00\nsales for the selected items\n3\npurchases for the selected items",
+        "export": {
+          "label": " Export CSV",
+          "download": "report-custom-2026-10-08.csv",
+          "data": "chart"
+        },
+        "errors": []
+      }
+    },
+    "expired": {
+      "legend": "\u00a330.00\nsales for the selected items\n3\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    },
+    "expiredUrl": "http://localhost:8099/woopoly-upgrade-lab/wp-admin/admin.php?page=wc-reports&tab=orders&report=sales_by_product&product_ids%5B0%5D=248&lang=de"
+  },
+  "exact_match": true,
+  "scope": "Final scoped policy: three preset reports, three native custom date form submissions and unsigned native redirect compared on actual published 1.5.0 and final 1.5.1. CSV download and wider feature upgrade matrix remain unproven."
+}
