@@ -1,0 +1,21 @@
+{
+  "test_commit": "d5d71d0",
+  "production_changes": 0,
+  "source_version": "1.5.1",
+  "published_version": "1.5.0",
+  "published_archive_sha256": "a004bea2d98e225c42de572818f4ca78f57400d56a26e865bdaf87ec2784295a",
+  "tests": 593,
+  "assertions": 1722,
+  "installed_findings": 37,
+  "findings_removed_by_batch": 0,
+  "fixture_setup_corrections": [
+    "WooCommerce 3.0 has no wc_create_attribute API. Fixture uses the verified attribute table and WordPress database insert/delete APIs.",
+    "WP CLI eval scope required an explicit global database declaration. Both failed preparations wrote only an empty fixture option, removed before the successful preparation."
+  ],
+  "limits": [
+    "Stored shipping class and coupon configuration retained. Rates, coupon application and checkout were not exercised by this batch.",
+    "English category and tag assignments appear on the German fixture in both published and candidate displays. This batch compares that baseline and does not prove translated category or tag rendering.",
+    "No native product editor save, stock deduction, refund, order, email or report flow is covered by this batch.",
+    "The complete supported feature upgrade matrix and zero finding gate remain unfinished."
+  ]
+}

@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 104 maintenance commits after the baseline through eaaeb29. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 106 maintenance commits after the baseline through d5d71d0. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -110,5 +110,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | 7f8d2a8 | 2 | fix: preserve catalogs with native version aware loading |
 | 4f965ef | 33 | docs: record native catalog adapter acceptance |
 | eaaeb29 | 0 | test: verify SKU status and language compatibility |
+| 7bfade8 | 46 | docs: record SKU compatibility and rejected query trial |
+| d5d71d0 | 0 | test: verify published product data survives upgrade |
 
 Latest verification passes 593 tests with 1722 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 37 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

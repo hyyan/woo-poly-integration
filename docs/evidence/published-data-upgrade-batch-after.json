@@ -1,0 +1,24 @@
+{
+  "version": "1.5.1",
+  "wordpress": "5.4.2",
+  "woocommerce": "3.0.0",
+  "polylang": "2.7.4",
+  "exact_snapshot_retained": true,
+  "groups": [
+    "products",
+    "terms",
+    "settings",
+    "shipping",
+    "attribute",
+    "image",
+    "coupon"
+  ],
+  "urls": {
+    "en": "/?product=published-data-upgrade-en",
+    "de": "/?product=published-data-upgrade-de&lang=de"
+  },
+  "products": {
+    "en": 194,
+    "de": 195
+  }
+}

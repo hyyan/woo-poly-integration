@@ -358,3 +358,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-024 | Discouraged plugin catalog loader call | Use version appropriate native registry and catalog loading APIs | 7f8d2a8, 569 tests pass, current and minimum native bootstrap plus Chrome Spanish settings pass, one warning removed |
 
 | CHECK-025 | Preserve SKU duplicate decisions across statuses and languages | Twenty four added regressions, both native sixty case probes and final package browser acceptance | eaaeb29, 593 tests pass, rejected query trial retained separately, no finding closed |
+
+| CHECK-026 | Published product, term, media, shipping and coupon data upgrade | Exact native snapshot and both Chrome product displays retained | d5d71d0, stored data and display only, no checker finding closed |

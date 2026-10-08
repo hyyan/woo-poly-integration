@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "eaaeb29e769ce77cd08f2acf2213e9f7fbdfaa5a",
-  "changed_files": 1795,
+  "through_commit": "d5d71d0dab53bc5eb35f373a1582952f78478de8",
+  "changed_files": 1828,
   "files": [
     {
       "file": ".exclude-list",
@@ -228,6 +228,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -324,6 +328,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -642,6 +650,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -896,6 +908,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -1002,6 +1018,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -1092,6 +1112,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -1250,6 +1274,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -1322,6 +1350,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -1452,6 +1484,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -2790,6 +2826,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -2836,6 +2876,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -12564,6 +12608,326 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-native-sku-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-baseline.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-browser-database.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-native-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-native-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-older-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-older-install.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-older-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-browser-database.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-native-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-older-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-native-sku-batch-trial-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-normalized-lists-batch-package.txt",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -13322,6 +13686,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -13364,6 +13732,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -18406,6 +18778,10 @@
         {
           "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
           "subject": "docs: record native catalog adapter acceptance"
+        },
+        {
+          "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
+          "subject": "docs: record SKU compatibility and rejected query trial"
         }
       ]
     },
@@ -19422,6 +19798,16 @@
         {
           "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
           "subject": "fix: retain published WooCommerce minimum requirement"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/published-data-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "d5d71d0dab53bc5eb35f373a1582952f78478de8",
+          "subject": "test: verify published product data survives upgrade"
         }
       ]
     },

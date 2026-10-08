@@ -6,11 +6,11 @@ Historical installed static and runtime Plugin Check reports contain 122 finding
 
 | Active batch | Remaining rows | Shared scope |
 | --- | ---: | --- |
-| Request verification | 49 | Inspect native verified calling contexts and read only selectors together |
-| Translation contracts | 44 | Preserve existing dependency catalogs, stored translations and legacy format keys |
-| Public hook constants | 22 | Preserve every existing extension hook and argument contract |
+| Request verification | 30 | Inspect native verified calling contexts and read only selectors together |
+| Translation contracts | 0 | Preserve existing dependency catalogs, stored translations and legacy format keys |
+| Public hook constants | 2 | Preserve every existing extension hook and argument contract |
 | Prepared queries | 2 | Direct query warnings remain after both cache warnings were corrected |
-| Other contracts | 5 | Catalog loading, trusted scripts, dependency global and hook, existing directory identity |
+| Other contracts | 3 | Trusted script output, legacy dependency global and existing directory identity |
 
 Zero findings and the complete published version upgrade feature matrix remain required. Source dispositions are not fixes. No exception acceptance or publication is authorized. The earlier inventory and batch records below retain historical evidence.
 
@@ -178,3 +178,6 @@ Runtime and data preservation batch complete. COMPAT-047 restores combined repor
 Release metadata batch complete. Plugin and readme tested headers now declare WordPress 7.1 and WooCommerce 11.1.2, matching the verified WordPress 7.1.3, WooCommerce 11.1.2 and PHP 8.5.11 lab. Both maintenance changelogs describe the security and compatibility corrections. Version 1.5.1 and minimum requirements remain unchanged. Full suites pass 312 tests with 1061 assertions. All 73 installed files match the rebuilt archive. Plugin Check reports 230 findings, 66 errors and 164 warnings. Exactly the outdated tested version warning is removed, with no new finding keys and empty diagnostics. Native Chrome Plugins renders the active 1.5.1 plugin alongside the tested dependencies without visible error notices. PLUGIN-CHECK-SUBMISSION.md groups all remaining source dispositions without hiding findings. External integration fixtures remain unavailable. No index, commit or publication action occurs.
 
 Scope clarification: only defects in this plugin and its existing supported WooCommerce and Polylang behavior are release requirements. Defects or missing features owned by other plugins, paid addon calendars, external themes, hosted payment services and mail transport are excluded. Their historical reports remain recorded, but missing external packages and configurations no longer block this maintenance release. No unverified external compatibility is claimed. Current production evidence remains 312 passing tests, 26 passing security cases, 61 installed PHP files passing syntax and 73 matching archive files. The 230 Plugin Check findings remain individually reviewed source dispositions, not a clean scan. The earlier Git write hook restriction remains separate from code scope.
+
+
+Published data upgrade batch d5d71d0 verifies the actual 1.5.0 to 1.5.1 update across seven stored data groups and both native Chrome product displays. The complete feature upgrade matrix remains open. Full suites pass 593 tests with 1722 assertions, 73 installed archive files match and the fresh runtime scan remains 37 findings. No production source changes or checker rows are removed. Evidence uses published-data-upgrade-batch.
