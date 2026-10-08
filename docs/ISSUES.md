@@ -386,3 +386,6 @@ CHECK-037 fixed in bad6b9c: corrupt variation relationships cannot update simple
 
 
 CHECK-038 fixed in c2487d4: overflowing IDs are rejected before variation removal, lookup and metadata writes, and the shared request integer reader returns zero. Five reproduced failures, 73 targeted tests, all 695 suite cases, both native installed stacks and the documented Chrome removal checks pass. The checker retains 13 findings. See variation-integer-range-batch evidence.
+
+
+CHECK-039 verified in a73ff74: eight native browser partial refunds, twelve browser comparisons and exact published order and refund retention pass across the actual 1.5.0 update. All 699 suite cases pass. This test batch removes no checker finding. Thirteen findings and the complete upgrade matrix remain open. See published-refund-upgrade-batch evidence.

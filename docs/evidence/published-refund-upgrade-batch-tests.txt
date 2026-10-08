@@ -1,0 +1,50 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-unit.xml
+
+...........                                                       11 / 11 (100%)
+
+Time: 00:00.044, Memory: 28.05 MB
+
+OK (11 tests, 30 assertions)
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+...............................................................  63 / 660 (  9%)
+............................................................... 126 / 660 ( 19%)
+............................................................... 189 / 660 ( 28%)
+............................................................... 252 / 660 ( 38%)
+............................................................... 315 / 660 ( 47%)
+............................................................... 378 / 660 ( 57%)
+............................................................... 441 / 660 ( 66%)
+............................................................... 504 / 660 ( 76%)
+............................................................... 567 / 660 ( 85%)
+............................................................... 630 / 660 ( 95%)
+..............................                                  660 / 660 (100%)
+
+Time: 00:35.750, Memory: 137.05 MB
+
+OK (660 tests, 1821 assertions)
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-frontend.xml
+
+.........                                                           9 / 9 (100%)
+
+Time: 00:00.693, Memory: 105.05 MB
+
+OK (9 tests, 46 assertions)
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /var/www/html/wp-content/plugins/woo-poly-integration/phpunit-admin.xml
+
+...................                                               19 / 19 (100%)
+
+Time: 00:00.858, Memory: 115.05 MB
+
+OK (19 tests, 38 assertions)

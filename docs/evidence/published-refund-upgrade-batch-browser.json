@@ -1,0 +1,334 @@
+{
+  "comparisons": 12,
+  "matched": true,
+  "cases": [
+    {
+      "publishedBefore": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published data upgrade en",
+            "quantity": "× 2",
+            "total": "£38.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00",
+        "refunds": []
+      },
+      "publishedAfter": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published data upgrade en",
+            "quantity": "× 21",
+            "total": "£38.00£19.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00 £19.00 Refunded: -£19.00",
+        "refunds": [
+          {
+            "amount": "-£19.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "candidateBefore": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published data upgrade en",
+            "quantity": "× 2",
+            "total": "£38.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00",
+        "refunds": []
+      },
+      "candidateAfter": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published data upgrade en",
+            "quantity": "× 21",
+            "total": "£38.00£19.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00 £19.00 Refunded: -£19.00",
+        "refunds": [
+          {
+            "amount": "-£19.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "retainedPublished": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published data upgrade en",
+            "quantity": "× 21",
+            "total": "£38.00£19.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00 £19.00 Refunded: -£19.00",
+        "refunds": [
+          {
+            "amount": "-£19.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "matched": true
+    },
+    {
+      "publishedBefore": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published data upgrade de",
+            "quantity": "× 2",
+            "total": "£38.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00",
+        "refunds": []
+      },
+      "publishedAfter": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published data upgrade de",
+            "quantity": "× 21",
+            "total": "£38.00£19.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00 £19.00 Refunded: -£19.00",
+        "refunds": [
+          {
+            "amount": "-£19.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "candidateBefore": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published data upgrade de",
+            "quantity": "× 2",
+            "total": "£38.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00",
+        "refunds": []
+      },
+      "candidateAfter": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published data upgrade de",
+            "quantity": "× 21",
+            "total": "£38.00£19.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00 £19.00 Refunded: -£19.00",
+        "refunds": [
+          {
+            "amount": "-£19.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "retainedPublished": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published data upgrade de",
+            "quantity": "× 21",
+            "total": "£38.00£19.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £38.00 £19.00 Refunded: -£19.00",
+        "refunds": [
+          {
+            "amount": "-£19.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "matched": true
+    },
+    {
+      "publishedBefore": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published variation upgrade en – Large",
+            "quantity": "× 2",
+            "total": "£28.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00",
+        "refunds": []
+      },
+      "publishedAfter": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published variation upgrade en – Large",
+            "quantity": "× 21",
+            "total": "£28.00£14.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00 £14.00 Refunded: -£14.00",
+        "refunds": [
+          {
+            "amount": "-£14.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "candidateBefore": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published variation upgrade en – Large",
+            "quantity": "× 2",
+            "total": "£28.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00",
+        "refunds": []
+      },
+      "candidateAfter": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published variation upgrade en – Large",
+            "quantity": "× 21",
+            "total": "£28.00£14.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00 £14.00 Refunded: -£14.00",
+        "refunds": [
+          {
+            "amount": "-£14.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "retainedPublished": {
+        "language": "en",
+        "items": [
+          {
+            "name": "Published variation upgrade en – Large",
+            "quantity": "× 21",
+            "total": "£28.00£14.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00 £14.00 Refunded: -£14.00",
+        "refunds": [
+          {
+            "amount": "-£14.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "matched": true
+    },
+    {
+      "publishedBefore": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published variation upgrade de – Large",
+            "quantity": "× 2",
+            "total": "£28.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00",
+        "refunds": []
+      },
+      "publishedAfter": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published variation upgrade de – Large",
+            "quantity": "× 21",
+            "total": "£28.00£14.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00 £14.00 Refunded: -£14.00",
+        "refunds": [
+          {
+            "amount": "-£14.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "candidateBefore": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published variation upgrade de – Large",
+            "quantity": "× 2",
+            "total": "£28.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00",
+        "refunds": []
+      },
+      "candidateAfter": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published variation upgrade de – Large",
+            "quantity": "× 21",
+            "total": "£28.00£14.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00 £14.00 Refunded: -£14.00",
+        "refunds": [
+          {
+            "amount": "-£14.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "retainedPublished": {
+        "language": "de",
+        "items": [
+          {
+            "name": "Published variation upgrade de – Large",
+            "quantity": "× 21",
+            "total": "£28.00£14.00"
+          }
+        ],
+        "totals": "Discount: £0.00 Shipping: £0.00 Order total: £28.00 £14.00 Refunded: -£14.00",
+        "refunds": [
+          {
+            "amount": "-£14.00",
+            "reason": "Published refund upgrade"
+          }
+        ]
+      },
+      "matched": true
+    }
+  ],
+  "originalFirstPublishedBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"language\":\"en\",\"items\":[{\"name\":\"Published data upgrade en\\t\\t\\n\\t\\t\\n\\n\\t\\t\\t\\t\\n\\t\\n\\n\\t\\n\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\n\\t\\t\\t\\n\\t\\t\\t\\tAdd meta\",\"quantity\":\"× 2\",\"total\":\"£38.00\"}],\"totals\":\"Discount:\\n\\t\\t\\t\\n\\t\\t\\t\\n\\t\\t\\t\\t£0.00\\t\\t\\t\\n\\t\\t\\n\\n\\t\\t\\n\\t\\t\\n\\t\\t\\t Shipping:\\n\\t\\t\\t\\n\\t\\t\\t£0.00\\n\\t\\t\\n\\n\\t\\t\\n\\t\\t\\n\\t\\t\\n\\t\\t\\n\\t\\t\\tOrder total:\\n\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\n\\t\\t\\t\\t£38.00\",\"refunds\":[]}\n```"
+      }
+    ]
+  },
+  "originalFirstPublishedAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"language\":\"en\",\"items\":[{\"name\":\"Published data upgrade en\\t\\t\\n\\t\\t\\n\\n\\t\\t\\t\\t\\n\\t\\n\\n\\t\\n\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\n\\t\\t\\t\\n\\t\\t\\t\\tAdd meta\",\"quantity\":\"× 21\",\"total\":\"£38.00£19.00\"}],\"totals\":\"Discount:\\n\\t\\t\\t\\n\\t\\t\\t\\n\\t\\t\\t\\t£0.00\\t\\t\\t\\n\\t\\t\\n\\n\\t\\t\\n\\t\\t\\n\\t\\t\\t Shipping:\\n\\t\\t\\t\\n\\t\\t\\t£0.00\\n\\t\\t\\n\\n\\t\\t\\n\\t\\t\\n\\t\\t\\n\\t\\t\\n\\t\\t\\tOrder total:\\n\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\n\\t\\t\\t\\t£38.00 £19.00\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\n\\t\\t\\n\\n\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\tRefunded:\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t-£19.00\",\"refunds\":[\"Refund #344 - October 8, 2026, 4:55 am by wpi-refund-browser\\t\\t\\t\\t\\tPublished refund upgrade\\n\\t\\t\\t\\t\\n\\t\\n\\n\\t\\n\\t \\n\\t \\n\\n\\t\\n\\t\\t\\n\\t\\t\\t-£19.00\"]}\n```"
+      }
+    ]
+  }
+}

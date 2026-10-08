@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
-  "changed_files": 2092,
+  "through_commit": "a73ff748e7089c4210cc27bf4498916ef840177e",
+  "changed_files": 2115,
   "files": [
     {
       "file": ".exclude-list",
@@ -444,6 +444,10 @@
         {
           "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
           "subject": "docs: record variation stock and coupon security proof"
+        },
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
         }
       ]
     },
@@ -814,6 +818,10 @@
         {
           "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
           "subject": "docs: record variation stock and coupon security proof"
+        },
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
         }
       ]
     },
@@ -1120,6 +1128,10 @@
         {
           "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
           "subject": "docs: record variation stock and coupon security proof"
+        },
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
         }
       ]
     },
@@ -1368,6 +1380,10 @@
         {
           "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
           "subject": "docs: record variation stock and coupon security proof"
+        },
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
         }
       ]
     },
@@ -3174,6 +3190,10 @@
         {
           "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
           "subject": "docs: record variation stock and coupon security proof"
+        },
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
         }
       ]
     },
@@ -21406,6 +21426,216 @@
       ]
     },
     {
+      "file": "docs/evidence/variation-integer-range-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-browser-state-after.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-browser-state-before.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-current-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-current-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-current-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-current-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-current-stock-coupon.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-minimum-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-minimum-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-minimum-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-minimum-stock-coupon.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-targeted-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-integer-range-batch-user-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/variation-stock-chrome.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -21818,6 +22048,10 @@
         {
           "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
           "subject": "docs: record variation stock and coupon security proof"
+        },
+        {
+          "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
+          "subject": "docs: record variation integer range security proof"
         }
       ]
     },
@@ -22924,6 +23158,16 @@
       ]
     },
     {
+      "file": "tests/bin/published-refund-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "a73ff748e7089c4210cc27bf4498916ef840177e",
+          "subject": "test: verify published refund and stock upgrades"
+        }
+      ]
+    },
+    {
       "file": "tests/bin/published-report-upgrade.php",
       "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
       "commits": [
@@ -23394,6 +23638,16 @@
         {
           "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
           "subject": "fix: reject integer overflow before variation operations"
+        }
+      ]
+    },
+    {
+      "file": "tests/integration/RefundStockSynchronizationTest.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "a73ff748e7089c4210cc27bf4498916ef840177e",
+          "subject": "test: verify published refund and stock upgrades"
         }
       ]
     },
