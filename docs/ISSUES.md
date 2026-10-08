@@ -380,3 +380,6 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-035 | Published guest checkout, coupon usage, order and stock upgrade | Four native Chrome purchases, exact published order retention and six browser comparisons pass | c6952cc, acceptance helper only, thirteen checker findings remain |
 
 | CHECK-036 | Published variable selection, coupon, purchase and stock upgrade | Four native Chrome purchases, padded relationship preservation, sibling stock and ten browser comparisons pass | dbd174a, acceptance helper only, thirteen checker findings remain |
+
+
+CHECK-037 fixed in bad6b9c: corrupt variation relationships cannot update simple stock or extend variation coupon inclusion or exclusion to a simple product. Three reproduced failures, 71 targeted tests, all 690 existing suite cases, both native installed stacks and the documented Chrome checks pass. The installed checker retains 13 findings. See variation-consumer-security-batch evidence.

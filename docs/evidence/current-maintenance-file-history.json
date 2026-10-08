@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "dbd174a331765c29e602276718d2b6f8c478412b",
-  "changed_files": 2049,
+  "through_commit": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
+  "changed_files": 2075,
   "files": [
     {
       "file": ".exclude-list",
@@ -136,6 +136,10 @@
         {
           "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
           "subject": "docs: record published checkout order and stock proof"
+        },
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
         }
       ]
     },
@@ -432,6 +436,10 @@
         {
           "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
           "subject": "docs: record published checkout order and stock proof"
+        },
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
         }
       ]
     },
@@ -794,6 +802,10 @@
         {
           "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
           "subject": "docs: record published checkout order and stock proof"
+        },
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
         }
       ]
     },
@@ -1092,6 +1104,10 @@
         {
           "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
           "subject": "docs: record published checkout order and stock proof"
+        },
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
         }
       ]
     },
@@ -3134,6 +3150,10 @@
         {
           "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
           "subject": "docs: record published checkout order and stock proof"
+        },
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
         }
       ]
     },
@@ -18136,6 +18156,256 @@
       ]
     },
     {
+      "file": "docs/evidence/published-variable-upgrade-batch-after-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-after-orders-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-after-orders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-before-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-before-orders-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-before-orders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-final-orders-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-final-orders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-final-state-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-final-state.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-install-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-install-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-prepare-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-prepare.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-variable-upgrade-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/purchase-rules-batch-artifact-continuity.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -21360,6 +21630,10 @@
         {
           "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
           "subject": "docs: record published checkout order and stock proof"
+        },
+        {
+          "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
+          "subject": "docs: record published variation purchase and stock proof"
         }
       ]
     },
@@ -21564,6 +21838,10 @@
         {
           "sha": "35671868dc5904d84dcb6bd9c5d31ce44d8e305a",
           "subject": "fix: own message domains and retain WooCommerce translations"
+        },
+        {
+          "sha": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
+          "subject": "fix: restrict variation stock and coupons to variations"
         }
       ]
     },
@@ -21916,6 +22194,10 @@
         {
           "sha": "b7b33b0d52d6bc761da9862be5d00497dc764911",
           "subject": "fix: verify stock edit requests and use native diagnostics"
+        },
+        {
+          "sha": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
+          "subject": "fix: restrict variation stock and coupons to variations"
         }
       ]
     },
@@ -22462,6 +22744,16 @@
         {
           "sha": "dbd174a331765c29e602276718d2b6f8c478412b",
           "subject": "test: verify published variation purchases and stock upgrades"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/relationship-consumers.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
+          "subject": "fix: restrict variation stock and coupons to variations"
         }
       ]
     },
@@ -23186,6 +23478,10 @@
         {
           "sha": "0e23d680865e3a5328ba333b3382b14cb73f8eff",
           "subject": "fix: reuse exact variation relationships across lookup paths"
+        },
+        {
+          "sha": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
+          "subject": "fix: restrict variation stock and coupons to variations"
         }
       ]
     },

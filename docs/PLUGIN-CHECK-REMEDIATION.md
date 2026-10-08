@@ -1,16 +1,15 @@
 # Active Plugin Check remediation
 
-Current verified source df79acb: 687 tests with 1842 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 13 findings, one error and 12 warnings. This removes 217 actual rows from the 230 finding baseline. Remaining batches contain six request checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-report-range-batch.
+Current verified source bad6b9c: 690 tests with 1851 assertions. Both installed stores match all 73 files of archive 80eeade9427fdf57858b6c6dd309fda0e9bc7abf1878a4be5cfc6ea6a4364429. Installed Plugin Check retains 13 findings, one error and 12 warnings. The stock and coupon correction removes no checker row. Zero findings and the complete published upgrade feature matrix remain required. Evidence uses variation-consumer-security-batch. The goal stays active.
 
-Current installed static and runtime Plugin Check reports contain 122 findings, 45 errors and 77 warnings. This is 108 actual removed rows from the 230 finding baseline. The current batches are mapped to every exact source location in evidence/current-plugin-check-batches.json.
+The latest installed report contains 13 findings. This is 217 actual removed rows from the 230 finding baseline. Remaining exact locations are retained in the latest installed report evidence.
 
 | Active batch | Remaining rows | Shared scope |
 | --- | ---: | --- |
-| Request verification | 49 | Inspect native verified calling contexts and read only selectors together |
-| Translation contracts | 44 | Preserve existing dependency catalogs, stored translations and legacy format keys |
-| Public hook constants | 22 | Preserve every existing extension hook and argument contract |
+| Request verification | 6 | Inspect native verified calling contexts and read only selectors together |
+| Public hook constants | 2 | Preserve every existing extension hook and argument contract |
 | Prepared queries | 2 | Direct query warnings remain after both cache warnings were corrected |
-| Other contracts | 5 | Catalog loading, trusted scripts, dependency global and hook, existing directory identity |
+| Other contracts | 3 | Catalog loading, trusted scripts, dependency global and hook, existing directory identity |
 
 Zero findings and the complete published version upgrade feature matrix remain required. Source dispositions are not fixes. No exception acceptance or publication is authorized. The earlier inventory and batch records below retain historical evidence.
 
@@ -169,3 +168,18 @@ Chrome compares the final scoped archive with actual published 1.5.0 through thr
 Cleanup deletes two report orders, two products and the temporary shop manager and fixture option, restores the notice exactly and removes all helpers and archives. Chrome returns to blank. All 73 source, current installed and minimum installed files match archive 9267170b243a1d8301cbd38b661f23e04e825ead61303c9aaacc6d8507cbae74. Sixty one installed PHP files and fifty nine entry and source files on PHP 7.0 pass syntax.
 
 Both installed scans report thirteen findings, one error and twelve warnings, with empty diagnostics. Exactly eleven nonce recommendation rows disappear with no added finding codes. There are 217 actual removed rows from the 230 baseline. Zero findings and complete upgrade acceptance remain open. No exception is accepted, and the goal stays active. Evidence uses plugin-check-report-range-batch.
+
+
+## CHECK-037: Corrupt variation relationships in stock and coupons
+
+Source commit bad6b9c corrects two reproduced consumers of variation metadata. The shared lookup deliberately returns corrupt relationships so the removal handler can reject them before any deletion. Filtering that shared result would weaken its existing fail closed contract. Stock synchronization now requires a variation target when its stock owner is a variation. Coupon inclusion and exclusion expansion retain only actual product_variation posts. Valid linked variations and padded legacy references remain supported. Simple product translation synchronization, shared lookup signatures and removal permission checks remain unchanged.
+
+Three new integration cases fail before correction. An unrelated simple product carrying the same relationship metadata changes from stock seven to five, and both coupon inclusion and exclusion contain it. After correction the targeted relationship, stock boundary, permission and query regressions pass 71 tests with 247 assertions. All four suites pass 690 tests with 1851 assertions. The existing corrupt relationship deletion test remains unchanged and passes.
+
+The native verifier tests the installed archive on the current stack and on WordPress 5.4.2, WooCommerce 3.0.0 and Polylang 2.7.4. Native stock changes both valid variations from nine to five while the unrelated simple stock stays seven. Native variation coupons apply to both translations and reject the unrelated simple product. Exclusion expansion retains both translations and excludes no unrelated simple product. Chrome confirms stock seven and rejected discounts for the unrelated simple product on both stacks. On the minimum stack it also confirms variation stock five and the valid coupon changing total twelve to ten with discount two. These are candidate behavior checks, not a new full published upgrade proof.
+
+Cleanup removes six owned posts on the current stack and seven on the minimum stack including the temporary classic cart page. Both fixture options are removed, the captured minimum cart option is restored exactly, browser cart lines are removed and Chrome returns to blank. Both installed stores match all 73 archive hashes. PHP 7.0 syntax passes for all source files, both main entry files and the native helper. An initial lint invocation used a nonexistent entry filename, was corrected and rerun. Native minimum diagnostics retain external WooCommerce deprecations. Scanner diagnostics are empty.
+
+Four files change in the source commit. Product/Stock.php rejects wrong product types during variation stock propagation. Coupon.php restricts variation coupon expansion by native post type. VariationRelationshipPathsTest.php adds the three reproduced regressions. tests/bin/relationship-consumers.php retains the isolated native compatibility and cleanup verifier. Two files count after excluding tests and configuration.
+
+Installed Plugin Check retains thirteen findings, one error and twelve warnings. No finding is hidden or counted as resolved by this batch. A separate exploratory checkout scan included excluded tests and is not the release scan or comparable finding count. Zero findings and the remaining full published upgrade feature matrix stay required. No push, publication or accepted exception. Evidence uses variation-consumer-security-batch.
