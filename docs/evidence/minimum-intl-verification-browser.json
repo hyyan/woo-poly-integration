@@ -1,0 +1,18 @@
+{
+  "guest": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n[{\"action\":\"woocs_get_products_price_html\",\"marker\":null,\"status\":200,\"result\":{\"hook\":\"wp_ajax_nopriv_woocs_get_products_price_html\",\"admin\":true,\"logged_in\":false,\"intl_available\":true,\"frontend_price_context\":true,\"separator\":\",\",\"number\":\"1.234,5\"}},{\"action\":\"woocs_get_variation_products_price_html\",\"marker\":null,\"status\":200,\"result\":{\"hook\":\"wp_ajax_nopriv_woocs_get_variation_products_price_html\",\"admin\":true,\"logged_in\":false,\"intl_available\":true,\"frontend_price_context\":true,\"separator\":\",\",\"number\":\"1.234,5\"}},{\"action\":\"woocs_get_custom_price_html\",\"marker\":null,\"status\":200,\"result\":{\"hook\":\"wp_ajax_nopriv_woocs_get_custom_price_html\",\"admin\":true,\"logged_in\":false,\"intl_available\":true,\"frontend_price_context\":true,\"separator\":\",\",\"number\":\"1.234,5\"}},{\"action\":\"woo_poly_integration_context_fixture\",\"marker\":\"1\",\"status\":200,\"result\":{\"hook\":\"wp_ajax_nopriv_woo_poly_integration_context_fixture\",\"admin\":true,\"logged_in\":false,\"intl_available\":true,\"frontend_price_context\":false,\"separator\":\".\",\"number\":\"1234.5\"}},{\"action\":\"woo_poly_integration_context_fixture\",\"marker\":\"array\",\"status\":200,\"result\":{\"hook\":\"wp_ajax_nopriv_woo_poly_integration_context_fixture\",\"admin\":true,\"logged_in\":false,\"intl_available\":true,\"frontend_price_context\":false,\"separator\":\".\",\"number\":\"1234.5\"}}]\n```"
+      }
+    ]
+  },
+  "manager": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n[{\"action\":\"woocs_get_products_price_html\",\"marker\":null,\"status\":200,\"result\":{\"hook\":\"wp_ajax_woocs_get_products_price_html\",\"admin\":true,\"logged_in\":true,\"intl_available\":true,\"frontend_price_context\":true,\"separator\":\",\",\"number\":\"1.234,5\"}},{\"action\":\"woocs_get_variation_products_price_html\",\"marker\":null,\"status\":200,\"result\":{\"hook\":\"wp_ajax_woocs_get_variation_products_price_html\",\"admin\":true,\"logged_in\":true,\"intl_available\":true,\"frontend_price_context\":true,\"separator\":\",\",\"number\":\"1.234,5\"}},{\"action\":\"woocs_get_custom_price_html\",\"marker\":null,\"status\":200,\"result\":{\"hook\":\"wp_ajax_woocs_get_custom_price_html\",\"admin\":true,\"logged_in\":true,\"intl_available\":true,\"frontend_price_context\":true,\"separator\":\",\",\"number\":\"1.234,5\"}},{\"action\":\"woo_poly_integration_context_fixture\",\"marker\":\"1\",\"status\":200,\"result\":{\"hook\":\"wp_ajax_woo_poly_integration_context_fixture\",\"admin\":true,\"logged_in\":true,\"intl_available\":true,\"frontend_price_context\":false,\"separator\":\".\",\"number\":\"1234.5\"}},{\"action\":\"woo_poly_integration_context_fixture\",\"marker\":\"array\",\"status\":200,\"result\":{\"hook\":\"wp_ajax_woo_poly_integration_context_fixture\",\"admin\":true,\"logged_in\":true,\"intl_available\":true,\"frontend_price_context\":false,\"separator\":\".\",\"number\":\"1234.5\"}}]\n```"
+      }
+    ]
+  }
+}

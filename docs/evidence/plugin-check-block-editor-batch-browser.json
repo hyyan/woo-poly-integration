@@ -1,0 +1,35 @@
+{
+  "minimumInvalid": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"savingLocked\":true,\"warningDismissed\":true,\"publish\":[{\"text\":\"Publish\",\"ariaDisabled\":\"true\",\"disabled\":false}],\"lang\":\"de\",\"type\":\"variable\"}\n```"
+      }
+    ]
+  },
+  "minimumRestored": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"savingLocked\":false,\"publish\":[{\"ariaDisabled\":\"false\"}],\"type\":\"simple\"}\n```"
+      }
+    ]
+  },
+  "classic": {
+    "invalid": {
+      "language": "de",
+      "type": "variable",
+      "publishDisabled": true,
+      "dialogOpen": true
+    },
+    "dismissed": {
+      "publishDisabled": true,
+      "dialogOpen": false
+    },
+    "restored": {
+      "type": "simple",
+      "publishDisabled": false
+    }
+  },
+  "invalidPublicationAttempted": false
+}

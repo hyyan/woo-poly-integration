@@ -1,0 +1,20 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-integration.xml
+
+F.                                                                  2 / 2 (100%)
+
+Time: 00:00.051, Memory: 109.05 MB
+
+There was 1 failure:
+
+1) InlineScriptSecurityTest::testPrintedWrapperUsesNativeScriptAttributes
+Failed asserting that '<script type="text/javascript" id="hyyan-wpi-native-renderer">\n
+ window.nativeRenderer = 1; \n
+</script>' [ASCII](length: 101) contains "data-wpi-renderer="native"" [ASCII](length: 26).
+
+PLUGIN_SOURCE/tests/integration/InlineScriptSecurityTest.php:65
+
+FAILURES!
+Tests: 2, Assertions: 5, Failures: 1.

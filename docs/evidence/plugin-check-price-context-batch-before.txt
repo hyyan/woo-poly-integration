@@ -1,0 +1,130 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/phpunit-integration.xml
+
+.FFFFFFFFF.                                                       11 / 11 (100%)
+
+Time: 00:00.013, Memory: 107.05 MB
+
+There were 9 failures:
+
+1) LocaleNumberContextTest::testUntrustedMarkerCannotChangeAdminFormatting#1 with data ([1], '.', '1234.5')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'.'
++','
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:15
+
+2) LocaleNumberContextTest::testUntrustedMarkerCannotChangeAdminFormatting#2 with data ([['legacy']], '.', '1234.5')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'.'
++','
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:15
+
+3) LocaleNumberContextTest::testNativePriceCallbackRetainsLocalizedDisplay@wp_ajax_woocs_get_products_price_html with data ('wp_ajax_woocs_get_products_price_html')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    0 => ',',
+-    1 => '1.234,5',
++    0 => '.',
++    1 => '1234.5',
+ ]
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:38
+
+4) LocaleNumberContextTest::testNativePriceCallbackRetainsLocalizedDisplay@wp_ajax_nopriv_woocs_get_products_price_html with data ('wp_ajax_nopriv_woocs_get_prod...e_html')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    0 => ',',
+-    1 => '1.234,5',
++    0 => '.',
++    1 => '1234.5',
+ ]
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:38
+
+5) LocaleNumberContextTest::testNativePriceCallbackRetainsLocalizedDisplay@wp_ajax_woocs_get_variation_products_price_html with data ('wp_ajax_woocs_get_variation_p...e_html')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    0 => ',',
+-    1 => '1.234,5',
++    0 => '.',
++    1 => '1234.5',
+ ]
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:38
+
+6) LocaleNumberContextTest::testNativePriceCallbackRetainsLocalizedDisplay@wp_ajax_nopriv_woocs_get_variation_products_price_html with data ('wp_ajax_nopriv_woocs_get_vari...e_html')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    0 => ',',
+-    1 => '1.234,5',
++    0 => '.',
++    1 => '1234.5',
+ ]
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:38
+
+7) LocaleNumberContextTest::testNativePriceCallbackRetainsLocalizedDisplay@wp_ajax_woocs_get_custom_price_html with data ('wp_ajax_woocs_get_custom_price_html')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    0 => ',',
+-    1 => '1.234,5',
++    0 => '.',
++    1 => '1234.5',
+ ]
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:38
+
+8) LocaleNumberContextTest::testNativePriceCallbackRetainsLocalizedDisplay@wp_ajax_nopriv_woocs_get_custom_price_html with data ('wp_ajax_nopriv_woocs_get_cust...e_html')
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+-    0 => ',',
+-    1 => '1.234,5',
++    0 => '.',
++    1 => '1234.5',
+ ]
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:38
+
+9) LocaleNumberContextTest::testOtherAjaxCallbackRetainsAdminFormattingDespiteMarker
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+ Array &0 [
+     0 => '.',
+-    1 => '1234.5',
++    1 => '1,234.5',
+ ]
+
+WORDPRESS_ROOT/wp-content/plugins/woo-poly-integration/tests/integration/LocaleNumberContextTest.php:69
+
+FAILURES!
+Tests: 11, Assertions: 13, Failures: 9.

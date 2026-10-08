@@ -1,0 +1,10 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-frontend.xml
+
+.......                                                             7 / 7 (100%)
+
+Time: 00:00.212, Memory: 105.05 MB
+
+OK (7 tests, 31 assertions)

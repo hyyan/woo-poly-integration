@@ -1,0 +1,47 @@
+[
+  {
+    "line": 94,
+    "column": 59,
+    "type": "WARNING",
+    "code": "WordPress.Security.NonceVerification.Recommended",
+    "message": "Processing form data without nonce verification.",
+    "docs": "",
+    "file": "src/Hyyan/WPI/LocaleNumbers.php"
+  },
+  {
+    "line": 115,
+    "column": 36,
+    "type": "WARNING",
+    "code": "WordPress.Security.NonceVerification.Recommended",
+    "message": "Processing form data without nonce verification.",
+    "docs": "",
+    "file": "src/Hyyan/WPI/LocaleNumbers.php"
+  },
+  {
+    "line": 178,
+    "column": 24,
+    "type": "WARNING",
+    "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+    "message": "Use of a direct database call is discouraged.",
+    "docs": "",
+    "file": "src/Hyyan/WPI/Product/Variation.php"
+  },
+  {
+    "line": 914,
+    "column": 24,
+    "type": "WARNING",
+    "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+    "message": "Use of a direct database call is discouraged.",
+    "docs": "",
+    "file": "src/Hyyan/WPI/Product/Meta.php"
+  },
+  {
+    "line": 0,
+    "column": 0,
+    "type": "WARNING",
+    "code": "trademarked_term",
+    "message": "The plugin slug includes a restricted term. Your plugin slug - \"woo-poly-integration\" - contains the restricted term \"woo\" and cannot be used to begin your plugin slug. We disallow the use of certain terms in ways that are abused, or potentially infringe on and/or are misleading with regards to trademarks. You may use the term \"woo\" elsewhere in your plugin slug, such as \"... for woo\".",
+    "docs": "",
+    "file": "__init__.php"
+  }
+]

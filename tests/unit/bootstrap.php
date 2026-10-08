@@ -2,6 +2,7 @@
 $GLOBALS['woopoly_test_admin'] = false;
 $GLOBALS['woopoly_test_locale'] = 'en_US';
 function is_admin() { return $GLOBALS['woopoly_test_admin']; }
+function doing_action($hook) { return false; }
 function pll_current_language($field = 'slug') { return $GLOBALS['woopoly_test_locale']; }
 function get_locale() { return $GLOBALS['woopoly_test_wp_locale'] ?? 'en_US'; }
 require dirname(__DIR__, 2) . '/src/Hyyan/WPI/LocaleNumbers.php';

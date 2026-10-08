@@ -1,18 +1,16 @@
 # Maintenance batches
 
-Current verified source df79acb: 687 tests with 1842 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 13 findings, one error and 12 warnings. This removes 217 actual rows from the 230 finding baseline. Remaining batches contain six request checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-report-range-batch.
+Current installed candidate has zero Plugin Check errors and zero code warnings. One visible trademark warning remains for the established folder identity, which the maintainer has required keeping. No checker rule is suppressed. The last source verification passes 724 PHP tests with 2013 assertions and eight JavaScript editor asset tests. Both installed distributions have matched all 73 manifest files. The JavaScript regressions now have a separate job in the existing push and pull request workflow.
 
-Historical installed static and runtime Plugin Check reports contain 122 findings, 45 errors and 77 warnings. This is 108 actual removed rows from the 230 finding baseline. The current batches are mapped to every exact source location in evidence/current-plugin-check-batches.json.
-
-| Active batch | Remaining rows | Shared scope |
+| Verified source batch | Actual findings removed | Evidence prefix |
 | --- | ---: | --- |
-| Request verification | 6 | Inspect native verified calling contexts and read only selectors together |
-| Translation contracts | 0 | Preserve existing dependency catalogs, stored translations and legacy format keys |
-| Public hook constants | 2 | Preserve every existing extension hook and argument contract |
-| Prepared queries | 2 | Direct query warnings remain after both cache warnings were corrected |
-| Other contracts | 3 | Trusted script output, legacy dependency global and existing directory identity |
+| Settings hook names | 2 | plugin-check-settings-hooks-batch |
+| Public catalog request handling | 5 | plugin-check-navigation-request-batch |
+| Native inline script output | 1 error | plugin-check-native-script-batch |
+| Native prepared metadata lookups | 2 | plugin-check-native-lookup-batch |
+| Verified price callback context | 2 | plugin-check-price-context-batch |
 
-Zero findings and the complete published version upgrade feature matrix remain required. Source dispositions are not fixes. No exception acceptance or publication is authorized. The earlier inventory and batch records below retain historical evidence.
+The block editor saving guard is an additional corrected regression with Chrome proof and eight tests covering both distributed assets. These resumed source batches remain uncommitted. Published 1.5.0 to final candidate comparisons now preserve seven stored data groups, six cart and coupon cases, eight stock selections and eight quantity limits. Eight Chrome product form comparisons match. Eight actual browser guest purchases and eight partial refunds pass before and after the update, with the four published orders and refunds retained exactly. The complete feature upgrade acceptance and final commit inventory remain unfinished. No publication is authorized.
 
 ## Historical batch inventory
 

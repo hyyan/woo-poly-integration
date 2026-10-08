@@ -1,0 +1,486 @@
+{
+  "before": [
+    {
+      "mode": "global",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "total": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"filled\":true}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```\nPage navigated to http://localhost:8099/woopoly-upgrade-lab/?page_id=629&order-received=648&key=wc_order_6ac7674f253dd."
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "global",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "total": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"filled\":true}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "wildcard",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "total": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"filled\":true}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "wildcard",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "total": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"filled\":true}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "parent",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "parent",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "backorder",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "backorder",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    }
+  ],
+  "after": [
+    {
+      "mode": "global",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "global",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "wildcard",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "wildcard",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "parent",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "parent",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "backorder",
+      "lang": "en",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-en\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "backorder",
+      "lang": "de",
+      "selection": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"attribute\":\"upgrade-pa_upgrade_colour-de\",\"quantity\":1}\n```"
+          }
+        ]
+      },
+      "purchase": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"total\":18}\n```"
+          }
+        ]
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"received\":true,\"errors\":[]}\n```"
+          }
+        ]
+      }
+    }
+  ]
+}

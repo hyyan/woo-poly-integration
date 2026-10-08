@@ -911,18 +911,21 @@ class Meta
         $cacheKey = 'duplicate_sku:' . md5($sku . ':' . (int) $product_id) . ':' . wp_cache_get_last_changed('posts');
         $postids = wp_cache_get($cacheKey, 'woo_poly_integration', false, $found);
         if (!$found) {
-            $postids = $wpdb->get_col(
-            $wpdb->prepare(
-            "SELECT $wpdb->posts.ID
-                    FROM $wpdb->posts
-                    LEFT JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id )
-                    WHERE $wpdb->posts.post_type IN ( 'product', 'product_variation' )
-                        AND $wpdb->posts.post_status NOT IN ('trash', 'auto-draft')
-                        AND $wpdb->postmeta.meta_key = '_sku' AND $wpdb->postmeta.meta_value = %s
-                        AND $wpdb->postmeta.post_id <> %d
-                    ", $sku, $product_id
-            )
-            );
+            $postids = Utilities::getPostIdsByQueryClauses(static function ($clauses) use ($wpdb, $sku, $product_id) {
+                $clauses['join'] = " INNER JOIN {$wpdb->postmeta} ON ({$wpdb->posts}.ID = {$wpdb->postmeta}.post_id)";
+                $clauses['where'] = $wpdb->prepare(
+                    " AND {$wpdb->posts}.post_type IN ('product', 'product_variation')
+                        AND {$wpdb->posts}.post_status NOT IN ('trash', 'auto-draft')
+                        AND {$wpdb->postmeta}.meta_key = %s AND {$wpdb->postmeta}.meta_value = %s
+                        AND {$wpdb->postmeta}.post_id <> %d",
+                    '_sku', $sku, $product_id
+                );
+                $clauses['groupby'] = '';
+                $clauses['orderby'] = '';
+                $clauses['limits'] = '';
+                $clauses['distinct'] = '';
+                return $clauses;
+            });
             wp_cache_set($cacheKey, $postids, 'woo_poly_integration', 60);
         }
 		$curlang = pll_get_post_language( $product_id );

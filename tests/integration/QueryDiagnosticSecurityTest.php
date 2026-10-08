@@ -148,6 +148,68 @@ final class QueryDiagnosticSecurityTest extends TestCase
         }
     }
 
+    public function testNativeMetadataLookupDoesNotAlterNestedPostQueries(): void
+    {
+        $source = $this->product('en', 'scoped-lookup-source');
+        $other = $this->product('de', 'scoped-lookup-other');
+        $nested = array();
+        $ids = Hyyan\WPI\Utilities::getPostIdsByQueryClauses(static function ($clauses) use ($source, $other, &$nested) {
+            global $wpdb;
+            $nested = get_posts(array('post_type' => 'product', 'post__in' => array($other), 'fields' => 'ids', 'lang' => ''));
+            $clauses['where'] = $wpdb->prepare(" AND {$wpdb->posts}.ID = %d", $source);
+            return $clauses;
+        });
+        self::assertSame(array((string) $source), $ids);
+        self::assertSame(array($other), $nested);
+    }
+
+    public function testNativeMetadataLookupRemovesItsFilterAfterFailure(): void
+    {
+        $before = isset($GLOBALS['wp_filter']['posts_clauses']) ? $GLOBALS['wp_filter']['posts_clauses']->callbacks : array();
+        try {
+            Hyyan\WPI\Utilities::getPostIdsByQueryClauses(static function ($clauses) {
+                throw new RuntimeException('Owned lookup failure');
+            });
+            self::fail('Lookup failure must propagate');
+        } catch (RuntimeException $error) {
+            self::assertSame('Owned lookup failure', $error->getMessage());
+        }
+        $after = isset($GLOBALS['wp_filter']['posts_clauses']) ? $GLOBALS['wp_filter']['posts_clauses']->callbacks : array();
+        self::assertSame($before, $after);
+    }
+
+    public function testNativeRelationshipLookupKeepsDuplicateAndOrphanMetadataRows(): void
+    {
+        global $wpdb;
+        $source = $this->product('en', 'orphan-lookup-source');
+        $orphan = PHP_INT_MAX - 5;
+        try {
+            foreach (array('000' . $source, (string) $source) as $value) {
+                self::assertNotFalse($wpdb->insert($wpdb->postmeta, array('post_id' => $orphan, 'meta_key' => Variation::DUPLICATE_KEY, 'meta_value' => $value), array('%d', '%s', '%s')));
+            }
+            $ids = Variation::getRelatedVariation($source, true);
+            self::assertSame(array((string) $orphan, (string) $orphan), $ids);
+        } finally {
+            $wpdb->delete($wpdb->postmeta, array('post_id' => $orphan, 'meta_key' => Variation::DUPLICATE_KEY), array('%d', '%s'));
+            wp_cache_set_posts_last_changed();
+        }
+    }
+
+    public function testNativeRelationshipLookupDoesNotAliasAnOverflowingMetadataPostId(): void
+    {
+        global $wpdb;
+        $source = $this->product('en', 'overflow-post-id-source');
+        $overflow = '18446744073709551615';
+        try {
+            self::assertNotFalse($wpdb->insert($wpdb->postmeta, array('post_id' => $overflow, 'meta_key' => Variation::DUPLICATE_KEY, 'meta_value' => $source), array('%s', '%s', '%d')));
+            $ids = Variation::getRelatedVariation($source, true);
+            self::assertNotContains((string) PHP_INT_MAX, $ids);
+        } finally {
+            $wpdb->delete($wpdb->postmeta, array('post_id' => $overflow, 'meta_key' => Variation::DUPLICATE_KEY), array('%s', '%s'));
+            wp_cache_set_posts_last_changed();
+        }
+    }
+
     #[DataProvider('requests')]
     public function testOptionalCouponDiagnosticsNeverWarnForMalformedRequestShape($uri): void
     {

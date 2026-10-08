@@ -1,0 +1,7 @@
+There are 6 orders to be synced.
+Sync completed.
+Success: 6 orders were synced in 0 seconds.
+Verification completed.
+Success: 6 orders were verified in 0 seconds.
+Running pre-enable checks...
+Success: HPOS enabled.

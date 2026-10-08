@@ -54,6 +54,41 @@ final class InlineScriptSecurityTest extends TestCase
         self::assertStringContainsString('&quot;', $output);
         self::assertStringContainsString('window.fixture = 1;', $output);
     }
+    public function testPrintedWrapperUsesNativeScriptAttributes(): void
+    {
+        $filter = static function ($attributes) {
+            $attributes['data-wpi-renderer'] = 'native';
+            return $attributes;
+        };
+        add_filter('wp_inline_script_attributes', $filter);
+        $output = $this->capture(fn() => Utilities::jsScriptWrapper('native-renderer', 'window.nativeRenderer = 1;', false));
+        self::assertStringContainsString('data-wpi-renderer="native"', $output);
+        self::assertStringContainsString('window.nativeRenderer = 1;', $output);
+    }
+
+    public function testRepeatedWrapperPrintsOnlyItsOwnCodeAndCleansRegistration(): void
+    {
+        $registered = array_keys(wp_scripts()->registered);
+        $first = $this->capture(fn() => Utilities::jsScriptWrapper('repeated', 'window.firstWrapper = 1;', false));
+        $second = $this->capture(fn() => Utilities::jsScriptWrapper('repeated', 'window.secondWrapper = 1;', false));
+        self::assertSame(1, substr_count($first, 'window.firstWrapper = 1;'));
+        self::assertStringNotContainsString('window.firstWrapper', $second);
+        self::assertSame(1, substr_count($second, 'window.secondWrapper = 1;'));
+        self::assertSame($registered, array_keys(wp_scripts()->registered));
+    }
+
+    public function testImmediateWrapperEscapesAttributesAndKeepsJavaScriptOperators(): void
+    {
+        $code = 'if (1 < 2) { window.wrapperText = "quoted & value"; }';
+        $output = $this->capture(fn() => Utilities::jsScriptWrapper('" onload="alert(1)', $code, false));
+        $document = new DOMDocument();
+        @$document->loadHTML($output);
+        $xpath = new DOMXPath($document);
+        self::assertSame(1, $xpath->query('//script')->length);
+        self::assertSame(0, $xpath->query('//*[@onload]')->length);
+        self::assertSame($code, trim($xpath->query('//script')->item(0)->textContent));
+    }
+
     public function testAttributeLabelsCannotTerminateScripts(): void
     {
         $_GET = array('page' => 'product_attributes'); $GLOBALS['pagenow'] = 'edit.php';

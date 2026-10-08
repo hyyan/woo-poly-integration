@@ -39,8 +39,9 @@ abstract class AbstractSettings implements SettingsInterface
     public function getSections(array $sections)
     {
         $new = array();
+        $id = static::getID();
         $current = apply_filters(
-                $this->getSectionsFilterName(), (array) $this->doGetSections()
+                "woo_poly_integration_settings_{$id}_sections", (array) $this->doGetSections()
         );
 
         foreach ($current as $def) {
@@ -56,31 +57,12 @@ abstract class AbstractSettings implements SettingsInterface
      */
     public function getFields(array $fields)
     {
+        $id = static::getID();
         return array_merge($fields, array(
             static::getID() => apply_filters(
-                    $this->getFieldsFilterName(), (array) $this->doGetFields()
+                    "woo_poly_integration_settings_{$id}_fields", (array) $this->doGetFields()
             ),
         ));
-    }
-
-    /**
-     * Get sections filter name.
-     *
-     * @return string
-     */
-    protected function getSectionsFilterName()
-    {
-        return sprintf('woo-poly.settings.%s_sections', static::getID());
-    }
-
-    /**
-     * Get sections filter name.
-     *
-     * @return string
-     */
-    protected function getFieldsFilterName()
-    {
-        return sprintf('woo-poly.settings.%s_fields', static::getID());
     }
 
     /**

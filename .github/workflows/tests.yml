@@ -31,3 +31,9 @@ jobs:
         with:
           name: diagnostics-php-${{ matrix.php }}
           path: artifacts/
+  javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run editor asset regressions
+        run: node --test tests/js/Variables.test.cjs

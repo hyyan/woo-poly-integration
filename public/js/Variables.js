@@ -78,6 +78,16 @@
          */
         , _changeSaveBoxState: function (enable) {
             this.$('#submitdiv *').prop('disabled', enable);
+            var editor = window.wp && window.wp.data && typeof window.wp.data.dispatch === 'function'
+                    ? window.wp.data.dispatch('core/editor')
+                    : null;
+            if (editor && typeof editor.lockPostSaving === 'function' && typeof editor.unlockPostSaving === 'function') {
+                if (enable) {
+                    editor.lockPostSaving('woo-poly-integration-variable-language');
+                } else {
+                    editor.unlockPostSaving('woo-poly-integration-variable-language');
+                }
+            }
         }
         /**
          * Create dialog

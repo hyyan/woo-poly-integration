@@ -23,6 +23,38 @@ final class Utilities
 {
 
     /**
+     * Run a metadata ID lookup through the native post query lifecycle.
+     *
+     * @param callable $filter SQL clauses for this lookup
+     *
+     * @return array post IDs as strings
+     */
+    public static function getPostIdsByQueryClauses(callable $filter)
+    {
+        $query = new \WP_Query();
+        $scopedFilter = static function ($clauses, $currentQuery) use ($query, $filter) {
+            return $currentQuery === $query ? $filter($clauses) : $clauses;
+        };
+        add_filter('posts_clauses', $scopedFilter, PHP_INT_MAX, 2);
+        try {
+            return array_map('strval', $query->query(array(
+                'fields' => 'ids',
+                'posts_per_page' => -1,
+                'orderby' => 'none',
+                'no_found_rows' => true,
+                'cache_results' => false,
+                'update_post_meta_cache' => false,
+                'update_post_term_cache' => false,
+                'ignore_sticky_posts' => true,
+                'suppress_filters' => false,
+                'lang' => '',
+            )));
+        } finally {
+            remove_filter('posts_clauses', $scopedFilter, PHP_INT_MAX);
+        }
+    }
+
+    /**
      * Get the translations IDS of the given product ID.
      *
      * @global \Polylang $polylang
@@ -271,7 +303,21 @@ final class Utilities
         }
 
         if (false === $return) {
-            echo $result;
+            $inlineCode = true === $jquery
+                    ? sprintf("\n jQuery(function ($) {\n %s \n});\n", $code)
+                    : $code;
+            if (function_exists('wp_print_inline_script_tag')) {
+                wp_print_inline_script_tag($inlineCode, array('type' => 'text/javascript', 'id' => $prefix . $ID));
+            } else {
+                $handle = wp_unique_id($prefix . sanitize_key($ID) . '-');
+                wp_register_script($handle, false, array(), Plugin::getVersion(), false);
+                try {
+                    wp_add_inline_script($handle, $inlineCode);
+                    wp_scripts()->print_inline_script($handle, 'after');
+                } finally {
+                    wp_deregister_script($handle);
+                }
+            }
         } else {
             return $result;
         }

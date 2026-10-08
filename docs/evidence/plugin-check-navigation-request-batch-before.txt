@@ -1,0 +1,23 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-frontend.xml
+
+.F                                                                  2 / 2 (100%)
+
+Time: 00:00.073, Memory: 105.05 MB
+
+There was 1 failure:
+
+1) NavigationRequestTest::testParsedPublicRequestTranslatesBeforeNativeSelection
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'nav-target'
++'nav-source'
+
+PLUGIN_SOURCE/tests/frontend/NavigationRequestTest.php:68
+
+FAILURES!
+Tests: 2, Assertions: 7, Failures: 1.

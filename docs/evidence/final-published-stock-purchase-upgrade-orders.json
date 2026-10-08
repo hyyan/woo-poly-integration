@@ -1,0 +1,27 @@
+[
+  {
+    "version": "1.5.1",
+    "native_stock_purchases": 16,
+    "quantity_each": 1,
+    "total_each": 18,
+    "stocks": {
+      "global": {
+        "en": 4,
+        "de": 4
+      },
+      "wildcard": {
+        "en": 4,
+        "de": 4
+      },
+      "parent": {
+        "en": 1,
+        "de": 1
+      },
+      "backorder": {
+        "en": -4,
+        "de": -4
+      }
+    },
+    "published_orders_retained": true
+  }
+]

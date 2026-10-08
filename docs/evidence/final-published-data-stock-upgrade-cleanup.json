@@ -1,0 +1,19 @@
+[
+  {
+    "removed_stock_matrix_products": 16,
+    "stock_matrix_fixture_removed": true
+  },
+  {
+    "removed_products": 2,
+    "removed_terms": 7,
+    "removed_attribute": true,
+    "removed_image": true,
+    "removed_coupon": true,
+    "options_restored": true
+  },
+  {
+    "cart_pages_removed": 4,
+    "minimum_coupon_removed": true,
+    "cart_options_restored": true
+  }
+]

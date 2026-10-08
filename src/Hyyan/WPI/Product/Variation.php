@@ -175,11 +175,22 @@ class Variation
         $cacheKey = 'related_variations:' . $variatonID . ':' . wp_cache_get_last_changed('posts');
         $postids = wp_cache_get($cacheKey, 'woo_poly_integration', false, $found);
         if (!$found) {
-            $postids = $wpdb->get_col($wpdb->prepare(
-                "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY) = %s",
-                self::DUPLICATE_KEY,
-                (string) $variatonID
-            ));
+            $postids = Utilities::getPostIdsByQueryClauses(static function ($clauses) use ($wpdb, $variatonID) {
+                $clauses['fields'] = "{$wpdb->postmeta}.post_id";
+                $clauses['join'] = " RIGHT JOIN {$wpdb->postmeta} ON ({$wpdb->posts}.ID = {$wpdb->postmeta}.post_id)";
+                $clauses['where'] = $wpdb->prepare(
+                    " AND meta_key = %s AND CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY) = %s
+                        AND {$wpdb->postmeta}.post_id <= %d",
+                    self::DUPLICATE_KEY,
+                    (string) $variatonID,
+                    PHP_INT_MAX
+                );
+                $clauses['groupby'] = '';
+                $clauses['orderby'] = '';
+                $clauses['limits'] = '';
+                $clauses['distinct'] = '';
+                return $clauses;
+            });
             wp_cache_set($cacheKey, $postids, 'woo_poly_integration', 60);
         }
 

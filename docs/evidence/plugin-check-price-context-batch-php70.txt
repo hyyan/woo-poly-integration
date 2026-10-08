@@ -1,0 +1,2 @@
+No syntax errors detected in /plugin/src/Hyyan/WPI/LocaleNumbers.php
+No syntax errors detected in /plugin/tests/bin/locale-price-context.php

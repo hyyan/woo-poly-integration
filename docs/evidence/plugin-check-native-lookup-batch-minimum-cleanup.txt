@@ -1,0 +1,1 @@
+{"removed_posts":6,"fixture_removed":true}

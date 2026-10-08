@@ -1,0 +1,1 @@
+Success: Removed user 18 from MINIMUM_STORE.

@@ -1,0 +1,27 @@
+{
+  "skuTranslated": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"sku\":\"native-sku-alpha\",\"messages\":[\"Product updated. View ProductDismiss this notice.\"],\"language\":\"de\"}\n```"
+      }
+    ]
+  },
+  "skuDuplicate": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"sku\":\"native-sku-gamma\",\"messages\":[\"Invalid or duplicated SKU.Dismiss this notice.\",\"Product updated. View ProductDismiss this notice.\"],\"language\":\"de\"}\n```"
+      }
+    ]
+  },
+  "variationDeletion": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Script ran on page and returned:\n```json\n{\"variationRows\":0,\"notices\":[\"\"]}\n```"
+      }
+    ]
+  },
+  "note": "Native controls were used. The invalid same language SKU retained its original stored value. Variation deletion was verified separately against stored posts."
+}

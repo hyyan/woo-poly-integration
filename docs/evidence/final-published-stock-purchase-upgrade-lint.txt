@@ -1,0 +1,1 @@
+No syntax errors detected in OWNED_HELPER/published-stock-purchase-upgrade.php

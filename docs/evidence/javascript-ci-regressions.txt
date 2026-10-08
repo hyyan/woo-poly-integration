@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: Variables.js: classic editor blocks invalid language and restores valid choices
+ok 1 - Variables.js: classic editor blocks invalid language and restores valid choices
+  ---
+  duration_ms: 2.025
+  type: 'test'
+  ...
+# Subtest: Variables.js: block editor locks saving after warning dismissal
+ok 2 - Variables.js: block editor locks saving after warning dismissal
+  ---
+  duration_ms: 0.510167
+  type: 'test'
+  ...
+# Subtest: Variables.js: changing product type releases only the plugin lock
+ok 3 - Variables.js: changing product type releases only the plugin lock
+  ---
+  duration_ms: 0.746875
+  type: 'test'
+  ...
+# Subtest: Variables.js: missing editor store preserves classic behavior
+ok 4 - Variables.js: missing editor store preserves classic behavior
+  ---
+  duration_ms: 0.464667
+  type: 'test'
+  ...
+# Subtest: Variables.min.js: classic editor blocks invalid language and restores valid choices
+ok 5 - Variables.min.js: classic editor blocks invalid language and restores valid choices
+  ---
+  duration_ms: 0.494833
+  type: 'test'
+  ...
+# Subtest: Variables.min.js: block editor locks saving after warning dismissal
+ok 6 - Variables.min.js: block editor locks saving after warning dismissal
+  ---
+  duration_ms: 0.296208
+  type: 'test'
+  ...
+# Subtest: Variables.min.js: changing product type releases only the plugin lock
+ok 7 - Variables.min.js: changing product type releases only the plugin lock
+  ---
+  duration_ms: 0.380209
+  type: 'test'
+  ...
+# Subtest: Variables.min.js: missing editor store preserves classic behavior
+ok 8 - Variables.min.js: missing editor store preserves classic behavior
+  ---
+  duration_ms: 0.27725
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 59.928583

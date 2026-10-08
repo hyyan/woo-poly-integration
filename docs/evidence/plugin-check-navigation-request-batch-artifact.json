@@ -1,0 +1,370 @@
+{
+  "archive_sha256": "e12e33107b32510dccf9069eeb02ef14b7e7baaeb4a92d60f2ff6f6274fb5716",
+  "files": [
+    {
+      "path": "woo-poly-integration/CHANGELOG.md",
+      "size": 26797,
+      "sha256": "35534bf246f12259fdcfb9a3dfeaedc0a65757f4fa51c99fc5696d978eaef6fe"
+    },
+    {
+      "path": "woo-poly-integration/LICENSE",
+      "size": 1084,
+      "sha256": "944ffdf553bb0620d2d41accc977ac53b4770af65f8cf3882d12537ea017ba02"
+    },
+    {
+      "path": "woo-poly-integration/__init__.php",
+      "size": 3354,
+      "sha256": "cb680178fa87c7b6d82339dc0ee8f3e63e54fa149dd62471b4b69de45527f254"
+    },
+    {
+      "path": "woo-poly-integration/index.php",
+      "size": 28,
+      "sha256": "bd48c24ce4500e60d2524571756787283f0d3fbfa50b116331309c09773f0cd1"
+    },
+    {
+      "path": "woo-poly-integration/languages/woo-poly-integration-ar.mo",
+      "size": 5971,
+      "sha256": "3311ebfa321d59504f9c9b4561368609b085341bc6a6f0ed5de272c7ddfc24b2"
+    },
+    {
+      "path": "woo-poly-integration/languages/woo-poly-integration-ar.po",
+      "size": 25036,
+      "sha256": "aae2cf4608139b5c53bbd206ecff1259dea24328e035a657b74146ddea9ce7da"
+    },
+    {
+      "path": "woo-poly-integration/languages/woo-poly-integration-es_ES.mo",
+      "size": 6614,
+      "sha256": "bce1aeffc8b80027e3522a586b15a1b5f9153d4ebae534d78a3e934a980e93fa"
+    },
+    {
+      "path": "woo-poly-integration/languages/woo-poly-integration-es_ES.po",
+      "size": 22865,
+      "sha256": "d660759b733d315fa9ce9dfa9affa48d001fc424e637c0e5ca2e298a1d0aa613"
+    },
+    {
+      "path": "woo-poly-integration/languages/woo-poly-integration.pot",
+      "size": 17722,
+      "sha256": "9e2bbbf803c3f62439acfd622a6cc18cdd6016a5135d50ad5e0c5db372ecd6a4"
+    },
+    {
+      "path": "woo-poly-integration/public/js/Cart.js",
+      "size": 7124,
+      "sha256": "5445f928461fc59cd296304a96d89172dad2d24d8dad7b0e2225e9ef72f2a6da"
+    },
+    {
+      "path": "woo-poly-integration/public/js/Cart.min.js",
+      "size": 3135,
+      "sha256": "08ff4cea3d996dc01962c39d5c041c7a24dd3944519c0ecbac066d24338e26fa"
+    },
+    {
+      "path": "woo-poly-integration/public/js/Variables.js",
+      "size": 3672,
+      "sha256": "f9fd98d4047bbe260a7d025068c2e87bed7dd40395554ca2282c134ab8146be0"
+    },
+    {
+      "path": "woo-poly-integration/public/js/Variables.min.js",
+      "size": 1241,
+      "sha256": "1a2e4bf70600f2b76959818abc5632aa919bc21c79bc070059af987ab334f885"
+    },
+    {
+      "path": "woo-poly-integration/readme.txt",
+      "size": 31701,
+      "sha256": "c6fd4a215d34da5a9b66756c0433628726a062802b0be1a6d4c93006266b1c1e"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Admin/AbstractSettings.php",
+      "size": 1819,
+      "sha256": "790f6e05cc14e280ff52857cff04779fddc262aa7e3b8c24fda117b41877a57e"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Admin/Features.php",
+      "size": 7595,
+      "sha256": "ff3bda6910000b93aee25f08a19cf38f0d36cc3b742691071441884018110fe7"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Admin/MetasList.php",
+      "size": 2669,
+      "sha256": "58d960ea42ba63d3fa7caf09a64bb1db30563f157e6ba47cb8981b44a07b5b1e"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Admin/Settings.php",
+      "size": 2795,
+      "sha256": "cf64d95f48dc5687c590cc5242469f2706cc3635f7f2e583f27aa588eb20149f"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Admin/SettingsInterface.php",
+      "size": 893,
+      "sha256": "ad3bc405c39658ec11ba7d4e2188d920ddb0ca4e61de3733f5f27eef77b116ca"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Admin/StatusReport.php",
+      "size": 2423,
+      "sha256": "5adfdbc961408fe3180b9927504d72edd849e0bd9e17bb0ff9ab14c2c8a0fcb1"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Ajax.php",
+      "size": 1273,
+      "sha256": "4d121355e9cd6bc4ef6653ad7e5ce653a35105ad6a92a8ae7fe90d4ebadd763b"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Autoloader.php",
+      "size": 1462,
+      "sha256": "747159f795b8c8be33245c8b9fce11028ede4c7368cb0bb099397ac119925f33"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Breadcrumb.php",
+      "size": 2864,
+      "sha256": "b80cc86d4ee4c0a95e6ab813f01adc09450c52dca69ef818b0defc2a7e0f1d0d"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Cart.php",
+      "size": 24575,
+      "sha256": "581aea13c8a933290a6e1321dee923e21215e58b5f496fcfc33c6071112a6885"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Coupon.php",
+      "size": 12460,
+      "sha256": "37e1aeb8fc202140c5dd68307235d42b70909437af139399903ee1186a395b9c"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Emails.php",
+      "size": 29738,
+      "sha256": "80aecafe03eaacd96c19b131b3d2dab5fdaa80e1d2fdf4140b2a10ac808144f3"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Endpoints.php",
+      "size": 8869,
+      "sha256": "f57ff7fd061dc13f19863940c35f416ab2d98f159912cd6b25857a0368a2f801"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayBACS.php",
+      "size": 5172,
+      "sha256": "3346e48a151edfad71d3fde0229d20bc4076894270acc2e96147619f0cbaafed"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayCOD.php",
+      "size": 1635,
+      "sha256": "f9638bca064e7a02487a4607a38ddf83dbf5523bfd6dd234b8abc7a99dd75a7a"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Gateways/GatewayCheque.php",
+      "size": 1663,
+      "sha256": "86919b1cb861bae4f1a1263f9c3f0b56d6448e5b798a3d5b64286e71865c5e0a"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Gateways.php",
+      "size": 9781,
+      "sha256": "e9268af42b1da35c8a5653c2f21b668477532f8259d64cbda81aeb84b4e142cb"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/HooksInterface.php",
+      "size": 9296,
+      "sha256": "1da06aa641ed6e68530e087031a0af97c737a91bf99f13700ec0a47159e40097"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Language.php",
+      "size": 3195,
+      "sha256": "9e76c07a38a80c0397dab94662ef33bb8a07f0fdae2b242c1be40bf4b0528cc5"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/LocaleNumbers.php",
+      "size": 5662,
+      "sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Login.php",
+      "size": 998,
+      "sha256": "8cfe12383198e40826d310c460a21df64c83fa40ad7139a49276fa7a08f22f76"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Media.php",
+      "size": 1500,
+      "sha256": "6c225fa9afe7e7bcf46e635ff26caf21788cb7445aa89034ffed845a91bdd977"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/MessagesInterface.php",
+      "size": 743,
+      "sha256": "bada088ad29c566d3716a93bf6bc9a4d85bbb88e8f5cce472148c46ad00d13e3"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Order.php",
+      "size": 5078,
+      "sha256": "b53be8934b26f3581841d28eb5653bec7d49d76d3a1a37487bf8f99fd0fa8261"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Pages.php",
+      "size": 6907,
+      "sha256": "f5bbaf45537a761038eaf15dc46939269dbef7dfd4e849a8051dcb62c86ab63c"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Permalinks.php",
+      "size": 1768,
+      "sha256": "bbce45a46ed6dc248cd337ba8f9a720331c6707e857c45c64f96f44ea2209e95"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Plugin.php",
+      "size": 31532,
+      "sha256": "a31483a4549704e8eed7b61a44c0548d215d7cb83b91ca189e7c36b6d9720558"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Privacy.php",
+      "size": 3512,
+      "sha256": "b71ef973ca7617cd10375aef4c875e90b4af56b9478d1d8c10252fef0786be0a"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Product/Duplicator.php",
+      "size": 2033,
+      "sha256": "078e101bb4ce8a19ad597ed23b59a4fc2d4fd58bb37f8171cdeb8294d0f9671b"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Product/Meta.php",
+      "size": 39965,
+      "sha256": "286d8a162b54b79181c2694e25caab8a86994de2e50e011f51d96823a67cb242"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Product/Product.php",
+      "size": 10074,
+      "sha256": "0079123353ad16d9d0c28319c4e79ff0aa87fa6ffab1313f4f2907b4eb7172e5"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Product/Stock.php",
+      "size": 5797,
+      "sha256": "607f91f44a91af1dca73bb000689d35f57bf2d79b6fffe1b960c2d81e94357cb"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Product/Variable.php",
+      "size": 22986,
+      "sha256": "ad9b1abf611546597e914c18bd39bb8fef9e0ae041c11cfaf9c0b8571cc91faa"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Product/Variation.php",
+      "size": 19724,
+      "sha256": "5c04b29bc2fe3384948b1f5ffd8bdf748b35eae2189b738474c410b245e46eb3"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Reports.php",
+      "size": 11113,
+      "sha256": "c3dec6d8b2be8af2906b120dc0c5760133fc64ca30d6461c737c62df820a0546"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Shipping.php",
+      "size": 6510,
+      "sha256": "2c713cbfc6272396dea7d1dd4ec8ec15940fb348bee128e0fe18854c9859e6ef"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Tax.php",
+      "size": 4282,
+      "sha256": "60368d9cf289a64e2036749a8ebac9103e8b852df4ade11f2a440c13a3b02d3a"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Attributes.php",
+      "size": 4384,
+      "sha256": "eb4a5e319372a0d924ca1a7718ed6e4fbc50391e941845455c090e3f71f141e8"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Categories.php",
+      "size": 5168,
+      "sha256": "0710c087fa0725badd34c5e7e1a7901655f9bd1c2a80ac7e61a5793d901a169e"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/ShippingCalss.php",
+      "size": 554,
+      "sha256": "b125e6641ac01b9dfd5a1790da75c6397a1ce567041f749906c5bbfad5e6d4d2"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Tags.php",
+      "size": 525,
+      "sha256": "b9fc7a7d0ea5bb0c773be490e9854e2ee27c27664ca84a6f3d7f3a0342c99c54"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/Taxonomies.php",
+      "size": 7604,
+      "sha256": "0983c5fa30e27cc1def07476530be9b938abeec8cb9b972514ac0b3d62449e6b"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Taxonomies/TaxonomiesInterface.php",
+      "size": 572,
+      "sha256": "c286219539aa7d4f6957df2c0dfdf7e0410f8e80988cd55077bb11c01c82bd36"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Tools/FlashMessages.php",
+      "size": 3598,
+      "sha256": "a5f8315af51e5df3327618d80c0e5ebcb177de12bf7e6dab82590b08723686fb"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Tools/TranslationsDownloader.php",
+      "size": 5121,
+      "sha256": "1307866b37f0109f48908d5542f24e7a018460c0316b808965e1bc6221b4273e"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Utilities.php",
+      "size": 25869,
+      "sha256": "33ccb6c2bb65eb6fa140b59b4d2a5b8a8423549c3f40a97509d045afbce5c719"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/about.php",
+      "size": 1086,
+      "sha256": "3f305bf01a7c52ca222fe5fa3728f2bfe3b5f77cc222bd494880574174a1d087"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/getHelp.php",
+      "size": 1035,
+      "sha256": "4bad73476a9d30a28a96bd9e359c8f50e88e9650672cbb728d7916b1fd9ad4e3"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/main.php",
+      "size": 207,
+      "sha256": "3e9da56a051525bbb1582365b9927940d78a5e7557b2899dca729d5af91f54a1"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/Admin/support.php",
+      "size": 951,
+      "sha256": "1b6592baeec3a11e0fb816f40c1957d393d7a46a50094179efafb75213825bf1"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/Messages/activateError.php",
+      "size": 1174,
+      "sha256": "2c6753c3df6221f0707cff627c44a4a7d7152b91e0e6d12b72ef5a94f9b2c7d0"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/Messages/endpointsTranslations.php",
+      "size": 680,
+      "sha256": "1d4bec228a03a21c4eb47eb4f29b7bbd066039de3ae70f2955f5bb6cc5c90c99"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/Messages/support.php",
+      "size": 1679,
+      "sha256": "1303e38a084870f3c1b2dc1fb1cb0767f27c6dfab9d8f4d4770b49ef6ff1804a"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/admin.php",
+      "size": 1072,
+      "sha256": "4852832556f48e8b715d58726201867689c7bae9675b83cc49a4f8fe0dd03b05"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/badges.php",
+      "size": 650,
+      "sha256": "b3ca753f09150a13bd42577ec4879117dfccc39ad6982f7a4f4ff92be9f09cb2"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Views/social.php",
+      "size": 1111,
+      "sha256": "a9f4bc80c52d76d22ee048f2293496149b7c9b86f79d157117d62c4a98386700"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Widgets/LayeredNav.php",
+      "size": 3082,
+      "sha256": "fe330d2f43614fc26d6b562918752d7529eaa62043c814e9e7c95d1c7f6075f4"
+    },
+    {
+      "path": "woo-poly-integration/src/Hyyan/WPI/Widgets/SearchWidget.php",
+      "size": 1758,
+      "sha256": "68a857582fd9e2f1cd27abdaba145d5053b20206323c2299ef864f939be76f90"
+    },
+    {
+      "path": "woo-poly-integration/vendor/class.settings-api.php",
+      "size": 24341,
+      "sha256": "217ec135cd88d3678ef8298f08cc4d38ad91371751cc2c1c30d6641f5df34277"
+    }
+  ]
+}

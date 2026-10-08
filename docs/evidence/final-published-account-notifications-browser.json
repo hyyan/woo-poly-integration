@@ -1,0 +1,82 @@
+{
+  "published": [
+    {
+      "lang": "en",
+      "registration": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"registered\":true,\"errors\":[],\"content\":\"Resend\\nYour account is using a temporary password. We emailed you a link to change your password.\\n\\nHello account-published-en (not account-published-en? Log out)\\n\\nFrom your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.\"}\n```"
+          }
+        ]
+      },
+      "reset": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"resetConfirmed\":true,\"text\":\"Lost password\\nPassword reset email has been sent.\\n\\nA password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.\",\"errors\":[],\"url\":\"https://store.example.invalid/my-account/lost-password/?reset-link-sent=true\"}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "lang": "de",
+      "registration": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"registered\":true,\"errors\":[]}\n```"
+          }
+        ]
+      },
+      "reset": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"resetConfirmed\":true,\"text\":\"Passwort zur\u00fccksetzen\\nEs wurde eine E-Mail zum Zur\u00fccksetzen des Passworts versandt.\\n\\nEine E-Mail zum Zur\u00fccksetzen des Passworts wurde an deine E-Mail-Adresse gesendet. Es kann jedoch dauern, bis die E-Mail in deinem Postfach erscheint. Bitte warte mindestens 10\u00a0Minuten, bis du es erneut versuchst.\",\"errors\":[],\"url\":\"https://store.example.invalid/de/my-account-2/passwort-vergessen/?reset-link-sent=true\"}\n```"
+          }
+        ]
+      }
+    }
+  ],
+  "candidate": [
+    {
+      "lang": "en",
+      "registration": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"registered\":true,\"errors\":[]}\n```"
+          }
+        ]
+      },
+      "reset": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"resetConfirmed\":true,\"url\":\"https://store.example.invalid/my-account/lost-password/?reset-link-sent=true\",\"errors\":[]}\n```"
+          }
+        ]
+      }
+    },
+    {
+      "lang": "de",
+      "registration": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"registered\":true,\"errors\":[]}\n```"
+          }
+        ]
+      },
+      "reset": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"resetConfirmed\":true,\"url\":\"https://store.example.invalid/de/my-account-2/passwort-vergessen/?reset-link-sent=true\",\"errors\":[]}\n```"
+          }
+        ]
+      }
+    }
+  ]
+}

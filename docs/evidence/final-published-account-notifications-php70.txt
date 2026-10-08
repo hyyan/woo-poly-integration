@@ -1,0 +1,1 @@
+Both account notification acceptance helpers pass PHP 7.0 syntax

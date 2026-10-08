@@ -22,6 +22,41 @@ final class SettingsRendererSecurityTest extends TestCase
         $GLOBALS['wp_filter'] = $this->hooks;
         delete_option('wpi-render-a'); delete_option('wpi-render-b');
     }
+    #[DataProvider('settingsClasses')]
+    public function testSettingsKeepDefinitionsWithPrefixedFilters(string $class): void
+    {
+        $settings = (new ReflectionClass($class))->newInstanceWithoutConstructor();
+        $id = $class::getID();
+        $sectionsHook = 'woo_poly_integration_settings_' . $id . '_sections';
+        $fieldsHook = 'woo_poly_integration_settings_' . $id . '_fields';
+        $sections = $settings->getSections(array());
+        $fields = $settings->getFields(array());
+        self::assertNotEmpty($sections[$id]);
+        self::assertNotEmpty($fields[$id]);
+        $sectionFilter = static function ($definitions) {
+            $definitions[0]['title'] = 'Filtered settings';
+            return $definitions;
+        };
+        $fieldFilter = static function ($definitions) {
+            $definitions[0]['label'] = 'Filtered field';
+            return $definitions;
+        };
+        add_filter($sectionsHook, $sectionFilter);
+        add_filter($fieldsHook, $fieldFilter);
+        self::assertSame('Filtered settings', $settings->getSections(array())[$id]['title']);
+        self::assertSame('Filtered field', $settings->getFields(array())[$id][0]['label']);
+        remove_filter($sectionsHook, $sectionFilter);
+        remove_filter($fieldsHook, $fieldFilter);
+        self::assertSame($sections, $settings->getSections(array()));
+        self::assertSame($fields, $settings->getFields(array()));
+    }
+    public static function settingsClasses(): array
+    {
+        return array(
+            array(Hyyan\WPI\Admin\Features::class),
+            array(Hyyan\WPI\Admin\MetasList::class),
+        );
+    }
     private function renderer(): WeDevs_Settings_API { return (new ReflectionClass(WeDevs_Settings_API::class))->newInstanceWithoutConstructor(); }
     private function capture(callable $callback): string
     {

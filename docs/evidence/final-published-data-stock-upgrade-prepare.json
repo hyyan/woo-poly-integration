@@ -1,0 +1,90 @@
+[
+  {
+    "prepared_version": "1.5.0",
+    "products": {
+      "en": 559,
+      "de": 560
+    },
+    "coupon": 561
+  },
+  {
+    "cart_urls": {
+      "cart": {
+        "en": "MINIMUM_STORE/?page_id=562",
+        "de": "MINIMUM_STORE/?page_id=563&lang=de"
+      },
+      "checkout": {
+        "en": "MINIMUM_STORE/?page_id=564",
+        "de": "MINIMUM_STORE/?page_id=565&lang=de"
+      }
+    },
+    "products": {
+      "en": 559,
+      "de": 560
+    },
+    "coupon": "published-data-upgrade"
+  },
+  {
+    "version": "1.5.0",
+    "products": {
+      "global": {
+        "en": {
+          "parent": 567,
+          "child": 568
+        },
+        "de": {
+          "parent": 569,
+          "child": 570
+        }
+      },
+      "wildcard": {
+        "en": {
+          "parent": 571,
+          "child": 572
+        },
+        "de": {
+          "parent": 573,
+          "child": 574
+        }
+      },
+      "parent": {
+        "en": {
+          "parent": 575,
+          "child": 576
+        },
+        "de": {
+          "parent": 577,
+          "child": 578
+        }
+      },
+      "backorder": {
+        "en": {
+          "parent": 579,
+          "child": 580
+        },
+        "de": {
+          "parent": 581,
+          "child": 582
+        }
+      }
+    },
+    "urls": {
+      "global": {
+        "en": "MINIMUM_STORE/?product=published-stock-matrix-global-en",
+        "de": "MINIMUM_STORE/?product=published-stock-matrix-global-de&lang=de"
+      },
+      "wildcard": {
+        "en": "MINIMUM_STORE/?product=published-stock-matrix-wildcard-en",
+        "de": "MINIMUM_STORE/?product=published-stock-matrix-wildcard-de&lang=de"
+      },
+      "parent": {
+        "en": "MINIMUM_STORE/?product=published-stock-matrix-parent-en",
+        "de": "MINIMUM_STORE/?product=published-stock-matrix-parent-de&lang=de"
+      },
+      "backorder": {
+        "en": "MINIMUM_STORE/?product=published-stock-matrix-backorder-en",
+        "de": "MINIMUM_STORE/?product=published-stock-matrix-backorder-de&lang=de"
+      }
+    }
+  }
+]

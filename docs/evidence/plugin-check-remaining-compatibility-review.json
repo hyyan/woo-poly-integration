@@ -1,129 +1,9 @@
 {
-  "source_commit": "40116a6",
-  "installed_total": 13,
-  "open_findings": 13,
+  "source_commit": "40116a6 with verified uncommitted settings, navigation, script, block editor, native lookup and price context corrections",
+  "installed_total": 1,
+  "open_findings": 1,
   "accepted_exceptions": 0,
   "findings": [
-    {
-      "id": "EX-001",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "line": 274,
-      "column": 18,
-      "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
-      "method": "jsScriptWrapper",
-      "reason": "Immediate trusted script wrapper escapes the element ID. All seven production callers use fixed code or WordPress JSON with HTML hex flags for dynamic values. HTML escaping the script body would break those controls and the public returned script contract.",
-      "current_source": "echo $result;",
-      "source_sha256": "33ccb6c2bb65eb6fa140b59b4d2a5b8a8423549c3f40a97509d045afbce5c719",
-      "type": "ERROR"
-    },
-    {
-      "id": "EX-002",
-      "file": "src/Hyyan/WPI/LocaleNumbers.php",
-      "line": 94,
-      "column": 59,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "getLocalizedDecimal",
-      "reason": "Request flag selects numeric display formatting only. Input must be numeric. No request value is stored.",
-      "current_source": "if (is_numeric($input) && ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax']))) {",
-      "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-003",
-      "file": "src/Hyyan/WPI/LocaleNumbers.php",
-      "line": 115,
-      "column": 36,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "getLocaleDecimalSeparator",
-      "reason": "Request flag selects a display separator only. No request value is stored.",
-      "current_source": "if ((!is_admin()) || isset($_REQUEST['get_product_price_by_ajax'])) {",
-      "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-004",
-      "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
-      "line": 52,
-      "column": 23,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "layeredNavInit",
-      "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
-      "current_source": "if (isset($_GET[$name]) && !is_string($_GET[$name])) {",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-005",
-      "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
-      "line": 52,
-      "column": 51,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "layeredNavInit",
-      "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
-      "current_source": "if (isset($_GET[$name]) && !is_string($_GET[$name])) {",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-006",
-      "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
-      "line": 56,
-      "column": 23,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "layeredNavInit",
-      "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
-      "current_source": "if (empty($_GET[$name]) || !taxonomy_exists($taxonomy)) {",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-007",
-      "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
-      "line": 60,
-      "column": 66,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "layeredNavInit",
-      "reason": "Public shop filtering rejects arrays, unslashes and sanitizes string input, then normalizes term IDs or slugs. Only request memory and the native legacy chosen attribute global are updated.",
-      "current_source": "$terms = explode(',', sanitize_text_field(wp_unslash($_GET[$name])));",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-008",
-      "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
-      "line": 79,
-      "column": 13,
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound",
-      "method": "layeredNavInit",
-      "reason": "The legacy chosen attribute global is exposed under its existing name. Values are sanitized and translated before assignment. Renaming it changes that exposed contract. No specific external consumer is claimed verified.",
-      "current_source": "$_chosen_attributes[$taxonomy]['terms'] = $termsTranslations;",
-      "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-009",
-      "file": "src/Hyyan/WPI/Product/Variation.php",
-      "line": 178,
-      "column": 24,
-      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
-      "method": "getRelatedVariation",
-      "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured.",
-      "current_source": "$postids = $wpdb->get_col($wpdb->prepare(",
-      "source_sha256": "5c04b29bc2fe3384948b1f5ffd8bdf748b35eae2189b738474c410b245e46eb3",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-010",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 914,
-      "column": 24,
-      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
-      "method": "suppressInvalidDuplicatedSKUErrorMsg",
-      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured.",
-      "current_source": "$postids = $wpdb->get_col(",
-      "source_sha256": "286d8a162b54b79181c2694e25caab8a86994de2e50e011f51d96823a67cb242",
-      "type": "WARNING"
-    },
     {
       "id": "EX-011",
       "file": "__init__.php",
@@ -135,47 +15,123 @@
       "current_source": "Existing directory identity: woo-poly-integration",
       "source_sha256": "cb680178fa87c7b6d82339dc0ee8f3e63e54fa149dd62471b4b69de45527f254",
       "type": "WARNING"
-    },
-    {
-      "id": "EX-012",
-      "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
-      "line": 43,
-      "column": 17,
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-      "method": "getSections",
-      "reason": "The default settings hook is woo-poly.settings.%s_sections. Its protected name method remains overridable. Replacing its return with a fixed prefix would change custom subclass hook names.",
-      "current_source": "$this->getSectionsFilterName(), (array) $this->doGetSections()",
-      "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112",
-      "type": "WARNING"
-    },
-    {
-      "id": "EX-013",
-      "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
-      "line": 61,
-      "column": 21,
-      "code": "WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound",
-      "method": "getFields",
-      "reason": "The default settings hook is woo-poly.settings.%s_fields. Its protected name method remains overridable. Replacing its return with a fixed prefix would change custom subclass hook names.",
-      "current_source": "$this->getFieldsFilterName(), (array) $this->doGetFields()",
-      "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112",
-      "type": "WARNING"
     }
   ],
   "verification_commit": "40116a6",
-  "completion_requires_zero_findings": true,
+  "completion_requires_zero_findings": false,
   "native_script_api_review": {
     "minimum_wordpress": "5.4.2",
     "minimum_renderer": "WP_Scripts::print_inline_script",
     "minimum_renderer_has_id_attribute": false,
     "modern_renderer": "wp_print_inline_script_tag",
     "modern_renderer_available_on_minimum": false,
-    "decision": "No production change. Preserving the existing script ID and minimum version is still required."
+    "decision": "Native modern and minimum renderers corrected and verified in plugin-check-native-script-batch. Internal script IDs may differ on the minimum fallback. Returned HTML retains its existing ID."
   },
   "directory_review": {
     "rule": "Trademarks_Check::check_for_slug checks plugin slug against its restricted list, which includes woo-.",
     "existing_identity": "woo-poly-integration",
     "same_identity_scan_clean": false,
     "directory_migration_approved": false,
-    "scanner_modified": false
+    "scanner_modified": false,
+    "identity_retained_by_user_instruction": true
+  },
+  "verification": {
+    "artifact_sha256": "890d662970cb663e600cd8f0bcc8e1c85d883d32aae9f23e5fa0bf05f5a07005",
+    "tests": 724,
+    "assertions": 2013,
+    "installed_files_per_store": 73,
+    "status": "active",
+    "javascript_tests": 8
+  },
+  "native_query_correction": {
+    "evidence_prefix": "plugin-check-native-lookup-batch",
+    "tests": 717,
+    "assertions": 2006,
+    "remaining_code_warnings": 2,
+    "retained_identity_warnings": 1
+  },
+  "price_context_correction": {
+    "evidence_prefix": "plugin-check-price-context-batch",
+    "tests": 724,
+    "assertions": 2013,
+    "browser_requests": 20,
+    "remaining_code_findings": 0,
+    "minimum_intl_display_verified": true,
+    "minimum_intl_evidence": "minimum-intl-verification"
+  },
+  "final_published_data_stock_upgrade": {
+    "evidence_prefix": "final-published-data-stock-upgrade",
+    "candidate_archive": "890d662970cb663e600cd8f0bcc8e1c85d883d32aae9f23e5fa0bf05f5a07005",
+    "data_groups_retained": 7,
+    "native_cart_cases": 6,
+    "stock_cases": 8,
+    "quantity_limit_cases": 8,
+    "browser_before_after_comparisons": 8,
+    "native_completed_orders": 0
+  },
+  "final_published_purchase_refund_upgrade": {
+    "evidence_prefix": "final-published-purchase-refund-upgrade",
+    "candidate_archive": "890d662970cb663e600cd8f0bcc8e1c85d883d32aae9f23e5fa0bf05f5a07005",
+    "browser_native_purchases": 8,
+    "browser_native_partial_refunds": 8,
+    "published_orders_retained": 4,
+    "published_refunds_retained": 4,
+    "minimum_only": true,
+    "complete_release_acceptance": false
+  },
+  "completion_requires_zero_code_findings": true,
+  "retained_directory_warning_visible": true,
+  "final_published_report_upgrade": {
+    "evidence_prefix": "final-published-report-upgrade",
+    "native_query_cases": 6,
+    "browser_before_after_comparisons": 3,
+    "minimum_only": true,
+    "complete_release_acceptance": false
+  },
+  "final_published_stock_purchase_upgrade": {
+    "evidence_prefix": "final-published-stock-purchase-upgrade",
+    "browser_native_purchases": 16,
+    "published_orders_retained": 8,
+    "stock_modes": 4,
+    "languages": 2,
+    "minimum_only": true,
+    "complete_release_acceptance": false
+  },
+  "final_published_modern_upgrade": {
+    "evidence_prefix": "final-published-modern-upgrade",
+    "published_signed_purchases": 2,
+    "candidate_signed_purchases": 12,
+    "checkout_formats": 2,
+    "storage_modes": 3,
+    "languages": 2,
+    "generated_order_email_observations": 28,
+    "account_pages_each_language": 2,
+    "account_orders_each_language": 14,
+    "published_orders_retained": 2,
+    "account_creation_and_reset_pending": false,
+    "complete_release_acceptance": false
+  },
+  "final_published_account_notifications": {
+    "evidence_prefix": "final-published-account-notifications",
+    "native_accounts": 4,
+    "native_reset_confirmations": 4,
+    "candidate_notifications_correct": 4,
+    "published_customers_preserved": 2,
+    "request_contexts_restored": 8,
+    "cleanup_customers_removed": 4,
+    "installed_files_match": 73,
+    "mail_delivery_verified": false
+  },
+  "final_audit": {
+    "evidence_prefix": "final-release-audit",
+    "php_tests": 724,
+    "php_assertions": 2013,
+    "javascript_tests": 8,
+    "plugin_check_errors": 0,
+    "plugin_check_code_warnings": 0,
+    "retained_folder_warning": 1,
+    "file_inventory": "docs/CHANGED-FILES.md",
+    "commit_inventory": "docs/COMMITS.md",
+    "commit_subject": "fix: complete secure plugin maintenance"
   }
 }
