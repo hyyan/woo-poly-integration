@@ -55,6 +55,36 @@ function woo_poly_integration_get_product_translation_request()
     return Hyyan\WPI\Utilities::getProductTranslationRequest();
 }
 
+/**
+ * Verify the native custom date request before report callbacks use it.
+ * Preset and ordinary report links remain available without a nonce.
+ *
+ * @return bool
+ */
+function woo_poly_integration_verify_report_request()
+{
+    if (!isset($_GET['page']) || !is_string($_GET['page']) ||
+            sanitize_text_field(wp_unslash($_GET['page'])) !== 'wc-reports') {
+        return true;
+    }
+    if (isset($_GET['tab']) && is_string($_GET['tab']) &&
+            sanitize_text_field(wp_unslash($_GET['tab'])) === 'stock') {
+        return true;
+    }
+    if (isset($_GET['tab'], $_GET['report']) && is_string($_GET['tab']) && is_string($_GET['report']) &&
+            sanitize_text_field(wp_unslash($_GET['tab'])) === 'customers' &&
+            sanitize_text_field(wp_unslash($_GET['report'])) === 'customer_list') {
+        return true;
+    }
+    if (!isset($_GET['range']) || !is_string($_GET['range']) ||
+            sanitize_text_field(wp_unslash($_GET['range'])) !== 'custom') {
+        return true;
+    }
+    return current_user_can('view_woocommerce_reports') &&
+            isset($_GET['wc_reports_nonce']) && is_string($_GET['wc_reports_nonce']) &&
+            wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['wc_reports_nonce'])), 'custom_range') !== false;
+}
+
 /* bootstrap the plugin */
 new Hyyan\WPI\Plugin();
 

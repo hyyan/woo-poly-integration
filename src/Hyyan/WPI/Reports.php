@@ -11,6 +11,7 @@
 namespace Hyyan\WPI;
 
 // phpcs:set WordPress.Security.ValidatedSanitizedInput customSanitizingFunctions[] hyyan\wpi\reports::sanitizereportid
+// phpcs:set WordPress.Security.NonceVerification customNonceVerificationFunctions[] woo_poly_integration_verify_report_request
 
 use Hyyan\WPI\Admin\Settings;
 use Hyyan\WPI\Admin\Features;
@@ -42,6 +43,11 @@ class Reports
      */
     public function __construct()
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            $this->tab = $this->report = false;
+            return;
+        }
+
         $this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;
         $this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;
 
@@ -91,6 +97,10 @@ class Reports
      */
     public function filterProductByLanguage(array $query)
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            return $query;
+        }
+
         $reports = array(
             'sales_by_product',
             'sales_by_category',
@@ -124,6 +134,10 @@ class Reports
      */
     public function combineProductsByLanguage($results)
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            return $results;
+        }
+
         if (!is_array($results)) {
             return $results;
         }
@@ -191,6 +205,10 @@ class Reports
      */
     public function filterStockByLanguage($query)
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            return $query;
+        }
+
         $lang = ($current = pll_current_language()) ?
                 array($current) :
                 pll_languages_list();
@@ -222,6 +240,10 @@ class Reports
      */
     public function translateProductIDS()
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            return false;
+        }
+
         global $polylang, $woocommerce;
         if (!$polylang || !$woocommerce) {
             return false;
@@ -266,6 +288,10 @@ class Reports
      */
     public function translateCategoryIDS()
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            return false;
+        }
+
         global $polylang, $woocommerce;
         if (!$polylang || !$woocommerce) {
             return false;
@@ -306,6 +332,10 @@ class Reports
      */
     public function addProductsInCategoryTranslations($productIDS, $categoryID)
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            return $productIDS;
+        }
+
         if (static::isCombine()) {
 
             /* Find the category translations */
@@ -336,6 +366,10 @@ class Reports
      */
     public static function isCombine()
     {
+        if (!woo_poly_integration_verify_report_request()) {
+            return false;
+        }
+
         return !pll_current_language() ||
                 Utilities::getRequestLanguage('lang') === 'all';
     }

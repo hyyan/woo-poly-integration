@@ -325,6 +325,110 @@ final class RequestInputSecurityTest extends TestCase
         self::assertSame('de', $handler->getProductAttributesInLanguage(array())['lang']);
     }
 
+    private function setReportRange(string $range, string $nonce): void
+    {
+        $_GET = array('page' => 'wc-reports', 'tab' => 'orders', 'report' => 'sales_by_product', 'lang' => 'de');
+        if ($range !== 'none') { $_GET['range'] = $range; }
+        if ($range === 'stock') { $_GET['tab'] = 'stock'; $_GET['range'] = 'custom'; unset($_GET['report']); }
+        if ($range === 'other page') { $_GET['page'] = 'woocommerce'; $_GET['range'] = 'custom'; }
+        if ($range === 'customer list') { $_GET['tab'] = 'customers'; $_GET['range'] = 'custom'; $_GET['report'] = 'customer_list'; }
+
+        if ($nonce === 'anonymous') { wp_set_current_user(0); }
+        if ($nonce === 'valid' || $nonce === 'anonymous') {
+            $_GET['wc_reports_nonce'] = wp_create_nonce('custom_range');
+        } elseif ($nonce === 'wrong') {
+            $_GET['wc_reports_nonce'] = wp_create_nonce('unrelated-report');
+        } elseif ($nonce === 'array') {
+            $_GET['wc_reports_nonce'] = array('invalid');
+        }
+    }
+
+    public static function reportRanges(): array
+    {
+        return array(
+            'ordinary link' => array('none', 'missing', true),
+            'stock ignores date parameter' => array('stock', 'missing', true),
+            'unrelated page ignores date parameter' => array('other page', 'missing', true),
+
+            'preset link' => array('7day', 'wrong', true),
+            'custom valid' => array('custom', 'valid', true),
+            'custom missing' => array('custom', 'missing', false),
+            'custom wrong action' => array('custom', 'wrong', false),
+            'custom array' => array('custom', 'array', false),
+            'custom no permission' => array('custom', 'anonymous', false),
+        );
+    }
+
+    public function testCustomerListIgnoresUnrelatedCustomDateParameter(): void
+    {
+        $this->setReportRange('customer list', 'missing');
+        self::assertTrue(woo_poly_integration_verify_report_request());
+    }
+
+    #[DataProvider('reportRanges')]
+    public function testReportRangeVerificationPrecedesProductAndCategoryResolution(string $range, string $nonce, bool $allowed): void
+    {
+        foreach (array('en', 'de') as $lang) {
+            $p = new WC_Product_Simple();
+            $p->set_name('Report range ' . $lang);
+            $p->save();
+            $this->products[$lang] = $p->get_id();
+            pll_set_post_language($p->get_id(), $lang);
+            $term = wp_insert_term('Report range ' . $lang, 'product_cat');
+            $this->categories[$lang] = $term['term_id'];
+            pll_set_term_language($term['term_id'], $lang);
+        }
+        pll_save_post_translations($this->products);
+        pll_save_term_translations($this->categories);
+        PLL()->curlang = PLL()->model->get_language('de');
+        $this->setReportRange($range, $nonce);
+        $_GET['product_ids'] = array((string) $this->products['en']);
+        $_GET['show_categories'] = array((string) $this->categories['en']);
+        $report = $this->handler(Reports::class);
+        $report->translateProductIDS();
+        $report->translateCategoryIDS();
+        self::assertSame($allowed ? array($this->products['de']) : array((string) $this->products['en']), $_GET['product_ids']);
+        self::assertSame($allowed ? array($this->categories['de']) : array((string) $this->categories['en']), $_GET['show_categories']);
+    }
+
+    #[DataProvider('reportRanges')]
+    public function testReportRangeVerificationPrecedesCallbackRegistration(string $range, string $nonce, bool $allowed): void
+    {
+        $this->setReportRange($range, $nonce);
+        $report = new Reports();
+        try {
+            self::assertSame($allowed ? 10 : false, has_filter('woocommerce_reports_get_order_report_query', array($report, 'filterProductByLanguage')));
+            self::assertSame($allowed ? 10 : false, has_action('admin_init', array($report, 'translateProductIDS')));
+        } finally {
+            remove_filter('woocommerce_reports_get_order_report_data', array($report, 'combineProductsByLanguage'));
+            remove_filter('woocommerce_reports_get_order_report_query', array($report, 'filterProductByLanguage'));
+            foreach (array('woocommerce_report_most_stocked_query_from', 'woocommerce_report_out_of_stock_query_from', 'woocommerce_report_low_in_stock_query_from') as $hook) { remove_filter($hook, array($report, 'filterStockByLanguage')); }
+            remove_action('admin_init', array($report, 'translateProductIDS'));
+            remove_action('admin_init', array($report, 'translateCategoryIDS'));
+            remove_filter('woocommerce_report_sales_by_category_get_products_in_category', array($report, 'addProductsInCategoryTranslations'));
+        }
+    }
+
+    #[DataProvider('reportRanges')]
+    public function testReportRangeVerificationPrecedesLanguageQueryChanges(string $range, string $nonce, bool $allowed): void
+    {
+        PLL()->curlang = PLL()->model->get_language('de');
+        $this->setReportRange($range, $nonce);
+        $report = $this->handler(Reports::class);
+        (new ReflectionProperty(Reports::class, 'report'))->setValue($report, 'sales_by_product');
+        $query = array('from' => 'posts', 'join' => '', 'where' => ' WHERE 1=1');
+        self::assertSame($allowed, $query !== $report->filterProductByLanguage($query));
+    }
+
+    #[DataProvider('reportRanges')]
+    public function testReportCombineRespectsCustomRangeVerification(string $range, string $nonce, bool $allowed): void
+    {
+        PLL()->curlang = PLL()->model->get_language('de');
+        $this->setReportRange($range, $nonce);
+        $_GET['lang'] = 'all';
+        self::assertSame($allowed, Reports::isCombine());
+    }
+
     public function testReportRouteRejectsArrayInput(): void
     {
         $_GET = array('tab' => array('orders'), 'report' => array('sales_by_product'));
