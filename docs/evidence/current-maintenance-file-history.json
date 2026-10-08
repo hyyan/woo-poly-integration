@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "a73ff748e7089c4210cc27bf4498916ef840177e",
-  "changed_files": 2115,
+  "through_commit": "3ef48a9a72866ed5b3a66707bc18c78a6bf16b4b",
+  "changed_files": 2136,
   "files": [
     {
       "file": ".exclude-list",
@@ -140,6 +140,10 @@
         {
           "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
           "subject": "docs: record published variation purchase and stock proof"
+        },
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
         }
       ]
     },
@@ -448,6 +452,10 @@
         {
           "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
           "subject": "docs: record variation integer range security proof"
+        },
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
         }
       ]
     },
@@ -822,6 +830,10 @@
         {
           "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
           "subject": "docs: record variation integer range security proof"
+        },
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
         }
       ]
     },
@@ -1132,6 +1144,14 @@
         {
           "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
           "subject": "docs: record variation integer range security proof"
+        },
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        },
+        {
+          "sha": "c9c4aed049c2b91b72f0826e37ed651ccc9fc8dc",
+          "subject": "docs: refresh security handoff and remaining findings"
         }
       ]
     },
@@ -1384,6 +1404,10 @@
         {
           "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
           "subject": "docs: record variation integer range security proof"
+        },
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
         }
       ]
     },
@@ -1566,6 +1590,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "c9c4aed049c2b91b72f0826e37ed651ccc9fc8dc",
+          "subject": "docs: refresh security handoff and remaining findings"
         }
       ]
     },
@@ -1662,6 +1690,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "c9c4aed049c2b91b72f0826e37ed651ccc9fc8dc",
+          "subject": "docs: refresh security handoff and remaining findings"
         }
       ]
     },
@@ -1796,6 +1828,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "c9c4aed049c2b91b72f0826e37ed651ccc9fc8dc",
+          "subject": "docs: refresh security handoff and remaining findings"
         }
       ]
     },
@@ -3194,6 +3230,10 @@
         {
           "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
           "subject": "docs: record variation integer range security proof"
+        },
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
         }
       ]
     },
@@ -14704,6 +14744,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "c9c4aed049c2b91b72f0826e37ed651ccc9fc8dc",
+          "subject": "docs: refresh security handoff and remaining findings"
         }
       ]
     },
@@ -17912,6 +17956,206 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-after-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-before-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-current-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-final-orders-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-final-orders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-targeted-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-thumbnail-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-thumbnail-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-refund-upgrade-batch-user-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
         }
       ]
     },
@@ -22052,6 +22296,10 @@
         {
           "sha": "5fc1d4d8924ddee2b7bff32beae83e18a6edf04c",
           "subject": "docs: record variation integer range security proof"
+        },
+        {
+          "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
+          "subject": "docs: record published refund upgrade proof"
         }
       ]
     },
@@ -23174,6 +23422,16 @@
         {
           "sha": "ba68d117a73ecb38339de1a4600a0eab07f8f758",
           "subject": "test: verify native reports survive published upgrade"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/published-stock-matrix-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "3ef48a9a72866ed5b3a66707bc18c78a6bf16b4b",
+          "subject": "test: verify published variation stock mode upgrades"
         }
       ]
     },

@@ -267,3 +267,6 @@ Verified integer range batch: Current verified source c2487d4: 695 tests with 18
 
 
 Published refund batch a73ff74 verifies eight browser manual refunds, twelve display comparisons, retained published order and refund business data, linked stock and untouched sibling stock. All 699 tests with 1935 assertions, PHP 7.0 helper syntax, cleanup and both installed 73 file archive matches pass. The fresh checker retains thirteen findings. No checker exception is accepted and none is hidden. The goal remains active. Evidence uses published-refund-upgrade-batch.
+
+
+Published stock mode batch 3ef48a9 verifies sixteen native cart and quantity limit cases plus eight native product form Chrome comparisons across the actual 1.5.0 update. Global and wildcard attributes, parent stock and notified backorders retain their selected terms, IDs, prices and limits. Exact stored data, PHP 7.0 helper syntax, cleanup and both installed 73 file hashes pass. Production and existing suites remain unchanged. No checker row is removed. Thirteen findings and the remaining upgrade requirements stay open.

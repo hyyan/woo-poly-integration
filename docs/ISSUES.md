@@ -389,3 +389,6 @@ CHECK-038 fixed in c2487d4: overflowing IDs are rejected before variation remova
 
 
 CHECK-039 verified in a73ff74: eight native browser partial refunds, twelve browser comparisons and exact published order and refund retention pass across the actual 1.5.0 update. All 699 suite cases pass. This test batch removes no checker finding. Thirteen findings and the complete upgrade matrix remain open. See published-refund-upgrade-batch evidence.
+
+
+CHECK-040 verified in 3ef48a9: eight native carts, eight stock limit cases and eight product form browser comparisons match across the actual published update for global, wildcard, parent stock and notified backorder modes. Exact product snapshots and cleanup pass. No checker finding is removed. Orders and stock deduction in these modes remain separate checks. See published-stock-mode-upgrade-batch evidence.
