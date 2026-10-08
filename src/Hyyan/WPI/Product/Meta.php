@@ -205,6 +205,10 @@ class Meta
             return false;
         }
 
+        if (isset($_GET['from_post']) && !woo_poly_integration_get_product_translation_request()) {
+            return false;
+        }
+
         //JM2021: #548 use WooCommerce save hook, and higher priority than variable hook 
         add_action('woocommerce_after_product_object_save', array($this, 'syncTaxonomiesAndProductAttributesAfterProductUpdate'), 5, 2);
 

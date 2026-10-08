@@ -1,6 +1,7 @@
 <?php
 use Hyyan\WPI\Language;
 use Hyyan\WPI\Reports;
+use Hyyan\WPI\Utilities;
 use Hyyan\WPI\Product\Product;
 use Hyyan\WPI\Taxonomies\Categories;
 use PHPUnit\Framework\TestCase;
@@ -192,6 +193,44 @@ final class RequestInputSecurityTest extends TestCase
             }
         }
         return $cases;
+    }
+
+    #[DataProvider('productCreationLanguageNonces')]
+    public function testProductCreationLanguageRequiresNonce(string $nonce, string $expected): void
+    {
+        $source = wp_insert_post(array('post_type' => 'product', 'post_status' => 'private',
+            'post_title' => 'Language nonce source', 'post_author' => 1));
+        $this->products[] = $source;
+        $_GET = array('from_post' => (string) $source, 'new_lang' => 'de');
+        if ($nonce === 'valid') {
+            $_GET['_wpnonce'] = wp_create_nonce('new-post-translation');
+        } elseif ($nonce === 'array') {
+            $_GET['_wpnonce'] = array('invalid');
+        } elseif ($nonce === 'wrong') {
+            $_GET['_wpnonce'] = wp_create_nonce('unrelated-action');
+        }
+        self::assertSame($expected, $this->handler(Product::class)->getProductAttributesInLanguage(array())['lang']);
+    }
+
+    public static function productCreationLanguageNonces(): array
+    {
+        return array(array('missing', ''), array('wrong', ''), array('array', ''), array('valid', 'de'));
+    }
+
+    #[DataProvider('readOnlyLanguageRequests')]
+    public function testReadOnlyLanguageSelectionDoesNotRequireCreationNonce(array $request, string $key): void
+    {
+        $_GET = $request;
+        self::assertSame('de', Utilities::getRequestLanguage($key));
+    }
+
+    public static function readOnlyLanguageRequests(): array
+    {
+        return array(
+            'blank editor' => array(array('new_lang' => 'de'), 'new_lang'),
+            'term copy' => array(array('new_lang' => 'de', 'from_tag' => '12'), 'new_lang'),
+            'report' => array(array('lang' => 'de', 'from_post' => '12', '_wpnonce' => 'unrelated'), 'lang'),
+        );
     }
 
     public function testProductLanguageRejectsArrayAndNormalizesSlashedText(): void

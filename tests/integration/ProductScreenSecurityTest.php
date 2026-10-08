@@ -60,6 +60,33 @@ final class ProductScreenSecurityTest extends TestCase
         self::assertFalse(metadata_exists('post', $this->product->get_id(), '_translation_porduct_type'));
     }
 
+    #[DataProvider('creationScreenRequests')]
+    public function testTranslationScreenSetupRequiresVerifiedRequest(string $nonce, bool $allowed, bool $reader): void
+    {
+        if ($reader) {
+            wp_set_current_user(get_user_by('login', 'lab-contributor')->ID);
+        }
+        $_GET = array('from_post' => (string) $this->product->get_id(), 'new_lang' => 'de');
+        if ($nonce === 'valid') {
+            $_GET['_wpnonce'] = wp_create_nonce('new-post-translation');
+        } elseif ($nonce === 'array') {
+            $_GET['_wpnonce'] = array('invalid');
+        } elseif ($nonce === 'wrong') {
+            $_GET['_wpnonce'] = wp_create_nonce('unrelated-action');
+        }
+        set_current_screen('product');
+        $handler = (new ReflectionClass(Meta::class))->newInstanceWithoutConstructor();
+        self::assertSame($allowed, $handler->handleProductScreen());
+        self::assertSame($allowed ? 5 : false, has_action('woocommerce_after_product_object_save',
+            array($handler, 'syncTaxonomiesAndProductAttributesAfterProductUpdate')));
+    }
+
+    public static function creationScreenRequests(): array
+    {
+        return array(array('missing', false, false), array('wrong', false, false),
+            array('array', false, false), array('valid', true, false), array('valid', false, true));
+    }
+
     public function testNativeProductSaveBackfillsItsOwnTypeMetadata(): void
     {
         set_current_screen('product');

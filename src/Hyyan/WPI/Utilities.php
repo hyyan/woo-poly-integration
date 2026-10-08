@@ -170,6 +170,7 @@ final class Utilities
 
     /**
      * Get a registered language query value, or an empty string.
+     * Post translation languages require a valid creation nonce.
      *
      * @param string $key query field
      * @return string
@@ -177,6 +178,11 @@ final class Utilities
     public static function getRequestLanguage($key = 'new_lang')
     {
         if (!isset($_GET[$key]) || !is_string($_GET[$key])) {
+            return '';
+        }
+        if ($key === 'new_lang' && isset($_GET['from_post']) &&
+                (!isset($_GET['_wpnonce']) || !is_string($_GET['_wpnonce']) ||
+                !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['_wpnonce'])), 'new-post-translation'))) {
             return '';
         }
         $language = sanitize_text_field(wp_unslash($_GET[$key]));
