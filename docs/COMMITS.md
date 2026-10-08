@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 125 maintenance commits after the baseline through c6952cc. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 127 maintenance commits after the baseline through dbd174a. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -131,5 +131,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | a983093 | 33 | docs: record published cart and coupon upgrade proof |
 | ebe883c | 3 | docs: refresh cart proof inventory and report formatting |
 | c6952cc | 0 | test: verify published checkout order and stock upgrades |
+| 3adbd38 | 31 | docs: record published checkout order and stock proof |
+| dbd174a | 0 | test: verify published variation purchases and stock upgrades |
 
 Latest verification passes 687 tests with 1842 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 13 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

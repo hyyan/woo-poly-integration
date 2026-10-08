@@ -378,3 +378,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-034 | Published classic guest cart and translated coupon upgrade | Six native cases and three Chrome comparisons retained | 14d0252, acceptance helper only, thirteen checker findings remain |
 
 | CHECK-035 | Published guest checkout, coupon usage, order and stock upgrade | Four native Chrome purchases, exact published order retention and six browser comparisons pass | c6952cc, acceptance helper only, thirteen checker findings remain |
+
+| CHECK-036 | Published variable selection, coupon, purchase and stock upgrade | Four native Chrome purchases, padded relationship preservation, sibling stock and ten browser comparisons pass | dbd174a, acceptance helper only, thirteen checker findings remain |

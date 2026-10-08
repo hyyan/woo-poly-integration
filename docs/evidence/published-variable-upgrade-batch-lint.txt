@@ -1,0 +1,2 @@
+No syntax errors detected in <variable-helper>
+No syntax errors detected in <variable-helper>

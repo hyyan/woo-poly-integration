@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "c6952cc32d6b24c7efb7b5f4ad75bde90cae4944",
-  "changed_files": 2023,
+  "through_commit": "dbd174a331765c29e602276718d2b6f8c478412b",
+  "changed_files": 2049,
   "files": [
     {
       "file": ".exclude-list",
@@ -132,6 +132,10 @@
         {
           "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
           "subject": "docs: record published cart and coupon upgrade proof"
+        },
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
         }
       ]
     },
@@ -424,6 +428,10 @@
         {
           "sha": "ebe883cc10ce1a31c0dac9d77aa330953c468596",
           "subject": "docs: refresh cart proof inventory and report formatting"
+        },
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
         }
       ]
     },
@@ -782,6 +790,10 @@
         {
           "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
           "subject": "docs: record published cart and coupon upgrade proof"
+        },
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
         }
       ]
     },
@@ -1076,6 +1088,10 @@
         {
           "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
           "subject": "docs: record published cart and coupon upgrade proof"
+        },
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
         }
       ]
     },
@@ -3114,6 +3130,10 @@
         {
           "sha": "ebe883cc10ce1a31c0dac9d77aa330953c468596",
           "subject": "docs: refresh cart proof inventory and report formatting"
+        },
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
         }
       ]
     },
@@ -17248,6 +17268,256 @@
       ]
     },
     {
+      "file": "docs/evidence/published-checkout-upgrade-batch-after-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-after-orders-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-after-orders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-before-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-before-orders-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-before-orders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-final-orders-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-final-orders.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-final-state-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-final-state.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-install-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-install-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-prepare-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-prepare.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-checkout-upgrade-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/published-data-upgrade-batch-after.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -21086,6 +21356,10 @@
         {
           "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
           "subject": "docs: record published cart and coupon upgrade proof"
+        },
+        {
+          "sha": "3adbd3800c2451b0d02f9f8c7891948db5c4fbd5",
+          "subject": "docs: record published checkout order and stock proof"
         }
       ]
     },
@@ -22178,6 +22452,16 @@
         {
           "sha": "ba68d117a73ecb38339de1a4600a0eab07f8f758",
           "subject": "test: verify native reports survive published upgrade"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/published-variable-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "dbd174a331765c29e602276718d2b6f8c478412b",
+          "subject": "test: verify published variation purchases and stock upgrades"
         }
       ]
     },
