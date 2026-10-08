@@ -65,6 +65,15 @@ if ($phase === 'prepare') {
         update_option($option, $data, false);
     }
     pll_save_post_translations($data['products']);
+    foreach ($data['products'] as $lang => $id) {
+        foreach (array('product_cat', 'product_tag') as $tax) {
+            wp_set_object_terms($id, array((int) $data['terms'][$tax][$lang]), $tax);
+            $assigned = wp_get_object_terms($id, $tax, array('fields' => 'ids'));
+            if (is_wp_error($assigned) || array_map('intval', $assigned) !== array((int) $data['terms'][$tax][$lang])) {
+                throw new RuntimeException('Translated fixture assignment failed');
+            }
+        }
+    }
     $coupon = new WC_Coupon();
     $coupon->set_code('published-data-upgrade');
     $coupon->set_discount_type('fixed_product');
