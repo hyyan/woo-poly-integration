@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "9611ab1e693f71a9d04c6ba5ef892ccd9badf738",
-  "changed_files": 1881,
+  "through_commit": "8ee5909acb9ebd4e5c9fdddecfa382a623c81c3a",
+  "changed_files": 1901,
   "files": [
     {
       "file": ".exclude-list",
@@ -248,6 +248,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -360,6 +364,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -694,6 +702,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -964,6 +976,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -1082,6 +1098,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -1184,6 +1204,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -1354,6 +1378,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -1438,6 +1466,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -2926,6 +2958,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -2984,6 +3020,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -12542,6 +12582,206 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-focused-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-focused-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-minimum-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-minimum-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-review.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-language-fallback-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-native-catalog-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -14212,6 +14452,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -14266,6 +14510,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -19444,6 +19692,10 @@
         {
           "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
           "subject": "docs: record creation request batch acceptance"
+        },
+        {
+          "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
+          "subject": "docs: record attribute language fallback acceptance"
         }
       ]
     },
@@ -20490,6 +20742,10 @@
         {
           "sha": "d5d71d0dab53bc5eb35f373a1582952f78478de8",
           "subject": "test: verify published product data survives upgrade"
+        },
+        {
+          "sha": "8ee5909acb9ebd4e5c9fdddecfa382a623c81c3a",
+          "subject": "test: verify translated taxonomy assignments survive upgrade"
         }
       ]
     },

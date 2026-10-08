@@ -366,3 +366,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-028 | Creation language and metadata setup | Verify the native creation nonce and reject unverified callback registration, preserving ordinary selectors and editing | 78d6218, 620 tests, both Chrome stacks and 59 native minimum cases pass, five findings removed |
 
 | CHECK-029 | Retained attribute language request presence | Delegate missing and invalid input handling to the validated helper, preserving native fallback values | 9611ab1, 627 tests, 70 native minimum cases and active Chrome regressions pass, one recommendation removed |
+
+| CHECK-030 | Published bilingual category and tag upgrade | Six native Chrome pages and complete stored snapshot retained | 8ee5909, test proof only, no checker finding removed |
