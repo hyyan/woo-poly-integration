@@ -173,11 +173,15 @@ final class Utilities
      * Post translation languages require a valid creation nonce.
      *
      * @param string $key query field
-     * @return string
+     * @param mixed $default fallback when the query field is absent
+     * @return mixed registered language, empty string for invalid input or the supplied fallback
      */
-    public static function getRequestLanguage($key = 'new_lang')
+    public static function getRequestLanguage($key = 'new_lang', $default = '')
     {
-        if (!isset($_GET[$key]) || !is_string($_GET[$key])) {
+        if (!isset($_GET[$key])) {
+            return $default;
+        }
+        if (!is_string($_GET[$key])) {
             return '';
         }
         if ($key === 'new_lang' && isset($_GET['from_post']) &&

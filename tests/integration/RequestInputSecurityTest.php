@@ -233,6 +233,48 @@ final class RequestInputSecurityTest extends TestCase
         );
     }
 
+    #[DataProvider('languageFallbackRequests')]
+    public function testLanguageGetterUsesFallbackOnlyForMissingInput(array $request, $fallback, $expected): void
+    {
+        $_GET = $request;
+        self::assertSame($expected, Utilities::getRequestLanguage('new_lang', $fallback));
+    }
+
+    public static function languageFallbackRequests(): array
+    {
+        return array(
+            'missing' => array(array(), 'en', 'en'),
+            'null' => array(array('new_lang' => null), 'en', 'en'),
+            'false native fallback' => array(array(), false, false),
+            'array input' => array(array('new_lang' => array('de')), 'en', ''),
+            'unknown language' => array(array('new_lang' => 'unknown-language'), 'en', ''),
+            'registered language' => array(array('new_lang' => 'de'), 'en', 'de'),
+        );
+    }
+
+    public function testAttributeLanguageFallbackRetainsPostAndPreferredLanguageObjects(): void
+    {
+        $postBefore = $GLOBALS['post'] ?? null;
+        $source = wp_insert_post(array('post_type' => 'product', 'post_status' => 'publish', 'post_title' => 'Attribute language fallback'));
+        $this->products[] = $source;
+        pll_set_post_language($source, 'en');
+        $handler = $this->handler(Product::class);
+        try {
+            $GLOBALS['post'] = get_post($source);
+            $_GET = array();
+            self::assertSame(array('hide_empty' => false, 'lang' => 'en'), $handler->getProductAttributesInLanguage(array('hide_empty' => false)));
+            $_GET = array('new_lang' => null);
+            self::assertSame('en', $handler->getProductAttributesInLanguage(array())['lang']);
+            $_GET = array('new_lang' => 'unknown-language');
+            self::assertSame('', $handler->getProductAttributesInLanguage(array())['lang']);
+            $GLOBALS['post'] = null;
+            $_GET = array();
+            self::assertSame(PLL()->pref_lang, $handler->getProductAttributesInLanguage(array())['lang']);
+        } finally {
+            $GLOBALS['post'] = $postBefore;
+        }
+    }
+
     public function testProductLanguageRejectsArrayAndNormalizesSlashedText(): void
     {
         $handler = $this->handler(Product::class);

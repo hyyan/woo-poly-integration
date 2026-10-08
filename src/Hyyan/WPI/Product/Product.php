@@ -244,17 +244,8 @@ class Product
     public function getProductAttributesInLanguage($args)
     {
         global $post;
-        $lang = '';
-
-        if (isset($_GET['new_lang'])) {
-            $lang = Utilities::getRequestLanguage();
-        } elseif (!empty($post)) {
-            $lang = pll_get_post_language($post->ID);
-        } else {
-            $lang = PLL()->pref_lang;
-        }
-
-        $args['lang'] = $lang;
+        $lang = !empty($post) ? pll_get_post_language($post->ID) : PLL()->pref_lang;
+        $args['lang'] = Utilities::getRequestLanguage('new_lang', $lang);
 
         return $args;
     }
