@@ -164,6 +164,36 @@ final class RequestInputSecurityTest extends TestCase
         return array(array('wpi_editor_title', 'post_title'), array('wpi_editor_content', 'post_content'), array('wpi_editor_excerpt', 'post_excerpt'));
     }
 
+    #[DataProvider('productEditorCreationRequests')]
+    public function testProductEditorDefaultsRequireCreationNonce(string $method, string $field, string $nonce): void
+    {
+        $source = wp_insert_post(array('post_type' => 'product', 'post_status' => 'private',
+            'post_title' => 'Product copy title', 'post_content' => 'Product copy content',
+            'post_excerpt' => 'Product copy excerpt', 'post_author' => 1));
+        $this->products[] = $source;
+        $_GET = array('from_post' => ($nonce === 'padded' ? '000' : '') . $source, 'new_lang' => 'de');
+        if ($nonce === 'valid' || $nonce === 'padded') {
+            $_GET['_wpnonce'] = wp_create_nonce('new-post-translation');
+        } elseif ($nonce === 'array') {
+            $_GET['_wpnonce'] = array('invalid');
+        } elseif ($nonce === 'wrong') {
+            $_GET['_wpnonce'] = wp_create_nonce('unrelated-action');
+        }
+        $expected = $nonce === 'valid' || $nonce === 'padded' ? get_post($source)->$field : 'Default';
+        self::assertSame($expected, $this->handler(Product::class)->$method('Default'));
+    }
+
+    public static function productEditorCreationRequests(): array
+    {
+        $cases = array();
+        foreach (self::editorFields() as $editor) {
+            foreach (array('missing', 'wrong', 'array', 'valid', 'padded') as $nonce) {
+                $cases[$editor[0] . ' ' . $nonce] = array($editor[0], $editor[1], $nonce);
+            }
+        }
+        return $cases;
+    }
+
     public function testProductLanguageRejectsArrayAndNormalizesSlashedText(): void
     {
         $handler = $this->handler(Product::class);
