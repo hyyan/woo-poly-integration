@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
-  "changed_files": 2075,
+  "through_commit": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
+  "changed_files": 2092,
   "files": [
     {
       "file": ".exclude-list",
@@ -440,6 +440,10 @@
         {
           "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
           "subject": "docs: record published variation purchase and stock proof"
+        },
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
         }
       ]
     },
@@ -806,6 +810,10 @@
         {
           "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
           "subject": "docs: record published variation purchase and stock proof"
+        },
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
         }
       ]
     },
@@ -1108,6 +1116,10 @@
         {
           "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
           "subject": "docs: record published variation purchase and stock proof"
+        },
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
         }
       ]
     },
@@ -1352,6 +1364,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
         }
       ]
     },
@@ -3154,6 +3170,10 @@
         {
           "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
           "subject": "docs: record published variation purchase and stock proof"
+        },
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
         }
       ]
     },
@@ -21086,6 +21106,166 @@
       ]
     },
     {
+      "file": "docs/evidence/variation-consumer-security-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-current-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-current-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-current-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-current-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-minimum-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-minimum-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-minimum-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-targeted-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/variation-consumer-security-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/variation-copy-availability.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -21634,6 +21814,10 @@
         {
           "sha": "3746d871902509f17997dfe73f3c30a1babc886e",
           "subject": "docs: record published variation purchase and stock proof"
+        },
+        {
+          "sha": "ee3f818f8c5a4790fbb5d6f90d6a3db7a20b38a5",
+          "subject": "docs: record variation stock and coupon security proof"
         }
       ]
     },
@@ -22240,6 +22424,10 @@
         {
           "sha": "4ac655a4fb1ac42bbb804ba5aec3fa83edea2e8a",
           "subject": "fix: resolve coupon screens and verify translation warning bypass"
+        },
+        {
+          "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
+          "subject": "fix: reject integer overflow before variation operations"
         }
       ]
     },
@@ -22286,6 +22474,10 @@
         {
           "sha": "24325be9498d1e36d9fc935e4fb671449f8d8924",
           "subject": "fix: verify creation callbacks and resolve attribute screens"
+        },
+        {
+          "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
+          "subject": "fix: reject integer overflow before variation operations"
         }
       ]
     },
@@ -22486,6 +22678,10 @@
         {
           "sha": "5fcd63c2a101a5043681b92189ae6789e4055d95",
           "subject": "fix: centralize native report language selection"
+        },
+        {
+          "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
+          "subject": "fix: reject integer overflow before variation operations"
         }
       ]
     },
@@ -22794,6 +22990,16 @@
         {
           "sha": "c66e470eb6d58ecd79217f6f8e58a04b1ab916a8",
           "subject": "fix: preserve translated cart state and validation"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/variation-integer-range.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
+          "subject": "fix: reject integer overflow before variation operations"
         }
       ]
     },
@@ -23184,6 +23390,10 @@
         {
           "sha": "dd816e0eef1bfa7922dd147bd46988d82c1dd349",
           "subject": "fix: invalidate cached product lookups on native changes"
+        },
+        {
+          "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
+          "subject": "fix: reject integer overflow before variation operations"
         }
       ]
     },
@@ -23504,6 +23714,10 @@
         {
           "sha": "3a83aa6c64e1e3a3e092d4df07c597f131f40b2d",
           "subject": "fix: resolve validated translated variation deletion sources"
+        },
+        {
+          "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
+          "subject": "fix: reject integer overflow before variation operations"
         }
       ]
     },

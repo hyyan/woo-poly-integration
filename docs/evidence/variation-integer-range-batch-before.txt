@@ -1,0 +1,50 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-integration.xml
+
+.........................FFFF.......F.....................        58 / 58 (100%)
+
+Time: 00:04.912, Memory: 111.05 MB
+
+There were 5 failures:
+
+1) QueryDiagnosticSecurityTest::testRequestIntegerRejectsOverflowAndPreservesPaddedIds
+Failed asserting that 9223372036854775807 is identical to 0.
+
+PLUGIN_SOURCE/tests/integration/QueryDiagnosticSecurityTest.php:266
+
+2) QueryDiagnosticSecurityTest::testRelatedLookupRejectsOverflowingInputBeforeItAliasesAnInteger
+Failed asserting that Array &0 [
+    0 => '77763',
+] is false.
+
+PLUGIN_SOURCE/tests/integration/QueryDiagnosticSecurityTest.php:278
+
+3) QueryDiagnosticSecurityTest::testRelatedLookupDoesNotResolveOverflowingSourceMetadata
+Failed asserting that an array contains '77765'.
+
+PLUGIN_SOURCE/tests/integration/QueryDiagnosticSecurityTest.php:290
+
+4) QueryDiagnosticSecurityTest::testRelationshipWriterRejectsOverflowBeforeMetadataOperations
+Failed asserting that two arrays are identical.
+--- Expected
++++ Actual
+@@ @@
+-Array &0 []
++Array &0 [
++    0 => Array &1 [
++        0 => 9223372036854775807,
++        1 => 9223372036854775807,
++    ],
++]
+
+PLUGIN_SOURCE/tests/integration/QueryDiagnosticSecurityTest.php:308
+
+5) VariationSecurityTest::testOverflowingIdRejectsWholeRemovalBatch
+Failed asserting that null is not null.
+
+PLUGIN_SOURCE/tests/integration/VariationSecurityTest.php:67
+
+FAILURES!
+Tests: 58, Assertions: 203, Failures: 5.

@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 129 maintenance commits after the baseline through bad6b9c. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 131 maintenance commits after the baseline through c2487d4. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -135,5 +135,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | dbd174a | 0 | test: verify published variation purchases and stock upgrades |
 | 3746d87 | 31 | docs: record published variation purchase and stock proof |
 | bad6b9c | 2 | fix: restrict variation stock and coupons to variations |
+| ee3f818 | 22 | docs: record variation stock and coupon security proof |
+| c2487d4 | 3 | fix: reject integer overflow before variation operations |
 
-Latest verification passes 690 tests with 1851 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 13 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 695 tests with 1863 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 13 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

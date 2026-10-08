@@ -261,3 +261,6 @@ Published variable batch dbd174a verifies four native bilingual guest variation 
 
 
 Verified variation consumer batch: Current verified source bad6b9c: 690 tests with 1851 assertions. Both installed stores match all 73 files of archive 80eeade9427fdf57858b6c6dd309fda0e9bc7abf1878a4be5cfc6ea6a4364429. Installed Plugin Check retains 13 findings, one error and 12 warnings. The stock and coupon correction removes no checker row. Zero findings and the complete published upgrade feature matrix remain required. Evidence uses variation-consumer-security-batch. The goal stays active.
+
+
+Verified integer range batch: Current verified source c2487d4: 695 tests with 1863 assertions. Both installed stores match all 73 files of archive 660c13f5dbada861f4cd4e9c27872fdb702d7704e9af9cb42d82936634dcf074. Installed Plugin Check retains 13 findings, one error and 12 warnings. The integer range correction removes no checker row. Zero findings and the complete published upgrade feature matrix remain required. Evidence uses variation-integer-range-batch. The goal stays active.

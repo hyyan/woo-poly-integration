@@ -383,3 +383,6 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 
 
 CHECK-037 fixed in bad6b9c: corrupt variation relationships cannot update simple stock or extend variation coupon inclusion or exclusion to a simple product. Three reproduced failures, 71 targeted tests, all 690 existing suite cases, both native installed stacks and the documented Chrome checks pass. The installed checker retains 13 findings. See variation-consumer-security-batch evidence.
+
+
+CHECK-038 fixed in c2487d4: overflowing IDs are rejected before variation removal, lookup and metadata writes, and the shared request integer reader returns zero. Five reproduced failures, 73 targeted tests, all 695 suite cases, both native installed stacks and the documented Chrome removal checks pass. The checker retains 13 findings. See variation-integer-range-batch evidence.

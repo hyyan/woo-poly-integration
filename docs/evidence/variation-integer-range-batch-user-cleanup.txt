@@ -1,0 +1,1 @@
+Success: Removed user 36 from http://localhost:8098/woopoly-package-lab.
