@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "7f8d2a8d1c487d3fd86967db333911c4799b4e9a",
-  "changed_files": 1777,
+  "through_commit": "eaaeb29e769ce77cd08f2acf2213e9f7fbdfaa5a",
+  "changed_files": 1795,
   "files": [
     {
       "file": ".exclude-list",
@@ -224,6 +224,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -316,6 +320,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -630,6 +638,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -880,6 +892,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -920,6 +936,10 @@
         {
           "sha": "5b11e2e394582996456424ccf6da64b579e70297",
           "subject": "docs: record product screen boundary and catalog compatibility"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -978,6 +998,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -1064,6 +1088,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -1104,6 +1132,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -1214,6 +1246,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -1282,6 +1318,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -1408,6 +1448,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -2742,6 +2786,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -2784,6 +2832,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -10592,6 +10644,176 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-native-bootstrap.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-targeted.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-catalog-adapter-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-catalog-loading-probe.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -13096,6 +13318,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -13134,6 +13360,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -18172,6 +18402,10 @@
         {
           "sha": "f5eb4f58a181acf19d359f1bbadedc468cbf2cfd",
           "subject": "docs: record native settings request acceptance"
+        },
+        {
+          "sha": "4f965efdf544341759a69c2b28b7a31fb61d1e7d",
+          "subject": "docs: record native catalog adapter acceptance"
         }
       ]
     },
@@ -19510,6 +19744,16 @@
         {
           "sha": "7f8d2a8d1c487d3fd86967db333911c4799b4e9a",
           "subject": "fix: preserve catalogs with native version aware loading"
+        }
+      ]
+    },
+    {
+      "file": "tests/integration/NativeSkuLookupCompatibilityTest.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "eaaeb29e769ce77cd08f2acf2213e9f7fbdfaa5a",
+          "subject": "test: verify SKU status and language compatibility"
         }
       ]
     },

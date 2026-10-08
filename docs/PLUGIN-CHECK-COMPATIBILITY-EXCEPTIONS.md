@@ -1,6 +1,6 @@
 # Remaining compatibility findings
 
-These 37 findings remain open. Zero findings remains the release requirement. Inspected boundaries are not fixes or accepted exceptions. Current evidence uses plugin-check-catalog-adapter-batch.
+These 37 findings remain open. Zero findings remains the release requirement. Inspected boundaries are not fixes or accepted exceptions. Current evidence uses plugin-check-native-sku-batch.
 
 | ID | File and line | Finding | Inspected boundary |
 | --- | --- | --- | --- |

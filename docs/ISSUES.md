@@ -356,3 +356,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-023 | Raw query tab controls the endpoint notice independently of native settings context | Reuse the native resolved WooCommerce tab | b4e1e63, five failures reproduced, 562 tests pass, current and older Chrome settings pass, three warnings removed |
 
 | CHECK-024 | Discouraged plugin catalog loader call | Use version appropriate native registry and catalog loading APIs | 7f8d2a8, 569 tests pass, current and minimum native bootstrap plus Chrome Spanish settings pass, one warning removed |
+
+| CHECK-025 | Preserve SKU duplicate decisions across statuses and languages | Twenty four added regressions, both native sixty case probes and final package browser acceptance | eaaeb29, 593 tests pass, rejected query trial retained separately, no finding closed |
