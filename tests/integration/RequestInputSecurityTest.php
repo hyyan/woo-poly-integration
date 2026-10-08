@@ -217,6 +217,47 @@ final class RequestInputSecurityTest extends TestCase
         return array(array('missing', ''), array('wrong', ''), array('array', ''), array('valid', 'de'));
     }
 
+    #[DataProvider('reportLanguageRequests')]
+    public function testSharedLanguageGetterRecognizesOnlyTheNativeReportAllSelector(array $request, string $key, string $expected): void
+    {
+        $_GET = $request;
+        self::assertSame($expected, Utilities::getRequestLanguage($key));
+    }
+
+    public static function reportLanguageRequests(): array
+    {
+        return array(
+            'native all' => array(array('lang' => 'all'), 'lang', 'all'),
+            'uppercase all' => array(array('lang' => 'ALL'), 'lang', 'all'),
+            'spaced all' => array(array('lang' => ' all '), 'lang', 'all'),
+            'readonly source context' => array(array('lang' => 'all', 'from_post' => '12', '_wpnonce' => 'wrong'), 'lang', 'all'),
+            'creation rejects all' => array(array('new_lang' => 'all'), 'new_lang', ''),
+            'array rejected' => array(array('lang' => array('all')), 'lang', ''),
+            'unknown rejected' => array(array('lang' => 'unknown-language'), 'lang', ''),
+            'registered retained' => array(array('lang' => 'de'), 'lang', 'de'),
+            'absent retained' => array(array(), 'lang', ''),
+        );
+    }
+
+    #[DataProvider('reportCombineSelectors')]
+    public function testReportCombineSelectorsPreserveBothLanguageContexts($current, array $request, bool $expected): void
+    {
+        PLL()->curlang = $current ? PLL()->model->get_language($current) : false;
+        $_GET = $request;
+        self::assertSame($expected, Reports::isCombine());
+    }
+
+    public static function reportCombineSelectors(): array
+    {
+        $cases = array();
+        foreach (array('de', false) as $current) {
+            foreach (array(array(array(), false), array(array('lang' => array('all')), false), array(array('lang' => 'de'), false), array(array('lang' => 'all'), true), array(array('lang' => 'ALL'), true), array(array('lang' => ' all '), true), array(array('lang' => 'unknown-language'), false)) as $case) {
+                $cases[] = array($current, $case[0], !$current || $case[1]);
+            }
+        }
+        return $cases;
+    }
+
     #[DataProvider('readOnlyLanguageRequests')]
     public function testReadOnlyLanguageSelectionDoesNotRequireCreationNonce(array $request, string $key): void
     {

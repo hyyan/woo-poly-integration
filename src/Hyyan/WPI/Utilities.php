@@ -169,12 +169,12 @@ final class Utilities
     }
 
     /**
-     * Get a registered language query value, or an empty string.
+     * Get a registered language or the native all languages report selector.
      * Post translation languages require a valid creation nonce.
      *
      * @param string $key query field
      * @param mixed $default fallback when the query field is absent
-     * @return mixed registered language, empty string for invalid input or the supplied fallback
+     * @return mixed registered language, report all selector, empty string for invalid input or the supplied fallback
      */
     public static function getRequestLanguage($key = 'new_lang', $default = '')
     {
@@ -188,6 +188,9 @@ final class Utilities
                 (!isset($_GET['_wpnonce']) || !is_string($_GET['_wpnonce']) ||
                 !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['_wpnonce'])), 'new-post-translation'))) {
             return '';
+        }
+        if ($key === 'lang' && sanitize_key(wp_unslash($_GET[$key])) === 'all') {
+            return 'all';
         }
         $language = sanitize_text_field(wp_unslash($_GET[$key]));
         return in_array($language, pll_languages_list(), true) ? $language : '';

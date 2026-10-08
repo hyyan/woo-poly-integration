@@ -337,6 +337,6 @@ class Reports
     public static function isCombine()
     {
         return !pll_current_language() ||
-                (isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');
+                Utilities::getRequestLanguage('lang') === 'all';
     }
 }
