@@ -1,0 +1,30 @@
+{
+  "source_commit": "bed0aee",
+  "findings_before": 37,
+  "findings_after": 33,
+  "removed_codes": {
+    "WordPress.Security.NonceVerification.Recommended": 4
+  },
+  "added_codes": {},
+  "tests": 608,
+  "assertions": 1737,
+  "focused_before": {
+    "tests": 125,
+    "assertions": 332,
+    "failures": 9
+  },
+  "focused_after": {
+    "tests": 125,
+    "assertions": 332,
+    "failures": 0
+  },
+  "native_minimum_cases": 47,
+  "preserved_contexts": [
+    "Legacy nonproduct post and page defaults",
+    "Read only post and from_tag integer values",
+    "Registered language filtering",
+    "Valid product creation links and padded source identifiers"
+  ],
+  "nonce_scope": "Product from_post source only. Ordinary integer selectors are not claimed universally nonce verified.",
+  "full_upgrade_matrix_complete": false
+}

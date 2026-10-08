@@ -1,12 +1,12 @@
 # Maintenance batches
 
-Current verified source eaaeb29: 593 tests with 1722 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 37 findings, one error and 36 warnings. This removes 193 actual rows from the 230 finding baseline. Remaining batches contain 30 request checks, zero translation checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-native-sku-batch.
+Current verified source bed0aee: 608 tests with 1737 assertions, 73 matching installed archive files. Installed static and runtime Plugin Check each report 33 findings, one error and 32 warnings. This removes 197 actual rows from the 230 finding baseline. Remaining batches contain 26 request checks, two overridable public hook checks, two prepared query checks and three other contracts. Zero findings and the complete published version upgrade feature matrix remain required. The goal remains active. No push, publication or release approval. Evidence uses plugin-check-product-prefill-batch.
 
 Historical installed static and runtime Plugin Check reports contain 122 findings, 45 errors and 77 warnings. This is 108 actual removed rows from the 230 finding baseline. The current batches are mapped to every exact source location in evidence/current-plugin-check-batches.json.
 
 | Active batch | Remaining rows | Shared scope |
 | --- | ---: | --- |
-| Request verification | 30 | Inspect native verified calling contexts and read only selectors together |
+| Request verification | 26 | Inspect native verified calling contexts and read only selectors together |
 | Translation contracts | 0 | Preserve existing dependency catalogs, stored translations and legacy format keys |
 | Public hook constants | 2 | Preserve every existing extension hook and argument contract |
 | Prepared queries | 2 | Direct query warnings remain after both cache warnings were corrected |

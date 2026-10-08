@@ -1,11 +1,12 @@
 {
-  "source_commit": "eaaeb29e769ce77cd08f2acf2213e9f7fbdfaa5a",
-  "installed_total": 37,
+  "source_commit": "bed0aee",
+  "installed_total": 33,
+  "removed_from_230": 197,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
       {
-        "line": 156,
+        "line": 179,
         "column": 20,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -14,43 +15,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 156,
-        "column": 45,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 156,
-        "column": 72,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 159,
-        "column": 40,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 172,
-        "column": 20,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 172,
+        "line": 179,
         "column": 47,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -59,7 +24,7 @@
         "file": "src/Hyyan/WPI/Utilities.php"
       },
       {
-        "line": 175,
+        "line": 182,
         "column": 52,
         "type": "WARNING",
         "code": "WordPress.Security.NonceVerification.Recommended",
@@ -318,7 +283,7 @@
     ],
     "other contracts": [
       {
-        "line": 252,
+        "line": 259,
         "column": 18,
         "type": "ERROR",
         "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",

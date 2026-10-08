@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "d5d71d0dab53bc5eb35f373a1582952f78478de8",
-  "changed_files": 1828,
+  "through_commit": "bed0aee39802159be53456f46c4bb10346d936cd",
+  "changed_files": 1840,
   "files": [
     {
       "file": ".exclude-list",
@@ -104,6 +104,10 @@
         {
           "sha": "2e226dcd6da8bc3ec99145fceba125861cf66c8b",
           "subject": "docs: record strict release gates and published upgrade evidence"
+        },
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
         }
       ]
     },
@@ -232,6 +236,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
         }
       ]
     },
@@ -332,6 +340,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
         }
       ]
     },
@@ -654,6 +666,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
         }
       ]
     },
@@ -912,6 +928,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
         }
       ]
     },
@@ -2830,6 +2850,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
         }
       ]
     },
@@ -15380,6 +15404,126 @@
       ]
     },
     {
+      "file": "docs/evidence/published-data-upgrade-batch-after.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-before.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-guards.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-review.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-data-upgrade-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/published-minimum-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -18782,6 +18926,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
+          "subject": "docs: record published data upgrade acceptance"
         }
       ]
     },
@@ -19594,6 +19742,10 @@
         {
           "sha": "3175ae8d45d131fb805671af78d48fc891f937bf",
           "subject": "fix: identify plugin hook constants with their owning prefix"
+        },
+        {
+          "sha": "bed0aee39802159be53456f46c4bb10346d936cd",
+          "subject": "fix: verify product editor translation requests"
         }
       ]
     },
@@ -20282,6 +20434,10 @@
         {
           "sha": "4e89b8eb616b2872e995921f66d6107b5d2a3026",
           "subject": "fix: validate registered languages across request filters"
+        },
+        {
+          "sha": "bed0aee39802159be53456f46c4bb10346d936cd",
+          "subject": "fix: verify product editor translation requests"
         }
       ]
     },

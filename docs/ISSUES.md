@@ -360,3 +360,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-025 | Preserve SKU duplicate decisions across statuses and languages | Twenty four added regressions, both native sixty case probes and final package browser acceptance | eaaeb29, 593 tests pass, rejected query trial retained separately, no finding closed |
 
 | CHECK-026 | Published product, term, media, shipping and coupon data upgrade | Exact native snapshot and both Chrome product displays retained | d5d71d0, stored data and display only, no checker finding closed |
+
+| CHECK-027 | Unverified product editor source prefilling | Require the native creation nonce for product source IDs, retaining read only and nonproduct defaults | bed0aee, 608 tests, both native browser flows and 47 minimum cases pass, four findings removed |
