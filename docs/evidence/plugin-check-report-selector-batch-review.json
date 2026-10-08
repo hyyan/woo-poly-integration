@@ -1,0 +1,23 @@
+{
+  "source_commit": "5fcd63c",
+  "findings_before": 27,
+  "findings_after": 24,
+  "removed_codes": {
+    "WordPress.Security.NonceVerification.Recommended": 3
+  },
+  "added_codes": {},
+  "tests": 650,
+  "assertions": 1787,
+  "focused_tests": 91,
+  "focused_assertions": 176,
+  "added_selector_cases": 23,
+  "new_getter_requirement_failures_before": 4,
+  "new_security_vulnerability_reproduced": false,
+  "native_selector_cases_each_stack": 23,
+  "native_minimum_creation_cases": 70,
+  "browser_reports": 3,
+  "published_report_native_cases": 6,
+  "nonce_policy_changed": false,
+  "new_suppressions": false,
+  "complete_upgrade_matrix_proven": false
+}

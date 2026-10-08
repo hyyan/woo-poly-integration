@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 116 maintenance commits after the baseline through ba68d11. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 118 maintenance commits after the baseline through 5fcd63c. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -122,5 +122,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | 8ee5909 | 0 | test: verify translated taxonomy assignments survive upgrade |
 | d9228fa | 17 | docs: record translated taxonomy upgrade acceptance |
 | ba68d11 | 0 | test: verify native reports survive published upgrade |
+| 31ab612 | 23 | docs: record native report upgrade acceptance |
+| 5fcd63c | 2 | fix: centralize native report language selection |
 
-Latest verification passes 627 tests with 1764 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 27 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 650 tests with 1787 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 24 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

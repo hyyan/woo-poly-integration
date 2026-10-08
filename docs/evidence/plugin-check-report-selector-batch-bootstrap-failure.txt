@@ -1,0 +1,18 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Error in bootstrap script: ParseError:
+Unclosed '['
+#0 woo-poly-integration/src/Hyyan/WPI/Plugin.php(285): Hyyan\WPI\Autoloader->handle('Hyyan\\WPI\\Utili...')
+#1 woo-poly-integration/src/Hyyan/WPI/Plugin.php(213): Hyyan\WPI\Plugin::canActivate()
+#2 /var/www/html/wp-includes/class-wp-hook.php(353): Hyyan\WPI\Plugin->activate('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(523): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(779): do_action('init')
+#6 /var/www/html/wp-config.php(139): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 woo-poly-integration/tests/integration/bootstrap.php(7): require('/var/www/html/w...')
+#9 phar:///usr/local/bin/phpunit/phpunit/TextUI/Configuration/BootstrapLoader.php(56): include_once('/var/www/html/w...')
+#10 phar:///usr/local/bin/phpunit/phpunit/TextUI/Configuration/BootstrapLoader.php(36): PHPUnit\TextUI\Configuration\BootstrapLoader->load('/var/www/html/w...')
+#11 phar:///usr/local/bin/phpunit/phpunit/TextUI/Application.php(123): PHPUnit\TextUI\Configuration\BootstrapLoader->handle(Object(PHPUnit\TextUI\Configuration\Configuration))
+#12 /usr/local/bin/phpunit(3310): PHPUnit\TextUI\Application->run(Array)
+#13 {main}

@@ -1,0 +1,7 @@
+{
+  "wordpress": "5.4.2",
+  "woocommerce": "3.0.0",
+  "polylang": "2.7.4",
+  "cases": 23,
+  "passed": true
+}

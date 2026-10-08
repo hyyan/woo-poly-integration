@@ -1,19 +1,19 @@
 {
-  "source_commit": "9611ab1",
-  "installed_total": 27,
-  "open_findings": 27,
+  "source_commit": "5fcd63c",
+  "installed_total": 24,
+  "open_findings": 24,
   "accepted_exceptions": 0,
   "findings": [
     {
       "id": "EX-001",
       "file": "src/Hyyan/WPI/Utilities.php",
-      "line": 269,
+      "line": 272,
       "column": 18,
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
       "method": "jsScriptWrapper",
       "reason": "Immediate trusted script wrapper escapes the element ID. All seven production callers use fixed code or WordPress JSON with HTML hex flags for dynamic values. HTML escaping the script body would break those controls and the public returned script contract.",
       "current_source": "echo $result;",
-      "source_sha256": "a68dd17ac62c29354e2faf82e48a309c3a32d402eb4560a539bdd170286a879f"
+      "source_sha256": "3e1de1552f588dd6784ae468d6b92b02261c5489c0600585e4c12d7c8c2f7039"
     },
     {
       "id": "EX-002",
@@ -46,7 +46,7 @@
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-005",
@@ -57,7 +57,7 @@
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-006",
@@ -68,7 +68,7 @@
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->tab = isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : false;",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-007",
@@ -79,7 +79,7 @@
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-008",
@@ -90,7 +90,7 @@
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-009",
@@ -101,7 +101,7 @@
       "method": "__construct",
       "reason": "Reports route selectors are scalar, unslashed and sanitized. They select report filters rather than a persisted setting.",
       "current_source": "$this->report = isset($_GET['report']) && is_string($_GET['report']) ? sanitize_key(wp_unslash($_GET['report'])) : false;",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-010",
@@ -112,7 +112,7 @@
       "method": "filterProductByLanguage",
       "reason": "Presence of product_ids selects the report query mode. Actual report identifiers are normalized before native report reads.",
       "current_source": "if (isset($_GET['product_ids'])) {",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-011",
@@ -123,7 +123,7 @@
       "method": "translateProductIDS",
       "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
       "current_source": "if (!isset($_GET['product_ids'])) {",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-012",
@@ -134,7 +134,7 @@
       "method": "translateProductIDS",
       "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
       "current_source": "$IDS = wp_parse_id_list(array_filter(array_map('Hyyan\\WPI\\Reports::sanitizeReportID', (array) wp_unslash($_GET['product_ids'])), 'is_int'));",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-013",
@@ -145,7 +145,7 @@
       "method": "translateCategoryIDS",
       "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
       "current_source": "if (!isset($_GET['show_categories'])) {",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-014",
@@ -156,43 +156,10 @@
       "method": "translateCategoryIDS",
       "reason": "Identifier types and digit strings are filtered, then wp_parse_id_list normalizes the list before native queries. Only request memory is updated.",
       "current_source": "$IDS = wp_parse_id_list(array_filter(array_map('Hyyan\\WPI\\Reports::sanitizeReportID', (array) wp_unslash($_GET['show_categories'])), 'is_int'));",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
+      "source_sha256": "c927bb3a668421e3131c9430e54606a1ce38adda1610835c30ec14ef10d1abfa"
     },
     {
       "id": "EX-015",
-      "file": "src/Hyyan/WPI/Reports.php",
-      "line": 340,
-      "column": 24,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "isCombine",
-      "reason": "Sanitized language selector chooses combined report mode. It does not modify persisted data.",
-      "current_source": "(isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
-    },
-    {
-      "id": "EX-016",
-      "file": "src/Hyyan/WPI/Reports.php",
-      "line": 340,
-      "column": 52,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "isCombine",
-      "reason": "Sanitized language selector chooses combined report mode. It does not modify persisted data.",
-      "current_source": "(isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
-    },
-    {
-      "id": "EX-017",
-      "file": "src/Hyyan/WPI/Reports.php",
-      "line": 340,
-      "column": 94,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "isCombine",
-      "reason": "Sanitized language selector chooses combined report mode. It does not modify persisted data.",
-      "current_source": "(isset($_GET['lang']) && is_string($_GET['lang']) && sanitize_key(wp_unslash($_GET['lang'])) === 'all');",
-      "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
-    },
-    {
-      "id": "EX-018",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 23,
@@ -203,7 +170,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-019",
+      "id": "EX-016",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 51,
@@ -214,7 +181,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-020",
+      "id": "EX-017",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 56,
       "column": 23,
@@ -225,7 +192,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-021",
+      "id": "EX-018",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 60,
       "column": 66,
@@ -236,7 +203,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-022",
+      "id": "EX-019",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 79,
       "column": 13,
@@ -247,7 +214,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-023",
+      "id": "EX-020",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 170,
       "column": 24,
@@ -258,7 +225,7 @@
       "source_sha256": "3f817e70fe60b000bfb08c597183aaae9b28f61606de36e6a09e2d6f1e2b712e"
     },
     {
-      "id": "EX-024",
+      "id": "EX-021",
       "file": "src/Hyyan/WPI/Product/Meta.php",
       "line": 914,
       "column": 24,
@@ -269,7 +236,7 @@
       "source_sha256": "286d8a162b54b79181c2694e25caab8a86994de2e50e011f51d96823a67cb242"
     },
     {
-      "id": "EX-025",
+      "id": "EX-022",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -280,7 +247,7 @@
       "source_sha256": "0166473b8fa1d37c5d7d9014fea5cc36de9bfc2e38bb612a1be7e51165d2bb6c"
     },
     {
-      "id": "EX-026",
+      "id": "EX-023",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -291,7 +258,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-027",
+      "id": "EX-024",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,

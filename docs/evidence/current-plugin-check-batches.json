@@ -1,7 +1,7 @@
 {
-  "source_commit": "9611ab1",
-  "installed_total": 27,
-  "removed_from_230": 203,
+  "source_commit": "5fcd63c",
+  "installed_total": 24,
+  "removed_from_230": 206,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
@@ -123,33 +123,6 @@
         "file": "src/Hyyan/WPI/Reports.php"
       },
       {
-        "line": 340,
-        "column": 24,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 340,
-        "column": 52,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
-        "line": 340,
-        "column": 94,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Reports.php"
-      },
-      {
         "line": 52,
         "column": 23,
         "type": "WARNING",
@@ -229,7 +202,7 @@
     ],
     "other contracts": [
       {
-        "line": 269,
+        "line": 272,
         "column": 18,
         "type": "ERROR",
         "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",

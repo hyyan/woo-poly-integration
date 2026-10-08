@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "ba68d117a73ecb38339de1a4600a0eab07f8f758",
-  "changed_files": 1913,
+  "through_commit": "5fcd63c2a101a5043681b92189ae6789e4055d95",
+  "changed_files": 1930,
   "files": [
     {
       "file": ".exclude-list",
@@ -112,6 +112,10 @@
         {
           "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
           "subject": "docs: record translated taxonomy upgrade acceptance"
+        },
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
         }
       ]
     },
@@ -376,6 +380,10 @@
         {
           "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
           "subject": "docs: record translated taxonomy upgrade acceptance"
+        },
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
         }
       ]
     },
@@ -718,6 +726,10 @@
         {
           "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
           "subject": "docs: record translated taxonomy upgrade acceptance"
+        },
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
         }
       ]
     },
@@ -996,6 +1008,10 @@
         {
           "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
           "subject": "docs: record translated taxonomy upgrade acceptance"
+        },
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
         }
       ]
     },
@@ -2982,6 +2998,10 @@
         {
           "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
           "subject": "docs: record translated taxonomy upgrade acceptance"
+        },
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
         }
       ]
     },
@@ -16516,6 +16536,176 @@
       ]
     },
     {
+      "file": "docs/evidence/published-report-upgrade-batch-after-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-before-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-install-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-install-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-post-browser-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-post-browser.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-report-upgrade-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/published-taxonomy-upgrade-batch-after.txt",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -19830,6 +20020,10 @@
         {
           "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
           "subject": "docs: record translated taxonomy upgrade acceptance"
+        },
+        {
+          "sha": "31ab612f5f5bdfe7d83f1adfd79d5e1ff8ad97d2",
+          "subject": "docs: record native report upgrade acceptance"
         }
       ]
     },
@@ -20500,6 +20694,10 @@
         {
           "sha": "ac630ad0351734d045498ec0e5683ae1d3838e87",
           "subject": "fix: normalize request IDs through validated sanitizers"
+        },
+        {
+          "sha": "5fcd63c2a101a5043681b92189ae6789e4055d95",
+          "subject": "fix: centralize native report language selection"
         }
       ]
     },
@@ -20662,6 +20860,10 @@
         {
           "sha": "9611ab1e693f71a9d04c6ba5ef892ccd9badf738",
           "subject": "fix: centralize attribute language request fallback"
+        },
+        {
+          "sha": "5fcd63c2a101a5043681b92189ae6789e4055d95",
+          "subject": "fix: centralize native report language selection"
         }
       ]
     },
@@ -21380,6 +21582,10 @@
         {
           "sha": "9611ab1e693f71a9d04c6ba5ef892ccd9badf738",
           "subject": "fix: centralize attribute language request fallback"
+        },
+        {
+          "sha": "5fcd63c2a101a5043681b92189ae6789e4055d95",
+          "subject": "fix: centralize native report language selection"
         }
       ]
     },
