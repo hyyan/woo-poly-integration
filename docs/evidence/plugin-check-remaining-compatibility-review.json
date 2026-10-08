@@ -1,5 +1,5 @@
 {
-  "source_commit": "c2487d4",
+  "source_commit": "40116a6",
   "installed_total": 13,
   "open_findings": 13,
   "accepted_exceptions": 0,
@@ -109,7 +109,7 @@
       "method": "getRelatedVariation",
       "reason": "Prepared exact relationship query uses validated integer IDs represented as strings for text metadata. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured.",
       "current_source": "$postids = $wpdb->get_col($wpdb->prepare(",
-      "source_sha256": "43430bfca0bef91bd9af48b731aaa530be2eb2b73cb35210bce11b1dd2f46348",
+      "source_sha256": "5c04b29bc2fe3384948b1f5ffd8bdf748b35eae2189b738474c410b245e46eb3",
       "type": "WARNING"
     },
     {
@@ -161,7 +161,7 @@
       "type": "WARNING"
     }
   ],
-  "verification_commit": "a73ff74",
+  "verification_commit": "40116a6",
   "completion_requires_zero_findings": true,
   "native_script_api_review": {
     "minimum_wordpress": "5.4.2",

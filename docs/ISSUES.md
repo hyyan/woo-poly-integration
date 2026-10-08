@@ -392,3 +392,6 @@ CHECK-039 verified in a73ff74: eight native browser partial refunds, twelve brow
 
 
 CHECK-040 verified in 3ef48a9: eight native carts, eight stock limit cases and eight product form browser comparisons match across the actual published update for global, wildcard, parent stock and notified backorder modes. Exact product snapshots and cleanup pass. No checker finding is removed. Orders and stock deduction in these modes remain separate checks. See published-stock-mode-upgrade-batch evidence.
+
+
+CHECK-041 fixed in 40116a6: failed variation relationship results cannot crash native stock synchronization, and generic field copies cannot replace valid target relationships with invalid source metadata and delete the existing variation. Six reproduced regressions, 86 focused tests, 705 full suite cases, both installed native stacks and the current native browser order updates pass. Thirteen checker findings remain open. See invalid-variation-stock-batch evidence.

@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "3ef48a9a72866ed5b3a66707bc18c78a6bf16b4b",
-  "changed_files": 2136,
+  "through_commit": "40116a690bf311cd20f9f8f80a0c5be777db0bf3",
+  "changed_files": 2151,
   "files": [
     {
       "file": ".exclude-list",
@@ -144,6 +144,10 @@
         {
           "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
           "subject": "docs: record published refund upgrade proof"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -456,6 +460,10 @@
         {
           "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
           "subject": "docs: record published refund upgrade proof"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -834,6 +842,10 @@
         {
           "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
           "subject": "docs: record published refund upgrade proof"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -1152,6 +1164,10 @@
         {
           "sha": "c9c4aed049c2b91b72f0826e37ed651ccc9fc8dc",
           "subject": "docs: refresh security handoff and remaining findings"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -1408,6 +1424,10 @@
         {
           "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
           "subject": "docs: record published refund upgrade proof"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -1694,6 +1714,10 @@
         {
           "sha": "c9c4aed049c2b91b72f0826e37ed651ccc9fc8dc",
           "subject": "docs: refresh security handoff and remaining findings"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -3234,6 +3258,10 @@
         {
           "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
           "subject": "docs: record published refund upgrade proof"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -18330,6 +18358,146 @@
       ]
     },
     {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-after-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-before-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-current-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-install-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-install-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-prepare-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-stock-mode-upgrade-batch-prepare.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/published-taxonomy-upgrade-batch-after.txt",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -22300,6 +22468,10 @@
         {
           "sha": "5c0979d7c026f305d3759ab79be3c86514fa8ec9",
           "subject": "docs: record published refund upgrade proof"
+        },
+        {
+          "sha": "d21b30d81098b87f3f2013381d30c57d6f1efb43",
+          "subject": "docs: record published variation stock mode proof"
         }
       ]
     },
@@ -22864,6 +23036,10 @@
         {
           "sha": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
           "subject": "fix: restrict variation stock and coupons to variations"
+        },
+        {
+          "sha": "40116a690bf311cd20f9f8f80a0c5be777db0bf3",
+          "subject": "fix: preserve variation relationships during stock updates"
         }
       ]
     },
@@ -22960,6 +23136,10 @@
         {
           "sha": "c2487d4e3d13260bfb72a72c02fc7ea1541a2de7",
           "subject": "fix: reject integer overflow before variation operations"
+        },
+        {
+          "sha": "40116a690bf311cd20f9f8f80a0c5be777db0bf3",
+          "subject": "fix: preserve variation relationships during stock updates"
         }
       ]
     },
@@ -23348,6 +23528,16 @@
         {
           "sha": "390162c909f3188326f5caac723de0078f4884d0",
           "subject": "fix: secure settings output and restrict page maintenance"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/invalid-stock-relationship.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "40116a690bf311cd20f9f8f80a0c5be777db0bf3",
+          "subject": "fix: preserve variation relationships during stock updates"
         }
       ]
     },
@@ -24066,6 +24256,10 @@
         {
           "sha": "d4aa1eee0af801cd8ccc636d3cfa5c9da692a1b2",
           "subject": "fix: restore stock synchronization callbacks after errors"
+        },
+        {
+          "sha": "40116a690bf311cd20f9f8f80a0c5be777db0bf3",
+          "subject": "fix: preserve variation relationships during stock updates"
         }
       ]
     },
@@ -24204,6 +24398,10 @@
         {
           "sha": "bad6b9c8d371face7af68fa9ddc95d0d11843bc7",
           "subject": "fix: restrict variation stock and coupons to variations"
+        },
+        {
+          "sha": "40116a690bf311cd20f9f8f80a0c5be777db0bf3",
+          "subject": "fix: preserve variation relationships during stock updates"
         }
       ]
     },

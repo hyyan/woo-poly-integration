@@ -1,0 +1,46 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-integration.xml
+
+EEE                                                                 3 / 3 (100%)
+
+Time: 00:00.408, Memory: 107.05 MB
+
+There were 3 errors:
+
+1) StockSynchronizationBoundaryTest::testNativeVariationLinkSurvivesInvalidSourceRelationship@missing with data (null)
+TypeError: array_search(): Argument #2 ($haystack) must be of type array, false given
+
+PLUGIN_SOURCE/src/Hyyan/WPI/Product/Stock.php:99
+PLUGIN_SOURCE/src/Hyyan/WPI/Product/Stock.php:70
+WORDPRESS_ROOT/wp-includes/class-wp-hook.php:353
+WORDPRESS_ROOT/wp-includes/class-wp-hook.php:377
+WORDPRESS_ROOT/wp-includes/plugin.php:523
+WORDPRESS_ROOT/wp-content/plugins/woocommerce/includes/wc-stock-functions.php:71
+PLUGIN_SOURCE/tests/integration/StockSynchronizationBoundaryTest.php:98
+
+2) StockSynchronizationBoundaryTest::testNativeVariationLinkSurvivesInvalidSourceRelationship@malformed with data ('not-a-variation')
+TypeError: array_search(): Argument #2 ($haystack) must be of type array, false given
+
+PLUGIN_SOURCE/src/Hyyan/WPI/Product/Stock.php:99
+PLUGIN_SOURCE/src/Hyyan/WPI/Product/Stock.php:70
+WORDPRESS_ROOT/wp-includes/class-wp-hook.php:353
+WORDPRESS_ROOT/wp-includes/class-wp-hook.php:377
+WORDPRESS_ROOT/wp-includes/plugin.php:523
+WORDPRESS_ROOT/wp-content/plugins/woocommerce/includes/wc-stock-functions.php:71
+PLUGIN_SOURCE/tests/integration/StockSynchronizationBoundaryTest.php:98
+
+3) StockSynchronizationBoundaryTest::testNativeVariationLinkSurvivesInvalidSourceRelationship@overflow with data ('92233720368547758070')
+TypeError: array_search(): Argument #2 ($haystack) must be of type array, false given
+
+PLUGIN_SOURCE/src/Hyyan/WPI/Product/Stock.php:99
+PLUGIN_SOURCE/src/Hyyan/WPI/Product/Stock.php:70
+WORDPRESS_ROOT/wp-includes/class-wp-hook.php:353
+WORDPRESS_ROOT/wp-includes/class-wp-hook.php:377
+WORDPRESS_ROOT/wp-includes/plugin.php:523
+WORDPRESS_ROOT/wp-content/plugins/woocommerce/includes/wc-stock-functions.php:71
+PLUGIN_SOURCE/tests/integration/StockSynchronizationBoundaryTest.php:98
+
+ERRORS!
+Tests: 3, Assertions: 3, Errors: 3.

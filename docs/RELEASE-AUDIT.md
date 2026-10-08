@@ -1,6 +1,6 @@
 # Current maintenance release audit
 
-Current state: production c2487d4, verification a73ff74, 699 tests with 1935 assertions, 73 matching installed archive files and thirteen open findings. The goal is incomplete and has no accepted exceptions. SECURITY-REVIEW-HANDOFF.md is the current release handoff.
+Current state: production and verification 40116a6, 705 tests with 1956 assertions, 73 matching installed archive files and thirteen open findings. The goal is incomplete and has no accepted exceptions. SECURITY-REVIEW-HANDOFF.md is the current release handoff.
 
 ## Historical audit records
 

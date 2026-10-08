@@ -1,6 +1,6 @@
 # Maintenance commits
 
-This snapshot lists all 136 maintenance commits after the baseline through 3ef48a9. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
+This snapshot lists all 138 maintenance commits after the baseline through 40116a6. Subjects are shown verbatim and every subject passes the Conventional Commits format check.
 
 Counts exclude test files and configuration, including the tests and work directories, CI configuration, PHPUnit configuration and root dependency configuration. Documentation and retained evidence are included. A file changed by multiple commits is counted in each commit.
 
@@ -142,5 +142,7 @@ Counts exclude test files and configuration, including the tests and work direct
 | 5c0979d | 27 | docs: record published refund upgrade proof |
 | c9c4aed | 5 | docs: refresh security handoff and remaining findings |
 | 3ef48a9 | 0 | test: verify published variation stock mode upgrades |
+| d21b30d | 22 | docs: record published variation stock mode proof |
+| 40116a6 | 2 | fix: preserve variation relationships during stock updates |
 
-Latest verification passes 699 tests with 1935 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 13 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.
+Latest verification passes 705 tests with 1956 assertions. All 73 installed distributable hashes match the tested archive. Installed Plugin Check retains 13 findings. The active goal remains incomplete. No push or publication. The complete changed file and commit history is in evidence/current-maintenance-file-history.json.

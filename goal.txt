@@ -270,3 +270,6 @@ Published refund batch a73ff74 verifies eight browser manual refunds, twelve dis
 
 
 Published stock mode batch 3ef48a9 verifies sixteen native cart and quantity limit cases plus eight native product form Chrome comparisons across the actual 1.5.0 update. Global and wildcard attributes, parent stock and notified backorders retain their selected terms, IDs, prices and limits. Exact stored data, PHP 7.0 helper syntax, cleanup and both installed 73 file hashes pass. Production and existing suites remain unchanged. No checker row is removed. Thirteen findings and the remaining upgrade requirements stay open.
+
+
+Verified invalid variation metadata batch 40116a6: six reproduced failures fixed in stock and metadata copying, 705 tests with 1956 assertions, both native stacks, current browser order stock update and repeated Update, complete fixture cleanup, 62 PHP 7.0 syntax checks and both installed 73 file hashes pass. Fresh installed Plugin Check retains thirteen findings. This is a defect correction without a checker reduction. The new final archive requires renewed affected published upgrade comparisons. The goal stays active.

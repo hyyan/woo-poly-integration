@@ -1,0 +1,50 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-unit.xml
+
+...........                                                       11 / 11 (100%)
+
+Time: 00:00.036, Memory: 28.05 MB
+
+OK (11 tests, 30 assertions)
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-integration.xml
+
+...............................................................  63 / 666 (  9%)
+............................................................... 126 / 666 ( 18%)
+............................................................... 189 / 666 ( 28%)
+............................................................... 252 / 666 ( 37%)
+............................................................... 315 / 666 ( 47%)
+............................................................... 378 / 666 ( 56%)
+............................................................... 441 / 666 ( 66%)
+............................................................... 504 / 666 ( 75%)
+............................................................... 567 / 666 ( 85%)
+............................................................... 630 / 666 ( 94%)
+....................................                            666 / 666 (100%)
+
+Time: 00:37.897, Memory: 137.05 MB
+
+OK (666 tests, 1842 assertions)
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-frontend.xml
+
+.........                                                           9 / 9 (100%)
+
+Time: 00:00.692, Memory: 105.05 MB
+
+OK (9 tests, 46 assertions)
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-admin.xml
+
+...................                                               19 / 19 (100%)
+
+Time: 00:00.988, Memory: 115.05 MB
+
+OK (19 tests, 38 assertions)

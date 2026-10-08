@@ -1,6 +1,6 @@
 # Security maintenance review
 
-Current state: production c2487d4, verification a73ff74, 699 tests with 1935 assertions, 73 matching installed archive files and thirteen open findings. SECURITY-REVIEW-HANDOFF.md contains the current release evidence and limits. The records below are historical and retain their original counts.
+Current state: production and verification 40116a6, 705 tests with 1956 assertions, 73 matching installed archive files and thirteen open findings. SECURITY-REVIEW-HANDOFF.md contains the current release evidence and limits. The records below are historical and retain their original counts.
 
 ## Historical review records
 

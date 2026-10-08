@@ -1,0 +1,11 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: PLUGIN_SOURCE/phpunit-integration.xml
+
+................................................................. 65 / 86 ( 75%)
+.....................                                             86 / 86 (100%)
+
+Time: 00:10.846, Memory: 115.05 MB
+
+OK (86 tests, 352 assertions)
