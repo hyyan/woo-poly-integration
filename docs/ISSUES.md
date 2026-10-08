@@ -368,3 +368,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-029 | Retained attribute language request presence | Delegate missing and invalid input handling to the validated helper, preserving native fallback values | 9611ab1, 627 tests, 70 native minimum cases and active Chrome regressions pass, one recommendation removed |
 
 | CHECK-030 | Published bilingual category and tag upgrade | Six native Chrome pages and complete stored snapshot retained | 8ee5909, test proof only, no checker finding removed |
+
+| CHECK-031 | Published native bilingual and combined product report upgrade | Six native queries and three Chrome totals retained | ba68d11, acceptance test only, no checker finding removed |

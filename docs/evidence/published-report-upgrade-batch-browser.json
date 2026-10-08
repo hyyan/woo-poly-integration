@@ -1,0 +1,62 @@
+{
+  "before": {
+    "all": {
+      "legend": "£50.00\nsales for the selected items\n5\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    },
+    "en": {
+      "legend": "£20.00\nsales for the selected items\n2\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    },
+    "de": {
+      "legend": "£30.00\nsales for the selected items\n3\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    }
+  },
+  "after": {
+    "all": {
+      "legend": "£50.00\nsales for the selected items\n5\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    },
+    "en": {
+      "legend": "£20.00\nsales for the selected items\n2\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    },
+    "de": {
+      "legend": "£30.00\nsales for the selected items\n3\npurchases for the selected items",
+      "export": {
+        "label": " Export CSV",
+        "download": "report-7day-2026-10-08.csv",
+        "data": "chart"
+      },
+      "errors": []
+    }
+  },
+  "exact_match": true,
+  "scope": "Three native sales-by-product screens on actual published 1.5.0 and final 1.5.1, minimum stack. CSV control retained, file download and custom date ranges not exercised."
+}

@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "8ee5909acb9ebd4e5c9fdddecfa382a623c81c3a",
-  "changed_files": 1901,
+  "through_commit": "ba68d117a73ecb38339de1a4600a0eab07f8f758",
+  "changed_files": 1913,
   "files": [
     {
       "file": ".exclude-list",
@@ -108,6 +108,10 @@
         {
           "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
           "subject": "docs: record published data upgrade acceptance"
+        },
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
         }
       ]
     },
@@ -368,6 +372,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
         }
       ]
     },
@@ -706,6 +714,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
         }
       ]
     },
@@ -980,6 +992,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
         }
       ]
     },
@@ -2962,6 +2978,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
         }
       ]
     },
@@ -16496,6 +16516,116 @@
       ]
     },
     {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-post-browser.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-taxonomy-upgrade-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/purchase-rules-batch-artifact-continuity.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -19696,6 +19826,10 @@
         {
           "sha": "75da8f4f1b71f9f4f234e90c64b36435e0f9f118",
           "subject": "docs: record attribute language fallback acceptance"
+        },
+        {
+          "sha": "d9228fa329b97148daa4a376f30cf8b3e5982163",
+          "subject": "docs: record translated taxonomy upgrade acceptance"
         }
       ]
     },
@@ -20746,6 +20880,16 @@
         {
           "sha": "8ee5909acb9ebd4e5c9fdddecfa382a623c81c3a",
           "subject": "test: verify translated taxonomy assignments survive upgrade"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/published-report-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "ba68d117a73ecb38339de1a4600a0eab07f8f758",
+          "subject": "test: verify native reports survive published upgrade"
         }
       ]
     },

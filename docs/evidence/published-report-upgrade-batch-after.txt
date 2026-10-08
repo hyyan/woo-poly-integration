@@ -1,0 +1,1 @@
+{"version":"1.5.1","cases":6,"reports":{"all":{"quantity":{"product":222,"value":5},"amount":{"product":222,"value":50}},"en":{"quantity":{"product":222,"value":2},"amount":{"product":222,"value":20}},"de":{"quantity":{"product":224,"value":3},"amount":{"product":224,"value":30}}},"baseline_retained":true}

@@ -1,0 +1,4 @@
+Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 644
+Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 645
+Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 646
+Warning: "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/admin/reports/class-wc-admin-report.php on line 131
