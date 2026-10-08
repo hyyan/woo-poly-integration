@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "a9830933dd4c786c567b2edc4cad7cba44e88739",
-  "changed_files": 2022,
+  "through_commit": "c6952cc32d6b24c7efb7b5f4ad75bde90cae4944",
+  "changed_files": 2023,
   "files": [
     {
       "file": ".exclude-list",
@@ -420,6 +420,10 @@
         {
           "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
           "subject": "docs: record published cart and coupon upgrade proof"
+        },
+        {
+          "sha": "ebe883cc10ce1a31c0dac9d77aa330953c468596",
+          "subject": "docs: refresh cart proof inventory and report formatting"
         }
       ]
     },
@@ -3106,6 +3110,10 @@
         {
           "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
           "subject": "docs: record published cart and coupon upgrade proof"
+        },
+        {
+          "sha": "ebe883cc10ce1a31c0dac9d77aa330953c468596",
+          "subject": "docs: refresh cart proof inventory and report formatting"
         }
       ]
     },
@@ -17192,6 +17200,10 @@
         {
           "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
           "subject": "docs: record published cart and coupon upgrade proof"
+        },
+        {
+          "sha": "ebe883cc10ce1a31c0dac9d77aa330953c468596",
+          "subject": "docs: refresh cart proof inventory and report formatting"
         }
       ]
     },
@@ -22132,6 +22144,16 @@
         {
           "sha": "14d02524ea0b7137267a42afa04ab5bae8d766c9",
           "subject": "test: verify native carts survive the published upgrade"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/published-checkout-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "c6952cc32d6b24c7efb7b5f4ad75bde90cae4944",
+          "subject": "test: verify published checkout order and stock upgrades"
         }
       ]
     },

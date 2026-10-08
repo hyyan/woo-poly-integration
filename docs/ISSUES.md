@@ -376,3 +376,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-033 | Custom report verification before translation | Verify native custom dates before callbacks, preserving non date contexts | df79acb, 687 tests, both native stacks and seven published Chrome cases pass, eleven recommendations removed |
 
 | CHECK-034 | Published classic guest cart and translated coupon upgrade | Six native cases and three Chrome comparisons retained | 14d0252, acceptance helper only, thirteen checker findings remain |
+
+| CHECK-035 | Published guest checkout, coupon usage, order and stock upgrade | Four native Chrome purchases, exact published order retention and six browser comparisons pass | c6952cc, acceptance helper only, thirteen checker findings remain |

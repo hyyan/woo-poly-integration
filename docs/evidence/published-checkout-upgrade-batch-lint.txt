@@ -1,0 +1,2 @@
+No syntax errors detected in <checkout-helper>
+No syntax errors detected in <checkout-helper>
