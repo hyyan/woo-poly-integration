@@ -18,4 +18,3 @@ FILE: __init__.php
 
 FILE: src/Hyyan/WPI/Admin/AbstractSettings.php
 [{"line":43,"column":17,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$this-&gt;getSectionsFilterName()&quot;.","docs":""},{"line":61,"column":21,"type":"WARNING","code":"WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound","message":"Hook names invoked by a theme\/plugin should start with the theme\/plugin prefix. Found: &quot;$this-&gt;getFieldsFilterName()&quot;.","docs":""}]
-

@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "14d02524ea0b7137267a42afa04ab5bae8d766c9",
-  "changed_files": 1995,
+  "through_commit": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+  "changed_files": 2022,
   "files": [
     {
       "file": ".exclude-list",
@@ -128,6 +128,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
         }
       ]
     },
@@ -412,6 +416,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
         }
       ]
     },
@@ -766,6 +774,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
         }
       ]
     },
@@ -1056,6 +1068,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
         }
       ]
     },
@@ -3086,6 +3102,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
         }
       ]
     },
@@ -16946,6 +16966,276 @@
       ]
     },
     {
+      "file": "docs/evidence/published-cart-upgrade-batch-admin-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-after-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-before-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-after-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-before-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-cleanup.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-prepare-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-cycle-prepare.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-install-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-install-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-post-browser-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-post-browser.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-recovery.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/published-cart-upgrade-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/published-data-upgrade-batch-after.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -20780,6 +21070,10 @@
         {
           "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
           "subject": "docs: record early custom report verification"
+        },
+        {
+          "sha": "a9830933dd4c786c567b2edc4cad7cba44e88739",
+          "subject": "docs: record published cart and coupon upgrade proof"
         }
       ]
     },
