@@ -152,11 +152,19 @@ class Variation
                 !ctype_digit((string) $variatonID) || (int) $variatonID < 1) {
             return false;
         }
-        $variatonID = (int) $variatonID;
+        $variatonID = filter_var(ltrim((string) $variatonID, '0'), FILTER_VALIDATE_INT,
+                array('options' => array('min_range' => 1)));
+        if ($variatonID === false) {
+            return false;
+        }
         $sourceID = get_post_meta($variatonID, self::DUPLICATE_KEY, true);
         if ((is_int($sourceID) || is_string($sourceID)) &&
                 ctype_digit((string) $sourceID) && (int) $sourceID > 0) {
-            $variatonID = (int) $sourceID;
+            $sourceID = filter_var(ltrim((string) $sourceID, '0'), FILTER_VALIDATE_INT,
+                    array('options' => array('min_range' => 1)));
+            if ($sourceID !== false) {
+                $variatonID = $sourceID;
+            }
         }
 
         //previous version of code using get_post_meta() was filtered at runtime by Polylang
@@ -269,7 +277,11 @@ class Variation
     public function addDuplicateMeta($ID)
     {
         if ((is_int($ID) || is_string($ID)) && ctype_digit((string) $ID) && (int) $ID > 0) {
-            $ID = (int) $ID;
+            $ID = filter_var(ltrim((string) $ID, '0'), FILTER_VALIDATE_INT,
+                    array('options' => array('min_range' => 1)));
+            if ($ID === false) {
+                return;
+            }
             $meta = get_post_meta($ID, self::DUPLICATE_KEY);
             if (empty($meta)) {
                 update_post_meta($ID, self::DUPLICATE_KEY, $ID);

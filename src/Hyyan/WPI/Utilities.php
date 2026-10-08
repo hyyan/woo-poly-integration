@@ -159,7 +159,9 @@ final class Utilities
         }
         $value = filter_var(wp_unslash($_GET[$key]), FILTER_VALIDATE_REGEXP,
                 array('options' => array('regexp' => '/^[0-9]+$/D')));
-        $source_id = $value !== false ? absint($value) : 0;
+        $source_id = $value !== false ? filter_var(ltrim((string) $value, '0'), FILTER_VALIDATE_INT,
+                array('options' => array('min_range' => 1))) : false;
+        $source_id = $source_id !== false ? $source_id : 0;
         if ($key === 'from_post' && $source_id && get_post_type($source_id) === 'product' &&
                 (!isset($_GET['_wpnonce']) || !is_string($_GET['_wpnonce']) ||
                 !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['_wpnonce'])), 'new-post-translation'))) {

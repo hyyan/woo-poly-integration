@@ -61,6 +61,13 @@ final class VariationSecurityTest extends TestCase
         $this->remove(array($this->source, array('nested')), wp_create_nonce('delete-variations'));
         self::assertNotNull(get_post($this->source)); self::assertNotNull(get_post($this->translated));
     }
+    public function testOverflowingIdRejectsWholeRemovalBatch(): void
+    {
+        $this->remove(array($this->source, (string) PHP_INT_MAX . '0'), wp_create_nonce('delete-variations'));
+        self::assertNotNull(get_post($this->source));
+        self::assertNotNull(get_post($this->translated));
+    }
+
     public function testShopManagerRemovalKeepsOriginalTranslationSynchronization(): void
     {
         $manager = get_user_by('login', 'lab-manager'); wp_set_current_user($manager->ID);

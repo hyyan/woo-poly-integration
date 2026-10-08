@@ -382,7 +382,11 @@ class Variable
         if ((!is_int($id) && !is_string($id)) || !ctype_digit((string) $id)) {
             wp_die(-1);
         }
-        return (int) $id;
+        $id = filter_var(ltrim((string) $id, '0') ?: '0', FILTER_VALIDATE_INT);
+        if ($id === false) {
+            wp_die(-1);
+        }
+        return $id;
     }
 
     /**

@@ -258,6 +258,59 @@ final class QueryDiagnosticSecurityTest extends TestCase
     }
 
 
+    public function testRequestIntegerRejectsOverflowAndPreservesPaddedIds(): void
+    {
+        $original = $_GET;
+        try {
+            $_GET['product_id'] = (string) PHP_INT_MAX . '0';
+            self::assertSame(0, Hyyan\WPI\Utilities::getRequestInteger('product_id'));
+            $_GET['product_id'] = '000' . PHP_INT_MAX;
+            self::assertSame(PHP_INT_MAX, Hyyan\WPI\Utilities::getRequestInteger('product_id'));
+        } finally {
+            $_GET = $original;
+        }
+    }
+
+    public function testRelatedLookupRejectsOverflowingInputBeforeItAliasesAnInteger(): void
+    {
+        $related = $this->product('de', 'overflow-input-target');
+        update_post_meta($related, Variation::DUPLICATE_KEY, (string) PHP_INT_MAX);
+        self::assertFalse(Variation::getRelatedVariation((string) PHP_INT_MAX . '0', true));
+    }
+
+    public function testRelatedLookupDoesNotResolveOverflowingSourceMetadata(): void
+    {
+        $source = $this->product('en', 'overflow-source');
+        $valid = $this->product('de', 'overflow-valid-target');
+        $unrelated = $this->product('de', 'overflow-unrelated-target');
+        update_post_meta($source, Variation::DUPLICATE_KEY, (string) PHP_INT_MAX . '0');
+        update_post_meta($valid, Variation::DUPLICATE_KEY, $source);
+        update_post_meta($unrelated, Variation::DUPLICATE_KEY, (string) PHP_INT_MAX);
+        $ids = Variation::getRelatedVariation($source, true);
+        self::assertContains((string) $valid, $ids);
+        self::assertNotContains((string) $unrelated, $ids);
+    }
+
+    public function testRelationshipWriterRejectsOverflowBeforeMetadataOperations(): void
+    {
+        $calls = array();
+        $observer = static function ($check, $id, $key, $value) use (&$calls) {
+            if ($key === Variation::DUPLICATE_KEY) {
+                $calls[] = array($id, $value);
+                return false;
+            }
+            return $check;
+        };
+        add_filter('update_post_metadata', $observer, PHP_INT_MAX, 4);
+        try {
+            $handler = (new ReflectionClass(Variation::class))->newInstanceWithoutConstructor();
+            $handler->addDuplicateMeta((string) PHP_INT_MAX . '0');
+            self::assertSame(array(), $calls);
+        } finally {
+            remove_filter('update_post_metadata', $observer, PHP_INT_MAX);
+        }
+    }
+
     public function testRelationshipWriterStoresCanonicalIntegerIds(): void
     {
         $source = $this->product('en', 'padded-relationship-source');
