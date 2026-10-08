@@ -364,3 +364,5 @@ The published 1.5.0 archive supports WooCommerce 3.0.0. Prepared release headers
 | CHECK-027 | Unverified product editor source prefilling | Require the native creation nonce for product source IDs, retaining read only and nonproduct defaults | bed0aee, 608 tests, both native browser flows and 47 minimum cases pass, four findings removed |
 
 | CHECK-028 | Creation language and metadata setup | Verify the native creation nonce and reject unverified callback registration, preserving ordinary selectors and editing | 78d6218, 620 tests, both Chrome stacks and 59 native minimum cases pass, five findings removed |
+
+| CHECK-029 | Retained attribute language request presence | Delegate missing and invalid input handling to the validated helper, preserving native fallback values | 9611ab1, 627 tests, 70 native minimum cases and active Chrome regressions pass, one recommendation removed |

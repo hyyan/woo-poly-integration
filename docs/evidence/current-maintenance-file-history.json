@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "78d6218840eff46f6383031b1a7dbf2b5be29955",
-  "changed_files": 1860,
+  "through_commit": "9611ab1e693f71a9d04c6ba5ef892ccd9badf738",
+  "changed_files": 1881,
   "files": [
     {
       "file": ".exclude-list",
@@ -244,6 +244,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -352,6 +356,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -682,6 +690,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -948,6 +960,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -1062,6 +1078,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -1160,6 +1180,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -1326,6 +1350,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -1406,6 +1434,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -2890,6 +2922,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -2944,6 +2980,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -11102,6 +11142,216 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-creation-language-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-focused-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-focused-language-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-focused-screen-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-minimum-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-minimum-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-review.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-creation-language-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-display-name-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -13958,6 +14208,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -14008,6 +14262,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -19182,6 +19440,10 @@
         {
           "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
           "subject": "docs: record product prefill nonce acceptance"
+        },
+        {
+          "sha": "a6eb60e8dba9118f5da4ff437c40888841c17d48",
+          "subject": "docs: record creation request batch acceptance"
         }
       ]
     },
@@ -19716,6 +19978,10 @@
         {
           "sha": "344363ec04bd699d3c06c1f67ddf3ccd54accf7e",
           "subject": "fix: verify early product translation creation requests"
+        },
+        {
+          "sha": "9611ab1e693f71a9d04c6ba5ef892ccd9badf738",
+          "subject": "fix: centralize attribute language request fallback"
         }
       ]
     },
@@ -20006,6 +20272,10 @@
         {
           "sha": "78d6218840eff46f6383031b1a7dbf2b5be29955",
           "subject": "fix: verify translation language and metadata setup"
+        },
+        {
+          "sha": "9611ab1e693f71a9d04c6ba5ef892ccd9badf738",
+          "subject": "fix: centralize attribute language request fallback"
         }
       ]
     },
@@ -20706,6 +20976,10 @@
         {
           "sha": "78d6218840eff46f6383031b1a7dbf2b5be29955",
           "subject": "fix: verify translation language and metadata setup"
+        },
+        {
+          "sha": "9611ab1e693f71a9d04c6ba5ef892ccd9badf738",
+          "subject": "fix: centralize attribute language request fallback"
         }
       ]
     },

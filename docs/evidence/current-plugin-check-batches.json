@@ -1,7 +1,7 @@
 {
-  "source_commit": "78d6218",
-  "installed_total": 28,
-  "removed_from_230": 202,
+  "source_commit": "9611ab1",
+  "installed_total": 27,
+  "removed_from_230": 203,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
@@ -184,15 +184,6 @@
         "message": "Processing form data without nonce verification.",
         "docs": "",
         "file": "src/Hyyan/WPI/Widgets/LayeredNav.php"
-      },
-      {
-        "line": 249,
-        "column": 19,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Product.php"
       }
     ],
     "translations": [],
@@ -238,7 +229,7 @@
     ],
     "other contracts": [
       {
-        "line": 265,
+        "line": 269,
         "column": 18,
         "type": "ERROR",
         "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
