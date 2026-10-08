@@ -1,0 +1,1 @@
+{"fixture_records_recovered":true,"notice_capture":"recovery state, original pre-prepare snapshot unavailable"}

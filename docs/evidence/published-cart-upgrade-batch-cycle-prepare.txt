@@ -1,0 +1,2 @@
+{"prepared_version":"1.5.0","products":{"en":269,"de":270},"coupon":271}
+{"cart_urls":{"cart":{"en":"<upgrade-store>\/?page_id=272","de":"<upgrade-store>\/?page_id=273&lang=de"},"checkout":{"en":"<upgrade-store>\/?page_id=274","de":"<upgrade-store>\/?page_id=275&lang=de"}},"products":{"en":269,"de":270},"coupon":"published-data-upgrade"}

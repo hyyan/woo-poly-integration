@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "df79acbf6d2d6482bae4d3a5bfc403d90f2c9bd8",
-  "changed_files": 1962,
+  "through_commit": "14d02524ea0b7137267a42afa04ab5bae8d766c9",
+  "changed_files": 1995,
   "files": [
     {
       "file": ".exclude-list",
@@ -124,6 +124,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -272,6 +276,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -400,6 +408,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -750,6 +762,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -1036,6 +1052,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -1162,6 +1182,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -1272,6 +1296,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -1450,6 +1478,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -1542,6 +1574,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -3046,6 +3082,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -3112,6 +3152,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -14548,6 +14592,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -14610,6 +14658,330 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-cleanup-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-current-native-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-current-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-install-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-install-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-min-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-min-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-min-creation-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-min-native-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-minimum-creation.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-minimum-native.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-post-browser.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-private-verifier-scan.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-probe-reflection-warning.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-review.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-report-range-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -20404,6 +20776,10 @@
         {
           "sha": "f52a1737d4fd999878eff878bf97e0ab574b26ce",
           "subject": "docs: record report language selector acceptance"
+        },
+        {
+          "sha": "cd41d1a9f1bcf5156d6961a6d7cf6c07d577d50c",
+          "subject": "docs: record early custom report verification"
         }
       ]
     },
@@ -21452,6 +21828,16 @@
         {
           "sha": "60ce0d0a482a41116c8fc22a1eadc838e138a609",
           "subject": "fix: retain published WooCommerce minimum requirement"
+        }
+      ]
+    },
+    {
+      "file": "tests/bin/published-cart-upgrade.php",
+      "purpose": "Regression coverage or disposable verification support for the referenced maintenance changes.",
+      "commits": [
+        {
+          "sha": "14d02524ea0b7137267a42afa04ab5bae8d766c9",
+          "subject": "test: verify native carts survive the published upgrade"
         }
       ]
     },
