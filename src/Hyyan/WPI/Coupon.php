@@ -315,6 +315,9 @@ class Coupon
         if ($product && $product->get_type() === 'variation') {
             $IDS = Product\Variation::getRelatedVariation($ID, true);
             if (is_array($IDS)) {
+                $IDS = array_filter($IDS, static function ($variationID) {
+                    return get_post_type($variationID) === 'product_variation';
+                });
                 $result = array_merge($result, $IDS);
             }
         } else {

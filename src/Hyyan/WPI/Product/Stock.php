@@ -113,7 +113,7 @@ class Stock {
 				foreach ( $product_translations as $product_translation ) {
 					if ( $product_translation != $product_with_stock->get_id() ) {
 						$translation = wc_get_product( $product_translation );
-						if ( $translation ) {
+						if ( $translation && ( ! $product_with_stock->is_type( 'variation' ) || $translation->is_type( 'variation' ) ) ) {
               //here the product stock is updated without saving then wc_update_product_stock_status will update and save status 
 							wc_update_product_stock( $translation, $targetValue, 'set', true );
               wc_update_product_stock_status ($product_translation, $target_status);
