@@ -1,0 +1,33 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: woo-poly-integration/phpunit-integration.xml
+
+..[41;37mF[0m[41;37mF[0m[41;37mF[0m.[41;37mF[0m.                                                            8 / 8 (100%)
+
+Time: 00:00.270, Memory: 109.05 MB
+
+There were 4 failures:
+
+1) ProductScreenSecurityTest::testTranslationScreenSetupRequiresVerifiedRequest#0 with data ('missing', false, false)
+Failed asserting that true is identical to false.
+
+woo-poly-integration/tests/integration/ProductScreenSecurityTest.php:79
+
+2) ProductScreenSecurityTest::testTranslationScreenSetupRequiresVerifiedRequest#1 with data ('wrong', false, false)
+Failed asserting that true is identical to false.
+
+woo-poly-integration/tests/integration/ProductScreenSecurityTest.php:79
+
+3) ProductScreenSecurityTest::testTranslationScreenSetupRequiresVerifiedRequest#2 with data ('array', false, false)
+Failed asserting that true is identical to false.
+
+woo-poly-integration/tests/integration/ProductScreenSecurityTest.php:79
+
+4) ProductScreenSecurityTest::testTranslationScreenSetupRequiresVerifiedRequest#4 with data ('valid', false, true)
+Failed asserting that true is identical to false.
+
+woo-poly-integration/tests/integration/ProductScreenSecurityTest.php:79
+
+[37;41mFAILURES![0m
+[37;41mTests: 8[0m[37;41m, Assertions: 16[0m[37;41m, Failures: 4[0m[37;41m.[0m

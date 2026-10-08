@@ -1,0 +1,45 @@
+PHPUnit 12.5.38 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: woo-poly-integration/phpunit-integration.xml
+
+...............................................................  63 / 132 ( 47%)
+........................................[41;37mF[0m[41;37mF[0m[41;37mF[0m.................... 126 / 132 ( 95%)
+......                                                          132 / 132 (100%)
+
+Time: 00:08.016, Memory: 111.05 MB
+
+There were 3 failures:
+
+1) RequestInputSecurityTest::testProductCreationLanguageRequiresNonce#0 with data ('missing', '')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-''
++'de'
+
+woo-poly-integration/tests/integration/RequestInputSecurityTest.php:212
+
+2) RequestInputSecurityTest::testProductCreationLanguageRequiresNonce#1 with data ('wrong', '')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-''
++'de'
+
+woo-poly-integration/tests/integration/RequestInputSecurityTest.php:212
+
+3) RequestInputSecurityTest::testProductCreationLanguageRequiresNonce#2 with data ('array', '')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-''
++'de'
+
+woo-poly-integration/tests/integration/RequestInputSecurityTest.php:212
+
+[37;41mFAILURES![0m
+[37;41mTests: 132[0m[37;41m, Assertions: 339[0m[37;41m, Failures: 3[0m[37;41m.[0m

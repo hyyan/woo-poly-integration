@@ -1,7 +1,7 @@
 {
   "baseline": "b5f7495180d37020204a6f725307eb6ecdc29cf0",
-  "through_commit": "bed0aee39802159be53456f46c4bb10346d936cd",
-  "changed_files": 1840,
+  "through_commit": "78d6218840eff46f6383031b1a7dbf2b5be29955",
+  "changed_files": 1860,
   "files": [
     {
       "file": ".exclude-list",
@@ -240,6 +240,10 @@
         {
           "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
           "subject": "docs: record published data upgrade acceptance"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -344,6 +348,10 @@
         {
           "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
           "subject": "docs: record published data upgrade acceptance"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -670,6 +678,10 @@
         {
           "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
           "subject": "docs: record published data upgrade acceptance"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -932,6 +944,10 @@
         {
           "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
           "subject": "docs: record published data upgrade acceptance"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -1042,6 +1058,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -1136,6 +1156,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -1298,6 +1322,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -1374,6 +1402,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -2854,6 +2886,10 @@
         {
           "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
           "subject": "docs: record published data upgrade acceptance"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -2904,6 +2940,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -13326,6 +13366,206 @@
       ]
     },
     {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-browser.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-diff-check.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-focused-after.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-focused-before.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-installed-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-minimum-artifact.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-minimum-browser-cleanup.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-minimum-probe.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-package.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-php70-lint.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-review.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-runtime-plugin-check-diagnostics.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-runtime-plugin-check.json",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-runtime-plugin-check.raw.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
+      "file": "docs/evidence/plugin-check-product-prefill-batch-tests.txt",
+      "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
+      "commits": [
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
+        }
+      ]
+    },
+    {
       "file": "docs/evidence/plugin-check-query-cache-batch-artifact.json",
       "purpose": "Retained source, review or verification evidence, including failed attempts where recorded.",
       "commits": [
@@ -13714,6 +13954,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -13760,6 +14004,10 @@
         {
           "sha": "7bfade8755dd5281fcffba1843a84c93ad98d3d1",
           "subject": "docs: record SKU compatibility and rejected query trial"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -18930,6 +19178,10 @@
         {
           "sha": "7334203cf4ecbd93abfeb88fccdd4b77d61a919e",
           "subject": "docs: record published data upgrade acceptance"
+        },
+        {
+          "sha": "1bff266279a642ac84de0860b14242090cfd5abe",
+          "subject": "docs: record product prefill nonce acceptance"
         }
       ]
     },
@@ -19434,6 +19686,10 @@
         {
           "sha": "9790467ae606f94656b2f9afcdd2541428dce86d",
           "subject": "fix: number translation formats and preserve legacy catalogs"
+        },
+        {
+          "sha": "78d6218840eff46f6383031b1a7dbf2b5be29955",
+          "subject": "fix: verify translation language and metadata setup"
         }
       ]
     },
@@ -19746,6 +20002,10 @@
         {
           "sha": "bed0aee39802159be53456f46c4bb10346d936cd",
           "subject": "fix: verify product editor translation requests"
+        },
+        {
+          "sha": "78d6218840eff46f6383031b1a7dbf2b5be29955",
+          "subject": "fix: verify translation language and metadata setup"
         }
       ]
     },
@@ -20342,6 +20602,10 @@
         {
           "sha": "4564602e2e975fe5ae70fa40bca767fbb8500869",
           "subject": "fix: defer product type metadata backfill until save"
+        },
+        {
+          "sha": "78d6218840eff46f6383031b1a7dbf2b5be29955",
+          "subject": "fix: verify translation language and metadata setup"
         }
       ]
     },
@@ -20438,6 +20702,10 @@
         {
           "sha": "bed0aee39802159be53456f46c4bb10346d936cd",
           "subject": "fix: verify product editor translation requests"
+        },
+        {
+          "sha": "78d6218840eff46f6383031b1a7dbf2b5be29955",
+          "subject": "fix: verify translation language and metadata setup"
         }
       ]
     },

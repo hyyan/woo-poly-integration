@@ -1,55 +1,22 @@
 {
-  "source_commit": "bed0aee",
-  "installed_total": 33,
-  "open_findings": 33,
+  "source_commit": "78d6218",
+  "installed_total": 28,
+  "open_findings": 28,
   "accepted_exceptions": 0,
   "findings": [
     {
       "id": "EX-001",
       "file": "src/Hyyan/WPI/Utilities.php",
-      "line": 179,
-      "column": 20,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "getRequestLanguage",
-      "reason": "Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request.",
-      "current_source": "if (!isset($_GET[$key]) || !is_string($_GET[$key])) {",
-      "source_sha256": "49e868fbfa84e1bfcb200add445158da9fc282860c027135584a82d9b5ed1465"
-    },
-    {
-      "id": "EX-002",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "line": 179,
-      "column": 47,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "getRequestLanguage",
-      "reason": "Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request.",
-      "current_source": "if (!isset($_GET[$key]) || !is_string($_GET[$key])) {",
-      "source_sha256": "49e868fbfa84e1bfcb200add445158da9fc282860c027135584a82d9b5ed1465"
-    },
-    {
-      "id": "EX-003",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "line": 182,
-      "column": 52,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "getRequestLanguage",
-      "reason": "Read only scalar getter unslashes and sanitizes the value, then requires a registered Polylang language. Mutation callers separately verify the request.",
-      "current_source": "$language = sanitize_text_field(wp_unslash($_GET[$key]));",
-      "source_sha256": "49e868fbfa84e1bfcb200add445158da9fc282860c027135584a82d9b5ed1465"
-    },
-    {
-      "id": "EX-004",
-      "file": "src/Hyyan/WPI/Utilities.php",
-      "line": 259,
+      "line": 265,
       "column": 18,
       "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
       "method": "jsScriptWrapper",
       "reason": "Immediate trusted script wrapper escapes the element ID. All seven production callers use fixed code or WordPress JSON with HTML hex flags for dynamic values. HTML escaping the script body would break those controls and the public returned script contract.",
       "current_source": "echo $result;",
-      "source_sha256": "49e868fbfa84e1bfcb200add445158da9fc282860c027135584a82d9b5ed1465"
+      "source_sha256": "ac992c67cb918c800be29b89ac5cc6bfbdb6716fb8d1cdde2978b08c77f2685f"
     },
     {
-      "id": "EX-005",
+      "id": "EX-002",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "line": 94,
       "column": 59,
@@ -60,7 +27,7 @@
       "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522"
     },
     {
-      "id": "EX-006",
+      "id": "EX-003",
       "file": "src/Hyyan/WPI/LocaleNumbers.php",
       "line": 115,
       "column": 36,
@@ -71,7 +38,7 @@
       "source_sha256": "6d610ef9f0ddbaf4a38b5c0f308aaf3a4d5c6ab924b95f31ec09ac720b128522"
     },
     {
-      "id": "EX-007",
+      "id": "EX-004",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 45,
       "column": 28,
@@ -82,7 +49,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-008",
+      "id": "EX-005",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 45,
       "column": 55,
@@ -93,7 +60,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-009",
+      "id": "EX-006",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 45,
       "column": 95,
@@ -104,7 +71,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-010",
+      "id": "EX-007",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 46,
       "column": 31,
@@ -115,7 +82,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-011",
+      "id": "EX-008",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 46,
       "column": 61,
@@ -126,7 +93,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-012",
+      "id": "EX-009",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 46,
       "column": 104,
@@ -137,7 +104,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-013",
+      "id": "EX-010",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 103,
       "column": 19,
@@ -148,7 +115,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-014",
+      "id": "EX-011",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 231,
       "column": 20,
@@ -159,7 +126,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-015",
+      "id": "EX-012",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 235,
       "column": 114,
@@ -170,7 +137,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-016",
+      "id": "EX-013",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 275,
       "column": 20,
@@ -181,7 +148,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-017",
+      "id": "EX-014",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 279,
       "column": 114,
@@ -192,7 +159,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-018",
+      "id": "EX-015",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 340,
       "column": 24,
@@ -203,7 +170,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-019",
+      "id": "EX-016",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 340,
       "column": 52,
@@ -214,7 +181,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-020",
+      "id": "EX-017",
       "file": "src/Hyyan/WPI/Reports.php",
       "line": 340,
       "column": 94,
@@ -225,7 +192,7 @@
       "source_sha256": "47e5943fa1c22b935274ff3ec1f32e1c4fda6bfbd136d2c3c33745da7312826d"
     },
     {
-      "id": "EX-021",
+      "id": "EX-018",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 23,
@@ -236,7 +203,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-022",
+      "id": "EX-019",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 52,
       "column": 51,
@@ -247,7 +214,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-023",
+      "id": "EX-020",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 56,
       "column": 23,
@@ -258,7 +225,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-024",
+      "id": "EX-021",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 60,
       "column": 66,
@@ -269,7 +236,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-025",
+      "id": "EX-022",
       "file": "src/Hyyan/WPI/Widgets/LayeredNav.php",
       "line": 79,
       "column": 13,
@@ -280,7 +247,7 @@
       "source_sha256": "a36ddaca740ff1b7989aff857201e2470e867179267fede0ed7bf53c7094ff64"
     },
     {
-      "id": "EX-026",
+      "id": "EX-023",
       "file": "src/Hyyan/WPI/Product/Product.php",
       "line": 249,
       "column": 19,
@@ -291,40 +258,7 @@
       "source_sha256": "2b3142b0019458be3f26a1b6afc8587f4a4cb1363de8f32d602dbe08484615fa"
     },
     {
-      "id": "EX-027",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 225,
-      "column": 19,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "handleProductScreen",
-      "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
-      "current_source": "if (isset($_GET['post'])) {",
-      "source_sha256": "6e2091477267beee9a90ba9f705bbcd02c8062d61bf7f74b8e8e73b8d7fe219c"
-    },
-    {
-      "id": "EX-028",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 230,
-      "column": 25,
-      "code": "WordPress.Security.NonceVerification.Recommended",
-      "method": "handleProductScreen",
-      "reason": "Validated product and language selectors choose field locking. The source metadata backfill was moved into the native product save callback.",
-      "current_source": "} elseif (isset($_GET['new_lang']) || ($currentScreen && $currentScreen->base == 'edit')) {",
-      "source_sha256": "6e2091477267beee9a90ba9f705bbcd02c8062d61bf7f74b8e8e73b8d7fe219c"
-    },
-    {
-      "id": "EX-029",
-      "file": "src/Hyyan/WPI/Product/Meta.php",
-      "line": 910,
-      "column": 24,
-      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
-      "method": "suppressInvalidDuplicatedSKUErrorMsg",
-      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured.",
-      "current_source": "$postids = $wpdb->get_col(",
-      "source_sha256": "6e2091477267beee9a90ba9f705bbcd02c8062d61bf7f74b8e8e73b8d7fe219c"
-    },
-    {
-      "id": "EX-030",
+      "id": "EX-024",
       "file": "src/Hyyan/WPI/Product/Variation.php",
       "line": 170,
       "column": 24,
@@ -335,7 +269,18 @@
       "source_sha256": "3f817e70fe60b000bfb08c597183aaae9b28f61606de36e6a09e2d6f1e2b712e"
     },
     {
-      "id": "EX-031",
+      "id": "EX-025",
+      "file": "src/Hyyan/WPI/Product/Meta.php",
+      "line": 914,
+      "column": 24,
+      "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+      "method": "suppressInvalidDuplicatedSKUErrorMsg",
+      "reason": "Prepared SKU query uses %s for the stored SKU and %d for the excluded product ID. Native posts cache versions invalidate these lookups after metadata, status and deletion writes. Cache entries expire after sixty seconds. Prepared predicates remain unchanged. Large catalog performance remains unmeasured.",
+      "current_source": "$postids = $wpdb->get_col(",
+      "source_sha256": "286d8a162b54b79181c2694e25caab8a86994de2e50e011f51d96823a67cb242"
+    },
+    {
+      "id": "EX-026",
       "file": "__init__.php",
       "line": 0,
       "column": 0,
@@ -346,7 +291,7 @@
       "source_sha256": "0166473b8fa1d37c5d7d9014fea5cc36de9bfc2e38bb612a1be7e51165d2bb6c"
     },
     {
-      "id": "EX-032",
+      "id": "EX-027",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 43,
       "column": 17,
@@ -357,7 +302,7 @@
       "source_sha256": "eb0795d0cb37317f8fba76f75b2078b7b56e41d02a65f65544c1d815e331a112"
     },
     {
-      "id": "EX-033",
+      "id": "EX-028",
       "file": "src/Hyyan/WPI/Admin/AbstractSettings.php",
       "line": 61,
       "column": 21,

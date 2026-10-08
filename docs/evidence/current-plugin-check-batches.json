@@ -1,37 +1,10 @@
 {
-  "source_commit": "bed0aee",
-  "installed_total": 33,
-  "removed_from_230": 197,
+  "source_commit": "78d6218",
+  "installed_total": 28,
+  "removed_from_230": 202,
   "release_requirement": "zero findings",
   "batches": {
     "request verification": [
-      {
-        "line": 179,
-        "column": 20,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 179,
-        "column": 47,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
-      {
-        "line": 182,
-        "column": 52,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Utilities.php"
-      },
       {
         "line": 94,
         "column": 59,
@@ -220,24 +193,6 @@
         "message": "Processing form data without nonce verification.",
         "docs": "",
         "file": "src/Hyyan/WPI/Product/Product.php"
-      },
-      {
-        "line": 225,
-        "column": 19,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Meta.php"
-      },
-      {
-        "line": 230,
-        "column": 25,
-        "type": "WARNING",
-        "code": "WordPress.Security.NonceVerification.Recommended",
-        "message": "Processing form data without nonce verification.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Meta.php"
       }
     ],
     "translations": [],
@@ -263,15 +218,6 @@
     ],
     "prepared queries": [
       {
-        "line": 910,
-        "column": 24,
-        "type": "WARNING",
-        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
-        "message": "Use of a direct database call is discouraged.",
-        "docs": "",
-        "file": "src/Hyyan/WPI/Product/Meta.php"
-      },
-      {
         "line": 170,
         "column": 24,
         "type": "WARNING",
@@ -279,11 +225,20 @@
         "message": "Use of a direct database call is discouraged.",
         "docs": "",
         "file": "src/Hyyan/WPI/Product/Variation.php"
+      },
+      {
+        "line": 914,
+        "column": 24,
+        "type": "WARNING",
+        "code": "WordPress.DB.DirectDatabaseQuery.DirectQuery",
+        "message": "Use of a direct database call is discouraged.",
+        "docs": "",
+        "file": "src/Hyyan/WPI/Product/Meta.php"
       }
     ],
     "other contracts": [
       {
-        "line": 259,
+        "line": 265,
         "column": 18,
         "type": "ERROR",
         "code": "WordPress.Security.EscapeOutput.OutputNotEscaped",
