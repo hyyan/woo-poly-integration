@@ -1,5 +1,9 @@
 <?php
 if (wp_get_environment_type() !== 'local') { throw new RuntimeException('Disposable local site required.'); }
+$synchronizer = wc_get_container()->get(Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer::class);
+if (!$synchronizer->create_database_tables()) {
+    throw new RuntimeException('The test lab requires native WooCommerce HPOS tables.');
+}
 foreach (array('en_US', 'de_DE') as $locale) {
     $slug = substr($locale, 0, 2);
     if (!PLL()->model->languages->get($slug)) {

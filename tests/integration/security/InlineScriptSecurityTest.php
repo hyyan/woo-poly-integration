@@ -15,6 +15,7 @@ final class InlineScriptSecurityTest extends TestCase
     private $features;
     private $screen;
     private $translation;
+    private array $products = array();
 
     protected function setUp(): void
     {
@@ -34,6 +35,7 @@ final class InlineScriptSecurityTest extends TestCase
     }
     protected function tearDown(): void
     {
+        foreach (array_reverse($this->products) as $id) { wp_delete_post($id, true); }
         $_GET = $this->get;
         $GLOBALS['pagenow'] = $this->page;
         PLL()->curlang = $this->language;
@@ -42,6 +44,20 @@ final class InlineScriptSecurityTest extends TestCase
         if ($this->features === false) { delete_option('wpi-features'); } else { update_option('wpi-features', $this->features); }
     }
     private function handler(string $class) { return (new ReflectionClass($class))->newInstanceWithoutConstructor(); }
+    private function createPublishedVariation(): void
+    {
+        $parent = new WC_Product_Variable();
+        $parent->set_name('Language warning regression');
+        $parent->set_status('publish');
+        $parent->save();
+        $this->products[] = $parent->get_id();
+        $variation = new WC_Product_Variation();
+        $variation->set_parent_id($parent->get_id());
+        $variation->set_status('publish');
+        $variation->set_regular_price('10');
+        $variation->save();
+        $this->products[] = $variation->get_id();
+    }
     private function capture(callable $callback): string
     {
         ob_start();
@@ -161,6 +177,7 @@ final class InlineScriptSecurityTest extends TestCase
     }
     public function testLanguageWarningUsesTextInsteadOfHtml(): void
     {
+        $this->createPublishedVariation();
         add_filter('gettext', $this->translation, 10, 3);
         $this->handler(Variable::class)->shouldDisableLangSwitcher();
         set_current_screen('settings_page_mlang');
@@ -191,6 +208,7 @@ final class InlineScriptSecurityTest extends TestCase
     }
     public function testNativeDefaultLanguageRowActionIsDisabledForVariations(): void
     {
+        $this->createPublishedVariation();
         $this->handler(Variable::class)->shouldDisableLangSwitcher();
         $output = apply_filters('pll_default_lang_row_action', '<a href="?pll_action=default-lang">Change</a>');
         self::assertStringNotContainsString('href=', $output);

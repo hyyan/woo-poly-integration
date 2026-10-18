@@ -6,6 +6,23 @@ use PHPUnit\Framework\TestCase;
 
 final class VariationCopyLifecycleTest extends TestCase
 {
+    public function testSaveCallbackIgnoresADeletedProductPost(): void
+    {
+        $product = new WC_Product_Variable();
+        $product->set_name('Deleted product save callback regression');
+        $product->save();
+        $id = $product->get_id();
+        try {
+            wp_delete_post($id, true);
+            self::assertNull(get_post($id));
+            // WooCommerce can retain the product object until deferred sync at shutdown.
+            do_action('woocommerce_after_product_object_save', $product, $product->get_data_store());
+            self::assertNull(get_post($id));
+        } finally {
+            wp_delete_post($id, true);
+        }
+    }
+
     #[DataProvider('copyOutcomes')]
     public function testCopyRestoresVisibilityAndSaveCallbacks(bool $fail): void
     {

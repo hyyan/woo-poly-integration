@@ -85,6 +85,10 @@ class Variable
         }
         $productid = $product->get_id();
         $post = get_post($productid);
+        // Deferred WooCommerce sync can retain an object after its post was deleted.
+        if (!$post) {
+            return;
+        }
         $this->duplicateVariations($productid, $post, true);
         $this->syncDefaultAttributes($productid, $post, true);
     }

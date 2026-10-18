@@ -11,6 +11,7 @@
 - `tests/checks/`: standalone verification tools for the native variation client and Plugin Check reports.
 - `tests/manual/`: manual testing site setup and seed data.
 - `tests/bin/`: setup, suite runner, and release packaging entry points.
+- `tests/support/`: test-only runtime helpers installed by the lab setup.
 
 The PHPUnit configuration files in the repository root discover test files recursively; feature subfolders share their suite's bootstrap.
 
@@ -23,7 +24,9 @@ docker compose -f tests/compose.yaml exec -T wordpress cat wp-content/plugins/wo
 node tests/checks/verify-variation-client.cjs /tmp/wpi-native-variation-client.js
 ```
 
-Use the disposable Docker lab only. Runtime/database volumes belong to Compose project `woo-poly-lab`; HTTP binds only to localhost:8098. Never point integration tests at a real store. Existing lab data is retained; `setup.sh` configures only lab dependencies/languages/users.
+Use the disposable Docker lab only. Runtime/database volumes belong to Compose project `woo-poly-lab`; HTTP binds only to localhost:8098. Never point integration tests at a real store. Existing lab data is retained; `setup.sh` configures lab dependencies, runtime settings, schemas, languages, and users.
+
+Setup selects pretty permalinks for the language URL fixtures, creates both native WooCommerce order-storage schemas, and installs a local-only mail transport stub. Email templates and mail hooks still execute; messages are not delivered. Tests that require products create and clean up their own fixtures.
 
 ## Automated checks
 
