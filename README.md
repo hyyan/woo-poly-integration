@@ -35,7 +35,54 @@ See the [getting started guide](https://github.com/hyyan/woo-poly-integration/wi
 
 Please use [GitHub issues](https://github.com/hyyan/woo-poly-integration/issues) for bug reports and feature requests. Include your plugin versions, steps to reproduce, and relevant logs with private data removed. See the [contribution guidelines](.github/CONTRIBUTING.md).
 
-Code, documentation, translations, and reproducible bug reports are welcome. For local development, see the [automated testing guide](docs/TESTING.md) and [manual testing guide](docs/MANUAL-TESTING.md).
+Code, documentation, translations, and reproducible bug reports are welcome.
+
+## Running tests
+
+Run these commands from the repository root. Install Docker with Compose v2, Bash, and Node.js 24.15 or newer. Docker must be running. WordPress, WooCommerce, Polylang, PHP, and PHPUnit are installed inside the test containers.
+
+### Automated tests
+
+Set up the local WordPress test site, then run the PHP suites:
+
+```sh
+tests/bin/setup.sh
+tests/bin/run.sh
+```
+
+Setup downloads the pinned dependencies on the first run. The suites cover unit tests, WordPress AJAX requests, product translations, stock, carts, orders, and admin and storefront behavior. Use the disposable test database only; these tests create and delete product data. The site listens at `http://localhost:8098`.
+
+Run the JavaScript tests and check that minified assets match their sources:
+
+```sh
+npm ci
+npm run check:js
+npm run test:js
+```
+
+After changing `public/js/Cart.js` or `public/js/Variables.js`, run `npm run build:js` and include the generated `.min.js` files with your changes. Enable the optional local pre-commit check with `npm run hooks:install`.
+
+GitHub Actions runs these checks on pushes and pull requests, with PHP 8.3, 8.4, and 8.5. It also validates the workflow files and checks release preparation with publishing disabled.
+
+Stop the automated test site while keeping its data:
+
+```sh
+docker compose -f tests/compose.yaml stop
+```
+
+### Testing in a browser
+
+The separate manual test store requires Make and rsync in addition to the tools above. Start it with:
+
+```sh
+make up
+```
+
+Open `http://localhost:8097` or `http://localhost:8097/wp-admin/`. Sign in as `manual-admin`, `manual-manager`, `manual-customer`, or `manual-subscriber`; each account uses the password `manual-password`. These accounts belong only to the local test store.
+
+The store includes English and German products, linked variations, stock, coupons, and offline checkout. Check product editing, variation removal, stock synchronization, language switching, cart continuity, checkout, refunds, and order emails in both languages. Captured emails are available under **Tools → Manual store mail**.
+
+Use `make classic` or `make block` to switch checkout formats. Run `make up` again to install your latest source changes while keeping the store data. `make stop` stops the store; `make reset` **deletes the manual store data** and recreates the fixtures. Clear browser cookies after a reset.
 
 ## Keep in touch
 
