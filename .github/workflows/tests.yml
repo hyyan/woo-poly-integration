@@ -21,16 +21,17 @@ jobs:
       - name: Run unit and WordPress integration regressions
         run: tests/bin/run.sh
       - name: Collect runtime diagnostics
-        if: always()
+        if: failure()
         run: |
           mkdir -p artifacts
           docker compose -f tests/compose.yaml logs --no-color > artifacts/containers.log
           docker compose -f tests/compose.yaml exec -T wordpress cat wp-content/debug.log > artifacts/wordpress-debug.log || true
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: failure()
         with:
           name: diagnostics-php-${{ matrix.php }}
           path: artifacts/
+          retention-days: 3
   javascript:
     runs-on: ubuntu-latest
     steps:

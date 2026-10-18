@@ -6,7 +6,7 @@ final class ReleaseUpgradeContractTest extends TestCase
 {
     public function testReleaseRetainsPublishedMinimumRequirements(): void
     {
-        $root = dirname(__DIR__, 2);
+        $root = dirname(__DIR__, 3);
         $headers = array('wordpress' => 'Requires at least', 'woocommerce' => 'WC requires at least', 'php' => 'Requires PHP');
         $published = array('wordpress' => '5.4', 'woocommerce' => '3.0.0', 'php' => '7.0');
         self::assertSame($published, get_file_data($root . '/__init__.php', $headers));

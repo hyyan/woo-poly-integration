@@ -1,12 +1,26 @@
 # Regression testing
 
+## Test layout
+
+- `tests/unit/`: isolated PHP tests.
+- `tests/integration/`: WordPress AJAX integration tests grouped into `security`, `products`, `stock`, `localization`, `cart`, `orders`, `reports`, and `compatibility`.
+- `tests/admin/` and `tests/frontend/`: tests that require normal admin or storefront request context.
+- `tests/js/`: JavaScript tests.
+- `tests/upgrade/`: published-version upgrade fixtures, observers, and verification scenarios.
+- `tests/scenarios/`: additional manual regression scenarios executed inside the disposable WordPress lab.
+- `tests/checks/`: standalone verification tools for the native variation client and Plugin Check reports.
+- `tests/manual/`: manual testing site setup and seed data.
+- `tests/bin/`: setup, suite runner, and release packaging entry points.
+
+The PHPUnit configuration files in the repository root discover test files recursively; feature subfolders share their suite's bootstrap.
+
 `VariationSecurityTest` includes real HTTP requests to the lab container's Apache at `http://127.0.0.1/wp-admin/admin-ajax.php`, using temporary WordPress sessions and owned product fixtures. Apache must be running alongside the test process.
 
 To execute the installed WooCommerce removal client and assert its nonce payload:
 
 ```sh
 docker compose -f tests/compose.yaml exec -T wordpress cat wp-content/plugins/woocommerce/assets/js/admin/meta-boxes-product-variation.js > /tmp/wpi-native-variation-client.js
-node tests/bin/verify-variation-client.cjs /tmp/wpi-native-variation-client.js
+node tests/checks/verify-variation-client.cjs /tmp/wpi-native-variation-client.js
 ```
 
 Use the disposable Docker lab only. Runtime/database volumes belong to Compose project `woo-poly-lab`; HTTP binds only to localhost:8098. Never point integration tests at a real store. Existing lab data is retained; `setup.sh` configures only lab dependencies/languages/users.

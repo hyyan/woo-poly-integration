@@ -80,7 +80,7 @@ final class TemplateOutputSecurityTest extends TestCase
 
     public function testStatusHelpTipsRemoveUnsafeFilteredMarkupAndPreserveAccessibleControls(): void
     {
-        require_once dirname(__DIR__, 2).'/src/Hyyan/WPI/Admin/StatusReport.php';
+        require_once dirname(__DIR__, 3).'/src/Hyyan/WPI/Admin/StatusReport.php';
         $filter = function ($html) {
             return str_replace('<span ', '<span onclick="alert(1)" ', $html).'<script>alert(1)</script>';
         };
