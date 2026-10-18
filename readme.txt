@@ -6,7 +6,7 @@ Stable tag: 1.6.0
 Tested Up To: 7.1
 WC requires at least: 3.0.0
 WC tested up to: 11.1.2
-Requires PHP: 7.0
+Requires PHP: 8.3
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/main/LICENSE
 
@@ -45,7 +45,7 @@ For bug reports and feature requests, please use GitHub issues and include your 
 
 = What you need to know about this plugin =
 
-The plugin declares WordPress 5.4+, PHP 7.0+, WooCommerce 3.0+, and Polylang 2.0+. Your installed dependencies may require newer PHP versions.
+The plugin requires WordPress 5.4+, PHP 8.3+, WooCommerce 3.0+, and Polylang 2.0+. Your installed dependencies may require newer WordPress or PHP versions.
 
 Version 1.6.0 has been tested with WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, and PHP 8.5.11. Older supported versions have not all been retested. Back up your store and test updates on a staging site first.
 

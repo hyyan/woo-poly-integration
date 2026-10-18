@@ -1,6 +1,6 @@
 # Installation
 
-The plugin requires WordPress 5.4+, PHP 7.0+, WooCommerce 3.0+, and Polylang 2.0+. Your installed WooCommerce and Polylang versions may require newer WordPress or PHP versions. The current release has been tested with WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, and PHP 8.3, 8.4, and 8.5. Older supported versions have not all been retested.
+The plugin requires WordPress 5.4+, PHP 8.3+, WooCommerce 3.0+, and Polylang 2.0+. Your installed WooCommerce and Polylang versions may require newer WordPress or PHP versions. The current release has been tested with WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, and PHP 8.3, 8.4, and 8.5. Older supported WordPress, WooCommerce, and Polylang versions have not all been retested.
 
 Back up your store before installing an update and test it on a staging site first. Choose your default language before creating variable products; changing it afterward is unsupported.
 
