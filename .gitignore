@@ -11,3 +11,5 @@
 /goal.txt
 /handoff.md
 /node_modules/
+/docs/.vitepress/cache/
+/docs/.vitepress/dist/

@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
         ));
         echo('. ');
         esc_html_e('For more information please see:', 'woo-poly-integration');
-        echo(' <a target="_blank" href="https://github.com/hyyan/woo-poly-integration/wiki">');
+        echo(' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/">');
         esc_html_e('documentation pages', 'woo-poly-integration');
         echo('</a>.');
         ?>

@@ -2,7 +2,7 @@
 
 Build a multilingual WooCommerce store with Polylang. Translate products and store pages, synchronize shared product data, and let customers shop in their chosen language.
 
-[Documentation](https://github.com/hyyan/woo-poly-integration/wiki) · [Getting started](https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started) · [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
+[Documentation](https://hyyan.github.io/woo-poly-integration/) · [Getting started](https://hyyan.github.io/woo-poly-integration/getting-started/) · [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
 
 ## Features
 
@@ -29,7 +29,7 @@ Choose your default language before creating variable products; changing it afte
 4. Translate product categories and attributes as needed, then create and link product translations.
 5. Test product selection, stock, the cart, checkout, and order emails in every store language before going live.
 
-See the [getting started guide](https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started) for details. Composer users can install the published package with `composer require hyyan/woo-poly-integration`.
+See the [getting started guide](https://hyyan.github.io/woo-poly-integration/getting-started/) for details. Composer users can install the published package with `composer require hyyan/woo-poly-integration`.
 
 ## Help and contributions
 

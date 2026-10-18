@@ -33,6 +33,17 @@ After editing `public/js/Cart.js` or `public/js/Variables.js`, run `npm run buil
 
 The pre-commit hook checks the staged versions and blocks stale minified assets. It never rewrites files or stages changes. Commits unrelated to these assets or their build configuration do not require Node.js. Hooks must be enabled separately in each clone; contributors with an existing hooks setup can call `node .github/scripts/build-js.cjs --check --staged` from their own hook.
 
+# Documentation
+
+The user guide lives in `docs/` as Markdown. To preview changes locally:
+
+```sh
+npm ci
+npm run docs:dev
+```
+
+Run `npm run docs:build` to check the production build and internal links. GitHub Actions builds documentation changes on pull requests and publishes updates from `main` to GitHub Pages.
+
 # Running tests
 
 Run these commands from the repository root. Install Docker with Compose v2, Bash, and Node.js 24.15 or newer. Docker must be running. WordPress, WooCommerce, Polylang, PHP, and PHPUnit are installed inside the test containers.

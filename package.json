@@ -5,6 +5,9 @@
     "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   },
   "scripts": {
+    "docs:dev": "vitepress dev docs --host 127.0.0.1",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs --host 127.0.0.1",
     "build:js": "node .github/scripts/build-js.cjs",
     "check:js": "node .github/scripts/build-js.cjs --check",
     "test:js": "node --test tests/js/*.test.cjs",
@@ -15,7 +18,8 @@
     "@release-it/bumper": "8.0.1",
     "git-cliff": "2.14.2",
     "release-it": "21.1.1",
-    "terser": "5.51.2"
+    "terser": "5.51.2",
+    "vitepress": "1.6.4"
   },
   "overrides": {
     "get-uri": {

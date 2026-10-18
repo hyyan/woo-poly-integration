@@ -16,7 +16,7 @@ Connect WooCommerce and Polylang for a multilingual store.
 
 Build a multilingual WooCommerce store with Polylang. Translate products and store pages, synchronize shared product data, and let customers shop in their chosen language.
 
-[Documentation](https://github.com/hyyan/woo-poly-integration/wiki) | [Getting started](https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started) | [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
+[Documentation](https://hyyan.github.io/woo-poly-integration/) | [Getting started](https://hyyan.github.io/woo-poly-integration/getting-started/) | [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
 
 For bug reports and feature requests, please use GitHub issues and include your plugin versions and steps to reproduce. Remove private data from any logs you share.
 
@@ -75,7 +75,7 @@ ways you can contribute:
 * Reporting issues (please read [issue guidelines](https://github.com/hyyan/woo-poly-integration/blob/main/.github/CONTRIBUTING.md))
 * Suggesting new features
 * Writing or refactoring [code](https://github.com/hyyan/woo-poly-integration)
-* Improving [documentation](https://github.com/hyyan/woo-poly-integration/wiki)
+* Improving [documentation](https://hyyan.github.io/woo-poly-integration/)
 * Fixing [issues](https://github.com/hyyan/woo-poly-integration/issues)
 
 == Installation ==
@@ -97,7 +97,7 @@ In all cases please do ensure you have Polylang and WooCommerce activated and se
 before you Activate this plugin from your admin panel
 
 Please note the getting started notes:
-https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started
+https://hyyan.github.io/woo-poly-integration/getting-started/
 
 
 == Frequently Asked Questions ==
