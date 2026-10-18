@@ -1,94 +1,51 @@
-# WordPress WooCommerce Polylang Integration
+# Hyyan Integration for WooCommerce and Polylang
 
-[![project status](http://www.repostatus.org/badges/latest/active.svg)](http://www.gitchecker.com/hyyan/woo-poly-integration)
-[![Latest Stable Version](https://poser.pugx.org/hyyan/woo-poly-integration/v/stable.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
-[![Wordpress plugin](http://img.shields.io/wordpress/plugin/v/woo-poly-integration.svg)](https://wordpress.org/plugins/woo-poly-integration/)
-[![Wordpress](http://img.shields.io/wordpress/plugin/dt/woo-poly-integration.svg)](https://wordpress.org/plugins/woo-poly-integration/)
-[![Wordpress rating](http://img.shields.io/wordpress/plugin/r/woo-poly-integration.svg)](https://wordpress.org/plugins/woo-poly-integration/)
-[![License](https://poser.pugx.org/hyyan/woo-poly-integration/license.svg)](https://packagist.org/packages/hyyan/woo-poly-integration)
+Build a multilingual WooCommerce store with Polylang. Translate products and store pages, synchronize shared product data, and let customers shop in their chosen language.
 
-**Given that I am not using Wordpress these days and I haven't really been using WooPoly for a while. I am looking for maintainers to take over this project.
-If you're interested, please reply to this [issue](https://github.com/hyyan/woo-poly-integration/issues/410) or get in touch with me via email: hyyanaf [at] gmail [dot] com**
-
----
-
-[This plugin](https://github.com/hyyan/woo-poly-integration/) makes it possible to run multilingual e-commerce sites using
-WooCommerce and Polylang.It makes products and store pages translatable, lets
-visitors switch languages and order products in their language. and all that from
-the same interface you love.
-
-[Read the full docs](https://github.com/hyyan/woo-poly-integration/wiki)
+[Documentation](https://github.com/hyyan/woo-poly-integration/wiki) · [Getting started](https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started) · [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
 
 ## Features
 
-- [x] Auto Download Woocommerce Translation Files
-- [x] Page Translation
-- [x] Endpoints Translation
-- [x] Product Translation
-  - [x] Categories
-  - [x] Tags
-  - [x] Attributes
-  - [x] Shipping Classes
-  - [x] Meta Synchronization
-  - [x] Variation Product
-  - [x] Product Gallery
-- [x] Order Translation
-- [x] Stock Synchronization
-- [x] Cart Synchronization
-- [x] Coupon Synchronization
-- [x] Emails
-- [x] Reports
-  - [x] Filter by language
-  - [x] Combine reports for all languages
+- Translate products, categories, tags, attributes, shipping classes, galleries, and variations.
+- Synchronize shared product metadata, stock, and coupons across translations.
+- Translate store pages, endpoints, payment and shipping text, and order emails.
+- Keep the cart consistent when customers switch languages, including classic and block cart/checkout flows.
+- Filter reports by language or combine translated product sales, with legacy and HPOS order storage support.
+- Manage integration features and synchronized fields under **Settings → WooPoly**.
 
+## Requirements and compatibility
 
-## What you need to know about this plugin
+The plugin declares WordPress 5.4+, PHP 7.0+, WooCommerce 3.0+, and Polylang 2.0+. Your installed WordPress, WooCommerce, and Polylang versions may require newer PHP versions.
 
-1. WooCommerce and therefore this plugin needs `PHP7 and above`
-2. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang)
-   and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
-3. The plugin support variable products , but using them will `disallow you to
-   change the default language` , because of the way the plugin implements this
-   support. So you have to make sure to choose the default language before you start
-   adding new variable products.
-4. Polylang URL modifications method `The language is set from content` is not
-   supported
+The current 1.5.1 development checkout has been tested with WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, and PHP 8.5.11. Older supported versions have not all been retested. Back up your store and verify updates on a staging site first.
 
-## How to install
+Choose your default language before creating variable products; changing it afterward is unsupported. Polylang's **The language is set from content** URL mode is also unsupported.
 
-### Classical way
+## Installation and setup
 
-1. Download the plugin as zip archive and then upload it to your wordpress plugins folder and
-extract it there.
-2. Activate the plugin from your admin panel
+1. Install and activate WooCommerce and Polylang, then configure your store languages and default language.
+2. Install this plugin through **Plugins → Add New**, or upload its release ZIP, and activate it.
+3. Review **Settings → WooPoly**, translate your WooCommerce pages, and check their language assignments.
+4. Translate product categories and attributes as needed, then create and link product translations.
+5. Test product selection, stock, the cart, checkout, and order emails in every store language before going live.
 
-### Composer way
+See the [getting started guide](https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started) for details. Composer users can install the published package with `composer require hyyan/woo-poly-integration`.
 
-1. run composer command : ``` composer require hyyan/woo-poly-integration```
+## Help and contributions
 
-In all cases please do ensure you have Polylang and WooCommerce activated and setup
-before you Activate this plugin from your admin panel
+Please use [GitHub issues](https://github.com/hyyan/woo-poly-integration/issues) for bug reports and feature requests. Include your plugin versions, steps to reproduce, and relevant logs with private data removed. See the [contribution guidelines](.github/CONTRIBUTING.md).
 
-Please note the getting started notes:
-https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started
+Code, documentation, translations, and reproducible bug reports are welcome. For local development, see the [automated testing guide](docs/TESTING.md) and [manual testing guide](docs/MANUAL-TESTING.md).
 
+## Keep in touch
 
-## Setup your environment
-
-1. You need to translate woocommerce pages by yourself
-2. The plugin will handle the rest for you
+Created by **Hyyan Abo Fakher**. If WooPoly is useful to you, a [star on GitHub](https://github.com/hyyan/woo-poly-integration) helps others discover it. You are also welcome to follow my work on [GitHub](https://github.com/hyyan) or [LinkedIn](https://www.linkedin.com/in/hyyan/).
 
 ## Translations
 
-* Arabic by [Hyyan Abo Fakher](https://github.com/hyyan)
-* Spanish by [nunhes](https://github.com/nunhes)
+- Arabic by [Hyyan Abo Fakher](https://github.com/hyyan).
+- Spanish by [nunhes](https://github.com/nunhes).
 
-## Contributing
+## License
 
-Everyone is welcome to help contribute and improve this plugin. There are several
-ways you can contribute:
-
-* Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
-* Suggesting new features
-* Writing or refactoring code
-* Fixing [issues](https://github.com/hyyan/woo-poly-integration/issues)
+[MIT](LICENSE).

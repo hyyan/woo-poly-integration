@@ -10,23 +10,15 @@ Requires PHP: 7.0
 License: MIT
 License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
  
-Integrates Woocommerce With Polylang 
+Connect WooCommerce and Polylang for a multilingual store.
 
 == Description ==
 
-**Given that I am not using Wordpress these days and I haven't really been using WooPoly for a while. I am looking for maintainers to take over this project.
-If you're interested, please reply to this [issue](https://github.com/hyyan/woo-poly-integration/issues/410) or get in touch with me via email: hyyanaf [at] gmail [dot] com**
+Build a multilingual WooCommerce store with Polylang. Translate products and store pages, synchronize shared product data, and let customers shop in their chosen language.
 
----
+[Documentation](https://github.com/hyyan/woo-poly-integration/wiki) | [Getting started](https://github.com/hyyan/woo-poly-integration/wiki/Getting-Started) | [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
 
-This plugin makes it possible to run multilingual e-commerce sites using
-WooCommerce and Polylang.It makes products and store pages translatable, lets 
-visitors switch languages and order products in their language. and all that from
-the same interface you love.
-
-> Please do not ask for support on wordpress forum anymore , it is becoming hard for me to follow issues in different places. please if you want help just open a new Github issue.
-
-[Read the full docs](https://github.com/hyyan/woo-poly-integration/wiki)
+For bug reports and feature requests, please use GitHub issues and include your plugin versions and steps to reproduce. Remove private data from any logs you share.
 
 = Features  =
 
@@ -53,20 +45,22 @@ the same interface you love.
 
 = What you need to know about this plugin =
 
-1. The plugin needs `PHP7.0 or above` ie same software versions as WooCommerce
-2. This plugin is developed in sync with [Polylang](https://wordpress.org/plugins/polylang) 
-   and [WooCommerce](https://wordpress.org/plugins/woocommerce/) latest version
-3. The plugin support variable products , but using them will `disallow you to 
-   change the default language` , because of the way the plugin implements this
-   support. So you have to make sure to choose the default language before you start
-   adding new variable products.
-4. Polylang URL modifications method `The language is set from content` is not 
-   supported
+The plugin declares WordPress 5.4+, PHP 7.0+, WooCommerce 3.0+, and Polylang 2.0+. Your installed dependencies may require newer PHP versions.
+
+Version 1.5.1 has been tested with WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, and PHP 8.5.11. Older supported versions have not all been retested. Back up your store and test updates on a staging site first.
+
+Choose your default language before creating variable products; changing it afterward is unsupported. Polylang's "The language is set from content" URL mode is also unsupported.
 
 = Setup your environment =
 
-1. You need to translate woocommerce pages by yourself
-2. The plugin will handle the rest for you
+1. Configure WooCommerce, Polylang, and your store languages before activating this plugin.
+2. Review Settings > WooPoly, translate your store pages, and check their language assignments.
+3. Translate product categories and attributes as needed, then create and link product translations.
+4. Test product selection, stock, cart, checkout, and emails in every store language before going live.
+
+= Keep in touch =
+
+Created by Hyyan Abo Fakher. If WooPoly is useful to you, a [star on GitHub](https://github.com/hyyan/woo-poly-integration) helps others discover it. You are also welcome to follow my work on [GitHub](https://github.com/hyyan) or [LinkedIn](https://www.linkedin.com/in/hyyan/).
 
 = Translations =
 
@@ -118,11 +112,11 @@ No. This plugin is for polylang and woocommerce
 
 = What do I need to do in my theme =
 
-Well , Nothing 
+No special theme changes are normally required. Test your theme and any checkout extensions on a staging site.
 
 = Products Category or tags pages are blank =
 
-Just make sure to setup your permalinks , and every thing will be fine , I promise
+Check the language assignments and translations for your terms, then save Settings > Permalinks. If the problem persists, report the steps to reproduce on GitHub.
 
 
 == Screenshots ==
@@ -137,6 +131,7 @@ Just make sure to setup your permalinks , and every thing will be fine , I promi
 == Changelog == 
 
 = 1.5.1 =
+* Refresh setup documentation and optional GitHub/LinkedIn links; show the administrator welcome notice once per release on plugin management screens.
 * Secure variation removal with complete integer validation, prepared database queries, capability checks and native AJAX nonce verification.
 * Preserve translated cart quantities, prices, stock, checkout validation and configured payment text in classic and block flows.
 * Restore caller language after email operations and retain current and older WooCommerce catalog loading.
@@ -485,6 +480,9 @@ CHANGE: new Product Attributes are no longer automatically enabled for translati
 * Released in the wordpress repository
 
 == Upgrade Notice ==
+
+= 1.5.1 =
+Security and compatibility update for variation removal and translated store workflows. Back up your store and test the update on staging before deployment.
 
 = 0.20 =
 The release includes many new features for reports , improve the support for emails , and include 

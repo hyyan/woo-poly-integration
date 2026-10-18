@@ -3,25 +3,9 @@ if (!defined('ABSPATH')) {
     exit('restricted access');
 }
 ?>
-<h3>
-    <span>
-        <?php esc_html_e('Support The Plugin', 'woo-poly-integration'); ?>
-    </span>
-</h3>
+<h3><span><?php esc_html_e('Keep in touch', 'woo-poly-integration'); ?></span></h3>
 <div class="inside">
-    <?php
-    echo wp_kses_post(__('<strong>I will never ask you for donation, now or in the future</strong>,
-        but the plugin still needs your support.
-        please support by rating this plugin on
-        <a href="https://wordpress.org/support/view/plugin-reviews/woo-poly-integration">Wordpress Repository</a>,
-        or by giving the plugin a star on  <a href="https://github.com/hyyan/woo-poly-integration">Github</a>.
-        <br><br>
-        If you speak a language other than English,
-        you can support the plugin by extending the
-        translation list and your name will be added
-        to the translators list', 'woo-poly-integration'
-    ));
-    ?>
-    <br><br>
+    <p><?php esc_html_e('If WooPoly is useful to you, a GitHub star helps others discover it. You are also welcome to follow Hyyan Abo Fakher on GitHub or LinkedIn for more open-source work.', 'woo-poly-integration'); ?></p>
+    <p><?php esc_html_e('Bug reports, translations, and contributions are always welcome.', 'woo-poly-integration'); ?></p>
     <?php include dirname(__DIR__).'/social.php'; ?>
 </div>

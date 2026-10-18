@@ -27,17 +27,20 @@ final class AdminNetworkPrivacyTest extends TestCase
         self::assertSame('https://github.com/hyyan/woo-poly-integration',$links[2]->getAttribute('href'));
         foreach ($links as $link) { self::assertNotSame('',trim($link->textContent)); }
     }
-    public function testSocialActionsRetainOriginalShareDataAndRepository(): void
+    public function testSocialActionsLinkOnlyToProjectAndAuthorProfiles(): void
     {
-        $links=$this->document('social')->getElementsByTagName('a');
-        self::assertCount(3,$links);
-        parse_str(parse_url($links[0]->getAttribute('href'),PHP_URL_QUERY),$tweet);
-        self::assertSame('https://wordpress.org/plugins/woo-poly-integration/',$tweet['url'] ?? null);
-        self::assertSame('Hyyan WooCommerce Polylang Integration ,makes you run multilingual store easily.',$tweet['text'] ?? null);
-        self::assertSame('HyyanAF',$tweet['via'] ?? null);
-        parse_str(parse_url($links[1]->getAttribute('href'),PHP_URL_QUERY),$facebook);
-        self::assertSame('https://wordpress.org/plugins/woo-poly-integration/',$facebook['u'] ?? null);
-        self::assertSame('https://github.com/hyyan/woo-poly-integration',$links[2]->getAttribute('href'));
+        $links = $this->document('social')->getElementsByTagName('a');
+        self::assertCount(3, $links);
+        $destinations = array(
+            'https://github.com/hyyan/woo-poly-integration',
+            'https://github.com/hyyan',
+            'https://www.linkedin.com/in/hyyan/',
+        );
+        foreach ($links as $index => $link) {
+            self::assertSame($destinations[$index], $link->getAttribute('href'));
+            self::assertSame('noopener noreferrer', $link->getAttribute('rel'));
+            self::assertSame('_blank', $link->getAttribute('target'));
+        }
     }
     public function testTranslatedActionLabelsCannotInjectActiveMarkup(): void
     {

@@ -35,6 +35,7 @@ class Plugin
     public function __construct()
     {
         FlashMessages::register();
+        add_action('admin_notices', array($this, 'showWelcomeNotice'));
 
         add_action('init', array($this, 'activate'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
@@ -220,9 +221,8 @@ class Plugin
         }
 
         FlashMessages::remove(MessagesInterface::MSG_ACTIVATE_ERROR);
-        FlashMessages::add(
-                MessagesInterface::MSG_SUPPORT, static::getView('Messages/support')
-        );
+        // Retire the old site-wide support message in favor of a scoped welcome notice.
+        FlashMessages::remove(MessagesInterface::MSG_SUPPORT);
 
         add_filter('plugin_action_links_woo-poly-integration/__init__.php', function ($links) {
             $baseURL = is_multisite() ? get_admin_url() : admin_url();
@@ -245,6 +245,29 @@ class Plugin
         }
 
         $this->registerCore();
+    }
+
+    /**
+     * Welcome administrators once per release on the plugin's management screens.
+     */
+    public function showWelcomeNotice()
+    {
+        if (!current_user_can('manage_options') || !static::canActivate()) {
+            return;
+        }
+        $screen = get_current_screen();
+        if (!$screen || !in_array($screen->id, array('plugins', 'settings_page_hyyan-wpi'), true)) {
+            return;
+        }
+        $version = static::getVersion();
+        if (get_user_meta(get_current_user_id(), 'wpi_welcome_version', true) === $version) {
+            return;
+        }
+
+        echo '<div class="notice notice-info is-dismissible">';
+        echo wp_kses_post(static::getView('Messages/support'));
+        echo '</div>';
+        update_user_meta(get_current_user_id(), 'wpi_welcome_version', $version);
     }
 
 	/*

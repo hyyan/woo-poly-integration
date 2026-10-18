@@ -40,17 +40,17 @@ final class TemplateOutputSecurityTest extends TestCase
         ));
     }
 
-    public function testExistingRichTextLinksAndSharingActionsRemainAvailable(): void
+    public function testProjectInformationAndOptionalFollowLinksRemainAvailable(): void
     {
         $about = $this->render('Admin/about');
         self::assertStringContainsString('href="https://wordpress.org/plugins/woocommerce/"', $about);
         self::assertStringContainsString('href="https://wordpress.org/plugins/polylang/"', $about);
         $support = $this->render('Admin/support');
-        self::assertStringContainsString('<strong>I will never ask', $support);
-        self::assertStringContainsString('twitter.com/intent/tweet', $support);
-        self::assertStringContainsString('facebook.com/sharer/sharer.php', $support);
+        self::assertStringContainsString('If WooPoly is useful to you', $support);
+        self::assertStringNotContainsString('twitter.com', $support);
+        self::assertStringContainsString('https://www.linkedin.com/in/hyyan/', $support);
         self::assertStringContainsString('https://github.com/hyyan/woo-poly-integration', $support);
-        self::assertStringContainsString('<b>Thank you!</b>', $this->render('Messages/support'));
+        self::assertStringContainsString('Thanks for using WooPoly', $this->render('Messages/support'));
     }
 
     public function testSettingsRenderingPreservesNativeFormsAndInlineControls(): void
@@ -74,7 +74,7 @@ final class TemplateOutputSecurityTest extends TestCase
         self::assertStringContainsString('<form method="post" action="options.php">', $output);
         self::assertStringContainsString('name="_wpnonce"', $output);
         self::assertStringContainsString('<script>window.woopolyControl=true</script>', $output);
-        self::assertStringContainsString('twitter.com/intent/tweet', $output);
+        self::assertStringContainsString('https://www.linkedin.com/in/hyyan/', $output);
         self::assertStringContainsString('Plugin releases', $output);
     }
 
