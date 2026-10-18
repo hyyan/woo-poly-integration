@@ -1,1 +1,0 @@
-No syntax errors detected in /code/tests/bin/published-refund-upgrade.php

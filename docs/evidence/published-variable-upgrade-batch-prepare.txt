@@ -1,3 +1,0 @@
-{"prepared_version":"1.5.0","products":{"en":291,"de":292},"coupon":293}
-{"cart_urls":{"cart":{"en":"<upgrade-store>\/?page_id=294","de":"<upgrade-store>\/?page_id=295&lang=de"},"checkout":{"en":"<upgrade-store>\/?page_id=296","de":"<upgrade-store>\/?page_id=297&lang=de"}},"products":{"en":291,"de":292},"coupon":"published-data-upgrade"}
-{"variable_products":{"en":299,"de":302},"children":{"en":{"small":300,"large":301},"de":{"small":303,"large":304}},"urls":{"en":"<upgrade-store>\/?product=published-variation-upgrade-en","de":"<upgrade-store>\/?product=published-variation-upgrade-de&lang=de"}}

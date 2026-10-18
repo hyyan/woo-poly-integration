@@ -1,5 +1,0 @@
-Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 644
-Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 645
-Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 646
-{"wordpress":"5.4.2","woocommerce":"3.0.0","stock_mode":"backorders","checks":{"initial_over_stock_allowed":true,"translated_backorder_merge_allowed":true,"merged_quantity_four":true,"backorder_increase_allowed":true}}
-{"owned_stock_posts_removed":4,"cleanup_verified":true}

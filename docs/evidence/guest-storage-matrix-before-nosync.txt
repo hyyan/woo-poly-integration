@@ -1,3 +1,0 @@
-There are 0 orders to be synced.
-Deprecated: Using null as an array offset is deprecated, use an empty string instead in phar:///usr/local/bin/wp/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 95
-Warning: There are no orders to sync, aborting.

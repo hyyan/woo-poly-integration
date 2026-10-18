@@ -1,1 +1,0 @@
-No syntax errors detected in /plugin/tests/bin/published-report-upgrade.php

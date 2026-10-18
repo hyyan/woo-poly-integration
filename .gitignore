@@ -4,3 +4,9 @@
 *.gif
 *.gif
 .idea
+
+# Local maintenance and test output
+/docs/evidence/
+/work/
+/goal.txt
+/handoff.md

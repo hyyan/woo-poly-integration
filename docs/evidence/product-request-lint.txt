@@ -1,5 +1,0 @@
-No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Meta.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variable.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variation.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Utilities.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/integration/ProductTranslationInputTest.php

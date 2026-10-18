@@ -1,1 +1,0 @@
-{"checks":{"duplicate_first":true,"duplicate_second":true,"relationship_first":true,"relationship_second":true,"cached_query_counts":true,"sku_refresh":true,"relationship_refresh":true,"refreshed_query_counts":true},"query_counts":{"sku":2,"relationship":2}}

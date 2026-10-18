@@ -1,2 +1,0 @@
-No syntax errors detected in /plugin/__init__.php
-No syntax errors detected in /plugin/src/Hyyan/WPI/Reports.php

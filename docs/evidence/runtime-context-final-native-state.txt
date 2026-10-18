@@ -1,4 +1,0 @@
-{"language":"en","product":10844,"stock":17}
-{"language":"de","product":10845,"stock":17}
-{"order":10846,"language":"de"}
-{"order":10847,"language":"de"}

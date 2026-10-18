@@ -1,1 +1,0 @@
-Initial existing suite run stopped with exit 255. PHP reported: Allowed memory size of 134217728 bytes exhausted. Retained partial output: plugin-check-exact-id-batch-tests-first.txt. Repeat used php -d memory_limit=256M with each existing PHPUnit configuration. All four suites passed. Integration peak: 129.05 MB. No production or repository configuration changed.

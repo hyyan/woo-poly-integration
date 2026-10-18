@@ -1,6 +1,0 @@
-Success: Compatibility mode enabled.
-There are 4 orders to be synced.
-Sync completed.
-Success: 4 orders were synced in 0 seconds.
-Verification completed.
-Success: 14 orders were verified in 0 seconds.

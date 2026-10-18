@@ -1,3 +1,0 @@
-Deprecated: Array and string offset access syntax with curly braces is deprecated in <upgrade-store>/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 644
-Deprecated: Array and string offset access syntax with curly braces is deprecated in <upgrade-store>/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 645
-Deprecated: Array and string offset access syntax with curly braces is deprecated in <upgrade-store>/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 646

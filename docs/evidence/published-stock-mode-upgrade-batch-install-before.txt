@@ -1,9 +1,0 @@
-Deprecated: Array and string offset access syntax with curly braces is deprecated in MINIMUM_STORE/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 644
-Deprecated: Array and string offset access syntax with curly braces is deprecated in MINIMUM_STORE/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 645
-Deprecated: Array and string offset access syntax with curly braces is deprecated in MINIMUM_STORE/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 646
-Unpacking the package...
-Installing the plugin...
-Removing the old version of the plugin...
-Plugin updated successfully.
-Warning: An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in MINIMUM_STORE/wp-includes/update.php on line 162
-Success: Installed 1 of 1 plugins.

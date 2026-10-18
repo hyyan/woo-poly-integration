@@ -1,2 +1,0 @@
-No syntax errors detected in PLUGIN_SOURCE/tests/bin/published-modern-upgrade.php
-No syntax errors detected in PLUGIN_SOURCE/tests/bin/published-modern-email-observer.php

@@ -1,6 +1,6 @@
 # Regression testing
 
-The 2026-10-18 targeted security verification is documented in [CVE-2026-101926-REMEDIATION.md](CVE-2026-101926-REMEDIATION.md). `VariationSecurityTest` includes real HTTP requests to the lab container's Apache at `http://127.0.0.1/wp-admin/admin-ajax.php`, using temporary WordPress sessions and owned product fixtures. Apache must be running alongside the test process.
+`VariationSecurityTest` includes real HTTP requests to the lab container's Apache at `http://127.0.0.1/wp-admin/admin-ajax.php`, using temporary WordPress sessions and owned product fixtures. Apache must be running alongside the test process.
 
 To execute the installed WooCommerce removal client and assert its nonce payload:
 
@@ -24,12 +24,20 @@ Unit tests isolate price localization and require PHP intl. Integration tests bo
 
 Pinned runtime: WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, WP-CLI 2.12.0, PHPUnit 12.5.38. Test-tool PHP minimum does not change plugin runtime minimum. CI runs PHP 8.3/8.4/8.5 for every pull request and push. Older runtime coverage remains to be added before a complete compatibility claim.
 
-## Chrome acceptance before each fix commit
+## Browser checks
 
-Use Chrome MCP exclusively. Preserve the scenario, user role, URL, request/response, before/after database effects, screenshot and exact installed versions in docs/evidence and docs/JOURNAL.md. Browser acceptance is a separate gate; PHP tests alone cannot prove it.
+Verify the native WooCommerce product editor and storefront in a browser alongside the automated checks. Use disposable products and test accounts with different roles.
 
-Security cases: subscriber/customer rejection; administrator missing/invalid nonce; malformed/nested/nonexistent IDs; no SQL delay; legitimate administrator/shop-manager translated removal; untouched sibling and unrelated products; translated stock behavior.
+- Confirm subscribers and customers cannot remove variations.
+- Confirm missing or invalid nonces, malformed or nested identifiers, and nonexistent variations are rejected without modifying product data.
+- Confirm administrators and shop managers can remove authorized variations and their translations while sibling and unrelated variations remain unchanged.
+- Check parent prices, variation metadata, and translated stock after removal and after saving the product.
+- Check English/German variation selectors and prices, adding a selected variation to the cart, and language switching with cart continuity.
 
-Product cases: English/German variable selectors and prices; empty dimensions; selected variation added to cart; original admin numeric values; language switch and cart continuity. Full feature matrix is tracked in docs/ACCEPTANCE.md.
+Keep generated screenshots, request captures, logs, and run reports outside the repository, for example in `/tmp/woo-poly-test-results/`. Record the tested versions and actual results with those artifacts.
 
-The available Docker seed image contains WordPress 7.1.2. Setup uses the native WordPress updater to select 7.1.3 before testing. WORDPRESS_VERSION can select another explicit runtime for compatibility verification. Both owned sites were updated to 7.1.3 through this native path. Full setup was not repeated after this script change.
+See [Manual Testing Guide](MANUAL-TESTING.md) for the broader functional checklist.
+
+## Runtime selection
+
+The Docker seed image contains WordPress 7.1.2. Setup uses the native WordPress updater to select 7.1.3 before testing. Set `WORDPRESS_VERSION` to select another explicit runtime for compatibility verification.

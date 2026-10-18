@@ -1,6 +1,0 @@
-No syntax errors detected in wp-content/plugins/woo-poly-integration/vendor/class.settings-api.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Plugin.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Admin/Settings.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/integration/SettingsRendererSecurityTest.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/admin/PageMaintenanceSecurityTest.php
-No syntax errors detected in wp-content/plugins/woo-poly-integration/tests/admin/bootstrap.php

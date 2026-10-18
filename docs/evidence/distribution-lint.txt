@@ -1,1 +1,0 @@
-No syntax errors detected in wp-content/plugins/woo-poly-integration/__init__.php

@@ -1,3 +1,0 @@
-Deprecated: Using null as an array offset is deprecated, use an empty string instead in phar:///usr/local/bin/wp/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 95
-Error: Failed to get current SQL modes. Reason: env: 'mysql': No such file or directory
-

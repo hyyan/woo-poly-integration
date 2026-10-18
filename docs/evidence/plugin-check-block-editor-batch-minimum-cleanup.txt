@@ -1,2 +1,0 @@
-Owned products, variation children, order, browser drafts and attribute removed, notice restored
-Success: Removed user 17 from MINIMUM_STORE.

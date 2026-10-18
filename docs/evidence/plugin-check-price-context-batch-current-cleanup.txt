@@ -1,1 +1,0 @@
-Success: Removed user 42 from CURRENT_STORE.

@@ -1,2 +1,0 @@
-{"id":4611,"status":"publish","type":"variable","language":"en","default":{"size":"Small"},"weight":"5","children":[4612],"translations":{"en":4611,"de":4615}}
-{"id":4615,"status":"publish","type":"variable","language":"de","default":{"size":"Small"},"weight":"5","children":[4616],"translations":{"de":4615,"en":4611}}

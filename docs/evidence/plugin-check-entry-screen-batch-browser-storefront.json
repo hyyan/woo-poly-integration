@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "Script ran on page and returned:\n```json\n{\"size\":\"small\",\"variation\":\"490\",\"title\":\"Entry screen German\",\"error\":false}\n```"
-    }
-  ]
-}

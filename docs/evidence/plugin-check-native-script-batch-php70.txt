@@ -1,2 +1,0 @@
-No syntax errors detected in PLUGIN_SOURCE/src/Hyyan/WPI/Utilities.php
-No syntax errors detected in PLUGIN_SOURCE/tests/bin/native-inline-script.php

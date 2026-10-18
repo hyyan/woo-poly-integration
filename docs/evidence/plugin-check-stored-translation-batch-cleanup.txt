@@ -1,4 +1,0 @@
-Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 644
-Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 645
-Deprecated: Array and string offset access syntax with curly braces is deprecated in /var/www/html/woopoly-upgrade-lab/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 646
-{"owned_orders_removed":6,"owned_pages_removed":2,"owned_products_removed":2,"settings_restored":true,"catalogs_restored":true}

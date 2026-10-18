@@ -1,7 +1,0 @@
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/badges.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/social.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Views/Messages/support.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/AdminNetworkPrivacyTest.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/TemplateOutputSecurityTest.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/unit/DirectFileAccessTest.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/frontend/SocialViewCompatibilityTest.php

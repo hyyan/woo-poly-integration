@@ -1,2 +1,0 @@
-wpi-features: 12 fields
-wpi-metas-list: 9 fields

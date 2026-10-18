@@ -1,1 +1,0 @@
-No syntax errors detected in /plugin/src/Hyyan/WPI/Emails.php

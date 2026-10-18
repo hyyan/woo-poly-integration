@@ -1,1 +1,0 @@
-{"stocks":{"en":5,"de":5,"simple":7},"coupon_ids":[851,853],"excluded_ids":[851,853],"simple":854,"parents":{"en":850,"de":852},"children":{"en":851,"de":853},"urls":{"simple":"http:\/\/localhost:8098\/woopoly-package-lab\/product\/relationship-security-unrelated-product\/","variation":"http:\/\/localhost:8098\/woopoly-package-lab\/product\/relationship-security-variation-en\/"}}

@@ -1,1 +1,0 @@
-{"stocks":{"en":5,"de":5,"simple":7},"coupon_ids":[549,551],"excluded_ids":[549,551],"simple":552,"parents":{"en":548,"de":550},"children":{"en":549,"de":551},"urls":{"simple":"http:\/\/localhost:8099\/woopoly-upgrade-lab\/?product=relationship-security-unrelated-product","variation":"http:\/\/localhost:8099\/woopoly-upgrade-lab\/?product=relationship-security-variation-en"}}

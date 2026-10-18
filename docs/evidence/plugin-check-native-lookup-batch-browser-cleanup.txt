@@ -1,1 +1,0 @@
-{"products_removed":3,"user_removed":true,"notice_restored":true}

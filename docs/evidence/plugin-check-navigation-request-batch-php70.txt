@@ -1,2 +1,0 @@
-No syntax errors detected in /plugin/src/Hyyan/WPI/Widgets/LayeredNav.php
-No syntax errors detected in /plugin/tests/bin/public-navigation-request.php

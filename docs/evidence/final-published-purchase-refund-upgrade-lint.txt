@@ -1,1 +1,0 @@
-No syntax errors detected in /tmp/wpi-final-purchase/published-purchase-refund-upgrade.php

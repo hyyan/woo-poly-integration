@@ -1,9 +1,0 @@
-{
-    "mode": "classic-cpt",
-    "hpos": false,
-    "sync": "no",
-    "checkout_urls": [
-        "http:\/\/localhost:8098\/woopoly-package-lab\/classic-hpos-checkout-en\/",
-        "http:\/\/localhost:8098\/woopoly-package-lab\/de\/classic-hpos-checkout-de\/"
-    ]
-}

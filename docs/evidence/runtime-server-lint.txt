@@ -1,4 +1,0 @@
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Ajax.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Endpoints.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/src/Hyyan/WPI/Product/Variation.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/tests/integration/RuntimeCompatibilityTest.php

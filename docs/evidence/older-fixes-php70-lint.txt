@@ -1,2 +1,0 @@
-No syntax errors detected in /plugin/src/Hyyan/WPI/Product/Meta.php
-No syntax errors detected in /plugin/src/Hyyan/WPI/Product/Variation.php

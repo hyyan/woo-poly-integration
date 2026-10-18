@@ -1,2 +1,0 @@
-Success: Removed user 37 from CURRENT_STORE.
-Deprecated: Using null as an array offset is deprecated, use an empty string instead in phar://CLI_RUNTIME/vendor/wp-cli/php-cli-tools/lib/cli/Colors.php on line 95

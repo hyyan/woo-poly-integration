@@ -1,3 +1,0 @@
-{"language":"en","product":10522,"stock":17}
-{"language":"de","product":10523,"stock":17}
-{"order":10524,"status":"processing","language":"de","total":"10.00","payment":"cod"}

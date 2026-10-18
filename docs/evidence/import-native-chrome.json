@@ -1,8 +1,0 @@
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "Script ran on page and returned:\n```json\n{\"url\":\"http://localhost:8098/wp-admin/edit.php?post_type=product&page=product_importer&step=done&_wpnonce=e767de248d&products-imported=0&products-imported-variations=0&products-failed=0&products-updated=1&products-skipped=0&file-name=product-woopoly-price-regression-pcmfuyfpba.csv\",\"text\":\"Import complete! 1 product updated. File uploaded: product-woopoly-price-regression-pcmfuyfpba.csv\\nView products\",\"fatal\":false}\n```"
-    }
-  ]
-}

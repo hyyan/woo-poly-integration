@@ -1,2 +1,0 @@
-No syntax errors detected in /plugin/src/Hyyan/WPI/Privacy.php
-No syntax errors detected in /plugin/src/Hyyan/WPI/Tax.php

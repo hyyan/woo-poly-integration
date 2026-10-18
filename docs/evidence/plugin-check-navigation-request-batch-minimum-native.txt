@@ -1,1 +1,0 @@
-{"query":{"filter_wpinav":"nav-match-de"},"chosen":{"pa_wpinav":{"terms":["nav-match-de"],"query_type":"and"}},"active_widget":true}

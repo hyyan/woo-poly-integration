@@ -1,1 +1,0 @@
-Success: Updated 'woocommerce_custom_orders_table_data_sync_enabled' option.

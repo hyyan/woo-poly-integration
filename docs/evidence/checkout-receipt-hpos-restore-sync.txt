@@ -1,3 +1,0 @@
-There are 15 orders to be synced.
-Sync completed.
-Success: 15 orders were synced in 0 seconds.

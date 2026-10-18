@@ -1,1 +1,0 @@
-{"version":"1.5.1","variable_orders":4,"languages":["en","de","en","de"],"total_each":24,"discount_each":4,"quantity_each":2,"large_stock_each":12,"small_stock_each":20,"coupon_uses":4,"order_ids":[306,307,308,309],"published_orders_retained":true}

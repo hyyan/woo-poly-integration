@@ -1,4 +1,0 @@
-1304:	public function get_order_type( $order_id ) {
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/guest-storage-matrix-mode.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/guest-storage-matrix-inspect.php
-No syntax errors detected in /var/www/html/wp-content/plugins/woo-poly-integration/work/guest-purchase-batch-recorder.php
