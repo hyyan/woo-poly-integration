@@ -23,7 +23,7 @@ final class AdminNetworkPrivacyTest extends TestCase
         $links = $this->document('badges')->getElementsByTagName('a');
         self::assertCount(3,$links);
         self::assertSame('https://wordpress.org/plugins/woo-poly-integration',$links[0]->getAttribute('href'));
-        self::assertSame('https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE',$links[1]->getAttribute('href'));
+        self::assertSame('https://github.com/hyyan/woo-poly-integration/blob/main/LICENSE',$links[1]->getAttribute('href'));
         self::assertSame('https://github.com/hyyan/woo-poly-integration',$links[2]->getAttribute('href'));
         foreach ($links as $link) { self::assertNotSame('',trim($link->textContent)); }
     }

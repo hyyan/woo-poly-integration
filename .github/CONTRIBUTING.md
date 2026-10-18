@@ -12,10 +12,10 @@ Thanks for contributing&mdash;you rock!
 # Making Changes
 
 * Create a topic branch from where you want to base your work.
-  * This is usually the `master` branch.
+  * This is usually the `main` branch.
   * Only target release branches if you are certain your fix must be on that branch.
-  * To quickly create a topic branch based on the `master` branch:
-    * `git checkout -b issue/%YOUR-ISSUE-NUMBER%_%DESCRIPTIVE-TITLE% master`
+  * To quickly create a topic branch based on the `main` branch:
+    * `git checkout -b issue/%YOUR-ISSUE-NUMBER%_%DESCRIPTIVE-TITLE% main`
     * a good example is `issue/123_typo_in_readme`
 * Make commits of logical units.
 * Make sure your commit messages are helpful.

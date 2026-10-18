@@ -499,7 +499,7 @@ class Variable
             $jsID = 'variables-data';
             $data = array(
                 'title' => __('Wrong Language For Variable Product', 'woo-poly-integration'),
-                'content' => wp_kses_post(__("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/tree/master#what-you-need-to-know-about-this-plugin' target='_blank'>Read more, to know why</a>", 'woo-poly-integration')),
+                'content' => wp_kses_post(__("Variable product must be created in the default language first or things will get messy. <br> <a href='https://github.com/hyyan/woo-poly-integration/tree/main#requirements-and-compatibility' target='_blank'>Read more, to know why</a>", 'woo-poly-integration')),
                 'defaultLang' => pll_default_language(),
             );
             $code = 'var HYYAN_WPI_VARIABLES = '.wp_json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT).';';

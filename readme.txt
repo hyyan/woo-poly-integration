@@ -8,7 +8,7 @@ WC requires at least: 3.0.0
 WC tested up to: 11.1.2
 Requires PHP: 7.0
 License: MIT
-License URI: https://github.com/hyyan/woo-poly-integration/blob/master/LICENSE
+License URI: https://github.com/hyyan/woo-poly-integration/blob/main/LICENSE
  
 Connect WooCommerce and Polylang for a multilingual store.
 
@@ -72,7 +72,7 @@ Created by Hyyan Abo Fakher. If WooPoly is useful to you, a [star on GitHub](htt
 Everyone is welcome to help contribute and improve this plugin. There are several
 ways you can contribute:
 
-* Reporting issues (please read [issue guidelines](https://github.com/hyyan/woo-poly-integration/blob/master/.github/CONTRIBUTING.md))
+* Reporting issues (please read [issue guidelines](https://github.com/hyyan/woo-poly-integration/blob/main/.github/CONTRIBUTING.md))
 * Suggesting new features
 * Writing or refactoring [code](https://github.com/hyyan/woo-poly-integration)
 * Improving [documentation](https://github.com/hyyan/woo-poly-integration/wiki)
