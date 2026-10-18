@@ -17,7 +17,7 @@ Build a multilingual WooCommerce store with Polylang. Translate products and sto
 
 The plugin declares WordPress 5.4+, PHP 7.0+, WooCommerce 3.0+, and Polylang 2.0+. Your installed WordPress, WooCommerce, and Polylang versions may require newer PHP versions.
 
-The current 1.5.1 development checkout has been tested with WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, and PHP 8.5.11. Older supported versions have not all been retested. Back up your store and verify updates on a staging site first.
+The current 1.6.0 development checkout has been tested with WordPress 7.1.3, WooCommerce 11.1.2, Polylang 3.8.10, and PHP 8.5.11. Older supported versions have not all been retested. Back up your store and verify updates on a staging site first.
 
 Choose your default language before creating variable products; changing it afterward is unsupported. Polylang's **The language is set from content** URL mode is also unsupported.
 
