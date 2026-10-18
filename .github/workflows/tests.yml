@@ -60,4 +60,4 @@ jobs:
         run: >-
           npm run release -- patch --ci
           --no-git.commit --no-git.tag --no-git.push --no-github.release
-          --git.requireBranch=false --git.requireUpstream=false
+          --no-git.requireBranch --no-git.requireUpstream
