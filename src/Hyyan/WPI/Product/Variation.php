@@ -179,10 +179,10 @@ class Variation
                 $clauses['fields'] = "{$wpdb->postmeta}.post_id";
                 $clauses['join'] = " RIGHT JOIN {$wpdb->postmeta} ON ({$wpdb->posts}.ID = {$wpdb->postmeta}.post_id)";
                 $clauses['where'] = $wpdb->prepare(
-                    " AND meta_key = %s AND CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY) = %s
+                    " AND meta_key = %s AND CAST(TRIM(LEADING '0' FROM meta_value) AS BINARY) = CAST(%d AS BINARY)
                         AND {$wpdb->postmeta}.post_id <= %d",
                     self::DUPLICATE_KEY,
-                    (string) $variatonID,
+                    $variatonID,
                     PHP_INT_MAX
                 );
                 $clauses['groupby'] = '';
@@ -221,7 +221,8 @@ class Variation
         }
         foreach ($products as $product) {
             if ($product->is_type('variation')) {
-                wp_delete_post($product->get_id(), true);
+                // Keep WooCommerce deletion hooks and deferred parent synchronization.
+                $product->delete(true);
             }
         }
     }

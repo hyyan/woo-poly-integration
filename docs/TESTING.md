@@ -1,5 +1,14 @@
 # Regression testing
 
+The 2026-10-18 targeted security verification is documented in [CVE-2026-101926-REMEDIATION.md](CVE-2026-101926-REMEDIATION.md). `VariationSecurityTest` includes real HTTP requests to the lab container's Apache at `http://127.0.0.1/wp-admin/admin-ajax.php`, using temporary WordPress sessions and owned product fixtures. Apache must be running alongside the test process.
+
+To execute the installed WooCommerce removal client and assert its nonce payload:
+
+```sh
+docker compose -f tests/compose.yaml exec -T wordpress cat wp-content/plugins/woocommerce/assets/js/admin/meta-boxes-product-variation.js > /tmp/wpi-native-variation-client.js
+node tests/bin/verify-variation-client.cjs /tmp/wpi-native-variation-client.js
+```
+
 Use the disposable Docker lab only. Runtime/database volumes belong to Compose project `woo-poly-lab`; HTTP binds only to localhost:8098. Never point integration tests at a real store. Existing lab data is retained; `setup.sh` configures only lab dependencies/languages/users.
 
 ## Automated checks

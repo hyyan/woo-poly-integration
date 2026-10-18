@@ -104,22 +104,38 @@ class Product
       if ( ! current_user_can( 'edit_products' ) ||
            ! isset( $_REQUEST['_wpnonce'], $_GET['product_id'] ) ||
            ! is_string( $_REQUEST['_wpnonce'] ) ||
-           ! is_scalar( $_GET['product_id'] ) ||
            ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'woocommerce-feature-product' ) ) {
         return;
       }
 
+      if (!is_int($_GET['product_id']) && !is_string($_GET['product_id'])) {
+        wp_send_json_error(array('code' => 'invalid_product'), 400);
+      }
+      $raw_id = filter_var(wp_unslash($_GET['product_id']), FILTER_VALIDATE_REGEXP,
+        array('options' => array('regexp' => '/^[0-9]+$/D')));
+      $product_id = $raw_id !== false
+        ? filter_var(ltrim((string) $raw_id, '0'), FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) : false;
+      if (!$product_id || get_post_type($product_id) !== 'product') {
+        wp_send_json_error(array('code' => 'invalid_product'), 400);
+      }
+      if (!current_user_can('edit_post', $product_id)) {
+        wp_send_json_error(array('code' => 'forbidden'), 403);
+      }
       $metas = Meta::getDisabledProductMetaToCopy();
       if ( in_array( '_visibility', $metas ) ) {
         return;
       }
-
-      $product = wc_get_product( absint( $_GET[ 'product_id' ] ) );
+      $product_translations = Utilities::getProductTranslationsArrayByID($product_id);
+      foreach ($product_translations as $translation_id) {
+        if (!current_user_can('edit_post', $translation_id)) {
+          wp_send_json_error(array('code' => 'forbidden'), 403);
+        }
+      }
+      $product = wc_get_product( $product_id );
       if ( $product ) {
         //woocommerce action runs last so we need to set translation feature to the opposite of current value
         $targetValue = ! $product->get_featured();
 
-        $product_translations = Utilities::getProductTranslationsArrayByObject( $product );
         foreach ( $product_translations as $product_translation ) {
           if ( $product_translation != $product->get_id() ) {
             $translation = wc_get_product( $product_translation );

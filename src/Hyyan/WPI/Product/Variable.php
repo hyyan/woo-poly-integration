@@ -337,37 +337,38 @@ class Variable
     }
 
     /**
-     * Remove variatoins related to current removed variation.
+     * Remove variations related to the selected variations.
      */
     public function removeVariations()
     {
         // This callback runs before WooCommerce's own authorization checks.
         check_ajax_referer('delete-variations', 'security');
-        if (!current_user_can('edit_products') || !isset($_POST['variation_ids'])) {
-            return;
+        if (!current_user_can('edit_products')) {
+            wp_send_json_error(array('code' => 'forbidden'), 403);
         }
-
-        $IDS = array_map('Hyyan\WPI\Product\Variable::sanitizeVariationID', (array) wp_unslash($_POST['variation_ids']));
+        if (!isset($_POST['variation_ids']) || !is_array($_POST['variation_ids']) || empty($_POST['variation_ids'])) {
+            wp_send_json_error(array('code' => 'invalid_variation_ids'), 400);
+        }
+        $IDS = array_unique(array_map('Hyyan\WPI\Product\Variable::sanitizeVariationID', wp_unslash($_POST['variation_ids'])));
         // Validate the complete batch before deleting any translated variation.
         foreach ($IDS as $ID) {
-            if ($ID < 1 || 'product_variation' !== get_post_type($ID)) {
-                continue;
+            if ('product_variation' !== get_post_type($ID)) {
+                wp_send_json_error(array('code' => 'invalid_variation'), 404);
             }
             if (!current_user_can('edit_post', wp_get_post_parent_id($ID))) {
-                wp_die(-1);
+                wp_send_json_error(array('code' => 'forbidden'), 403);
             }
+        }
+        foreach ($IDS as $ID) {
             foreach ((array) Variation::getRelatedVariation($ID) as $variation) {
                 if (!$variation->is_type('variation') ||
                         !current_user_can('edit_post', $variation->get_parent_id())) {
-                    wp_die(-1);
+                    wp_send_json_error(array('code' => 'forbidden'), 403);
                 }
             }
         }
         foreach ($IDS as $ID) {
-            $ID = (int) $ID;
-            if ($ID > 0 && 'product_variation' === get_post_type($ID)) {
-                Variation::deleteRelatedVariation($ID);
-            }
+            Variation::deleteRelatedVariation($ID);
         }
     }
 
@@ -380,11 +381,12 @@ class Variable
     private static function sanitizeVariationID($id)
     {
         if ((!is_int($id) && !is_string($id)) || !ctype_digit((string) $id)) {
-            wp_die(-1);
+            wp_send_json_error(array('code' => 'invalid_variation_ids'), 400);
         }
-        $id = filter_var(ltrim((string) $id, '0') ?: '0', FILTER_VALIDATE_INT);
+        $id = filter_var(ltrim((string) $id, '0') ?: '0', FILTER_VALIDATE_INT,
+                array('options' => array('min_range' => 1)));
         if ($id === false) {
-            wp_die(-1);
+            wp_send_json_error(array('code' => 'invalid_variation_ids'), 400);
         }
         return $id;
     }

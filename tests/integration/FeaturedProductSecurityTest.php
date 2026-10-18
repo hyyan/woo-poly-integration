@@ -52,8 +52,41 @@ final class FeaturedProductSecurityTest extends TestCase
             $_GET['_wpnonce'] = $nonce;
         }
         $_REQUEST = $_GET;
-        Product::sync_ajax_woocommerce_feature_product();
+        ob_start();
+        try { Product::sync_ajax_woocommerce_feature_product(); } catch (WooPolyTestDie $e) {}
+        finally { ob_end_clean(); }
     }
+
+    #[DataProvider('invalidProductIds')]
+    public function testMalformedProductIdCannotToggleValidPrefix($value): void
+    {
+        $id = $value === 'suffix' ? $this->source . 'suffix' : $value;
+        $this->invoke(wp_create_nonce('woocommerce-feature-product'), $id);
+        self::assertFalse(wc_get_product($this->source)->get_featured());
+        self::assertFalse(wc_get_product($this->translated)->get_featured());
+    }
+
+    public static function invalidProductIds(): array
+    {
+        return array(array('suffix'), array(-1), array(0), array(true), array(array(1)),
+            array((string) PHP_INT_MAX . '0'));
+    }
+
+    #[DataProvider('deniedProducts')]
+    public function testFeaturedRequiresPermissionForEveryAffectedProduct(bool $translation): void
+    {
+        $id = $translation ? $this->translated : $this->source;
+        $deny = function ($caps, $cap, $user, $args) use ($id) {
+            return $cap === 'edit_post' && ($args[0] ?? null) === $id ? array('do_not_allow') : $caps;
+        };
+        add_filter('map_meta_cap', $deny, 100, 4);
+        try {
+            $this->invoke(wp_create_nonce('woocommerce-feature-product'));
+            self::assertFalse(wc_get_product($this->translated)->get_featured());
+        } finally { remove_filter('map_meta_cap', $deny, 100); }
+    }
+
+    public static function deniedProducts(): array { return array(array(false), array(true)); }
 
     #[DataProvider('unauthorizedRoles')]
     public function testUnauthorizedRoleCannotFeatureTranslationWithValidNonce(string $login): void
