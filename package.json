@@ -1,0 +1,16 @@
+{
+  "name": "woo-poly-integration-tools",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:js": "node .github/scripts/build-js.cjs",
+    "check:js": "node .github/scripts/build-js.cjs --check",
+    "test:js": "node --test tests/js/*.test.cjs",
+    "hooks:install": "git config --local core.hooksPath .githooks"
+  },
+  "devDependencies": {
+    "terser": "5.51.2"
+  }
+}

@@ -26,3 +26,7 @@
 /handoff.md export-ignore
 /phpunit*.xml export-ignore
 /README.md export-ignore
+/.githooks export-ignore
+/package.json export-ignore
+/package-lock.json export-ignore
+/node_modules export-ignore

@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+
+# Only JavaScript asset/build changes require Node and the minifier.
+if ! git diff --cached --name-only | grep -Eq '^(public/js/(Cart|Variables)(\.min)?\.js|package(-lock)?\.json|\.github/scripts/build-js\.cjs)$'; then
+    exit 0
+fi
+
+if ! command -v node >/dev/null 2>&1; then
+    echo 'JavaScript asset check requires Node.js. Install Node.js 18+ and run npm ci.' >&2
+    exit 1
+fi
+node .github/scripts/build-js.cjs --check --staged

@@ -1,5 +1,5 @@
 === Hyyan Integration for WooCommerce and Polylang ===
-Contributors: hyyan, jonathanmoorebcsorg
+Contributors: hyyan
 Tags: woocommerce, multilingual, polylang, language, translation
 Requires at least: 5.4
 Stable tag: 1.5.1

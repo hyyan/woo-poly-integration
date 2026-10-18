@@ -20,6 +20,19 @@ Thanks for contributing&mdash;you rock!
 * Make commits of logical units.
 * Make sure your commit messages are helpful.
 
+# JavaScript Assets
+
+Use Node.js 18 or newer. Install the pinned development dependency and enable the local asset check once per clone:
+
+```sh
+npm ci
+npm run hooks:install
+```
+
+After editing `public/js/Cart.js` or `public/js/Variables.js`, run `npm run build:js` and stage both the source and its `.min.js` file. Run `npm run check:js` to check all generated files, and `npm run test:js` for JavaScript regressions.
+
+The pre-commit hook checks the staged versions and blocks stale minified assets. It never rewrites files or stages changes. Commits unrelated to these assets or their build configuration do not require Node.js. Hooks must be enabled separately in each clone; contributors with an existing hooks setup can call `node .github/scripts/build-js.cjs --check --staged` from their own hook.
+
 # Submitting Changes
 
 * Push your changes to the according topic branch in your fork of the repository.
