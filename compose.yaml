@@ -1,0 +1,73 @@
+name: woo-poly-manual
+
+services:
+  database:
+    image: mariadb:11.4
+    environment:
+      MARIADB_ROOT_PASSWORD: manual-root
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: manual-database
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 5s
+      retries: 30
+
+  wordpress:
+    image: wordpress:7.1.2-php8.5-apache
+    ports:
+      - "127.0.0.1:8097:80"
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: manual-database
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_TABLE_PREFIX: wpi_manual_
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_AUTO_UPDATE_CORE', false);
+    volumes:
+      - wordpress:/var/www/html
+      - mail:/var/www/manual-mail
+    depends_on:
+      database:
+        condition: service_healthy
+
+  setup:
+    image: wordpress:7.1.2-php8.5-apache
+    entrypoint: [bash, /workspace/tests/manual/setup.sh]
+    working_dir: /var/www/html
+    environment:
+      WP_CLI_CACHE_DIR: /tools/cache
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: manual-database
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_TABLE_PREFIX: wpi_manual_
+      WORDPRESS_DEBUG: ""
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_AUTO_UPDATE_CORE', false);
+    volumes:
+      - wordpress:/var/www/html
+      - mail:/var/www/manual-mail
+      - tools:/tools
+      - .:/workspace:ro
+    depends_on:
+      database:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+
+volumes:
+  database:
+  wordpress:
+  tools:
+  mail:

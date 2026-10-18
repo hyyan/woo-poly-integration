@@ -14,3 +14,6 @@ goal.txt
 handoff.md
 phpunit*.xml
 README.md
+
+compose.yaml
+Makefile
