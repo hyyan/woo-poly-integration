@@ -139,6 +139,77 @@ Check the language assignments and translations for your terms, then save Settin
 * fix: restrict variation stock and coupons to variations
 * fix: verify custom report requests before translation
 * fix: centralize native report language selection
+* fix: centralize attribute language request fallback
+* fix: verify translation language and metadata setup
+* fix: verify product editor translation requests
+* fix: preserve catalogs with native version aware loading
+* fix: use native settings context for endpoint notices
+* fix: own message domains and retain WooCommerce translations
+* fix: number translation formats and preserve legacy catalogs
+* fix: resolve coupon screens and verify translation warning bypass
+* fix: verify creation callbacks and resolve attribute screens
+* fix: expose verified product creation requests to security checks
+* fix: identify plugin hook constants with their owning prefix
+* fix: translate stored checkout text through Polylang
+* fix: preserve cart stock checks on WooCommerce 3.0
+* fix: invalidate cached product lookups on native changes
+* fix: normalize request IDs through validated sanitizers
+* fix: retain published WooCommerce minimum requirement
+* fix: use compliant plugin display name in release headers
+* fix: reuse exact variation relationships across lookup paths
+* fix: match normalized variation relationships exactly
+* fix: verify early product translation creation requests
+* fix: validate registered languages across request filters
+* fix: defer product type metadata backfill until save
+* fix: remove obsolete product type request callbacks
+* fix: prefix plugin callbacks and sharing variables
+* fix: verify stock edit requests and use native diagnostics
+* fix: verify category requests and normalize request identifiers
+* fix: sanitize admin notices and translation error output
+* fix: preserve language filtered reports under HPOS
+* fix: translate configured block and receipt payment titles
+* fix: translate configured native tax rate labels
+* fix: preserve native translated store notice controls
+* fix: preserve variation copy and import synchronization
+* fix: preserve independent product attributes during copies
+* fix: restore stock synchronization callbacks after errors
+* fix: resolve validated translated variation deletion sources
+* fix: replace only complete translated shop path segments
+* fix: retain product defaults and reload locale catalogs
+* fix: restore caller language after translated emails
+* fix: preserve translated cart state and validation
+* fix: preserve translated checkout receipt endpoints
+* fix: preserve translated account endpoints when switching languages
+* fix: preserve native block store page translations
+* fix: exclude development files from release packages
+* fix: remove automatic third-party admin resources
+* fix: preserve native URLs and restore variation timeouts
+* fix: protect stock synchronization across request contexts
+* fix: correct translation calls and preserve catalog contracts
+* fix: preserve literal SKU checks and secure coupon diagnostics
+* fix: secure settings output and restrict page maintenance
+* fix: secure inline script data and preserve editor restrictions
+* fix: validate navigation filters and current URL inputs
+* fix: validate product synchronization request inputs
+* fix: preserve Polylang post fields during product import
+* fix: validate language and translation request boundaries
+* fix: escape translated template and gateway output
+* fix: guard executable files outside WordPress
+* fix: escape status report locale and path output
+* fix: verify translation download certificates
+* fix: encode category translation script values
+* fix: load the cookie API required by cart fragments
+* fix: preserve absent Polylang language for unknown locales
+* fix: translate account email templates
+* fix: preserve block checkout order language
+* fix: use WordPress locale when checkout language is unavailable
+* fix: load rest of world shipping methods
+* fix: restore translated shortcodes on PHP 8
+* fix: preserve product search language links
+* fix: authorize translated featured product toggles
+* fix: preserve empty values during decimal localization
+* fix: validate and authorize linked variation removal
+* fixes #568
 
 [Full changelog](https://github.com/hyyan/woo-poly-integration/blob/main/CHANGELOG.md).
 

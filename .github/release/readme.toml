@@ -136,8 +136,8 @@ Check the language assignments and translations for your terms, then save Settin
 body = """
 = {{ version }} =
 
-{% for commit in commits | slice(end=8) %}\
-* {{ commit.message | split(pat="\n") | first | truncate(length=120, end="…") }}
+{% for commit in commits %}\
+* {{ commit.message | split(pat="\n") | first }}
 {% endfor %}
 [Full changelog](https://github.com/hyyan/woo-poly-integration/blob/main/CHANGELOG.md).
 

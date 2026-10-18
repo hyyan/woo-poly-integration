@@ -1,0 +1,29 @@
+name: Update WordPress.org readme
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wordpress-org-release
+  cancel-in-progress: false
+
+jobs:
+  readme:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    environment: wordpress-org
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update readme in trunk and the existing stable tag
+        uses: 10up/action-wordpress-plugin-asset-update@2480306f6f693672726d08b5917ea114cb2825f7 # 2.2.0
+        env:
+          SLUG: woo-poly-integration
+          IGNORE_OTHER_FILES: 'true'
+          SKIP_ASSETS: 'true'
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}

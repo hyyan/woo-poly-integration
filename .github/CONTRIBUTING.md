@@ -56,7 +56,7 @@ npm run check:js
 npm run test:js
 ```
 
-GitHub Actions runs these checks on pushes and pull requests, with PHP 8.3, 8.4, and 8.5. It also validates the workflow files and checks release preparation with publishing disabled.
+GitHub Actions runs these checks on pushes and pull requests, with PHP 8.3, 8.4, and 8.5. It also validates the workflow files.
 
 Stop the automated test site while keeping its data:
 
@@ -77,14 +77,6 @@ Open `http://localhost:8097` or `http://localhost:8097/wp-admin/`. Sign in as `m
 The store includes English and German products, linked variations, stock, coupons, and offline checkout. Check product editing, variation removal, stock synchronization, language switching, cart continuity, checkout, refunds, and order emails in both languages. Captured emails are available under **Tools → Manual store mail**.
 
 Use `make classic` or `make block` to switch checkout formats. Run `make up` again to install your latest source changes while keeping the store data. `make stop` stops the store; `make reset` **deletes the manual store data** and recreates the fixtures. Clear browser cookies after a reset.
-
-# Releases
-
-Run **Actions → Publish release** on `main` and enter the new version. `release-it` updates versions and creates the GitHub release; `git-cliff` generates changelogs from commits; 10up deploys the tag to WordPress.org and builds the release ZIP. Tests run separately. If deployment fails, use GitHub's **Re-run failed jobs** to retry the deploy job.
-
-Configure `SVN_USERNAME` and an SVN-specific `SVN_PASSWORD` in the GitHub environment named `wordpress-org`. Enter credentials directly in GitHub, never in source files or workflow inputs.
-
-Edit the WordPress description in `.github/release/readme.toml`; the release regenerates `readme.txt` from that template. The latest eight commit summaries appear in the WordPress readme, while the complete notes are prepended to `CHANGELOG.md` without removing its history. Clear commit subjects become release notes.
 
 # Submitting Changes
 
