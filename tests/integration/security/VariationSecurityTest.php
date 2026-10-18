@@ -64,7 +64,7 @@ final class VariationSecurityTest extends TestCase
         foreach ($this->ids as $id) { $before[$id] = array(get_post($id), get_post_meta($id)); }
         $lookups = array();
         $observe = function ($sql) use (&$lookups) {
-            if (strpos($sql, 'TRIM(LEADING') !== false) { $lookups[] = $sql; }
+            if (strpos($sql, Variation::DUPLICATE_KEY) !== false) { $lookups[] = $sql; }
             return $sql;
         };
         add_filter('query', $observe);
@@ -104,7 +104,7 @@ final class VariationSecurityTest extends TestCase
         update_post_meta($this->sibling, Variation::DUPLICATE_KEY, $this->source . 'suffix');
         $queries = array();
         $observe = function ($sql) use (&$queries) {
-            if (strpos($sql, 'TRIM(LEADING') !== false) { $queries[] = $sql; }
+            if (strpos($sql, Variation::DUPLICATE_KEY) !== false) { $queries[] = $sql; }
             return $sql;
         };
         add_filter('query', $observe);
@@ -158,8 +158,20 @@ final class VariationSecurityTest extends TestCase
         }
         $body = array('action' => 'woocommerce_remove_variations');
         if ($input !== 'missing') {
-            $body['variation_ids'] = $input === 'valid' ? array($this->source)
-                : ($input === 'scalar' ? (string) $this->source : array($this->source, 'invalid'));
+            $inputs = array(
+                'valid' => array($this->source),
+                'padded' => array('000' . $this->source),
+                'scalar' => (string) $this->source,
+                'mixed' => array($this->source, 'invalid'),
+                'suffix' => array($this->source, $this->source . 'suffix'),
+                'negative' => array($this->source, -1),
+                'zero' => array($this->source, 0),
+                'nested' => array($this->source, array($this->source)),
+                'overflow' => array($this->source, (string) PHP_INT_MAX . '0'),
+                'nonexistent' => array($this->source, PHP_INT_MAX),
+                'wrong post type' => array($this->source, $this->unrelated),
+            );
+            $body['variation_ids'] = $inputs[$input];
         }
         if ($nonce !== 'missing') { $body['security'] = $nonce === 'valid' ? wp_create_nonce('delete-variations') : 'invalid'; }
         try {
@@ -197,8 +209,57 @@ final class VariationSecurityTest extends TestCase
             'missing IDs' => array('lab-admin', 'missing', 'valid', 400, false),
             'scalar IDs' => array('lab-admin', 'scalar', 'valid', 400, false),
             'mixed IDs' => array('lab-admin', 'mixed', 'valid', 400, false),
+            'suffix ID' => array('lab-admin', 'suffix', 'valid', 400, false),
+            'negative ID' => array('lab-admin', 'negative', 'valid', 400, false),
+            'zero ID' => array('lab-admin', 'zero', 'valid', 400, false),
+            'nested ID' => array('lab-admin', 'nested', 'valid', 400, false),
+            'overflow ID' => array('lab-admin', 'overflow', 'valid', 400, false),
+            'nonexistent variation' => array('lab-admin', 'nonexistent', 'valid', 404, false),
+            'wrong post type' => array('lab-admin', 'wrong post type', 'valid', 404, false),
+            'padded ID' => array('lab-admin', 'padded', 'valid', 200, true),
             'administrator' => array('lab-admin', 'valid', 'valid', 200, true),
             'shop manager' => array('lab-manager', 'valid', 'valid', 200, true),
+        );
+    }
+
+    #[DataProvider('httpProductOwnership')]
+    public function testHttpRemovalRequiresPermissionForEveryProduct(bool $ownsSource): void
+    {
+        $user = get_user_by('login', 'lab-contributor');
+        $originalCaps = $user->caps;
+        $sourceParent = wp_get_post_parent_id($this->source);
+        $translatedParent = wp_get_post_parent_id($this->translated);
+
+        try {
+            // Allow editing own products while retaining WordPress's ownership checks.
+            $user->add_cap('edit_products');
+            $user->add_cap('edit_published_products');
+            if ($ownsSource) {
+                wp_update_post(array('ID' => $sourceParent, 'post_author' => $user->ID));
+            }
+            wp_set_current_user($user->ID);
+            self::assertTrue(current_user_can('edit_products'));
+            self::assertSame($ownsSource, current_user_can('edit_post', $sourceParent));
+            self::assertFalse(current_user_can('edit_post', $translatedParent));
+
+            $this->testRealAdminAjaxRequest('lab-contributor', 'valid', 'valid', 403, false);
+        } finally {
+            foreach (array('edit_products', 'edit_published_products') as $cap) {
+                if (array_key_exists($cap, $originalCaps)) {
+                    $user->add_cap($cap, $originalCaps[$cap]);
+                } else {
+                    $user->remove_cap($cap);
+                }
+            }
+            wp_set_current_user(1);
+        }
+    }
+
+    public static function httpProductOwnership(): array
+    {
+        return array(
+            'selected product belongs to another author' => array(false),
+            'translated product belongs to another author' => array(true),
         );
     }
 
