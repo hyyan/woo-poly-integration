@@ -29,7 +29,7 @@ Choose your default language before creating variable products; changing it afte
 4. Translate product categories and attributes as needed, then create and link product translations.
 5. Test product selection, stock, the cart, checkout, and order emails in every store language before going live.
 
-See the [getting started guide](https://hyyan.github.io/woo-poly-integration/getting-started/) for details. Composer users can install the published package with `composer require hyyan/woo-poly-integration`.
+See the [getting started guide](https://hyyan.github.io/woo-poly-integration/getting-started/) for details.
 
 ## Help and contributions
 

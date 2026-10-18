@@ -92,10 +92,6 @@ In your site Admin, go to Plugins, Add New and search for Hyyan WooCommerce Poly
 1. Download the plugin as zip archive and then upload it to your wordpress plugins folder and
 extract it there.
 
-= Composer way =
-
-1. run composer command : ``` composer require hyyan/woo-poly-integration```
-
 In all cases please do ensure you have Polylang and WooCommerce activated and setup
 before you Activate this plugin from your admin panel
 
