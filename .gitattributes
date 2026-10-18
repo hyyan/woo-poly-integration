@@ -30,3 +30,6 @@
 /package.json export-ignore
 /package-lock.json export-ignore
 /node_modules export-ignore
+/.release-it.json export-ignore
+/compose.yaml export-ignore
+/Makefile export-ignore

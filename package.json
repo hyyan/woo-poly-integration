@@ -2,15 +2,24 @@
   "name": "woo-poly-integration-tools",
   "private": true,
   "engines": {
-    "node": ">=18"
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   },
   "scripts": {
     "build:js": "node .github/scripts/build-js.cjs",
     "check:js": "node .github/scripts/build-js.cjs --check",
     "test:js": "node --test tests/js/*.test.cjs",
-    "hooks:install": "git config --local core.hooksPath .githooks"
+    "hooks:install": "git config --local core.hooksPath .githooks",
+    "release": "release-it"
   },
   "devDependencies": {
+    "@release-it/bumper": "8.0.1",
+    "git-cliff": "2.14.2",
+    "release-it": "21.1.1",
     "terser": "5.51.2"
+  },
+  "overrides": {
+    "get-uri": {
+      "basic-ftp": "6.2.3"
+    }
   }
 }

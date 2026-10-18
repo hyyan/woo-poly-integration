@@ -1,0 +1,29 @@
+{
+    "npm": false,
+    "git": {
+        "requireBranch": "main",
+        "tagName": "${version}",
+        "commitMessage": "chore: release ${version}",
+        "pushArgs": ["--follow-tags", "--atomic"]
+    },
+    "github": {
+        "release": true,
+        "releaseName": "${version}",
+        "releaseNotes": "git-cliff --config .github/release/changelog.toml --strip header --tag ${version} ${latestTag}..HEAD"
+    },
+    "plugins": {
+        "@release-it/bumper": {
+            "out": [
+                "__init__.php",
+                "README.md",
+                { "file": ".github/release/readme.toml", "type": "text/plain" }
+            ]
+        }
+    },
+    "hooks": {
+        "after:bump": [
+            "git-cliff --config .github/release/changelog.toml --unreleased --tag ${version} --prepend CHANGELOG.md",
+            "git-cliff --config .github/release/readme.toml --unreleased --tag ${version} --output readme.txt"
+        ]
+    }
+}

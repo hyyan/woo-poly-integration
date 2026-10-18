@@ -1,0 +1,83 @@
+name: Publish release
+run-name: 'Release ${{ inputs.version }}'
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: New version, for example 1.5.2
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wordpress-org-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    environment: wordpress-org
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Configure release commit author
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Check deployment secrets are configured
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+        run: test -n "$SVN_USERNAME" && test -n "$SVN_PASSWORD"
+
+      - name: Update versions, generate changelog and create GitHub release
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          [[ "$RELEASE_VERSION" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
+          npm run release -- "$RELEASE_VERSION" --ci
+
+  deploy:
+    needs: release
+    runs-on: ubuntu-24.04
+    environment: wordpress-org
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.version }}
+
+      - name: Deploy to WordPress.org
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2 # 2.3.0
+        with:
+          generate-zip: true
+        env:
+          SLUG: woo-poly-integration
+          VERSION: ${{ inputs.version }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+
+      - name: Attach installable ZIP to GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.version }}
+          files: ${{ steps.deploy.outputs.zip-path }}
+          fail_on_unmatched_files: true

@@ -6,6 +6,14 @@ on:
 permissions:
   contents: read
 jobs:
+  workflows:
+    name: Validate GitHub Actions workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker://rhysd/actionlint:1.7.12
+        with:
+          args: -color
   phpunit:
     runs-on: ubuntu-latest
     strategy:
@@ -33,8 +41,23 @@ jobs:
           path: artifacts/
           retention-days: 3
   javascript:
+    name: Validate assets and release preparation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
       - name: Run editor asset regressions
-        run: node --test tests/js/Variables.test.cjs
+        run: |
+          npm run check:js
+          npm run test:js
+      - name: Validate release preparation without publishing
+        run: >-
+          npm run release -- patch --ci
+          --no-git.commit --no-git.tag --no-git.push --no-github.release
+          --git.requireBranch=false --git.requireUpstream=false

@@ -1,0 +1,16 @@
+[changelog]
+header = "# Changelog\n\n"
+body = """
+## {{ version }}
+
+{% for commit in commits %}\
+* {{ commit.message | split(pat="\n") | first }} ([{{ commit.id | truncate(length=7, end="") }}](https://github.com/hyyan/woo-poly-integration/commit/{{ commit.id }}))
+{% endfor %}
+"""
+trim = true
+
+[git]
+conventional_commits = false
+filter_unconventional = false
+sort_commits = "newest"
+commit_parsers = [{ message = "^(docs?|tests?|chore|ci|build)(\\([^)]*\\))?[:;]", skip = true }]

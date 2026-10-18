@@ -1,6 +1,6 @@
 # Manual testing
 
-Run commands from the plugin repository. Docker Desktop, Make, Bash, Python 3 and rsync are required. The first launch downloads the pinned WordPress tools and plugins. The store uses its own Docker project and volumes.
+Run commands from the plugin repository. Docker Desktop, Make, Bash, Node.js 24.15 or later, zip and rsync are required. The first launch downloads the pinned WordPress tools and plugins. The store uses its own Docker project and volumes.
 
 ## Start, reset and stop
 
