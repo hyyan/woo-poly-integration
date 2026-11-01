@@ -17,7 +17,7 @@
   "devDependencies": {
     "@release-it/bumper": "8.0.1",
     "git-cliff": "2.14.2",
-    "release-it": "21.1.1",
+    "release-it": "21.1.2",
     "terser": "5.51.2",
     "vitepress": "1.6.4"
   },
