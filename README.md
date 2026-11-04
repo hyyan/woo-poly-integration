@@ -1,3 +1,5 @@
+![WooCommerce × Polylang — One store. Every language.](assets/wordpress-org/banner-1544x500.png)
+
 # Hyyan Integration for WooCommerce and Polylang
 
 Build a multilingual WooCommerce store with Polylang. Translate products and store pages, synchronize shared product data, and let customers shop in their chosen language.
