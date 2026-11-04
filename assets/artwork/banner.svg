@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1544" height="500" viewBox="0 0 1544 500">
+  <rect width="1544" height="500" fill="#F7F7F4"/>
+  <g font-family="Avenir Next, sans-serif">
+    <g fill="#232227" font-size="25" font-weight="600">
+      <text x="64" y="83">WooCommerce</text>
+      <text x="258" y="83" fill="#79757E" font-weight="400">×</text>
+      <text x="292" y="83">Polylang</text>
+    </g>
+    <text x="58" y="218" fill="#232227" font-size="88" font-family="Avenir-Next-Demi-Bold" font-weight="600">One store.</text>
+    <text x="58" y="318" fill="#6745D6" font-size="88" font-family="Avenir-Next-Demi-Bold" font-weight="600">Every language.</text>
+    <text x="64" y="400" fill="#65616C" font-size="25" font-weight="400">Translated products. Stock in sync.</text>
+  </g>
+  <path d="M891 0H1544V500H891Z" fill="#E9E5F3"/>
+  <path d="M891 0H956L891 500H826Z" fill="#F7F7F4"/>
+  <g font-family="Avenir Next, sans-serif">
+    <rect x="1002" y="66" width="470" height="112" rx="5" fill="#F7F7F4" stroke="#CBC2E2" stroke-width="2"/>
+    <text x="1033" y="136" fill="#766B8B" font-size="36" font-weight="600">EN</text>
+    <path d="M1111 94V151" stroke="#D7D0E5" stroke-width="2"/>
+    <text x="1139" y="134" fill="#51465F" font-size="29" font-weight="500">Coffee mug</text>
+    <rect x="954" y="194" width="470" height="112" rx="5" fill="#6745D6"/>
+    <text x="985" y="264" fill="#FFFFFF" font-size="36" font-weight="600">DE</text>
+    <path d="M1063 222V279" stroke="#967BEB" stroke-width="2"/>
+    <text x="1091" y="262" fill="#FFFFFF" font-size="29" font-weight="500">Kaffeebecher</text>
+    <rect x="1002" y="322" width="470" height="112" rx="5" fill="#F7F7F4" stroke="#CBC2E2" stroke-width="2"/>
+    <text x="1033" y="392" fill="#766B8B" font-size="36" font-weight="600">FR</text>
+    <path d="M1111 350V407" stroke="#D7D0E5" stroke-width="2"/>
+    <text x="1139" y="390" fill="#51465F" font-size="29" font-weight="500">Tasse à café</text>
+  </g>
+</svg>
