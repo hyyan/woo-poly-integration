@@ -56,8 +56,8 @@ Choose your default language before creating variable products; changing it afte
 
 = Setup your environment =
 
-1. Configure WooCommerce, Polylang, and your store languages before activating this plugin.
-2. Review Settings > WooPoly, translate your store pages, and check their language assignments.
+1. Install and activate this plugin, WooCommerce, and Polylang in any order.
+2. Open Settings > WooPoly. Follow the checklist to activate dependencies, choose languages, and create or link your store pages.
 3. Translate product categories and attributes as needed, then create and link product translations.
 4. Test product selection, stock, cart, checkout, and emails in every store language before going live.
 
@@ -92,8 +92,8 @@ In your site Admin, go to Plugins, Add New and search for Hyyan WooCommerce Poly
 1. Download the plugin as zip archive and then upload it to your wordpress plugins folder and
 extract it there.
 
-In all cases please do ensure you have Polylang and WooCommerce activated and setup
-before you Activate this plugin from your admin panel
+Activate the plugin, then open Settings > WooPoly. Its setup checklist guides you
+through WooCommerce, Polylang, your languages, and translated store pages.
 
 Please note the getting started notes:
 https://hyyan.github.io/woo-poly-integration/getting-started/

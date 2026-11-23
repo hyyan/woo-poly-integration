@@ -9,14 +9,14 @@ Screenshots show earlier versions of the administration screens. Labels and layo
 ## Dependencies
 
 1. **WooCommerce**: woo-poly-integration version 1 requires WooCommerce 3 or higher, it is recommended to use the [latest release version from WordPress.org](https://wordpress.org/plugins/woocommerce/).
-    Please activate wooCommerce and run through the setup wizard or manually set the basic settings before activating the translation tool.
+    Use WooCommerce’s setup wizard to configure your store, payments, shipping, and taxes. You can activate WooPoly before or after this step.
 
 2. **Polylang**  please use [latest version from Wordpress.org](https://wordpress.org/plugins/polylang/) or [Polylang.Pro](https://polylang.pro/).
-After activating Polylang, please complete Polylang basic configuration, woo-poly-integration can't do anything unless Polylang is configured, that is:
+Configure your languages in Polylang before creating translated products. The WooPoly checklist links to this step:
     1. go to Languages, Languages /wp-admin/admin.php?page=mlang and add your chosen languages.
     2. go to Languages, Settings /wp-admin/admin.php?page=mlang_settings and check the options for URL modifications. Note that the Polylang URL setting "The language is set from content" is not compatible with the Polylang-WooCommerce-Plugin combination.
 
-    Make sure that Polylang is configured and working before installing this plugin. 
+    You can install WooPoly before its dependencies. Open **Settings → WooPoly** to activate the required plugins and complete the [store setup checklist](/getting-started/setup.md).
 
 
 ## How to install

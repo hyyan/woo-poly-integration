@@ -35,6 +35,7 @@ class Plugin
     public function __construct()
     {
         FlashMessages::register();
+        new Admin\Setup();
         add_action('admin_notices', array($this, 'showWelcomeNotice'));
 
         add_action('init', array($this, 'activate'));
@@ -49,9 +50,8 @@ class Plugin
           if ( defined( 'DOING_AJAX' ) || (function_exists( 'is_ajax' ) && is_ajax()) ) {
             //skipping ajax
           } else {
-            $wcpagecheck_passed = get_option( 'wpi_wcpagecheck_passed' );
             $check_pages		 = Settings::getOption( 'checkpages', Features::getID(), 0 );
-            if ( ($check_pages && $check_pages != 'off') || ! ($wcpagecheck_passed) ) {
+            if ($check_pages && $check_pages != 'off') {
                 add_action( 'current_screen', array( __CLASS__, 'wpi_ensure_woocommerce_pages_translated' ) );
             }
           }
@@ -211,11 +211,13 @@ class Plugin
      */
     public function activate()
     {
+        $checkPages = Settings::getOption('checkpages', Features::getID(), 'off');
+        if (!$checkPages || $checkPages === 'off') {
+            FlashMessages::remove('pagechecks');
+        }
         if (!static::canActivate()) {
             FlashMessages::remove(MessagesInterface::MSG_SUPPORT);
-            FlashMessages::add(
-                    MessagesInterface::MSG_ACTIVATE_ERROR, static::getView('Messages/activateError'), array('error'), true
-            );
+            FlashMessages::remove(MessagesInterface::MSG_ACTIVATE_ERROR);
 
             return false;
         }
@@ -257,6 +259,9 @@ class Plugin
         }
         $screen = get_current_screen();
         if (!$screen || !in_array($screen->id, array('plugins', 'settings_page_hyyan-wpi'), true)) {
+            return;
+        }
+        if (!Admin\Setup::isReady()) {
             return;
         }
         $version = static::getVersion();
@@ -431,6 +436,9 @@ class Plugin
 	 *
 	 */
 	public static function wpi_ensure_woocommerce_pages_translated() {
+        if (!static::canActivate()) {
+            return;
+        }
         if (!current_user_can('manage_woocommerce') && !current_user_can('manage_options')) {
             return;
         }

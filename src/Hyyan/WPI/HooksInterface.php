@@ -17,6 +17,14 @@ namespace Hyyan\WPI;
  */
 interface HooksInterface
 {
+    /**
+     * Render the existing advanced settings inside the WooPoly setup entry point.
+     *
+     * Runs only for an authorized administrator after dependencies are configured.
+     * Callbacks receive no arguments and may output the native settings form.
+     */
+    const SETUP_ADVANCED_SETTINGS_ACTION = 'woo_poly_integration_advanced_settings';
+
     /** WordPress plugin locale filter. */
     const WORDPRESS_PLUGIN_LOCALE_FILTER = 'plugin_locale';
 

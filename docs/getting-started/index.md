@@ -1,20 +1,12 @@
 # Getting started
 
-## Summary
+## Start with the setup checklist
 
-1. Before you start using WordPress you probably should already fix your base site language and permalink structure
-1. after activating WooCommerce you should run through the initial setup 
-1. after Polylang you should add the languages you need and set the permalinks
-1. after activating woo-poly-integration, you must visit Settings, WooPoly /wp-admin/options-general.php?page=hyyan-wpi and set the configuration to match your use case and press Save
-1. note, if activating Polylang on an existing installation, existing items will not have a language set and may not be translatable, be sure to set the options you require before translating.  Specifically, under Polylang settings - "Languages" on the admin menu - a message will come up about some items not having a default language set, with an option to click to set these to the default language:  do this before starting to translate.
-1. before translating a set of products, create and translate the [Product Categories and Tags](/products/categories.md) and [Product Attributes](/products/attributes.md) which these products will use
+Open **Settings → WooPoly** and follow the [store setup guide](/getting-started/setup.md). The checklist helps you activate the required plugins, choose languages in Polylang, and create or select the store pages for each language.
 
+You can install WooPoly before WooCommerce or Polylang. Return to the checklist after activating and configuring them. Existing stores keep their pages and translations.
 
-## Preparation
-
-1. First, make sure you have done in the initial [setup](/getting-started/installation.md) including basic configuration of Wordpress, WooCommerce and Polylang.
-1. At this point you should know what languages you are going to use and what your urls look like (eg lang2.mysite.com or mysite.com/lang2 etc) and you should have translated some site pages, now you can activate woo-poly-integration
-
+Before translating products, review the default language and URL settings in Polylang, then prepare your [categories and tags](/products/categories.md) and [attributes](/products/attributes.md).
 
 ## Global Translation Settings
 Before you start translating, you should:
@@ -25,11 +17,7 @@ Before you start translating, you should:
 ## Adding a new Language
 For each new language, first there are several steps to do in Polylang and Wordpress:
 1. Add new language to Polylang
-1. Add translation pages for the standard WooCommerce pages Shop, Basket, Checkout, My Account: Just open each page and press the '+' button next to the language flags in the Languages section, this is [standard Polylang functionality](https://polylang.pro/documentation/support/getting-started/translating-pages-posts-categories-and-tags/). Keep the same type of content as the original language version:
-    - Shop: no checkout shortcode is needed; WooCommerce displays the product archive.
-    - Basket: the Cart block or `[woocommerce_cart]`.
-    - Checkout: the Checkout block or `[woocommerce_checkout]`.
-    - My Account: `[woocommerce_my_account]`.
+1. Return to **Settings → WooPoly** and use the [page checklist](/getting-started/setup.md#_3-prepare-your-store-pages) to create missing translations or select existing pages. Keep blocks or shortcodes consistent with the original page.
 1. Add menu for the new language to Wordpress
 The site won't be usable in the new language without these steps!
 Next:

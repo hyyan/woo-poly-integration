@@ -20,7 +20,7 @@ Thanks for contributing&mdash;you rock!
 * Make commits of logical units.
 * Make sure your commit messages are helpful.
 
-# JavaScript Assets
+# JavaScript and CSS Assets
 
 Use Node.js 24.15 or newer. Install the pinned development dependencies and enable the local asset check once per clone:
 
@@ -29,9 +29,11 @@ npm ci
 npm run hooks:install
 ```
 
-After editing `public/js/Cart.js` or `public/js/Variables.js`, run `npm run build:js` and stage both the source and its `.min.js` file. Run `npm run check:js` to check all generated files, and `npm run test:js` for JavaScript regressions.
+After editing `public/js/Cart.js`, `public/js/Variables.js`, or `public/css/setup.css`, run `npm run build:assets` and stage both the source and its `.min.js` or `.min.css` file. JavaScript uses Terser; CSS uses esbuild. WordPress loads the readable sources when `SCRIPT_DEBUG` is enabled and minified files otherwise.
 
-The pre-commit hook checks the staged versions and blocks stale minified assets. It never rewrites files or stages changes. Commits unrelated to these assets or their build configuration do not require Node.js. Hooks must be enabled separately in each clone; contributors with an existing hooks setup can call `node .github/scripts/build-js.cjs --check --staged` from their own hook.
+Run `npm run check:assets` to check all generated files, and `npm run test:js` for asset build and JavaScript regressions. The older `build:js` and `check:js` commands remain available as aliases.
+
+The pre-commit hook checks the staged versions and blocks stale minified assets. It never rewrites files or stages changes. Commits unrelated to these assets or their build configuration do not require Node.js. Hooks must be enabled separately in each clone; contributors with an existing hooks setup can call `node .github/scripts/build-assets.cjs --check --staged` from their own hook. CI runs the same source-to-output check for JavaScript and CSS.
 
 # Documentation
 
@@ -59,11 +61,11 @@ tests/bin/run.sh
 
 Setup downloads the pinned dependencies on the first run. The suites cover unit tests, WordPress AJAX requests, product translations, stock, carts, orders, and admin and storefront behavior. Use the disposable test database only; these tests create and delete product data. The site listens at `http://localhost:8098`.
 
-Run the JavaScript tests and check that minified assets match their sources:
+Run the asset and JavaScript tests and check that minified assets match their sources:
 
 ```sh
 npm ci
-npm run check:js
+npm run check:assets
 npm run test:js
 ```
 

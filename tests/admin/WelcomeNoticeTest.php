@@ -1,5 +1,6 @@
 <?php
 use Hyyan\WPI\Plugin;
+use Hyyan\WPI\Admin\SetupPages;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -9,6 +10,8 @@ final class WelcomeNoticeTest extends TestCase
     private $screen;
     private array $welcomeVersion;
     private $noticeHook;
+    private array $pageOptions = array();
+    private array $pageIds = array();
 
     protected function setUp(): void
     {
@@ -30,10 +33,37 @@ final class WelcomeNoticeTest extends TestCase
         delete_user_meta(1, 'wpi_welcome_version');
         wp_set_current_user(1);
         $GLOBALS['current_screen'] = WP_Screen::get('plugins');
+        // Welcome links are offered only after the multilingual checklist is ready.
+        foreach (array_keys(SetupPages::getPageTypes()) as $type) {
+            $option = 'woocommerce_' . $type . '_page_id';
+            $this->pageOptions[$option] = get_option($option);
+            $translations = array();
+            foreach (array_keys(SetupPages::getLanguages()) as $slug) {
+                $id = wp_insert_post(array('post_type' => 'page', 'post_status' => 'publish',
+                    'post_title' => 'Welcome notice fixture ' . $type . ' ' . $slug), true);
+                self::assertIsInt($id);
+                $this->pageIds[] = $id;
+                pll_set_post_language($id, $slug);
+                $translations[$slug] = $id;
+            }
+            pll_save_post_translations($translations);
+            update_option($option, $translations[pll_default_language()]);
+        }
     }
 
     protected function tearDown(): void
     {
+        wp_set_current_user(1);
+        foreach ($this->pageIds as $id) {
+            wp_delete_post($id, true);
+        }
+        foreach ($this->pageOptions as $option => $value) {
+            if ($value === false) {
+                delete_option($option);
+            } else {
+                update_option($option, $value);
+            }
+        }
         delete_user_meta(1, 'wpi_welcome_version');
         foreach ($this->welcomeVersion as $value) {
             add_user_meta(1, 'wpi_welcome_version', $value);
@@ -72,6 +102,15 @@ final class WelcomeNoticeTest extends TestCase
         $GLOBALS['current_screen'] = WP_Screen::get('settings_page_hyyan-wpi');
         self::assertStringContainsString('Thanks for using WooPoly', $this->renderNotices());
         self::assertSame(Plugin::getVersion(), get_user_meta(1, 'wpi_welcome_version', true));
+    }
+
+    public function testIncompleteSetupDoesNotConsumeWelcome(): void
+    {
+        wp_update_post(array('ID' => $this->pageIds[0], 'post_status' => 'draft'));
+        self::assertStringNotContainsString('Thanks for using WooPoly', $this->renderNotices());
+        self::assertSame('', get_user_meta(1, 'wpi_welcome_version', true));
+        wp_update_post(array('ID' => $this->pageIds[0], 'post_status' => 'publish'));
+        self::assertStringContainsString('Thanks for using WooPoly', $this->renderNotices());
     }
 
     #[DataProvider('unrelatedScreens')]

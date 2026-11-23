@@ -28,7 +28,7 @@ class Settings extends \WeDevs_Settings_API
     {
         parent::__construct();
         add_action('admin_init', array($this, 'init'));
-        add_action('admin_menu', array($this, 'registerMenu'));
+        add_action(Hyyan_WPI_Hooks::SETUP_ADVANCED_SETTINGS_ACTION, array($this, 'outputPage'));
 
         new Features();
         new MetasList();
@@ -52,11 +52,7 @@ class Settings extends \WeDevs_Settings_API
      */
     public function registerMenu()
     {
-	  	if ( current_user_can( 'manage_options' ) ) {
-        add_options_page(
-                esc_html__('Hyyan WooCommerce Polylang Integration', 'woo-poly-integration'), esc_html__('WooPoly', 'woo-poly-integration'), 'delete_posts', 'hyyan-wpi', array($this, 'outputPage')
-        );
-      }
+        Setup::registerMenu();
     }
 
     /**

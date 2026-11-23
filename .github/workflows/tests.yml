@@ -54,7 +54,7 @@ jobs:
       - run: npm ci
       - name: Run editor asset regressions
         run: |
-          npm run check:js
+          npm run check:assets
           npm run test:js
       - name: Validate release preparation without publishing
         run: >-

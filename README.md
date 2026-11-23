@@ -25,9 +25,9 @@ Choose your default language before creating variable products; changing it afte
 
 ## Installation and setup
 
-1. Install and activate WooCommerce and Polylang, then configure your store languages and default language.
-2. Install this plugin through **Plugins → Add New**, or upload its release ZIP, and activate it.
-3. Review **Settings → WooPoly**, translate your WooCommerce pages, and check their language assignments.
+1. Install this plugin through **Plugins → Add New**, or upload its release ZIP, and activate it. WooCommerce and Polylang can be installed before or afterward.
+2. Open **Settings → WooPoly** and follow the checklist to activate dependencies and choose your languages.
+3. Create or link your store pages from the checklist, then review their translated content. Existing pages are preserved.
 4. Translate product categories and attributes as needed, then create and link product translations.
 5. Test product selection, stock, the cart, checkout, and order emails in every store language before going live.
 
