@@ -2,9 +2,7 @@
 
 woo-poly-integration is an open source WordPress plugin which aims to fill the gap between [WooCommerce](https://en-gb.wordpress.org/plugins/woocommerce/) and [Polylang](https://en-gb.wordpress.org/plugins/polylang/).
 
-Before using this product, please:
-* review the [Getting Started](/getting-started/index.md) guide.
-* please make sure you have WooCommerce and basic Wordpress-Polylang translation working.  
+Start with the [store setup checklist](/getting-started/setup.md) to connect WooCommerce and Polylang, add store languages, and link the four WooCommerce pages in each language. The [getting started guide](/getting-started/index.md) covers the next steps for products and navigation.
 
 This is not a commercial product, it's entirely free and open source, and support is by volunteers in their spare time only, so please check you have understood and followed the basic setup instructions before reporting any problems.
 

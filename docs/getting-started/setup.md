@@ -1,8 +1,15 @@
 # Set up your multilingual store
 
-Open **Settings → WooPoly** to see your setup checklist. You can return at any time: the checklist reads your current configuration, so completed steps remain ready and newly added languages appear automatically.
+Open **Settings → WooPoly**. Under **Your setup**, each checkmark means a requirement is met. Select a step to jump to its controls. The highlighted number marks the first unfinished step.
 
-Closing the setup page does not complete a step. A step becomes **Ready** only when its requirements are met; unfinished steps still need attention when you return.
+| Progress | What to check |
+| --- | --- |
+| 0/3 | Both WooCommerce and Polylang need to be active at supported versions. If just one is ready, follow the action beside the other. |
+| 1/3 | Both plugins are ready. Add a second language if the store has only one. |
+| 2/3 | Check the store page table for missing translations, pages without a language, or unpublished pages. |
+| 3/3 | Every configured language has a linked, published Shop, Cart, Checkout, and My account page. |
+
+Closing a wizard or leaving the checklist saves no completion flag. For example, activating both plugins and leaving their wizards before adding languages gives you **1/3** when you return. If you later move a linked Checkout page to Draft, progress returns to **2/3** until that page is published again.
 
 ## 1. Connect your plugins
 
@@ -12,7 +19,7 @@ If another plugin opens its setup wizard, complete the relevant steps and return
 
 ## 2. Choose your languages
 
-Choose **Manage languages** to configure languages in Polylang. Add your store’s original language and at least one translation language, then return to WooPoly and choose **Check again**.
+Choose **Choose languages in Polylang** to add your first language. Once a language exists, the link reads **Manage languages**. Add your store’s original language and at least one translation language, then return to WooPoly and choose **Check again**.
 
 Choose your default language carefully. Changing it after creating variable products is unsupported. Polylang’s **The language is set from content** URL mode is also unsupported.
 
