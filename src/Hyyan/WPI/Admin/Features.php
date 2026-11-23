@@ -53,6 +53,12 @@ class Features extends AbstractSettings
     {
         return array(
             array(
+                'name' => 'deepl-meta-keys',
+                'type' => 'text',
+                'label' => __('DeepL product text fields', 'woo-poly-integration'),
+                'desc' => __('Additional custom field keys containing translatable product text, separated by commas.', 'woo-poly-integration'),
+            ),
+            array(
                 'name' => 'fields-locker',
                 'type' => 'checkbox',
                 'default' => 'on',

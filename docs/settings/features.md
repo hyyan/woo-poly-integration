@@ -22,10 +22,20 @@ Also you might like to turn on the feature for New Translation Behaviour.
 * **New Translation Behaviour**	When creating new translations, start with blank text, copy or machine translation? (You may want to turn this off if using Polylang Pro, Lingotek or other automatic copy-or-translation solution.)
     * **Blank Text** default behaviour as per previous versions
     * **Copy Source** when creating a new translation, copy from source.  Note that the copy may be based on the current screen, for example if the base language is English you choose for example to create a Spanish translation from within the edit screen for Italian then Italian will be used to create the Spanish version..
-    * **Translate Source** currently uses Copy Source. This plugin does not provide automatic machine translation.
+    * **Translate Source** currently uses Copy Source. Use the **Translate with DeepL** panel to generate a translated draft.
 * **Use locale number formats** Format prices and other supported numeric values using the locale configured for the current Polylang language. Enabled by default. See [Price localization](/products/price-localization.md).
 * **Synchronize on Import** Apply the configured synchronization rules to existing translations when WooCommerce's built-in product importer updates a product. Enabled by default. See [Imports and bulk editing](/products/import-and-bulk-edit.md).
 * **Check WooCommerce Pages** Check if WooCommerce pages are present and correctly translated and published. Especially helpful on initial setup. Turn off once setup is complete.
 * **Translation Downloader** Download WooCommerce translation files when a new Polylang language is added. Turn off if you manage language packs separately or work without an internet connection. Ensure the WooCommerce language packs are installed for every store language.
 
 ![WooPoly Features screenshot](../../public/guide/images/woo-poly-features.gif)
+
+## Translate a product with DeepL
+
+Set `WOOPOLY_DEEPL_AUTH_KEY` in your private WordPress configuration, or set the server environment variable `DEEPL_AUTH_KEY`. Use an API key with translation quota. Free API keys use the DeepL Free endpoint.
+
+Save the product and assign its source language in Polylang. In the product editor, choose a target language under **Translate with DeepL** and select **Create translated draft**. Review the linked draft before publishing. A language with an existing translation is excluded from the selector.
+
+The request sends product text, including descriptions, purchase notes, attributes and variation descriptions, to DeepL. Existing translated categories, tags, global attribute terms and labels are reused. Enable the relevant taxonomies in Polylang to translate their terms. With Polylang media translation enabled, new translated attachments share the original files and have their own captions and alternative text.
+
+In **Settings → WooPoly → Advanced settings → Features**, enter any additional SEO or custom text field keys in **DeepL product text fields**. Extensions can register text keys through `woo-poly.product.translationMetaKeys`. Only select fields intended for translation. WooCommerce's internal product fields are excluded.

@@ -66,6 +66,9 @@ interface HooksInterface
      */
     const PRODUCT_META_SYNC_FILTER = 'woo-poly.product.metaSync';
 
+    /** Additional text meta keys to send to DeepL for a specific WooCommerce product. */
+    const PRODUCT_TRANSLATION_META_KEYS = 'woo-poly.product.translationMetaKeys';
+
     /**
      * Fields Locker Selectors Filter.
      *
