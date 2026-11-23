@@ -84,6 +84,11 @@ final class StoreApiCartLanguageTest extends TestCase
             Utilities::switch_pll_locale('en_US');
             WC()->cart->cart_contents[$key]['data']->set_price('15.00');
             WC()->cart->calculate_totals();
+            $line = WC()->cart->get_cart()[$key];
+            $display = apply_filters('woocommerce_cart_item_product', $line['data'], $line, $key);
+            self::assertSame($products['en'], $display->get_id());
+            self::assertSame(15.0, (float) $display->get_price());
+            self::assertSame(12.5, (float) wc_get_product($products['en'])->get_price());
             $response = rest_do_request(new WP_REST_Request('GET', '/wc/store/v1/cart'));
             $data = $response->get_data();
             self::assertSame('1500', ((array) $data['items'][0]['prices'])['price']);
