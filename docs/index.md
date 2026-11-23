@@ -14,8 +14,7 @@ woo-poly-integration provides shop managers with a lightweight open-source solut
 * Shipping Methods, Payment Methods, Order Emails, Tax strings etc
 * Extensive options regarding types of data to be synchronised or translated between different language versions of the same product - see Settings [Features](/settings/features.md) and [Metas](/settings/metadata.md). 
 
-This solution does not automatically use Google Translate or other translation tool: if an internet user wants automatic translation there are plenty of browser tools which they can use to do this, however automatic translation is just not good enough for convincing customer service. 
-Instead the tool currently does a simple copy-source text to help the translation process.
+Merchants can translate products manually or use [DeepL to create a linked draft](/translations/deepl.md). Review the draft in the product editor before publishing it.
 
 Similarly this solution does *not* link to a network of translators, and at the time of writing is *not* retested with the Polylang Lingotek solution which has previously been tested negatively.  Instead, the recommendation is not to translate to languages in which the shop cannot provide customer service: if you just outsourced the translation to a language you don't understand then how do you check the translation quality? and how do you answer detailed customer questions?
 

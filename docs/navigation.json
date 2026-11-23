@@ -21,6 +21,7 @@
   },
   "Translations": {
     "translations/overview": "How translations work",
+    "translations/deepl": "Translate a product with DeepL",
     "translations/strings": "Translating store text",
     "translations/emails": "Email languages"
   },
