@@ -2,6 +2,14 @@
 
 Pricing is normally synchronised across all language versions of a product but can be turned off under [Settings, Metas](/settings/metadata.md).  It's not clear why you might want to turn this off, generally, Customers are annoyed if they discover that the price changes when switching language, so if you have a good use case please add it here.
 
+## Discounts in a translated cart
+
+When a pricing extension adjusts a cart item’s unit price, WooPoly carries that adjustment into the translated cart row. Switching languages keeps the translated product name and displays the row subtotal using the adjusted price. The product’s saved catalog price stays the same.
+
+For example, with a catalog price of $10.00 and a 15% YayPricing Lite bulk discount across matching items, a qualifying cart displays $8.50 for a row of one and $17.00 for a row of two. A French cart can format those amounts as 8,50 and 17,00. If the pricing extension also shows the original subtotal crossed out, compare the discounted amount beside it.
+
+To check your store, add enough matching items to qualify for the rule. Open the cart, note the quantities and discounted row subtotals, then switch to the translated cart with the same session. Compare each row in both languages. The [price localization guide](/products/price-localization.md) explains how the separators and currency symbol are displayed.
+
 ## Sale price in one language only
 
 Maybe you have a marketing campaign in one language only and you want to create some offers which only apply to one language?
