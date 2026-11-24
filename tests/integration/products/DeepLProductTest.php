@@ -6,30 +6,24 @@ use PHPUnit\Framework\TestCase;
 
 final class DeepLProductTest extends TestCase
 {
-    public function testShopManagerCanReplaceAPrivateKeyWithoutAffectingOtherUsers(): void
+    public function testStoreKeyIsSharedMaskedAndReplaceable(): void
     {
-        $original = get_current_user_id();
-        $manager = wp_insert_user(array('user_login' => wp_unique_id('deepl-manager-'), 'user_pass' => wp_generate_password(), 'role' => 'shop_manager'));
-        self::assertIsInt($manager);
+        $previous = get_option(DeepL::STORE_KEY);
+
         try {
-            wp_set_current_user($manager);
-            $fallback = DeepL::getKey();
-            self::assertTrue(DeepL::savePersonalKey('first-test:fx'));
+            self::assertTrue(DeepL::saveStoreKey('first-test:fx'));
             self::assertSame('first-test:fx', DeepL::getKey());
-            self::assertStringNotContainsString('first-test', get_user_meta($manager, DeepL::USER_KEY, true));
-            self::assertFalse(DeepL::savePersonalKey("invalid\nheader"));
+            self::assertStringNotContainsString('first-test', get_option(DeepL::STORE_KEY));
+            self::assertFalse(DeepL::saveStoreKey("invalid\nheader"));
             self::assertSame('first-test:fx', DeepL::getKey());
-            self::assertTrue(DeepL::savePersonalKey('replacement-test:fx'));
-            wp_set_current_user(0);
-            self::assertFalse(DeepL::personalKey());
-            wp_set_current_user($manager);
+            self::assertTrue(DeepL::saveStoreKey('replacement-test:fx'));
             self::assertSame('replacement-test:fx', DeepL::getKey());
-            delete_user_meta($manager, DeepL::USER_KEY);
-            self::assertSame($fallback, DeepL::getKey());
         } finally {
-            wp_set_current_user($original);
-            require_once ABSPATH . 'wp-admin/includes/user.php';
-            wp_delete_user($manager);
+            if ($previous === false) {
+                delete_option(DeepL::STORE_KEY);
+            } else {
+                update_option(DeepL::STORE_KEY, $previous, false);
+            }
         }
     }
 
@@ -37,22 +31,28 @@ final class DeepLProductTest extends TestCase
     {
         $user = get_current_user_id();
         $key = getenv('DEEPL_AUTH_KEY');
+        $storeKey = get_option(DeepL::STORE_KEY);
         $ids = array();
         $requests = 0;
         $api = static function ($pre, $args, $url) use (&$requests) {
             if ($url !== 'https://api-free.deepl.com/v2/translate') {
                 return $pre;
             }
+
             ++$requests;
             $body = json_decode($args['body'], true);
             self::assertSame('EN', $body['source_lang']);
             self::assertSame('DE', $body['target_lang']);
             $items = array_map(static function ($s) { return array('text' => 'DE ' . $s); }, $body['text']);
+
             return array('response' => array('code' => 200), 'headers' => array(), 'body' => wp_json_encode(array('translations' => $items)));
         };
+
         $keys = static function () { return array('seo_title', '_sku', '_price'); };
+
         try {
             wp_set_current_user(1);
+            delete_option(DeepL::STORE_KEY);
             putenv('DEEPL_AUTH_KEY=test:fx');
             add_filter('pre_http_request', $api, 10, 3);
             add_filter(\Hyyan\WPI\HooksInterface::PRODUCT_TRANSLATION_META_KEYS, $keys);
@@ -75,12 +75,14 @@ final class DeepLProductTest extends TestCase
             wp_set_current_user(1);
             $failure = static function () { return new WP_Error('connection_failed'); };
             add_filter('pre_http_request', $failure, 100);
+
             try {
                 self::assertTrue(is_wp_error(TranslatedDraft::create($source, 'de')));
                 self::assertEmpty(pll_get_post($source, 'de'));
             } finally {
                 remove_filter('pre_http_request', $failure, 100);
             }
+
             $draft = TranslatedDraft::create($source, 'de');
             self::assertIsInt($draft, is_wp_error($draft) ? $draft->get_error_message() : '');
             $ids[] = $draft;
@@ -103,9 +105,15 @@ final class DeepLProductTest extends TestCase
         } finally {
             remove_filter('pre_http_request', $api, 10);
             remove_filter(\Hyyan\WPI\HooksInterface::PRODUCT_TRANSLATION_META_KEYS, $keys);
+
             foreach (array_reverse($ids) as $id) {
                 wp_delete_post($id, true);
             }
+
+            if ($storeKey !== false) {
+                update_option(DeepL::STORE_KEY, $storeKey, false);
+            }
+
             putenv($key === false ? 'DEEPL_AUTH_KEY' : 'DEEPL_AUTH_KEY=' . $key);
             wp_set_current_user($user);
         }

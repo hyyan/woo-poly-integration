@@ -30,6 +30,7 @@ class Settings extends \WeDevs_Settings_API
         add_action('admin_init', array($this, 'init'));
         add_action(Hyyan_WPI_Hooks::SETUP_ADVANCED_SETTINGS_ACTION, array($this, 'outputPage'));
 
+        new DeepLSettings();
         new Features();
         new MetasList();
     }

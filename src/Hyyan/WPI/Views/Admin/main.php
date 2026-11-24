@@ -8,3 +8,5 @@ if (!defined('ABSPATH')) {
 <div class="postbox" style="padding: 10px;">
     <?php $vars['self']->show_forms(); ?>
 </div>
+
+<?php \Hyyan\WPI\Admin\DeepLSettings::render(); ?>
