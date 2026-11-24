@@ -10,6 +10,7 @@
 
 namespace Hyyan\WPI\Admin;
 
+use Hyyan\WPI\Product\DeepL;
 use Hyyan\WPI\Utilities;
 
 /**
@@ -19,12 +20,34 @@ use Hyyan\WPI\Utilities;
  */
 class Features extends AbstractSettings
 {
+    const DEEPL_KEY_MASK = '********';
+
     /**
      * {@inheritdoc}
      */
     public static function getID()
     {
         return 'wpi-features';
+    }
+
+    /**
+     * Keep the credential out of the password field and the public features array.
+     */
+    public function sanitizeDeepLKey($value)
+    {
+        $value = is_string($value) ? trim($value) : null;
+
+        if ($value === '') {
+            delete_option(DeepL::STORE_KEY);
+
+            return '';
+        }
+
+        if ($value !== self::DEEPL_KEY_MASK && !DeepL::saveStoreKey($value)) {
+            add_settings_error(self::getID(), 'deepl-key', __('Could not save the DeepL API key.', 'woo-poly-integration'));
+        }
+
+        return DeepL::storeKey() ? self::DEEPL_KEY_MASK : '';
     }
 
     /**
@@ -52,6 +75,14 @@ class Features extends AbstractSettings
     protected function doGetFields()
     {
         return array(
+            array(
+                'name' => 'deepl-api-key',
+                'type' => 'password',
+                'default' => DeepL::storeKey() ? self::DEEPL_KEY_MASK : '',
+                'label' => __('DeepL API key', 'woo-poly-integration'),
+                'desc' => __('Store key for product translation. Enter a new key to replace it or clear the field to remove it.', 'woo-poly-integration'),
+                'sanitize_callback' => array($this, 'sanitizeDeepLKey'),
+            ),
             array(
                 'name' => 'deepl-meta-keys',
                 'type' => 'text',

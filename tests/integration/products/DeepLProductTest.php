@@ -1,5 +1,7 @@
 <?php
 
+use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\HooksInterface;
 use Hyyan\WPI\Product\DeepL;
 use Hyyan\WPI\Product\TranslatedDraft;
 use PHPUnit\Framework\TestCase;
@@ -10,14 +12,27 @@ final class DeepLProductTest extends TestCase
     {
         $previous = get_option(DeepL::STORE_KEY);
 
+        $sections = apply_filters(HooksInterface::SETTINGS_FIELDS_FILTER, array());
+        $fields = array_column($sections[Features::getID()], null, 'name');
+        $field = $fields['deepl-api-key'];
+
+        self::assertSame('password', $field['type']);
+        $sanitize = $field['sanitize_callback'];
+
         try {
-            self::assertTrue(DeepL::saveStoreKey('first-test:fx'));
+            $mask = $sanitize('first-test:fx');
+            self::assertSame('********', $mask);
             self::assertSame('first-test:fx', DeepL::getKey());
             self::assertStringNotContainsString('first-test', get_option(DeepL::STORE_KEY));
-            self::assertFalse(DeepL::saveStoreKey("invalid\nheader"));
+
+            self::assertSame($mask, $sanitize($mask));
             self::assertSame('first-test:fx', DeepL::getKey());
-            self::assertTrue(DeepL::saveStoreKey('replacement-test:fx'));
+
+            self::assertSame($mask, $sanitize('replacement-test:fx'));
             self::assertSame('replacement-test:fx', DeepL::getKey());
+
+            self::assertSame('', $sanitize(''));
+            self::assertFalse(DeepL::storeKey());
         } finally {
             if ($previous === false) {
                 delete_option(DeepL::STORE_KEY);

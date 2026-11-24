@@ -39,7 +39,14 @@ final class ProductTranslation
     public function render($post)
     {
         if (!DeepL::getKey()) {
-            echo '<p><a href="' . esc_url(DeepLSettings::url()) . '">' . esc_html__('Connect DeepL in WooPoly settings', 'woo-poly-integration') . '</a></p>';
+            if (current_user_can('manage_options')) {
+                echo '<a href="' . esc_url(Setup::getSetupUrl(true) . '#wpi-features') . '">';
+                esc_html_e('Connect DeepL in WooPoly settings', 'woo-poly-integration');
+                echo '</a>';
+            } else {
+                esc_html_e('The store needs a DeepL API key before products can be translated.', 'woo-poly-integration');
+            }
+
             return;
         }
 

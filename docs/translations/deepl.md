@@ -4,9 +4,9 @@ Create a linked draft in another Polylang language from a saved WooCommerce prod
 
 ## Connect a DeepL API key
 
-Open **Settings → WooPoly → Advanced settings → DeepL product translation**. Shop Managers can open **WooCommerce → WooPoly**. Enter your DeepL API Free or Pro key and select **Save key**. Everyone who can translate products in this store can now use the connection.
+Open **Settings → WooPoly → Advanced settings → Features**. Enter your DeepL API Free or Pro key in **DeepL API key** and select **Save Changes**. Everyone who can translate products in this store can now use the connection.
 
-The saved key stays hidden. Enter a new key to replace it or select **Remove saved key** to remove it. Stores that supply a key through server configuration continue to use it when the settings field has no saved key.
+The saved key stays hidden. Enter a new key to replace it or clear the field and save to remove it. Stores that supply a key through server configuration continue to use it when the settings field has no saved key.
 
 ## Create and review the draft
 
@@ -35,4 +35,4 @@ Extensions can register additional keys with the `woo-poly.product.translationMe
 
 ## If translation fails
 
-If the panel asks for a key, follow **Connect DeepL in WooPoly settings** and save the store key. For a failed request, check the account quota and whether DeepL supports the selected language pair. Correct the problem and retry from the saved source product.
+If the panel asks for a key, check the **DeepL API key** field in WooPoly’s **Features** settings. For a failed request, check the account quota and whether DeepL supports the selected language pair. Correct the problem and retry from the saved source product.
