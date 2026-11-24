@@ -361,6 +361,12 @@ class Cart
 
         // If we are changing the product to the right language
         if ($cart_item_data_translation->get_id() != $cart_item_data->get_id()) {
+            // Preserve per-line price adjustments when loading the translated catalog product.
+            $changes = $cart_item_data->get_changes();
+            if (array_key_exists('price', $changes)) {
+                $cart_item_data_translation = clone $cart_item_data_translation;
+                $cart_item_data_translation->set_price($changes['price']);
+            }
             $cart_item_data_translation = apply_filters(Hyyan_WPI_Hooks::CART_SWITCHED_ITEM, $cart_item_data_translation, $cart_item_data, $cart_item);
         }
 
