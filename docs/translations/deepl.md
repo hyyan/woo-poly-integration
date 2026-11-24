@@ -4,7 +4,9 @@ Create a linked draft in another Polylang language from a saved WooCommerce prod
 
 ## Connect a DeepL API key
 
-Use a DeepL API account with available translation quota. Have the site administrator set the WordPress constant `WOOPOLY_DEEPL_AUTH_KEY` in the private site configuration, or supply `DEEPL_AUTH_KEY` in the server environment available to PHP. The constant takes precedence. WooPoly selects the API Free endpoint for keys ending in `:fx`.
+Open a saved product as a Shop Manager. In **Translate with DeepL → DeepL API key**, paste your DeepL API Free or Pro key and select **Save key**. You can now translate products from this WordPress account. The field stays blank when you return. To replace your key, enter the new one and save. Choose **Remove personal key** to disconnect it.
+
+If the store already supplies a shared key, WooPoly uses it for accounts without a personal key. Your personal key takes precedence.
 
 ## Create and review the draft
 
@@ -33,4 +35,4 @@ Extensions can register additional keys with the `woo-poly.product.translationMe
 
 ## If translation fails
 
-If the panel asks for a key, confirm the PHP process serving WordPress can read the configured key. For a failed request, check the account quota and whether DeepL supports the selected language pair. Correct the problem and retry from the saved source product.
+If the panel asks for a key, open **DeepL API key** in the product editor and save your key. For a failed request, check the account quota and whether DeepL supports the selected language pair. Correct the problem and retry from the saved source product.

@@ -15,8 +15,40 @@ namespace Hyyan\WPI\Product;
  */
 final class DeepL
 {
+    const USER_KEY = '_woopoly_deepl_key';
+
+    private static function encryptionKey()
+    {
+        return hash_hmac('sha256', 'woopoly-deepl-' . get_current_user_id(), wp_salt('auth'), true);
+    }
+
+    public static function personalKey()
+    {
+        $stored = get_user_meta(get_current_user_id(), self::USER_KEY, true);
+        $bytes = is_string($stored) ? base64_decode($stored, true) : false;
+        if (!$bytes || strlen($bytes) <= SODIUM_CRYPTO_SECRETBOX_NONCEBYTES + SODIUM_CRYPTO_SECRETBOX_MACBYTES) {
+            return false;
+        }
+        $nonce = substr($bytes, 0, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
+        return sodium_crypto_secretbox_open(substr($bytes, strlen($nonce)), $nonce, self::encryptionKey());
+    }
+
+    public static function savePersonalKey($key)
+    {
+        if (!get_current_user_id() || !is_string($key) || !preg_match('/^[!-~]{1,512}$/D', $key)) {
+            return false;
+        }
+        $nonce = random_bytes(SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
+        $encrypted = sodium_crypto_secretbox($key, $nonce, self::encryptionKey());
+        return (bool) update_user_meta(get_current_user_id(), self::USER_KEY, base64_encode($nonce . $encrypted));
+    }
+
     public static function getKey()
     {
+        $personal = self::personalKey();
+        if ($personal) {
+            return $personal;
+        }
         return defined('WOOPOLY_DEEPL_AUTH_KEY') ? WOOPOLY_DEEPL_AUTH_KEY : getenv('DEEPL_AUTH_KEY');
     }
 

@@ -1,10 +1,38 @@
 <?php
 
+use Hyyan\WPI\Product\DeepL;
 use Hyyan\WPI\Product\TranslatedDraft;
 use PHPUnit\Framework\TestCase;
 
 final class DeepLProductTest extends TestCase
 {
+    public function testShopManagerCanReplaceAPrivateKeyWithoutAffectingOtherUsers(): void
+    {
+        $original = get_current_user_id();
+        $manager = wp_insert_user(array('user_login' => wp_unique_id('deepl-manager-'), 'user_pass' => wp_generate_password(), 'role' => 'shop_manager'));
+        self::assertIsInt($manager);
+        try {
+            wp_set_current_user($manager);
+            $fallback = DeepL::getKey();
+            self::assertTrue(DeepL::savePersonalKey('first-test:fx'));
+            self::assertSame('first-test:fx', DeepL::getKey());
+            self::assertStringNotContainsString('first-test', get_user_meta($manager, DeepL::USER_KEY, true));
+            self::assertFalse(DeepL::savePersonalKey("invalid\nheader"));
+            self::assertSame('first-test:fx', DeepL::getKey());
+            self::assertTrue(DeepL::savePersonalKey('replacement-test:fx'));
+            wp_set_current_user(0);
+            self::assertFalse(DeepL::personalKey());
+            wp_set_current_user($manager);
+            self::assertSame('replacement-test:fx', DeepL::getKey());
+            delete_user_meta($manager, DeepL::USER_KEY);
+            self::assertSame($fallback, DeepL::getKey());
+        } finally {
+            wp_set_current_user($original);
+            require_once ABSPATH . 'wp-admin/includes/user.php';
+            wp_delete_user($manager);
+        }
+    }
+
     public function testCreatesLinkedDraftAndProtectsReviewedContent(): void
     {
         $user = get_current_user_id();
