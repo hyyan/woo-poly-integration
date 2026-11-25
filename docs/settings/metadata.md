@@ -6,7 +6,7 @@ See also [Settings, Features](/settings/features.md)
 Note, this page covers standard WooCommerce Meta information for Products.  For more information on synchronization of other data added by different extension plugins, see [Product Meta and Custom Fields](/products/custom-fields.md).
 
 ## Metas List
-![Metas page](../../assets/woo-poly-metas1.gif)
+![Metas page](../../public/guide/images/woo-poly-metas1.gif)
 ### General Metas	
 * Product-type: leave enabled, should be always be the same in all languages
 * Virtual: leave enabled, should be always be the same in all languages
@@ -26,7 +26,7 @@ Note: turning off these features may not have the desired effect: to control the
 * Menu Order       (Page order)
 * Thumbnail Id     (Featured image)
 * Comment Status
-![Related Polylang settings](../../assets/polylang-settings-sync.gif)
+![Related Polylang settings](../../public/guide/images/polylang-settings-sync.gif)
 
 ### Stock Metas	
 See note [Features](/settings/features.md), Stock.  Stock synchronisation can be turned off if both Features\Stock and the Stock Metas are turned off.  These options can be turned off individually but a more normal use case would be to leave them all on or all off.  For example if your products are localized (different packaging, different electrical plug etc for each language) then you might want to manage separate stock inventory for each language.
@@ -39,7 +39,7 @@ See note [Features](/settings/features.md), Stock.  Stock synchronisation can be
 Stock Metas: see also Features, Stock Sync
 
 ## Metas List page 2.. scroll on for more Metas
-![Metas page 2](../../assets/woo-poly-metas2.gif)
+![Metas page 2](../../public/guide/images/woo-poly-metas2.gif)
 ### ShippingClass Metas	
 Should normally be left on, so the same size/weight information is available in all languages
 * Weight

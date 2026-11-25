@@ -9,6 +9,7 @@ const pairs = ['Cart', 'Variables'].map(name => ({
     type: 'js'
 }));
 pairs.push({ source: 'public/css/setup.css', output: 'public/css/setup.min.css', type: 'css' });
+pairs.push({ source: 'public/css/guide.css', output: 'public/css/guide.min.css', type: 'css' });
 const tooling = ['package.json', 'package-lock.json', '.github/scripts/build-assets.cjs'];
 const args = process.argv.slice(2);
 const staged = args.includes('--staged');

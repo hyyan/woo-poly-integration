@@ -11,7 +11,7 @@ Run from the repository root. Install Node dependencies with `npm ci`. See the [
 | PHP | Run `.github/scripts/check-php-style` for staged PHP. It reports newly introduced WordPress Coding Standards violations. |
 | Plugin behavior | In the disposable test environment, run `tests/bin/setup.sh`, then `tests/bin/run.sh`. Both commands write store data. Verify the database and HTTP endpoint are separate from the manual review store first. |
 | JavaScript or CSS assets | Rebuild with `npm run build:assets`. Include the generated minified files. Run `npm run check:assets` and `npm run test:js`. |
-| User documentation | Run `npm run docs:build` to check the build and internal links. |
+| User documentation | Run `npm run docs:build` and `npm run docs:check`. Include the generated guide and verify it in the installed plugin. |
 
 ## Repository conventions
 

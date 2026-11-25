@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
             <h1><?php esc_html_e('A store in every language.', 'woo-poly-integration'); ?></h1>
             <p class="wpi-intro"><?php esc_html_e('Connect your plugins, choose your languages, and prepare your store pages. Pick up where you left off, any time.', 'woo-poly-integration'); ?></p>
         </div>
-        <a class="button" href="https://hyyan.github.io/woo-poly-integration/getting-started/setup.html"><?php esc_html_e('Read the setup guide', 'woo-poly-integration'); ?> &nearr;</a>
+		<a class="button" href="<?php echo esc_url( \Hyyan\WPI\Admin\Guide::url( 'getting-started/setup' ) ); ?>"><?php esc_html_e( 'Read the setup guide', 'woo-poly-integration' ); ?> &nearr;</a>
     </header>
     <hr class="wp-header-end">
 
@@ -187,12 +187,12 @@ if (!defined('ABSPATH')) {
                 <ul>
                     <li><a href="https://polylang.pro/documentation/support/guides/the-language-switcher/"><?php esc_html_e('Add a language switcher to your navigation.', 'woo-poly-integration'); ?></a></li>
                     <li><a href="<?php echo esc_url($dependencies[0]['active'] ? admin_url('admin.php?page=wc-admin&path=/setup-wizard') : '#required-plugins'); ?>"><?php esc_html_e('Finish WooCommerce setup: payments, shipping, and taxes.', 'woo-poly-integration'); ?></a></li>
-                    <li><a href="https://hyyan.github.io/woo-poly-integration/getting-started/setup.html#translate-your-first-product"><?php esc_html_e('Create your first translated product.', 'woo-poly-integration'); ?></a></li>
+					<li><a href="<?php echo esc_url( \Hyyan\WPI\Admin\Guide::url( 'getting-started/setup' ) . '#translate-your-first-product' ); ?>"><?php esc_html_e( 'Create your first translated product.', 'woo-poly-integration' ); ?></a></li>
                     <li><?php esc_html_e('Review your terms and privacy pages, then test a purchase and customer email in each language.', 'woo-poly-integration'); ?></li>
                 </ul>
-                <div class="wpi-next-footer"><span><?php esc_html_e('Prices and stock are shared across product translations by default.', 'woo-poly-integration'); ?></span><a href="https://hyyan.github.io/woo-poly-integration/settings/features.html"><?php esc_html_e('Understand synchronization', 'woo-poly-integration'); ?> &nearr;</a></div>
+				<div class="wpi-next-footer"><span><?php esc_html_e( 'Prices and stock are shared across product translations by default.', 'woo-poly-integration' ); ?></span><a href="<?php echo esc_url( \Hyyan\WPI\Admin\Guide::url( 'settings/features' ) ); ?>"><?php esc_html_e( 'Understand synchronization', 'woo-poly-integration' ); ?> &nearr;</a></div>
             </section>
-            <footer class="wpi-setup-footer"><?php esc_html_e('Need a hand?', 'woo-poly-integration'); ?> <a href="https://hyyan.github.io/woo-poly-integration/"><?php esc_html_e('Browse the documentation', 'woo-poly-integration'); ?></a> &middot; <a href="https://github.com/hyyan/woo-poly-integration/issues"><?php esc_html_e('Ask for help on GitHub', 'woo-poly-integration'); ?></a></footer>
+			<footer class="wpi-setup-footer"><?php esc_html_e( 'Need a hand?', 'woo-poly-integration' ); ?> <a href="<?php echo esc_url( \Hyyan\WPI\Admin\Guide::url( 'index' ) ); ?>"><?php esc_html_e( 'Browse the documentation', 'woo-poly-integration' ); ?></a> &middot; <a href="https://github.com/hyyan/woo-poly-integration/issues"><?php esc_html_e( 'Ask for help on GitHub', 'woo-poly-integration' ); ?></a></footer>
         </div>
     </div>
 </div>

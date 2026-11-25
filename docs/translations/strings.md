@@ -21,4 +21,4 @@ For detail on the Term translation options see [Products\Attributes](/products/a
 If you display tax as part of the price you can now customize how this is translated.  The string includes a parameter for the price so you can display text before or after in different languages for example:
 * ({price_including_tax} inc VAT)
 * (con IVA {price_including_tax})
-![Strings Translations examples for price Tax display](../../assets/strings-translations-tax.gif)
+![Strings Translations examples for price Tax display](../../public/guide/images/strings-translations-tax.gif)

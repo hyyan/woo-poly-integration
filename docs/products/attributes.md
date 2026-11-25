@@ -14,7 +14,7 @@ Get all the data set up right and translated once, then you just get left with a
 
 ## How to use Product Attributes 
 Product Attributes have a Name which is translatable and a set of Terms which are optionally Translatable.
-![Product Attributes](../../assets/product-attributes.gif)
+![Product Attributes](../../public/guide/images/product-attributes.gif)
 
 All Product Attribute Names are added for translation to Polylang [Strings Translations](/translations/strings.md)
 In **Languages → Translations**, select the **WooCommerce Attributes** group to translate the attribute names.
@@ -22,7 +22,7 @@ In **Languages → Translations**, select the **WooCommerce Attributes** group t
 Term translation works the same way as the screens for [Product Categories](/products/categories.md) and Tags.
 
 Term translation can be turned on or off for each individual Product Attribute:  attributes are added to Polylang settings page Languages, Settings, Custom post types and Taxonomies `/wp-admin/admin.php?page=mlang_settings`: here you can choose which individual attributes to translate.  For example you have have some attributes which are codes or numeric values which don't need translation, other attributes may be language strings which need to be translated. 
-![Enable individual attributes for translation in Polylang Languages, Settings, Custom Post Types and Taxonomies](../../assets/polylang-settings-tax.gif)
+![Enable individual attributes for translation in Polylang Languages, Settings, Custom Post Types and Taxonomies](../../public/guide/images/polylang-settings-tax.gif)
 
 Tips:
 

@@ -45,7 +45,7 @@ class MetasList extends AbstractSettings
                         ', 'woo-poly-integration'
                 ) . ' ' . __(
                         'For more information please see:', 'woo-poly-integration'
-                ) . ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/settings/metadata.html">' .
+				) . ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'settings/metadata' ) ) . '">' .
                     __('documentation pages', 'woo-poly-integration') . '</a>.'
                 ,
             ),

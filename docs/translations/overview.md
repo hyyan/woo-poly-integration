@@ -14,7 +14,7 @@ ALL text which is created at design time should be translated using standard Wor
 
 The built-in WordPress translation mechanism uses these types of functions in the source code to return localized text:
 
-```
+```php
 //return the text or translation for this domain
 __('text to translate', 'text domain')
 //echo the text or translation
@@ -47,7 +47,7 @@ If there is no version for the current language the item may be considered unava
 
 ### Polylang Strings Translations
 These are translated in the Polylang strings translation table (Languages, Strings translations - normally found at /wp-admin/admin.php?page=mlang_strings) and used from code like this:
-```
+```php
 //register string for translation
 pll_register_string($name, $string, $group, $multiline);
 //return the text or translation

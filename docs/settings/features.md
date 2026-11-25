@@ -28,4 +28,4 @@ Also you might like to turn on the feature for New Translation Behaviour.
 * **Check WooCommerce Pages** Check if WooCommerce pages are present and correctly translated and published. Especially helpful on initial setup. Turn off once setup is complete.
 * **Translation Downloader** Download WooCommerce translation files when a new Polylang language is added. Turn off if you manage language packs separately or work without an internet connection. Ensure the WooCommerce language packs are installed for every store language.
 
-![WooPoly Features screenshot](../../assets/woo-poly-features.gif)
+![WooPoly Features screenshot](../../public/guide/images/woo-poly-features.gif)

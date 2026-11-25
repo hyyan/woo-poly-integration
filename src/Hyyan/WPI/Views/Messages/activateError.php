@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
         Please configure Polylang by adding a language before activating WooCommerce Polylang Integration.', 'woo-poly-integration'
     );
     esc_html_e('See also', 'woo-poly-integration');
-    echo('<a href="https://hyyan.github.io/woo-poly-integration/getting-started/installation.html">');
+	echo '<a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'getting-started/installation' ) ) . '">';
     esc_html_e('Installation Guide', 'woo-poly-integration');
     echo('</a>.');
     ?>
