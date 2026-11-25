@@ -116,7 +116,7 @@
 ### 1.4.4
 
 * [implements #476 adding Additional Content to translated email fields](https://github.com/hyyan/woo-poly-integration/issues/476)
-* [Addresses multiple email issues causing some fields and default values not to be picked up or translated correctly.](https://github.com/hyyan/woo-poly-integration/wiki/Email-Languages)
+* Addresses multiple email issues causing some fields and default values not to be picked up or translated correctly. See **Tools → WooPoly Documentation → Translations → Email languages** in WordPress.
 * [fixes #502 Cart issues by removing addToCartHandlerVariable()](https://github.com/hyyan/woo-poly-integration/issues/502)
 * [fixes #503 Deprecated: get_woocommerce_term_meta](https://github.com/hyyan/woo-poly-integration/issues/503)
 * [fixes #466 undefined index in Cart.php on line 188 props nicmare sep 2019](https://github.com/hyyan/woo-poly-integration/issues/466)
