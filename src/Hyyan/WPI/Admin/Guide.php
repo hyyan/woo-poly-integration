@@ -85,7 +85,11 @@ final class Guide {
 						<summary><?php echo esc_html( $group ); ?></summary>
 						<ul>
 							<?php foreach ( $topics as $slug => $label ) : ?>
-								<li><a href="<?php echo esc_url( self::url( $slug ) ); ?>" <?php echo $slug === $topic ? 'aria-current="page"' : ''; ?>><?php echo esc_html( $label ); ?></a></li>
+								<li><a href="<?php echo esc_url( self::url( $slug ) ); ?>" <?php echo $slug === $topic ? 'aria-current="page"' : ''; ?>><?php echo esc_html( $label ); ?>
+									<?php if ( 'translations/deepl' === $slug ) : ?>
+										<span class="wpiguide-new"><?php esc_html_e( 'New', 'woo-poly-integration' ); ?></span>
+									<?php endif; ?>
+								</a></li>
 							<?php endforeach; ?>
 						</ul>
 						</details>

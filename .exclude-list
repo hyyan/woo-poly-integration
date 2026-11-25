@@ -3,6 +3,7 @@ assets
 nbproject
 *.json
 *.sh
++ /public/guide/images/*.png
 *.png
 .*
 

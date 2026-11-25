@@ -24,7 +24,7 @@ jobs:
         run: |
           if [[ -n "$PR_BASE" ]]; then
             base=$(git merge-base "$PR_BASE" HEAD)
-          elif [[ -n "$BEFORE" && "$BEFORE" != 0000000000000000000000000000000000000000 ]]; then
+          elif [[ -n "$BEFORE" ]] && git merge-base --is-ancestor "$BEFORE" HEAD 2>/dev/null; then
             base=$BEFORE
           elif [[ "$GITHUB_EVENT_NAME" == push && "$GITHUB_REF" != refs/heads/main ]]; then
             base=$(git merge-base origin/main HEAD)
@@ -49,7 +49,7 @@ jobs:
             printf '%s\n' "$PR_TITLE" | "$lint"
             base=$(git merge-base "$PR_BASE" "$PR_HEAD")
             "$lint" --from "$base" --to "$PR_HEAD"
-          elif [[ -n "$BEFORE" && "$BEFORE" != 0000000000000000000000000000000000000000 ]]; then
+          elif [[ -n "$BEFORE" ]] && git merge-base --is-ancestor "$BEFORE" HEAD 2>/dev/null; then
             "$lint" --from "$BEFORE" --to "$GITHUB_SHA"
           elif [[ "$GITHUB_EVENT_NAME" == push && "$GITHUB_REF" != refs/heads/main ]]; then
             base=$(git merge-base origin/main "$GITHUB_SHA")

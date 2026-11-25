@@ -1,0 +1,178 @@
+<?php
+/**
+ * Product translation integration tests.
+ *
+ * @package WooPoly
+ */
+
+use Hyyan\WPI\Admin\Features;
+use Hyyan\WPI\HooksInterface;
+use Hyyan\WPI\Product\DeepL;
+use Hyyan\WPI\Product\TranslatedDraft;
+use PHPUnit\Framework\TestCase;
+
+/** Exercise the DeepL product translation workflow. */
+final class DeepLProductTest extends TestCase {
+
+	/**
+	 * Verify shared credential storage, masking, replacement and deletion.
+	 */
+	public function testStoreKeyIsSharedMaskedAndReplaceable(): void {
+		$previous = get_option( DeepL::STORE_KEY );
+
+		$sections = apply_filters( HooksInterface::SETTINGS_FIELDS_FILTER, array() );
+		$fields   = array_column( $sections[ Features::getID() ], null, 'name' );
+		$field    = $fields['deepl-api-key'];
+
+		self::assertSame( 'password', $field['type'] );
+		$sanitize = $field['sanitize_callback'];
+
+		try {
+			$mask = $sanitize( 'first-test:fx' );
+			self::assertSame( '********', $mask );
+			self::assertSame( 'first-test:fx', DeepL::getKey() );
+			self::assertStringNotContainsString( 'first-test', get_option( DeepL::STORE_KEY ) );
+
+			self::assertSame( $mask, $sanitize( $mask ) );
+			self::assertSame( 'first-test:fx', DeepL::getKey() );
+
+			self::assertSame( $mask, $sanitize( 'replacement-test:fx' ) );
+			self::assertSame( 'replacement-test:fx', DeepL::getKey() );
+
+			self::assertSame( '', $sanitize( '' ) );
+			self::assertFalse( DeepL::storeKey() );
+		} finally {
+			if ( false === $previous ) {
+				delete_option( DeepL::STORE_KEY );
+			} else {
+				update_option( DeepL::STORE_KEY, $previous, false );
+			}
+		}
+	}
+
+	/**
+	 * Verify draft creation, language links and duplicate protection.
+	 */
+	public function testCreatesLinkedDraftAndProtectsReviewedContent(): void {
+		$user      = get_current_user_id();
+		$key       = getenv( 'DEEPL_AUTH_KEY' );
+		$store_key = get_option( DeepL::STORE_KEY );
+		$ids       = array();
+		$tag_id    = 0;
+		$requests  = 0;
+		$api       = static function ( $pre, $args, $url ) use ( &$requests ) {
+			if ( 'https://api-free.deepl.com/v2/translate' !== $url ) {
+				return $pre;
+			}
+
+			++$requests;
+			$body = json_decode( $args['body'], true );
+			self::assertNotContains( 'Shared cup label', $body['text'] );
+			self::assertSame( 'EN', $body['source_lang'] );
+			self::assertSame( 'DE', $body['target_lang'] );
+			$items = array_map(
+				static function ( $s ) {
+					return array( 'text' => 'DE ' . $s );
+				},
+				$body['text']
+			);
+
+			return array(
+				'response' => array( 'code' => 200 ),
+				'headers'  => array(),
+				'body'     => wp_json_encode( array( 'translations' => $items ) ),
+			);
+		};
+
+		$keys = static function () {
+			return array( 'seo_title', '_sku', '_price' );
+		};
+
+		try {
+			wp_set_current_user( 1 );
+			delete_option( DeepL::STORE_KEY );
+			putenv( 'DEEPL_AUTH_KEY=test:fx' ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv -- The test scopes the credential to this process and restores it in finally.
+			add_filter( 'pre_http_request', $api, 10, 3 );
+			add_filter( \Hyyan\WPI\HooksInterface::PRODUCT_TRANSLATION_META_KEYS, $keys );
+			$product = new WC_Product_Simple();
+			$product->set_name( 'Blue cup' );
+			$product->set_description( '<p>Stoneware</p>' );
+			$product->set_short_description( 'Handmade' );
+			$product->set_purchase_note( 'Wash by hand' );
+			$product->set_regular_price( '19.99' );
+			$product->set_sku( wp_unique_id( 'cup-' ) );
+			$product->set_manage_stock( true );
+			$product->set_stock_quantity( 7 );
+			$source = $product->save();
+			$ids[]  = $source;
+			pll_set_post_language( $source, 'en' );
+			$tag = wp_insert_term( 'Shared cup label', 'product_tag' );
+			self::assertIsArray( $tag );
+			$tag_id = $tag['term_id'];
+			wp_set_object_terms( $source, array( $tag_id ), 'product_tag' );
+			wp_set_object_terms( $tag_id, array(), 'term_language' );
+			self::assertFalse( pll_get_term_language( $tag_id ) );
+			update_post_meta( $source, 'seo_title', 'Blue cup' );
+			wp_set_current_user( 0 );
+			self::assertTrue( is_wp_error( TranslatedDraft::create( $source, 'de' ) ) );
+			self::assertSame( 0, $requests );
+			wp_set_current_user( 1 );
+			$failure = static function () {
+				return new WP_Error( 'connection_failed' );
+			};
+			add_filter( 'pre_http_request', $failure, 100 );
+
+			try {
+				self::assertTrue( is_wp_error( TranslatedDraft::create( $source, 'de' ) ) );
+				self::assertEmpty( pll_get_post( $source, 'de' ) );
+			} finally {
+				remove_filter( 'pre_http_request', $failure, 100 );
+			}
+
+			$draft = TranslatedDraft::create( $source, 'de' );
+			self::assertIsInt( $draft, is_wp_error( $draft ) ? $draft->get_error_message() : '' );
+			$ids[] = $draft;
+			self::assertSame( 'draft', get_post_status( $draft ) );
+			self::assertSame( $draft, pll_get_post( $source, 'de' ) );
+			$copy = wc_get_product( $draft );
+			self::assertNotContains( $tag_id, $copy->get_tag_ids() );
+			self::assertEmpty( pll_get_term( $tag_id, 'de' ) );
+			self::assertSame( 'DE Blue cup', $copy->get_name() );
+			self::assertSame( 'DE <p>Stoneware</p>', $copy->get_description() );
+			self::assertSame( 'DE Handmade', $copy->get_short_description() );
+			self::assertSame( 'DE Wash by hand', $copy->get_purchase_note() );
+			self::assertSame( 'DE Blue cup', get_post_meta( $draft, 'seo_title', true ) );
+			self::assertSame( $product->get_sku(), $copy->get_sku() );
+			self::assertEquals( 19.99, $copy->get_price() );
+			self::assertSame( 7, $copy->get_stock_quantity() );
+			wp_update_post(
+				array(
+					'ID'         => $draft,
+					'post_title' => 'Reviewed',
+				)
+			);
+			$before = $requests;
+			self::assertTrue( is_wp_error( TranslatedDraft::create( $source, 'de' ) ) );
+			self::assertSame( $before, $requests );
+			self::assertSame( 'Reviewed', get_post( $draft )->post_title );
+		} finally {
+			remove_filter( 'pre_http_request', $api, 10 );
+			remove_filter( \Hyyan\WPI\HooksInterface::PRODUCT_TRANSLATION_META_KEYS, $keys );
+
+			foreach ( array_reverse( $ids ) as $id ) {
+				wp_delete_post( $id, true );
+			}
+
+			if ( $tag_id ) {
+				wp_delete_term( $tag_id, 'product_tag' );
+			}
+
+			if ( false !== $store_key ) {
+				update_option( DeepL::STORE_KEY, $store_key, false );
+			}
+
+			putenv( false === $key ? 'DEEPL_AUTH_KEY' : 'DEEPL_AUTH_KEY=' . $key ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv -- The test scopes the credential to this process and restores it in finally.
+			wp_set_current_user( $user );
+		}
+	}
+}
