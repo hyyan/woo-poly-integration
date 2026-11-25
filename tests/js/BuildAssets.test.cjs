@@ -23,7 +23,13 @@ function hook() {
 
 beforeEach(() => {
     fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'woopoly-assets-test-'));
-    for (const file of ['.github/scripts/build-assets.cjs', '.githooks/pre-commit', 'package.json', 'package-lock.json']) {
+    for (const file of [
+        '.github/scripts/build-assets.cjs',
+        '.github/scripts/check-php-style',
+        '.githooks/pre-commit',
+        'package.json',
+        'package-lock.json',
+    ]) {
         fs.mkdirSync(path.dirname(path.join(fixture, file)), { recursive: true });
         fs.copyFileSync(path.join(repository, file), path.join(fixture, file));
     }

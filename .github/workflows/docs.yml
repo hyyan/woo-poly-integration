@@ -26,7 +26,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  checks:
+    uses: ./.github/workflows/tests.yml
+    permissions:
+      contents: read
+
   build:
+    needs: checks
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7

@@ -1,5 +1,7 @@
-#!/bin/sh
-set -eu
+#!/usr/bin/env bash
+set -euo pipefail
+
+.github/scripts/check-php-style
 
 # Only asset/build changes require Node and the minifiers.
 if ! git diff --cached --name-only | grep -Eq '^(public/js/(Cart|Variables)(\.min)?\.js|public/css/setup(\.min)?\.css|package(-lock)?\.json|\.github/scripts/build-assets\.cjs)$'; then

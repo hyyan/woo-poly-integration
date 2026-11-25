@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# With no revision, check the index. CI supplies the base of the change.
+cd "$(git rev-parse --show-toplevel)"
+if [[ $# == 0 ]]; then
+    diff=(--cached)
+    compare=(--git-staged)
+else
+    base=$(git rev-parse --verify "$1^{tree}")
+    diff=("$base" HEAD)
+    compare=(--git-base "$1")
+fi
+
+paths=$(mktemp)
+trap 'rm -f "$paths"' EXIT
+git diff --name-only --diff-filter=ACMR -z "${diff[@]}" -- \
+    __init__.php index.php ':(glob)src/**/*.php' ':(glob)tests/**/*.php' > "$paths"
+files=()
+while IFS= read -r -d '' path; do
+    files+=("$path")
+done < "$paths"
+[[ ${#files[@]} -gt 0 ]] || exit 0
+
+bin=.github/php-style/vendor/bin
+check=("$bin/phpcs-changed" --git "${compare[@]}" --standard=phpcs.xml.dist --phpcs-path="$bin/phpcs")
+if command -v php >/dev/null 2>&1; then
+    "${check[@]}" "${files[@]}"
+else
+    common=$(git rev-parse --path-format=absolute --git-common-dir)
+    docker run --rm --network none --entrypoint php \
+        -e GIT_CONFIG_COUNT=1 -e GIT_CONFIG_KEY_0=safe.directory -e "GIT_CONFIG_VALUE_0=$PWD" \
+        -v "$PWD:$PWD:ro" -v "$common:$common:ro" -w "$PWD" composer:2 "${check[@]}" "${files[@]}"
+fi

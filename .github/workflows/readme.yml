@@ -11,7 +11,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  checks:
+    uses: ./.github/workflows/tests.yml
+    permissions:
+      contents: read
+
   readme:
+    needs: checks
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     environment: wordpress-org

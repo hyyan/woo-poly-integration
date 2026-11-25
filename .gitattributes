@@ -34,3 +34,7 @@
 /.release-it.json export-ignore
 /compose.yaml export-ignore
 /Makefile export-ignore
+
+/.editorconfig export-ignore
+/phpcs.xml.dist export-ignore
+/.commitlintrc.json export-ignore

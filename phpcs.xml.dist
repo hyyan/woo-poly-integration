@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="WooPoly">
+    <description>Check first-party PHP against the WordPress Coding Standards.</description>
+    <file>__init__.php</file>
+    <file>index.php</file>
+    <file>src</file>
+    <file>tests</file>
+    <arg name="extensions" value="php"/>
+    <rule ref="WordPress"/>
+</ruleset>

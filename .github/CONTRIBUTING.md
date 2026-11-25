@@ -20,6 +20,14 @@ Thanks for contributing&mdash;you rock!
 * Make commits of logical units.
 * Make sure your commit messages are helpful.
 
+# PHP formatting and commit messages
+
+Use the WordPress Coding Standards for first-party PHP. Install the pinned development tools with `composer install --working-dir=.github/php-style`. The hook checks staged changes with `.github/scripts/check-php-style`. CI uses the same check against the base revision. New files receive the full check. Existing files are checked for newly introduced violations.
+
+For deliberate formatting cleanup, run `.github/php-style/vendor/bin/phpcbf --standard=phpcs.xml.dist <file>` and review the diff. Preserve public callback names, inherited signatures, and existing behavior. The tools are isolated from the plugin's runtime dependencies.
+
+Install the JavaScript development dependencies with `npm ci` and enable the repository hooks with `npm run hooks:install`. The pre-commit hook checks staged PHP and applicable assets. The commit-msg hook checks the message with commitlint. CI also checks the PR title and commit messages against Conventional Commits.
+
 # JavaScript and CSS Assets
 
 Use Node.js 24.15 or newer. Install the pinned development dependencies and enable the local asset check once per clone:
@@ -33,7 +41,7 @@ After editing `public/js/Cart.js`, `public/js/Variables.js`, or `public/css/setu
 
 Run `npm run check:assets` to check all generated files, and `npm run test:js` for asset build and JavaScript regressions. The older `build:js` and `check:js` commands remain available as aliases.
 
-The pre-commit hook checks the staged versions and blocks stale minified assets. It never rewrites files or stages changes. Commits unrelated to these assets or their build configuration do not require Node.js. Hooks must be enabled separately in each clone; contributors with an existing hooks setup can call `node .github/scripts/build-assets.cjs --check --staged` from their own hook. CI runs the same source-to-output check for JavaScript and CSS.
+The pre-commit hook checks the staged versions and blocks stale minified assets. It never rewrites files or stages changes. Hooks must be enabled separately in each clone; contributors with an existing hooks setup can call `node .github/scripts/build-assets.cjs --check --staged` from their own hook. CI runs the same source-to-output check for JavaScript and CSS.
 
 # Documentation
 

@@ -17,6 +17,8 @@
     "release": "release-it"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
     "@release-it/bumper": "8.0.1",
     "esbuild": "0.28.2",
     "git-cliff": "2.14.2",

@@ -1,11 +1,64 @@
 name: Regression tests
 on:
   pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
   push:
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 jobs:
+  style:
+    name: Check PHP formatting and Conventional Commits
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install WordPress Coding Standards
+        run: composer install --working-dir=.github/php-style --no-interaction --prefer-dist
+      - name: Check new PHP violations
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [[ -n "$PR_BASE" ]]; then
+            base=$(git merge-base "$PR_BASE" HEAD)
+          elif [[ -n "$BEFORE" && "$BEFORE" != 0000000000000000000000000000000000000000 ]]; then
+            base=$BEFORE
+          elif [[ "$GITHUB_EVENT_NAME" == push && "$GITHUB_REF" != refs/heads/main ]]; then
+            base=$(git merge-base origin/main HEAD)
+          else
+            base=$(git rev-parse HEAD^)
+          fi
+          .github/scripts/check-php-style "$base"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Check commit messages and pull request title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          lint=./node_modules/.bin/commitlint
+          if [[ -n "$PR_HEAD" ]]; then
+            printf '%s\n' "$PR_TITLE" | "$lint"
+            base=$(git merge-base "$PR_BASE" "$PR_HEAD")
+            "$lint" --from "$base" --to "$PR_HEAD"
+          elif [[ -n "$BEFORE" && "$BEFORE" != 0000000000000000000000000000000000000000 ]]; then
+            "$lint" --from "$BEFORE" --to "$GITHUB_SHA"
+          elif [[ "$GITHUB_EVENT_NAME" == push && "$GITHUB_REF" != refs/heads/main ]]; then
+            base=$(git merge-base origin/main "$GITHUB_SHA")
+            "$lint" --from "$base" --to "$GITHUB_SHA"
+            git log -1 --format=%B "$GITHUB_SHA" | "$lint"
+          else
+            git log -1 --format=%B "$GITHUB_SHA" | "$lint"
+          fi
+
   workflows:
     name: Validate GitHub Actions workflows
     runs-on: ubuntu-latest
