@@ -31,6 +31,9 @@ class Product
 
         add_filter('pll_get_new_post_translation_link', array(__CLASS__, 'addTranslationRequestNonce'), 10, 3);
 
+		add_filter( 'woocommerce_rest_product_query', array( __CLASS__, 'filterRestProductLanguage' ), 20, 2 );
+		add_filter( 'woocommerce_rest_product_object_query', array( __CLASS__, 'filterRestProductLanguage' ), 20, 2 );
+
         // manage product translation
         add_filter(
                 'pll_get_post_types', array($this, 'manageProductTranslation')
@@ -76,6 +79,26 @@ class Product
         }
     }
 
+
+	/**
+	 * Filter the WooCommerce product collection before pagination.
+	 *
+	 * @param array            $args    Prepared product query.
+	 * @param \WP_REST_Request $request WooCommerce request.
+	 * @return array Filtered query arguments.
+	 */
+	public static function filterRestProductLanguage( $args, $request ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid -- Preserve the public WooCommerce filter callback.
+		$language = $request->get_param( 'lang' );
+		if ( null === $language || '' === $language ) {
+			return $args;
+		}
+		if ( ! is_string( $language ) || ! in_array( $language, pll_languages_list( array( 'fields' => 'slug' ) ), true ) ) {
+			$args['post__in'] = array( 0 );
+			return $args;
+		}
+		$args['lang'] = $language;
+		return $args;
+	}
 
     /**
      * Add request verification to legacy Polylang product creation links.

@@ -29,6 +29,7 @@
     "guides/performance": "Performance"
   },
   "Advanced examples": {
+    "advanced/rest-products": "Filter REST products by language",
     "advanced/locale-switching": "Locale switching",
     "advanced/variation-examples": "Variation integrations"
   }
