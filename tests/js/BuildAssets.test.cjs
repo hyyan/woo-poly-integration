@@ -35,13 +35,14 @@ beforeEach(() => {
     }
     fs.symlinkSync(path.join(repository, 'node_modules'), path.join(fixture, 'node_modules'), 'dir');
     fs.mkdirSync(path.join(fixture, 'public/js'), { recursive: true });
-    for (const name of ['Cart', 'Variables']) {
+    for (const name of ['Cart', 'Share', 'Variables']) {
         fs.writeFileSync(path.join(fixture, `public/js/${name}.js`), `window.${name} = 1;\n`);
     }
     fs.mkdirSync(path.join(fixture, 'public/css'), { recursive: true });
     fs.writeFileSync(path.join(fixture, 'public/css/setup.css'),
         '/*! WooPoly setup license */\n.wpi-setup { --accent: var(--wp-admin-theme-color, #2271b1); color: var(--accent); }\n');
     fs.writeFileSync(path.join(fixture, 'public/css/guide.css'), '.wpiguide { display: block; }');
+    fs.writeFileSync(path.join(fixture, 'public/css/share.css'), '.wpishare { display: block; }');
     git('init', '--quiet');
     assert.equal(build().status, 0);
     git('add', 'package.json', 'package-lock.json', '.github', '.githooks', 'public');

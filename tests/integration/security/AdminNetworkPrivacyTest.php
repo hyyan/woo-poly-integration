@@ -27,14 +27,16 @@ final class AdminNetworkPrivacyTest extends TestCase
         self::assertSame('https://github.com/hyyan/woo-poly-integration',$links[2]->getAttribute('href'));
         foreach ($links as $link) { self::assertNotSame('',trim($link->textContent)); }
     }
-    public function testSocialActionsLinkOnlyToProjectAndAuthorProfiles(): void
-    {
+	/** Verify that sharing only opens the public project and author destinations. */
+	public function testSocialActionsLinkToAuthorProjectAndLinkedInShare(): void {
         $links = $this->document('social')->getElementsByTagName('a');
-        self::assertCount(3, $links);
+		self::assertCount( 5, $links );
         $destinations = array(
-            'https://github.com/hyyan/woo-poly-integration',
-            'https://github.com/hyyan',
-            'https://www.linkedin.com/in/hyyan/',
+			'https://www.linkedin.com/in/hyyan/',
+			'https://github.com/hyyan',
+			'https://github.com/hyyan/woo-poly-integration',
+			'https://wordpress.org/support/plugin/woo-poly-integration/reviews/#new-post',
+			'https://www.linkedin.com/feed/?shareActive=true&text=' . rawurlencode( trim( $this->document( 'social' )->getElementsByTagName( 'blockquote' )[0]->textContent ) ),
         );
         foreach ($links as $index => $link) {
             self::assertSame($destinations[$index], $link->getAttribute('href'));

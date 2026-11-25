@@ -46,7 +46,7 @@ final class TemplateOutputSecurityTest extends TestCase
         self::assertStringContainsString('href="https://wordpress.org/plugins/woocommerce/"', $about);
         self::assertStringContainsString('href="https://wordpress.org/plugins/polylang/"', $about);
         $support = $this->render('Admin/support');
-        self::assertStringContainsString('If WooPoly is useful to you', $support);
+		self::assertStringContainsString( 'would you star it on GitHub?', $support );
         self::assertStringNotContainsString('twitter.com', $support);
         self::assertStringContainsString('https://www.linkedin.com/in/hyyan/', $support);
         self::assertStringContainsString('https://github.com/hyyan/woo-poly-integration', $support);

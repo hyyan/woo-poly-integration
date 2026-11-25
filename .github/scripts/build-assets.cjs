@@ -3,12 +3,13 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 
-const pairs = ['Cart', 'Variables'].map(name => ({
+const pairs = ['Cart', 'Share', 'Variables'].map(name => ({
     source: `public/js/${name}.js`,
     output: `public/js/${name}.min.js`,
     type: 'js'
 }));
 pairs.push({ source: 'public/css/setup.css', output: 'public/css/setup.min.css', type: 'css' });
+pairs.push({ source: 'public/css/share.css', output: 'public/css/share.min.css', type: 'css' });
 pairs.push({ source: 'public/css/guide.css', output: 'public/css/guide.min.css', type: 'css' });
 const tooling = ['package.json', 'package-lock.json', '.github/scripts/build-assets.cjs'];
 const args = process.argv.slice(2);

@@ -32,6 +32,11 @@ if (!defined('ABSPATH')) {
         <div class="notice <?php echo $result['error'] ? 'notice-error' : (!empty($result['warning']) ? 'notice-warning' : 'notice-success'); ?> inline"><p><?php echo esc_html($result['message']); ?></p></div>
     <?php endif; ?>
 
+			<section class="wpi-setup-card" id="woopoly-maintainer" aria-labelledby="wpi-maintainer-title">
+				<h2 id="wpi-maintainer-title"><?php esc_html_e( 'A note from Hyyan', 'woo-poly-integration' ); ?></h2>
+				<?php require dirname( __DIR__ ) . '/social.php'; ?>
+			</section>
+
     <div class="wpi-setup-layout">
         <aside class="wpi-setup-nav" aria-label="<?php esc_attr_e('Setup progress', 'woo-poly-integration'); ?>">
             <p><strong><?php esc_html_e('Your setup', 'woo-poly-integration'); ?></strong> <span><?php echo esc_html($progress . '/3'); ?></span></p>

@@ -93,6 +93,7 @@ new Hyyan\WPI\Plugin();
  * called when plugin is activated in settings, plugins
  */
 function woo_poly_integration_on_activate() {
+	delete_user_meta( get_current_user_id(), 'wpi_welcome_version' );
 	update_option( 'wpi_wcpagecheck_passed', false );
 	update_option( 'hyyan-wpi-flash-messages', '' );
 }

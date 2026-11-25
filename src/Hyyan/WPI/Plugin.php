@@ -255,16 +255,13 @@ class Plugin
      */
     public function showWelcomeNotice()
     {
-        if (!current_user_can('manage_options') || !static::canActivate()) {
-            return;
-        }
-        $screen = get_current_screen();
-        if (!$screen || !in_array($screen->id, array('plugins', 'settings_page_hyyan-wpi'), true)) {
-            return;
-        }
-        if (!Admin\Setup::isReady()) {
-            return;
-        }
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		$screen = get_current_screen();
+		if ( ! $screen || 'plugins' !== $screen->id ) {
+			return;
+		}
         $version = static::getVersion();
         if (get_user_meta(get_current_user_id(), 'wpi_welcome_version', true) === $version) {
             return;

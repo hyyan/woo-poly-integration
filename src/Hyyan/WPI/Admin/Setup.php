@@ -63,9 +63,12 @@ final class Setup
      */
     public static function enqueueAssets($screen = '')
     {
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		if ( in_array( $screen, array( 'plugins', 'settings_page_hyyan-wpi' ), true ) ) {
+			wp_enqueue_style( 'woopoly-share', plugins_url( 'public/css/share' . $suffix . '.css', Hyyan_WPI_DIR ), array(), Plugin::getVersion() );
+		}
         if ($screen === 'settings_page_hyyan-wpi') {
             $dependencies = wp_style_is('wp-theme', 'registered') ? array('wp-theme') : array();
-            $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
             wp_enqueue_style('woopoly-setup', plugins_url('public/css/setup' . $suffix . '.css', Hyyan_WPI_DIR), $dependencies, Plugin::getVersion());
         }
     }
