@@ -6,7 +6,7 @@ Here's a simplified example which might help if your plugin needs to switch text
 (happens eg if system needs to send out email in user locale / order language instead of system language etc)
 This is not how this plugin does it but I verified something similar to this on another plugin:
 
-```
+```php
 class myClass
 {
 
@@ -61,7 +61,7 @@ class myClass
 ```
 
 The actual locale switch might happen like this:
-```
+```php
             if (isset($order) && $order instanceof WC_Order && function_exists('pll_get_post_language')) {
                 $locale = pll_get_post_language($order->get_id(), 'locale'); 
                 $switched = switch_to_locale($locale);

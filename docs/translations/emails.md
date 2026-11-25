@@ -41,7 +41,7 @@ As per [Translation Overview](/translations/overview.md) there are three differe
 
 1. WordPress translation mechanism:  this uses language files for WordPress and each plugin, each language containing dictionaries of texts used for each plugin. The core framework takes care of downloading the files for each language, and additionally the translations can be customised by adding custom language files, typically using Loco Translate.  However to switch languages fully (to send emails in a different language) it is necessary to unload previously loaded language files and re-load new language version of the files. This plugin will only unload language files for WooCommerce so if additional plugins are adding text to emails, for compatibility they should hook the language switching actions  provided by this plugin as per the illustration below for woo-advanced-shipment-tracking:
 
-```
+```php
 /*
  * when switching language for order email, unload these additional text domains
  */
@@ -79,13 +79,13 @@ This cannot be used to switch an email into the user language (which is the obje
 The plugin uses the WooCommerce setup and restore locale events to preserve the caller's language context. It switches to the order or customer language when the email recipient, subject, heading, or content is processed, then restores the previous context after sending. Do not disable these hooks in custom email code.
 
 Next the email class will load the order and attempt to send it using code like:
-```
+```php
 if ( $this->is_enabled() && $this->get_recipient() ) {
   $this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
 }
 ```
 $this->get_recipient() is therefore the first call which has the full context about the email which is to be sent as has a filter like this:
-```
+```php
 $recipient  = apply_filters( 'woocommerce_email_recipient_' . $this->id, $this->recipient, $this->object, $this );
 ```
 * the id is the id of the email as in new_order, new_account, reset_password etc

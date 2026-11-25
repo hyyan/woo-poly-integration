@@ -36,6 +36,7 @@ class Plugin
     {
         FlashMessages::register();
         new Admin\Setup();
+		new Admin\Guide();
         add_action('admin_notices', array($this, 'showWelcomeNotice'));
 
         add_action('init', array($this, 'activate'));
@@ -230,7 +231,7 @@ class Plugin
             $baseURL = is_multisite() ? get_admin_url() : admin_url();
             $settingsLinks = array(
                 static::settingsLinkHTML(),
-                '<a target="_blank" href="https://hyyan.github.io/woo-poly-integration/">'
+				'<a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'index' ) ) . '">'
                 . esc_html__('Docs', 'woo-poly-integration')
                 . '</a>',
             );
@@ -417,8 +418,8 @@ class Plugin
     {
         if ('woo-poly-integration/__init__.php' == $file) {
             $row_meta = array(
-                'docs' => '<a target="_blank" href="https://hyyan.github.io/woo-poly-integration/"'
-                . '" aria-label="' . esc_attr__('View WooCommerce-Polylang Integration documentation', 'woo-poly-integration') . '">'
+				'docs'    => '<a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'index' ) ) . '"'
+				. ' aria-label="' . esc_attr__( 'View WooCommerce-Polylang Integration documentation', 'woo-poly-integration' ) . '">'
                 . esc_html__('Docs', 'woo-poly-integration') . '</a>',
                 'support' => '<a target="_blank" href="https://github.com/hyyan/woo-poly-integration/issues"'
                 . '" aria-label="' . esc_attr__('View Issue tracker on GitHub', 'woo-poly-integration') . '">'

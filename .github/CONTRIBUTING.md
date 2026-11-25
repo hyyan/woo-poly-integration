@@ -45,14 +45,7 @@ The pre-commit hook checks the staged versions and blocks stale minified assets.
 
 # Documentation
 
-The user guide lives in `docs/` as Markdown. To preview changes locally:
-
-```sh
-npm ci
-npm run docs:dev
-```
-
-Run `npm run docs:build` to check the production build and internal links. GitHub Actions builds documentation changes on pull requests and publishes updates from `main` to GitHub Pages.
+Edit the Markdown in `docs/` and register new articles in `docs/navigation.json`. Run `npm run docs:build` and include the generated guide with the change. Run `npm run docs:check` to validate links, images, and freshness. Preview the installed guide in WordPress under **Tools → WooPoly Documentation**.
 
 # Running tests
 

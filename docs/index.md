@@ -1,4 +1,4 @@
-# WooPoly documentation
+# Overview
 
 woo-poly-integration is an open source WordPress plugin which aims to fill the gap between [WooCommerce](https://en-gb.wordpress.org/plugins/woocommerce/) and [Polylang](https://en-gb.wordpress.org/plugins/polylang/).
 

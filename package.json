@@ -5,16 +5,15 @@
     "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs --host 127.0.0.1",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs --host 127.0.0.1",
+    "docs:build": "node .github/scripts/build-guide.cjs",
     "build:assets": "node .github/scripts/build-assets.cjs",
     "check:assets": "node .github/scripts/build-assets.cjs --check",
     "build:js": "npm run build:assets",
     "check:js": "npm run check:assets",
     "test:js": "node --test tests/js/*.test.cjs",
     "hooks:install": "git config --local core.hooksPath .githooks",
-    "release": "release-it"
+    "release": "release-it",
+    "docs:check": "node .github/scripts/build-guide.cjs --check"
   },
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
@@ -22,9 +21,10 @@
     "@release-it/bumper": "8.0.1",
     "esbuild": "0.28.2",
     "git-cliff": "2.14.2",
+    "highlight.js": "11.12.0",
+    "markdown-it": "14.1.1",
     "release-it": "21.1.2",
-    "terser": "5.51.2",
-    "vitepress": "1.6.4"
+    "terser": "5.51.2"
   },
   "overrides": {
     "get-uri": {

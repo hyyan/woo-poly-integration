@@ -2,7 +2,7 @@
 
 ## Variations and custom fields note
 
-```
+```php
 /*
  * stop synchronisation of field
  */
@@ -33,7 +33,7 @@ woo-poly-integration [Meta settings](/settings/metadata.md) extends Polylang Met
 
 Additional plugins may extend Products to add additional information which is not handled by woo-poly.
 The basic control to allow synchronisation of additional meta is in Polylang, see Languages, Settings, Synchronisation, Custom fields: 
-![Related Polylang settings](../../assets/polylang-settings-sync.gif)
+![Related Polylang settings](../../public/guide/images/polylang-settings-sync.gif)
 
 If this is enabled, then Polylang does the following:
 
@@ -50,7 +50,7 @@ Not sure which meta keys you need to check?
 Here is an example of changing the Polylang default behaviour so some fields which are not normally synchronised to translated Products can be synchronised.
 
 Currency Switcher for WooCommerce By Algoritmika Ltd adds some additional meta at product level if you set prices in other currencies at the product level, they will be saved like this  in wp_postmeta under meta keys such as:
-```
+```text
 _alg_currency_switcher_per_product_regular_price_EUR
 _alg_currency_switcher_per_product_sale_price_EUR
 _alg_currency_switcher_per_product_regular_price_GBP
@@ -60,7 +60,7 @@ _alg_currency_switcher_per_product_sale_price_GBP
 Since these fields start with `'_'` they will not normally be synchronised by Polylang.
 To change this we can use a Polylang filter like this:
 
-```
+```php
 /**
  * Polylang meta filter, if true meta item will not be synchronized.
  *

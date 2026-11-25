@@ -57,7 +57,7 @@ Here are some code snippet examples for localization:
 * How to Synchronize extra product information to Product translations eg per-currency product pricing: see code snippet at the end of the [Product Meta page](/products/custom-fields.md).
 * How to localize [WooCommerce Currency Switcher](https://wordpress.org/plugins/woocommerce-currency-switcher/): this code snippet will override the configured non-localized currency settings with localized settings, similar techniques may apply to other plugins:
 
-```
+```php
 add_filter( 'woocs_currency_data_manipulation', 'localize_currency_switcher', 10, 1);
 /*
  * Localise initialization parameters for WooCommerce Currency Switcher, if installed:

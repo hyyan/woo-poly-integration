@@ -7,14 +7,14 @@ For example, let's take an amount in Euros:
      $currency = 'EUR';
 
 How users expect to see this depends on their locale: their location and language convention:
-```
+```text
      Country  Locale  Format
      UK:      en_GB: €12,345.68
      Germany: de_DE: 12.345,68 €
      France:  fr_FR: 12 345,68 €
 ```
 In PHP this is implemented by built-in libraries, as eg:
-```
+```php
      $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
      echo $locale . ': ' . $formatter->formatCurrency($amount, $currency);
 ```

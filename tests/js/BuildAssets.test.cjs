@@ -41,6 +41,7 @@ beforeEach(() => {
     fs.mkdirSync(path.join(fixture, 'public/css'), { recursive: true });
     fs.writeFileSync(path.join(fixture, 'public/css/setup.css'),
         '/*! WooPoly setup license */\n.wpi-setup { --accent: var(--wp-admin-theme-color, #2271b1); color: var(--accent); }\n');
+    fs.writeFileSync(path.join(fixture, 'public/css/guide.css'), '.wpiguide { display: block; }');
     git('init', '--quiet');
     assert.equal(build().status, 0);
     git('add', 'package.json', 'package-lock.json', '.github', '.githooks', 'public');

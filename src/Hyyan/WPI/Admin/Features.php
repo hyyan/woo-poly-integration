@@ -40,7 +40,7 @@ class Features extends AbstractSettings
                           Plugin Features.', 'woo-poly-integration'
                 ) . ' ' . __(
                         'For more information please see:', 'woo-poly-integration'
-                ) . ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/settings/features.html"> ' .
+				) . ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'settings/features' ) ) . '"> ' .
                     __('documentation pages', 'woo-poly-integration') . '</a>.',
             ),
         );
@@ -93,7 +93,7 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Stock Sync', 'woo-poly-integration'),
-                'desc' => ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/products/stock.html"> '.
+				'desc'    => ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'products/stock' ) ) . '"> ' .
                             __(
                         'Sync stock for product and its translations', 'woo-poly-integration'
                 ) . '.</a> <strong>' . __(
@@ -105,7 +105,7 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Translate Categories', 'woo-poly-integration'),
-                'desc' => ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/products/categories.html"> '.
+				'desc'    => ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'products/categories' ) ) . '"> ' .
                             __(
                         'Enable categories translations', 'woo-poly-integration'
                 )   . '</a>.',
@@ -115,7 +115,7 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Translate Tags', 'woo-poly-integration'),
-                'desc' => ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/products/tags.html"> '.
+				'desc'    => ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'products/tags' ) ) . '"> ' .
                             __(
                         'Enable tags translations', 'woo-poly-integration'
                 )   . '</a>.',
@@ -125,7 +125,7 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Translate Attributes', 'woo-poly-integration'),
-                'desc' => ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/products/attributes.html"> '.
+				'desc'    => ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'products/attributes' ) ) . '"> ' .
                             __(
                         'Enable attributes translations', 'woo-poly-integration'
                 )  . '</a>.',
@@ -150,7 +150,7 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Use locale number formats', 'woo-poly-integration'),
-                'desc' => ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/products/price-localization.html"> ' .
+				'desc'    => ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'products/price-localization' ) ) . '"> ' .
                    __(
                         'Format numbers according to the convention for current language', 'woo-poly-integration')
                  . '</a>.'
@@ -161,7 +161,7 @@ class Features extends AbstractSettings
                 'type' => 'checkbox',
                 'default' => 'on',
                 'label' => __('Synchronize on Import', 'woo-poly-integration'),
-                'desc' => ' <a target="_blank" href="https://hyyan.github.io/woo-poly-integration/products/import-and-bulk-edit.html"> ' .
+				'desc'    => ' <a href="' . esc_url( \Hyyan\WPI\Admin\Guide::url( 'products/import-and-bulk-edit' ) ) . '"> ' .
                    __(
                         'When using WooCommerce 3.1 importer to importing updates to existing items, apply synchronization rules to update any existing translations.', 'woo-poly-integration')
                  . '</a>.'

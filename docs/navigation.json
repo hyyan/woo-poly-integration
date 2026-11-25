@@ -1,0 +1,34 @@
+{
+  "Start here": {
+    "index": "Overview",
+    "getting-started/installation": "Installation",
+    "getting-started/setup": "Store setup",
+    "getting-started/index": "Getting started"
+  },
+  "Store settings": {
+    "settings/features": "Features",
+    "settings/metadata": "Metadata synchronization"
+  },
+  "Products": {
+    "products/categories": "Categories",
+    "products/tags": "Tags",
+    "products/attributes": "Attributes",
+    "products/stock": "Stock synchronization",
+    "products/pricing": "Pricing and currencies",
+    "products/price-localization": "Price localization",
+    "products/import-and-bulk-edit": "Imports and bulk editing",
+    "products/custom-fields": "Custom fields"
+  },
+  "Translations": {
+    "translations/overview": "How translations work",
+    "translations/strings": "Translating store text",
+    "translations/emails": "Email languages"
+  },
+  "Further help": {
+    "guides/performance": "Performance"
+  },
+  "Advanced examples": {
+    "advanced/locale-switching": "Locale switching",
+    "advanced/variation-examples": "Variation integrations"
+  }
+}

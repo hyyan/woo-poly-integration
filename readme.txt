@@ -16,7 +16,7 @@ Connect WooCommerce and Polylang for a multilingual store.
 
 Build a multilingual WooCommerce store with Polylang. Translate products and store pages, synchronize shared product data, and let customers shop in their chosen language.
 
-[Documentation](https://hyyan.github.io/woo-poly-integration/) | [Getting started](https://hyyan.github.io/woo-poly-integration/getting-started/) | [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
+Documentation: WordPress admin → Tools → WooPoly Documentation | Getting started: Settings → WooPoly | [Report an issue](https://github.com/hyyan/woo-poly-integration/issues)
 
 For bug reports and feature requests, please use GitHub issues and include your plugin versions and steps to reproduce. Remove private data from any logs you share.
 
@@ -75,7 +75,7 @@ ways you can contribute:
 * Reporting issues (please read [issue guidelines](https://github.com/hyyan/woo-poly-integration/blob/main/.github/CONTRIBUTING.md))
 * Suggesting new features
 * Writing or refactoring [code](https://github.com/hyyan/woo-poly-integration)
-* Improving [documentation](https://hyyan.github.io/woo-poly-integration/)
+* Improving the bundled documentation
 * Fixing [issues](https://github.com/hyyan/woo-poly-integration/issues)
 
 == Installation ==
@@ -93,7 +93,7 @@ Activate the plugin, then open Settings > WooPoly. Its setup checklist guides yo
 through WooCommerce, Polylang, your languages, and translated store pages.
 
 Please note the getting started notes:
-https://hyyan.github.io/woo-poly-integration/getting-started/
+In WordPress, open Settings → WooPoly.
 
 
 == Frequently Asked Questions ==

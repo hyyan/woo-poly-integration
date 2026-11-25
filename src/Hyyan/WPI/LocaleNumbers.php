@@ -38,7 +38,7 @@ class LocaleNumbers
 
     /*
      * Filter WooCommerce pricing arguments to localize
-     * see https://hyyan.github.io/woo-poly-integration/products/price-localization.html for notes
+	 * see the bundled Price localization guide for notes
      *
      * @param Array $args   arguments used with wc_price
      * 		'ex_tax_label'       => false,
