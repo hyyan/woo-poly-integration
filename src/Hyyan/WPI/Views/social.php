@@ -20,7 +20,7 @@ https://wordpress.org/plugins/woo-poly-integration/',
 <p>
 	<a class="button button-primary" href="https://github.com/hyyan/woo-poly-integration" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Star WooPoly on GitHub', 'woo-poly-integration' ); ?></a>
 	<a class="button" href="https://wordpress.org/support/plugin/woo-poly-integration/reviews/#new-post" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Rate on WordPress.org', 'woo-poly-integration' ); ?></a>
-	<a class="button" href="<?php echo esc_url( 'https://www.linkedin.com/feed/?shareActive=true&text=' . rawurlencode( $wpi_share_text ) ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Share on LinkedIn', 'woo-poly-integration' ); ?></a>
+	<a class="button" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=<?php echo esc_attr( rawurlencode( $wpi_share_text ) ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Share on LinkedIn', 'woo-poly-integration' ); ?></a>
 </p>
 <details>
 	<summary><?php esc_html_e( 'Preview the post and tag Hyyan', 'woo-poly-integration' ); ?></summary>
