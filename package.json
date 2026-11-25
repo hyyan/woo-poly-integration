@@ -22,7 +22,7 @@
     "esbuild": "0.28.2",
     "git-cliff": "2.14.2",
     "highlight.js": "11.12.0",
-    "markdown-it": "14.1.1",
+    "markdown-it": "14.3.3",
     "release-it": "21.1.2",
     "terser": "5.51.2"
   },
