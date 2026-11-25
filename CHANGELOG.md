@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.7.0
+
+* feat: filter WooCommerce REST products by language ([7f07863](https://github.com/hyyan/woo-poly-integration/commit/7f078637d8a03839da8b162494bd93b83ab968c2))
+* feat: filter WooCommerce REST product collections by language ([b286fd8](https://github.com/hyyan/woo-poly-integration/commit/b286fd89349670cf5336381ef5236cc64f6dbc9d))
+* feat: translate WooCommerce products and metadata with DeepL ([8665ab3](https://github.com/hyyan/woo-poly-integration/commit/8665ab334815d5cc6033f1c873491d93be5f4a73))
+* feat: integrate the DeepL workflow with the bundled product guide ([bc19b1d](https://github.com/hyyan/woo-poly-integration/commit/bc19b1d341dfb3c9d3ba7967ffea07505ac679f2))
+* fix: register the DeepL key in WooPoly feature settings ([5f4e351](https://github.com/hyyan/woo-poly-integration/commit/5f4e3519ed1855d5eb1e20a22db0ffb15e36a63b))
+* fix: configure the store DeepL key in WooPoly settings ([9996b84](https://github.com/hyyan/woo-poly-integration/commit/9996b841876b90bd5a7f7788fabb8ab8eb3f7e3f))
+* feat: manage personal DeepL keys in the product editor ([1a4c644](https://github.com/hyyan/woo-poly-integration/commit/1a4c644777b5b661242c6b9899d5e68156de34f7))
+* feat: create linked WooCommerce product drafts with DeepL ([0d86064](https://github.com/hyyan/woo-poly-integration/commit/0d860648c2a2bcd0e7dc2cf5c9b7338342193618))
+* fix: preserve paragraph breaks in LinkedIn share links ([25daad9](https://github.com/hyyan/woo-poly-integration/commit/25daad987391c88565f7d1bdcc35455b9086ae6a))
+* feat: add maintainer pledge and project sharing to WooPoly ([2bc5c7d](https://github.com/hyyan/woo-poly-integration/commit/2bc5c7d8716914905fd3f0b7aa80550c1f9b5929))
+* feat: bundle the WooPoly guide in WordPress admin ([467d479](https://github.com/hyyan/woo-poly-integration/commit/467d47931f134cca6ad4d8ec840338ab0eab1555))
+* fix: preserve adjusted prices on translated cart rows ([db01a81](https://github.com/hyyan/woo-poly-integration/commit/db01a8114807c0a9f29774db48e22d27dfa96342))
+* Remove the translated cart discount documentation ([f2ee3c4](https://github.com/hyyan/woo-poly-integration/commit/f2ee3c42ceba3bde8cb2e56207c2a54c553c34f4))
+* Explain discounted row subtotals in translated carts ([4f77484](https://github.com/hyyan/woo-poly-integration/commit/4f77484ee002e2e5229f087eb6eb16d3e149aa39))
+* Preserve adjusted cart prices on translated product rows ([cce36dd](https://github.com/hyyan/woo-poly-integration/commit/cce36dd804ebd3ac24a6fd2c6cc59619625cb9d4))
+* Explain setup progress and how to resume the checklist ([499995a](https://github.com/hyyan/woo-poly-integration/commit/499995a8d9af1e972eb60b9682917ce91ef9c556))
+* Guide merchants through multilingual store setup ([a7accc5](https://github.com/hyyan/woo-poly-integration/commit/a7accc5d36696abc844cdb50fba3e6dd2c2cb8c0))
+* Merge pull request #572 from hyyan/dependabot/npm_and_yarn/multi-4e2dc1f270 ([29fc846](https://github.com/hyyan/woo-poly-integration/commit/29fc846071bf1e1b903f84cf42909bdeeb6e5d04))
+* fix: publish complete release changelog in WordPress readme ([ea16288](https://github.com/hyyan/woo-poly-integration/commit/ea16288c57111a91d00f63635bbe3124b43824cb))
 ## 1.6.0
 
 * fix: initialize CI fixtures and guard deferred product saves ([fcecb7a](https://github.com/hyyan/woo-poly-integration/commit/fcecb7a5dc9c9c039b61bb9218677a0afb427194))
