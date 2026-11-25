@@ -45,3 +45,14 @@
     .wpiguide-jump label { grid-column: 1 / -1; font-weight: 600; }
     .wpiguide-jump select { width: 100%; max-width: none; }
 }
+
+.wpiguide-new {
+    display: inline-block;
+    margin-inline-start: 4px;
+    padding: 0 6px;
+    border-radius: 8px;
+    background: #eaf4ed;
+    color: #245b2a;
+    font-size: 11px;
+    font-weight: 600;
+}

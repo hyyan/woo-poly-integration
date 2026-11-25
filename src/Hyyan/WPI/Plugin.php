@@ -380,7 +380,7 @@ class Plugin
     {
         new Emails();
         new Admin\Settings();
-        new Admin\ProductTranslation();
+		new Admin\ProductTranslation();
         new Cart();
         //new Login();
         new Order();

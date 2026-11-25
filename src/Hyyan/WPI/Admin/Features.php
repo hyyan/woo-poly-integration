@@ -20,7 +20,7 @@ use Hyyan\WPI\Utilities;
  */
 class Features extends AbstractSettings
 {
-    const DEEPL_KEY_MASK = '********';
+	const DEEPL_KEY_MASK = '********';
 
     /**
      * {@inheritdoc}
@@ -30,25 +30,27 @@ class Features extends AbstractSettings
         return 'wpi-features';
     }
 
-    /**
-     * Keep the credential out of the password field and the public features array.
-     */
-    public function sanitizeDeepLKey($value)
-    {
-        $value = is_string($value) ? trim($value) : null;
+	/**
+	 * Keep the credential out of the password field and the public features array.
+	 *
+	 * @param mixed $value Submitted password field.
+	 * @return string Mask for the stored credential, or an empty field.
+	 */
+	public function sanitizeDeepLKey( $value ) {
+		$value = is_string( $value ) ? trim( $value ) : null;
 
-        if ($value === '') {
-            delete_option(DeepL::STORE_KEY);
+		if ( '' === $value ) {
+			delete_option( DeepL::STORE_KEY );
 
-            return '';
-        }
+			return '';
+		}
 
-        if ($value !== self::DEEPL_KEY_MASK && !DeepL::saveStoreKey($value)) {
-            add_settings_error(self::getID(), 'deepl-key', __('Could not save the DeepL API key.', 'woo-poly-integration'));
-        }
+		if ( self::DEEPL_KEY_MASK !== $value && ! DeepL::saveStoreKey( $value ) ) {
+			add_settings_error( self::getID(), 'deepl-key', __( 'Could not save the DeepL API key.', 'woo-poly-integration' ) );
+		}
 
-        return DeepL::storeKey() ? self::DEEPL_KEY_MASK : '';
-    }
+		return DeepL::storeKey() ? self::DEEPL_KEY_MASK : '';
+	}
 
     /**
      * {@inheritdoc}
@@ -75,20 +77,20 @@ class Features extends AbstractSettings
     protected function doGetFields()
     {
         return array(
-            array(
-                'name' => 'deepl-api-key',
-                'type' => 'password',
-                'default' => DeepL::storeKey() ? self::DEEPL_KEY_MASK : '',
-                'label' => __('DeepL API key', 'woo-poly-integration'),
-                'desc' => __('Store key for product translation. Enter a new key to replace it or clear the field to remove it.', 'woo-poly-integration'),
-                'sanitize_callback' => array($this, 'sanitizeDeepLKey'),
-            ),
-            array(
-                'name' => 'deepl-meta-keys',
-                'type' => 'text',
-                'label' => __('DeepL product text fields', 'woo-poly-integration'),
-                'desc' => __('Additional custom field keys containing translatable product text, separated by commas.', 'woo-poly-integration'),
-            ),
+			array(
+				'name'              => 'deepl-api-key',
+				'type'              => 'password',
+				'default'           => DeepL::storeKey() ? self::DEEPL_KEY_MASK : '',
+				'label'             => __( 'DeepL API key', 'woo-poly-integration' ),
+				'desc'              => __( 'Store key for product translation. Enter a new key to replace it or clear the field to remove it.', 'woo-poly-integration' ) . ' <a href="' . esc_url( Guide::url( 'translations/deepl' ) . '#connect-a-deepl-api-key' ) . '">' . esc_html__( 'DeepL setup guide', 'woo-poly-integration' ) . '</a>',
+				'sanitize_callback' => array( $this, 'sanitizeDeepLKey' ),
+			),
+			array(
+				'name'  => 'deepl-meta-keys',
+				'type'  => 'text',
+				'label' => __( 'DeepL product text fields', 'woo-poly-integration' ),
+				'desc'  => __( 'Additional custom field keys containing translatable product text, separated by commas.', 'woo-poly-integration' ) . ' <a href="' . esc_url( Guide::url( 'translations/deepl' ) . '#include-custom-text-fields' ) . '">' . esc_html__( 'Custom field example', 'woo-poly-integration' ) . '</a>',
+			),
             array(
                 'name' => 'fields-locker',
                 'type' => 'checkbox',
